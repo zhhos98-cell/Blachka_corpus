@@ -1,0 +1,50 @@
+name: slide-survey
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Run mode: dry-run validates and plans only; full fetches public metadata pages only."
+        required: true
+        default: "dry-run"
+        type: choice
+        options:
+          - dry-run
+          - full
+  pull_request:
+    paths:
+      - "data/survey/**"
+      - "scripts/**"
+      - ".github/workflows/slide_survey.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate survey table
+        run: python scripts/validate_survey.py
+
+      - name: Build harvest plan
+        run: python scripts/harvest_catalogue.py --mode "${{ github.event.inputs.mode || 'dry-run' }}"
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: slide-survey-reports
+          path: |
+            outputs/*.md
+            outputs/*.json
+            data/normalized/*.jsonl
