@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Validate the UK/US microscope-slide survey table.
 
-This script is deliberately conservative. It checks that survey rows retain
-relationship language and do not silently flatten ownership claims.
+The survey is not a general ownership table. It keeps source relationship
+phrases intact so that "belonging to", "prepared by", "mounted by",
+"donated by", "lent by", and related statements are not flattened into one
+ownership field.
 """
 
 from __future__ import annotations
@@ -11,6 +13,7 @@ import csv
 import sys
 from collections import Counter
 from pathlib import Path
+from typing import Any
 
 SURVEY_PATH = Path("data/survey/07A_UK_US_Microscope_Slide_Collections_Survey.csv")
 REPORT_PATH = Path("outputs/run_report.md")
@@ -24,6 +27,7 @@ REQUIRED_COLUMNS = [
     "source_type",
     "source_url",
     "stable_id_pattern",
+    "site_adapter",
     "slide_certainty",
     "stated_count",
     "harvestable_item_count",
@@ -43,7 +47,26 @@ REQUIRED_COLUMNS = [
 
 ALLOWED_COUNTRIES = {"UK", "US"}
 ALLOWED_PROVENANCE = {"A", "B", "C", "D"}
-ALLOWED_AUTOMATION = {"manual only", "static HTML", "paginated HTML", "API", "downloadable finding aid", "IIIF", "blocked"}
+ALLOWED_AUTOMATION = {
+    "manual only",
+    "static HTML",
+    "paginated HTML",
+    "API",
+    "downloadable finding aid",
+    "IIIF",
+    "blocked",
+}
+ALLOWED_SITE_ADAPTERS = {
+    "smg_object_type_search",
+    "wellcome_work_static",
+    "wellcome_search",
+    "nhm_collections_landing_manual",
+    "rms_quekett_manual",
+    "oac_finding_aid",
+    "smithsonian_search",
+    "mczbase_manual",
+    "cornell_candidate_manual",
+}
 RISK_TERMS = ("lantern slide", "photographic slide", "glass plate negative", "35mm slide")
 OWNERSHIP_COLLAPSE_TERMS = ("owner", "owned by")
 RELATIONSHIP_TERMS = (
@@ -61,7 +84,16 @@ RELATIONSHIP_TERMS = (
 )
 
 
-def load_rows(path: Path) -> list[dict[str, str]]:
+def safe_text(value: Any) -> str:
+    """Return a stable string for CSV cells and malformed extra-field lists."""
+    if value is None:
+        return ""
+    if isinstance(value, list):
+        return " | ".join(safe_text(v) for v in value)
+    return str(value)
+
+
+def load_rows(path: Path) -> list[dict[str, Any]]:
     if not path.exists():
         raise FileNotFoundError(f"Survey table not found: {path}")
     with path.open(newline="", encoding="utf-8") as f:
@@ -73,47 +105,70 @@ def load_rows(path: Path) -> list[dict[str, str]]:
         return list(reader)
 
 
-def validate(rows: list[dict[str, str]]) -> tuple[list[str], list[str]]:
+def validate(rows: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
-    ids = Counter(row["entry_id"] for row in rows)
 
+    ids = Counter(safe_text(row.get("entry_id")) for row in rows)
     for entry_id, count in ids.items():
         if count > 1:
             errors.append(f"Duplicate entry_id: {entry_id}")
 
     for i, row in enumerate(rows, start=2):
-        rid = row["entry_id"] or f"row {i}"
-        if row["country"] not in ALLOWED_COUNTRIES:
-            errors.append(f"{rid}: country must be UK or US, got {row['country']!r}")
-        if row["provenance_value"] not in ALLOWED_PROVENANCE:
-            errors.append(f"{rid}: provenance_value must be A/B/C/D, got {row['provenance_value']!r}")
-        if row["automation_feasibility"] not in ALLOWED_AUTOMATION:
-            errors.append(f"{rid}: unsupported automation_feasibility {row['automation_feasibility']!r}")
+        rid = safe_text(row.get("entry_id")) or f"row {i}"
 
-        joined = " ".join(row.values()).lower()
-        if any(term in joined for term in RISK_TERMS) and not row["exclude_reason"]:
+        if None in row:
+            errors.append(f"{rid}: malformed CSV row has extra values beyond header: {safe_text(row[None])}")
+
+        if safe_text(row.get("country")) not in ALLOWED_COUNTRIES:
+            errors.append(f"{rid}: country must be UK or US, got {safe_text(row.get('country'))!r}")
+        if safe_text(row.get("provenance_value")) not in ALLOWED_PROVENANCE:
+            errors.append(
+                f"{rid}: provenance_value must be A/B/C/D, got {safe_text(row.get('provenance_value'))!r}"
+            )
+        if safe_text(row.get("automation_feasibility")) not in ALLOWED_AUTOMATION:
+            errors.append(f"{rid}: unsupported automation_feasibility {safe_text(row.get('automation_feasibility'))!r}")
+        if safe_text(row.get("site_adapter")) not in ALLOWED_SITE_ADAPTERS:
+            errors.append(f"{rid}: unsupported site_adapter {safe_text(row.get('site_adapter'))!r}")
+
+        joined = " ".join(safe_text(v) for v in row.values()).lower()
+        if any(term in joined for term in RISK_TERMS) and not safe_text(row.get("exclude_reason")):
             warnings.append(f"{rid}: slide-media risk term present; add exclude_reason or clarify microscope-slide certainty.")
 
-        relationship = row["relationship_phrase"].lower()
+        relationship = safe_text(row.get("relationship_phrase")).lower()
         if any(term in relationship for term in OWNERSHIP_COLLAPSE_TERMS):
             warnings.append(f"{rid}: avoid flattening relations into ownership; preserve source phrase.")
         if relationship and not any(term in relationship for term in RELATIONSHIP_TERMS):
-            warnings.append(f"{rid}: relationship_phrase may need normalization or source-language preservation: {row['relationship_phrase']!r}")
+            warnings.append(
+                f"{rid}: relationship_phrase may need normalization or source-language preservation: "
+                f"{safe_text(row.get('relationship_phrase'))!r}"
+            )
 
-        if row["automation_feasibility"] != "manual only" and not row["source_url"]:
+        if safe_text(row.get("automation_feasibility")) not in {"manual only", "blocked"} and not safe_text(row.get("source_url")):
             errors.append(f"{rid}: automated row lacks source_url")
-        if row["provenance_value"] in {"A", "B"} and not (row["person_or_collection_name"] or row["physical_structure"] or row["stated_count"]):
+
+        if safe_text(row.get("automation_feasibility")) == "manual only" and safe_text(row.get("site_adapter")).endswith("_search"):
+            warnings.append(f"{rid}: manual-only row uses a search adapter name; use a *_manual adapter or enable harvesting.")
+
+        if safe_text(row.get("provenance_value")) in {"A", "B"} and not (
+            safe_text(row.get("person_or_collection_name"))
+            or safe_text(row.get("physical_structure"))
+            or safe_text(row.get("stated_count"))
+        ):
             warnings.append(f"{rid}: A/B row should preserve person, count, or physical batch structure.")
+
+        if "slide" not in safe_text(row.get("slide_certainty")).lower():
+            warnings.append(f"{rid}: slide_certainty does not explicitly say slide/slides.")
 
     return errors, warnings
 
 
-def write_report(rows: list[dict[str, str]], errors: list[str], warnings: list[str]) -> None:
+def write_report(rows: list[dict[str, Any]], errors: list[str], warnings: list[str]) -> None:
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    country_counts = Counter(row["country"] for row in rows)
-    value_counts = Counter(row["provenance_value"] for row in rows)
-    automation_counts = Counter(row["automation_feasibility"] for row in rows)
+    country_counts = Counter(safe_text(row.get("country")) for row in rows)
+    value_counts = Counter(safe_text(row.get("provenance_value")) for row in rows)
+    automation_counts = Counter(safe_text(row.get("automation_feasibility")) for row in rows)
+    adapter_counts = Counter(safe_text(row.get("site_adapter")) for row in rows)
 
     lines = [
         "# Slide survey validation report",
@@ -122,6 +177,7 @@ def write_report(rows: list[dict[str, str]], errors: list[str], warnings: list[s
         f"Countries: {dict(country_counts)}",
         f"Provenance values: {dict(value_counts)}",
         f"Automation feasibility: {dict(automation_counts)}",
+        f"Site adapters: {dict(adapter_counts)}",
         "",
         f"Errors: {len(errors)}",
     ]
