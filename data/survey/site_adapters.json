@@ -1,0 +1,135 @@
+{
+  "schema_version": "slide-survey-site-adapter-registry-v1",
+  "purpose": "Versioned registry for known UK/US microscope-slide collection-entry adapters. These are not generic crawlers; each adapter preserves collection-scale evidence and source relationship language.",
+  "guards": [
+    "Fetch metadata pages only; do not bulk-download images.",
+    "Do not bypass login, paywalls, anti-bot checks, robots controls, or IIIF image delivery.",
+    "Do not collapse belonging_to, from_collection_of, prepared_by, mounted_by, donated_by, lent_by, assembled_by, or received_by into ownership.",
+    "Treat single thin item pages as useful only when they support a collection, person, batch, cabinet, label, or circulation question.",
+    "Flag lantern slides, photographic slides, glass plate negatives, and 35mm slides before promotion."
+  ],
+  "adapters": [
+    {
+      "site_adapter": "smg_object_type_search",
+      "status": "active_metadata",
+      "institution_scope": "Science Museum Group",
+      "target": "object_type microscope slide search",
+      "expected_terms": [
+        "microscope slide",
+        "object",
+        "maker",
+        "date"
+      ],
+      "item_url_pattern": "collection.sciencemuseumgroup.org.uk/objects/{object_id}",
+      "promotion_rule": "Promote maker/date/item clusters, not mere search-result existence."
+    },
+    {
+      "site_adapter": "wellcome_work_static",
+      "status": "active_metadata",
+      "institution_scope": "Wellcome Collection",
+      "target": "static work page",
+      "expected_terms": [
+        "Timothy Lewis",
+        "microscope slides",
+        "belonging to",
+        "Wellcome"
+      ],
+      "item_url_pattern": "wellcomecollection.org/works/{work_id}",
+      "promotion_rule": "Preserve relationship phrase and exhibition/documentation context."
+    },
+    {
+      "site_adapter": "wellcome_search",
+      "status": "active_metadata",
+      "institution_scope": "Wellcome Collection",
+      "target": "search results for microscope slides",
+      "expected_terms": [
+        "microscope slides",
+        "works",
+        "Wellcome"
+      ],
+      "item_url_pattern": "wellcomecollection.org/works/{work_id}",
+      "promotion_rule": "Filter photographic and lantern-slide noise before promotion."
+    },
+    {
+      "site_adapter": "oac_finding_aid",
+      "status": "active_metadata",
+      "institution_scope": "Online Archive of California / San Diego Natural History Museum",
+      "target": "Hartshorn-Bolles finding aid",
+      "expected_terms": [
+        "Hartshorn-Bolles",
+        "microscope slides",
+        "wooden cabinet",
+        "50 drawers",
+        "Bolles",
+        "Hartshorn"
+      ],
+      "item_url_pattern": "oac.cdlib.org/findaid/ark:/{ark}",
+      "promotion_rule": "Collection-scale count and cabinet structure outrank thin item records."
+    },
+    {
+      "site_adapter": "smithsonian_search",
+      "status": "active_metadata",
+      "institution_scope": "Smithsonian Institution",
+      "target": "collections search for microscope slide",
+      "expected_terms": [
+        "microscope slide",
+        "Smithsonian",
+        "collection"
+      ],
+      "item_url_pattern": "collections.si.edu/search/detail/{unit_code}_{id}",
+      "promotion_rule": "Filter photographic-slide and unrelated slide-media noise."
+    },
+    {
+      "site_adapter": "nhm_collections_landing_manual",
+      "status": "manual_placeholder",
+      "institution_scope": "Natural History Museum London",
+      "target": "collections landing/search endpoint candidate",
+      "expected_terms": [
+        "collection",
+        "specimen",
+        "microscope"
+      ],
+      "item_url_pattern": "",
+      "promotion_rule": "Do not automate until stable query/API endpoint is fixed."
+    },
+    {
+      "site_adapter": "rms_quekett_manual",
+      "status": "manual_placeholder",
+      "institution_scope": "Royal Microscopical Society / Quekett context",
+      "target": "archive/finding-aid endpoint candidate",
+      "expected_terms": [
+        "microscope slides",
+        "Quekett",
+        "Royal Microscopical Society"
+      ],
+      "item_url_pattern": "",
+      "promotion_rule": "Use local event-side corpus first; object-side endpoint remains open."
+    },
+    {
+      "site_adapter": "mczbase_manual",
+      "status": "manual_placeholder",
+      "institution_scope": "Harvard MCZ",
+      "target": "MCZbase query candidate",
+      "expected_terms": [
+        "MCZ",
+        "microscope slide",
+        "specimen"
+      ],
+      "item_url_pattern": "",
+      "promotion_rule": "Keep separate from Harvard Blaschka glass-model provenance."
+    },
+    {
+      "site_adapter": "cornell_candidate_manual",
+      "status": "manual_placeholder",
+      "institution_scope": "Cornell University",
+      "target": "candidate finding aid/catalogue endpoint",
+      "expected_terms": [
+        "microscope slide",
+        "teaching",
+        "biology"
+      ],
+      "item_url_pattern": "",
+      "promotion_rule": "Needs a specific source URL before automation."
+    }
+  ]
+}
