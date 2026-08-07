@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the UK/US microscope-slide survey table.
+"""Validate the global microscope-slide survey table.
 
 The survey is not a general ownership table. It keeps source relationship
 phrases intact so that "belonging to", "prepared by", "mounted by",
@@ -10,12 +10,13 @@ ownership field.
 from __future__ import annotations
 
 import csv
+import re
 import sys
 from collections import Counter
 from pathlib import Path
 from typing import Any
 
-SURVEY_PATH = Path("data/survey/07A_UK_US_Microscope_Slide_Collections_Survey.csv")
+SURVEY_PATH = Path("data/survey/07A_Global_Microscope_Slide_Collections_Survey.csv")
 REPORT_PATH = Path("outputs/run_report.md")
 
 REQUIRED_COLUMNS = [
@@ -45,7 +46,6 @@ REQUIRED_COLUMNS = [
     "notes",
 ]
 
-ALLOWED_COUNTRIES = {"UK", "US"}
 ALLOWED_PROVENANCE = {"A", "B", "C", "D"}
 ALLOWED_AUTOMATION = {
     "manual only",
@@ -57,15 +57,26 @@ ALLOWED_AUTOMATION = {
     "blocked",
 }
 ALLOWED_SITE_ADAPTERS = {
+    "nhm_microscope_digitisation",
+    "nhm_collection_static",
+    "kew_collection_static",
+    "kew_digitisation_static",
+    "oumnh_project_static",
     "smg_object_type_search",
     "wellcome_work_static",
     "wellcome_search",
-    "nhm_collections_landing_manual",
     "rms_quekett_manual",
     "oac_finding_aid",
     "smithsonian_search",
     "mczbase_manual",
     "cornell_candidate_manual",
+    "powerhouse_object_static",
+    "museums_victoria_object_static",
+    "senckenberg_virmisco_static",
+    "bsm_database_static",
+    "naturalis_collection_static",
+    "mnhn_deflandre_literature_manual",
+    "dissco_method_static",
 }
 RISK_TERMS = ("lantern slide", "photographic slide", "glass plate negative", "35mm slide")
 OWNERSHIP_COLLAPSE_TERMS = ("owner", "owned by")
@@ -81,6 +92,14 @@ RELATIONSHIP_TERMS = (
     "lent by",
     "assembled by",
     "received by",
+    "held by",
+    "digitised by",
+    "developed by",
+    "produced by",
+    "used by",
+    "inscribed names",
+    "part of",
+    "hosted by",
 )
 
 
@@ -91,6 +110,15 @@ def safe_text(value: Any) -> str:
     if isinstance(value, list):
         return " | ".join(safe_text(v) for v in value)
     return str(value)
+
+
+def is_valid_country_scope(value: str) -> bool:
+    """Accept ISO-like country tags plus GLOBAL and multi-country tags.
+
+    Examples: UK, US, DE, AU, NL, FR, GLOBAL, UK-US, FR/DE.
+    The field is a survey scope marker rather than a diplomatic country name.
+    """
+    return bool(re.fullmatch(r"GLOBAL|[A-Z]{2,3}([-/][A-Z]{2,3})*", value))
 
 
 def load_rows(path: Path) -> list[dict[str, Any]]:
@@ -120,8 +148,9 @@ def validate(rows: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
         if None in row:
             errors.append(f"{rid}: malformed CSV row has extra values beyond header: {safe_text(row[None])}")
 
-        if safe_text(row.get("country")) not in ALLOWED_COUNTRIES:
-            errors.append(f"{rid}: country must be UK or US, got {safe_text(row.get('country'))!r}")
+        country = safe_text(row.get("country"))
+        if not is_valid_country_scope(country):
+            errors.append(f"{rid}: country must be ISO-like scope or GLOBAL, got {country!r}")
         if safe_text(row.get("provenance_value")) not in ALLOWED_PROVENANCE:
             errors.append(
                 f"{rid}: provenance_value must be A/B/C/D, got {safe_text(row.get('provenance_value'))!r}"
@@ -157,8 +186,11 @@ def validate(rows: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
         ):
             warnings.append(f"{rid}: A/B row should preserve person, count, or physical batch structure.")
 
-        if "slide" not in safe_text(row.get("slide_certainty")).lower():
+        if "slide" not in safe_text(row.get("slide_certainty")).lower() and not safe_text(row.get("exclude_reason")):
             warnings.append(f"{rid}: slide_certainty does not explicitly say slide/slides.")
+
+        if safe_text(row.get("provenance_value")) == "D" and not safe_text(row.get("exclude_reason")):
+            warnings.append(f"{rid}: D-grade row should state why it is method-only, weak, or excluded.")
 
     return errors, warnings
 
@@ -174,7 +206,7 @@ def write_report(rows: list[dict[str, Any]], errors: list[str], warnings: list[s
         "# Slide survey validation report",
         "",
         f"Rows: {len(rows)}",
-        f"Countries: {dict(country_counts)}",
+        f"Countries/scopes: {dict(country_counts)}",
         f"Provenance values: {dict(value_counts)}",
         f"Automation feasibility: {dict(automation_counts)}",
         f"Site adapters: {dict(adapter_counts)}",
