@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Custom metadata harvest for UK/US microscope-slide survey entries.
+"""Custom metadata harvest for global microscope-slide survey entries.
 
-This is not a universal crawler. It is a registry-driven set of small site
+This is not a universal crawler. It reads a versioned registry of small site
 adapters for known collection entrances. Each adapter preserves collection-
 scale evidence: counts, collection names, relationship phrases, source URLs,
 object-page patterns, physical structure, and warning flags.
@@ -31,13 +31,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-SURVEY_PATH = Path("data/survey/07A_UK_US_Microscope_Slide_Collections_Survey.csv")
+SURVEY_PATH = Path("data/survey/07A_Global_Microscope_Slide_Collections_Survey.csv")
+ADAPTER_REGISTRY_SOURCE_PATH = Path("data/survey/site_adapters.json")
 RAW_DIR = Path("data/raw/catalogue_pages")
 NORMALIZED_DIR = Path("data/normalized")
 REPORT_PATH = Path("outputs/harvest_plan.json")
 REGISTRY_PATH = Path("outputs/adapter_registry_snapshot.json")
 
-USER_AGENT = "Blachka-corpus-slide-survey/0.2 (+site-adapter metadata-only; no image bulk download)"
+USER_AGENT = "Blachka-corpus-slide-survey/0.3 (+global site-adapter metadata-only; no image bulk download)"
 SKIP_AUTOMATION = {"manual only", "blocked"}
 MAX_BYTES = 2_000_000
 
@@ -48,70 +49,8 @@ class Adapter:
     label: str
     expected_terms: tuple[str, ...]
     item_url_pattern: str = ""
-    notes: str = ""
-
-
-ADAPTERS: dict[str, Adapter] = {
-    "smg_object_type_search": Adapter(
-        key="smg_object_type_search",
-        label="Science Museum Group object_type microscope-slide search",
-        expected_terms=("microscope slide", "object", "maker", "date"),
-        item_url_pattern="collection.sciencemuseumgroup.org.uk/objects/{object_id}",
-        notes="Use for SMG object-type result pages; promote maker/date clusters, not mere item existence.",
-    ),
-    "wellcome_work_static": Adapter(
-        key="wellcome_work_static",
-        label="Wellcome static work page",
-        expected_terms=("Timothy Lewis", "microscope slides", "belonging to", "Wellcome"),
-        item_url_pattern="wellcomecollection.org/works/{work_id}",
-        notes="Use for single Wellcome work pages where the relationship phrase itself matters.",
-    ),
-    "wellcome_search": Adapter(
-        key="wellcome_search",
-        label="Wellcome microscope-slide search",
-        expected_terms=("microscope slides", "works", "Wellcome"),
-        item_url_pattern="wellcomecollection.org/works/{work_id}",
-        notes="Use for broad Wellcome search pages; filter photographic and lantern-slide noise before promotion.",
-    ),
-    "nhm_collections_landing_manual": Adapter(
-        key="nhm_collections_landing_manual",
-        label="NHM London manual landing-page target",
-        expected_terms=("collection", "specimen", "microscope"),
-        notes="Manual placeholder until a stable catalogue endpoint is fixed.",
-    ),
-    "rms_quekett_manual": Adapter(
-        key="rms_quekett_manual",
-        label="RMS/Quekett manual archive target",
-        expected_terms=("microscope slides", "Quekett", "Royal Microscopical Society"),
-        notes="Object-side endpoint not fixed; local corpus currently supplies stronger event-side evidence.",
-    ),
-    "oac_finding_aid": Adapter(
-        key="oac_finding_aid",
-        label="Online Archive of California finding aid",
-        expected_terms=("Hartshorn-Bolles", "microscope slides", "wooden cabinet", "50 drawers", "Bolles", "Hartshorn"),
-        item_url_pattern="oac.cdlib.org/findaid/ark:/{ark}",
-        notes="Collection-scale finding aid; count and physical cabinet structure are more important than thin items.",
-    ),
-    "smithsonian_search": Adapter(
-        key="smithsonian_search",
-        label="Smithsonian collections search",
-        expected_terms=("microscope slide", "Smithsonian", "collection"),
-        item_url_pattern="collections.si.edu/search/detail/{unit_code}_{id}",
-        notes="Broad search adapter; must filter photographic slides and unrelated slide media.",
-    ),
-    "mczbase_manual": Adapter(
-        key="mczbase_manual",
-        label="Harvard MCZbase manual target",
-        expected_terms=("MCZ", "microscope slide", "specimen"),
-        notes="Manual placeholder until stable MCZbase query shape is selected.",
-    ),
-    "cornell_candidate_manual": Adapter(
-        key="cornell_candidate_manual",
-        label="Cornell candidate manual target",
-        expected_terms=("microscope slide", "teaching", "biology"),
-        notes="Candidate only; needs a specific collection/finding-aid URL before automation.",
-    ),
-}
+    status: str = ""
+    promotion_rule: str = ""
 
 
 def slugify(value: str) -> str:
@@ -128,12 +67,30 @@ def safe_text(value: Any) -> str:
     return str(value)
 
 
+def load_adapter_registry(path: Path = ADAPTER_REGISTRY_SOURCE_PATH) -> dict[str, Adapter]:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    adapters: dict[str, Adapter] = {}
+    for item in data.get("adapters", []):
+        key = safe_text(item.get("site_adapter"))
+        if not key:
+            continue
+        adapters[key] = Adapter(
+            key=key,
+            label=safe_text(item.get("institution_scope")) or key,
+            expected_terms=tuple(safe_text(t) for t in item.get("expected_terms", [])),
+            item_url_pattern=safe_text(item.get("item_url_pattern")),
+            status=safe_text(item.get("status")),
+            promotion_rule=safe_text(item.get("promotion_rule")),
+        )
+    return adapters
+
+
 def load_rows() -> list[dict[str, str]]:
     with SURVEY_PATH.open(newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
 
-def iter_harvestable(rows: Iterable[dict[str, str]], entry_ids: set[str], adapters: set[str]) -> Iterable[dict[str, str]]:
+def iter_selected(rows: Iterable[dict[str, str]], entry_ids: set[str], adapters: set[str]) -> Iterable[dict[str, str]]:
     for row in rows:
         if entry_ids and row.get("entry_id") not in entry_ids:
             continue
@@ -191,18 +148,18 @@ def find_term_hits(text: str, expected_terms: Iterable[str]) -> tuple[list[str],
     found: list[str] = []
     missing: list[str] = []
     for term in expected_terms:
-        if term.lower() in text_lower:
+        if term and term.lower() in text_lower:
             found.append(term)
-        else:
+        elif term:
             missing.append(term)
     return found, missing
 
 
 def count_candidates(text: str) -> list[str]:
     patterns = [
-        r"\b(?:about|approximately|approx\.?|c\.|circa)\s+[\d,]+\b",
-        r"\b[\d,]+\s+(?:microscope slides|slides|specimens|objects|drawers|cabinets)\b",
-        r"\b(?:one|two|three|four|five|six|seven|eight|nine|ten|fifty)\s+(?:drawers|cabinets|slides|objects)\b",
+        r"\b(?:about|approximately|approx\.?|around|over|c\.|circa)\s+[\d,]+\b",
+        r"\b[\d,]+\s+(?:microscope slides|slides|specimens|objects|drawers|cabinets|boxes|trays)\b",
+        r"\b(?:one|two|three|four|five|six|seven|eight|nine|ten|fifty)\s+(?:drawers|cabinets|slides|objects|boxes|trays)\b",
     ]
     candidates: list[str] = []
     for pattern in patterns:
@@ -226,23 +183,24 @@ def classify_media_risks(text: str) -> list[str]:
     return risks
 
 
-def build_record(row: dict[str, str], raw_text: str, body: bytes, content_type: str, fetched_utc: str) -> dict[str, Any]:
-    adapter = ADAPTERS[row["site_adapter"]]
+def build_record(row: dict[str, str], adapter: Adapter, raw_text: str, body: bytes, content_type: str, fetched_utc: str) -> dict[str, Any]:
     text = html_to_text(raw_text)
     found, missing = find_term_hits(text, adapter.expected_terms)
     urls = extract_urls(raw_text, row.get("source_url", ""))
 
     return {
-        "schema_version": "slide-survey-site-adapter-record-v1",
+        "schema_version": "slide-survey-site-adapter-record-v2-global",
         "entry_id": row.get("entry_id"),
         "country": row.get("country"),
         "institution_current": row.get("institution_current"),
+        "institution_historical": row.get("institution_historical"),
         "collection_title_or_search_entry": row.get("collection_title_or_search_entry"),
         "source_type": row.get("source_type"),
         "source_url": row.get("source_url"),
         "site_adapter": adapter.key,
         "adapter_label": adapter.label,
-        "adapter_notes": adapter.notes,
+        "adapter_status": adapter.status,
+        "adapter_promotion_rule": adapter.promotion_rule,
         "item_url_pattern": adapter.item_url_pattern or row.get("stable_id_pattern"),
         "relationship_phrase": row.get("relationship_phrase"),
         "person_or_collection_name": row.get("person_or_collection_name"),
@@ -256,6 +214,7 @@ def build_record(row: dict[str, str], raw_text: str, body: bytes, content_type: 
         "provenance_value": row.get("provenance_value"),
         "automation_feasibility": row.get("automation_feasibility"),
         "event_side_hooks": row.get("event_side_hooks"),
+        "exclude_reason": row.get("exclude_reason"),
         "content_type": content_type,
         "byte_length": len(body),
         "source_sha256": hashlib.sha256(body).hexdigest(),
@@ -270,11 +229,12 @@ def build_record(row: dict[str, str], raw_text: str, body: bytes, content_type: 
     }
 
 
-def build_plan_record(row: dict[str, str], mode: str, fetched_utc: str) -> dict[str, Any]:
-    adapter = ADAPTERS.get(row.get("site_adapter", ""))
+def build_plan_record(row: dict[str, str], adapter: Adapter | None, mode: str, fetched_utc: str) -> dict[str, Any]:
     automation = row.get("automation_feasibility", "")
     source_url = row.get("source_url", "")
-    if automation in SKIP_AUTOMATION:
+    if adapter is None:
+        action = "skip_unknown_adapter"
+    elif automation in SKIP_AUTOMATION:
         action = "skip_manual_or_blocked"
     elif not source_url:
         action = "skip_missing_source_url"
@@ -292,6 +252,7 @@ def build_plan_record(row: dict[str, str], mode: str, fetched_utc: str) -> dict[
         "automation_feasibility": automation,
         "site_adapter": row.get("site_adapter"),
         "adapter_label": adapter.label if adapter else "",
+        "adapter_status": adapter.status if adapter else "",
         "mode": mode,
         "action": action,
         "fetched_utc": fetched_utc,
@@ -329,10 +290,12 @@ def main() -> int:
     parser.add_argument("--fail-on-fetch-error", action="store_true")
     args = parser.parse_args()
 
+    registry_raw = json.loads(ADAPTER_REGISTRY_SOURCE_PATH.read_text(encoding="utf-8"))
+    adapters_by_key = load_adapter_registry()
     rows = load_rows()
     entry_ids = parse_csv_set(args.entry_id)
-    adapters = parse_csv_set(args.adapter)
-    selected = list(iter_harvestable(rows, entry_ids, adapters))
+    adapter_filter = parse_csv_set(args.adapter)
+    selected = list(iter_selected(rows, entry_ids, adapter_filter))
     now = datetime.now(timezone.utc).isoformat()
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
@@ -343,10 +306,11 @@ def main() -> int:
     fetch_errors = 0
 
     for row in selected:
-        plan_record = build_plan_record(row, args.mode, now)
+        adapter = adapters_by_key.get(row.get("site_adapter", ""))
+        plan_record = build_plan_record(row, adapter, args.mode, now)
         plan.append(plan_record)
 
-        if plan_record["action"] != "fetch_with_site_adapter":
+        if plan_record["action"] != "fetch_with_site_adapter" or adapter is None:
             continue
 
         try:
@@ -355,7 +319,7 @@ def main() -> int:
             raw_path = RAW_DIR / f"{slugify(row['entry_id'])}.html"
             raw_path.write_bytes(body)
             raw_text = body.decode("utf-8", errors="replace")
-            record = build_record(row, raw_text, body, content_type, now)
+            record = build_record(row, adapter, raw_text, body, content_type, now)
             record["raw_path"] = str(raw_path)
             collection_records.append(record)
             plan_record.update(
@@ -376,29 +340,33 @@ def main() -> int:
 
         time.sleep(max(args.delay, 0))
 
-    registry = {
-        "schema_version": "slide-survey-site-adapter-registry-v1",
+    registry_snapshot = {
+        "schema_version": registry_raw.get("schema_version", "slide-survey-site-adapter-registry"),
+        "purpose": registry_raw.get("purpose", ""),
+        "guards": registry_raw.get("guards", []),
         "adapters": {
             key: {
                 "label": adapter.label,
+                "status": adapter.status,
                 "expected_terms": list(adapter.expected_terms),
                 "item_url_pattern": adapter.item_url_pattern,
-                "notes": adapter.notes,
+                "promotion_rule": adapter.promotion_rule,
             }
-            for key, adapter in ADAPTERS.items()
+            for key, adapter in adapters_by_key.items()
         },
     }
 
     write_json(REPORT_PATH, plan)
-    write_json(REGISTRY_PATH, registry)
+    write_json(REGISTRY_PATH, registry_snapshot)
     write_jsonl(NORMALIZED_DIR / "collections_seed.jsonl", collection_records)
 
     print(f"Mode: {args.mode}")
     print(f"Rows: {len(rows)}; selected: {len(selected)}; fetched records: {len(collection_records)}")
     print(f"Plan: {REPORT_PATH}")
     print(f"Adapter registry: {REGISTRY_PATH}")
-    if fetch_errors and args.fail_on_fetch_error:
+    if fetch_errors:
         print(f"Fetch errors: {fetch_errors}")
+    if fetch_errors and args.fail_on_fetch_error:
         return 1
     return 0
 
