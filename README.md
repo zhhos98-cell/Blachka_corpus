@@ -6,6 +6,7 @@ Current pilot:
 
 - `07A_Global_Microscope_Slide_Collections_Survey`: a global survey layer for microscope-slide collection entrances, finding aids, object catalogues, digitisation projects, batch-level collections, and method-only comparators.
 - `site_adapters.json`: a versioned registry of institution/site-specific adapters. The pilot is intentionally not a universal crawler.
+- `docs/SLIDE_SURVEY_PRIORITY_RULES.md`: the scoring and promotion logic for the generated priority queue.
 - The pilot treats single item pages as weak evidence unless they contribute to a collection, person, batch, label, cabinet, register, box, damage, conservation, or circulation question.
 - GitHub Actions currently runs validation and dry-run harvesting by default. Manual full mode still fetches public metadata HTML/text only. It does not bulk-download images, bypass logins, or treat `belonging to`, `from the collection of`, `prepared by`, `mounted by`, `donated by`, `lent by`, `held by`, `used by`, `produced by`, or `digitised by` as the same ownership relation.
 
@@ -23,9 +24,14 @@ python scripts/harvest_catalogue.py --mode full --adapter powerhouse_object_stat
 python scripts/harvest_catalogue.py --mode full --entry-id UK-WELLCOME-TIMOTHY-LEWIS
 ```
 
-The output files are intentionally small and auditable:
+Validation writes three audit outputs:
 
 - `outputs/run_report.md`
+- `outputs/coverage_summary.json`
+- `outputs/priority_queue.md`
+
+Harvest planning writes:
+
 - `outputs/harvest_plan.json`
 - `outputs/adapter_registry_snapshot.json`
 - `data/normalized/collections_seed.jsonl`
