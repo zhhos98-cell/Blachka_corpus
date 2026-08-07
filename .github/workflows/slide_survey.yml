@@ -34,6 +34,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Prepare modular survey inputs
+        run: python scripts/prepare_survey_inputs.py
+
       - name: Validate survey table
         run: python scripts/validate_survey.py
 
