@@ -3,59 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The Blaschka Object Network traces glass models across workshops, dealers, museums, and surviving collections.">
+  <meta name="description" content="The Blaschka Object Network traces glass models through workshop records, dealers, shipments, museum collections, damage, conservation, rediscovery, and present custody.">
   <title>The Blaschka Object Network</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="site-title" href="./">The Blaschka Object Network</a>
-    <span class="prototype">Research prototype</span>
-  </header>
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <img class="hero-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea%20cucumber%2C%20model%20by%20Leopold%20and%20Rudolph%20Blaschka%2C%20glass%20-%20Harvard%20Museum%20of%20Comparative%20Zoology%20-%20DSC06169.jpg?width=2000" alt="Blaschka glass model of a sea cucumber at Harvard Museum of Comparative Zoology">
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <header class="hero-header">
+      <nav class="top-nav" aria-label="Page sections">
+        <a href="#project">Project</a>
+        <a href="#difference">Difference</a>
+        <a href="#method">Method</a>
+        <a href="#scope">Scope</a>
+        <a href="#limits">Limits</a>
+        <a href="#participate">Contribute</a>
+        <a href="#sample-liverpool">Sample</a>
+      </nav>
+      <a class="prototype-mark" href="#top">Research prototype</a>
+    </header>
+
+    <div class="hero-title-wrap">
+      <p class="hero-kicker">Glass models in motion</p>
+      <h1 id="hero-title">The Blaschka<br>Object Network</h1>
+      <p class="hero-subtitle">Tracing objects across workshop records, dealers, shipments, museums, damage, conservation, rediscovery, and present custody.</p>
+    </div>
+
+    <a class="hero-credit" href="https://commons.wikimedia.org/wiki/File:Sea_cucumber,_model_by_Leopold_and_Rudolph_Blaschka,_glass_-_Harvard_Museum_of_Comparative_Zoology_-_DSC06169.jpg">Hero image: Daderot, CC0</a>
+  </section>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">Glass models in motion</p>
-      <h1 id="hero-title">Objects have histories beyond the cabinet.</h1>
-      <p class="lede">A research project tracing Blaschka glass models through workshop records, dealers, shipments, museum collections, damage, conservation, and rediscovery.</p>
-
-      <nav class="jump-hub" aria-label="Prototype page index">
-        <span class="jump-label">Jump</span>
-        <a href="#case-liverpool">Case 001</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#evidence">Evidence</a>
-        <a href="#sources">Sources</a>
-      </nav>
-    </section>
-
-    <section class="visual-index" aria-label="Temporary image and link prototype">
-      <a class="visual-card visual-wide" href="#case-liverpool">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea%20cucumber%2C%20model%20by%20Leopold%20and%20Rudolph%20Blaschka%2C%20glass%20-%20Harvard%20Museum%20of%20Comparative%20Zoology%20-%20DSC06169.jpg?width=1600" alt="Blaschka glass model of a sea cucumber at Harvard Museum of Comparative Zoology">
-        <span class="visual-caption"><strong>Case studies</strong><small>Follow an object through several documentary lives</small></span>
-      </a>
-
-      <a class="visual-card" href="#timeline">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Blaschka%20Natural%20History%20Museum%20Londres%2028072013%202.jpg?width=1000" alt="Blaschka glass model of an octopus at the Natural History Museum, London">
-        <span class="visual-caption"><strong>Routes</strong><small>Orders, dealers, cases, transfers, returns</small></span>
-      </a>
-
-      <a class="visual-card" href="#evidence">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Blaschka%20Grant%20Museum%20of%20Zoology%20Londres%2005082013%203.jpg?width=1000" alt="Blaschka glass model at the Grant Museum of Zoology, London">
-        <span class="visual-caption"><strong>Evidence</strong><small>What closes, what remains open, and why</small></span>
-      </a>
-    </section>
-
-    <section class="case" id="case-liverpool" aria-labelledby="case-title">
-      <div class="case-meta">
-        <p class="eyebrow">Case 001</p>
-        <p>1887 · Liverpool</p>
+    <section class="project" id="project" aria-labelledby="project-title">
+      <div class="section-heading">
+        <p class="eyebrow">About the project</p>
+        <h2 id="project-title">A public research index for objects whose histories exceed the cabinet.</h2>
       </div>
 
-      <article>
+      <div class="project-lede">
+        <p>The Blaschka Object Network follows glass models as historical objects in motion. It reconstructs how they were selected, priced, ordered, packed, shipped, received, displayed, damaged, repaired, reclassified, dispersed, and rediscovered.</p>
+        <p>The project is built from archival and collection evidence. Its public pages are designed to show both the links that can be closed and the links that remain open.</p>
+      </div>
+
+      <div class="research-chain" aria-label="Research direction">
+        <span>surviving object</span><b>→</b><span>local record</span><b>→</b><span>transaction</span><b>→</b><span>workshop</span><b>↔</b><span>back to the object</span>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-item" id="difference">
+          <p class="item-no">01</p>
+          <h3>What is different here?</h3>
+          <p>Many catalogues begin with what survives in a collection. This project works in both directions: from a surviving model back into labels, accession registers, invoices, correspondence, and workshop papers; and from documentary traces forward toward present custody. The result is a network of object histories, not a census alone.</p>
+        </article>
+
+        <article class="project-item" id="method">
+          <p class="item-no">02</p>
+          <h3>Method</h3>
+          <p>Each case is assembled as an evidential chain. Workshop correspondence, dealer accounts, freight marks, museum accessions, local identifiers, conservation files, exhibition records, published images, and current collection data remain distinguishable layers. A connection is promoted only when the sources actually bridge it.</p>
+        </article>
+
+        <article class="project-item" id="scope">
+          <p class="item-no">03</p>
+          <h3>What it contains</h3>
+          <p>Institutional cases, object-level identifiers where recoverable, commercial catalogue numbers, prices and payments, shipment routes, transfers, damage and repair, conservation, rediscovery, present display or storage, and precise archival targets for the gaps that remain.</p>
+        </article>
+
+        <article class="project-item">
+          <p class="item-no">04</p>
+          <h3>Research model</h3>
+          <p>This is a versioned research prototype rather than a finished catalogue. The backend can preserve more detail, OCR ambiguity, competing readings, and unresolved provenance than the public page. Cases can be revised or upgraded as new evidence closes a chain.</p>
+        </article>
+
+        <article class="project-item" id="limits">
+          <p class="item-no">05</p>
+          <h3>Limits</h3>
+          <p>The record is uneven. OCR can be fragile; nineteenth-century ledgers compress money, quantity, and order numbers; museum names and administrative custody change; many collection databases expose only selected objects. Missing links are left open instead of being completed by analogy.</p>
+        </article>
+
+        <article class="project-item" id="participate">
+          <p class="item-no">06</p>
+          <h3>Contribute</h3>
+          <p>Corrections and additions are welcome, especially local accession numbers, photographs of labels or marks, archival references, purchase and movement records, conservation documentation, and current display or storage information. Contributions should remain traceable to their source and will be credited.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sample" id="sample-liverpool" aria-labelledby="case-title">
+      <div class="sample-side">
+        <p class="eyebrow">Sample 001</p>
+        <p class="sample-place">Liverpool · 1887</p>
+        <p class="sample-note">One-page prototype. No separate case page yet.</p>
+      </div>
+
+      <article class="sample-main">
         <h2 id="case-title">Liverpool Museum: one order, several documentary lives</h2>
         <p class="standfirst">An 1887 workshop sequence follows a Liverpool order from manufacture to accounting and dispatch. More than a century later, surviving models reappear in exhibition and collection records.</p>
 
-        <div class="timeline" id="timeline" aria-label="Liverpool case timeline">
+        <div class="timeline" aria-label="Liverpool case timeline">
           <div class="event">
             <time datetime="1887-10-11">11 Oct 1887</time>
             <p>The Blaschka workshop told its British intermediary that work on “the models for Liverpool” would begin the following week.</p>
@@ -78,21 +123,25 @@
           </div>
         </div>
 
-        <aside class="status" id="evidence" aria-label="Evidence status">
-          <h3>What the chain closes</h3>
-          <p>Manufacture, workshop accounting, a marked shipment, institutional destination, and modern physical survival can be connected at collection level.</p>
-          <h3>What remains open</h3>
-          <p>The original model count, Liverpool accession numbers, the receipt register, and the object-level bridge between case I.B. 268 and individual surviving models.</p>
+        <aside class="status" aria-label="Evidence status">
+          <div>
+            <h3>What the chain closes</h3>
+            <p>Manufacture, workshop accounting, a marked shipment, institutional destination, and modern physical survival can be connected at collection level.</p>
+          </div>
+          <div>
+            <h3>What remains open</h3>
+            <p>The original model count, Liverpool accession numbers, the receipt register, and the object-level bridge between case I.B. 268 and individual surviving models.</p>
+          </div>
         </aside>
 
-        <p class="source-note" id="sources">Prototype case based on the project’s Liverpool research module. Claims are intentionally separated from unresolved fields; the public citation layer will be added in the next build.</p>
+        <p class="source-note">Prototype case based on the project’s Liverpool research module. Claims are intentionally separated from unresolved fields; a fuller public citation layer will follow in a later build.</p>
       </article>
     </section>
   </main>
 
   <footer>
-    <p>The Blaschka Object Network · Work in progress</p>
-    <p class="image-credit">Temporary image test: <a href="https://commons.wikimedia.org/wiki/File:Sea_cucumber,_model_by_Leopold_and_Rudolph_Blaschka,_glass_-_Harvard_Museum_of_Comparative_Zoology_-_DSC06169.jpg">Harvard MCZ photograph by Daderot</a>; <a href="https://commons.wikimedia.org/wiki/File:Blaschka_Natural_History_Museum_Londres_28072013_2.jpg">Natural History Museum photograph by Vassil</a>; <a href="https://commons.wikimedia.org/wiki/File:Blaschka_Grant_Museum_of_Zoology_Londres_05082013_3.jpg">Grant Museum photograph by Vassil</a>. All three files are CC0 on Wikimedia Commons.</p>
+    <a href="#top">The Blaschka Object Network</a>
+    <span>Research prototype · Work in progress</span>
   </footer>
 </body>
 </html>
