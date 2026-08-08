@@ -52,12 +52,12 @@ jobs:
 
     steps:
       - name: Check out frozen slide-survey branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: slide-survey-actions-pilot
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -98,12 +98,12 @@ jobs:
 
     steps:
       - name: Check out frozen slide-survey branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: slide-survey-actions-pilot
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -142,7 +142,7 @@ jobs:
 
     steps:
       - name: Check out frozen slide-survey branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: slide-survey-actions-pilot
 
