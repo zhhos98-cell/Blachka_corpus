@@ -2,44 +2,55 @@
 
 Working repository for the Blaschka / microscope-slide backend experiments.
 
-Current pilot:
+Current slide-survey architecture:
 
-- `07A_Global_Microscope_Slide_Collections_Survey`: a global survey layer for microscope-slide collection entrances, finding aids, object catalogues, digitisation projects, batch-level collections, and method-only comparators.
-- `site_adapters.json`: a versioned registry of institution/site-specific adapters. The pilot is intentionally not a universal crawler.
-- `docs/SLIDE_SURVEY_PRIORITY_RULES.md`: the scoring and promotion logic for the generated priority queue.
-- The pilot treats single item pages as weak evidence unless they contribute to a collection, person, batch, label, cabinet, register, box, damage, conservation, or circulation question.
-- GitHub Actions currently runs validation and dry-run harvesting by default. Manual full mode still fetches public metadata HTML/text only. It does not bulk-download images, bypass logins, or treat `belonging to`, `from the collection of`, `prepared by`, `mounted by`, `donated by`, `lent by`, `held by`, `used by`, `produced by`, or `digitised by` as the same ownership relation.
+- `07A_Global_Microscope_Slide_Collections_Survey.csv`: canonical global survey seed.
+- `07B_*`, `07C_*`, and future `07D_*` batches: modular survey expansions. `scripts/prepare_survey_inputs.py` merges them at workflow runtime without rewriting the committed 07A source file.
+- `site_adapters.json` plus `site_adapters_expansion_*.json`: institution/site-specific adapter registry. The project is intentionally not a universal crawler.
+- `harvest_families_v1.json`: batch-level extraction contracts shared across similar sites and data systems.
+- `scripts/build_harvest_batches.py`: assigns merged survey entries to harvest families and produces a ranked batch plan.
+- `docs/SLIDE_SURVEY_PRIORITY_RULES.md`: scoring and promotion logic for collection-scale evidence.
 
-Core rule: item-level records may be thin, but they must support collection-scale evidence.
+Core rule: item-level records may be thin, but they must support collection-scale evidence. Collection/person identity, count, relationship language, cabinets/boxes/labels, registers, damage/conservation, and circulation hooks are more important than simply accumulating generic slide pages.
 
-Global scope rule: country is now a survey-scope marker rather than a closed UK/US filter. It accepts ISO-like tags such as `UK`, `US`, `DE`, `AU`, `NL`, `FR`, or `GLOBAL`. A `GLOBAL` row is method or infrastructure context, not a physical collection unless the row proves one.
+Global scope rule: country is a survey-scope marker rather than a closed UK/US filter. A `GLOBAL` row is normally method or infrastructure context rather than a physical collection.
+
+Relationship guard: `belonging to`, `from the collection of`, `prepared by`, `mounted by`, `collected by`, `donated by`, `lent by`, `held by`, `used by`, `produced by`, `received by`, and `digitised by` remain separate source claims. They are never collapsed into a generic ownership field.
+
+Media guard: microscope glass slides remain distinct from lantern slides, photographic slides, glass plate negatives, 35mm slides, and plastic slides.
+
+Current harvest families:
+
+- `institution_collection_record`: one authoritative collection page; collection-scale metadata only.
+- `collection_page_plus_search_portal`: collection page plus a bounded linked item/search portal.
+- `specialized_collection_catalogue`: bounded specialist catalogues preserving set/subcollection hierarchy.
+- `dataset_api_or_dwca`: official APIs or Darwin Core exports filtered by preparation/material fields.
+- `archive_or_finding_aid_record`: finding aids, creators, extent, boxes/drawers, former ownership and container lists.
+- `literature_or_project_evidence`: collection papers/project pages used as evidence without pretending they are object registers.
+- `item_catalogue_json_or_iiif`: item metadata JSON or IIIF manifests only; no image-tile harvesting.
+- `manual_or_endpoint_discovery`: candidates retained until a stable endpoint is found.
 
 Local commands:
 
 ```bash
+python scripts/prepare_survey_inputs.py
 python scripts/validate_survey.py
+python scripts/build_harvest_batches.py
 python scripts/harvest_catalogue.py --mode dry-run
 python scripts/harvest_catalogue.py --mode full --adapter kew_collection_static
-python scripts/harvest_catalogue.py --mode full --adapter powerhouse_object_static
 python scripts/harvest_catalogue.py --mode full --entry-id UK-WELLCOME-TIMOTHY-LEWIS
 ```
 
-Validation writes three audit outputs:
+Workflow audit outputs include:
 
+- `outputs/prepare_survey_inputs.json`
 - `outputs/run_report.md`
 - `outputs/coverage_summary.json`
 - `outputs/priority_queue.md`
-
-Harvest planning writes:
-
+- `outputs/harvest_batches.json`
+- `outputs/harvest_batches.md`
 - `outputs/harvest_plan.json`
 - `outputs/adapter_registry_snapshot.json`
 - `data/normalized/collections_seed.jsonl`
 
-First global seed regions currently represented:
-
-- UK: NHM, Kew, OUMNH, SMG, Wellcome, RMS/Quekett.
-- US: OAC Hartshorn-Bolles, Smithsonian, Harvard/MCZ, Cornell candidate.
-- Australia: Powerhouse, Museums Victoria.
-- Continental Europe: Senckenberg/VIRMISCO, Botanische Staatssammlung Muenchen, Naturalis, MNHN Deflandre lead.
-- Global method layer: DiSSCo digitisation guide.
+Survey coverage now includes the UK, US, Canada, Australia, New Zealand, continental Europe, Japan, South Africa, and global method/infrastructure nodes. The current expansion layers include named historical collections, large modern natural-history slide holdings, archive/finding-aid batches, specialist diatom catalogues, and API-oriented biodiversity datasets.
