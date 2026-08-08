@@ -1,0 +1,1 @@
+Temporary navigation prototype: Case 001 → Timeline → Evidence → Sources. This file is a removable note and is not used by the site.
