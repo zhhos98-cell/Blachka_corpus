@@ -6,8 +6,8 @@ Working repository for the Blaschka / nineteenth-century microscope-slide backen
 
 - Spatial scope: global.
 - Historical scope: **1800-1899**.
-- Discovery layer: **192 collection/subcollection/batch/database entries**.
-- Strict post-lock batches `07K`-`07R`: **41 entries with explicit nineteenth-century object, maker, set, use, trade, collection, or provenance evidence**.
+- Discovery layer: **246 collection/subcollection/batch/database entries**.
+- Strict post-lock batches `07K`-`07AC`: **95 entries with explicit nineteenth-century object, maker, set, use, trade, collection, or provenance evidence**.
 - Earlier discovery rows remain auditable and may be classified `CORE_19C`, `POSSIBLE_19C`, `MODERN_COMPARATOR`, or `OUT_OF_SCOPE`.
 
 The survey works backwards from surviving slides, cabinets, boxes, sets and current collection records, while the event corpus works forwards from newspapers, microscopical journals, archives, catalogues and correspondence. The two sides are intended to cross-check ownership/collection attribution, preparation, sale, exchange, gift, lending, transfer, use, exhibition, damage, relabelling and other historical events.
@@ -30,7 +30,7 @@ Core rule: current museum custody is not historical ownership. Preserve source r
 
 The crawler layer is deliberately not universal. Known sites get small adapters, while recurring systems share harvest families. Metadata comes first; the workflow does not bulk-download specimen images or bypass login, paywalls, anti-bot systems, robots restrictions, or access controls.
 
-Especially strong strict-19C nodes already include commercial maker sets (Wheeler, Cole, Norman, Collins, Enock, Dancer, Pritchard), household/workshop cabinets (Herschel, Elcock), instrument-plus-slide assemblages (Lankester), published diatom replicate sets (Cleve & Möller, Eulenstein, H. L. Smith, Van Heurck & Grunow), the Bailey and Boston Society collections at Farlow, Phoebus's Cinchona slide sets distributed through the Dutch colonial administration, Walker Arnott at RBGE, William Smith material in the NHM Data Portal, and the Grunow accession-book/slide/sample/drawing system in Vienna.
+Especially strong strict-19C nodes already include commercial maker sets (Wheeler, Cole, Norman, Collins, Enock, Dancer, Pritchard), household/workshop cabinets (Herschel, Elcock, Sullivant), instrument-plus-slide assemblages (Lankester, Dancer/Nachet, His embryograph), published diatom replicate sets (Cleve & Möller, Eulenstein, H. L. Smith, Van Heurck & Grunow), Bailey and Boston Society collections at Farlow, Phoebus's Cinchona slide sets distributed through the Dutch colonial administration, Darwin and Balfour slides at Cambridge, W.B. Carpenter and Percy Sladen collections at RAMM, Virchow and Pacini pathological/histological preparations, Golgi and Cajal histology, Sorby's experimental glass mounts, Ross's malaria slides, the NSW Geological Survey thin-section catalogue, Brady and Parker foraminifera networks, Ferdinand I's personal microscopic preparations in Vienna, and the Williamson and Carpenter Eozoon holdings at NHM London.
 
 ## Harvest families
 
