@@ -33,15 +33,27 @@ Quantity namespaces also remain separate. Slide count, microscopic-preparation c
 - `data/survey/scope_19c_overrides.json`: conservative temporal/medium overrides, including the Harting held-out disposition.
 - `data/survey/site_adapters.json` plus expansion files: institution/site-specific metadata adapters.
 - `data/survey/harvest_families_v1.json` plus expansion files: shared extraction contracts.
+- `data/survey/institution_harvest_profiles.json`: high-yield institution profiles plus automatic fallback profiles for every other automatable strict institution.
 - `docs/19C_SCOPE_RULES.md`: nineteenth-century scope rule.
 - `scripts/prepare_survey_inputs.py`: merges modular inputs, skips 07AR superseded aliases, and collapses repeated `entry_id`s.
 - `scripts/validate_survey.py`: validates schema, adapters, media-risk language and provenance relationships.
 - `scripts/audit_19c_scope.py`: classifies `CORE_19C`, `POSSIBLE_19C`, `MODERN_COMPARATOR` and `OUT_OF_SCOPE`.
 - `scripts/apply_19c_scope.py`: restricts active harvesting to `CORE_19C`.
 - `scripts/build_harvest_batches.py`: groups active entries by harvest family.
-- `scripts/harvest_catalogue.py`: dry-run-first metadata harvester.
+- `scripts/harvest_catalogue.py`: dry-run-first collection-page metadata harvester.
+- `scripts/build_institution_matrix.py`: converts the strict survey into an institution-level GitHub Actions matrix.
+- `scripts/harvest_institution.py`: bounded institution-specific metadata harvester for HTML, JSON/JSON-LD, metadata links and PDFs.
+- `scripts/aggregate_institution_harvest.py`: combines per-institution outputs into one downloadable bundle index.
 
 The crawler layer is deliberately not universal. Known sites get small adapters and recurring systems share harvest families. The workflow does not bulk-download specimen images or bypass login, paywalls, anti-bot systems, robots restrictions or access controls.
+
+## One-click institution harvest
+
+The manual Actions workflow is `slide-institution-harvest`. It is exposed on the repository default branch only so GitHub can display and dispatch it, but every checkout in the workflow explicitly uses `slide-survey-actions-pilot`; it does not read or modify the Blaschka research data on `main`.
+
+The recommended first run is `bundle=high-yield`, `mode=full`, `depth=balanced`. One dispatch builds the frozen 19C canonical survey, fans out institution jobs in parallel, and then aggregates all institution artifacts into a single `slide-metadata-...` artifact. The current explicit high-yield profiles cover Science Museum Group, Natural History Museum London, Farlow, St Andrews, OHSU, Powerhouse, Whipple, Smithsonian, Museums Victoria, MNHN Paris, RBGE, NHM Vienna, Hunterian/RCS, Cambridge museum systems, Oxford and BGS. Institutions outside these systems are still assigned automatically to structured/API, paginated-catalogue, document/PDF, or seed-page fallback profiles.
+
+Available bundles are `high-yield`, `all-automatable`, `uk-high-yield`, `diatoms`, `medical-histology`, `geology-petrology`, and `single`. `quick`, `balanced`, and `deep` alter only the bounded per-institution page budget. Raw fetched metadata documents, normalized `records.jsonl`, per-institution plans/summaries, errors, hashes, count candidates and identifier candidates are retained in the workflow artifact. Image binaries and IIIF tiles are excluded.
 
 ## Closure notes
 
