@@ -12,8 +12,10 @@
     ['.sample-side', 0],
     ['.sample-main > h2', 0],
     ['.standfirst', 90],
+    ['.case-figure', 0],
     ['.event', 70],
     ['.status', 0],
+    ['.case-sources', 0],
     ['.source-note', 0],
     ['footer', 0]
   ];
