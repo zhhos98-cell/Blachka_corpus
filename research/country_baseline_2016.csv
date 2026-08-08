@@ -1,6 +1,6 @@
 country,corning_current_2016,project_secure_2026,project_recheck_2026,secure_delta_vs_2016,priority,interpretive_note
 Austria,2,4,0,2,baseline_match_needed,"Project has two more secure rows than the 2016 country total; this does not by itself prove two post-2016 discoveries because row-level identity and split/merge history remain unresolved."
-Australia,3,2,0,-1,very_high,"At least one 2016 Australian current-holder node is missing from the project if country/node normalization is comparable. Current project rows are Australian Museum and Museums Victoria."
+Australia,3,2,0,-1,very_high,"At least one 2016 Australian current-holder node is missing from the project if country/node normalization is comparable. Secure ownership rows are Australian Museum and Museums Victoria. University of Sydney / Chau Chak Wing Museum now has 2024-2025 official physical-presence proof for Blaschka works and is the strongest bounded candidate for the third node, but its objects may still derive from the Australian Museum's 1884 loan; do not promote until lender/acquisition or object-register evidence closes ownership."
 Belgium,1,1,0,0,normal,"Country-level count reconciles; still requires row-level baseline match."
 Canada,1,1,0,0,normal,"Country-level count reconciles; still requires row-level baseline match."
 Czech Republic,1,1,0,0,normal,"Country-level count reconciles; project uses Czechia as current country name."
