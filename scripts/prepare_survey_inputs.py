@@ -217,15 +217,36 @@ def merge_adapters() -> dict[str, Any]:
     }
 
 
+def print_validation_preview() -> None:
+    """Expose validator errors in Actions logs before the validator exits non-zero."""
+    try:
+        import validate_survey as validator
+
+        rows = validator.load_rows(CANONICAL_SURVEY)
+        registry, duplicates, registry_errors = validator.load_adapter_registry(CANONICAL_ADAPTERS)
+        errors, _warnings = validator.validate(rows, registry, duplicates, registry_errors)
+    except Exception as exc:  # noqa: BLE001
+        print(f"Validation preview unavailable: {exc}")
+        return
+
+    if errors:
+        print(f"Validation preview: {len(errors)} error(s)")
+        for error in errors:
+            print(f"VALIDATION_ERROR: {error}")
+    else:
+        print("Validation preview: 0 errors")
+
+
 def main() -> int:
     PREP_REPORT.parent.mkdir(parents=True, exist_ok=True)
     report = {
-        "schema_version": "slide-survey-prep-v5-07AR-safe-legacy-csv-tails",
+        "schema_version": "slide-survey-prep-v6-07AR-validation-preview",
         "survey": merge_surveys(),
         "adapters": merge_adapters(),
     }
     PREP_REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(f"Prepared survey inputs. Report: {PREP_REPORT}")
+    print_validation_preview()
     return 0
 
 
