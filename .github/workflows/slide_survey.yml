@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Run mode: dry-run validates and plans only; full fetches public metadata pages only."
+        description: "Run mode: dry-run validates and plans only; full fetches public metadata pages only. CORE_19C scope is always enforced."
         required: true
         default: "dry-run"
         type: choice
@@ -15,6 +15,7 @@ on:
     paths:
       - "data/survey/**"
       - "scripts/**"
+      - "docs/19C_SCOPE_RULES.md"
       - ".github/workflows/slide_survey.yml"
 
 permissions:
@@ -37,13 +38,19 @@ jobs:
       - name: Prepare modular survey inputs
         run: python scripts/prepare_survey_inputs.py
 
-      - name: Validate survey table
+      - name: Validate full survey table
         run: python scripts/validate_survey.py
 
-      - name: Build harvest batches
+      - name: Audit nineteenth-century scope
+        run: python scripts/audit_19c_scope.py
+
+      - name: Restrict runtime survey to CORE_19C
+        run: python scripts/apply_19c_scope.py
+
+      - name: Build nineteenth-century harvest batches
         run: python scripts/build_harvest_batches.py
 
-      - name: Build harvest plan
+      - name: Build nineteenth-century harvest plan
         run: python scripts/harvest_catalogue.py --mode "${{ github.event.inputs.mode || 'dry-run' }}"
 
       - name: Upload reports
@@ -53,4 +60,6 @@ jobs:
           path: |
             outputs/*.md
             outputs/*.json
+            outputs/*.csv
+            data/normalized/*.json
             data/normalized/*.jsonl
