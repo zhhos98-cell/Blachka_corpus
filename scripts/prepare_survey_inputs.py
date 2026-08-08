@@ -2,8 +2,9 @@
 """Prepare modular survey inputs before validation or harvesting.
 
 The repository keeps a canonical 07A survey table and optional expansion batches
-such as 07B, 07C, etc. This script merges them in the checked-out workspace so
-existing validators and harvesters can keep reading the canonical file.
+such as 07B, 07C, 07D, etc. This script merges every matching expansion batch in
+the checked-out workspace so existing validators and harvesters can keep reading
+the canonical file.
 
 It also merges optional site-adapter expansion JSON files into the canonical
 adapter registry. The script does not fetch remote data and does not commit the
@@ -22,7 +23,7 @@ CANONICAL_SURVEY = SURVEY_DIR / "07A_Global_Microscope_Slide_Collections_Survey.
 CANONICAL_ADAPTERS = SURVEY_DIR / "site_adapters.json"
 PREP_REPORT = Path("outputs/prepare_survey_inputs.json")
 
-SURVEY_EXPANSION_GLOB = "07B*_Global_Microscope_Slide_Collections*.csv"
+SURVEY_EXPANSION_GLOB = "07*_Global_Microscope_Slide_Collections*.csv"
 ADAPTER_EXPANSION_GLOB = "site_adapters_expansion_*.json"
 
 
@@ -41,6 +42,15 @@ def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> 
         writer.writerows(rows)
 
 
+def expansion_survey_paths() -> list[Path]:
+    """Return every modular survey batch except the canonical 07A file."""
+    return [
+        path
+        for path in sorted(SURVEY_DIR.glob(SURVEY_EXPANSION_GLOB))
+        if path.resolve() != CANONICAL_SURVEY.resolve()
+    ]
+
+
 def merge_surveys() -> dict[str, Any]:
     fieldnames, rows = read_csv(CANONICAL_SURVEY)
     seen = {row["entry_id"] for row in rows}
@@ -48,7 +58,7 @@ def merge_surveys() -> dict[str, Any]:
     skipped_duplicates: list[str] = []
     sources: list[str] = []
 
-    for path in sorted(SURVEY_DIR.glob(SURVEY_EXPANSION_GLOB)):
+    for path in expansion_survey_paths():
         sources.append(str(path))
         next_fields, next_rows = read_csv(path)
         if next_fields != fieldnames:
@@ -107,7 +117,7 @@ def merge_adapters() -> dict[str, Any]:
 def main() -> int:
     PREP_REPORT.parent.mkdir(parents=True, exist_ok=True)
     report = {
-        "schema_version": "slide-survey-prep-v1",
+        "schema_version": "slide-survey-prep-v2-modular-glob",
         "survey": merge_surveys(),
         "adapters": merge_adapters(),
     }
