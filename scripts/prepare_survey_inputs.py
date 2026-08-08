@@ -14,6 +14,13 @@ The frozen 07AR survey additionally carries a superseded-alias map. The modular
 batch files remain intact as an audit trail, but rows identified there as duplicate
 aliases of the same physical collection/object are skipped from the canonical
 runtime merge.
+
+Some early modular CSVs were hand-written before the later all-fields-quoted
+convention. A legacy row may therefore expose an extra DictReader ``None`` key
+when a comma occurred inside the final notes field. We repair only that safe case:
+the row must still have a valid provenance grade and automation value, proving
+that all structural columns before ``notes`` remained aligned. Any other malformed
+row fails with a source path and line number rather than being silently rewritten.
 """
 
 from __future__ import annotations
@@ -32,18 +39,65 @@ PREP_REPORT = Path("outputs/prepare_survey_inputs.json")
 SURVEY_EXPANSION_GLOB = "07*_Global_Microscope_Slide_Collections*.csv"
 ADAPTER_EXPANSION_GLOB = "site_adapters_expansion_*.json"
 
+ALLOWED_PROVENANCE = {"A", "B", "C", "D"}
+ALLOWED_AUTOMATION = {
+    "manual only",
+    "static HTML",
+    "paginated HTML",
+    "API",
+    "downloadable finding aid",
+    "IIIF",
+    "blocked",
+}
+
 
 def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
+    repaired: list[str] = []
     with path.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         if reader.fieldnames is None:
             raise ValueError(f"No CSV header: {path}")
-        return list(reader.fieldnames), list(reader)
+        fieldnames = list(reader.fieldnames)
+        rows: list[dict[str, str]] = []
+        for row_number, raw_row in enumerate(reader, start=2):
+            row: dict[str, Any] = dict(raw_row)
+            extras = row.pop(None, None)
+            if extras:
+                extra_values = [str(value) for value in extras if value not in (None, "")]
+                provenance = str(row.get("provenance_value") or "")
+                automation = str(row.get("automation_feasibility") or "")
+                if (
+                    extra_values
+                    and fieldnames[-1] == "notes"
+                    and provenance in ALLOWED_PROVENANCE
+                    and automation in ALLOWED_AUTOMATION
+                ):
+                    notes_parts = [str(row.get("notes") or ""), *extra_values]
+                    row["notes"] = ",".join(part for part in notes_parts if part)
+                    repaired.append(f"{path}:{row_number}:{row.get('entry_id', '')}")
+                elif extra_values:
+                    raise ValueError(
+                        "Malformed CSV row with extra fields before safe trailing-notes repair: "
+                        f"{path}:{row_number}; entry_id={row.get('entry_id', '')!r}; "
+                        f"provenance={provenance!r}; automation={automation!r}; extras={extra_values!r}"
+                    )
+
+            missing = [name for name in fieldnames if row.get(name) is None]
+            if missing:
+                raise ValueError(
+                    f"Malformed CSV row missing columns {missing}: {path}:{row_number}; "
+                    f"entry_id={row.get('entry_id', '')!r}"
+                )
+            rows.append({name: str(row.get(name, "")) for name in fieldnames})
+
+    if repaired:
+        print("Repaired legacy trailing-notes CSV overflow: " + "; ".join(repaired))
+    return fieldnames, rows
 
 
 def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> None:
     with path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n", extrasaction="raise")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -162,7 +216,7 @@ def merge_adapters() -> dict[str, Any]:
 def main() -> int:
     PREP_REPORT.parent.mkdir(parents=True, exist_ok=True)
     report = {
-        "schema_version": "slide-survey-prep-v3-07AR-alias-dedup",
+        "schema_version": "slide-survey-prep-v4-07AR-safe-legacy-csv-repair",
         "survey": merge_surveys(),
         "adapters": merge_adapters(),
     }
