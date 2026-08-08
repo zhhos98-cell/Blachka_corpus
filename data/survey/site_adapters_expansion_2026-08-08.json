@@ -39,9 +39,9 @@
       "status": "active_metadata",
       "institution_scope": "University of Manchester Museum of Medicine and Health",
       "target": "Gibson microscope slide collection article",
-      "expected_terms": ["Gibson", "microscope slide collection", "donated", "Arthur Gibson"],
+      "expected_terms": ["681 slides", "twenty-five numbered trays", "thirty-four different suppliers", "donated", "Arthur Gibson"],
       "item_url_pattern": "",
-      "promotion_rule": "Use as person-collection and label-evidence source; exact museum object IDs require institutional records."
+      "promotion_rule": "Capture 681-slide count, 25-tray cabinet structure, supplier labels and donation history; preserve uncertainty about the original pre-Gibson owner."
     },
     {
       "site_adapter": "mcz_collection_static",
