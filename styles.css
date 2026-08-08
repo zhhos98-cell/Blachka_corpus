@@ -51,7 +51,9 @@ footer {
 .case-meta,
 time,
 .source-note,
-footer {
+footer,
+.jump-hub,
+.visual-caption {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -73,7 +75,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 90px 0 110px;
+  padding: 90px 0 76px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -107,11 +109,116 @@ h1 {
   font-size: clamp(1.15rem, 2vw, 1.45rem);
 }
 
+.jump-hub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: baseline;
+  margin-top: 66px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 0.76rem;
+}
+
+.jump-label {
+  margin-right: 10px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.jump-hub a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.jump-hub a:hover {
+  color: var(--accent);
+}
+
+.visual-index {
+  display: grid;
+  grid-template-columns: 1.65fr 0.8fr 0.8fr;
+  gap: 14px;
+  padding: 18px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.visual-card {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: #ddd7ca;
+  color: #fff;
+  text-decoration: none;
+}
+
+.visual-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 500ms ease, filter 500ms ease;
+}
+
+.visual-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 14, 12, 0.74), rgba(15, 14, 12, 0.02) 62%);
+  pointer-events: none;
+}
+
+.visual-wide img {
+  object-position: center;
+}
+
+.visual-card:nth-child(2) img {
+  object-position: 48% center;
+}
+
+.visual-card:nth-child(3) img {
+  object-position: center 42%;
+}
+
+.visual-card:hover img {
+  transform: scale(1.018);
+  filter: saturate(0.9) contrast(1.03);
+}
+
+.visual-caption {
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  right: 20px;
+  bottom: 19px;
+  display: block;
+}
+
+.visual-caption strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.visual-caption small {
+  display: block;
+  max-width: 360px;
+  color: rgba(255, 255, 255, 0.83);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.87rem;
+  line-height: 1.35;
+}
+
 .case {
   display: grid;
   grid-template-columns: minmax(150px, 0.7fr) minmax(0, 3fr);
   gap: clamp(36px, 7vw, 110px);
   padding: 110px 0 130px;
+  scroll-margin-top: 28px;
 }
 
 .case-meta {
@@ -139,6 +246,7 @@ h2 {
 
 .timeline {
   border-top: 1px solid var(--ink);
+  scroll-margin-top: 28px;
 }
 
 .event {
@@ -163,6 +271,7 @@ time {
   padding: 30px 0 8px;
   border-top: 3px solid var(--ink);
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 28px;
 }
 
 .status h3 {
@@ -180,6 +289,7 @@ time {
   margin: 35px 0 0;
   font-size: 0.74rem;
   line-height: 1.55;
+  scroll-margin-top: 28px;
 }
 
 footer {
@@ -190,12 +300,44 @@ footer {
 
 footer p { margin: 0; }
 
+.image-credit {
+  max-width: 880px;
+  margin-top: 9px;
+  font-size: 0.66rem;
+  line-height: 1.5;
+}
+
+.image-credit a {
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .visual-index {
+    grid-template-columns: 1.45fr 1fr;
+  }
+
+  .visual-wide {
+    grid-row: span 2;
+  }
+
+  .visual-card {
+    min-height: 270px;
+  }
+}
+
 @media (max-width: 760px) {
   body { font-size: 17px; }
   .site-header { min-height: 68px; }
   .prototype { display: none; }
-  .hero { min-height: auto; padding: 80px 0 90px; }
+  .hero { min-height: auto; padding: 80px 0 58px; }
   h1 { font-size: clamp(3rem, 16vw, 5rem); }
+  .jump-hub { margin-top: 46px; gap: 8px 14px; }
+  .jump-label { width: 100%; margin-bottom: 3px; }
+  .visual-index { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .visual-wide { grid-column: 1 / -1; grid-row: auto; min-height: 310px; }
+  .visual-card:not(.visual-wide) { min-height: 245px; }
+  .visual-caption { left: 14px; right: 14px; bottom: 13px; }
+  .visual-caption small { font-size: 0.78rem; }
   .case { grid-template-columns: 1fr; gap: 24px; padding: 80px 0 100px; }
   .case-meta { display: flex; gap: 16px; align-items: baseline; }
   .event { grid-template-columns: 1fr; gap: 8px; }
