@@ -1,5 +1,5 @@
 {
-  "schema_version": "slide-survey-19c-scope-overrides-v1",
+  "schema_version": "slide-survey-19c-scope-overrides-v2",
   "rule": "Overrides are used only where the survey row's free-text date field is insufficient or potentially misleading. CORE_19C requires a source-backed nineteenth-century object/collection/provenance node.",
   "overrides": {
     "UK-WELLCOME-TIMOTHY-LEWIS": {
@@ -9,6 +9,10 @@
     "US-YALE-PEABODY-INVERTEBRATE-SLIDES": {
       "status": "CORE_19C",
       "reason": "The collection is explicitly described as developing over nearly 150 years, placing the beginning of the surviving slide corpus in the nineteenth century; later rehousing is a modern custody event."
+    },
+    "US-MCZ-INSLIDE-PROJECT": {
+      "status": "CORE_19C",
+      "reason": "Harvard's 2026 collection account explicitly identifies surviving MCZ microscope slides mounted by Nathan Banks in 1891 and William Morton Wheeler for his 1893 thesis, and states that some of the roughly 50,000 invertebrate slides are more than 150 years old. The current digitisation project is modern infrastructure around a corpus containing explicit nineteenth-century objects."
     },
     "KR-NNIBR-PERMANENT-TYPE-SLIDES": {
       "status": "OUT_OF_SCOPE",
