@@ -34,8 +34,8 @@ This corrects a recurrent false-negative problem in the old workflow: institutio
 - **Stiftung Friedenstein Gotha:** 28 acquired in 1881/82; 7 stated to survive.
 - **Universalmuseum Joanneum, Graz:** 19 acquired in 1868; recent 2024–2026 exhibition evidence confirms surviving Blaschka material; exact present count open.
 - **Universität Leipzig Zoological Collection:** 6 current models; Clava squamata highlighted by the university in 2025.
-- **Naturhistorisches Museum Wien:** 50 Blaschka objects owned by NHMW; current/recent display evidence.
-- **University of Vienna:** distinct ownership node; 45 models on long-term loan at NHMW. Do not merge ownership with NHMW and do not create a third node from the loan location.
+- **University of Vienna:** current Zoological Collection page states 156 Blaschka glass models. Earlier institutional layers report 145 or 146; these count changes require reconciliation. Forty-five was an exhibition subset, not the collection total.
+- **Naturhistorisches Museum Wien:** retained as a display venue / possible separate-holder lead only. Current Hall 22 wording explicitly identifies the displayed Blaschka group as belonging to the University of Vienna. A separate NHMW-owned Blaschka collection must be proven from accession/ownership evidence before it is counted as another holder.
 - **Derby Museum and Art Gallery:** 1 surviving model in Corning's 2016 census; likely an old-baseline node, but row-level 2017 matching remains to be done.
 
 Utrecht and UW–Madison are retained as known project leads that need clean census normalization.
@@ -69,4 +69,14 @@ The classes most likely to be missed by broad web discovery are schools, univers
 
 ### Repository handoff rule
 
-For future sessions, read `research/README.md`, `research/census.csv`, and the latest section of this log first. After any substantial research run, update the CSV and append a new dated log section. This is the canonical handoff mechanism and replaces manual transcript copying.
+For future sessions, read `research/README.md`, `research/current_holders.csv`, `research/census.csv`, and the latest section of this log first. After any substantial research run, update the CSV and append a new dated log section. This is the canonical handoff mechanism and replaces manual transcript copying.
+
+## 2026-08-09 — Holder-first census reset
+
+The global census workflow is now explicitly inverted. First establish **who currently/recently holds at least one Blaschka invertebrate model**. Then audit those holder rows one by one for count, ownership, 2017-map membership, acquisition route, identifiers, conservation and current location.
+
+A new `research/current_holders.csv` was seeded with 53 named current or recent holder candidates already supported by the active backend, numbered modules 41–49, or direct institutional evidence. This is a working seed set rather than a claim that 53 rows are all independent 2026 collections. Each row still requires duplicate/ownership and freshness audit.
+
+The first row-by-row audit immediately exposed why this order is safer. The earlier Vienna working note had treated 45 models displayed at Naturhistorisches Museum Wien as if 45 were the University of Vienna holding total, and had also provisionally treated NHMW as a separate 50-object owner. Current University of Vienna sources instead state **156 models** in the Zoological Collection, while institutional exhibition wording identifies the NHMW Hall 22 Blaschka display as a subset of the University collection. The NHMW separate-owner claim is therefore suspended pending accession evidence. This is exactly the kind of double-count / display-versus-ownership error the holder-first audit is designed to catch.
+
+Next unit of work: scan `current_holders.csv` sequentially. For each row, establish (1) legal/institutional holder, (2) current or latest defensible count, (3) source date and authority, (4) whether a display/loan creates no new ownership node, and (5) whether the institution can be matched to the 2017 Corning surviving baseline. Only after this normalization should the project calculate a present total or claim `>68`.
