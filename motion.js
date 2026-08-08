@@ -1,4 +1,9 @@
 (() => {
+  const enhancementSheet = document.createElement('link');
+  enhancementSheet.rel = 'stylesheet';
+  enhancementSheet.href = 'enhancements.css';
+  document.head.appendChild(enhancementSheet);
+
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) return;
 
