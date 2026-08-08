@@ -4,9 +4,36 @@
     topNav.innerHTML = `
       <a href="#project">Project</a>
       <a href="#cases">Cases</a>
+      <a href="bibliography/">Bibliography</a>
       <a href="auctions/">Auctions</a>
       <a href="blog/">Blog</a>
     `;
+  }
+
+  const projectLede = document.querySelector('.project-lede');
+  if (projectLede && !document.querySelector('.origin-story')) {
+    projectLede.insertAdjacentHTML('afterend', `
+      <section class="origin-story" aria-labelledby="origin-story-title">
+        <p class="origin-kicker">Where the story begins</p>
+        <div class="origin-body">
+          <h3 id="origin-story-title">From a Bohemian glassworking family to a worldwide scientific trade</h3>
+          <div class="origin-columns">
+            <p><strong>Leopold Blaschka (1822–1895)</strong> came from a long glassworking family in Bohemia. His first wife, Carolina Zimmerman, and their son Josef Augustine died of cholera in 1850. His father Josef died in 1852. The sequence of losses sits immediately before the episode that later became the best-known origin story of the Blaschka marine models.</p>
+            <p>In 1853 Leopold sailed to the United States. During the voyage his ship was becalmed for two weeks, and he studied and drew jellyfish and other marine invertebrates around the vessel. Their translucent bodies presented a material problem that answered unusually well to the substance his family knew best: glass. A decade later, after making botanical models and attracting scientific attention, he began producing marine invertebrates for museum display in Dresden.</p>
+            <p><strong>Rudolf Blaschka (1857–1939)</strong> learned glassworking from his father and officially joined the business in 1876. Together they supplied museums and universities with hundreds of catalogue models. From 1890 the workshop turned exclusively to Harvard’s botanical commission, the Glass Flowers. What happened to the earlier zoological models after they left Dresden—their purchase, shipment, use, damage, dispersal, rediscovery, and present custody—is the subject of this project.</p>
+          </div>
+          <div class="origin-dates" aria-label="Selected Blaschka chronology">
+            <span><b>1850</b> wife &amp; son die</span>
+            <span><b>1852</b> father dies</span>
+            <span><b>1853</b> Atlantic voyage</span>
+            <span><b>1863</b> marine models</span>
+            <span><b>1876</b> Rudolf joins</span>
+            <span><b>1890</b> Harvard exclusive</span>
+          </div>
+          <p class="origin-source">Biographical chronology checked against <a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener">Harvard’s Blaschka archive finding aid ↗</a> and <a href="https://press.cmog.org/2016/blaschka-glass-marine-creatures-exhibition-opens-may-2016" target="_blank" rel="noopener">The Corning Museum of Glass ↗</a>. See the project’s <a href="bibliography/">secondary literature bibliography ↗</a>.</p>
+        </div>
+      </section>
+    `);
   }
 
   const firstSample = document.querySelector('.sample');
@@ -178,6 +205,83 @@
     const caseIndexStyle = document.createElement('style');
     caseIndexStyle.id = 'case-index-style';
     caseIndexStyle.textContent = `
+      .origin-story {
+        display: grid;
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: clamp(38px, 8vw, 120px);
+        padding: 58px 0 66px;
+        border-top: 1px solid var(--ink);
+        border-bottom: 1px solid var(--line);
+        background: radial-gradient(circle at 76% 46%, rgba(169, 79, 66, .055), transparent 34%);
+      }
+      .origin-kicker {
+        margin: 6px 0 0;
+        color: var(--accent);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .68rem;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+      .origin-body h3 {
+        max-width: 880px;
+        margin: 0 0 34px;
+        font-size: clamp(2rem, 4.2vw, 3.8rem);
+        line-height: 1;
+        letter-spacing: -.035em;
+        font-weight: 500;
+      }
+      .origin-columns {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(24px, 4vw, 48px);
+      }
+      .origin-columns p {
+        margin: 0;
+        color: #ded4cb;
+        font-size: .98rem;
+        line-height: 1.62;
+      }
+      .origin-columns strong { color: var(--ink); font-weight: 600; }
+      .origin-dates {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 40px;
+        border-top: 1px solid rgba(243, 238, 231, .16);
+        border-bottom: 1px solid rgba(243, 238, 231, .10);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .origin-dates span {
+        min-height: 66px;
+        padding: 14px 13px 12px 0;
+        color: rgba(217, 207, 198, .72);
+        font-size: .61rem;
+        line-height: 1.38;
+      }
+      .origin-dates span + span { padding-left: 13px; border-left: 1px solid rgba(243, 238, 231, .10); }
+      .origin-dates b {
+        display: block;
+        margin-bottom: 3px;
+        color: #b44b3d;
+        font-size: .66rem;
+        letter-spacing: .04em;
+      }
+      .origin-source {
+        max-width: 860px;
+        margin: 20px 0 0;
+        color: rgba(185, 173, 162, .68);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .62rem;
+        line-height: 1.55;
+      }
+      .origin-source a {
+        text-decoration-line: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+        text-decoration-color: rgba(208, 160, 120, .55);
+      }
+
       .case-index {
         padding: 24px 0 118px;
         border-top: 1px solid var(--line);
@@ -382,7 +486,13 @@
         84% { opacity: 0; transform: scale(2.2); }
       }
 
+      @media (max-width: 1000px) {
+        .origin-columns { grid-template-columns: 1fr; gap: 20px; }
+        .origin-dates { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .origin-dates span:nth-child(4) { border-left: 0; }
+      }
       @media (max-width: 900px) {
+        .origin-story { grid-template-columns: 1fr; gap: 22px; }
         .case-index-head { grid-template-columns: 1fr; gap: 20px; }
         .case-index-row { grid-template-columns: 44px minmax(120px, 1fr) 96px minmax(0, 1.45fr) 20px; }
         .case-index-row .case-closure { grid-column: 2 / -1; margin-top: -8px; }
@@ -392,6 +502,11 @@
         }
       }
       @media (max-width: 650px) {
+        .origin-story { padding: 44px 0 52px; }
+        .origin-body h3 { margin-bottom: 26px; }
+        .origin-dates { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .origin-dates span:nth-child(odd) { border-left: 0; }
+        .origin-dates span:nth-child(even) { border-left: 1px solid rgba(243, 238, 231, .10); }
         .case-index { padding-bottom: 86px; }
         .case-index-row { grid-template-columns: 40px 1fr 20px; gap: 12px 14px; min-height: 108px; }
         .case-index-row strong { font-size: 1.12rem; }
@@ -487,6 +602,11 @@
   const revealGroups = [
     ['.section-heading', 0],
     ['.project-lede > p', 80],
+    ['.origin-kicker', 0],
+    ['.origin-body > h3', 0],
+    ['.origin-columns > p', 75],
+    ['.origin-dates', 0],
+    ['.origin-source', 0],
     ['.research-chain', 0],
     ['.evidence-key', 0],
     ['.project-item', 35],
