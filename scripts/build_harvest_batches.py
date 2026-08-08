@@ -3,6 +3,10 @@
 
 Run after `prepare_survey_inputs.py`, so the canonical 07A CSV already contains
 all modular expansion batches for this workflow run.
+
+The base harvest-family contract lives in `harvest_families_v1.json`. Small
+assignment expansions can be added as `harvest_families_expansion_*.json`, so
+new survey waves do not require rewriting the whole base contract.
 """
 
 from __future__ import annotations
@@ -15,6 +19,7 @@ from typing import Any
 
 SURVEY_PATH = Path("data/survey/07A_Global_Microscope_Slide_Collections_Survey.csv")
 FAMILY_PATH = Path("data/survey/harvest_families_v1.json")
+FAMILY_EXPANSION_GLOB = "harvest_families_expansion_*.json"
 JSON_OUT = Path("outputs/harvest_batches.json")
 MD_OUT = Path("outputs/harvest_batches.md")
 
@@ -35,25 +40,38 @@ def load_rows() -> list[dict[str, str]]:
         return list(csv.DictReader(f))
 
 
-def load_families() -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
+def load_families() -> tuple[dict[str, dict[str, Any]], dict[str, str], list[str]]:
     data = json.loads(FAMILY_PATH.read_text(encoding="utf-8"))
     families: dict[str, dict[str, Any]] = {}
     adapter_to_family: dict[str, str] = {}
     duplicates: dict[str, list[str]] = defaultdict(list)
+    expansion_sources: list[str] = []
+
+    def assign(adapter: str, family_name: str) -> None:
+        if adapter in adapter_to_family and adapter_to_family[adapter] != family_name:
+            duplicates[adapter].extend([adapter_to_family[adapter], family_name])
+        adapter_to_family[adapter] = family_name
 
     for family in data.get("families", []):
         name = family["family"]
         families[name] = family
         for adapter in family.get("adapter_keys", []):
-            if adapter in adapter_to_family and adapter_to_family[adapter] != name:
-                duplicates[adapter].extend([adapter_to_family[adapter], name])
-            adapter_to_family[adapter] = name
+            assign(adapter, name)
+
+    for path in sorted(FAMILY_PATH.parent.glob(FAMILY_EXPANSION_GLOB)):
+        expansion_sources.append(str(path))
+        expansion = json.loads(path.read_text(encoding="utf-8"))
+        for family_name, adapters in expansion.get("assignments", {}).items():
+            if family_name not in families:
+                raise ValueError(f"Unknown harvest family in {path}: {family_name}")
+            for adapter in adapters:
+                assign(str(adapter), family_name)
 
     if duplicates:
         detail = "; ".join(f"{k}: {sorted(set(v))}" for k, v in duplicates.items())
         raise ValueError(f"Adapter assigned to multiple harvest families: {detail}")
 
-    return families, adapter_to_family
+    return families, adapter_to_family, expansion_sources
 
 
 def score_row(row: dict[str, str], family: str) -> int:
@@ -76,7 +94,7 @@ def score_row(row: dict[str, str], family: str) -> int:
 
 def main() -> int:
     rows = load_rows()
-    families, adapter_to_family = load_families()
+    families, adapter_to_family, family_expansion_sources = load_families()
 
     batches: dict[str, list[dict[str, Any]]] = defaultdict(list)
     unassigned: list[dict[str, str]] = []
@@ -109,11 +127,12 @@ def main() -> int:
         items.sort(key=lambda x: (-int(x["priority_score"]), str(x["entry_id"])))
 
     payload = {
-        "schema_version": "slide-survey-harvest-batches-v1",
+        "schema_version": "slide-survey-harvest-batches-v2-modular-families",
         "survey_rows": len(rows),
         "assigned_rows": sum(len(v) for v in batches.values()),
         "unassigned_rows": len(unassigned),
         "country_counts": dict(Counter(row.get("country", "") for row in rows)),
+        "family_expansion_sources": family_expansion_sources,
         "batches": [
             {
                 "family": name,
@@ -144,6 +163,7 @@ def main() -> int:
         f"Survey rows: {len(rows)}",
         f"Assigned to a harvest family: {payload['assigned_rows']}",
         f"Unassigned: {payload['unassigned_rows']}",
+        f"Family assignment expansions: {len(family_expansion_sources)}",
         "",
     ]
 
@@ -174,6 +194,8 @@ def main() -> int:
 
     MD_OUT.write_text("\n".join(lines), encoding="utf-8")
     print(f"Built harvest batches: {JSON_OUT}, {MD_OUT}")
+    if family_expansion_sources:
+        print(f"Loaded {len(family_expansion_sources)} harvest-family expansion file(s)")
     if unassigned:
         print(f"Warning: {len(unassigned)} survey rows have unassigned adapters")
     return 0
