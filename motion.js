@@ -1,9 +1,4 @@
 (() => {
-  const enhancementSheet = document.createElement('link');
-  enhancementSheet.rel = 'stylesheet';
-  enhancementSheet.href = 'enhancements.css';
-  document.head.appendChild(enhancementSheet);
-
   const hero = document.querySelector('.hero');
   const navLinks = [...document.querySelectorAll('.top-nav a[href^="#"]')];
   const timeline = document.querySelector('.timeline');
@@ -75,10 +70,10 @@
 
   const revealGroups = [
     ['.section-heading', 0],
-    ['.project-lede > p', 110],
+    ['.project-lede > p', 80],
     ['.research-chain', 0],
     ['.evidence-key', 0],
-    ['.project-item', 0],
+    ['.project-item', 35],
     ['.sample-side', 0],
     ['.sample-main > h2', 0],
     ['.standfirst', 90],
