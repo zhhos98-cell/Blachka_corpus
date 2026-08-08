@@ -1,6 +1,6 @@
 {
   "schema_version": "slide-survey-site-adapter-expansion-v34-07AJ-19c-working-collections",
-  "purpose": "Adapters for nineteenth-century working slide collections and teaching histotheques recovered through deep institutional and collection-history search, including Deby, Giacomini, Perroncito, Siena, Milan veterinary histology and Oscar Schmidt's distributed sponge-slide network.",
+  "purpose": "Adapters for nineteenth-century working slide collections and teaching histotheques recovered through deep institutional and collection-history search, including Deby, Giacomini, Siena, Milan veterinary histology and Oscar Schmidt's distributed sponge-slide network.",
   "guards": [
     "Historical acquisition totals are dated states and must not be presented as current survivor counts without item-level inventory evidence.",
     "Nested collections and published exsiccata sets inside a larger acquisition must not be double-counted against the parent aggregate.",
@@ -36,15 +36,6 @@
       "expected_terms": ["preparati istologici", "metà dell'Ottocento", "Museo Anatomico", "Scienze veterinarie"],
       "item_url_pattern": "",
       "promotion_rule": "Use the official collection chronology as a nineteenth-century existence node and locate the museum inventory before assigning slide counts or glass-mount format; keep the >1500 mixed anatomical-preparation total out of slide arithmetic."
-    },
-    {
-      "site_adapter": "turin_perroncito_vet_static",
-      "status": "active_metadata",
-      "institution_scope": "University of Turin Veterinary Sciences Museum Museo Perroncito",
-      "target": "official museum history and former-institute inventory records",
-      "expected_terms": ["Perroncito", "raccolta ottocentesca", "preparati istologici", "microtomi", "1879"],
-      "item_url_pattern": "",
-      "promotion_rule": "Separate the incomplete Perroncito nineteenth-century parasite collection from histological preparations and apparatus inherited from the former Pathological Anatomy Institute; assign authorship only where labels or inventory records support it."
     },
     {
       "site_adapter": "siena_comparini_histology_static",
