@@ -1,0 +1,144 @@
+.bib-scope,
+.bib-note {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: clamp(38px, 8vw, 120px);
+}
+
+.bib-scope {
+  padding: 58px 0 72px;
+  border-bottom: 1px solid var(--line);
+}
+
+.bib-scope-label,
+.bib-year,
+.bib-caution,
+.bib-links {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bib-scope-label,
+.bib-year {
+  margin: 0;
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.bib-scope h2,
+.bib-note h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  font-weight: 500;
+}
+
+.bib-scope > div > p,
+.bib-note > div > p {
+  max-width: 770px;
+  color: #d8cec5;
+}
+
+.bib-caution {
+  margin-top: 24px;
+  color: var(--muted) !important;
+  font-size: .7rem;
+  line-height: 1.6;
+}
+
+.bib-section {
+  padding: 76px 0 88px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.bib-section-head {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: clamp(38px, 8vw, 120px);
+  align-items: start;
+  margin-bottom: 42px;
+}
+
+.bib-section-head h2 {
+  max-width: 840px;
+  margin: 0 0 14px;
+  font-size: clamp(2.35rem, 5vw, 4.8rem);
+  line-height: .96;
+  letter-spacing: -.04em;
+  font-weight: 500;
+}
+
+.bib-section-head > div > p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.bib-list {
+  border-top: 2px solid var(--ink);
+}
+
+.bib-entry {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: clamp(38px, 8vw, 120px);
+  padding: 28px 0 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.bib-entry h3 {
+  max-width: 900px;
+  margin: 0 0 9px;
+  font-size: clamp(1.26rem, 2.4vw, 1.78rem);
+  line-height: 1.18;
+  font-weight: 500;
+}
+
+.bib-entry p:not(.bib-year):not(.bib-links) {
+  max-width: 800px;
+  margin-bottom: 10px;
+  color: #d8cec5;
+}
+
+.bib-links {
+  margin: 10px 0 0;
+  color: var(--accent);
+  font-size: .68rem;
+  letter-spacing: .025em;
+}
+
+.bib-links a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(208, 160, 120, .62);
+}
+
+.bib-note {
+  padding: 72px 0 96px;
+  border-top: 2px solid var(--ink);
+}
+
+@media (max-width: 760px) {
+  .bib-scope,
+  .bib-note,
+  .bib-section-head,
+  .bib-entry {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .bib-section {
+    padding: 60px 0 72px;
+  }
+
+  .bib-section-head {
+    margin-bottom: 30px;
+  }
+
+  .bib-entry {
+    padding: 24px 0 28px;
+  }
+}
