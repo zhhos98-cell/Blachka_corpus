@@ -1,6 +1,6 @@
 {
   "schema_version": "slide-survey-site-adapter-expansion-v30-07AF-19c-early-cabinets-maker-sets",
-  "purpose": "Adapters for early Ypelaar cabinets and sets, nineteenth-century institutional collection formation, bounded commercial maker cases, a transnational Australian slide box, NHM Thysanoptera digitisation and the Albert Mann diatom corpus.",
+  "purpose": "Adapters for early Ypelaar cabinets and sets, nineteenth-century institutional collection formation, a transnational Australian slide box, NHM Thysanoptera digitisation and the Albert Mann diatom corpus. Science Museum Group rows reuse the existing smg_object_json_iiif adapter.",
   "guards": [
     "Preserve early circular bone- or ivory-mounted microscopic preparations as historically specific slide/preparation formats rather than silently normalising them to later rectangular glass slides.",
     "Do not convert original cabinet counts or later accession totals into current surviving counts without inventory evidence.",
@@ -35,15 +35,6 @@
       "expected_terms": ["earliest", "1850", "microscopic preparations", "Hamlin Lee", "unknown"],
       "item_url_pattern": "",
       "promotion_rule": "Preserve unknown maker status and only record Hamlin Lee as a qualified possibility; locate surviving inventory/preparation records before asserting glass-slide counts."
-    },
-    {
-      "site_adapter": "smg_object_json_iiif",
-      "status": "active_metadata",
-      "institution_scope": "Science Museum Group object catalogue",
-      "target": "official object and child-part records with downloadable JSON and IIIF manifests",
-      "expected_terms": ["microscope slides", "Object Number", "Download catalogue entry as json", "Download manifest IIIF"],
-      "item_url_pattern": "collection.sciencemuseumgroup.org.uk/objects/{object_slug}",
-      "promotion_rule": "Preserve parent/child hierarchy, object numbers, maker/date labels and media classifications; use bounded parent cases as collection units without inferring wider maker output."
     },
     {
       "site_adapter": "powerhouse_prepared_19_static",
