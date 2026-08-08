@@ -1,9 +1,7 @@
 (() => {
   const hero = document.querySelector('.hero');
   const navLinks = [...document.querySelectorAll('.top-nav a[href^="#"]')];
-  const timeline = document.querySelector('.timeline');
-  const caseMeter = document.querySelector('.case-meter span');
-  const sample = document.querySelector('.sample');
+  const samples = [...document.querySelectorAll('.sample')];
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const sectionTargets = navLinks
@@ -33,19 +31,24 @@
   };
 
   const updateDocumentaryProgress = () => {
-    if (timeline) {
-      const rect = timeline.getBoundingClientRect();
-      const trigger = window.innerHeight * 0.52;
-      const progress = clamp((trigger - rect.top) / Math.max(rect.height, 1), 0, 1);
-      timeline.style.setProperty('--timeline-progress', `${(progress * 100).toFixed(2)}%`);
-    }
+    samples.forEach((sample) => {
+      const timeline = sample.querySelector('.timeline');
+      const caseMeter = sample.querySelector('.case-meter span');
 
-    if (sample && caseMeter) {
-      const rect = sample.getBoundingClientRect();
-      const distance = Math.max(rect.height - window.innerHeight * 0.55, 1);
-      const progress = clamp((window.innerHeight * 0.28 - rect.top) / distance, 0, 1);
-      caseMeter.style.setProperty('--case-progress', `${(progress * 100).toFixed(2)}%`);
-    }
+      if (timeline) {
+        const rect = timeline.getBoundingClientRect();
+        const trigger = window.innerHeight * 0.52;
+        const progress = clamp((trigger - rect.top) / Math.max(rect.height, 1), 0, 1);
+        timeline.style.setProperty('--timeline-progress', `${(progress * 100).toFixed(2)}%`);
+      }
+
+      if (caseMeter) {
+        const rect = sample.getBoundingClientRect();
+        const distance = Math.max(rect.height - window.innerHeight * 0.55, 1);
+        const progress = clamp((window.innerHeight * 0.28 - rect.top) / distance, 0, 1);
+        caseMeter.style.setProperty('--case-progress', `${(progress * 100).toFixed(2)}%`);
+      }
+    });
   };
 
   let utilityTicking = false;
@@ -76,9 +79,10 @@
     ['.project-item', 35],
     ['.sample-side', 0],
     ['.sample-main > h2', 0],
-    ['.standfirst', 90],
+    ['.standfirst', 70],
     ['.case-figure', 0],
-    ['.event', 55],
+    ['.event', 45],
+    ['.object-register', 0],
     ['.status', 0],
     ['.case-sources', 0],
     ['.source-note', 0],
