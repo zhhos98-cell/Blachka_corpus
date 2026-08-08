@@ -13,7 +13,9 @@
       "siena_comparini_histology_static"
     ],
     "literature_or_project_evidence": [
-      "strasbourg_schmidt_spicule_slides"
+      "strasbourg_schmidt_spicule_slides",
+      "mnhn_schmidt_spicule_slides",
+      "copenhagen_schmidt_spicule_slides"
     ]
   }
 }
