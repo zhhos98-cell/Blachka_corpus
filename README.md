@@ -5,7 +5,7 @@ Working repository for the Blaschka / microscope-slide backend experiments.
 Current slide-survey architecture:
 
 - `07A_Global_Microscope_Slide_Collections_Survey.csv`: canonical global survey seed.
-- `07B_*`, `07C_*`, and future `07D_*` batches: modular survey expansions. `scripts/prepare_survey_inputs.py` merges them at workflow runtime without rewriting the committed 07A source file.
+- `07B_*`, `07C_*`, `07D_*`, and future numbered-letter batches: modular survey expansions. `scripts/prepare_survey_inputs.py` merges them at workflow runtime without rewriting the committed 07A source file.
 - `site_adapters.json` plus `site_adapters_expansion_*.json`: institution/site-specific adapter registry. The project is intentionally not a universal crawler.
 - `harvest_families_v1.json`: batch-level extraction contracts shared across similar sites and data systems.
 - `scripts/build_harvest_batches.py`: assigns merged survey entries to harvest families and produces a ranked batch plan.
@@ -26,7 +26,7 @@ Current harvest families:
 - `specialized_collection_catalogue`: bounded specialist catalogues preserving set/subcollection hierarchy.
 - `dataset_api_or_dwca`: official APIs or Darwin Core exports filtered by preparation/material fields.
 - `archive_or_finding_aid_record`: finding aids, creators, extent, boxes/drawers, former ownership and container lists.
-- `literature_or_project_evidence`: collection papers/project pages used as evidence without pretending they are object registers.
+- `literature_or_project_evidence`: collection papers, programme reports, legal records or curatorial pages used as evidence without pretending they are object registers.
 - `item_catalogue_json_or_iiif`: item metadata JSON or IIIF manifests only; no image-tile harvesting.
 - `manual_or_endpoint_discovery`: candidates retained until a stable endpoint is found.
 
@@ -53,4 +53,6 @@ Workflow audit outputs include:
 - `outputs/adapter_registry_snapshot.json`
 - `data/normalized/collections_seed.jsonl`
 
-Survey coverage now includes the UK, US, Canada, Australia, New Zealand, continental Europe, Japan, South Africa, and global method/infrastructure nodes. The current expansion layers include named historical collections, large modern natural-history slide holdings, archive/finding-aid batches, specialist diatom catalogues, and API-oriented biodiversity datasets.
+Survey coverage now includes the UK, US, Canada, Australia, New Zealand, continental Europe, Japan, Singapore, South Africa, and global method/infrastructure nodes. The current expansion layers include named nineteenth-century commercial and personal collections, major modern natural-history slide holdings, archive/finding-aid batches, specialist diatom and wood collections, teaching collections, pathology/histology legacies, and API-oriented biodiversity datasets.
+
+`07D` adds a further survey wave focused on under-covered regions and high-value subcollections: Kyoto RISH Xylarium, NUS Lee Kong Chian Natural History Museum, Wits bone-histology and palynology collections, Spanish UPM/UCM/MNCN/Cajal collections, large Smithsonian entomology slide subcollections, Notre Dame medical-entomology teaching slides, Te Papa/Dominion Museum slide batches, St Andrews named historical groups, Dundee commercial-preparer series, and Harvard MCZ InSliDE. Counts from historical reports remain dated states and are not projected into current holdings.
