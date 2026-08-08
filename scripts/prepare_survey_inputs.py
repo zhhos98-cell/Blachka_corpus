@@ -17,10 +17,10 @@ runtime merge.
 
 Some early modular CSVs were hand-written before the later all-fields-quoted
 convention. A legacy row may therefore expose an extra DictReader ``None`` key
-when a comma occurred inside the final notes field. We repair only that safe case:
-the row must still have a valid provenance grade and automation value, proving
-that all structural columns before ``notes`` remained aligned. Any other malformed
-row fails with a source path and line number rather than being silently rewritten.
+when a comma occurred inside the final notes field, or may simply omit the final
+notes cell. We repair only those safe trailing cases. Structural malformation in
+any earlier field fails with a source path and line number rather than being
+silently rewritten.
 """
 
 from __future__ import annotations
@@ -74,7 +74,7 @@ def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
                 ):
                     notes_parts = [str(row.get("notes") or ""), *extra_values]
                     row["notes"] = ",".join(part for part in notes_parts if part)
-                    repaired.append(f"{path}:{row_number}:{row.get('entry_id', '')}")
+                    repaired.append(f"overflow:{path}:{row_number}:{row.get('entry_id', '')}")
                 elif extra_values:
                     raise ValueError(
                         "Malformed CSV row with extra fields before safe trailing-notes repair: "
@@ -83,6 +83,10 @@ def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
                     )
 
             missing = [name for name in fieldnames if row.get(name) is None]
+            if missing == ["notes"] and fieldnames[-1] == "notes":
+                row["notes"] = ""
+                repaired.append(f"missing-notes:{path}:{row_number}:{row.get('entry_id', '')}")
+                missing = []
             if missing:
                 raise ValueError(
                     f"Malformed CSV row missing columns {missing}: {path}:{row_number}; "
@@ -91,7 +95,7 @@ def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
             rows.append({name: str(row.get(name, "")) for name in fieldnames})
 
     if repaired:
-        print("Repaired legacy trailing-notes CSV overflow: " + "; ".join(repaired))
+        print("Repaired safe legacy CSV tails: " + "; ".join(repaired))
     return fieldnames, rows
 
 
@@ -216,7 +220,7 @@ def merge_adapters() -> dict[str, Any]:
 def main() -> int:
     PREP_REPORT.parent.mkdir(parents=True, exist_ok=True)
     report = {
-        "schema_version": "slide-survey-prep-v4-07AR-safe-legacy-csv-repair",
+        "schema_version": "slide-survey-prep-v5-07AR-safe-legacy-csv-tails",
         "survey": merge_surveys(),
         "adapters": merge_adapters(),
     }
