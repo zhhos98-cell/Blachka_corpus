@@ -31,6 +31,10 @@
       <p class="hero-subtitle">Tracing objects across workshop records, dealers, shipments, museums, damage, conservation, rediscovery, and present custody.</p>
     </div>
 
+    <a class="scroll-cue" href="#project" aria-label="Scroll to project introduction">
+      <span>Scroll</span><i aria-hidden="true"></i>
+    </a>
+
     <a class="hero-credit" href="https://commons.wikimedia.org/wiki/File:Sea_cucumber,_model_by_Leopold_and_Rudolph_Blaschka,_glass_-_Harvard_Museum_of_Comparative_Zoology_-_DSC06169.jpg">Hero image: Daderot, CC0</a>
   </section>
 
@@ -100,26 +104,36 @@
         <h2 id="case-title">Liverpool Museum: one order, several documentary lives</h2>
         <p class="standfirst">An 1887 workshop sequence follows a Liverpool order from manufacture to accounting and dispatch. More than a century later, surviving models reappear in exhibition and collection records.</p>
 
+        <figure class="case-figure">
+          <a href="https://commons.wikimedia.org/wiki/File:Blaschka_Natural_History_Museum_Londres_28072013_2.jpg" target="_blank" rel="noopener">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Blaschka%20Natural%20History%20Museum%20Londres%2028072013%202.jpg?width=1400" alt="Blaschka glass octopus model at the Natural History Museum, London">
+          </a>
+          <figcaption>
+            <span>Comparative visual</span>
+            <p>A Blaschka marine model at the Natural History Museum, London. This CC0 image is used only to test the visual rhythm of the Liverpool sample; it is not a Liverpool object. <a href="https://natsca.blog/2019/08/22/invertebrates-in-vitro/" target="_blank" rel="noopener">View the published photograph of Liverpool catalogue no. 93 ↗</a></p>
+          </figcaption>
+        </figure>
+
         <div class="timeline" aria-label="Liverpool case timeline">
           <div class="event">
             <time datetime="1887-10-11">11 Oct 1887</time>
-            <p>The Blaschka workshop told its British intermediary that work on “the models for Liverpool” would begin the following week.</p>
+            <p>The Blaschka workshop told its British intermediary that work on <a class="evidence-link" href="#source-workshop">“the models for Liverpool”</a> would begin the following week.</p>
           </div>
           <div class="event">
             <time datetime="1887-11-23">23 Nov 1887</time>
-            <p>A workshop account separated <strong>247 Marks</strong> for the Liverpool models from an additional packing estimate.</p>
+            <p>A workshop account separated <a class="evidence-link" href="#source-workshop"><strong>247 Marks</strong></a> for the Liverpool models from an additional packing estimate.</p>
           </div>
           <div class="event">
             <time datetime="1887-12">Dec 1887</time>
-            <p>One freight case, marked <strong>I.B. 268</strong>, was routed through M. O. W. Möller in Hamburg for onward delivery to Liverpool. The dispatch letter records an invoice total read in the project OCR as 268 Marks.</p>
+            <p>One freight case, marked <a class="evidence-link" href="#source-workshop"><strong>I.B. 268</strong></a>, was routed through M. O. W. Möller in Hamburg for onward delivery to Liverpool. The dispatch letter records an invoice total read in the project OCR as 268 Marks.</p>
           </div>
           <div class="event">
             <time datetime="2017">2017</time>
-            <p>A modern account described a trove of Blaschka sea anemones rediscovered in a drawer at World Museum Liverpool.</p>
+            <p>A modern account described a <a class="evidence-link external" href="https://src.apollo-magazine.com/paper-plants-and-wax-peaches-at-the-manchester-museum/" target="_blank" rel="noopener">trove of Blaschka sea anemones ↗</a> rediscovered in a drawer at World Museum Liverpool and shown in Manchester Museum’s <a class="evidence-link external" href="https://research.manchester.ac.uk/en/publications/object-lessons/" target="_blank" rel="noopener">Object Lessons ↗</a>.</p>
           </div>
           <div class="event">
             <time datetime="2019">2019</time>
-            <p>A published collection image identified a World Museum Liverpool specimen as <strong>Blaschka catalogue no. 93</strong>.</p>
+            <p>A published collection image identified a World Museum Liverpool specimen as <a class="evidence-link external" href="https://natsca.blog/2019/08/22/invertebrates-in-vitro/" target="_blank" rel="noopener"><strong>Blaschka catalogue no. 93 ↗</strong></a>.</p>
           </div>
         </div>
 
@@ -134,6 +148,25 @@
           </div>
         </aside>
 
+        <div class="case-sources" aria-label="Liverpool source links">
+          <div class="source-row" id="source-workshop">
+            <span>1887</span>
+            <p><strong>Workshop sequence.</strong> Corning / Rakow notebook evidence underlies the manufacture, 247-Mark accounting, and I.B. 268 dispatch statements. Page-level public linking remains pending.</p>
+          </div>
+          <div class="source-row">
+            <span>1880</span>
+            <p><a href="https://www.biodiversitylibrary.org/item/43130" target="_blank" rel="noopener">H. H. Higgins, <em>Synopsis of an arrangement of invertebrate animals in the Free Public Museum of Liverpool</em> ↗</a> provides Liverpool institutional and invertebrate-curation context.</p>
+          </div>
+          <div class="source-row">
+            <span>2017</span>
+            <p><a href="https://src.apollo-magazine.com/paper-plants-and-wax-peaches-at-the-manchester-museum/" target="_blank" rel="noopener">Apollo, “Paper plants and wax peaches at the Manchester Museum” ↗</a></p>
+          </div>
+          <div class="source-row">
+            <span>2019</span>
+            <p><a href="https://natsca.blog/2019/08/22/invertebrates-in-vitro/" target="_blank" rel="noopener">Paolo Viscardi, “Invertebrates In Vitro” ↗</a></p>
+          </div>
+        </div>
+
         <p class="source-note">Prototype case based on the project’s Liverpool research module. Claims are intentionally separated from unresolved fields; a fuller public citation layer will follow in a later build.</p>
       </article>
     </section>
@@ -143,5 +176,7 @@
     <a href="#top">The Blaschka Object Network</a>
     <span>Research prototype · Work in progress</span>
   </footer>
+
+  <script src="motion.js" defer></script>
 </body>
 </html>
