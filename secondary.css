@@ -114,7 +114,8 @@ body.subpage {
 
 .blog-entry a,
 .privacy-copy a,
-.subscribe-note a {
+.subscribe-note a,
+.auction-case a {
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
@@ -234,9 +235,156 @@ body.subpage {
   padding-left: 1.2rem;
 }
 
+.market-scope,
+.market-note {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: clamp(38px, 8vw, 120px);
+}
+
+.market-scope {
+  padding: 58px 0 70px;
+  border-bottom: 1px solid var(--line);
+}
+
+.market-scope-label,
+.auction-year,
+.auction-house,
+.lot-no,
+.market-caution {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.market-scope-label,
+.auction-year,
+.lot-no {
+  color: var(--accent);
+  font-size: .68rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.market-scope h2,
+.market-note h2 {
+  margin: 0 0 16px;
+  max-width: 760px;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1.04;
+  font-weight: 500;
+}
+
+.market-scope p,
+.market-note p {
+  max-width: 760px;
+  color: #d8cec5;
+}
+
+.market-caution {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted) !important;
+  font-size: .72rem;
+}
+
+.auction-cases {
+  padding: 10px 0 88px;
+}
+
+.auction-case {
+  padding: 66px 0 74px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.auction-case-head {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: clamp(38px, 8vw, 120px);
+}
+
+.auction-case-head > div {
+  max-width: 800px;
+}
+
+.auction-house {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: .68rem;
+  line-height: 1.45;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.auction-case h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 4.6vw, 4rem);
+  line-height: .98;
+  letter-spacing: -.035em;
+  font-weight: 500;
+}
+
+.auction-case-head p:last-child {
+  color: #d8cec5;
+}
+
+.auction-lots {
+  margin-top: 46px;
+  margin-left: calc(180px + clamp(38px, 8vw, 120px));
+  border-top: 1px solid var(--line);
+}
+
+.auction-lot {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 28px;
+  padding: 24px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.auction-lot > div {
+  max-width: 720px;
+}
+
+.auction-lot h3 {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.auction-lot p {
+  margin-bottom: 10px;
+  color: #d8cec5;
+}
+
+.lot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .7rem;
+}
+
+.open-case {
+  background: rgba(255,255,255,.018);
+  box-shadow: 50vw 0 0 rgba(255,255,255,.018), -50vw 0 0 rgba(255,255,255,.018);
+}
+
+.market-note {
+  padding: 68px 0 92px;
+  border-top: 3px solid var(--ink);
+}
+
 .subpage-footer {
   width: min(calc(100% - 40px), var(--max));
   margin-inline: auto;
+}
+
+@media (max-width: 900px) {
+  .auction-lots {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 700px) {
@@ -261,7 +409,10 @@ body.subpage {
   .page-intro,
   .blog-entry,
   .subscription,
-  .privacy-copy {
+  .privacy-copy,
+  .market-scope,
+  .market-note,
+  .auction-case-head {
     grid-template-columns: 1fr;
     gap: 18px;
   }
@@ -284,5 +435,18 @@ body.subpage {
 
   .subscribe-row button {
     width: 100%;
+  }
+
+  .auction-case {
+    padding: 52px 0 58px;
+  }
+
+  .auction-lots {
+    margin-top: 34px;
+  }
+
+  .auction-lot {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }
