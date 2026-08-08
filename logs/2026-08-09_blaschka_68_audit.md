@@ -10,36 +10,52 @@ A present institution enters the census only with current or recent reliable pro
 
 `baseline_2017_match` remains `unresolved` until the 68 surviving rows of the 2017 map are reconstructed at institution level. A 2026 node is therefore not called a '69th collection' merely because it is absent from the existing deep backend.
 
-## First current-proof seed
+## Current-proof census seed
 
-Ten current nodes are now written to `data/blaschka_census/2026_surviving_census_seed.csv`. The first audit deliberately mixes likely old-baseline calibrators with possible delta candidates so that map reconstruction can be tested against positive controls.
+Nineteen current nodes are now written to `data/blaschka_census/2026_surviving_census_seed.csv`. The seed deliberately mixes confirmed old-baseline calibrators with unresolved delta candidates.
 
-- Universität Leipzig: current university history explicitly states six surviving Blaschka glass models; the collection remains a teaching/study collection.
-- Stiftung Friedenstein Gotha: institution states 28 acquired in 1881/82 and seven survive today.
-- Universalmuseum Joanneum Graz: current 2024–2026 exhibition explicitly displays Blaschka models; historical annual reports give 19 acquired in 1868. Current exact survivor count is deliberately left blank.
-- Naturhistorisches Museum Wien: NHMW publication states 50 Blaschka exhibition objects are owned by NHMW; current Hall 22 display is separately documented.
-- University of Vienna Zoological Collection: current collection page states 156 Blaschka models. Other university pages give 145/146, so the count history is retained as a source conflict. The 45-model NHMW display subset is never treated as the University total or as a third collection node.
-- Universiteitsmuseum Utrecht: a current Utrecht University page states 128 Blaschka marine-animal models. An earlier about-80 formulation is therefore treated as stale or scope-different, not as the present census count.
-- Natural History Museum London: current institutional page states more than 180 models.
-- Australian Museum: current museum page states nearly 100 sea-anemone models and remains current in 2026.
-- Academy of Natural Sciences of Drexel University: current institutional finding aid scopes the collection at 48 glass models while preserving lower subset/legacy counts separately.
-- Cornell University: included as a positive-control baseline match because Corning explicitly listed Cornell as current in 2016; no digital-image count is converted into a physical survivor count.
+The first ten were Leipzig (6), Gotha (7 from 28 acquired in 1881/82), Graz (current display; 19 historically purchased in 1868 but no current count inferred), NHMW Vienna (50 owned by NHMW), University of Vienna (156, with 145/146 retained as older conflicting count layers), Utrecht (128), NHM London (>180), Australian Museum (nearly 100), ANSP (48), and Cornell.
+
+Nine further current-proof rows have now been added:
+
+- Harvard MCZ: approximately 430 current invertebrate models; approximately 60 is only the HMNH rotating display subset.
+- National Museum of Ireland – Natural History: current institutional page states over 500 pieces. This remains a separate collection from University College Dublin and other Irish universities.
+- National Museums Scotland: 82 models are explicitly on display; therefore the surviving count is at least 82, while the whole current collection total remains open.
+- University of Dundee D’Arcy Thompson Zoology Museum: current institutional Blaschka page itemizes eleven models with DUNUC identifiers. The museum's own pages give 1888 and 1889 as acquisition dates, so the one-year conflict remains visible.
+- UCL Grant Museum: current Blaschka collection and gallery location are explicit; exact current total remains open. Twenty Lankester-era models in the 1890 catalogue and later Science Museum transfers remain separate acquisition strata.
+- Museum für Naturkunde Berlin: the current OS001-02 institutional inventory enumerates **40** Blaschka object records. This is an especially useful census/deep bridge because it also preserves historical ZM numbers, commercial Blaschka numbers, Reiling numbers, acquisition dates and 1995–98 internal transfers into the Historical Division.
+- University College Cork: current collection page confirms physical Blaschka holdings and a display subset; exact total remains open.
+- UW–Madison Zoological Museum: current UWZM project states over 50 models survive. The approximately-53 historical estimate, detached fragments and modern experimental reconstructions remain separate units.
+- Derby Museums: Corning's 2016 one-model minimum is now independently bridged to a 2023 Derby Museums publication illustrating a Blaschka sea-anemone model as part of the current Collections of Making.
+
+## 2016 positive controls
+
+A separate `baseline_2016_2017_reconstruction_worklog.csv` now records source-level baseline facts and technical blockers. Five institution matches can already be marked `yes` without recovering the 2017 pin table because Corning's 2016 text itself identifies them as current: Cornell, Derby, University of Wisconsin, University of Vienna and Australian Museum.
+
+This matters methodologically. `baseline_2017_match=yes` is evidence of old-baseline membership, not merely a guess that a famous collection 'must have been' on the map. The same discipline will be applied to all other nodes.
 
 ## Historical-successor audit
 
 `data/blaschka_census/historical_successor_leads.csv` keeps obscure school/university/person leads separate from proven current nodes.
 
-Warsaw is the strongest unresolved lead. The present University of Warsaw Faculty of Biology zoological teaching collection explicitly preserves historical material probably descending from the old Zoological Cabinet, includes didactic models, and retains labels reading `Zoołogiczeskij Kabinet` and `Zootom Kab.`. The 1907 volume *Зоотомическая лаборатория, зоотомический кабинет и преподавание анатомических дисциплин...* is confirmed as a 154-page open-access source at the Russian State Library. No current Blaschka object has yet been identified, so Warsaw remains outside the surviving census.
+Warsaw remains the strongest unresolved lead. The present University of Warsaw Faculty of Biology zoological teaching collection explicitly preserves historical material probably descending from the old Zoological Cabinet, includes didactic models, and retains labels reading `Zoołogiczeskij Kabinet` and `Zootom Kab.`. No current Blaschka object has yet been identified, so Warsaw remains outside the surviving census.
 
-Jeypore/Jaipur and Indian Museum Calcutta were removed from the 'redo the history' queue. The active Blaschka backend already contains deep modules 37 and 38. Jaipur has the 1886–87 Hendley order, 640-Mark model value, Damon mediation, LB 285–286 Trieste–Bombay shipment and 1895 numbered display; Calcutta has catalogue-purchaser, 1883 shipment, Superintendent-order and 1894 glass-model display layers. For both, the remaining census problem is current Blaschka-specific survival proof.
+The Hamburg school lead has been tightened but not closed. The Blaschka ledger OCR reads `Reform. Realschule Hamburg M 57 50`. Ernst Schlee's Altona school is a strong candidate because it originated as a Reformrealschule, but by 1887 its formal title was **Realgymnasium mit Realschule zu Altona**. This nomenclature mismatch prevents automatic identification. Digitised 1886/87 and 1887/88 school reports now provide a primary-source route for checking acquisitions and natural-history collections before successor tracing. The school line later became the Schlee school and Ernst-Schlee-Gymnasium, eventually closing in 1997; no teaching-collection transfer is inferred from that institutional succession.
+
+König-Wilhelms-Gymnasium Breslau is now treated as a wartime institutional discontinuity rather than a simple successor search. A digitised 1887 programme contains the 1886/87 school report. Because the school/building history ends through wartime destruction and 1945 closure, the next question is whether collections were transferred or dispersed before that point. Building destruction alone is not evidence that the Blaschka models were destroyed.
+
+Jeypore/Jaipur and Indian Museum Calcutta stay out of the 'redo the history' queue. Their deep nineteenth-century chains already exist in modules 37 and 38; only current Blaschka-specific physical proof is needed for census promotion.
 
 ## Baseline-source state
 
-The live Corning legacy map remains online, and the 2017 *Journal of Glass Studies* note is identifiable as Ruggiero and Larson, “The Blaschka Legacy in Worldwide Collections: A New Resource,” pp. 419–428. The map UI itself does not expose institution rows to ordinary text indexing, and the JSTOR XML/PDF route currently exposes metadata rather than the article body in this runtime. Therefore the institution-level 68-row baseline is not yet reconstructed and remains the decisive audit dependency.
+Corning's 2016 publication states 174 historical / 64 current collections and 4,747 surviving models. The later AIC/Corning account states 179 discrete / 68 surviving collections and describes the interactive map as containing owner/institution, location, image, collection history and current status.
+
+The legacy map remains online and visibly distinguishes current versus original collections, but ordinary text extraction exposes only the interface key rather than pin-level records. Search-engine indexing has not yet exposed the underlying JavaScript/data payload. Consequently the row-level 68 remains the decisive unresolved dependency.
 
 ## Immediate next passes
 
-1. Reconstruct the institution-level 2017 surviving-68 list from the Corning map or its underlying data asset.
-2. Continue Warsaw with the 1907 cabinet history and present collection inventory/images.
-3. Verify the exact ledger identities for Reform-Realschule Hamburg, Gymnasium Leitmeritz, König-Wilhelms-Gymnasium Breslau and the second Leipzig school lead before successor tracing.
-4. Keep every loan/display relation distinct from legal/institutional collection identity, especially University of Vienna versus NHMW.
+1. Keep attacking the map's underlying data asset or an archived/exported copy of its 68 current pins.
+2. Continue Warsaw at object level; the next successful result must be a current Blaschka label/object/inventory record, not another general institutional-history layer.
+3. Read the Altona 1886/87–1887/88 school reports and Breslau 1886/87 report for acquisitions/Sammlungen before doing modern successor searches.
+4. Expand the current-proof seed through authoritative institutional inventories, especially low-visibility university/school collections, while keeping baseline matching separate.
+5. Preserve every count ontology and custody distinction: acquisition count versus survivor count, collection total versus display subset, owner versus borrower, institutional transfer versus physical manufacture.
