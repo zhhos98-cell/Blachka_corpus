@@ -1,6 +1,6 @@
 {
-  "schema_version": "slide-survey-19c-scope-overrides-v2",
-  "rule": "Overrides are used only where the survey row's free-text date field is insufficient or potentially misleading. CORE_19C requires a source-backed nineteenth-century object/collection/provenance node.",
+  "schema_version": "slide-survey-19c-scope-overrides-v3-07AR",
+  "rule": "Overrides are used only where the survey row's free-text date field is insufficient or potentially misleading. CORE_19C requires a source-backed nineteenth-century object/collection/provenance node, and the frozen microscope-slide catalogue additionally requires the surviving object medium to be closed strongly enough for inclusion.",
   "overrides": {
     "UK-WELLCOME-TIMOTHY-LEWIS": {
       "status": "CORE_19C",
@@ -13,6 +13,10 @@
     "US-MCZ-INSLIDE-PROJECT": {
       "status": "CORE_19C",
       "reason": "Harvard's 2026 collection account explicitly identifies surviving MCZ microscope slides mounted by Nathan Banks in 1891 and William Morton Wheeler for his 1893 thesis, and states that some of the roughly 50,000 invertebrate slides are more than 150 years old. The current digitisation project is modern infrastructure around a corpus containing explicit nineteenth-century objects."
+    },
+    "NL-UMU-PIETER-HARTING-PREPARATIONS-19C": {
+      "status": "POSSIBLE_19C",
+      "reason": "UMU explicitly says that a few preparations of Pieter Harting survive and separately documents his nineteenth-century microscopy teaching and collecting, but the public source does not close those surviving preparations specifically as glass microscope slides. Retain as a discovery/held-out node rather than in the frozen strict slide layer."
     },
     "KR-NNIBR-PERMANENT-TYPE-SLIDES": {
       "status": "OUT_OF_SCOPE",
