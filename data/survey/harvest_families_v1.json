@@ -17,7 +17,7 @@
       "fields": ["page_title", "institution", "collection_name", "stated_count", "count_scope", "date_range", "named_people", "relationship_phrases", "subject_scope", "physical_structure", "label_or_identifier_notes", "linked_catalogue_urls", "source_url", "source_sha256"],
       "follow_links": "Only same-institution links explicitly labelled collection, catalogue, database, find a specimen, inventory, or related collection.",
       "stop_rule": "Do not recursively crawl generic navigation or news pages.",
-      "adapter_keys": ["nhm_collection_static", "kew_collection_static", "kew_digitisation_static", "oumnh_project_static", "hunterian_collection_static", "kcl_collection_static", "mcz_collection_static", "florida_museum_static", "mnhn_collection_static", "standrews_collection_record", "grosvenor_collection_static", "cambridge_museums_static", "osu_herbarium_static", "nybg_structural_botany_static", "cu_boulder_diatom_static", "cmn_palaeobiology_static", "tiegs_museum_static", "mfn_micropaleontology_static", "kahaku_mrc_static", "iziko_entomology_static", "bsm_database_static", "naturalis_collection_static", "senckenberg_virmisco_static"]
+      "adapter_keys": ["nhm_collection_static", "kew_collection_static", "kew_digitisation_static", "oumnh_project_static", "hunterian_collection_static", "kcl_collection_static", "mcz_collection_static", "florida_museum_static", "mnhn_collection_static", "standrews_collection_record", "grosvenor_collection_static", "cambridge_museums_static", "osu_herbarium_static", "nybg_structural_botany_static", "cu_boulder_diatom_static", "cmn_palaeobiology_static", "tiegs_museum_static", "mfn_micropaleontology_static", "kahaku_mrc_static", "iziko_entomology_static", "naturalis_collection_static"]
     },
     {
       "family": "collection_page_plus_search_portal",
@@ -35,7 +35,7 @@
       "fields": ["collection_or_series", "subcollection", "set_or_exsiccata", "serial_number", "collector", "preparer", "taxon", "locality", "date", "publication_relation", "gift_exchange_purchase_phrase", "item_or_set_url", "label_text", "notes"],
       "pagination": "Follow catalogue/list links on the same host; preserve parent-child hierarchy and source ordering.",
       "stop_rule": "Never flatten replicated published sets and unique unpublished collections into one undifferentiated item list.",
-      "adapter_keys": ["farlow_diatom_catalogue", "nhmd_desmid_static", "caup_diatom_static"]
+      "adapter_keys": ["farlow_diatom_catalogue", "nhmd_desmid_static", "caup_diatom_static", "senckenberg_virmisco_static", "bsm_database_static"]
     },
     {
       "family": "dataset_api_or_dwca",
@@ -61,7 +61,7 @@
       "strategy": "Use a paper, museum journal article, or project page to establish collection existence, counts, label fields, digitisation method, or conservation state; keep it distinct from an official object register.",
       "fields": ["citation", "institution", "collection_name", "stated_count", "survey_date", "table_or_figure_reference", "label_fields_described", "condition_or_conservation_notes", "digitisation_workflow", "named_people", "claimed_object_register_link", "verification_needed"],
       "stop_rule": "Do not promote literature table row numbers, figure numbers, or OCR artefacts into museum identifiers.",
-      "adapter_keys": ["nhm_phthiraptera_literature", "manchester_gibson_literature", "mnhn_deflandre_literature_manual", "reimer_diatom_literature", "geoscience_australia_literature", "nhmw_scale_insect_literature"]
+      "adapter_keys": ["nhm_microscope_digitisation", "nhm_phthiraptera_literature", "manchester_gibson_literature", "reimer_diatom_literature", "geoscience_australia_literature", "nhmw_scale_insect_literature"]
     },
     {
       "family": "item_catalogue_json_or_iiif",
@@ -70,14 +70,14 @@
       "fields": ["object_id", "accession_number", "title", "object_type", "maker", "credit_or_donor", "date", "materials", "measurements", "description", "json_url", "iiif_manifest_url", "collection_context"],
       "pagination": "Start from a bounded collection/search result and follow item records; use JSON/manifest URLs advertised by the item page.",
       "stop_rule": "Do not request IIIF image tiles or full-resolution derivatives in the survey workflow.",
-      "adapter_keys": ["smg_object_type_search", "museums_victoria_object_static"]
+      "adapter_keys": ["smg_object_type_search", "museums_victoria_object_static", "powerhouse_object_static", "wellcome_work_static"]
     },
     {
       "family": "manual_or_endpoint_discovery",
       "phase": "0",
       "strategy": "Keep the candidate in the survey while locating a stable catalogue, API, finding aid, or collection page. No automated harvest yet.",
       "fields": ["candidate_institution", "candidate_collection", "known_evidence", "missing_endpoint", "next_search_terms"],
-      "adapter_keys": ["rms_quekett_manual", "mczbase_manual", "cornell_candidate_manual", "mnhn_deflandre_literature_manual"]
+      "adapter_keys": ["rms_quekett_manual", "mczbase_manual", "cornell_candidate_manual", "mnhn_deflandre_literature_manual", "dissco_method_static"]
     }
   ]
 }
