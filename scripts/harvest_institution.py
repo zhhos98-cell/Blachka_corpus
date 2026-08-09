@@ -3,8 +3,9 @@
 
 Each Actions matrix job handles one current institution. The institution profile
 controls allowed hosts, page budget and relevant links. Only public metadata
-HTML, JSON, CSV/text and PDFs are fetched. Image binaries and IIIF image tiles
-are deliberately excluded.
+HTML, JSON, CSV/text and small PDFs are fetched. Image binaries and IIIF image
+tiles are deliberately excluded. Oversized PDFs are recorded as skipped URLs and
+are never written as partial files into Actions artifacts.
 """
 
 from __future__ import annotations
@@ -33,6 +34,7 @@ USER_AGENT = "Blachka-corpus-slide-survey/1.0 (+bounded public metadata only)"
 SKIP_AUTOMATION = {"manual only", "blocked"}
 IMAGE_EXT = re.compile(r"\.(?:jpe?g|png|gif|webp|tiff?|bmp|jp2)(?:$|\?)", re.I)
 IIIF_TILE = re.compile(r"/(?:full|pct:|square|!?\d+,\d+)/", re.I)
+DEFAULT_MAX_PDF_BYTES = 5_000_000
 
 
 def slugify(value: str) -> str:
@@ -69,7 +71,23 @@ def skip_binary(url: str) -> bool:
     return bool(IMAGE_EXT.search(url) or IIIF_TILE.search(url))
 
 
-def fetch(url: str, max_bytes: int) -> tuple[bytes, str, str]:
+def _content_length(headers: Any) -> int | None:
+    raw = headers.get("content-length", "")
+    try:
+        value = int(raw)
+    except (TypeError, ValueError):
+        return None
+    return value if value >= 0 else None
+
+
+def fetch(url: str, max_bytes: int, max_pdf_bytes: int) -> tuple[bytes, str, str, dict[str, Any]]:
+    """Fetch a bounded metadata document.
+
+    PDFs are special: if Content-Length already exceeds the configured PDF cap,
+    the body is not read. If the server omits Content-Length, at most cap+1 bytes
+    are read; an oversized response is discarded rather than stored truncated.
+    Small PDFs are therefore always complete when passed to pypdf.
+    """
     req = urllib.request.Request(url, headers={
         "User-Agent": USER_AGENT,
         "Accept": "text/html,application/json,application/ld+json,application/pdf,text/plain,text/csv;q=0.8,*/*;q=0.2",
@@ -77,8 +95,36 @@ def fetch(url: str, max_bytes: int) -> tuple[bytes, str, str]:
     with urllib.request.urlopen(req, timeout=35) as resp:  # noqa: S310
         ctype = resp.headers.get("content-type", "").split(";", 1)[0].strip().lower()
         final_url = resp.geturl()
-        body = resp.read(max_bytes + 1)
-    return body[:max_bytes], ctype, final_url
+        content_length = _content_length(resp.headers)
+        is_pdf = "pdf" in ctype or final_url.lower().split("?", 1)[0].endswith(".pdf")
+
+        if is_pdf and content_length is not None and content_length > max_pdf_bytes:
+            return b"", ctype, final_url, {
+                "skipped_large_pdf": True,
+                "reason": "content-length-over-limit",
+                "content_length": content_length,
+                "limit_bytes": max_pdf_bytes,
+            }
+
+        read_limit = max_pdf_bytes if is_pdf else max_bytes
+        body = resp.read(read_limit + 1)
+
+    if is_pdf and len(body) > max_pdf_bytes:
+        return b"", ctype, final_url, {
+            "skipped_large_pdf": True,
+            "reason": "stream-over-limit",
+            "content_length": content_length,
+            "limit_bytes": max_pdf_bytes,
+        }
+
+    truncated = (not is_pdf) and len(body) > max_bytes
+    if truncated:
+        body = body[:max_bytes]
+    return body, ctype, final_url, {
+        "skipped_large_pdf": False,
+        "content_length": content_length,
+        "truncated": truncated,
+    }
 
 
 def html_to_text(raw: str) -> str:
@@ -223,13 +269,25 @@ def raw_name(url: str, idx: int, suffix: str) -> str:
     return f"{idx:03d}-{stem}{suffix}"
 
 
-def build_record(url: str, final_url: str, body: bytes, ctype: str, seed_ids: list[str], profile_key: str, idx: int, out_dir: Path) -> tuple[dict[str, Any], list[tuple[str, str]]]:
+def build_record(
+    url: str,
+    final_url: str,
+    body: bytes,
+    ctype: str,
+    seed_ids: list[str],
+    profile_key: str,
+    idx: int,
+    out_dir: Path,
+    fetch_meta: dict[str, Any],
+) -> tuple[dict[str, Any], list[tuple[str, str]]]:
     record: dict[str, Any] = {
-        "schema_version": "slide-survey-institution-harvest-record-v1",
+        "schema_version": "slide-survey-institution-harvest-record-v2-small-pdf-only",
         "url": url,
         "final_url": final_url,
         "content_type": ctype,
         "byte_length": len(body),
+        "response_content_length": fetch_meta.get("content_length"),
+        "response_truncated": bool(fetch_meta.get("truncated")),
         "sha256": hashlib.sha256(body).hexdigest(),
         "fetched_utc": datetime.now(timezone.utc).isoformat(),
         "seed_entry_ids": seed_ids,
@@ -249,7 +307,7 @@ def build_record(url: str, final_url: str, body: bytes, ctype: str, seed_ids: li
         except Exception as exc:
             record["json_parse_error"] = repr(exc)
             text = body.decode("utf-8", errors="replace")
-    elif "pdf" in ctype or final_url.lower().endswith(".pdf"):
+    elif "pdf" in ctype or final_url.lower().split("?", 1)[0].endswith(".pdf"):
         suffix = ".pdf"
         text, extra = pdf_text(body)
         record.update(extra)
@@ -305,6 +363,7 @@ def main() -> int:
     page_budget = max(1, int(profile.get("page_budget", defaults.get("page_budget", 12)) * factor))
     page_budget = min(page_budget, int(defaults.get("absolute_page_cap", 120)))
     max_bytes = int(profile.get("max_bytes", defaults.get("max_bytes", 4000000)))
+    max_pdf_bytes = int(profile.get("max_pdf_bytes", defaults.get("max_pdf_bytes", DEFAULT_MAX_PDF_BYTES)))
     allowed_hosts = {h.lower() for h in profile.get("allowed_hosts", [])}
     for seed in seed_to_ids:
         host = urllib.parse.urlparse(seed).hostname
@@ -312,20 +371,21 @@ def main() -> int:
             allowed_hosts.add(host.lower())
 
     plan = {
-        "schema_version": "slide-survey-institution-harvest-plan-v1",
+        "schema_version": "slide-survey-institution-harvest-plan-v2-small-pdf-only",
         "institution_key": args.institution_key,
         "institution": institution,
         "profile": args.profile,
         "mode": args.mode,
         "depth": args.depth,
         "page_budget": page_budget,
+        "max_pdf_bytes": max_pdf_bytes,
         "active_entry_ids": [row.get("entry_id") for row in rows],
         "seed_urls": list(seed_to_ids),
         "allowed_hosts": sorted(allowed_hosts),
     }
     (out_dir / "plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if args.mode == "dry-run":
-        summary = {**plan, "status": "dry-run", "fetched": 0, "errors": 0}
+        summary = {**plan, "status": "dry-run", "fetched": 0, "errors": 0, "skipped_large_pdfs": 0}
         (out_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return 0
 
@@ -334,6 +394,7 @@ def main() -> int:
     fetched_urls: set[str] = set()
     records: list[dict[str, Any]] = []
     errors: list[dict[str, str]] = []
+    skipped_large_pdfs: list[dict[str, Any]] = []
 
     while queue and len(fetched_urls) < page_budget:
         url, seed_ids = queue.popleft()
@@ -341,8 +402,30 @@ def main() -> int:
             continue
         fetched_urls.add(url)
         try:
-            body, ctype, final_url = fetch(url, max_bytes)
-            record, discovered = build_record(url, final_url, body, ctype, seed_ids, args.profile, len(records) + 1, out_dir)
+            body, ctype, final_url, fetch_meta = fetch(url, max_bytes, max_pdf_bytes)
+            if fetch_meta.get("skipped_large_pdf"):
+                skipped_large_pdfs.append({
+                    "url": url,
+                    "final_url": final_url,
+                    "content_type": ctype,
+                    "reason": fetch_meta.get("reason"),
+                    "content_length": fetch_meta.get("content_length"),
+                    "limit_bytes": fetch_meta.get("limit_bytes"),
+                    "seed_entry_ids": seed_ids,
+                })
+                continue
+
+            record, discovered = build_record(
+                url,
+                final_url,
+                body,
+                ctype,
+                seed_ids,
+                args.profile,
+                len(records) + 1,
+                out_dir,
+                fetch_meta,
+            )
             records.append(record)
             for link_url, label in discovered:
                 if link_url in queued or link_url in fetched_urls or skip_binary(link_url):
@@ -369,13 +452,18 @@ def main() -> int:
         "status": "complete",
         "fetched": len(records),
         "errors": len(errors),
+        "skipped_large_pdfs": len(skipped_large_pdfs),
+        "skipped_large_pdf_detail": skipped_large_pdfs,
         "queued_remaining": len(queue),
         "page_budget_reached": len(fetched_urls) >= page_budget,
         "content_type_counts": ctype_counts,
         "errors_detail": errors,
     }
     (out_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"{institution}: fetched={len(records)} errors={len(errors)} budget={page_budget}")
+    print(
+        f"{institution}: fetched={len(records)} errors={len(errors)} "
+        f"skipped_large_pdfs={len(skipped_large_pdfs)} budget={page_budget}"
+    )
     return 0
 
 
