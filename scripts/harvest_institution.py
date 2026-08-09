@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Bounded institution-specific metadata harvester for the frozen slide survey.
 
-Each Actions matrix job handles one current institution. The institution profile
-controls allowed hosts, page budget and relevant links. Only public metadata
-HTML, JSON, CSV/text and small PDFs are fetched. Image binaries and IIIF image
-tiles are deliberately excluded. Oversized PDFs are recorded as skipped URLs and
-are never written as partial files into Actions artifacts.
+Each Actions matrix job handles one current institution/catalogue group. The
+institution profile controls allowed hosts, page budget and relevant links. Only
+public metadata HTML, JSON, CSV/text and small PDFs are fetched. Image binaries
+and IIIF image tiles are deliberately excluded. Oversized PDFs are recorded as
+skipped URLs and are never written as partial files into Actions artifacts.
 """
 
 from __future__ import annotations
@@ -36,9 +36,41 @@ IMAGE_EXT = re.compile(r"\.(?:jpe?g|png|gif|webp|tiff?|bmp|jp2)(?:$|\?)", re.I)
 IIIF_TILE = re.compile(r"/(?:full|pct:|square|!?\d+,\d+)/", re.I)
 DEFAULT_MAX_PDF_BYTES = 5_000_000
 
+INSTITUTION_GROUP_RULES = [
+    (r"Farlow Herbarium", "farlow-herbarium", "Farlow Herbarium, Harvard University"),
+    (r"Mus[eéu-]*um national d.Histoire naturelle.*Paris|MNHN.*Paris", "mnhn-paris", "Muséum national d'Histoire naturelle, Paris"),
+    (r"Powerhouse", "powerhouse-collection", "Powerhouse Collection"),
+    (r"Royal College of Surgeons of England|Hunterian Museum.*Royal College of Surgeons", "rcs-hunterian", "Royal College of Surgeons of England / Hunterian Museum"),
+    (r"Naturhistorisches Museum Wien", "nhmw-vienna", "Naturhistorisches Museum Wien"),
+]
+
+QUANTITY_UNIT_NAMESPACE = {
+    "microscope slides": "physical_slide_count",
+    "slides": "physical_slide_count",
+    "preparations": "preparation_count",
+    "specimens": "specimen_count",
+    "objects": "object_count",
+    "drawers": "container_count",
+    "cabinets": "container_count",
+    "boxes": "container_count",
+    "trays": "container_count",
+    "sections": "section_count",
+}
+IDENTIFIER_CONTEXT = re.compile(
+    r"(?:sample|catalog(?:ue)?|accession|registration|inventory|register|object|specimen|slide)\s*(?:no\.?|number|#|:)?\s*$",
+    re.I,
+)
+
 
 def slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-") or "institution"
+
+
+def canonical_institution_group(institution: str) -> tuple[str, str]:
+    for pattern, key, label in INSTITUTION_GROUP_RULES:
+        if re.search(pattern, institution, flags=re.I):
+            return key, label
+    return slugify(institution), institution
 
 
 def load_rows() -> list[dict[str, str]]:
@@ -81,13 +113,7 @@ def _content_length(headers: Any) -> int | None:
 
 
 def fetch(url: str, max_bytes: int, max_pdf_bytes: int) -> tuple[bytes, str, str, dict[str, Any]]:
-    """Fetch a bounded metadata document.
-
-    PDFs are special: if Content-Length already exceeds the configured PDF cap,
-    the body is not read. If the server omits Content-Length, at most cap+1 bytes
-    are read; an oversized response is discarded rather than stored truncated.
-    Small PDFs are therefore always complete when passed to pypdf.
-    """
+    """Fetch one bounded metadata document, discarding oversized PDFs whole."""
     req = urllib.request.Request(url, headers={
         "User-Agent": USER_AGENT,
         "Accept": "text/html,application/json,application/ld+json,application/pdf,text/plain,text/csv;q=0.8,*/*;q=0.2",
@@ -197,19 +223,49 @@ def relevant_link(url: str, label: str, profile: dict[str, Any]) -> bool:
 
 
 def count_candidates(text: str) -> list[str]:
-    out: list[str] = []
-    seen: set[str] = set()
-    patterns = [
-        r"\b(?:about|approximately|around|over|more than|ca\.?|circa)\s+[\d,]+\b",
-        r"\b[\d,]+\s+(?:microscope slides|slides|preparations|specimens|objects|drawers|cabinets|boxes|trays|sections)\b",
-    ]
-    for pat in patterns:
-        for item in re.findall(pat, text, re.I):
-            item = " ".join(item.split())
-            if item.lower() not in seen:
-                seen.add(item.lower())
-                out.append(item)
-    return out[:30]
+    """Legacy short surfaces; never promote these directly to survey counts."""
+    return [item["surface"] for item in quantity_candidates(text)[:30]]
+
+
+def quantity_candidates(text: str) -> list[dict[str, Any]]:
+    """Return count-like phrases with local context and a conservative namespace.
+
+    A phrase such as ``sample 1745 ... slides`` is marked identifier_context,
+    preventing a catalogue/sample number from being silently promoted to a
+    physical slide count. Every candidate remains evidence-for-review only.
+    """
+    out: list[dict[str, Any]] = []
+    seen: set[tuple[int, int]] = set()
+    pat = re.compile(
+        r"\b(?:(about|approximately|around|over|more than|ca\.?|circa)\s+)?([\d,]+)\s+"
+        r"(microscope slides|slides|preparations|specimens|objects|drawers|cabinets|boxes|trays|sections)\b",
+        re.I,
+    )
+    for match in pat.finditer(text):
+        if match.span() in seen:
+            continue
+        seen.add(match.span())
+        start, end = match.span()
+        before = text[max(0, start - 90):start]
+        after = text[end:min(len(text), end + 90)]
+        surface = " ".join(match.group(0).split())
+        unit = match.group(3).lower()
+        namespace = QUANTITY_UNIT_NAMESPACE.get(unit, "unclassified_count")
+        identifier_probe = before[-55:]
+        if IDENTIFIER_CONTEXT.search(identifier_probe):
+            namespace = "identifier_context"
+        out.append({
+            "surface": surface,
+            "value": match.group(2),
+            "qualifier": (match.group(1) or "").strip(),
+            "unit": unit,
+            "namespace": namespace,
+            "context": " ".join((before + surface + after).split())[:320],
+            "review_required": True,
+        })
+        if len(out) >= 60:
+            break
+    return out
 
 
 def identifier_candidates(text: str) -> list[str]:
@@ -281,7 +337,7 @@ def build_record(
     fetch_meta: dict[str, Any],
 ) -> tuple[dict[str, Any], list[tuple[str, str]]]:
     record: dict[str, Any] = {
-        "schema_version": "slide-survey-institution-harvest-record-v2-small-pdf-only",
+        "schema_version": "slide-survey-institution-harvest-record-v3-quantity-namespaces",
         "url": url,
         "final_url": final_url,
         "content_type": ctype,
@@ -320,7 +376,9 @@ def build_record(
         text = html_to_text(raw)
 
     record["text_sample"] = text[:16000]
-    record["count_candidates"] = count_candidates(text)
+    quantities = quantity_candidates(text)
+    record["quantity_candidates"] = quantities
+    record["count_candidates"] = [item["surface"] for item in quantities[:30]]
     record["identifier_candidates"] = identifier_candidates(text)
     raw_dir = out_dir / "raw"
     raw_dir.mkdir(parents=True, exist_ok=True)
@@ -346,11 +404,16 @@ def main() -> int:
     rows = load_rows()
     if active:
         rows = [row for row in rows if row.get("entry_id") in active]
-    rows = [row for row in rows if slugify(row.get("institution_current", "")) == args.institution_key and row.get("automation_feasibility", "") not in SKIP_AUTOMATION]
+    rows = [
+        row for row in rows
+        if canonical_institution_group(row.get("institution_current", ""))[0] == args.institution_key
+        and row.get("automation_feasibility", "") not in SKIP_AUTOMATION
+    ]
     if not rows:
         raise SystemExit(f"No active automatable rows for {args.institution_key}")
 
-    institution = rows[0].get("institution_current", args.institution_key)
+    _, institution = canonical_institution_group(rows[0].get("institution_current", args.institution_key))
+    institution_aliases = sorted({row.get("institution_current", "").strip() for row in rows if row.get("institution_current", "").strip()})
     out_dir = OUT_ROOT / args.institution_key
     out_dir.mkdir(parents=True, exist_ok=True)
     seed_to_ids: dict[str, list[str]] = {}
@@ -371,9 +434,10 @@ def main() -> int:
             allowed_hosts.add(host.lower())
 
     plan = {
-        "schema_version": "slide-survey-institution-harvest-plan-v2-small-pdf-only",
+        "schema_version": "slide-survey-institution-harvest-plan-v3-canonical-groups",
         "institution_key": args.institution_key,
         "institution": institution,
+        "institution_aliases": institution_aliases,
         "profile": args.profile,
         "mode": args.mode,
         "depth": args.depth,
@@ -444,9 +508,13 @@ def main() -> int:
             f.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
 
     ctype_counts: dict[str, int] = {}
+    quantity_namespace_counts: dict[str, int] = {}
     for record in records:
         key = record.get("content_type", "") or "unknown"
         ctype_counts[key] = ctype_counts.get(key, 0) + 1
+        for candidate in record.get("quantity_candidates", []):
+            namespace = candidate.get("namespace", "unclassified_count")
+            quantity_namespace_counts[namespace] = quantity_namespace_counts.get(namespace, 0) + 1
     summary = {
         **plan,
         "status": "complete",
@@ -457,6 +525,7 @@ def main() -> int:
         "queued_remaining": len(queue),
         "page_budget_reached": len(fetched_urls) >= page_budget,
         "content_type_counts": ctype_counts,
+        "quantity_namespace_counts": quantity_namespace_counts,
         "errors_detail": errors,
     }
     (out_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
