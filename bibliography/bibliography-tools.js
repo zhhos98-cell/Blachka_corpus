@@ -60,7 +60,6 @@
       border-color: rgba(242,238,233,.56);
       color: #fff;
     }
-    .bib-entry[hidden] { display: none !important; }
     .bib-tools-meta {
       flex-basis: 100%;
       display: flex;
@@ -78,14 +77,8 @@
 
   const toolbar = document.createElement('div');
   toolbar.className = 'bib-tools';
-  toolbar.setAttribute('aria-label', 'Bibliography filtering, sorting and export tools');
+  toolbar.setAttribute('aria-label', 'Bibliography sorting and export tools');
   toolbar.innerHTML = `
-    <div class="bib-tools-group" role="group" aria-label="Filter bibliography layer">
-      <span class="bib-tools-label">Layer</span>
-      <button class="bib-tool-button" type="button" data-layer="all" aria-pressed="true">All</button>
-      <button class="bib-tool-button" type="button" data-layer="direct" aria-pressed="false">Blaschka</button>
-      <button class="bib-tool-button" type="button" data-layer="material" aria-pressed="false">Material context</button>
-    </div>
     <div class="bib-tools-group" role="group" aria-label="Sort bibliography">
       <span class="bib-tools-label">Sort</span>
       <button class="bib-tool-button" type="button" data-sort="year" aria-pressed="true">Year ↑</button>
@@ -98,7 +91,7 @@
     </div>
     <div class="bib-tools-meta">
       <p class="bib-tools-status" aria-live="polite"></p>
-      <p class="bib-tools-note">“Blaschka” contains direct scholarship, reception, collection and exhibition records. “Material context” is a bounded technical layer for lampworking, scientific glassblowing, composition, colour and durability. Exports follow the active layer filter.</p>
+      <p class="bib-tools-note">Author sorting uses the first credited author or organization; anonymous items sort by title. CSL JSON is Zotero-importable and preserves the working citation, year, source URLs, and a best-effort title while field-level normalization continues.</p>
     </div>
   `;
 
@@ -107,15 +100,12 @@
 
   const collator = new Intl.Collator(['en', 'de', 'fr'], { sensitivity: 'base', numeric: true });
   let mode = 'year';
-  let layer = 'all';
   let observer;
 
   const entries = () => [...list.querySelectorAll('.bib-entry')];
   const clean = (value) => String(value || '').replace(/\s+/g, ' ').trim();
   const citationText = (node) => clean(node.querySelector('h3')?.textContent);
   const yearOf = (node) => Number.parseInt(node.querySelector('.bib-year')?.textContent || node.dataset.year || '9999', 10);
-  const contextOf = (node) => node.dataset.bibContext === 'material' ? 'material' : 'direct';
-  const visibleEntries = () => entries().filter((node) => !node.hidden);
 
   const organizationPattern = /\b(Museum|Museums|University|Universität|Harvard|Stadt|Fondazione|National|Australian|Amgueddfa|Musées|Society|Institute|Institution|College|Library|Press|Department)\b/i;
 
@@ -150,15 +140,6 @@
   const urlsOf = (node) => [...node.querySelectorAll('.bib-links a')].map((a) => a.href).filter(Boolean);
   const labelsOf = (node) => [...node.querySelectorAll('.bib-links a')].map((a) => clean(a.textContent.replace(/↗/g, ''))).filter(Boolean);
 
-  const applyFilter = () => {
-    entries().forEach((node) => {
-      node.hidden = layer !== 'all' && contextOf(node) !== layer;
-    });
-    toolbar.querySelectorAll('[data-layer]').forEach((button) => {
-      button.setAttribute('aria-pressed', String(button.dataset.layer === layer));
-    });
-  };
-
   const applySort = () => {
     const rows = entries().map((node, index) => ({
       node,
@@ -180,17 +161,14 @@
     toolbar.querySelectorAll('[data-sort]').forEach((button) => {
       button.setAttribute('aria-pressed', String(button.dataset.sort === mode));
     });
-    applyFilter();
     updateStatus();
     if (observer) observer.observe(list, { childList: true });
   };
 
   const updateStatus = () => {
-    const total = entries().length;
-    const visible = visibleEntries().length;
+    const count = entries().length;
     const status = toolbar.querySelector('.bib-tools-status');
-    const layerLabel = layer === 'material' ? 'material context' : layer === 'direct' ? 'Blaschka' : 'all layers';
-    if (status) status.textContent = `${visible}${visible === total ? '' : ` of ${total}`} records · ${layerLabel} · ${mode === 'author' ? 'author A–Z' : 'year ascending'}`;
+    if (status) status.textContent = `${count} records · ${mode === 'author' ? 'author A–Z' : 'year ascending'}`;
   };
 
   const csvCell = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`;
@@ -208,10 +186,9 @@
   };
 
   const exportCsv = () => {
-    const header = ['year', 'layer', 'sort_author', 'title', 'citation', 'source_labels', 'source_urls'];
-    const rows = visibleEntries().map((node) => [
+    const header = ['year', 'sort_author', 'title', 'citation', 'source_labels', 'source_urls'];
+    const rows = entries().map((node) => [
       yearOf(node),
-      contextOf(node),
       authorSortKey(node),
       titleGuess(node),
       citationText(node),
@@ -219,36 +196,29 @@
       urlsOf(node).join(' | ')
     ]);
     const csv = '\ufeff' + [header, ...rows].map((row) => row.map(csvCell).join(',')).join('\r\n');
-    download(`blaschka-working-bibliography-${layer}.csv`, csv, 'text/csv;charset=utf-8');
+    download('blaschka-working-bibliography.csv', csv, 'text/csv;charset=utf-8');
   };
 
   const exportCsl = () => {
-    const data = visibleEntries().map((node, index) => {
+    const data = entries().map((node, index) => {
       const urls = urlsOf(node);
       const item = {
-        id: `blaschka-bib-${layer}-${String(index + 1).padStart(3, '0')}`,
+        id: `blaschka-bib-${String(index + 1).padStart(3, '0')}`,
         type: 'article',
         title: titleGuess(node),
         issued: { 'date-parts': [[yearOf(node)]] },
-        note: `Bibliography layer: ${contextOf(node)}. Full working citation: ${citationText(node)}`
+        note: `Full working citation: ${citationText(node)}`
       };
       if (urls[0]) item.URL = urls[0];
       if (urls.length > 1) item.note += ` Additional source URLs: ${urls.slice(1).join(' | ')}`;
       return item;
     });
-    download(`blaschka-working-bibliography-${layer}.json`, JSON.stringify(data, null, 2) + '\n', 'application/json;charset=utf-8');
+    download('blaschka-working-bibliography.json', JSON.stringify(data, null, 2) + '\n', 'application/json;charset=utf-8');
   };
 
   toolbar.addEventListener('click', (event) => {
     const button = event.target.closest('button');
     if (!button) return;
-
-    if (button.dataset.layer) {
-      layer = button.dataset.layer;
-      applyFilter();
-      updateStatus();
-      return;
-    }
 
     if (button.dataset.sort) {
       mode = button.dataset.sort;
