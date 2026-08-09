@@ -51,4 +51,11 @@
 
   const scopeTitle = document.querySelector('#bib-scope-title');
   if (scopeTitle) scopeTitle.textContent = '1883–2026 · sixteenth expanded pass';
+
+  if (!document.querySelector('script[data-bib-pass17-loader]')) {
+    const pass17 = document.createElement('script');
+    pass17.src = 'bibliography-pass17.js?v=20260809-1';
+    pass17.dataset.bibPass17Loader = 'true';
+    document.head.appendChild(pass17);
+  }
 })();
