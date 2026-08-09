@@ -86,11 +86,11 @@
     <div class="bib-tools-group" role="group" aria-label="Export bibliography">
       <span class="bib-tools-label">Export</span>
       <button class="bib-tool-button" type="button" data-export="csv">CSV</button>
-      <button class="bib-tool-button" type="button" data-export="ris">RIS · Zotero</button>
+      <button class="bib-tool-button" type="button" data-export="csl">CSL JSON · Zotero</button>
     </div>
     <div class="bib-tools-meta">
       <p class="bib-tools-status" aria-live="polite"></p>
-      <p class="bib-tools-note">Author sorting uses the first credited author or organization; anonymous items sort by title. RIS preserves the working citation, year, first source URL, and a best-effort title for Zotero import.</p>
+      <p class="bib-tools-note">Author sorting uses the first credited author or organization; anonymous items sort by title. CSL JSON is Zotero-importable and preserves the working citation, year, source URLs, and a best-effort title while field-level normalization continues.</p>
     </div>
   `;
 
@@ -101,11 +101,8 @@
   let observer;
 
   const entries = () => [...list.querySelectorAll('.bib-entry')];
-
   const clean = (value) => String(value || '').replace(/\s+/g, ' ').trim();
-
   const citationText = (node) => clean(node.querySelector('h3')?.textContent);
-
   const yearOf = (node) => Number.parseInt(node.querySelector('.bib-year')?.textContent || node.dataset.year || '9999', 10);
 
   const organizationPattern = /\b(Museum|Museums|University|Universität|Harvard|Stadt|Fondazione|National|Australian|Amgueddfa|Musées|Society|Institute|Institution|College|Library|Press|Department)\b/i;
@@ -200,23 +197,21 @@
     download('blaschka-working-bibliography.csv', csv, 'text/csv;charset=utf-8');
   };
 
-  const risEscape = (value) => clean(value).replace(/[\r\n]+/g, ' ');
-
-  const exportRis = () => {
-    const ris = entries().map((node) => {
-      const lines = [
-        'TY  - GEN',
-        `T1  - ${risEscape(titleGuess(node))}`,
-        `PY  - ${yearOf(node)}`,
-        `N1  - Full working citation: ${risEscape(citationText(node))}`
-      ];
+  const exportCsl = () => {
+    const data = entries().map((node, index) => {
       const urls = urlsOf(node);
-      if (urls[0]) lines.push(`UR  - ${urls[0]}`);
-      if (urls.length > 1) lines.push(`N1  - Additional source URLs: ${urls.slice(1).join(' | ')}`);
-      lines.push('ER  -');
-      return lines.join('\r\n');
-    }).join('\r\n\r\n');
-    download('blaschka-working-bibliography.ris', ris + '\r\n', 'application/x-research-info-systems;charset=utf-8');
+      const item = {
+        id: `blaschka-bib-${String(index + 1).padStart(3, '0')}`,
+        type: 'article',
+        title: titleGuess(node),
+        issued: { 'date-parts': [[yearOf(node)]] },
+        note: `Full working citation: ${citationText(node)}`
+      };
+      if (urls[0]) item.URL = urls[0];
+      if (urls.length > 1) item.note += ` Additional source URLs: ${urls.slice(1).join(' | ')}`;
+      return item;
+    });
+    download('blaschka-working-bibliography.json', JSON.stringify(data, null, 2) + '\n', 'application/json;charset=utf-8');
   };
 
   toolbar.addEventListener('click', (event) => {
@@ -230,7 +225,7 @@
     }
 
     if (button.dataset.export === 'csv') exportCsv();
-    if (button.dataset.export === 'ris') exportRis();
+    if (button.dataset.export === 'csl') exportCsl();
   });
 
   let scheduled = false;
