@@ -3,7 +3,7 @@ name: Attach bibliography pass 6
 on:
   push:
     paths:
-      - '.github/workflows/attach-bib-pass6.yml'
+      - 'BIB_PASS6_TRIGGER.txt'
 
 permissions:
   contents: write
@@ -13,27 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Load sixth bibliography pass
+      - name: Patch bibliography loader
+        shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
           p = Path('bibliography/bibliography-form.js')
           s = p.read_text()
-          marker = "  if (!document.querySelector('script[data-bib-pass6-loader]')) {"
+          marker = "data-bib-pass6-loader"
           if marker not in s:
               pos = s.rfind('})();')
-              if pos < 0:
-                  raise SystemExit('Could not locate runtime closure')
-              loader = """  if (!document.querySelector('script[data-bib-pass6-loader]')) {
-    const pass6 = document.createElement('script');
-    pass6.src = 'bibliography-pass6.js?v=20260809-1';
-    pass6.dataset.bibPass6Loader = 'true';
-    document.head.appendChild(pass6);
-  }\n"""
-              s = s[:pos] + loader + s[pos:]
-              p.write_text(s)
+              if pos == -1:
+                  raise SystemExit('runtime closure not found')
+              loader = "\n  if (!document.querySelector('script[data-bib-pass6-loader]')) {\n    const pass6 = document.createElement('script');\n    pass6.src = 'bibliography-pass6.js?v=20260809-1';\n    pass6.dataset.bibPass6Loader = 'true';\n    document.head.appendChild(pass6);\n  }\n"
+              p.write_text(s[:pos] + loader + s[pos:])
           PY
       - name: Commit loader
+        shell: bash
         run: |
           if git diff --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
