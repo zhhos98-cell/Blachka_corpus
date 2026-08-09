@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Historical newspaper audit for Blaschka auction and transfer discovery",
+  "purpose": "Reuse the project's earlier British Newspaper Archive query matrix as a bounded historical audit for the auction module, so maker-name and generic glass-model searches are not silently rerun or misread as exhaustive coverage.",
+  "source_backend": {
+    "file": "microscopy_first_round_1850_1886.xlsx",
+    "run_date": "2026-07-24",
+    "database": "British Newspaper Archive",
+    "date_range": "1850-01-01/1886-12-31",
+    "reuse_note": "The matrix was created for the microscopy/material-transfer project but deliberately included maker-specific Blaschka/Blaschke and glass-model transfer queries. Those rows are re-used here only at the level their original query log supports."
+  },
+  "query_runs": [
+    {
+      "query_run_id": "QR-F09",
+      "query_group_id": "F09",
+      "all_words": "glass models auction",
+      "exact_phrase": "",
+      "completion_status": "noisy_replaced",
+      "displayed_hit_count": 123990,
+      "screened_count": 8,
+      "retained_article_count": 0,
+      "retained_event_count": 0,
+      "blocker": "semantic_noise",
+      "original_note": "Unusable without maker/institution anchors",
+      "auction_module_interpretation": "Generic nineteenth-century newspaper searching for `glass models auction` is too noisy to function as an exhaustion test. Future newspaper work should use maker spelling, taxon, collector, institution, inventory number, address or named-estate anchors."
+    },
+    {
+      "query_run_id": "QR-F10",
+      "query_group_id": "F10",
+      "all_words": "Blaschka presented",
+      "completion_status": "count_unknown",
+      "displayed_hit_count": null,
+      "displayed_hit_count_text": "results present",
+      "screened_count": 2,
+      "retained_article_count": 0,
+      "retained_event_count": 0,
+      "blocker": "dynamic_count",
+      "original_note": "No relevant preview retained",
+      "auction_module_interpretation": "No qualifying auction event can be promoted from this maker-specific BNA row."
+    },
+    {
+      "query_run_id": "QR-F11",
+      "query_group_id": "F11",
+      "all_words": "Blaschke presented models",
+      "completion_status": "completed_screened",
+      "displayed_hit_count": 4,
+      "screened_count": 4,
+      "retained_article_count": 2,
+      "retained_event_count": 2,
+      "original_note": "Edinburgh 1867 purchase and 1871 acquisition; presented term noisy",
+      "coverage_complete": true,
+      "screening_complete": true,
+      "auction_module_interpretation": "The only two retained Blaschke-model records are institutional acquisition evidence and are therefore excluded from the auction layer by policy."
+    },
+    {
+      "query_run_id": "QR-F12",
+      "query_group_id": "F12",
+      "all_words": "Blaschka purchased models",
+      "completion_status": "count_unknown",
+      "displayed_hit_count": null,
+      "displayed_hit_count_text": "results present",
+      "screened_count": 1,
+      "retained_article_count": 0,
+      "retained_event_count": 0,
+      "blocker": "dynamic_count",
+      "original_note": "Single visible lead did not prove purchase",
+      "auction_module_interpretation": "No qualifying auction event can be promoted from this row."
+    }
+  ],
+  "institutional_exclusions_recovered_by_BNA": [
+    {
+      "event_id": "BNA-E0010",
+      "article_id": "BNA-A0035",
+      "publication_date": "1867-08-24",
+      "event_type": "institutional_purchase",
+      "maker_as_recorded": "Leopold Blaschke",
+      "recipient": "Edinburgh Museum of Natural History",
+      "object_scope": "set of glass sea-anemone and allied-form models",
+      "evidence_state": "verified in original matrix",
+      "auction_inclusion": false,
+      "exclusion_reason": "Explicit institutional purchase; belongs in collection/provenance mapping.",
+      "open_fields": [
+        "purchase date distinct from newspaper report date",
+        "price",
+        "intermediary/dealer"
+      ]
+    },
+    {
+      "event_id": "BNA-E0026",
+      "article_id": "BNA-A0059",
+      "publication_date": "1871-03-18",
+      "newspaper": "The Field",
+      "article_title": "Glass Models Recently Acquired",
+      "event_type": "institutional_purchase",
+      "maker_as_recorded": "Blaschke, Dresden",
+      "object_scope": "set of glass models of Medusae and Molluscs",
+      "preview_text_summary": "An interesting set of Blaschke glass models of Medusae and Molluscs was reported as recently acquired by purchase.",
+      "recipient": null,
+      "recipient_status": "institution absent from preview",
+      "auction_inclusion": false,
+      "exclusion_reason": "The source explicitly describes acquisition by purchase into an institution, even though the institution name is missing from the retained preview; do not promote it into the auction layer or merge it with Edinburgh 1867 without proof.",
+      "source_identifier": "bl/0002446/18710318/072/0013",
+      "viewer_url": "https://www.britishnewspaperarchive.co.uk/viewer/bl/0002446/18710318/072/0013"
+    }
+  ],
+  "historical_auction_search_implications": [
+    "The fully screened F11 row is a useful negative boundary for that exact Blaschke spelling/query formulation: its retained hits resolve to institutional acquisitions, not public auction lots.",
+    "F09 demonstrates why generic `glass models auction` newspaper queries are unusable at scale without provenance anchors.",
+    "F10 and F12 remain partial/count-unstable and cannot support an absence claim.",
+    "The newspaper layer should now be driven by named seeds from the auction backend: Philip Brookes Mason, Science Museum inventory numbers, Berlin zoological-institute labels, Loudon's unnamed school/dealer, model numbers such as L. No. 330/343, and exact taxa."
+  ],
+  "coverage_guard": "This audit reuses a bounded 1850-1886 BNA search matrix. It is not a complete British newspaper search for Blaschka auctions: some query rows were count-unstable or semantically noisy, and the matrix ends in 1886, before the Mason estate and most later secondary-market history."
+}
