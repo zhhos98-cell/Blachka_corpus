@@ -1,0 +1,54 @@
+from pathlib import Path
+
+p = Path('bibliography/index.html')
+s = p.read_text()
+
+s = s.replace('1894–2025 · second expanded pass', '1894–2025 · third expanded pass')
+s = s.replace(
+    'Entries are arranged by publication year. The list combines modern scholarship with a small number of early historical publications that remain important for tracing the historiography of the Glass Flowers and marine models.',
+    'Entries are arranged by publication year. The list combines modern scholarship with selected historical reception, museum literature, and other published records that help reconstruct how the Glass Flowers and marine models were described, exhibited, conserved, and rediscovered.'
+)
+
+def before(marker, block):
+    global s
+    if block.strip() in s:
+        return
+    if marker not in s:
+        raise RuntimeError(f'Marker not found: {marker[:100]}')
+    s = s.replace(marker, block + '\n' + marker, 1)
+
+marker = '        <article class="bib-entry"><p class="bib-year">1897</p><div><h3>Marcia E. Hale'
+before(marker, '''        <article class="bib-entry"><p class="bib-year">1895</p><div><h3>“The Ware Collection of Blaschka Glass Models of Plants and Flowers in the Botanical Museum of Harvard University,” <em>Scientific American Supplement</em> 39, no. 1003supp (23 March 1895): 16036.</h3><p class="bib-links"><a href="https://www.scientificamerican.com/article/the-ware-collection-of-blaschka-glass-models-of-plants-and-flowers-in-the-botanical-museum-of-harvard-university/" target="_blank" rel="noopener">Scientific American ↗</a> · <a href="https://doi.org/10.1038/scientificamerican03231895-16036bsupp" target="_blank" rel="noopener">DOI ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">1895</p><div><h3>Emma F. Cary, “A Garden of Glass,” <em>Young Catholic: An Illustrated Magazine for Young Folks</em>, 20 January 1895, 22.</h3><p class="bib-links"><a href="https://thecela.org/wp-content/uploads/LRR_13_POPULAR-RECEPTION-FOR-HARVARDS-GLASS-FLOWERS.pdf" target="_blank" rel="noopener">HOLLIS reception study ↗</a></p></div></article>''')
+
+marker = '        <article class="bib-entry"><p class="bib-year">1940</p><div><h3>Fritz Kredel'
+before(marker, '''        <article class="bib-entry"><p class="bib-year">1904</p><div><h3>Vincent Van Marter Beede, “Miracles in Glass,” <em>The House Beautiful</em> 16, no. 4 (September 1904): 16.</h3><p class="bib-links"><a href="https://gahistoricnewspapers.galileo.usg.edu/lccn/sn87090456/1904-09-10/ed-1/seq-8/" target="_blank" rel="noopener">Contemporary reprint ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">1915</p><div><h3>George Lincoln Goodale, <em>The Ware Collection of Blaschka Glass-Models of Plants in Flower</em>. Cambridge, MA: Harvard University, 1915.</h3><p class="bib-links"><a href="https://agris.fao.org/search/en/providers/122535/records/65de06edb766d82b18fbd055" target="_blank" rel="noopener">National Agricultural Library record ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">1935</p><div><h3>“The Story of the Glass Flowers at the University Museum,” <em>Harvard Summer School News</em> 1, 12 July 1935.</h3><p class="bib-links"><a href="https://citeseerx.ist.psu.edu/document?doi=38b3ea5123c44a122defdd256f717b3bff644d45&amp;repid=rep1&amp;type=pdf" target="_blank" rel="noopener">Harvard thesis citation ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">1938</p><div><h3>“Bohemian Maker’s Retirement Completes Harvard’s Glass-Flower Collection,” <em>Life</em>, 28 February 1938, 24.</h3><p class="bib-links"><a href="https://thecela.org/wp-content/uploads/LRR_13_POPULAR-RECEPTION-FOR-HARVARDS-GLASS-FLOWERS.pdf" target="_blank" rel="noopener">HOLLIS reception study ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">1938</p><div><h3>“Flowers in Glass Main Spectacle,” <em>Boston Post</em>, 3 October 1938.</h3><p class="bib-links"><a href="https://citeseerx.ist.psu.edu/document?doi=38b3ea5123c44a122defdd256f717b3bff644d45&amp;repid=rep1&amp;type=pdf" target="_blank" rel="noopener">Harvard thesis citation ↗</a></p></div></article>''')
+
+marker = '        <article class="bib-entry"><p class="bib-year">1963</p><div><h3>Oakes Ames'
+before(marker, '''        <article class="bib-entry"><p class="bib-year">1961</p><div><h3>Mary Lee Ware, “How Were the Glass Flowers Made?” <em>Botanical Museum Leaflets, Harvard University</em> 19(6): 125–136.</h3><p class="bib-links"><a href="https://biostor.org/reference/160823" target="_blank" rel="noopener">BioStor / BHL ↗</a> · <a href="https://www.jstor.org/stable/41762212" target="_blank" rel="noopener">JSTOR ↗</a></p></div></article>''')
+
+marker = '        <article class="bib-entry"><p class="bib-year">1978</p><div><h3>C. G. Kessler'
+before(marker, '''        <article class="bib-entry"><p class="bib-year">1976</p><div><h3>Robert C. Gormley, “Glass Flowers to Show in New York: Elaborate Safety Measures Used,” <em>The Harvard Crimson</em>, 1 March 1976.</h3><p class="bib-links"><a href="https://www.thecrimson.com/article/1976/3/1/glass-flowers-to-show-in-new/" target="_blank" rel="noopener">Harvard Crimson ↗</a></p></div></article>''')
+
+marker = '        <article class="bib-entry"><p class="bib-year">1993</p><div><h3>Rika Smith McNally'
+before(marker, '''        <article class="bib-entry"><p class="bib-year">1989</p><div><h3>T. Kennedy, “Blowing and Blasting,” <em>Technology Ireland</em> (September 1989): 31–33.</h3><p class="bib-links"><a href="https://irishmuseums.org/wp-content/uploads/2026/03/Museum-Ireland-Vol-13-2003-Irish-Museums-Association.pdf" target="_blank" rel="noopener">Museum Ireland bibliography ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">1990</p><div><h3>David Whitehouse, “The Amazing Blaschkas,” <em>Glass Art Society Journal</em> 20: 78–84.</h3><p class="bib-links"><a href="https://www.stadtmuseum-tuebingen.de/wp-content/uploads/2024/06/Kunstformen-des-Meeres.pdf" target="_blank" rel="noopener">Tübingen bibliography ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">1991</p><div><h3>David Whitehouse, “The Blaschka Animals,” <em>Glass</em> 44 (Summer 1991): 36.</h3><p class="bib-links"><a href="https://irishmuseums.org/wp-content/uploads/2026/03/Museum-Ireland-Vol-13-2003-Irish-Museums-Association.pdf" target="_blank" rel="noopener">Museum Ireland bibliography ↗</a></p></div></article>''')
+
+marker = '        <article class="bib-entry"><p class="bib-year">1998</p><div><h3>Henri Reiling'
+before(marker, '''        <article class="bib-entry"><p class="bib-year">1994</p><div><h3>“The Blaschka Project,” <em>The Glass Cone</em> 38 (Autumn 1994): 5.</h3><p class="bib-links"><a href="https://www.theglasssociety.org/publication/the-glass-cone-no-38-autumn-1994/" target="_blank" rel="noopener">The Glass Society ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">1995</p><div><h3>Chris Meechan, “A Glass Menagerie: The Work of Leopold and Rudolph Blaschka,” <em>The Glass Cone</em> 39 (Spring 1995): 4.</h3><p class="bib-links"><a href="https://www.theglasssociety.org/publication/the-glass-cone-no-39-spring-1995/" target="_blank" rel="noopener">The Glass Society ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">1997</p><div><h3>“The Glass Animals,” <em>Harvard Magazine</em>, 1 July 1997.</h3><p class="bib-links"><a href="https://www.harvardmagazine.com/1997/07/the-glass-animals" target="_blank" rel="noopener">Harvard Magazine ↗</a></p></div></article>''')
+
+marker = '        <article class="bib-entry"><p class="bib-year">2000</p><div><h3>Henri Reiling'
+before(marker, '''        <article class="bib-entry"><p class="bib-year">1998</p><div><h3>Carlo G. Pantano, Susan M. Rossi-Wilcox, and David Lange, “The Glass Flowers,” in W. Patrick McCray and W. David Kingery, eds., <em>The Prehistory &amp; History of Glassmaking Technology</em>, Ceramics and Civilization 8, 61–78. Westerville, OH: American Ceramic Society.</h3><p class="bib-links"><a href="https://www.gbv.de/dms/ilmenau/toc/251245365.PDF" target="_blank" rel="noopener">Volume contents ↗</a> · <a href="https://resources.culturalheritage.org/osg-postprints/wp-content/uploads/sites/8/2015/02/osg013-01.pdf" target="_blank" rel="noopener">Conservation bibliography ↗</a></p></div></article>''')
+
+marker = '        <article class="bib-entry"><p class="bib-year">2003</p><div><h3>Susan M. Rossi-Wilcox'
+before(marker, '''        <article class="bib-entry"><p class="bib-year">2002</p><div><h3>Chris Meechan and Henri Reiling, “Leopold and Rudolf Blaschka and Natural History in the Nineteenth Century,” in James Peto and Angie Hudson, eds., <em>Leopold &amp; Rudolf Blaschka</em>, 12–27. London: Design Museum.</h3><p class="bib-links"><a href="https://www.stadtmuseum-tuebingen.de/wp-content/uploads/2024/06/Kunstformen-des-Meeres.pdf" target="_blank" rel="noopener">Tübingen bibliography ↗</a></p></div></article>
+        <article class="bib-entry"><p class="bib-year">2002</p><div><h3>Henri Reiling, “Glass Models of Soft Bodied Animals: The Relation between Blaschka, Frič and the National Museum,” <em>Journal of the National Museum (Prague), Natural History Series</em> 171(1–4): 81–84.</h3><p class="bib-links"><a href="https://publikace.nm.cz/periodicke-publikace/jotnmpnhs/171-1-4/glass-models-of-soft-bodied-animals-the-relation-between-blaschka-fric-and-the-national-museum" target="_blank" rel="noopener">National Museum Prague ↗</a></p></div></article>''')
+
+p.write_text(s)
