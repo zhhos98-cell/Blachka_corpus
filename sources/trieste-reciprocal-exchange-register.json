@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Trieste Reciprocal Live-Animal / Glass-Model Exchange Register",
+  "generated_date": "2026-08-10",
+  "scope": "A source-controlled reconstruction of the reciprocal relationship linking the k.k. Zoological Station at Trieste, Carl Claus / Vienna, Franz Eilhard Schulze / Graz and the Blaschka workshop. The register treats living-animal supply and glass-model orders as two linked but distinct directions of circulation.",
+  "primary_or_institutional_basis": {
+    "direct_blaschka_primary": "Rudolf Blaschka's retrospective workshop history states that living animals from the Imperial Austrian Zoological Station at Trieste were kept in seawater tanks in Dresden and explicitly connects this to improvement in the zoological models.",
+    "institutional_reconstruction": "University of Vienna collection research provides a detailed chronology of the Trieste–Dresden relationship, including live-animal shipments from 1878, the 1880 dispute, packing/temperature constraints and resumed exchanges/orders by 1884.",
+    "official_locator": "https://bibliothek.univie.ac.at/sammlungen/objekt_des_monats/003878.html"
+  },
+  "chronology": [
+    {
+      "date": "1875",
+      "event": "k.k. Zoological Station at Trieste opened under the Vienna/Graz zoological institutes",
+      "direction": "institutional infrastructure",
+      "evidence": "University of Vienna identifies supply of preserved and living marine animals to the Vienna and Graz zoological institutes as one function of the station."
+    },
+    {
+      "date": "from 1878",
+      "event": "living marine animals dispatched from Trieste to Dresden",
+      "direction": "Trieste → Blaschka workshop",
+      "evidence": "University of Vienna states that Dresden became a destination of Trieste live-animal shipments from 1878; several aquaria in the workshop allowed close observation of living reference organisms.",
+      "direct_primary_support": "Rudolf's later workshop account independently says the Dresden seawater tanks contained living animals sent by the Trieste station."
+    },
+    {
+      "date": "before / around 1880",
+      "event": "models supplied in the opposite direction",
+      "direction": "Blaschka workshop → Trieste / Vienna-Graz zoological network",
+      "evidence": "University of Vienna describes Claus and Schulze requesting models corresponding to their marine research interests and notes that these exchanges were not always simply cash purchases.",
+      "guard": "Do not translate 'not always against money' into a one-for-one barter ratio without the underlying account/correspondence."
+    },
+    {
+      "date": "1880",
+      "event": "rupture over routing and quality of the reciprocal relationship",
+      "direction": "administrative rerouting dispute",
+      "evidence": "Carl Claus insisted that Blaschka models should be sent to the Vienna institute instead of directly to the Trieste station. Leopold objected because he feared the quality of living-animal shipments would no longer meet his requirements; he had to seek other sources of live marine animals.",
+      "research_value": "The dispute makes the two directions causally visible: the destination of finished models affected access to living source organisms."
+    },
+    {
+      "date": "1880s",
+      "event": "live-animal packing and dispatch constraints",
+      "direction": "Trieste → inland recipients",
+      "evidence": "University of Vienna describes snails, anemones, mussels and seahorses sealed in jars, placed in padded baskets and sent by express/urgent delivery only when temperatures allowed. Only robust individuals survived, so animals had to be selected and prepared for shipment.",
+      "research_value": "Selection for transportability could alter which living forms reached the workshop for observation."
+    },
+    {
+      "date": "by 1884",
+      "event": "relationship restored",
+      "direction": "bidirectional",
+      "evidence": "University of Vienna reports that Leopold again received requested marine animals, mostly mussels and snails, from Trieste; Carl Claus ordered 38 models and a few months later another 77."
+    },
+    {
+      "date": "1887-02",
+      "event": "probable final University of Vienna order",
+      "direction": "Blaschka workshop → Vienna",
+      "evidence": "University of Vienna reports a probable final order of 21 models in February 1887."
+    }
+  ],
+  "logistical_affordances": [
+    "animals had to be sufficiently robust for multi-day inland transport",
+    "packing involved jars nested in padded baskets",
+    "express/urgent delivery reduced but did not remove transit stress",
+    "temperature determined whether dispatch should occur",
+    "the quality of the arriving living animal mattered to the workshop as observational reference",
+    "routing of glass models and supply of live animals were institutionally linked through the same scientific relationship"
+  ],
+  "research_implication": "This case is stronger than a linear supply-chain example. It is a reciprocal knowledge-and-object circuit: Trieste supplied living organisms that enabled the Blaschkas to improve representations; the Blaschkas supplied glass models that served the zoological institutes. The 1880 dispute shows that administrative routing in one direction could threaten epistemic quality in the other.",
+  "archive_targets": [
+    {
+      "repository": "Österreichisches Staatsarchiv, Allgemeines Verwaltungsarchiv",
+      "reference": "Zoologische Station Triest, Signatur 2A, 1873–1903",
+      "target": "Claus/Schulze/Blaschka correspondence, live-animal dispatch, expenses, permissions and administrative routing"
+    },
+    {
+      "repository": "University of Vienna Archives / Zoological Institute records",
+      "target": "Carl Claus correspondence, acquisition accounts, model orders, Trieste station correspondence and live-animal receipt records"
+    },
+    {
+      "repository": "Rakow Research Library",
+      "target": "workshop drafts to Claus, Schulze and Trieste, order/business books and live-animal receipt/complaint correspondence"
+    }
+  ],
+  "evidence_guard": "The University of Vienna page is an official institutional reconstruction but does not expose every underlying manuscript shelfmark. Its chronology should therefore guide retrieval; direct quotations and transaction-level claims in a scholarly article should be anchored to the underlying correspondence/accounts when obtainable."
+}
