@@ -87,9 +87,16 @@
     workingNote.textContent = 'The bibliography is being expanded both chronologically and collection by collection. HOLLIS Series VIII remains a discovery backbone, while institutional publications from Vienna, Cardiff, Edinburgh, London, Sydney, Ithaca, and other collection sites are being used to recover museum-specific scholarship, conservation records, exhibition writing, and digital documentation. Primary workshop and transaction records remain catalogued separately.';
   }
 
+  if (!document.querySelector('script[data-bib-pass8-loader]')) {
+    const pass8 = document.createElement('script');
+    pass8.src = 'bibliography-pass8.js?v=20260809-1';
+    pass8.dataset.bibPass8Loader = 'true';
+    document.head.appendChild(pass8);
+  }
+
   if (!document.querySelector('script[data-bib-tools-loader]')) {
     const tools = document.createElement('script');
-    tools.src = 'bibliography-tools.js?v=20260809-1';
+    tools.src = 'bibliography-tools.js?v=20260809-2';
     tools.dataset.bibToolsLoader = 'true';
     document.head.appendChild(tools);
   }
