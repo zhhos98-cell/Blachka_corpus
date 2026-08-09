@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0-zotero-ingest-sample",
+  "source": {
+    "repository": "zhhos98-cell/Blachka_corpus",
+    "path": "bibliography/bibliography-pass37.js",
+    "bibliography_pass": 37
+  },
+  "records": [
+    {
+      "record_id": "arnaud_saraceno_2025_metric_gesture",
+      "item_type": "journalArticle",
+      "title": "Qui regarde la traduction métrique du geste ?",
+      "creators": [
+        {
+          "creator_type": "author",
+          "first_name": "David",
+          "last_name": "Arnaud"
+        },
+        {
+          "creator_type": "author",
+          "first_name": "Marco",
+          "last_name": "Saraceno"
+        }
+      ],
+      "publication_title": "Socio-anthropologie",
+      "volume": "51",
+      "year": 2025,
+      "pages": "189-194",
+      "language": "fr",
+      "identifiers": {
+        "doi": "10.4000/14av6",
+        "isbn": null,
+        "issn": null
+      },
+      "urls": {
+        "doi": "https://doi.org/10.4000/14av6",
+        "open_full_text": "https://journals.openedition.org/socio-anthropologie/19441?lang=fr"
+      },
+      "zotero_lookup": {
+        "primary": {
+          "type": "doi",
+          "value": "10.4000/14av6"
+        },
+        "fallback": {
+          "type": "title_author_year",
+          "title": "Qui regarde la traduction métrique du geste ?",
+          "authors": ["David Arnaud", "Marco Saraceno"],
+          "year": 2025
+        }
+      },
+      "acquisition": {
+        "metadata_status": "ready",
+        "full_text_status": "known_open_url",
+        "preferred_action": "resolve_doi_then_attach_open_full_text",
+        "zotero_item_key": null,
+        "attachment_key": null
+      },
+      "corpus_relevance": {
+        "topics": [
+          "Blaschka Renaissance",
+          "Clava multicornis",
+          "replication",
+          "motion capture",
+          "lampworking gesture",
+          "material and immaterial heritage"
+        ],
+        "reverse_extraction_priority": "high"
+      },
+      "provenance_note": "Fields are extracted from bibliography pass 37. ISSN and Zotero keys remain unset because the source record does not supply them and no Zotero import has yet been run."
+    }
+  ]
+}
