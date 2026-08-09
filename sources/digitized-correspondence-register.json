@@ -1,12 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "title": "The Blaschka Object Network — Digitized Correspondence Corpus Register",
   "generated_date": "2026-08-10",
   "scope": "Digitized primary-source correspondence corpora that can be downloaded or searched directly and ingested into a research corpus. A collection-level digital surrogate is distinguished from item-level content claims: dates, correspondents and holding institutions may be secure even when individual letters have not yet been content-coded.",
   "status_vocabulary": {
     "direct_digitized_primary_corpus": "A substantial primary-source corpus is openly digitized with page images and/or downloadable OCR/text.",
     "metadata_only_until_read": "Collection identity and dates are verified, but letter content must be read before topic claims are assigned.",
-    "metadata_date_conflict": "The displayed archival label and structured metadata date disagree; the manuscript/page label remains the authority until image review."
+    "metadata_date_conflict": "The displayed archival label and structured metadata date disagree; the manuscript/page label remains the authority until image review.",
+    "part_level_pdf_mirror": "An individual BHL correspondence part has a separately downloadable PDF and persistent record on Zenodo, deposited by Plazi from BHL."
   },
   "corpora": [
     {
@@ -24,7 +25,8 @@
         "JPEG 2000 download",
         "downloadable text/OCR",
         "table of contents with individually dated correspondence parts",
-        "Internet Archive mirror"
+        "Internet Archive mirror",
+        "part-level Plazi/Zenodo PDF mirrors for multiple BHL parts"
       ],
       "corpus_scale_note": "BHL's Rudolf Blaschka creator index exposes 80 chapters/articles/treatments, dominated by the dated correspondence parts in this collection. The item table of contents runs from 23 October 1895 through 10 December 1927 and also contains notes, postcards, extracts and some correspondence to or from G. L. Goodale and other participants.",
       "content_guard": "BHL describes the Blaschka-to-Deane letters as botanical and personal. Logistics, patronage, workshop practice, regulation or model-production topics must be coded from the individual pages rather than inferred from the date span.",
@@ -55,17 +57,75 @@
           "status": "metadata_date_conflict"
         }
       ],
+      "part_level_mirrors": {
+        "platform": "Zenodo",
+        "depositor": "Plazi",
+        "relationship": "individual PDFs derived from BHL correspondence parts",
+        "guard": "The Zenodo records inherit BHL part metadata and do not independently resolve BHL date conflicts. They are useful as persistent downloadable part-level surrogates, not as a new archival authority.",
+        "verified_examples": [
+          {
+            "label": "Blaschka, Rudolf Dec. 11, 1902",
+            "bhl_part": "298530",
+            "doi": "10.5281/zenodo.16317608",
+            "file": "bhlpart298530.pdf"
+          },
+          {
+            "label": "Blaschka, Rudolf Dec. 11, 1904",
+            "bhl_part": "298534",
+            "doi": "10.5281/zenodo.16401771",
+            "file": "bhlpart298534.pdf"
+          },
+          {
+            "label": "Blaschka, Rudolf Jan. 13, 1907",
+            "bhl_part": "298540",
+            "doi": "10.5281/zenodo.16317615",
+            "file": "bhlpart298540.pdf"
+          },
+          {
+            "label": "Blaschka, Rudolf Apr. 22, 1907",
+            "bhl_part": "298541",
+            "doi": "10.5281/zenodo.16359990",
+            "file": "bhlpart298541.pdf"
+          },
+          {
+            "label": "Blaschka, Rudolf Apr. 30, 1911",
+            "bhl_part": "298555",
+            "doi": "10.5281/zenodo.16401767",
+            "file": "bhlpart298555.pdf"
+          },
+          {
+            "label": "Blaschka, Rudolf May 16, 1920",
+            "bhl_part": "298571",
+            "doi": "10.5281/zenodo.16317672",
+            "file": "bhlpart298571.pdf"
+          },
+          {
+            "label": "Blaschka, Rudolf Aug. 29, 1921",
+            "bhl_part": "298576",
+            "doi": "10.5281/zenodo.16345213",
+            "file": "bhlpart298576.pdf"
+          },
+          {
+            "label": "Blaschka, Rudolf Dec. 10, 1927",
+            "bhl_part": "298587",
+            "doi": "10.5281/zenodo.16401769",
+            "file": "bhlpart298587.pdf"
+          }
+        ]
+      },
       "research_use": [
         "direct full-text/OCR corpus construction",
         "chronological correspondence network",
         "cross-walk against Harvard Ware correspondence and workshop business records",
         "comparison of private botanical/personal correspondence with formal business letters",
-        "search for model-production, plant supply, travel, shipment, payment, war/postwar disruption and institutional relations after 1895"
+        "search for model-production, plant supply, travel, shipment, payment, war/postwar disruption and institutional relations after 1895",
+        "stable part-level PDF citation through BHL part IDs and Zenodo DOIs"
       ],
       "locators": [
         "https://www.biodiversitylibrary.org/item/158899",
         "https://www.biodiversitylibrary.org/creator/128193",
-        "https://www.biodiversitylibrary.org/bibliography/83900"
+        "https://www.biodiversitylibrary.org/bibliography/83900",
+        "https://zenodo.org/search?q=%22Rudolf%20Blaschka%20letters%20to%20Walter%20Deane%22"
       ]
     }
   ],
@@ -74,6 +134,8 @@
     "fields": [
       "displayed archival label",
       "BHL structured date",
+      "BHL part ID",
+      "Zenodo DOI if available",
       "page URL or page ID",
       "sender",
       "recipient",
@@ -89,6 +151,6 @@
       "workshop labour/process",
       "personal/family context"
     ],
-    "rule": "Preserve BHL's raw metadata and archival page label separately; do not overwrite date anomalies during ingest."
+    "rule": "Preserve BHL's raw metadata and archival page label separately; do not overwrite date anomalies during ingest. Treat Zenodo as a persistent part-level surrogate, not as an independent date authority."
   }
 }
