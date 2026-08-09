@@ -56,4 +56,11 @@
   if (workingNote) {
     workingNote.textContent = 'This final multilingual/global sweep adds direct Chinese, Italian, Spanish and Arabic publications and extends the bibliography’s reception and collection-history geography into East Asia, Latin America and the Arabic-language sphere, while retaining earlier Australasian collection scholarship. Searches also tested Portuguese, Korean, South Asian and African routes; unverified, derivative or merely contextual hits were not promoted. The public bibliography remains Blaschka-specific: general glass history and generic natural-history model literature stay outside scope unless they substantially treat the makers, models, workshop, collection histories, conservation, scientific use or circulation.';
   }
+
+  if (!document.querySelector('script[data-bib-pass37-loader]')) {
+    const pass37 = document.createElement('script');
+    pass37.src = 'bibliography-pass37.js?v=20260809-1';
+    pass37.dataset.bibPass37Loader = 'true';
+    document.head.appendChild(pass37);
+  }
 })();
