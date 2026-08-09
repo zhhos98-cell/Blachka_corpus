@@ -22,6 +22,12 @@
       links: '<a href="https://www.biodiversitylibrary.org/item/158899" target="_blank" rel="noopener">BHL digitised item ↗</a> · <a href="https://www.biodiversitylibrary.org/creator/128193" target="_blank" rel="noopener">Rudolf Blaschka BHL creator index ↗</a>'
     },
     {
+      type: 'Persistent part-level surrogates · Plazi / Zenodo',
+      title: 'Individual BHL correspondence parts also survive as separately downloadable PDFs with Zenodo DOIs.',
+      meta: 'Verified examples include Dec. 11, 1902 (BHL part 298530 / Zenodo 16317608), Jan. 13, 1907 (part 298540 / Zenodo 16317615), Apr. 30, 1911 (part 298555 / Zenodo 16401767), Aug. 29, 1921 (part 298576 / Zenodo 16345213) and Dec. 10, 1927 (part 298587 / Zenodo 16401769). These are persistent PDF mirrors deposited by Plazi from BHL, useful for part-level citation and retrieval; they do not independently correct BHL metadata.',
+      links: '<a href="https://zenodo.org/records/16317608" target="_blank" rel="noopener">1902 example ↗</a> · <a href="https://zenodo.org/records/16345213" target="_blank" rel="noopener">1921 example ↗</a> · <a href="https://zenodo.org/records/16401769" target="_blank" rel="noopener">1927 example ↗</a>'
+    },
+    {
       type: 'Metadata guard · do not silently normalize dates',
       title: 'Several BHL structured dates conflict with the displayed archival labels.',
       meta: 'Examples include “May 12, 1899” paired with structured date 1889-05-12; “Jul. 7, 1913” paired with 1912-07-13; and “Sep. 19, 1923” paired with 1921-11-19. The corpus register therefore stores archival display label and structured metadata as separate fields until the manuscript image is checked.',
