@@ -4,11 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       bundle:
-        description: "One click can fan out across many institutions. High-yield is the recommended first pass."
+        description: "Third wave: targeted-deep enumerates the catalogues that proved high-yield in reconnaissance."
         required: true
-        default: "high-yield"
+        default: "targeted-deep"
         type: choice
         options:
+          - targeted-deep
+          - remaining-automatable
           - high-yield
           - all-automatable
           - uk-high-yield
@@ -17,12 +19,12 @@ on:
           - geology-petrology
           - single
       institution_key:
-        description: "Only used when bundle=single. Use the slug shown in the matrix artifact."
+        description: "Only used when bundle=single. Use the canonical key from the matrix artifact."
         required: false
         default: ""
         type: string
       mode:
-        description: "dry-run builds plans only; full fetches bounded public metadata."
+        description: "Use full for targeted-deep. dry-run remains available for the generic institution harvester."
         required: true
         default: "full"
         type: choice
@@ -30,7 +32,7 @@ on:
           - full
           - dry-run
       depth:
-        description: "Per-institution page-budget multiplier. balanced is intended for routine harvesting."
+        description: "Request-budget multiplier. balanced is recommended; targeted-deep is already catalogue-specific."
         required: true
         default: "balanced"
         type: choice
@@ -51,11 +53,13 @@ jobs:
       institution_count: ${{ steps.matrix.outputs.institution_count }}
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - name: Check out frozen slide-survey branch
+        uses: actions/checkout@v6
+        with:
+          ref: slide-survey-actions-pilot
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -92,14 +96,16 @@ jobs:
       max-parallel: 8
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - name: Check out frozen slide-survey branch
+        uses: actions/checkout@v6
+        with:
+          ref: slide-survey-actions-pilot
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -112,19 +118,33 @@ jobs:
           python scripts/audit_19c_scope.py
 
       - name: Harvest ${{ matrix.institution }}
+        shell: bash
         run: |
-          python scripts/harvest_institution.py \
-            --institution-key "${{ matrix.institution_key }}" \
-            --profile "${{ matrix.profile }}" \
-            --mode "${{ inputs.mode }}" \
-            --depth "${{ inputs.depth }}"
+          if [[ "${{ inputs.bundle }}" == "targeted-deep" ]]; then
+            if [[ "${{ inputs.mode }}" != "full" ]]; then
+              echo "targeted-deep is an enumeration run; choose mode=full" >&2
+              exit 2
+            fi
+            python scripts/harvest_targeted.py \
+              --institution-key "${{ matrix.institution_key }}" \
+              --adapter "${{ matrix.targeted_adapter }}" \
+              --depth "${{ inputs.depth }}"
+          else
+            python scripts/harvest_institution.py \
+              --institution-key "${{ matrix.institution_key }}" \
+              --profile "${{ matrix.profile }}" \
+              --mode "${{ inputs.mode }}" \
+              --depth "${{ inputs.depth }}"
+          fi
 
       - name: Upload institution metadata
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: institution-${{ matrix.institution_key }}
-          path: outputs/institution_harvest/${{ matrix.institution_key }}/
+          path: |
+            outputs/institution_harvest/${{ matrix.institution_key }}/
+            outputs/targeted_harvest/${{ matrix.institution_key }}/
           retention-days: 30
           if-no-files-found: warn
 
@@ -137,8 +157,10 @@ jobs:
     timeout-minutes: 15
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - name: Check out frozen slide-survey branch
+        uses: actions/checkout@v6
+        with:
+          ref: slide-survey-actions-pilot
 
       - name: Download all institution artifacts
         uses: actions/download-artifact@v4
