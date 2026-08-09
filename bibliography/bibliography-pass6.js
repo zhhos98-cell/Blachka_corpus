@@ -71,4 +71,11 @@
   if (workingNote) {
     workingNote.textContent = 'The bibliography is being expanded year by year from HOLLIS Series VIII and cross-checked against library catalogues, journal platforms, museum publications, author bibliographies, exhibition catalogues, conservation literature, and specialist scientific-glass sources. Primary workshop records remain catalogued separately; duplicate editions are collapsed unless materially different.';
   }
+
+  if (!document.querySelector('script[data-bib-pass7-loader]')) {
+    const pass7 = document.createElement('script');
+    pass7.src = 'bibliography-pass7.js?v=20260809-1';
+    pass7.dataset.bibPass7Loader = 'true';
+    document.head.appendChild(pass7);
+  }
 })();
