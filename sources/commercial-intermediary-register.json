@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Commercial Intermediary and Transport Archive Register",
+  "generated_date": "2026-08-10",
+  "scope": "Named non-dealer commercial actors that handled Blaschka orders after or alongside the dealer layer: forwarding agents, carriers, banking/payment intermediaries, travelling preparators, and route infrastructure. The register links explicit Blaschka transaction evidence to archival repositories where the intermediary's own paperwork may survive.",
+  "methodological_guard": "Dealer, forwarding agent, carrier, bank, travelling preparator, and museum receiver are distinct roles even when one actor performs several functions. An archive of a carrier or bank is a retrieval target only when the Blaschka transaction independently documents that actor. Corporate archive survival does not prove that the relevant shipment, bill, or account row survives.",
+  "status_vocabulary": {
+    "direct_transaction_actor": "Named in Blaschka workshop or receiving-side evidence as participating in a specific transaction.",
+    "corporate_archive_identified": "A surviving archive of the intermediary has been located, but the Blaschka transaction has not yet been isolated inside it.",
+    "distributed_or_unresolved_archive": "The actor is securely named in the transaction but no dedicated archival fonds has yet been located.",
+    "candidate_successor_archive": "A later or successor-company archive is historically connected but requires proof that earlier records were inherited."
+  },
+  "routes": [
+    {
+      "id": "ROUTE-JEYPORE-1887",
+      "destination": "Jeypore Museum, Rajputana",
+      "date": "1887",
+      "transaction_evidence": "Primary Blaschka workshop correspondence records packages LB 285–286 sent by rail from Dresden to Trieste, delivered to the Austro-Hungarian Lloyd for the next steamer to Bombay, with onward forwarding instructions to Grindlay & Groom in Bombay. The same correspondence records a sterling draft converted through a Dresden banking institution and a remaining account balance.",
+      "actors": [
+        {
+          "name": "Austro-Hungarian Lloyd / Österreichisch-Ungarischer Lloyd",
+          "role": "ocean carrier",
+          "status": ["direct_transaction_actor", "corporate_archive_identified"],
+          "transaction_detail": "Workshop correspondence names the Lloyd at Trieste as carrier for LB 285–286 to Bombay.",
+          "archive": {
+            "repository": "Civico Museo del Mare di Trieste",
+            "collection": "Archivio del Lloyd Triestino di Navigazione",
+            "coverage": "1801–1988",
+            "extent": "6195 units",
+            "relevant_record_types": ["correspondence", "cost tables", "route and call schedules", "movements of passengers and goods", "values of imported/exported goods", "cash and expense records", "receipts", "contracts", "accounting notes", "bills of lading", "bills of exchange"],
+            "guard": "The archive description establishes corporate record survival. No manifest or bill of lading for LB 285–286 has yet been identified.",
+            "locator": "https://www.archividellascienza.org/en/archivio/IT-MUST-GUI001-002072"
+          }
+        },
+        {
+          "name": "Grindlay, Groom & Co., Bombay",
+          "role": "Bombay forwarding / agency house",
+          "status": ["direct_transaction_actor", "candidate_successor_archive"],
+          "transaction_detail": "Workshop correspondence gives separate forwarding instructions to Grindlay & Groom in Bombay for the Jeypore glass models.",
+          "archive": {
+            "repository": "The London Archives",
+            "collection": "Grindlays and Company: Accounting and Financial",
+            "reference": "GB 0074 CLC/B/207/GR01",
+            "coverage": "1861–[1920]",
+            "relevant_record_types": ["indexed private ledger", "credit balances", "share accounts", "profit and loss accounts", "general ledger"],
+            "corporate_history_note": "The catalogue states that Grindlay & Co opened branch firms at Calcutta in 1854 and Bombay in 1865; these became directly administered branches in 1908.",
+            "guard": "The surviving London sub-fonds is evidence for Grindlays corporate/accounting survival, not yet proof that Grindlay, Groom & Co.'s 1887 Bombay forwarding transaction is present in the ledgers.",
+            "locator": "https://atom.aim25.com/index.php/grindlays-and-company-accounting-and-financial"
+          },
+          "additional_archive_context": {
+            "repository": "NatWest Group Heritage Hub",
+            "reference": "GRI",
+            "coverage": "mainly 1923 onward",
+            "guard": "Too late for the 1887 transaction; retained only as successor-company archival context.",
+            "locator": "https://www.natwestgroup.com/heritage/companies/grindlays-bank-ltd.html"
+          }
+        },
+        {
+          "name": "Dresden banking institution",
+          "role": "currency conversion / payment intermediary",
+          "status": ["direct_transaction_actor", "distributed_or_unresolved_archive"],
+          "transaction_detail": "Workshop OCR records a £18 draft converted to approximately 365 Reichsmarks by a Dresden bank before deduction of the Jeypore account balance.",
+          "identity_guard": "The OCR wording 'Dresden Bank' is not silently normalised to Dresdner Bank AG without image-level verification.",
+          "archive_lead": {
+            "repository": "Commerzbank Historical Archive",
+            "collection": "Dresdner Bank historical holdings",
+            "coverage": "1872–2009",
+            "extent": "approximately 7100 linear metres",
+            "guard": "This is only a candidate if original-image verification establishes Dresdner Bank AG as the institution named in the Blaschka correspondence.",
+            "locator": "https://www.commerzbank.de/konzern/wer-wir-sind/geschichte/uebersicht-archivbestaende.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ROUTE-LIVERPOOL-1887",
+      "destination": "Liverpool Museum",
+      "date": "1887",
+      "transaction_evidence": "Primary workshop OCR records one case marked I.B. 268 containing Liverpool Museum models and sent toward Hamburg through M. O. W. Möller before onward movement to Liverpool.",
+      "actors": [
+        {
+          "name": "M. O. W. Möller, Hamburg",
+          "role": "first forwarding point / commercial forwarder",
+          "status": ["direct_transaction_actor", "distributed_or_unresolved_archive"],
+          "transaction_detail": "Named in the workshop dispatch record as the Hamburg forwarding point for case I.B. 268.",
+          "archive_status": "No dedicated company archive or confidently identified business fonds has been located in the public-catalogue searches completed to date.",
+          "discovery_leads": [
+            {
+              "repository": "Staats- und Universitätsbibliothek Hamburg",
+              "resource": "digitised Hamburger address books",
+              "research_use": "The 1887 address-book run is available and can be used for name, firm, occupation and address verification; the exact M. O. W. Möller entry has not yet been isolated.",
+              "locator": "https://adressbuecher.sub.uni-hamburg.de/"
+            }
+          ],
+          "guard": "Do not identify M. O. W. Möller with a modern Möller forwarding company or another Hamburg Möller without a contemporary directory match."
+        }
+      ]
+    },
+    {
+      "id": "ROUTE-AUCKLAND-1885",
+      "destination": "Auckland Museum",
+      "date": "1885",
+      "transaction_evidence": "Auckland correspondence and collection research reconstruct seven Ward-supplied Blaschka models delivered by Charles Francis Adams and a triangular £20 settlement linking Auckland Museum, Adams, Ward and Ward's Australian creditor.",
+      "actors": [
+        {
+          "name": "Charles Francis Adams",
+          "role": "travelling preparator, physical carrier and payment intermediary",
+          "status": ["direct_transaction_actor", "distributed_or_unresolved_archive"],
+          "transaction_detail": "Adams is reported as safely delivering the models to Auckland and participating in the multi-party settlement through which museum funds were credited against interconnected debts.",
+          "archive": {
+            "repository": "Auckland War Memorial Museum manuscript collections",
+            "collection": "Cheeseman–Ward correspondence",
+            "references": ["MUS-1996-6-2", "MUS-1995-38"],
+            "status": "receiving-side documentary witness",
+            "guard": "This is not an Adams personal/business fonds. It records his intermediary role from the museum/dealer correspondence side."
+          }
+        }
+      ]
+    }
+  ],
+  "route_archive_priorities": [
+    {
+      "priority": 1,
+      "target": "Archivio del Lloyd Triestino di Navigazione, Trieste",
+      "question": "Can LB 285–286 be connected to a steamer, bill of lading, freight charge, sailing date, cargo manifest or Bombay arrival record in spring 1887?"
+    },
+    {
+      "priority": 2,
+      "target": "Grindlays and Company ledgers, CLC/B/207/GR01",
+      "question": "Do 1887 Bombay branch/firm entries retain Jeypore Museum, Hendley, Damon, Blaschka, freight, commission or forwarding charges?"
+    },
+    {
+      "priority": 3,
+      "target": "Hamburg address books and commercial directories, 1886–1888",
+      "question": "Who exactly was M. O. W. Möller, what business category and address did the firm use, and can that identity lead to a company or shipping archive?"
+    },
+    {
+      "priority": 4,
+      "target": "Original Rakow image for the Jeypore bank conversion line",
+      "question": "Does the manuscript name Dresdner Bank AG or another Dresden banking house? Only after this identification should a bank archive be queried."
+    }
+  ],
+  "network_observation": "The circulation archive is structurally wider than the dealer archive. Workshop records name actors that disappear once a museum accession is treated as the endpoint: railway freight, commercial forwarders, ocean carriers, agency houses, banks and travelling preparators. Reconstructing these actors makes logistics a documented chain of institutions rather than a generic verb such as 'shipped'."
+}
