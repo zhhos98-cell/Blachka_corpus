@@ -1,4 +1,4 @@
-# P1 source target 3 — Naples 1881 price catalogue
+# P1 source target 3 — Naples microscope-slide price catalogue
 
 Date: 2026-08-09
 
@@ -6,40 +6,101 @@ Object node: `UK-STANDREWS-NAPOLI-FRITZ-MEYER-SLIDES-1881`
 
 ## Outcome
 
-The target is no longer a discovery problem. The full sixteen-page primary catalogue is located in the Station's own journal:
+The target is now parsed at catalogue-entry level from the uploaded Internet Archive DJVU text.
 
-Anton Dohrn, `Preis-Verzeichnis der durch die Zoologische Station zu beziehenden mikroskopischen Präparate`, *Mittheilungen aus der Zoologischen Station zu Neapel*, Bd. 2 (1881), pp. 238-253.
+Primary source:
+
+Anton Dohrn, `Preis-Verzeichnis der durch die Zoologische Station zu beziehenden mikroskopischen Präparate`, *Mittheilungen aus der Zoologischen Station zu Neapel*, Bd. 2, pp. 238-253.
+
+The source itself is signed **`Neapel, August 1880`**. The surrounding volume/publication context is 1880-1881; for corpus work this derived extraction is therefore labelled **Naples 1880** while retaining the published volume context.
 
 Biodiversity Heritage Library item: `37442`
 
 - Item: https://www.biodiversitylibrary.org/item/37442
-- Article start/page pointer: https://www.biodiversitylibrary.org/page/9678021
-- Internet Archive identifier exposed by BHL: `mittheilungenaus02staz`
+- Internet Archive identifier: `mittheilungenaus02staz`
 - BHL copyright status: `NOT_IN_COPYRIGHT`
 
-BHL's article index closes the page range as 238-253, exactly sixteen printed pages. It catalogues Anton Dohrn as author.
+## What the uploaded primary text closes
 
-## Object-side cross-check
+The catalogue is much richer than the object-side summary alone suggested.
 
-The University of St Andrews Bell-Pettigrew collection record `BPM/1/FM` independently describes the same 1881 catalogue as sixteen pages and states that it featured **423 different slides**, priced in gold francs. It also notes that many vertebrate preparations represent developmental stages, that relatively few Naples slides survive, and that Fritz Meyer appears to have mounted most surviving examples.
+### Catalogue structure
 
-This makes `423` a **historical catalogue-offering count**. It is not a surviving-slide count, not a present St Andrews collection total, and not a count that can be summed with extant-object quantities.
+- introductory/programmatic section: pp. 238-241;
+- numbered catalogue: **1-423** on pp. **242-253**;
+- therefore `423` is exactly the historical catalogue-offering namespace;
+- it is not a surviving-slide count and not a current institutional total.
 
-## Relation to the existing UK microscopy corpus
+The historical major-group distribution of the 423 numbered offerings is:
 
-The primary catalogue closes a chain already visible in the corpus:
+- Protozoa: 4;
+- Coelenterata: 33;
+- Echinodermata: 49;
+- Vermes: 33;
+- Arthropoda: 57;
+- `Mollusca` in the catalogue's historical classification, including Tunicata: 54;
+- Vertebrata: **193**.
 
-1. JRMS 1880 p.700 reports Naples slides sent to Britain through A. W. Waters and states that a Fritz Meyer-managed department had begun large-scale preparation of microscopical objects, with a list forthcoming.
-2. The 1881 price catalogue is that bounded commercial/distribution source: sixteen pages, 423 offerings, priced for order.
+The vertebrate component is therefore 45.6% of the numbered catalogue. Within it are 61 Pisces, 12 Amphibia, 4 Reptilia, 65 Aves, 33 Mammalia, and 18 Homo entries. The catalogue is consequently not simply a marine-zoology slide list: it is also a large teaching/embryology/histology offer.
+
+### Material and commercial specification
+
+The introductory pages state explicitly:
+
+- slide format: the `English` format, **70 x 28 mm**;
+- labels (`Etiquetten`) also function as protective strips;
+- most preparations are stained with carmine or other durable stains;
+- they are mounted in Canada balsam, dried, then sealed with a thin layer of masking varnish;
+- prices are in **gold francs**;
+- price formation is tied to material rarity and to the difficulty/labour of preparation.
+
+These statements belong to the catalogue as a whole. They must not be silently converted into row-level claims where the numbered entry itself specifies a different treatment.
+
+### Scientific-commercial programme
+
+Dohrn explicitly contrasts the Station's project with ordinary slides available `für Geld`. He argues that preparations have scientific value only when technical skill is combined with understanding of scientific problems and viewpoints. The intended functions include collections, demonstrations, academic teaching, comparative-anatomical work, embryology, and the provision of comparison objects that individual investigators would otherwise find difficult to obtain.
+
+The catalogue is explicitly called **provisional**. Dohrn says a larger and more systematically divided catalogue was intended once stocks allowed it.
+
+Although the Station's programme was principally marine, the catalogue deliberately abandons an exclusively marine scope when useful terrestrial and especially embryological material became available. This explains the heavy vertebrate and avian-embryology sections.
+
+## Fritz Meyer attribution rule
+
+The introduction says that Dohrn invited **Fritz Meyer** of Leipzig, whose technical-scientific competence was highly regarded, to direct the new department for microscope preparations, and that Meyer had begun setting it up about a year and a half earlier.
+
+This supports:
+
+`department led/organized by Fritz Meyer`
+
+It does **not** support:
+
+`all 423 entries prepared by Fritz Meyer`.
+
+Individual preparer attribution remains open unless another source closes it. The existing St Andrews statement that most surviving examples appear to have been mounted by Meyer is an object-side claim about that surviving subset and remains separate.
+
+## Object -> text chain now closed
+
+1. JRMS 1880 p.700 reports Naples slides sent to Britain through A. W. Waters and says a Fritz Meyer-managed department had begun large-scale preparation, with a list forthcoming.
+2. The source signed August 1880 is that priced catalogue programme: 423 numbered offerings, standardized slide format, treatment/mounting conventions, gold-franc prices, and explicit teaching/research rationale.
 3. Quekett proceedings 1882 p.194 record chick-embryo specimens explicitly prepared by Fritz Meyer in British club use.
 4. Surviving St Andrews slides provide the present object-side endpoint.
 
-The resulting historical chain is therefore: `production department -> priced catalogue/distribution -> British use -> surviving institutional objects`.
+Historical chain:
 
-## Parse status
+`preparation department -> standardized priced catalogue -> distribution/British use -> surviving institutional objects`.
 
-The primary source container and exact article extent are located. BHL exposes public text/download controls, but the row-level OCR for pp.238-253 could not be recovered through the present tool path during this pass. No attempt has been made to invent or reconstruct the 423 catalogue entries from modern metadata.
+## Extraction status
 
-Status: `LOCATED_FULL_PRIMARY_PARSE_PENDING`.
+A V1 machine-readable extraction now contains **423 sequential catalogue rows** with printed page, historical group/subgroup, cleaned entry text, analytical preparation/stage/orientation fields, price status, and review flags.
 
-If individual prices, taxa, preparation types, or catalogue numbers become analytically necessary, this is now a bounded manual ingest task: download/inspect only pp.238-253 from BHL or Internet Archive and parse those sixteen pages. No further open-ended discovery is warranted.
+The DJVU plain text reorders number/description/price columns on several pages. Therefore:
+
+- **148** row prices are securely recoverable from row-aligned OCR;
+- **275** prices are deliberately left unresolved rather than guessed;
+- rows 223-230 (Cephalopoda) are reconstructed from a column-scrambled page and carry a specific alignment-review flag;
+- source classification is preserved, including Tunicata under `Mollusca`;
+- the extraction never converts catalogue offering numbers into surviving-object counts.
+
+Status: **`PARSED_423_OCR_TEXT_V1_PRICE_PARTIAL`**.
+
+A page-image pass is only necessary if complete price-level quantitative work or publication-level verification of the column-scrambled rows becomes important. No further discovery work is required for this source.
