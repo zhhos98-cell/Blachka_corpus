@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "title": "Blaschka source corpus ingest priority",
   "generated_date": "2026-08-10",
   "principle": "Prioritize sources that can be ingested now or retrieved by a precise archival unit. Repository discovery alone has lower value than document-level or corpus-level access.",
@@ -9,7 +9,7 @@
       "target": "Harvard HOLLIS ecb00006 digital archive — Blaschka studio correspondence + Ware correspondence",
       "access": "open digital surrogates linked from archival finding aid",
       "action": "Download the finding-aid CSV; create a component-level hierarchy; harvest digital-surrogate links for Series I correspondence; preserve archival hierarchy, call number, date and repository provenance before text/image extraction.",
-      "reason": "HOLLIS currently reports 2,749 archival components and 897 digital-content components and states that most Series I correspondence is digitised. This is already a large corpus environment, not merely a physical-archive target.",
+      "reason": "HOLLIS currently reports 2,749 archival components and 897 digital-content components and states that most Series I correspondence is digitised.",
       "guard": "897 is HOLLIS's digital-content component metric, not a count of digitised letters or pages."
     },
     {
@@ -23,23 +23,45 @@
       "priority": "P0",
       "target": "Rakow Notizbüchel 1869–1871 + Geschäfts-Anmerkungen 1872–1887",
       "access": "open/downloadable digital primary sources identified by Corning Museum of Glass",
-      "action": "Ingest page-by-page customer/order/account entries from the two business books and align with local OCR, dealer registers and current-holder census without collapsing historical purchaser into present repository.",
-      "reason": "These books are the transaction backbone for original customers, sales and dealer shares and were explicitly used by Corning's global census reconstruction."
+      "action": "Ingest page-by-page customer/order/account entries and align with local OCR, dealer registers and current-holder census without collapsing historical purchaser into present repository.",
+      "reason": "Transaction backbone for original customers, sales and dealer shares."
     },
     {
       "priority": "P0",
-      "target": "Existing Rakow/Blaschka OCR workshop corpus already in project backend",
+      "target": "Existing Rakow/Blaschka OCR workshop corpus",
       "access": "local project corpus",
-      "action": "Cross-walk Harvard and Deane dates/names against business letters, Lieferungs-Buch, Geschäfts-Anmerkungen, packing and shipping records while preserving drafts/copies/enclosures as distinct witnesses.",
-      "reason": "Provides the workshop/business side needed to interpret the Harvard receiving/patronage and Deane correspondence layers."
+      "action": "Cross-walk Harvard, Deane, business books, packing/shipping and live-animal supply records while preserving drafts/copies/enclosures as distinct witnesses.",
+      "reason": "Workshop-side textual backbone."
     },
     {
       "priority": "P0",
       "target": "R. T. Smith, Weymouth — cross-project living-specimen and microscopy corpus",
       "access": "local Rakow OCR + local Hardwicke's Science-Gossip corpus + published archival locators",
-      "action": "Build one chronology from all Smith witnesses: five exact microscopy notices (1873–1876), the 1882 and 1886 workshop drafts, species requests, 15-Mark order, forwarding language, weather, transit duration, aquarium recovery/failure and alternative Devon supplier search. Image-verify every manuscript/page before diplomatic quotation.",
-      "reason": "This is an immediately actionable bridge between two local corpora and exposes the upstream circulation of living reference organisms before glass model production.",
-      "guard": "Preserve initials only. Do not merge the Hughes/Lloyd OCR reading 'E. J. Smith, 25 St. Alban's Row' with R. T. Smith until the printed page is checked."
+      "action": "Build one chronology from the five exact microscopy notices (1873–1876), 1882/1886 workshop drafts, species requests, 15-Mark order, forwarding language, weather, transit duration, aquarium recovery/failure and alternative Devon supplier search; image-verify before diplomatic quotation.",
+      "reason": "Immediate person/address bridge between two local corpora and a direct upstream living-reference route.",
+      "guard": "Do not merge the Hughes/Lloyd OCR reading 'E. J. Smith, 25 St. Alban's Row' with R. T. Smith until the printed page is checked."
+    },
+    {
+      "priority": "P0",
+      "target": "Stazione Zoologica Anton Dohrn, Naples — 4 February 1877 Leopold Blaschka species-list letter + March/November 1877 archive documents",
+      "access": "precise archive retrieval; institutional archive and published archival references identified",
+      "action": "Obtain image and shelfmark for the reported 4 February 1877 letter requesting 41 preserved marine animals; retrieve the March and November 1877 Dohrn documents; cross-walk request, fulfilment, prices, species, preservation and shipment.",
+      "reason": "This is the strongest known upstream preserved-reference transaction: exact date, quantity, purpose and named institutional supplier, with a rich ASZN administrative/scientific archive behind it.",
+      "guard": "The 41-item list is reported by a scholar who examined the Naples archive; do not enter species-level transcription until the archival document is obtained."
+    },
+    {
+      "priority": "P0",
+      "target": "Trieste reciprocal circuit — live-animal shipments 1878–1884+ and Vienna/Graz model orders",
+      "access": "local Rudolf primary OCR + University of Vienna institutional reconstruction + Austrian State Archives Signatur 2A",
+      "action": "Cross-walk Rudolf's direct Trieste statement with Rakow drafts, Vienna order chronology and OeStA Zoologische Station Triest 1873–1903; target 1878 live shipments, 1880 rupture, 1884 restored exchange, orders of 38 and 77, and February 1887 order of 21.",
+      "reason": "Best case where inward biological supply and outward model distribution form one reciprocal institutional circuit. It directly tests how routing, temperature, packing and survival changed epistemic inputs before manufacture."
+    },
+    {
+      "priority": "P0",
+      "target": "Reference-material ecology — Müller/Gosse illustrations + Naples preserved animals + Trieste/Smith living animals + workshop drawings",
+      "access": "open museum/archive sources + local primary corpus",
+      "action": "Build model/species-level crosswalks only where a drawing, catalogue number, archival statement or object identification explicitly connects reference medium to model. Code published image, preserved body, living observation and workshop drawing separately.",
+      "reason": "Converts 'scientific accuracy' from a generic claim into a source-history problem with distinct affordances and failure modes."
     },
     {
       "priority": "P1",
@@ -53,28 +75,28 @@
       "target": "Cornell Comstock papers Box 2 Folder 7 and reported 1882 Andrew D. White letter",
       "access": "archive retrieval",
       "action": "Read Ward letters of 3, 8 and 23 October 1885; locate the reported 16 October 1882 Ward-to-White letter; test whether Cornell acquisition occurred in multiple Ward-mediated layers.",
-      "reason": "Official finding aid provides a precise 1885 Ward folder; secondary chronology claims glass-model content and an earlier 1882 procurement layer that can now be tested."
+      "reason": "Precise 1885 Ward folder plus testable claim for an earlier 1882 procurement layer."
     },
     {
       "priority": "P1",
       "target": "UCD Archives IE UCDA RCSI accounts 1883–1885 and equipment/supplies order books 1867–1916",
       "access": "archive retrieval",
       "action": "Search exact 13 June 1885 transaction and 495/619-Mark totals; identify any intermediary/commission notation.",
-      "reason": "A precise receiving-side archive may close the unexplained 124-Mark commission layer."
+      "reason": "May close the unexplained 124-Mark commission layer."
     },
     {
       "priority": "P1",
       "target": "Charles Francis Adams Diary, Illinois collection 782",
       "access": "archive request",
-      "action": "Read January–May 1885 daily entries around Ward shipment arrival; code wharf, package, museum handoff, unpacking and payment references.",
-      "reason": "Personal archive of a named carrier/preparator/payment intermediary in the Auckland Blaschka transaction."
+      "action": "Read January–May 1885 entries around Ward shipment arrival; code wharf, package, museum handoff, unpacking and payment references.",
+      "reason": "Personal archive of a named carrier/preparator/payment intermediary in the Auckland transaction."
     },
     {
       "priority": "P1",
       "target": "MNCN/Simurg Robert F. Damon catalogues and dispatch note, 1885–1906",
       "access": "digital catalogue / image retrieval",
       "action": "Transcribe catalogue headings, list structure, prices if present, customer/dispatch notation and language.",
-      "reason": "Same-period Damon business paperwork can supply a control vocabulary for British/Irish Blaschka transactions."
+      "reason": "Same-period Damon business paperwork supplies a control vocabulary for British/Irish transactions."
     },
     {
       "priority": "P1",
@@ -84,10 +106,17 @@
       "reason": "Controlled pre-agency comparator for dealer list, purchase and exchange practices."
     },
     {
+      "priority": "P1",
+      "target": "Corning premade component stock / matchbox corpus",
+      "access": "open object records + physical collection",
+      "action": "Inventory labelled matchboxes/component types and cross-walk with catalogue numbers, order books, schematic drawings and finished models where possible.",
+      "reason": "Tests the chronology between order receipt and manufacture: some production occurred before the order and later assembly/finishing could be order-triggered."
+    },
+    {
       "priority": "P2",
       "target": "Frič–Antipa letters nos. 168–172 and associated inventory/registers",
       "access": "published reconstruction + museum archive",
-      "action": "Use as a coding template for dealer → receiving inventory → surviving object crosswalk.",
+      "action": "Use as coding template for dealer → receiving inventory → surviving object crosswalk.",
       "reason": "Excellent longitudinal comparator but postdates Blaschka marine-model production."
     },
     {
