@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Transaction Gap Register",
+  "generated_date": "2026-08-10",
+  "scope": "Transactions in which the object order is secure but one financial, administrative or intermediary layer remains unidentified. The register converts anomalies in surviving invoices and workshop records into targeted archive questions rather than filling gaps by inference.",
+  "records": [
+    {
+      "id": "GAP-UCD-RCSI-1885-COMMISSION-R",
+      "institution": "Royal College of Science for Ireland / present University College Dublin collection",
+      "date": "1885-06-13",
+      "transaction": "A. C. Haddon order of 139 Blaschka models",
+      "direct_invoice_evidence": {
+        "base_total_reichsmarks": 495,
+        "models_share_percent": 92,
+        "boxes_and_transport_share_percent": 8,
+        "added_text": "commission ‘r’: 124 / 619",
+        "final_total_reichsmarks": 619,
+        "commission_share_of_final_total_percent": 20,
+        "material_observation": "The published study reports thicker black ink and different handwriting for the added commission lines and considers them probably added by an intermediary after Leopold Blaschka signed and sent the invoice."
+      },
+      "unknown": "Identity and institutional role of the intermediary associated with the 124-Mark commission.",
+      "receiving_archive_target": {
+        "repository": "UCD Archives",
+        "reference": "IE UCDA RCSI",
+        "title": "Records of the Royal College of Science for Ireland",
+        "dates": "1867–1929",
+        "extent": "7 boxes, 115 bound volumes",
+        "high_value_series": [
+          "consolidated College accounts, 1883–1885",
+          "order books and journal for equipment and supplies, 1867–1916",
+          "administrative correspondence and related financial records"
+        ],
+        "research_question": "Can the 13 June 1885 Blaschka order be found in the 1883–1885 accounts or equipment/supply order books, and does the receiving-side entry name the intermediary, commission, payment route or dealer?",
+        "locator": "https://www.ucd.ie/archives/collections/universityarchives/items/collectionname235376en.html"
+      },
+      "catalogue_crosscheck": {
+        "source": "AIP History Center catalogue record for the Royal College of Science for Ireland archives",
+        "evidence": "The catalogue independently describes consolidated College accounts for 1883–1885 and order books/journal for equipment and supplies for 1867–1916.",
+        "locator": "https://history.aip.org/history/catalog/icos/2336.html"
+      },
+      "evidence_guard": "The letter ‘r’ is preserved as transcribed in the published invoice study. It is not expanded into a personal or company name without archival evidence. The 124-Mark addition is not assigned to Damon, Ward or another dealer merely because they operated in the wider network."
+    }
+  ],
+  "research_observation": "A commission written onto a completed invoice is analytically different from model price, packing, transport and museum payment. The anomaly therefore opens a separate intermediary layer in the transaction chain rather than being absorbed into a single purchase total."
+}
