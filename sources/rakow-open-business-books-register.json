@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Open Rakow Business-Book Corpus Register",
+  "generated_date": "2026-08-10",
+  "scope": "Blaschka business and order books identified by the Corning Museum of Glass as downloadable PDF primary sources and usable as a corpus for original customers, sales, dealers and transaction chronology. Public digital surrogates remain the archival authority; project OCR is a derivative search layer.",
+  "records": [
+    {
+      "id": "RAKOW-NOTIZBUECHEL-1869-1871",
+      "title": "Notizbüchel für 1869–1870",
+      "actual_date_span": "1869–1871",
+      "repository": "Juliette K. and Leonard S. Rakow Research Library, Corning Museum of Glass",
+      "collection": "Leopold and Rudolf Blaschka Collection",
+      "reference": "LRBC, MS 0013, Box 24",
+      "access": "downloadable PDF identified by Corning Museum of Glass",
+      "research_use": [
+        "original customers",
+        "orders and sales",
+        "institutional geography",
+        "early dealer and direct-sale comparison",
+        "chronological transaction crosswalk"
+      ],
+      "evidence": "Corning's 2016 global-census account states that original European collections were reconstructed in part from this order book and Geschäfts-Anmerkungen and explicitly says both are downloadable as PDFs.",
+      "permalink": "https://cmog.primo.exlibrisgroup.com/permalink/01CORNING_INST/1m7c70c/alma99873833504126"
+    },
+    {
+      "id": "RAKOW-GESCHAEFTS-ANMERKUNGEN-1872-1887",
+      "title": "Geschäfts-Anmerkungen",
+      "date_span": "1872–1887",
+      "repository": "Juliette K. and Leonard S. Rakow Research Library, Corning Museum of Glass",
+      "collection": "Leopold and Rudolf Blaschka Collection",
+      "reference": "LRBC, MS 0013, Box 23, Folder 64",
+      "access": "downloadable PDF identified by Corning Museum of Glass",
+      "contents_named_in_scholarship": [
+        "Jahres-Rechnung 1872",
+        "Geschäfts-Uebersicht 1873"
+      ],
+      "research_use": [
+        "annual sales and account summaries",
+        "dealer/customer shares",
+        "payments and commercial chronology",
+        "comparison of Ward, Damon, Frič and direct institutional purchasing"
+      ],
+      "evidence": "Corning's 2016 global-census account explicitly identifies Geschäfts-Anmerkungen as one of the downloadable order/business books used to reconstruct original collections. J. P. Short independently locates the Jahres-Rechnung 1872 and Geschäfts-Uebersicht 1873 inside this volume at Box 23, Folder 64.",
+      "permalink": "https://cmog.primo.exlibrisgroup.com/permalink/01CORNING_INST/1m7c70c/alma99618813504126"
+    }
+  ],
+  "archive_root": "https://cmog.primo.exlibrisgroup.com/permalink/01CORNING_INST/1m7c70c/alma991107413504126",
+  "method_guard": "Treat page images/PDFs as primary-source witnesses. Local OCR may be used to search and align entries but must preserve page identity, raw transcription and uncertainty. Do not infer a current collection from a historical customer entry; order-book customer and present holder are separate entities.",
+  "corpus_strategy": {
+    "unit": "page / dated account or order entry",
+    "fields": [
+      "book",
+      "page",
+      "date",
+      "customer/institution",
+      "city/country",
+      "dealer/intermediary",
+      "catalogue/model numbers",
+      "quantity",
+      "model price",
+      "packing/case/carton",
+      "transport/postage",
+      "payment/balance",
+      "notes",
+      "raw transcription",
+      "normalized entities"
+    ],
+    "crosswalks": [
+      "dealer-document-register.json",
+      "global-archive-register.json",
+      "current holder/census data",
+      "local Rakow OCR corpus"
+    ]
+  }
+}
