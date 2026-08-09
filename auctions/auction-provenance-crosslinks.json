@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Blaschka auction provenance cross-links and market-adjacent leads",
+  "purpose": "Supplement the canonical auction lot table with cross-source identity hypotheses, prior institutional labels, dealer-market leads, and bounded negative-search results that should not be flattened into auction facts without an explicit evidential bridge.",
+  "relationship_to_canonical": {
+    "canonical_lot_file": "auction-data.json",
+    "lot_count_changed_by_this_file": false,
+    "rule": "This file records evidence that qualifies or extends canonical auction records without silently upgrading inferred buyer identities, dealer transactions, institutional labels, or conflicting dates into settled provenance."
+  },
+  "crosslinks": [
+    {
+      "crosslink_id": "XL-2015-GRISEBACH-LOUDON",
+      "canonical_record_id": "AUC-2015-GRISEBACH-SERPULA-343",
+      "auction_event": {
+        "auction_house": "Grisebach",
+        "sale_title": "ORANGERIE. Selected Objects",
+        "date": "2015-11-26",
+        "location": "Berlin"
+      },
+      "candidate_post_sale_identity": "George Loudon collection",
+      "identity_status": "strong_cross_source_inference_not_explicit_buyer_record",
+      "evidence": [
+        "Invaluable indexes a Grisebach sale on 26 November 2015 for a Blaschka Serpulidae model labelled Serpula contortuplicata, L. No. 343, with dimensions approximately 6 cm high by 9.5 cm diameter and estimate EUR 3,000-5,000.",
+        "Grisebach's own 2015 press material identifies ORANGERIE. Selected Objects as the relevant 26 November 2015 crossover object sale in Berlin.",
+        "In a first-person Corning Museum of Glass guest post, George Loudon states that he had recently found a Blaschka model of a Serpulidae worm at auction in Berlin; the illustrated object is identified as Serpula contortuplicata and measured 6 x 9 cm diameter, with a 2015 Berlin photograph credit.",
+        "Taxon, object type, city, time, dimensions and 2015 documentation align very closely, but Loudon's account does not name Grisebach, a lot number or L. No. 343."
+      ],
+      "safe_public_claim": "George Loudon's 2016 first-person account appears to describe the same Serpula contortuplicata model sold through Grisebach in Berlin in November 2015, but the buyer identity remains an inference until a buyer record, invoice, catalogue annotation, or explicit collection crosswalk is recovered.",
+      "sources": [
+        {
+          "type": "aggregator_sold_index",
+          "url": "https://www.invaluable.com/artist/blaschka-leopold-49ejcqcd3j/sold-at-auction-prices/"
+        },
+        {
+          "type": "auction_house_press",
+          "url": "https://www.grisebach.com/en/auction-house/press/the-orangerie-selected-objects-auction-tells-the-story-of-the-world-in-100-objects-from-andrea-pisano-to-gunter-sachs"
+        },
+        {
+          "type": "collector_first_person_museum_blog",
+          "url": "https://blog.cmog.org/2016/modern-day-cabinet-curiosity"
+        }
+      ],
+      "open_fields": [
+        "exact Grisebach lot number",
+        "primary Grisebach object-archive page",
+        "realized result",
+        "explicit buyer record or invoice linking the lot to George Loudon"
+      ]
+    },
+    {
+      "crosslink_id": "XL-2025-KREFELD-26-BERLIN",
+      "canonical_record_id": "AUC-2025-KREFELD-26",
+      "prior_institutional_label": "Zoolog. Institut Universität, Berlin / handwritten botanical designation",
+      "label_status": "auction_catalogue_transcription",
+      "institutional_interpretation": "The wording is consistent with a Berlin university zoological-institute teaching-collection label. It establishes a prior Berlin institutional association at label level, not an original-purchase, legal-title, deaccession, or current-institution identity by itself.",
+      "date_conflict": {
+        "auction_catalogue_date": "around 1870",
+        "Berlin_institutional_collection_context": "Museum für Naturkunde Berlin states that all Berlin Blaschka models in its historical university/museum collection were made between 1884 and 1889.",
+        "resolution": "open",
+        "guard": "Do not normalize the auction-house circa-1870 date to 1884-1889 and do not assume that the label necessarily places the object in the surviving MfN/HU corpus without an inventory crosswalk."
+      },
+      "sources": [
+        {
+          "type": "auction_house_lot_page",
+          "url": "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/glass-model-sea-anemone-around-1870-137451/"
+        },
+        {
+          "type": "aggregator_lot_page_with_label",
+          "url": "https://www.gazette-drouot.com/lots/28984163-leopold-and-rudolf-blaschka----"
+        },
+        {
+          "type": "institutional_collection_history",
+          "url": "https://artsandculture.google.com/story/works-of-art-for-science-museum-fuer-naturkunde-berlin/MwVBFWmlRzwzPQ?hl=en"
+        }
+      ]
+    },
+    {
+      "crosslink_id": "XL-2025-KREFELD-27-BERLIN",
+      "canonical_record_id": "AUC-2025-KREFELD-27",
+      "prior_institutional_label": "Zoolog. Institut Universität, Berlin / handwritten botanical designation",
+      "label_status": "primary_auction_house_transcription",
+      "condition_from_primary_page": "Glass case with light signs of use and light soiling; top pane and right-side pane each with a small corner crack; otherwise overall good condition.",
+      "institutional_interpretation": "Like lot 26, lot 27 carries an explicit Berlin zoological-institute university label. This is prior institutional provenance evidence, but no Berlin inventory number, deaccession record, or HU/MfN object-level crosswalk is yet public.",
+      "date_conflict": {
+        "auction_catalogue_date": "around 1870",
+        "Berlin_institutional_collection_context": "Museum für Naturkunde Berlin states that all Berlin Blaschka models in its historical university/museum collection were made between 1884 and 1889.",
+        "resolution": "open"
+      },
+      "sources": [
+        {
+          "type": "auction_house_lot_page_primary_German",
+          "url": "https://www.kunstunddesign-auktionen.de/de/auktionen/K-15/glasmodell-stachelpolyp-um-1870-137452/"
+        },
+        {
+          "type": "auction_house_results",
+          "url": "https://www.kunstunddesign-auktionen.de/de/auktionen/K-15/ergebnisliste/"
+        },
+        {
+          "type": "institutional_collection_history",
+          "url": "https://artsandculture.google.com/story/works-of-art-for-science-museum-fuer-naturkunde-berlin/MwVBFWmlRzwzPQ?hl=en"
+        }
+      ],
+      "next_step": "Search the MfN OS001-02 Blaschka inventory list and HU zoological teaching-collection records for matching sea-anemone/polyp morphology, old labels, catalogue numbers, dimensions or movement/deaccession notes."
+    },
+    {
+      "crosslink_id": "XL-2019-CHRISTIES-46-SECONDARY-RESULT",
+      "canonical_record_id": "AUC-2019-CHRISTIES-46-1877-381",
+      "secondary_result": {
+        "amount": 10000,
+        "currency": "GBP",
+        "wording": "Sold for £10,000 on 30 January 2019 at Christie’s in London",
+        "status": "secondary_report_not_primary_auction_house_result"
+      },
+      "sources": [
+        {
+          "type": "auction_house_lot_page",
+          "url": "https://www.christies.com/en/lot/lot-6188456"
+        },
+        {
+          "type": "secondary_result_caption",
+          "url": "https://www.emmareynard.com/small-glass-houses/2021/8/31/leopold-and-rudolf-blaschka-1857-1939"
+        }
+      ],
+      "guard": "Retain as secondary result reporting until a Christie's results record or another primary result source is recovered."
+    }
+  ],
+  "market_adjacent_leads": [
+    {
+      "lead_id": "DEALER-LOUDON-ENGLISH-SCHOOL",
+      "included_in_auction_lot_count": false,
+      "transaction_type": "dealer-mediated private-market dispersal",
+      "collector": "George Loudon",
+      "dealer": "unnamed London dealer",
+      "former_holder": "unnamed English school / public school",
+      "former_holder_status": "reported by dealer through collector testimony",
+      "reported_objects": [
+        "initial group of three Blaschka slugs",
+        "a sea anemone",
+        "a later group of ten slugs/snails plus a Portuguese man o' war"
+      ],
+      "reported_context": "Loudon states that a London dealer obtained the Blaschka pieces from an English school that had closed or was disposing of its natural-history teaching material for financial reasons. These purchases helped form the Blaschka component of his collection before the 2015 Berlin auction acquisition.",
+      "why_not_auction_record": "The source describes purchases through a dealer, not a public auction event. It is therefore retained as a provenance-gap lead but excluded from auction lot totals.",
+      "sources": [
+        {
+          "type": "collector_first_person_museum_blog",
+          "url": "https://blog.cmog.org/2016/modern-day-cabinet-curiosity"
+        },
+        {
+          "type": "collector_interview",
+          "url": "https://www.masterpiecefair.com/collection-stories/george-loudon"
+        }
+      ],
+      "open_fields": [
+        "name of London dealer",
+        "identity of English school",
+        "school inventory/accession numbers",
+        "sale/disposal date or dates",
+        "dealer invoices or stock records",
+        "model catalogue numbers and current object crosswalk"
+      ]
+    }
+  ],
+  "institutional_context_only": [
+    {
+      "context_id": "CTX-SCIENCE-MUSEUM-1925-27-TRANSFERS",
+      "related_canonical_records": [
+        "AUC-2019-CHRISTIES-46-1877-381",
+        "AUC-2019-CHRISTIES-47-1877-360",
+        "AUC-2019-CHRISTIES-48-1877-376"
+      ],
+      "statement": "UCL Grant Museum states that when the Science Museum deaccessioned its glass-model collection in 1925-1927, models were transferred to UCL and six other institutions. This establishes a wider deaccession/distribution event but does not identify the later Christie's objects as part of those institutional transfers.",
+      "source": "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/highlights/blaschka-glass-models-invertebrates",
+      "guard": "Do not infer an intermediate institutional owner for the three 2019 Christie's lots without matching Science Museum transfer records or recipient accession numbers."
+    }
+  ],
+  "bounded_negative_search": {
+    "date": "2026-08-10",
+    "result": "No additional vetted physical Blaschka auction lot was promoted in this continuation pass.",
+    "areas_rechecked": [
+      "Invaluable artist index",
+      "The Saleroom indexed Blaschka results",
+      "Auctionet",
+      "Barnebys",
+      "Lot-tissimo",
+      "Grisebach public archive and 2015 press",
+      "James D. Julia legacy domain",
+      "English, German, French and Italian keyword variants",
+      "exact label phrases including Blaschka's Modelle and L. No."
+    ],
+    "important_negative_guard": "Search-engine and public-index failure is not catalogue exhaustion. Older PDF, print-only, poorly OCRed, subscriber-only and unindexed sale catalogues remain outside the closure claim."
+  },
+  "next_actions": [
+    "Recover the exact Grisebach 2015 Serpula lot number, primary object-archive page and realized result.",
+    "Seek an explicit Grisebach-to-George-Loudon buyer bridge before promoting the inferred identity to fact.",
+    "Audit the Museum für Naturkunde OS001-02 Blaschka inventory and HU zoological teaching collection against Krefeld 2025 lots 26 and 27.",
+    "Explain the auction c.1870 dating versus Berlin's institutional 1884-1889 collection chronology without silently choosing either date.",
+    "Identify George Loudon's London dealer and the English school source, keeping the resulting records in a dealer/provenance layer unless a public auction is found.",
+    "Continue pre-2005 discovery through digitised auction PDFs, library sale-catalogue holdings, newspaper notices and named scientific-collection dispersals."
+  ]
+}
