@@ -23,7 +23,7 @@
     },
     {
       year: 2001,
-      citation: 'Bruno P. Kremer, “Natur im Museum: Die Glasblumen-Sammlung in Harvard,” <em>Natur &amp; Museum</em> 131 (2001): 69–74. [German]',
+      citation: 'Bruno P. Kremer, “Natur im Museum: Die Glasblumen-Sammlung in Harvard,” <em>Natur & Museum</em> 131 (2001): 69–74. [German]',
       links: '<a href="https://www.stadtwikidd.de/wiki/Blaschka-Sammlung" target="_blank" rel="noopener">Dresden Blaschka bibliography cross-check ↗</a>'
     }
   ];
@@ -44,4 +44,11 @@
 
   const scopeTitle = document.querySelector('#bib-scope-title');
   if (scopeTitle) scopeTitle.textContent = '1870–2026 · twenty-fifth expanded pass';
+
+  if (!document.querySelector('script[data-bib-pass26-loader]')) {
+    const pass26 = document.createElement('script');
+    pass26.src = 'bibliography-pass26.js?v=20260809-1';
+    pass26.dataset.bibPass26Loader = 'true';
+    document.head.appendChild(pass26);
+  }
 })();
