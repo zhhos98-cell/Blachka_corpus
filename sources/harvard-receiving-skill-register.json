@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Harvard Receiving Skill and Museum Practice Register",
+  "generated_date": "2026-08-10",
+  "scope": "Archival evidence for the receiving-side labour that converted transported Blaschka models into stable museum objects at Harvard: customs opening, unpacking, remounting, repair, labelling, display, photography and accumulated staff expertise. The register centres Louis Charles Bierweiler because both Blaschka correspondence and Harvard's finding aid identify him as a long-term museum technician/curator with direct workshop and object-handling experience.",
+  "methodological_guard": "Biographical and museum-record files are not assumed to contain a report of every shipment. Direct handling claims come from dated Blaschka/Harvard correspondence; HOLLIS components are used to identify the archival universe for the actor and institutional practice. Later photographs and teaching-use records are evidence of continued custodial work, not proof of a specific 1930s repair unless the image/file says so.",
+  "actor": {
+    "name": "Louis Charles Bierweiler",
+    "roles": ["Harvard Botanical Museum curator / museum staff", "receiver and clearance coordinator", "skilled unpacker", "minor repairer", "later photographic/collection technician"],
+    "direct_primary_evidence": [
+      {
+        "date": "1929",
+        "evidence": "Harvard correspondence sends Bierweiler to the Treasurer's Office to arrange prompt clearing of the incoming Blaschka shipment; after arrival he is associated with slight local repair."
+      },
+      {
+        "date": "1932-10-31",
+        "evidence": "Rudolf explicitly tells Bierweiler that some models in the recent shipment were complicated to unpack and compliments his skill and carefulness for the excellent result."
+      }
+    ]
+  },
+  "harvard_archive": {
+    "repository": "Botany Libraries, Harvard University",
+    "collection": "The Archives of Rudolf and Leopold Blaschka and the Ware Collection of Blaschka Glass Models of Plants",
+    "reference": "ecb00006",
+    "collection_scope": "Correspondence, manuscripts, curatorial files, artwork, photographs, publications, ephemera, artifacts, original boxes and mailing material documenting creation, growth and administration of the Glass Flowers.",
+    "bierweiler_components": [
+      {
+        "title": "Louis C. Bierweiler",
+        "date_range": "1935–1964",
+        "reference": "Box Biographical 1, Folder 26",
+        "extent": "2 folders",
+        "status": "named actor file",
+        "note": "HOLLIS describes the file as biographical material and notes that one image features Oakes Ames and Bierweiler."
+      },
+      {
+        "title": "Louis Bierweiler diary",
+        "date": "1931",
+        "reference": "component title not isolated in this pass; described in collection-level scope note",
+        "status": "direct actor manuscript",
+        "note": "The collection-level finding aid states that a 1931 diary by Bierweiler documents his trip to Hosterwitz, Germany, as curator of the museum to visit Rudolf Blaschka."
+      },
+      {
+        "title": "Transparency of Louis Bierweiler at work with the glass models",
+        "date_range": "between 1949 and 1957",
+        "reference": "ecb00006 component; exact container not shown in public search result used here",
+        "status": "visual evidence of later handling practice"
+      },
+      {
+        "title": "Stereoscopic Slides",
+        "date": "1954",
+        "reference": "ecb00006 component",
+        "status": "later collection-use / documentation practice",
+        "note": "HOLLIS states that G. Blake Johnson photographed glass models in exhibition cases with assistance from Louis C. Bierweiler, producing 638 unique glass stereoscopic slides covering 386 species."
+      }
+    ],
+    "locator": "https://hollisarchives.lib.harvard.edu/catalog/ecb00006"
+  },
+  "related_institutional_archive": {
+    "repository": "Botany Libraries, Harvard University",
+    "collection": "Harvard Botanical Museum records, 1869–2004, bulk 1970–2004",
+    "reference": "ecb00011",
+    "scope": "Administrative, research, teaching and public-exhibition activities of the Museum.",
+    "status": "institutional receiving-side context",
+    "guard": "The collection is broader than the Glass Flowers and has a late bulk date. It is indexed as a companion institutional archive for museum practice, not as a substitute for the Blaschka collection's direct shipment correspondence.",
+    "locator": "https://hollisarchives.lib.harvard.edu/catalog/ecb00011"
+  },
+  "research_observation": "The receiving institution acquired technique as well as objects. Bierweiler's 1931 visit to Hosterwitz collapses the apparent division between maker-side and museum-side knowledge: a Harvard curator entered the workshop, later coordinated clearance and repair, and was explicitly praised by Rudolf for skilled unpacking. The circulation system therefore transferred tacit handling knowledge through people, not only instructions attached to crates."
+}
