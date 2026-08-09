@@ -17,6 +17,12 @@ The human-readable closure audit is `data/survey/07AR_CLOSURE_AUDIT_2026-08-09.m
 
 New discoveries after this point belong to a later reopening/version. They should not silently extend this frozen directory state.
 
+### Frozen membership is now executable
+
+The closure count is no longer reconstructed from the heuristic `CORE_19C` classifier. `scripts/build_frozen_strict_membership.py` rebuilds the active set directly from the frozen 07K-07AQ strict batches and applies the 07AR closure rules: twenty superseded distinct-ID aliases are removed, the repeated identical Hubrecht entry is collapsed, and the explicit Harting demotion is applied. The script asserts the full closure arithmetic `177 -> 155` and writes `data/normalized/scope_19c_active_ids.json` for downstream use.
+
+`scripts/audit_19c_scope.py` still runs over the complete discovery layer because its diagnostic labels are useful for review. Its heuristic `CORE_19C` count is **diagnostic only** and cannot enlarge the frozen census. `scripts/apply_19c_scope.py` filters against the closure-derived 155 active IDs.
+
 ## Method
 
 The survey works backwards from surviving microscope slides, preparations, cases, cabinets, numbered sets and current collection records. The event corpus can work forwards from catalogues, journals, archives, correspondence and institutional documentation. The two sides are intended to cross-check preparation, collection, sale, exchange, gift, lending, transfer, use, exhibition, damage, relabelling, recataloguing and current custody.
@@ -33,27 +39,29 @@ Quantity namespaces also remain separate. Slide count, microscopic-preparation c
 - `data/survey/scope_19c_overrides.json`: conservative temporal/medium overrides, including the Harting held-out disposition.
 - `data/survey/site_adapters.json` plus expansion files: institution/site-specific metadata adapters.
 - `data/survey/harvest_families_v1.json` plus expansion files: shared extraction contracts.
-- `data/survey/institution_harvest_profiles.json`: high-yield institution profiles plus automatic fallback profiles for every other automatable strict institution.
+- `data/survey/institution_harvest_profiles.json`: institution profiles plus automatic fallback profiles.
+- `data/evidence/targeted_deep_4/`: normalised evidence and residual checklist from the final targeted harvest pass. It is an enrichment layer and does not reopen the census.
 - `docs/19C_SCOPE_RULES.md`: nineteenth-century scope rule.
 - `scripts/prepare_survey_inputs.py`: merges modular inputs, skips 07AR superseded aliases, and collapses repeated `entry_id`s.
+- `scripts/build_frozen_strict_membership.py`: reconstructs and count-checks the immutable 155-entry closure membership.
 - `scripts/validate_survey.py`: validates schema, adapters, media-risk language and provenance relationships.
-- `scripts/audit_19c_scope.py`: classifies `CORE_19C`, `POSSIBLE_19C`, `MODERN_COMPARATOR` and `OUT_OF_SCOPE`.
-- `scripts/apply_19c_scope.py`: restricts active harvesting to `CORE_19C`.
+- `scripts/audit_19c_scope.py`: diagnostic classification of `CORE_19C`, `POSSIBLE_19C`, `MODERN_COMPARATOR` and `OUT_OF_SCOPE`; it no longer defines frozen membership.
+- `scripts/apply_19c_scope.py`: restricts active processing to the closure-derived 155.
 - `scripts/build_harvest_batches.py`: groups active entries by harvest family.
 - `scripts/harvest_catalogue.py`: dry-run-first collection-page metadata harvester.
 - `scripts/build_institution_matrix.py`: converts the strict survey into an institution-level GitHub Actions matrix.
-- `scripts/harvest_institution.py`: bounded institution-specific metadata harvester for HTML, JSON/JSON-LD, metadata links and PDFs.
+- `scripts/harvest_institution.py`: bounded institution-specific metadata harvester for HTML, JSON/JSON-LD, metadata links and small PDFs.
 - `scripts/aggregate_institution_harvest.py`: combines per-institution outputs into one downloadable bundle index.
 
-The crawler layer is deliberately not universal. Known sites get small adapters and recurring systems share harvest families. The workflow does not bulk-download specimen images or bypass login, paywalls, anti-bot systems, robots restrictions or access controls.
+The crawler layer is deliberately not universal. Known sites get small adapters and recurring systems share harvest families. The workflow does not bulk-download specimen images or bypass login, paywalls, anti-bot systems, robots restrictions or access controls. PDFs larger than the configured small-file threshold are skipped whole rather than stored as corrupt partial files.
 
-## One-click institution harvest
+## Harvesting status
 
-The manual Actions workflow is `slide-institution-harvest`. It is exposed on the repository default branch only so GitHub can display and dispatch it, but every checkout in the workflow explicitly uses `slide-survey-actions-pilot`; it does not read or modify the Blaschka research data on `main`.
+The automatic reconnaissance/enumeration phase is complete. Four manual workflow runs were used to test, broaden and finally target the high-value public catalogues. Run #4 (`31287016342`) was the final `targeted-deep` pass. Its overall GitHub conclusion is `cancelled` because the Sorbonne job was interrupted, but the combined artifact was produced for seven completed institutions. The useful output is normalised under `data/evidence/targeted_deep_4/`; the partial Sorbonne raw artifact is intentionally ignored.
 
-The recommended first run is `bundle=high-yield`, `mode=full`, `depth=balanced`. One dispatch builds the frozen 19C canonical survey, fans out institution jobs in parallel, and then aggregates all institution artifacts into a single `slide-metadata-...` artifact. The current explicit high-yield profiles cover Science Museum Group, Natural History Museum London, Farlow, St Andrews, OHSU, Powerhouse, Whipple, Smithsonian, Museums Victoria, MNHN Paris, RBGE, NHM Vienna, Hunterian/RCS, Cambridge museum systems, Oxford and BGS. Institutions outside these systems are still assigned automatically to structured/API, paginated-catalogue, document/PDF, or seed-page fallback profiles.
+The final targeted pass yielded particularly strong machine-readable evidence at Copenhagen (510 unique SNM slide identifiers after de-duplicating repeated species rows), Farlow/Cheever (3,363 public position rows with 3,362 unique box/slide tokens, retained as mixed-period position evidence), and the St Andrews Bell-Pettigrew hierarchy. ANSP Symbiota results are retained only as a review pool because a nominal `pre-1900` query demonstrably returned later material, including 1938 Preston Smith records.
 
-Available bundles are `high-yield`, `all-automatable`, `uk-high-yield`, `diatoms`, `medical-histology`, `geology-petrology`, and `single`. `quick`, `balanced`, and `deep` alter only the bounded per-institution page budget. Raw fetched metadata documents, normalized `records.jsonl`, per-institution plans/summaries, errors, hashes, count candidates and identifier candidates are retained in the workflow artifact. Image binaries and IIIF tiles are excluded.
+No further general-purpose Actions harvesting is recommended for this closed version. Remaining edge cases are listed in `data/evidence/targeted_deep_4/MANUAL_RESIDUALS.md` and should be handled manually when a specific research use justifies the effort.
 
 ## Closure notes
 
@@ -61,4 +69,4 @@ The 07AR audit identified twenty distinct-ID rediscoveries of already catalogued
 
 Held-out closure decisions are recorded in the audit. Pieter Harting remains a discovery node but is excluded from strict because the current public UMU source does not close the surviving preparations specifically as glass microscope slides. Walther Flemming is excluded because the relevant Kiel institutional history reports the anatomical preparations lost in 1944. KCL's generic historical slide lead remains unresolved, while the named Dawes cabinets are twentieth-century. Perroncito remains held out because date and histological-preparation claims are not yet closed onto the same surviving objects.
 
-This freeze is not itself a CI-pass claim. Final GitHub check-run status is recorded in the closure manifest.
+The 07AR freeze itself was recorded before a fresh final CI run existed. Later harvesting runs validate the operational tooling on subsequent heads, but they do not retroactively change the closure manifest's contemporaneous statement or the frozen 307/155 counts.
