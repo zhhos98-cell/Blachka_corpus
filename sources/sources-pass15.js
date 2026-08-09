@@ -7,30 +7,42 @@
   section.className = 'source-section';
   section.setAttribute('aria-labelledby', 'moller-forwarding-title');
   section.innerHTML = `
-    <p class="source-kicker">British forwarding route</p>
-    <h2 id="moller-forwarding-title">M. Otto W. Möller, Hamburg: Marlborough and Liverpool, 1887</h2>
-    <p class="source-note">Workshop business records now show that the Hamburg forwarder previously known only from the Liverpool case was reused for another Damon-mediated British consignment. The two transactions are retained at document level in <a href="moller-hamburg-forwarding-register.json" target="_blank" rel="noopener">moller-hamburg-forwarding-register.json ↗</a>.</p>
+    <p class="source-kicker">British and Irish forwarding route</p>
+    <h2 id="moller-forwarding-title">M. Otto W. Möller, Hamburg: a recurrent corridor, 1886–1887</h2>
+    <p class="source-note">A wider re-read of the workshop business records shows that Möller was not confined to Marlborough and Liverpool. The Hamburg node recurs across Galway, Cardiff, Dublin Museum and later English orders, with case marks and dealer-account layers preserved at shipment level. Canonical register: <a href="moller-hamburg-forwarding-register.json" target="_blank" rel="noopener">moller-hamburg-forwarding-register.json ↗</a>.</p>
     <div class="source-list"></div>
   `;
 
   const list = section.querySelector('.source-list');
   const records = [
     {
+      type: '28 January 1886 · Galway and Cardiff',
+      title: 'Cases I.B. 269 and L.B. 270 move together through M. Otto W. Möller.',
+      meta: 'One Damon letter sends the Galway Natural History Museum order to Prof. R. J. Anderson and the Cardiff University Museum order to Prof. Parker through the same Hamburg forwarder. The invoices are 288 and 197 Marks and exactly exhaust 485 Marks of prepayment. The 290-Mark parenthetical attached to the Galway case is OCR-ambiguous and is not silently labelled as insurance.',
+      links: '<a href="moller-hamburg-forwarding-register.json" target="_blank" rel="noopener">Galway / Cardiff transaction record ↗</a>'
+    },
+    {
+      type: '1886 · Dublin Museum instalments',
+      title: 'Cases L.B. 271–272 and later 275–276: a large museum order split across repeated Hamburg consignments.',
+      meta: 'The first Dublin Museum consignment required two cases and carried a 380-Mark invoice against 264 Marks prepaid. A later July dispatch again names the Hamburg forwarder for two cases and closes a 900-Mark invoice/prepayment account. Case-prefix OCR varies and remains guarded, but the repeated forwarding relationship and instalment structure are clear.',
+      links: '<a href="moller-hamburg-forwarding-register.json" target="_blank" rel="noopener">Dublin Museum records ↗</a>'
+    },
+    {
       type: '11 October 1887 · Marlborough College',
-      title: 'Case I.B. 266, insured for 200 Marks, forwarded through M. Otto W. Möller in Hamburg.',
-      meta: 'The workshop letter to Damon states that the case had been sent on 8 October, identifies Marlborough College as the destination, gives 200 Marks insurance, names M. Otto W. Möller as the Hamburg forwarder, and states an invoice of 196 Marks against Damon\'s prepaid account. One document therefore preserves object destination, case identity, insurance, forwarder, invoice and account balance together.',
+      title: 'Case I.B. 266, insured for 200 Marks, forwarded through M. Otto W. Möller.',
+      meta: 'The letter combines destination, case identity, insurance, forwarder, invoice and account balance: I.B. 266, 200 Marks insurance and a 196-Mark invoice against Damon’s prepaid credit.',
       links: '<a href="moller-hamburg-forwarding-register.json" target="_blank" rel="noopener">Marlborough I.B. 266 record ↗</a>'
     },
     {
       type: 'November–December 1887 · Liverpool Museum',
-      title: 'Case I.B. 268: model value, packing estimate, Hamburg forwarding and rolling Damon credit remain distinct documentary layers.',
-      meta: 'A 23 November letter says 247 Marks prepaid for Liverpool covered models only and asks for about 50 Marks more for packing. The later dispatch letter sends I.B. 268 by freight to M. O. W. Möller for immediate forwarding to Liverpool and states a 268-Mark invoice while carrying Damon credit onward to Galway and Cardiff. The insurance figure in this OCR record remains ambiguous and is deliberately left unresolved.',
+      title: 'I.B. 268: model value, packing estimate, Hamburg forwarding and rolling Damon credit remain distinct.',
+      meta: 'The Liverpool sequence separates 247 Marks for models from an additional packing estimate and a later 268-Mark dispatch invoice. The case moves by freight to M. O. W. Möller for onward Liverpool dispatch while residual Damon credit is carried into other institutional orders.',
       links: '<a href="moller-hamburg-forwarding-register.json" target="_blank" rel="noopener">Liverpool I.B. 268 record ↗</a>'
     },
     {
       type: 'Archive target · Hamburg',
       title: 'Resolve the historical firm before searching a company archive.',
-      meta: 'Exact-name web searches have not yet produced a secure corporate fonds. The next source task is narrower: identify M. Otto W. Möller in the 1887 Hamburg address books, establish the legal firm name, occupation and address, and only then pursue Handelsregister, Chamber of Commerce or Staatsarchiv records. No modern Möller forwarding company is treated as a successor without that bridge.',
+      meta: 'No secure corporate fonds has yet surfaced. The next task is identity resolution in the 1886–1887 Hamburg address books: legal firm name, occupation, principals and street address first; Handelsregister, Chamber of Commerce and Staatsarchiv records second. A modern Möller firm is not treated as successor without that bridge.',
       links: '<a href="https://adressbuecher.sub.uni-hamburg.de/" target="_blank" rel="noopener">Hamburg digitised address books ↗</a>'
     }
   ];
