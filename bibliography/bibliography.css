@@ -5,12 +5,78 @@
   display: block;
 }
 
+/* Bibliography-specific atmosphere: keep the page readable, but let the
+   background carry a faint sense of routes, catalogues and archival paper. */
+body.subpage {
+  background-color: #1d1714;
+  background-image:
+    radial-gradient(circle at 86% 6%, rgba(171, 105, 68, .17), transparent 30rem),
+    radial-gradient(circle at 9% 72%, rgba(126, 91, 66, .10), transparent 34rem),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 7px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Cg fill='none' stroke='%23d8b18e' stroke-width='1.2' opacity='.10'%3E%3Cpath d='M-90 245 C210 80 390 330 670 208 S1110 80 1690 280'/%3E%3Cpath d='M-120 702 C180 530 410 775 710 610 S1190 420 1700 690'/%3E%3Cpath d='M84 -80 C220 185 120 392 275 642 S352 930 480 1090'/%3E%3Cpath d='M1080 -120 C960 180 1090 420 925 648 S830 918 730 1090'/%3E%3Cpath d='M132 452 C370 378 530 412 690 492 C875 585 1010 547 1208 404 C1324 322 1410 308 1560 350' stroke-dasharray='5 10'/%3E%3Ccircle cx='260' cy='420' r='4' fill='%23d8b18e'/%3E%3Ccircle cx='540' cy='468' r='4' fill='%23d8b18e'/%3E%3Ccircle cx='845' cy='556' r='4' fill='%23d8b18e'/%3E%3Ccircle cx='1198' cy='414' r='4' fill='%23d8b18e'/%3E%3C/g%3E%3Cg fill='%23e8c9ad' opacity='.075' font-family='Georgia,serif' font-size='18' letter-spacing='2'%3E%3Ctext x='180' y='392'%3EHOSTERWITZ / DRESDEN%3C/text%3E%3Ctext x='476' y='448'%3EHAMBURG%3C/text%3E%3Ctext x='760' y='608'%3ELIVERPOOL%3C/text%3E%3Ctext x='1140' y='388'%3EBOSTON / ROCHESTER%3C/text%3E%3Ctext x='121' y='785'%3ECATALOGUE · INVOICE · ACCESSION · CONSERVATION%3C/text%3E%3Ctext x='1060' y='792'%3E1878 · 1887 · 1893 · 2017%3C/text%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, auto, auto, 1600px 1000px;
+  background-attachment: fixed, fixed, fixed, fixed;
+}
+
+.subpage-main,
+.subpage-footer {
+  position: relative;
+  z-index: 1;
+}
+
 .page-intro,
 .bib-scope,
 .bib-section,
 .bib-note,
 .bib-contribute {
   max-width: 980px;
+}
+
+/* The bibliography gets only two images, both concentrated in the header.
+   They act like material fragments on a desk rather than a gallery sequence. */
+.page-intro {
+  position: relative;
+  max-width: 1180px;
+  min-height: 520px;
+  padding-right: clamp(270px, 29vw, 390px);
+  isolation: isolate;
+}
+
+.page-intro::before,
+.page-intro::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  overflow: hidden;
+  border: 1px solid rgba(245,239,232,.17);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 24px 70px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.025);
+  filter: saturate(.68) sepia(.12) contrast(.98) brightness(.78);
+}
+
+.page-intro::before {
+  top: 74px;
+  width: clamp(210px, 22vw, 300px);
+  aspect-ratio: 4 / 5;
+  transform: rotate(1.8deg);
+  background-image:
+    linear-gradient(rgba(31,22,18,.05), rgba(31,22,18,.20)),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Rudolf%2C%20Leopold%20and%20Caroline%20Blaschka%20in%20garden%20cropped.jpg?width=900");
+  background-position: center 34%;
+}
+
+.page-intro::after {
+  top: 286px;
+  right: clamp(155px, 15vw, 220px);
+  width: clamp(155px, 16vw, 220px);
+  aspect-ratio: 1 / 1.04;
+  transform: rotate(-3.2deg);
+  background-image:
+    linear-gradient(rgba(31,22,18,.04), rgba(31,22,18,.17)),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Blaschka%20Natural%20History%20Museum%20Londres%2028072013%202.jpg?width=700");
 }
 
 .page-intro h1,
@@ -26,6 +92,10 @@
   color: #f2eee9;
 }
 
+.page-intro h1 {
+  text-shadow: 0 8px 28px rgba(0,0,0,.18);
+}
+
 .page-intro .page-dek,
 .bib-section-head > div > p,
 .bib-scope > div > p,
@@ -37,8 +107,21 @@
 }
 
 .bib-scope {
+  position: relative;
   padding: 38px 0 44px;
   border-bottom: 1px solid rgba(242, 238, 233, .16);
+}
+
+.bib-scope::after {
+  content: "CATALOGUES · RECEPTION · COLLECTIONS · MATERIALS";
+  position: absolute;
+  right: -22px;
+  bottom: 16px;
+  color: rgba(242,238,233,.055);
+  font: 700 clamp(.72rem, 1.3vw, 1rem)/1 Arial, Helvetica, sans-serif;
+  letter-spacing: .22em;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .bib-scope-label,
@@ -113,12 +196,37 @@
 }
 
 .bib-list {
+  position: relative;
   border-top: 1px solid rgba(242, 238, 233, .2);
 }
 
+.bib-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -24px;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(212,161,116,.42), rgba(212,161,116,.03) 72%, transparent);
+  pointer-events: none;
+}
+
 .bib-entry {
+  position: relative;
   padding: 15px 0 17px;
   border-bottom: 1px solid rgba(242, 238, 233, .10);
+}
+
+.bib-entry:nth-child(12n + 1)::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 23px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(212,161,116,.58);
+  box-shadow: 0 0 0 4px rgba(212,161,116,.06);
 }
 
 .bib-entry .bib-year {
@@ -198,7 +306,59 @@
   line-height: 1.45;
 }
 
+@media (max-width: 980px) {
+  .page-intro {
+    min-height: 470px;
+    padding-right: 260px;
+  }
+
+  .page-intro::before {
+    width: 220px;
+  }
+
+  .page-intro::after {
+    right: 126px;
+    top: 274px;
+    width: 160px;
+  }
+}
+
 @media (max-width: 760px) {
+  body.subpage {
+    background-attachment: scroll;
+    background-size: auto, auto, auto, 1050px 660px;
+  }
+
+  .page-intro {
+    min-height: 0;
+    padding-right: 0;
+    padding-bottom: 228px;
+  }
+
+  .page-intro::before {
+    top: auto;
+    right: 3px;
+    bottom: 38px;
+    width: 158px;
+    aspect-ratio: 4 / 5;
+  }
+
+  .page-intro::after {
+    top: auto;
+    right: 126px;
+    bottom: 18px;
+    width: 128px;
+  }
+
+  .bib-scope::after {
+    display: none;
+  }
+
+  .bib-list::before,
+  .bib-entry:nth-child(12n + 1)::before {
+    display: none;
+  }
+
   .bib-section,
   .bib-scope,
   .bib-note,
