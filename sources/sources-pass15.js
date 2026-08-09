@@ -18,7 +18,7 @@
     {
       type: '11 October 1887 · Marlborough College',
       title: 'Case I.B. 266, insured for 200 Marks, forwarded through M. Otto W. Möller in Hamburg.',
-      meta: 'The workshop letter to Damon states that the case had been sent on 8 October, identifies Marlborough College as the destination, gives 200 Marks insurance, names M. Otto W. Möller as the Hamburg forwarder, and states an invoice of 196 Marks against Damon's prepaid account. One document therefore preserves object destination, case identity, insurance, forwarder, invoice and account balance together.',
+      meta: 'The workshop letter to Damon states that the case had been sent on 8 October, identifies Marlborough College as the destination, gives 200 Marks insurance, names M. Otto W. Möller as the Hamburg forwarder, and states an invoice of 196 Marks against Damon\'s prepaid account. One document therefore preserves object destination, case identity, insurance, forwarder, invoice and account balance together.',
       links: '<a href="moller-hamburg-forwarding-register.json" target="_blank" rel="noopener">Marlborough I.B. 266 record ↗</a>'
     },
     {
@@ -44,4 +44,9 @@
   });
 
   paymentSection.insertAdjacentElement('afterend', section);
+
+  const next = document.createElement('script');
+  next.src = 'sources-pass16.js?v=20260810-1';
+  next.defer = true;
+  document.body.appendChild(next);
 })();
