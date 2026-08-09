@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Dealer Cross-Category Material Trade Register",
+  "generated_date": "2026-08-10",
+  "scope": "Evidence that the principal Blaschka distributors also traded ordinary natural-history specimens, teaching collections, casts, preserved material or other scientific objects. This register tests whether glass models should be studied inside broader dealer economies rather than as an isolated product category.",
+  "methodological_guard": "A dealer's trade in natural specimens does not prove that those specimens served as models for Blaschka glasswork, and a shared dealer does not prove a shared shipment. The comparison concerns commercial repertoire, customer networks and documentary practices unless a source directly joins the categories.",
+  "dealers": [
+    {
+      "id": "CROSSCAT-FRIC",
+      "dealer": "Václav Frič / V. Frič natural-history business",
+      "categories": [
+        "marine specimens from the Naples Zoological Station",
+        "natural-history specimens across the three kingdoms of nature",
+        "teaching and demonstration material",
+        "Blaschka glass invertebrate models"
+      ],
+      "direct_cross_category_evidence": "Henri Reiling and Tat'jána Spunarová's archival/business reconstruction explicitly states that Frič sold marine specimens from the Naples Zoological Station and also retailed glass invertebrate models made by the Blaschkas. Their article treats these activities as parts of the same natural-history business.",
+      "research_value": "Frič is the clearest case in which preserved/natural material and glass representations were commercial alternatives or complements inside one dealer repertoire. This makes catalogues, pricing, customer selection and museum purchasing categories directly comparable.",
+      "guard": "Do not infer that the Naples specimens Frič sold were the same specimens purchased by the Blaschkas in 1877 or that a specific glass model copied a Frič-supplied specimen.",
+      "source_locator": "https://academic.oup.com/jhc/article/17/1/23/624357"
+    },
+    {
+      "id": "CROSSCAT-DAMON",
+      "dealer": "Robert Damon / Robert Ferris Damon",
+      "categories": [
+        "fossils and geological material",
+        "shells and marine natural-history specimens",
+        "rare zoological specimens",
+        "Blaschka glass invertebrate models as British/Irish agent"
+      ],
+      "direct_natural_history_evidence": "Nature in 1871 called Robert Damon a well-known dealer in natural-history objects at Weymouth and reported that he procured numerous West Indian Pentacrini, enabling detailed scientific observations of both hard and soft parts. McGill's archival authority record independently describes the Damon dealership as supplying museums in Europe, the Americas and Australia with natural-history specimens.",
+      "direct_blaschka_evidence": "A September 1880 workshop draft grants Damon the sole agency and sale of Blaschka glass models for Great Britain and Ireland, subject to catalogue prices and transport-risk terms.",
+      "research_value": "Damon did not become a scientific dealer by selling Blaschka models; the agency entered an already established specimen trade and museum customer network. His role can therefore be analysed as category extension inside a mature natural-history business.",
+      "guard": "The Pentacrinus transaction predates the Blaschka agency and is not evidence of a Blaschka model transaction.",
+      "source_locators": [
+        "https://www.nature.com/articles/004496a0",
+        "https://archivalcollections.library.mcgill.ca/index.php/damon-robert"
+      ]
+    },
+    {
+      "id": "CROSSCAT-WARD",
+      "dealer": "Henry Augustus Ward / Ward's Natural Science Establishment",
+      "categories": [
+        "biological, geological and palaeontological specimens",
+        "scientific cabinets",
+        "casts and models",
+        "taxidermic work",
+        "Blaschka glass invertebrate models"
+      ],
+      "direct_natural_history_evidence": "University of Rochester describes Ward's Natural Science Establishment as a supplier of scientific cabinets and natural-history specimens to museums, colleges and universities, with manuscripts, catalogues and photographs preserved in Rochester. The Ward Project describes the firm as a worldwide supplier of specimens.",
+      "direct_blaschka_evidence": "Ward's 1879 pamphlet advertised Blaschka glass models; Academy of Natural Sciences records preserve models bearing Ward's Natural Science Establishment stamps, and multiple institutional procurement chains document Ward as the North-American distributor.",
+      "research_value": "Ward offers the strongest surviving corporate archive for testing how a general natural-history establishment priced, catalogued and routed a new manufactured representation alongside specimens, casts and prepared teaching collections.",
+      "guard": "Ward's general specimen trade and Blaschka distribution are commercially connected at the firm level, but specific cabinet/specimen transactions must not be merged with glass-model orders without document-level evidence.",
+      "source_locators": [
+        "https://www.library.rochester.edu/rbscp/blog/searching-ward",
+        "https://www.library.rochester.edu/rbscp/special-collections-development-and-management",
+        "https://archivalcollections.drexel.edu/repositories/3/resources/842"
+      ]
+    }
+  ],
+  "comparative_questions": [
+    "Were glass models priced and sold using the same catalogue, credit, exchange and commission practices as ordinary specimens?",
+    "Did customers choose between preserved specimens, casts/models and Blaschka glass representations for the same teaching problem?",
+    "Did fragile manufactured representations require different packing, insurance and liability terms from wet, dry or mineral specimens?",
+    "Did dealer networks make glass models portable by attaching them to pre-existing natural-history routes rather than creating new routes from scratch?",
+    "How did the category assigned by dealer paperwork — specimen, model, teaching aid, cabinet item — affect museum accession and later provenance?"
+  ],
+  "research_observation": "The three principal distributors were not specialist glass-model merchants. Each operated within a broader economy of natural-history objects. The historical unit of analysis can therefore shift from 'the market for Blaschka models' to the commercial infrastructures that moved interchangeable and non-interchangeable forms of nature: living organisms, preserved specimens, fossils, casts, models and catalogued teaching sets."
+}
