@@ -58,4 +58,11 @@
 
   const scopeTitle = document.querySelector('#bib-scope-title');
   if (scopeTitle) scopeTitle.textContent = '1870–2026 · twenty-fourth expanded pass';
+
+  if (!document.querySelector('script[data-bib-pass25-loader]')) {
+    const pass25 = document.createElement('script');
+    pass25.src = 'bibliography-pass25.js?v=20260809-1';
+    pass25.dataset.bibPass25Loader = 'true';
+    document.head.appendChild(pass25);
+  }
 })();
