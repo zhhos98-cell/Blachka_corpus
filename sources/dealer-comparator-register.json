@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Dealer Ecology and Commercial Paperwork Comparator Register",
+  "generated_date": "2026-08-10",
+  "scope": "Archival and printed comparators used to distinguish Blaschka-specific distribution practices from broader nineteenth-century natural-history dealership. This register includes the three documented Blaschka dealer routes only when they occur in a shared receiving-side record structure, and also includes non-Blaschka natural-history dealers preserved in the same series or in closely comparable transaction records.",
+  "methodological_guard": "A comparator is not evidence that a dealer sold Blaschka models. Entries are included because they expose comparable commercial actions such as catalogue circulation, specimen/model selection, approval shipments, invoices, cheques, returns, account reconciliation, insurance, exchange, or museum acquisition paperwork. Blaschka-specific claims remain confined to sources that explicitly identify the models or workshop.",
+  "comparison_axes": [
+    "catalogue and price-list circulation",
+    "sample or approval shipment",
+    "customer selection and return",
+    "invoice and payment",
+    "credit, exchange, and account reconciliation",
+    "packing, shipping, and insurance",
+    "museum acquisition and receipt paperwork",
+    "dealer identity and market positioning"
+  ],
+  "archive_clusters": [
+    {
+      "id": "COMP-BAYHSTA-ZSS-DEALER-SERIES",
+      "repository": "Bayerisches Hauptstaatsarchiv",
+      "record_group": "Zoologische Staatssammlung acquisition files",
+      "status": "controlled_receiving_side_comparator",
+      "records": [
+        {
+          "reference": "BayHStA, Zoologische Staatssammlung 113",
+          "dealer": "Václav Frič, Prague",
+          "title": "Erwerbungen beim Naturalienhändler V. Fric (Prag)",
+          "dates": "1864–1869, 1883",
+          "relationship_to_blaschka": "documented Blaschka dealer; file content itself not yet verified as Blaschka-specific"
+        },
+        {
+          "reference": "BayHStA, Zoologische Staatssammlung 123",
+          "dealer": "Schlüter & Söhne, Halle",
+          "title": "Erwerbungen bei der Naturalienhandlung Schlüter & Söhne (Halle)",
+          "dates": "1872–1873, 1881–1885",
+          "relationship_to_blaschka": "non-Blaschka dealer comparator"
+        },
+        {
+          "reference": "BayHStA, Zoologische Staatssammlung 124",
+          "dealer": "Robert Damon, Weymouth",
+          "title": "Erwerbungen beim Naturalienhändler Robert Damon (Weymouth)",
+          "dates": "1873",
+          "relationship_to_blaschka": "documented Blaschka dealer; file content itself not yet verified as Blaschka-specific"
+        },
+        {
+          "reference": "BayHStA, Zoologische Staatssammlung 127",
+          "dealer": "Henry Augustus Ward / Ward's Museum, Rochester",
+          "title": "Erwerbungen bei Ward's Museum of Mineralogy, Geology & Zoology (Rochester)",
+          "dates": "1875",
+          "relationship_to_blaschka": "documented Blaschka dealer; file content itself not yet verified as Blaschka-specific"
+        },
+        {
+          "reference": "BayHStA, Zoologische Staatssammlung 129",
+          "dealer": "John A. Spring, Tucson",
+          "title": "Erwerbungen beim Naturalienhändler John A. Spring (Tuscon)",
+          "dates": "1876",
+          "relationship_to_blaschka": "non-Blaschka dealer comparator"
+        },
+        {
+          "reference": "BayHStA, Zoologische Staatssammlung 132",
+          "dealer": "Carl Baudisch, Trieste",
+          "title": "Erwerb von Aalen beim Naturalienhändler Carl Baudisch (Triest)",
+          "dates": "1877",
+          "relationship_to_blaschka": "non-Blaschka dealer comparator"
+        }
+      ],
+      "research_value": "A single zoological receiving institution filed acquisitions from Frič, Damon, Ward and competing natural-history traders in adjacent records. This offers an unusually controlled way to compare dealer/customer paperwork without assuming that every file concerns Blaschka models.",
+      "locator": "https://www.gda.bayern.de/service/findmitteldatenbank/Kapitel/a1f20232-b9e9-410d-9ba2-131684437bc8"
+    },
+    {
+      "id": "COMP-HILDESHEIM-BEST741-DEALER-ECOLOGY",
+      "repository": "Stadtarchiv Hildesheim",
+      "record_group": "Best. 741, Zoologische Sammlung allgemein",
+      "status": "controlled_local_dealer_ecology",
+      "records": [
+        {
+          "reference": "StadtA HI, Best. 741, Nr. 301",
+          "dealer": "V. Frič, Prague",
+          "title": "Zoologie: Erwerbungen von der Lehrmittel- und Naturalienhandlung V. Fric in Prag",
+          "dates": "1880",
+          "relationship_to_blaschka": "documented Blaschka dealer; file content not yet verified as Blaschka-specific"
+        },
+        {
+          "reference": "StadtA HI, Best. 741, Nr. 304",
+          "dealer": "H. Putze, Hamburg",
+          "title": "Zoologie: Erwerbungen von H. Putze, Hamburg, zoologische anatomische Lehrmittelanstalt",
+          "dates": "1880–1884",
+          "relationship_to_blaschka": "non-Blaschka teaching-aid dealer comparator"
+        },
+        {
+          "reference": "StadtA HI, Best. 741, Nr. 306",
+          "dealer": "Hugo Schilling, Hamburg",
+          "title": "Zoologie: Erwerbungen von der Naturalienhandlung Hugo Schilling, Hamburg",
+          "dates": "1878–1901",
+          "relationship_to_blaschka": "non-Blaschka natural-history dealer comparator"
+        },
+        {
+          "reference": "StadtA HI, Best. 741, Nr. 305",
+          "dealer": "L. W. Schaufuss, Dresden",
+          "title": "Zoologie: Erwerbungen von der Naturalienhandlung Dr. L. W. Schaufuss, Dresden",
+          "dates": "1867–1882",
+          "relationship_to_blaschka": "non-Blaschka natural-history dealer comparator"
+        },
+        {
+          "reference": "StadtA HI, Best. 741, Nr. 294",
+          "dealer": "Museum Godeffroy, Hamburg",
+          "title": "Zoologie: Erwerbungen aus dem Museum Godeffroy, Hamburg",
+          "dates": "1878–1884",
+          "relationship_to_blaschka": "commercial museum/dealer comparator; also relevant to Damon's later Godeffroy/Godfrey collecting-market context but not a Blaschka transaction"
+        }
+      ],
+      "research_value": "The same municipal zoological filing structure preserves Frič alongside competitors in naturalia and anatomical teaching aids during the exact Blaschka marine-model sales period. It is a second controlled archive for comparing how museums administratively distinguished or conflated natural specimens, teaching aids, and model suppliers.",
+      "locator": "https://www.arcinsys.niedersachsen.de/arcinsys/list.action?nodeid=g312285&page=1"
+    },
+    {
+      "id": "COMP-MFN-S-DEALER-CORRESPONDENCE",
+      "repository": "Museum für Naturkunde Berlin",
+      "record_group": "Historical Image and Document Collections, records holding S",
+      "status": "holding_level_dealer_comparator",
+      "records": [
+        {
+          "dealer": "Václav Frič natural-history trade, Prague",
+          "relationship_to_blaschka": "documented Blaschka dealer; official holding description explicitly names correspondence with the trade"
+        },
+        {
+          "dealer": "Firma Umlauff, Berlin",
+          "relationship_to_blaschka": "non-Blaschka dealer comparator explicitly named in the same institutional correspondence holdings"
+        }
+      ],
+      "chronological_target": "For Blaschka-era zoological correspondence before 1889, S001 (Zoologisches Museum, 1810–1888) is the first chronological subdivision to inspect; this is a target inference from the archive's chronology, not an item-level Frič reference.",
+      "research_value": "The official archive description places Frič and another major natural-history trading firm, Umlauff, within the same museum records universe. This supports comparative study of dealer correspondence while preserving the distinction between holding-level and item-level evidence.",
+      "access_note": "Written-records access is currently suspended during relocation; public archive notices should be checked before planning consultation.",
+      "locators": [
+        "https://www.museumfuernaturkunde.berlin/en/research/records-collection",
+        "https://www.museumfuernaturkunde.berlin/en/research/records-collection-chronological-overview",
+        "https://www.museumfuernaturkunde.berlin/en/research/collection/archive/document-collection/"
+      ]
+    }
+  ],
+  "transaction_process_comparators": [
+    {
+      "id": "COMP-DAMON-RUSKIN-MORGAN",
+      "dealer": "Robert Damon",
+      "repository": "The Morgan Library & Museum",
+      "collection": "John Ruskin letters to Robert Damon",
+      "reference": "MA 1406.1–18",
+      "dates": "1884–1885",
+      "status": "same_period_general_dealer_business_context",
+      "relationship_to_blaschka": "not Blaschka correspondence",
+      "process_evidence": [
+        {
+          "reference": "MA 1406.2",
+          "date": "1884-07-03",
+          "action": "customer selects minerals from a dealer shipment, returns the catalogue, and encloses a cheque for retained items"
+        },
+        {
+          "reference": "MA 1406.3",
+          "date": "1884-07-24",
+          "action": "customer requests specimens on approval together with additional goods"
+        },
+        {
+          "reference": "MA 1406.5",
+          "date": "1884/1885-08-03",
+          "action": "customer requests the dealer's catalogue and refers to items kept and returned"
+        },
+        {
+          "reference": "MA 1406.9",
+          "date": "1885-12-31",
+          "action": "customer reconciles the transaction through a list of retained minerals and offers to correct discrepancies"
+        }
+      ],
+      "research_value": "This compact sequence exposes Damon's ordinary commercial workflow in the same years as his Blaschka agency: catalogue circulation, approval shipment, selective retention/return, cheque payment, and later reconciliation. It is a control for deciding which features of Blaschka transactions were dealer-standard rather than object-specific.",
+      "locator": "https://www.themorgan.org/literary-historical/191319"
+    },
+    {
+      "id": "COMP-WARD-BULLETIN-BHL",
+      "dealer": "Ward's Natural Science Establishment",
+      "repository": "Biodiversity Heritage Library / Smithsonian Libraries and Archives",
+      "source": "Ward's natural science bulletin, vols. 1–3",
+      "dates": "1881–1886",
+      "status": "dealer_published_primary_source",
+      "relationship_to_blaschka": "commercial print infrastructure; individual pages require inspection for Blaschka references",
+      "research_value": "A public-domain run of the firm's own bulletin can be searched for catalogues, product announcements, pricing language, institutional customers, and the commercial rhetoric surrounding models and natural-history teaching material.",
+      "locator": "https://www.biodiversitylibrary.org/item/212981"
+    },
+    {
+      "id": "COMP-WARD-ANSP-PAMPHLET-1879",
+      "dealer": "Henry Augustus Ward / Ward's Museum",
+      "repository": "Academy of Natural Sciences of Drexel University Archives",
+      "reference": "ANSP-2012-060",
+      "date": "1879-06-01",
+      "status": "direct_blaschka_dealer_evidence",
+      "relationship_to_blaschka": "explicit",
+      "research_value": "The archival pamphlet advertises Blaschka glass models and identifies Ward as the sole American agent. It is a direct printed witness to how agency status and catalogue access were marketed to customers.",
+      "locator": "https://archivalcollections.drexel.edu/repositories/3/resources/842"
+    }
+  ],
+  "next_retrieval_targets": [
+    "Inspect BayHStA ZSS 113, 124, and 127 together with ZSS 123 as a non-Blaschka control.",
+    "Inspect Hildesheim Best. 741 Nr. 301 together with Nr. 304 and Nr. 306 to compare model/teaching-aid/naturalia procurement paperwork.",
+    "Search Ward's natural science bulletin, 1881–1886, for Blaschka, glass models, invertebrates, catalogue, packing, cases, freight, insurance, exchange, schools, museums, and colleges.",
+    "Use the Morgan Damon sequence as a process vocabulary when coding Damon-mediated Blaschka orders: catalogue, approval, retained, returned, cheque, list, correction/reconciliation.",
+    "When Museum für Naturkunde written records reopen, request Frič correspondence in the pre-1889 zoological records and compare it with Umlauff material from the same holding."
+  ]
+}
