@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Blaschka source corpus ingest priority",
+  "generated_date": "2026-08-10",
+  "principle": "Prioritize sources that can be ingested now or retrieved by a precise archival unit. Repository discovery alone has lower value than document-level or corpus-level access.",
+  "priorities": [
+    {
+      "priority": "P0",
+      "target": "BHL Rudolf Blaschka letters to Walter Deane, 1895–1927",
+      "access": "open digital",
+      "action": "Download OCR/text and page metadata; preserve display-label and structured-date fields separately; create one record per dated correspondence part/page.",
+      "reason": "Large direct primary corpus available immediately with no archive visit."
+    },
+    {
+      "priority": "P0",
+      "target": "Existing Rakow/Blaschka OCR workshop corpus already in project backend",
+      "access": "local project corpus",
+      "action": "Cross-walk Deane dates and names against business letters, Lieferungs-Buch, Geschäfts Anmerkungen, packing and shipping records.",
+      "reason": "Provides the workshop/business side needed to interpret the new Deane corpus without collapsing private and commercial correspondence."
+    },
+    {
+      "priority": "P1",
+      "target": "University of Rochester A.W23 and D.231 Ward archives",
+      "access": "archive retrieval",
+      "action": "Request or inspect Blaschka-specific customer correspondence, invoices, catalogue/order records, packing/shipping and account rows.",
+      "reason": "Only concentrated dealer-side personal + corporate archive in the three principal distribution routes."
+    },
+    {
+      "priority": "P1",
+      "target": "UCD Archives IE UCDA RCSI accounts 1883–1885 and equipment/supplies order books 1867–1916",
+      "access": "archive retrieval",
+      "action": "Search exact 13 June 1885 transaction and 495/619-Mark totals; identify any intermediary/commission notation.",
+      "reason": "A precise receiving-side archive may close the unexplained 124-Mark commission layer."
+    },
+    {
+      "priority": "P1",
+      "target": "Charles Francis Adams Diary, Illinois collection 782",
+      "access": "archive request",
+      "action": "Read January–May 1885 daily entries around Ward shipment arrival; code wharf, package, museum handoff, unpacking and payment references.",
+      "reason": "Personal archive of a named carrier/preparator/payment intermediary in the Auckland Blaschka transaction."
+    },
+    {
+      "priority": "P1",
+      "target": "MNCN/Simurg Robert F. Damon catalogues and dispatch note, 1885–1906",
+      "access": "digital catalogue / image retrieval",
+      "action": "Transcribe catalogue headings, list structure, prices if present, customer/dispatch notation and language.",
+      "reason": "Same-period Damon business paperwork can supply a control vocabulary for British/Irish Blaschka transactions."
+    },
+    {
+      "priority": "P1",
+      "target": "Smithsonian SIA RU007095 Box 1 specimen lists, 1861–1865",
+      "access": "archive retrieval",
+      "action": "Isolate Damon lists and financial entries and compare with Talling/Vaux inside the same customer archive.",
+      "reason": "Controlled pre-agency comparator for dealer list, purchase and exchange practices."
+    },
+    {
+      "priority": "P2",
+      "target": "Frič–Antipa letters nos. 168–172 and associated inventory/registers",
+      "access": "published reconstruction + museum archive",
+      "action": "Use as a coding template for dealer → receiving inventory → surviving object crosswalk.",
+      "reason": "Excellent longitudinal comparator but postdates Blaschka marine-model production."
+    },
+    {
+      "priority": "P2",
+      "target": "BayHStA ZSS 113/124/127 and related dealer acquisition files",
+      "access": "archive retrieval",
+      "action": "Compare Frič, Damon, Ward and adjacent dealers under one museum administrative system.",
+      "reason": "Best controlled receiving-side comparison for ordinary natural-history dealership."
+    },
+    {
+      "priority": "P2",
+      "target": "Carrier/customs archives: Lloyd Triestino, NDL, NARA RG36",
+      "access": "archive retrieval",
+      "action": "Search only against already known case marks, shipment dates, consignee/forwarder names and routes.",
+      "reason": "High interpretive value but lower expected hit rate than direct correspondence/account sources."
+    }
+  ]
+}
