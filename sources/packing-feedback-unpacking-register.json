@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Packing Feedback and Skilled Unpacking Register",
+  "generated_date": "2026-08-10",
+  "scope": "Primary-source sequences in which packing design, customs opening, museum unpacking, repair and receiver feedback become one iterative circulation process. The register concentrates on the Ware Collection because the correspondence preserves both workshop-side methods and receiver-side evaluation across multiple shipments.",
+  "methodological_guard": "Successful arrival is not treated as proof that packing alone worked. Customs inspection, route choice, handling, receiver skill, remounting and repair are recorded as separate actions. Retrospective statements are distinguished from dated transaction documents, and OCR wording is not silently normalised where an image check remains useful.",
+  "events": [
+    {
+      "id": "PACK-1892-CUSTOMS-OPENING",
+      "date_range": "1892",
+      "status": "direct_primary_evidence",
+      "event": "Five cases arrive Cambridge and are opened under customs supervision",
+      "evidence": "The 1892 correspondence identifies five cases L.B. 1–5, consigned through Boston. Rudolf later reported from Cambridge that all five boxes had been found, that the first was opened before a customs inspector, and that the contents had arrived without even a scratch before the remaining cases were opened over subsequent days.",
+      "stages": ["arrival", "customs", "unpacking", "condition feedback"],
+      "research_value": "Customs opening was already embedded in the receiving procedure at the beginning of the botanical-model programme."
+    },
+    {
+      "id": "PACK-1929-PROTECTION-REGULATION-REPAIR",
+      "date_range": "1929-04 to 1929-07",
+      "status": "direct_multi_document_chain",
+      "event": "Four cases / twenty-seven framed boxes: packing cost, border classification, unpacking and slight repair",
+      "evidence": "The workshop account separates four outer cases, twenty-seven framed boxes, packing materials including canvas and straw, packing wages, transport to the Dresden railway and consular paperwork. Harvard prepared Louis Bierweiler for prompt clearing. After arrival, receiving correspondence reported only slight breakage and local mending; the same documentary sequence records a dispute over hay/straw as regulated plant packing material.",
+      "stages": ["packing", "dispatch", "customs/quarantine", "arrival", "unpacking", "repair", "feedback"],
+      "research_value": "The protective material became a regulatory liability at the border while the glass itself arrived largely intact."
+    },
+    {
+      "id": "PACK-1930-METHOD",
+      "date": "1930",
+      "status": "direct_primary_procedural_source",
+      "event": "Method of preparing the models for Transportation",
+      "procedure": [
+        "fasten each glass model securely to a firm cardboard plate",
+        "place the model in a strong cardboard box",
+        "immobilise dependent parts with rolls of crushed tissue paper",
+        "pack the cardboard boxes in a pinewood outer box with straw between them",
+        "wrap the outer box in a bale of straw and cover with burlap to create an elastic shock-absorbing bundle",
+        "open the boxes in the Museum under a Custom-house Inspector",
+        "remove models from temporary cardboard supports",
+        "transfer models to plaster plaques made by a method attributed to Dr. H. F. Libby of Boston",
+        "place each mounted model in its exhibition case with a label"
+      ],
+      "reported_result": "The procedural description states that such bundles reached Cambridge after the ocean voyage with practically no parts broken.",
+      "research_value": "Transportation is described as a complete transformation sequence from temporary transport mounting to museum remounting, not merely as crate construction."
+    },
+    {
+      "id": "PACK-1930-AMES-FEEDBACK",
+      "date": "1930-12-15",
+      "status": "direct_primary_feedback",
+      "event": "Receiver feeds vibration and quarantine risk back into future packing",
+      "evidence": "Oakes Ames advised Rudolf that leaves would stand transportation better if supported with tissue paper because even careful transit involved vibration and danger of damage. He separately repeated his warning about hay because inspectors were very strict about plant material used for packing.",
+      "stages": ["feedback", "packing redesign", "regulatory knowledge"],
+      "research_value": "Receiver observation becomes future workshop technique; the knowledge needed for packing is distributed across Dresden and Cambridge."
+    },
+    {
+      "id": "PACK-1932-SKILLED-UNPACKING",
+      "date_range": "1932-09 to 1932-10",
+      "status": "direct_multi_document_chain",
+      "event": "Three cases and twenty-one models: skilled unpacking as a condition of success",
+      "evidence": "On 29 September 1932 Harvard reported that three cases contained twenty-one models with only a small piece broken from one leaf, calling it the most satisfactory shipment received from Blaschka. On 31 October Rudolf replied to Louis Bierweiler that some items had been complicated to unpack and explicitly credited Bierweiler's skill and carefulness for the excellent result.",
+      "stages": ["arrival", "unpacking", "condition assessment", "receiver skill", "feedback"],
+      "research_value": "Near-perfect arrival did not make unpacking automatic. Accumulated technician skill remained part of the transport system."
+    }
+  ],
+  "actors_and_distributed_knowledge": [
+    {
+      "actor": "Rudolf Blaschka / workshop",
+      "knowledge": ["temporary mounting", "immobilisation", "crate architecture", "material selection", "case marking"]
+    },
+    {
+      "actor": "Oakes Ames / Harvard receiver",
+      "knowledge": ["arrival condition", "vibration effects", "quarantine sensitivity of packing materials", "feedback for future shipments"]
+    },
+    {
+      "actor": "Custom-house Inspector",
+      "knowledge": ["authorised inspection/opening", "border compliance"]
+    },
+    {
+      "actor": "Louis Bierweiler",
+      "knowledge": ["clearance coordination", "skilled unpacking", "minor repair", "installation handling"]
+    },
+    {
+      "actor": "H. F. Libby",
+      "knowledge": ["plaster-plaque remounting method"]
+    }
+  ],
+  "research_observation": "Packing functioned as a distributed instruction and feedback system. The workshop encoded handling knowledge into supports, tissue, boxes and crate architecture; customs officers controlled opening; museum technicians translated temporary transport mounts into exhibition mounts; receiver reports of vibration, breakage and regulated packing material were fed back into later shipments. The historical unit is therefore a packing–unpacking loop rather than a crate."
+}
