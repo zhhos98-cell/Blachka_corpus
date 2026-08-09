@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "title": "The Blaschka Object Network — Dealer Archive Register",
   "generated_date": "2026-08-10",
   "scope": "Archival survival of the three documented commercial dealers/distributors of Blaschka marine-invertebrate models: Henry Augustus Ward / Ward's Natural Science Establishment, Robert Damon / Robert Ferris Damon, and Václav Frič. The register distinguishes intact business archives from dispersed dealer correspondence preserved by the Blaschka workshop, customers, museums and later manuscript collections.",
@@ -79,6 +79,25 @@
           "status": "receiving_side_dealer_file",
           "blaschka_guard": "Dealer/customer correspondence in the Blaschka era; item content must be checked before linking to glass models.",
           "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA00025.html"
+        },
+        {
+          "repository": "Smithsonian Institution Archives",
+          "collection": "Assistant Secretary in charge of the United States National Museum records",
+          "reference": "SIA RU000189, Box 139, Folders 1-3",
+          "coverage": "Henry Augustus Ward correspondence, 1879-1895",
+          "status": "receiving_side_dealer_file",
+          "evidence": "The finding aid describes the bulk of the correspondence as business transactions, especially taxidermic work and exchanges of natural-history specimens, between the U.S. National Museum and Ward's Natural Science Establishment.",
+          "blaschka_guard": "Blaschka content has not yet been isolated within these folders.",
+          "locator": "https://siarchives.si.edu/collections/siris_arc_216765"
+        },
+        {
+          "repository": "Bayerisches Hauptstaatsarchiv",
+          "collection": "Zoologische Staatssammlung",
+          "reference": "BayHStA, Zoologische Staatssammlung 127",
+          "coverage": "Erwerbungen bei Ward's Museum of Mineralogy, Geology & Zoology (Rochester), 1875",
+          "status": "receiving_side_dealer_file",
+          "blaschka_guard": "Dealer-network context; no Blaschka content is asserted without file inspection.",
+          "locator": "https://www.gda.bayern.de/service/findmitteldatenbank/Kapitel/a1f20232-b9e9-410d-9ba2-131684437bc8"
         }
       ],
       "locators": [
@@ -131,11 +150,12 @@
             "9 April 1879"
           ],
           "recipient_date": "7 February 1881",
-          "examples": [
-            "CA MUA MG1022-2-1-109-0007 (13 February 1877)",
+          "verified_examples": [
+            "CA MUA MG1022-2-1-135-0011 (13 February 1879)",
             "CA MUA MG1022-2-1-117-0019 (25 October 1877)",
-            "CA MUA MG1022-2-1-136-0003 (3 March 1879)"
+            "CA MUA MG1022-2-1-136-0004 (3 March 1879)"
           ],
+          "catalogue_correction_note": "An earlier project pass mis-associated CA MUA MG1022-2-1-109-0007 with Damon. McGill's catalogue identifies that item as a 13 February 1877 letter from C. A. White. The Damon reference for 13 February 1879 is MG1022-2-1-135-0011; the Damon item on 3 March 1879 is MG1022-2-1-136-0004.",
           "status": "receiving_side_dealer_file",
           "blaschka_guard": "Dealer correspondence in the Blaschka era; Blaschka content must be verified item by item.",
           "locator": "https://archivalcollections.library.mcgill.ca/index.php/damon-robert"
