@@ -5,7 +5,7 @@
   const records = [
     {
       year: 1883,
-      citation: 'James Troop, “Botany at Harvard University,” <em>Botanical Gazette</em> 8(4): 202–205. [Entry retained from Harvard Series VIII; page span follows the BHL issue record.]',
+      citation: 'James Troop, “Botany at Harvard University,” <em>Botanical Gazette</em> 8(4): 202–204. [Entry retained from Harvard Series VIII; page span bounded by the next article in the BHL issue record.]',
       links: '<a href="https://www.biodiversitylibrary.org/page/5167982" target="_blank" rel="noopener">BHL bibliographic locator ↗</a> · <a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener">Harvard Series VIII discovery source ↗</a>'
     },
     {
