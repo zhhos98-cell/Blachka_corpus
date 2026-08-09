@@ -1,1 +1,0 @@
-Apply entry-first source loading, bibliography pass 11, and move/cache-bust bibliography tools at page top.
