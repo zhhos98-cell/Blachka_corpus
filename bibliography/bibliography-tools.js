@@ -1,6 +1,7 @@
 (() => {
   const list = document.querySelector('.bib-list');
   const section = document.querySelector('.bib-section');
+  const intro = document.querySelector('.page-intro');
   if (!list || !section || document.querySelector('.bib-tools')) return;
 
   const style = document.createElement('style');
@@ -12,7 +13,7 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: 16px 26px;
-      margin: 0 0 20px;
+      margin: 18px 0 30px;
       padding: 14px 0 16px;
       border-top: 1px solid rgba(242,238,233,.16);
       border-bottom: 1px solid rgba(242,238,233,.16);
@@ -94,7 +95,8 @@
     </div>
   `;
 
-  list.insertAdjacentElement('beforebegin', toolbar);
+  if (intro) intro.insertAdjacentElement('afterend', toolbar);
+  else section.insertAdjacentElement('beforebegin', toolbar);
 
   const collator = new Intl.Collator(['en', 'de', 'fr'], { sensitivity: 'base', numeric: true });
   let mode = 'year';
