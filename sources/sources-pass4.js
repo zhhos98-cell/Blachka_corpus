@@ -4,6 +4,13 @@
   const list = section?.querySelector('.source-list');
   if (!section || !list || list.querySelector('[data-source-pass="4"]')) return;
 
+  if (!section.querySelector('.archive-data-link')) {
+    const dataNote = document.createElement('p');
+    dataNote.className = 'source-note archive-data-link';
+    dataNote.innerHTML = 'Machine-readable archival register: <a href="global-archive-register.json" target="_blank" rel="noopener">global-archive-register.json ↗</a>. Entries distinguish direct Blaschka archives, dealer/business archives, receiving-side institutional archives and candidate archival bridges.';
+    heading.insertAdjacentElement('afterend', dataNote);
+  }
+
   const records = [
     {
       type: 'United Kingdom · direct workshop correspondence',
