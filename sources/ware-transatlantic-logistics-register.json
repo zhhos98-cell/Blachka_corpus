@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Ware Collection Transatlantic Logistics and Customs Register",
+  "generated_date": "2026-08-10",
+  "scope": "Repeated transatlantic shipment infrastructure for the Blaschka botanical models, with emphasis on named forwarding agents, ocean carriers, customs brokers, customs inspection, insurance, freight charges, packing materials and receiving-side clearance. The purpose is to reconstruct transport as a chain of institutions and documents rather than a single 'shipped to Harvard' event.",
+  "methodological_guard": "Adjacent letters and invoices are cross-walked only when date, case marks, consignee, carrier or archival sequence supports the connection. Corporate archives are listed as retrieval targets; their existence does not prove survival of a particular Blaschka cargo record. Shipping agents, ocean carriers, customs brokers, customs authorities and Harvard officers remain separate roles.",
+  "source_base": {
+    "workshop_and_harvard_records": "Rakow / Blaschka archive OCR corpus and Harvard-side correspondence preserved in the project backend",
+    "carrier_archives": "official archival descriptions for Norddeutscher Lloyd and Eastern Steamship Lines-related collections",
+    "customs_archives": "U.S. National Archives Record Group 36, Records of the U.S. Customs Service"
+  },
+  "routes": [
+    {
+      "id": "WARE-1906-CONSIGNMENT",
+      "date_range": "1906-10 to 1906-11",
+      "status": "direct_multi_document_chain",
+      "dispatch": {
+        "date": "1906-10-23",
+        "workshop_letter_date": "1906-10-27",
+        "case_marks": "OCR reads R.B.1 to 6; original image should be checked before using the count in publication",
+        "route": ["Dresden", "Bremen", "North German Lloyd transatlantic service", "United States", "Boston/Cambridge"],
+        "actors": [
+          {
+            "name": "Ehrhorn, Emden & Mayer",
+            "role": "Bremen forwarding agents",
+            "evidence": "Rudolf states that the cases left Dresden for Bremen and would be shipped by the agents on the next North German Lloyd steamer."
+          },
+          {
+            "name": "Norddeutscher Lloyd",
+            "role": "ocean carrier",
+            "evidence": "The dispatch letter explicitly names the next North German Lloyd steamer; a neighbouring workshop letter says the steamer Friedrich der Große had the models on board and was almost in America.",
+            "sequence_guard": "The Friedrich der Große reference is adjacent in the archival sequence and fits the 1906 dispatch, but the vessel-consignment link should be image/date-checked before being treated as a formal bill-of-lading identification."
+          },
+          {
+            "name": "E. A. Snow",
+            "role": "Boston custom-house broker / forwarding agent",
+            "evidence": "Goodale's 14 November 1906 letter says the incoming Blaschka boxes had been consigned to E. A. Snow, formerly a custom-house broker on State Street, even though Snow was no longer in business."
+          },
+          {
+            "name": "U.S. Customs / Boston custom-house inspector",
+            "role": "inspection and release",
+            "evidence": "Goodale instructed that the goods be sent to the University Museum to be opened under the eye of a custom-house inspector; a follow-up letter fixed the inspector's attendance at the Museum for the unpacking."
+          }
+        ],
+        "financial_and_documentary_layers": [
+          "shipment insured",
+          "consular invoice made out to the value of approximately three years' work",
+          "freight and charges paid from a special Mary Lee Ware appropriation",
+          "customs-supervised unpacking at the museum"
+        ]
+      }
+    },
+    {
+      "id": "WARE-1923-SEALED-CASES",
+      "date_range": "1923-07 to 1923-10",
+      "status": "direct_multi_document_chain",
+      "case_marks": "R.B. No. 1–4",
+      "route": ["Hosterwitz/Dresden", "Dresden railway station", "Bremen", "New York", "in bond to Boston", "Harvard University Botanical Museum"],
+      "actors": [
+        {
+          "name": "German export/customs authorities",
+          "role": "export permission, export-tax assessment and physical customs inspection",
+          "evidence": "Workshop correspondence describes regulatory obstacles and a customs examination that had to be reorganised around the physical risk of unpacking the models."
+        },
+        {
+          "name": "Ehrhorn, Emden & Mayer",
+          "role": "Bremen forwarding agents",
+          "evidence": "Rudolf's 12 September 1923 letter says the agents would arrange shipment from Bremen by the next steamer to New York."
+        },
+        {
+          "name": "E. A. Snow",
+          "role": "Boston custom-house broker and forwarding agent",
+          "evidence": "The same letter sends the cases in bond from New York to Boston in Snow's care."
+        },
+        {
+          "name": "T. D. Downing Co.",
+          "role": "U.S. customs brokerage / freight and customs-charge processor",
+          "evidence": "A 20 October 1923 invoice to Harvard, ref. L 16091, covers four packages of glassware marked RB 1/4 and itemises ocean freight/charges and customs-entry charges."
+        },
+        {
+          "name": "Eastern Steamship Lines, Inc.",
+          "role": "carrier named on the Downing invoice",
+          "evidence": "The invoice is headed 'Ex. S. S. Eastern SS Lines, Inc.' for the four Rudolf Blaschka packages.",
+          "role_guard": "The precise leg represented by Eastern Steamship Lines should be reconstructed from the original brokerage paperwork; the invoice alone does not establish the full transatlantic routing."
+        }
+      ],
+      "documentary_layers": [
+        "export permission",
+        "export-tax valuation",
+        "customs inspection and sealing",
+        "rail dispatch",
+        "forwarder instruction",
+        "bonded movement New York to Boston",
+        "customs-broker invoice",
+        "ocean freight and customs-entry charges"
+      ]
+    },
+    {
+      "id": "WARE-1929-FRUIT-MODELS",
+      "date_range": "1928-12 to 1929-08",
+      "status": "direct_multi_document_chain",
+      "dispatch_date": "1929-04-16",
+      "case_marks": "R.B. No. 1–4",
+      "packing_structure": {
+        "outer_cases": 4,
+        "inner_framed_boxes": 27,
+        "packing_materials": ["canvas", "straw", "cords / OCR variant"],
+        "packing_wages": "listed separately in the workshop account",
+        "transport_to_dresden_railroad": "listed separately",
+        "consular_certificate": "listed separately"
+      },
+      "actors": [
+        {
+          "name": "Ehrhorn, Emden & Mayer",
+          "role": "forwarding agents",
+          "evidence": "Project event reconstruction identifies the firm again in the 1929 dispatch chain."
+        },
+        {
+          "name": "Norddeutscher Lloyd",
+          "role": "ocean carrier",
+          "evidence": "Project event reconstruction identifies the Lloyd in the 1929 transatlantic chain."
+        },
+        {
+          "name": "New York / Boston customs authorities",
+          "role": "customs and plant-material regulation",
+          "evidence": "Receiving-side correspondence records a customs problem created when straw/hay packing was classified differently under U.S. plant-quarantine rules."
+        },
+        {
+          "name": "Louis Bierweiler",
+          "role": "Harvard receiving/clearance and local repair actor",
+          "evidence": "Oakes Ames sent Bierweiler to the Treasurer's Office to arrange prompt clearing; after arrival Bierweiler repaired one or two slight breaks."
+        }
+      ],
+      "research_value": "The 1929 chain shows packing material itself becoming a regulated object. The same material that protected fragile glass during transport could trigger customs or plant-quarantine intervention at the border."
+    }
+  ],
+  "external_archive_targets": [
+    {
+      "id": "ARCHIVE-NDL-STAB-7-2010",
+      "repository": "Staatsarchiv Bremen",
+      "reference": "StAB 7.2010",
+      "collection": "Norddeutscher Lloyd",
+      "coverage": "1858–1985",
+      "archive_status": "fragmentary corporate archive",
+      "relevant_record_types": ["passenger shipping", "freight shipping", "calculations", "annual reports", "timetables", "printed material", "photographs"],
+      "survival_guard": "The finding aid explicitly warns that the Bremen holdings are only a small remnant of the former company archive. Around 1,000 ship files with photographs, voyage reports, passenger lists and cargo papers were transferred to the Hapag-Lloyd archive in Hamburg. The corresponding Hamburg ship-file list shown in the Bremen finding aid mainly documents later vessels/dates, so no early Blaschka cargo file is assumed to survive.",
+      "locator": "https://www.arcinsys.niedersachsen.de/arcinsys/detailAction.action?detailid=b17014"
+    },
+    {
+      "id": "ARCHIVE-US-CUSTOMS-RG36-BOSTON",
+      "repository": "National Archives at Boston",
+      "reference": "Record Group 36, Records of the U.S. Customs Service",
+      "coverage": "Boston customs records extend across the Blaschka shipment period; the national guide lists Boston-Charlestown records 1789–1918 and Boston regional holdings 1858–1966, while the Boston holdings page lists customs field records into the twentieth century.",
+      "relevant_record_types": ["imports and exports", "entrance and clearance of vessels", "cargo manifests", "warehousing", "customs administration", "merchant-vessel documentation"],
+      "research_question": "Can the 1906, 1923 or 1929 Harvard Blaschka consignments be matched to Boston customs entry, bonded-movement, manifest, warehouse or inspection records?",
+      "locator": "https://www.archives.gov/boston/finding-aids/maritime.html"
+    },
+    {
+      "id": "ARCHIVE-EASTERN-STEAMSHIP-WARSHAW",
+      "repository": "Archives Center, National Museum of American History",
+      "reference": "NMAH.AC.0060.S01.01.Steamboats_ref835",
+      "collection": "Warshaw Collection of Business Americana — Eastern Steamship Lines",
+      "coverage": "1910–1930",
+      "archive_status": "business Americana / marketing-material collection, not the complete corporate archive",
+      "research_question": "Use the collection to establish Eastern Steamship Lines' route and company context for the 1923 T. D. Downing invoice; do not infer a Blaschka cargo record from the collection description.",
+      "locator": "https://sova.si.edu/record/nmah.ac.0060.s01.01.steamboats/ref835"
+    },
+    {
+      "id": "ARCHIVE-EASTERN-STEAMSHIP-HNE",
+      "repository": "Historic New England",
+      "collection": "Eastern Steamship Lines timetables and ephemera",
+      "example_reference": "MS028.01.002.002 (1929 timetable)",
+      "archive_status": "route/timetable context",
+      "research_value": "Contemporary route ephemera for New York, Boston and other Eastern Steamship Lines services; useful for reconstructing possible coastal legs after customs paperwork identifies a specific movement.",
+      "locator": "https://www.historicnewengland.org/explore/collections-access/gusn/289065"
+    },
+    {
+      "id": "ARCHIVE-EHRHORN-EMDEN-MAYER",
+      "repository": null,
+      "collection": null,
+      "archive_status": "unresolved",
+      "evidence_of_business": "The firm recurs in Blaschka records from Rudolf's 1892 travel arrangements through multiple Harvard shipments in 1906, 1923 and 1929.",
+      "next_search": "Bremen commercial registers, address books, chamber-of-commerce records and forwarding-agent archives; no dedicated fonds has yet been confidently identified."
+    },
+    {
+      "id": "ARCHIVE-EA-SNOW",
+      "repository": null,
+      "collection": null,
+      "archive_status": "unresolved",
+      "evidence_of_business": "Harvard correspondence identifies E. A. Snow as a State Street custom-house broker and forwarding agent and shows repeated use of his name as consignee even after his business status changed.",
+      "next_search": "Boston city/business directories and customs-broker licensing/administrative records before asserting a firm identity or successor."
+    },
+    {
+      "id": "ARCHIVE-TD-DOWNING",
+      "repository": null,
+      "collection": null,
+      "archive_status": "direct_document_survives_but_corporate_fonds_unresolved",
+      "evidence_of_business": "The Blaschka archive itself preserves a 20 October 1923 T. D. Downing Co. customs/freight invoice to Harvard, giving a direct company document even without a separate corporate archive.",
+      "next_search": "Boston/New York commercial directories, customs-broker licensing records and receiving-side Harvard Treasurer records."
+    }
+  ],
+  "research_observation": "Across 1906, 1923 and 1929 the Harvard route repeatedly reuses the same categories of intermediary while particular firms and regulations change. Forwarders, carriers, brokers, customs officers, bonded movement, consular invoices, insurance, packing materials, clearance and local repair formed a durable logistics apparatus around the glass models. This creates a longitudinal source base for studying how fragility was administratively managed rather than treating transport as an isolated accident between workshop and museum."
+}
