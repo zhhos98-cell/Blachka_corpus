@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Payment, Banking and Currency Regulation Register",
+  "generated_date": "2026-08-10",
+  "scope": "Primary-source evidence for the movement of money around Blaschka work: drafts, bank receipts, currency conversion, balances, securities, foreign-exchange regulation and compulsory transfer. The register distinguishes the workshop's commercial payments from banking and state-regulatory infrastructure.",
+  "methodological_guard": "OCR bank names are not silently normalised to modern corporate identities. A bank's historical archive is listed only as a candidate when the institution can plausibly be identified; transaction-level linkage still requires the original document or an archival account row. Payments to Rudolf, model prices, dealer balances and later regulatory transfers are kept as separate financial layers.",
+  "cases": [
+    {
+      "id": "PAY-JEYPORE-1887",
+      "date_range": "1887",
+      "status": "direct_primary_transaction_evidence",
+      "transaction": "Jeypore order balance and sterling-to-mark conversion",
+      "evidence": "Workshop correspondence records a £18 remittance converted by a Dresden banking institution, after which the remaining Jeypore account balance of 61.50 Marks was deducted. The project preserves the OCR institution wording without forcing a corporate identification.",
+      "guard": "The bank must not be called Dresdner Bank AG until the manuscript image confirms the name.",
+      "research_value": "The dealer/order account crossed currencies and banking institutions before it became a closed workshop balance."
+    },
+    {
+      "id": "PAY-WARE-1903",
+      "date": "1903-07-03",
+      "status": "direct_primary_evidence",
+      "transaction": "5,000-Reichsmark draft and bank receipt practice",
+      "evidence": "Rudolf acknowledged receipt of a draft for 5,000 Reichsmark and reflected that remittances passed through several people in banking, with formal receipt practices before money was released.",
+      "research_value": "Payment appears as a witnessed procedural chain rather than a simple bilateral transfer between patron and maker."
+    },
+    {
+      "id": "PAY-WARE-1904",
+      "date": "1904-07-26",
+      "status": "direct_primary_evidence_with_bank_name_guard",
+      "transaction": "Charles E. Ware sends a 5,000-Mark bank draft at Mary Lee Ware's request",
+      "evidence": "Rudolf wrote that Charles E. Ware of Fitchburg had enclosed a draft, OCR-read as drawn on 'Dredner Bank', for 5,000 Marks, which Rudolf interpreted as his semi-annual salary. The same letter distinguishes this salary remittance from an earlier 4,800-Mark sum sent by Mary Ware.",
+      "guard": "The OCR 'Dredner Bank' is not promoted to Dresdner Bank until image verification.",
+      "candidate_archive": {
+        "repository": "Commerzbank Historical Archive",
+        "collection": "Dresdner Bank holdings",
+        "coverage": "1872–2009",
+        "extent": "approximately 7,100 linear metres",
+        "status": "conditional candidate only",
+        "condition": "Use only if the original Blaschka document verifies Dresdner Bank.",
+        "locator": "https://www.commerzbank.de/group/who-we-are/history/overview-archive-assets.html"
+      }
+    },
+    {
+      "id": "PAY-1934-REICHSBANK-CONTROL",
+      "date_range": "1934-08 to 1934-09",
+      "status": "direct_multi_document_regulatory_chain",
+      "transaction": "Securities converted to cash and balance transmitted for Reichsbank account under German law",
+      "actors": [
+        "Rudolph Blaschka",
+        "Francis G. Goodale / Hill, Barlow & Homans",
+        "Harvard University and Mary Lee Ware representatives",
+        "First National Bank of Boston",
+        "German Reichsbank"
+      ],
+      "evidence": "On 11 August 1934 Francis G. Goodale wrote that Rudolf had instructed him, in response to a Reichsbank letter, to convert securities into cash and deliver the proceeds to the First National Bank of Boston for the account specified by the Reichsbank. Goodale asked whether the German requirement applied only to funds received since 12 July 1931 or also to earlier accumulated balances. A 13 September affidavit records $6,000 received, $4,950 paid out, a $1,050 balance, and transmission of that balance through the First National Bank of Boston for credit to Rudolf's Reichsbank account in obedience to German law of 1933.",
+      "research_value": "By 1934 the circulation of patronage money was constrained by exchange-control law and required lawyer, bank, affidavit and Reichsbank compliance layers. Financial circulation had become a regulated transatlantic infrastructure in its own right.",
+      "archive_targets": [
+        {
+          "repository": "Bundesarchiv",
+          "reference": "R 2501 — Deutsche Reichsbank",
+          "status": "institution-level federal archive target",
+          "evidence_of_survival": "Bundesarchiv research guidance explicitly identifies R 2501 as the Deutsche Reichsbank fonds and notes surviving individual account/securities-related files within it.",
+          "research_question": "Search Reichsbank transfer, foreign-exchange, blocked-account or correspondence records for Rudolf Blaschka, Harvard/Ware funds and the 1934 remittance if name-based access is possible.",
+          "locator": "https://www.bundesarchiv.de/im-archiv-recherchieren/archivgut-recherchieren/nach-themen/arisierung-und-sonstige-formen-des-entzugs-juedischen-vermoegens-im-nationalsozialismus/"
+        },
+        {
+          "repository": "First National Bank of Boston corporate archive",
+          "status": "unresolved",
+          "evidence_of_transaction": "The Blaschka papers directly name the bank as the U.S. intermediary for the 1934 transfer.",
+          "guard": "No complete First National Bank of Boston corporate fonds was identified in this public-catalogue pass. Scattered institutional correspondence with the bank survives elsewhere but is not a substitute for the 1934 transaction record."
+        },
+        {
+          "repository": "Hill, Barlow & Homans / Francis G. Goodale legal papers",
+          "status": "unresolved external fonds; direct documents survive inside the Blaschka archive",
+          "research_question": "Determine whether retained client files, firm successor records or Harvard-side legal/treasurer files preserve the Reichsbank letter or bank transfer instruments."
+        }
+      ]
+    }
+  ],
+  "institutional_archive_context": [
+    {
+      "repository": "Commerzbank Historical Archive",
+      "holding": "Dresdner Bank",
+      "coverage": "1872–2009",
+      "extent": "about 7,100 metres",
+      "access": "written request and appointment",
+      "guard": "The archive is a verified corporate repository, but no Blaschka transaction is assigned to it until the bank name in the primary document is verified.",
+      "locator": "https://www.commerzbank.de/group/who-we-are/history/overview-archive-assets.html"
+    },
+    {
+      "repository": "Bundesarchiv",
+      "holding": "R 2501 Deutsche Reichsbank",
+      "coverage": "Reichsbank institutional records including National Socialist-era material",
+      "guard": "The existence of R 2501 does not prove a Rudolf Blaschka file; it supplies the correct state-bank archival universe for the 1934 regulatory problem.",
+      "locator": "https://www.bundesarchiv.de/"
+    }
+  ],
+  "research_observation": "The Blaschka network moved money through infrastructures as complex as those that moved glass. Drafts, receipts, currency conversion, legal representation, bank accounts, securities and state exchange controls determined when workshop value became usable income. The 1934 sequence is especially important because it shows political regulation entering the material economy of scientific model-making long after the objects' production contract had been established."
+}
