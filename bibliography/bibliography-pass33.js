@@ -43,4 +43,11 @@
 
   const scopeTitle = document.querySelector('#bib-scope-title');
   if (scopeTitle) scopeTitle.textContent = '1870–2026 · thirty-third expanded pass';
+
+  if (!document.querySelector('script[data-bib-pass34-loader]')) {
+    const pass34 = document.createElement('script');
+    pass34.src = 'bibliography-pass34.js?v=20260809-1';
+    pass34.dataset.bibPass34Loader = 'true';
+    document.head.appendChild(pass34);
+  }
 })();
