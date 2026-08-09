@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Dublin Shipping Failure and Replacement Register",
+  "generated_date": "2026-08-10",
+  "scope": "A workshop-side 1887 Dublin cluster in which dealer routing, shipper documentation, accidental landing at Bristol, delay, breakage and replacement can be followed across institutional orders. The cluster links W. J. Sollas at Trinity College Dublin and A. C. Haddon at the Royal College of Science, Dublin, through Robert Damon and a Hamburg forwarding route.",
+  "methodological_guard": "The OCR date and the Haddon case-prefix/forwarder spelling are imperfect. The transaction sequence is retained without silently repairing those fields. The Bristol landing is described by the workshop as resulting from a mistake in the shipper's note; no carrier is assigned until another document names it.",
+  "events": [
+    {
+      "id": "DUBLIN-SOLLAS-MISROUTING",
+      "date": "before the Haddon dispatch, mid-1887 sequence",
+      "customer": "Prof. W. J. Sollas, Trinity College Dublin",
+      "dealer": "Robert Damon",
+      "status": "direct_primary_failure_report",
+      "expected_destination": "Dublin",
+      "actual_landing": "Bristol",
+      "cause_reported_by_workshop": "mistake in the shipper's note",
+      "delay": "about two weeks later than expected, according to the workshop letter",
+      "damage": ["model no. 239 broken", "model no. 356 broken"],
+      "response": "Fresh examples of the two damaged models were placed into the subsequent Haddon consignment.",
+      "research_value": "A documentary error altered the physical route, produced delay and probable breakage, and was corrected by embedding replacements in a different customer's shipment. Logistics feedback therefore crossed order boundaries."
+    },
+    {
+      "id": "DUBLIN-HADDON-INSURED-CASE",
+      "date": "17 June [1887?]; OCR year corrupt",
+      "customer": "Alfred Cort Haddon, Royal College of Science, Dublin",
+      "dealer": "Robert Damon",
+      "case_mark": "OCR: L.D. 262; prefix unresolved",
+      "insurance": "500 Marks",
+      "invoice": "495 Marks",
+      "prepayment": "695 Marks",
+      "dealer_credit_after_invoice": "approximately 200 Marks",
+      "hamburg_forwarder": "OCR: M.Miller; probable M. Otto W. Möller but image verification required",
+      "embedded_replacements": ["Sollas model no. 239", "Sollas model no. 356"],
+      "status": "direct_primary_transaction_evidence",
+      "research_value": "The Haddon shipment functioned simultaneously as a new institutional order and as the repair/replacement channel for a failed earlier Dublin delivery."
+    }
+  ],
+  "receiving_side_archives": [
+    {
+      "institution": "Royal College of Science for Ireland",
+      "repository": "UCD Archives",
+      "reference": "IE UCDA RCSI",
+      "coverage": "1867–1929; 7 boxes and 115 bound volumes",
+      "record_types": ["accounts", "correspondence", "order books", "equipment and supplies records", "college administration", "library order/account books"],
+      "research_question": "Can the Haddon purchase, receipt, condition, invoice or museum/zoology order be matched to the workshop's insured case and 495-Mark invoice?",
+      "locator": "https://www.ucd.ie/archives/collections/universityarchives/items/collectionname235376en.html"
+    },
+    {
+      "institution": "Trinity College Dublin",
+      "repository": "Manuscripts & Archives, Trinity College Dublin",
+      "reference": "College archives / departmental records; exact Sollas series not isolated in this pass",
+      "coverage": "College records include departmental and financial records across the relevant period",
+      "research_question": "Can Sollas correspondence or departmental accounts identify the original Blaschka order, carrier/shipper, Bristol mislanding, damage report or replacement receipt?",
+      "locator": "https://www.tcd.ie/library/research-collections/subject-strengths/archives.php"
+    }
+  ],
+  "parallel_haddon_archive": {
+    "repository": "University of St Andrews Special Collections",
+    "reference": "ms13973–MS13981",
+    "date_range": "1885–1900",
+    "content": "Nine Haddon letters to D'Arcy Wentworth Thompson about marine natural history, specimen supply and exchange between museums and collecting work in Ireland.",
+    "status": "same-period Haddon network context, not Blaschka evidence",
+    "research_value": "Useful for reconstructing Haddon's ordinary exchange and museum-supply practices around the time of the Blaschka order.",
+    "locator": "https://collections.st-andrews.ac.uk/item/correspondence-from-a-c-haddon-to-darcy-wentworth-thompson/2059287"
+  },
+  "research_observation": "The Dublin cluster gives a unusually concrete failure chain: shipper's note → wrong port → delay → breakage → replacement → consolidation into another customer's insured case. It therefore provides direct evidence that paperwork errors and physical damage were coupled, and that the workshop managed failure through subsequent network traffic rather than treating each order as a closed transaction."
+}
