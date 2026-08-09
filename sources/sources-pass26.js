@@ -18,14 +18,20 @@
     {
       type: 'Weymouth → Dresden · living marine supply',
       title: 'R. T. Smith, 25 St. Alban’s Street, Weymouth — aquarium/marine-specimen supplier.',
-      meta: 'Leopold Blaschka’s draft correspondence asks Smith for small consignments of British sea anemones, specifies preferred kinds and price scale, and asks about forwarding. A later draft reports anemones arriving alive and recovering in the workshop tank after several days from Weymouth to Dresden; another reports weak arrivals and four specimens that failed to revive, possibly after frost during rail transit. Season, weather and survival were therefore active constraints on model production.',
+      meta: 'Leopold Blaschka’s draft correspondence asks Smith for small consignments of British sea anemones worth about 15 Reichsmarks, specifies preferred kinds, and asks about forwarding. A later draft reports anemones arriving alive and recovering immediately in the workshop tank after several days from Weymouth to Dresden; another reports weak arrivals and four specimens that failed to revive, possibly after frost during rail transit. Season, weather, packing and survival were active constraints on model production.',
       links: '<a href="upstream-living-specimen-supply-register.json" target="_blank" rel="noopener">Smith correspondence map ↗</a>'
     },
     {
-      type: '1874 · independent microscopy-network witness',
-      title: 'The same R. T. Smith and address appear in <em>Hardwicke’s Science-Gossip</em> exchanging marine-algae slides and starfish.',
-      meta: 'Contemporary exchange notices list R. T. Smith, 25 St. Alban’s Street, Weymouth, offering well-mounted microscopic slides of marine algae, about forty varieties, plus starfish and small unmounted marine material in exchange for good slides. The address match ties the Blaschka supplier to an amateur microscopy and marine-specimen circulation network years before the surviving Blaschka drafts.',
-      links: '<a href="upstream-living-specimen-supply-register.json" target="_blank" rel="noopener">cross-project evidence guard ↗</a>'
+      type: '1873–1876 · repeated microscopy-network witness',
+      title: 'R. T. Smith appears repeatedly in <em>Hardwicke’s Science-Gossip</em>, not as a one-off advertisement.',
+      meta: 'The project microscopy corpus now isolates five exact-name records. In 1873 Smith in Weymouth offers larvae for good microscopic slides. Three 1874 notices at 25 St. Alban’s Street offer roughly forty varieties of mounted marine-algae slides, starfish and unmounted marine material, or named algae slides for other mounted sections. A 1876 notice offers Bulla hydatis and other material for palate mounting. The repeated address and marine/microscopy exchange activity make the link to the later Blaschka supplier materially stronger.',
+      links: '<a href="upstream-living-specimen-supply-register.json" target="_blank" rel="noopener">1873–1876 record map ↗</a>'
+    },
+    {
+      type: '1875 · identity check still open',
+      title: 'A marine-aquarium collector list gives an OCR reading “E. J. Smith, 25 St. Alban’s Row, Weymouth.”',
+      meta: 'William R. Hughes’s 1875 <em>On the Principles and Management of the Marine Aquarium</em> lists collectors of marine animals, principally from W. A. Lloyd’s handbook. The project OCR gives initials E. J. at essentially the same address used by R. T. Smith. This is potentially important but is not merged: the printed page and Lloyd source must be checked to decide whether this is OCR error, another person at the address, or a separate collector.',
+      links: '<a href="https://www.biodiversitylibrary.org/bibliography/158623" target="_blank" rel="noopener">Hughes 1875 BHL record ↗</a> · <a href="upstream-living-specimen-supply-register.json" target="_blank" rel="noopener">identity guard ↗</a>'
     },
     {
       type: 'Supply failure and substitution',
