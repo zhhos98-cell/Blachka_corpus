@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Workshop Logistics Document Register",
+  "generated_date": "2026-08-10",
+  "scope": "Document-level logistics, customs, invoice, packing and shipping sources explicitly listed in Series 04, Business Files, of the Leopold and Rudolf Blaschka Collection at the Rakow Research Library. This register turns the workshop archive from a repository-level citation into a retrieval list for circulation research.",
+  "source": {
+    "repository": "Juliette K. and Leonard S. Rakow Research Library, Corning Museum of Glass",
+    "collection": "Leopold and Rudolf Blaschka Collection, circa 1730–1981",
+    "series": "Series 04 — Business Files, circa 1864–1936",
+    "finding_aid_pages": "107–110",
+    "series_scope": "The finding aid describes Series 04 as financial records, shipping documentation and ephemera. Shipping documentation mainly concerns botanical-model shipments to Harvard and extends through Rudolf's final 1936 shipment.",
+    "container_guard": "The public PDF text extraction separates container strings from titles in a way that makes several item-to-container mappings ambiguous. This register therefore records exact titles and dates from the finding aid without silently assigning a box/folder unless the mapping is independently verified."
+  },
+  "documents": [
+    {
+      "title": "Consular Certificate for Shipment to Harvard University",
+      "date": "1932",
+      "document_type": "consular certificate / export-shipping documentation",
+      "research_use": ["declared shipment identity", "consular formalities", "valuation", "export documentation"],
+      "priority": "high"
+    },
+    {
+      "title": "Customs Receipts",
+      "date_range": "1907–1911",
+      "document_type": "customs receipts",
+      "research_use": ["customs payments", "port/broker identification", "shipment dates", "administrative classification"],
+      "priority": "very high"
+    },
+    {
+      "title": "Delivery Book (Lieferungs-Buch)",
+      "date_range": "1883–1893",
+      "document_type": "delivery book",
+      "research_use": ["orders", "dispatch", "recipient", "model lists", "dealer/customer crosswalk"],
+      "priority": "core"
+    },
+    {
+      "title": "Draft Invoice for Botanical Museum of Harvard University",
+      "date": "1932",
+      "document_type": "draft invoice",
+      "research_use": ["model value", "charges", "invoice vocabulary", "comparison with packing and shipping documents"],
+      "priority": "high"
+    },
+    {
+      "title": "International Rail Transport Waybill",
+      "date": "1907",
+      "document_type": "international railway waybill",
+      "research_use": ["rail route", "consignor/consignee", "case marks", "weight", "freight class", "charges", "handoff before ocean shipment"],
+      "priority": "very high",
+      "image_note": "A reproduced waybill is already present in the project source packet; route and field-level transcription should be made from the image rather than OCR alone."
+    },
+    {
+      "title": "Invoices",
+      "date_range": "1890–1899",
+      "document_type": "invoice series",
+      "research_use": ["prices", "packing/freight separation", "customers", "payment layers"],
+      "priority": "high"
+    },
+    {
+      "title": "List of Specimens Sent",
+      "date": "1929",
+      "document_type": "shipment contents list",
+      "research_use": ["contents-to-case crosswalk", "shipment completeness", "comparison with arrival and condition report"],
+      "priority": "very high"
+    },
+    {
+      "title": "Notebook: Lists of Models with Prices",
+      "date_range": "1894–1906",
+      "document_type": "model/price notebook",
+      "research_use": ["model valuation", "commercial catalogue crosswalk", "shipment invoicing"],
+      "priority": "high"
+    },
+    {
+      "title": "Sketches of Packed Crates",
+      "date_range": "1929, 1932",
+      "document_type": "packing diagrams / crate sketches",
+      "research_use": ["crate architecture", "spatial arrangement", "inner/outer containment", "handling instructions", "comparison after damage feedback"],
+      "priority": "core"
+    },
+    {
+      "title": "Waybill for Last Shipment to Harvard University",
+      "date": "1936",
+      "document_type": "waybill",
+      "research_use": ["final workshop-to-Harvard route", "carrier", "case identity", "weight and charges", "longitudinal comparison with 1907"],
+      "priority": "core"
+    },
+    {
+      "title": "Business Card: Robert Thode & Co. Bankers",
+      "date": "undated",
+      "document_type": "business card / financial contact ephemera",
+      "research_use": ["banking contact network", "financial intermediary identification"],
+      "priority": "context",
+      "guard": "The presence of the business card proves a retained banking contact, not a specific Blaschka transaction. Robert Thode & Co. was absorbed by Dresdner Bank in 1891; any transaction-level connection requires separate evidence."
+    }
+  ],
+  "retrieval_batches": [
+    {
+      "batch": "A — packing and shipment reconstruction",
+      "documents": ["International Rail Transport Waybill, 1907", "Sketches of Packed Crates, 1929, 1932", "List of Specimens Sent, 1929", "Waybill for Last Shipment to Harvard University, 1936"],
+      "goal": "Build a field-level longitudinal table of case marks, dimensions, inner supports, weight, route, carrier and charges."
+    },
+    {
+      "batch": "B — border paperwork",
+      "documents": ["Customs Receipts, 1907–1911", "Consular Certificate for Shipment to Harvard University, 1932"],
+      "goal": "Connect workshop shipping documentation to customs/consular records and government archives."
+    },
+    {
+      "batch": "C — value and payment",
+      "documents": ["Invoices, 1890–1899", "Notebook: Lists of Models with Prices, 1894–1906", "Draft Invoice for Botanical Museum of Harvard University, 1932"],
+      "goal": "Separate model value from packing, freight, insurance, customs and other circulation costs."
+    }
+  ],
+  "research_observation": "The workshop archive itself already contains the documentary genres required for a history of circulation: waybill, customs receipt, consular certificate, invoice, contents list, delivery book and crate sketch. These sources should be read as an integrated logistics dossier rather than as miscellaneous business ephemera."
+}
