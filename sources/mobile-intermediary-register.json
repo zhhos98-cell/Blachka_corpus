@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Mobile Human Intermediary Register",
+  "generated_date": "2026-08-10",
+  "scope": "Named people who physically carried, received, prepared or financially mediated Blaschka objects and whose personal papers can supplement dealer and museum archives. Personal papers are treated as retrieval targets only when an independent Blaschka transaction already identifies the person as an actor.",
+  "actors": [
+    {
+      "id": "INTERMEDIARY-CHARLES-FRANCIS-ADAMS-AUCKLAND",
+      "name": "Charles Francis Adams",
+      "transaction": "Auckland Museum / Ward / Blaschka models, 1885",
+      "roles": [
+        "travelling taxidermist/preparator",
+        "physical carrier of Ward-supplied goods",
+        "payment intermediary in the Auckland–Ward settlement"
+      ],
+      "direct_blaschka_witness": {
+        "repository": "Auckland War Memorial Museum manuscript collections",
+        "collections": "Cheeseman–Ward correspondence",
+        "references": ["MUS-1996-6-2", "MUS-1995-38"],
+        "evidence": "Cheeseman thanked Ward for the Blaschka glass-model samples that Adams safely delivered. The correspondence also places Adams inside the £20 multi-party settlement among Auckland Museum, Ward and Ward's Australian creditor."
+      },
+      "personal_archive": {
+        "repository": "Illinois History and Lincoln Collections, University of Illinois Library",
+        "collection": "Charles Francis Adams Diary, 1884–1887",
+        "collection_identifier": "782",
+        "extent": "1 item; 160-page account",
+        "coverage": "10 December 1884 onward, including daily entries for travel to New Zealand and Auckland Museum work from 15 January to 12 July 1885, followed by later travel accounts through 1887",
+        "finding_aid_summary": "The diary records Adams's Pacific journey and his work as a taxidermist at Auckland Museum, where he prepared birds, fish and marine invertebrates and also recorded local movement including visits to the wharf and ships.",
+        "status": "high_priority_personal_archive_target",
+        "blaschka_guard": "The finding aid does not state that Blaschka models are named in the diary. The diary is relevant because Adams is independently documented as the carrier in the 1885 Blaschka transaction; an exact handoff or unpacking entry must be demonstrated from the diary before quotation or event-level linkage.",
+        "locator": "https://archon.library.illinois.edu/ihlc/index.php?p=collections/controlcard&id=778"
+      },
+      "research_questions": [
+        "Does the diary record receipt, carriage, handoff or unpacking of Ward packages around the Blaschka delivery?",
+        "Can the daily chronology identify the date on which the seven glass models entered Auckland Museum?",
+        "Does Adams describe packing condition, breakage, labels, crates, customs or wharf handling?",
+        "Does the diary illuminate how a travelling preparator could serve simultaneously as museum worker, carrier and financial intermediary?"
+      ]
+    }
+  ]
+}
