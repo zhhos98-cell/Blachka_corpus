@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.1.1",
   "title": "The Blaschka Object Network — Upstream Institutional Specimen Supply Register",
   "generated_date": "2026-08-10",
   "scope": "Institutional marine-biological stations, archives and administrative record groups relevant to preserved or living organisms supplied to the Blaschka workshop before glass models were produced. Direct Blaschka evidence, institutional supply capacity and comparative shipping evidence are kept separate.",
@@ -12,16 +12,7 @@
       "archive": {
         "repository": "Archivio Storico della Stazione Zoologica Anton Dohrn (ASZN)",
         "scope": "administrative and scientific records of the institute",
-        "record_types": [
-          "correspondence",
-          "general-affairs registers",
-          "copybooks",
-          "manuscripts",
-          "offprints",
-          "photographs",
-          "films",
-          "scientific drawings"
-        ],
+        "record_types": ["correspondence", "general-affairs registers", "copybooks", "manuscripts", "offprints", "photographs", "films", "scientific drawings"],
         "institutional_fonds_summary": "Archivi della Scienza describes the Stazione Zoologica fonds as 353 folders, 643 files and 3 boxes, with foundation/administration, budgets, study tables, correspondence and scientific activity records; arrangement remains partial.",
         "Anton_Dohrn_personal_fonds": "Archivi della Scienza separately records an Anton Dohrn archive, 1860–1950, containing manuscripts, correspondence and institutional documents.",
         "locators": [
@@ -33,10 +24,7 @@
       "institutional_supply_capacity": {
         "status": "official institutional history",
         "evidence": "The Stazione Zoologica's official history states that Anton Dohrn developed the sending of samples and biological preparations as a revenue stream; preserved marine-animal collections were sold to museums, universities, schools and individuals. The station's museum history likewise describes preserved marine animals as internationally distributed products.",
-        "locators": [
-          "https://szn.it/en/who-we-are/our-history",
-          "https://www.szn.it/index.php/en/news/news/11-english/pages/1457-museum"
-        ]
+        "locators": ["https://szn.it/en/who-we-are/our-history", "https://www.szn.it/index.php/en/news/news/11-english/pages/1457-museum"]
       },
       "direct_blaschka_evidence": [
         {
@@ -85,12 +73,7 @@
         "repository": "Österreichisches Staatsarchiv, Allgemeines Verwaltungsarchiv",
         "record_group": "Unterricht und Kultus → Unterrichtsministerium → Allgemeine Reihe → Akten",
         "reference": "Zoologische Station Triest (Signatur 2A)",
-        "date_blocks": [
-          "1873–1903",
-          "1904–1908",
-          "1909–1911",
-          "1912–1921"
-        ],
+        "date_blocks": ["1873–1903", "1904–1908", "1909–1911", "1912–1921"],
         "research_value": "Ministry-level records can potentially document funding, institutional remit, staffing, specimen traffic, university requests, shipping or administrative arrangements behind the station that Rudolf names as a live-animal source.",
         "locator": "https://www.archivinformationssystem.at/archivplansuche.aspx?ID=1324310"
       },
@@ -115,34 +98,16 @@
       "repository": "Österreichisches Staatsarchiv, Allgemeines Verwaltungsarchiv",
       "record_group": "Unterricht und Kultus → Unterrichtsministerium → Allgemeine Reihe → Akten, Signatur 2A",
       "parallel_series": [
-        {
-          "title": "Zoologische Station Neapel",
-          "dates": "1874–1906"
-        },
-        {
-          "title": "Zoologische Station Neapel",
-          "dates": "1907–1939"
-        },
-        {
-          "title": "Zoologische Station Triest",
-          "dates": "1873–1903"
-        },
-        {
-          "title": "Zoologische Station Triest",
-          "dates": "1904–1908"
-        },
-        {
-          "title": "Zoologische Station Triest",
-          "dates": "1909–1911"
-        },
-        {
-          "title": "Zoologische Station Triest",
-          "dates": "1912–1921"
-        }
+        {"title": "Zoologische Station Neapel", "dates": "1874–1906"},
+        {"title": "Zoologische Station Neapel", "dates": "1907–1939"},
+        {"title": "Zoologische Station Triest", "dates": "1873–1903"},
+        {"title": "Zoologische Station Triest", "dates": "1904–1908"},
+        {"title": "Zoologische Station Triest", "dates": "1909–1911"},
+        {"title": "Zoologische Station Triest", "dates": "1912–1921"}
       ],
       "research_value": "Naples and Trieste appear as parallel named marine-station files in the same ministry archival structure. This creates a controlled administrative comparator for two institutions that enter Blaschka reference-material history through different routes: Naples through preserved specimens documented in 1877, Trieste through Rudolf's direct statement about living animals in the Dresden seawater tanks.",
       "guard": "The existence of Austrian ministry files for Naples does not prove that the 1877 Blaschka purchase passed through the Austrian ministry. The comparison concerns administrative infrastructure and state relations, not a shared shipment unless documents establish one.",
-      "locator": "https://www.archivinformationsystem.at/archivplansuche.aspx?ID=1324310"
+      "locator": "https://www.archivinformationssystem.at/archivplansuche.aspx?ID=1324310"
     }
   ],
   "analytic_distinctions": [
