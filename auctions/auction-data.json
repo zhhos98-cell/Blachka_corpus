@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Blaschka public auction provenance records",
+  "scope": {
+    "purpose": "Public auction appearances are retained as provenance evidence and gap-filling market traces, not as a price guide.",
+    "include_rule": "Include a public auction appearance of an attributed Blaschka model when the checked public sources do not explicitly identify the buyer as a museum, university, or comparable institutional collection.",
+    "institutional_buyer_exclusion": "If a museum, university, or comparable institutional buyer is explicitly documented, exclude that acquisition from this auction layer and place it in the collection/provenance layer instead.",
+    "prior_institutional_custody_allowed": true,
+    "buyer_unknown_rule": "Auction appearance does not prove private ownership. When the buyer is not public, post-sale custody remains open.",
+    "tentative_attribution_rule": "Qualified auction attributions may be retained only when the qualification is explicit in the record.",
+    "price_rule": "Preserve the auction platform's own price type. Do not silently convert buyer-premium-inclusive prices to hammer prices or infer a realized price from an estimate.",
+    "coverage_claim": "This is a targeted deep pass across directly searchable auction-house and aggregator archives. It is not a proof that no additional auction records exist."
+  },
+  "summary": {
+    "included_lot_records": 11,
+    "auction_event_groups": 7,
+    "physical_object_appearances_reported_by_lots": 13,
+    "probable_reoffer_links": 1,
+    "records_with_explicit_result_conflict": 2,
+    "rejected_false_positive_records": 6,
+    "earliest_public_record_recovered_in_this_pass": "2005",
+    "latest_public_record_recovered_in_this_pass": "2026"
+  },
+  "records": [
+    {
+      "record_id": "AUC-2005-JDJ-WINTER-480A",
+      "auction_house": "James D. Julia",
+      "auction_title": "Fine Art, Antiques & Asian - Winter 2005",
+      "auction_date": null,
+      "year": 2005,
+      "lot": "480A",
+      "title_as_catalogued": "RARE AND IMPORTANT BLOWN GLASS MARINE LEACH BY LEOPOLD AND RUDOLPH BLASHKA.",
+      "attribution_as_catalogued": "Leopold and Rudolph Blashka",
+      "attribution_status": "auction_house_attribution_with_variant_spelling",
+      "object_type": "glass model of a marine leech",
+      "taxon_or_label": "Pontobdella Muricata, L. No 330",
+      "commercial_or_label_number": "L. No 330",
+      "dimensions": "5 in long x 3/4 in widest",
+      "condition": "Very good",
+      "estimate": {"low": 1000, "high": 3000, "currency": "USD"},
+      "result": {
+        "status": "no_realized_price_recorded_or_unsold",
+        "displayed_price": 0,
+        "currency": "USD",
+        "price_type": "site_displayed_price",
+        "caution": "The legacy archive displays $0.00. This is retained literally and is not promoted to a confirmed hammer/result interpretation."
+      },
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "probable_same_object_as": "AUC-2005-JDJ-SAMOSET-561",
+      "same_object_inference_basis": "Same auction house and year; exact taxon/label L. No 330; matching dimensions, condition, estimate, and catalogue wording.",
+      "same_object_inference_confidence": "high_but_inferred",
+      "sources": [{"type": "auction_house_legacy_archive", "url": "https://jamesdjulia.com/item/lot-480a-rare-and-important-blown-glass-marine-leach-by-leopold-and-rudolph-blashka-25713/"}],
+      "notes": ["Auction house spells the makers' name 'Blashka' and 'leech' as 'leach'; source wording is preserved."]
+    },
+    {
+      "record_id": "AUC-2005-JDJ-SAMOSET-561",
+      "auction_house": "James D. Julia",
+      "auction_title": "Fine Art, Antiques & Asian - Samoset 2005",
+      "auction_date": null,
+      "year": 2005,
+      "lot": "561",
+      "title_as_catalogued": "RARE AND IMPORTANT BLOWN GLASS MARINE LEACH BY LEOPOLD AND RUDOLPH BLASHKA.",
+      "attribution_as_catalogued": "Leopold and Rudolph Blashka",
+      "attribution_status": "auction_house_attribution_with_variant_spelling",
+      "object_type": "glass model of a marine leech",
+      "taxon_or_label": "Pontobdella Muricata, L. No 330",
+      "commercial_or_label_number": "L. No 330",
+      "dimensions": "5 in long x 3/4 in widest",
+      "condition": "Very good",
+      "estimate": {"low": 1000, "high": 3000, "currency": "USD"},
+      "result": {
+        "status": "sold_price_reported",
+        "amount": 1150,
+        "currency": "USD",
+        "price_type": "price_including_buyers_premium",
+        "caution": "James D. Julia's legacy archive states that reported prices include hammer plus buyer's premium."
+      },
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "probable_reoffer_of": "AUC-2005-JDJ-WINTER-480A",
+      "same_object_inference_basis": "Same auction house and year; exact taxon/label L. No 330; matching dimensions, condition, estimate, and catalogue wording.",
+      "same_object_inference_confidence": "high_but_inferred",
+      "sources": [{"type": "auction_house_legacy_archive", "url": "https://jamesdjulia.com/item/lot-561-rare-and-important-blown-glass-marine-leach-by-leopold-and-rudolph-blashka-27163/"}]
+    },
+    {
+      "record_id": "AUC-2015-GRISEBACH-SERPULA-343",
+      "auction_house": "Grisebach",
+      "auction_title": null,
+      "auction_date": "2015-11-26",
+      "year": 2015,
+      "lot": null,
+      "title_as_catalogued": "Leopold and Rudolph Blaschka, Model of a Serpulida",
+      "attribution_as_catalogued": "Leopold and Rudolph Blaschka",
+      "attribution_status": "aggregator_indexed_auction_attribution",
+      "object_type": "glass model of a Serpulidae worm",
+      "taxon_or_label": "Serpula contortuplicata",
+      "commercial_or_label_number": "L. No. 343",
+      "label_transcription": "Blaschka’s Modelle / Dresden. / Serpula contortuplicata. / L. No. 343",
+      "catalogued_object_date": "Circa 1900",
+      "dimensions": "model 2 3/8 in; diameter 3 3/4 in; box 3 x 7 1/8 x 7 1/8 in",
+      "estimate": {"low": 3000, "high": 5000, "currency": "EUR"},
+      "result": {"status": "not_publicly_recovered"},
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "primary_lot_page": null,
+      "needs_primary_lot_page": true,
+      "sources": [
+        {"type": "aggregator_sold_index", "url": "https://www.invaluable.com/artist/blaschka-leopold-49ejcqcd3j/sold-at-auction-prices/"}
+      ],
+      "notes": [
+        "The market index catalogues the object 'Circa 1900' while attributing it jointly to Leopold and Rudolph Blaschka. The date is preserved as market metadata rather than silently corrected.",
+        "The exact primary Grisebach lot page, lot number, and realized result remain open."
+      ]
+    },
+    {
+      "record_id": "AUC-2016-CHEFFINS-621",
+      "auction_house": "Cheffins",
+      "auction_title": "The Fine Art Sale",
+      "auction_date": "2016-11-30",
+      "year": 2016,
+      "lot": "621",
+      "title_as_catalogued": "Three 19th century glass models of jelly fish, possibly by Rudolf Blaschka (1857-1939)",
+      "attribution_as_catalogued": "possibly by Rudolf Blaschka",
+      "attribution_status": "tentative_auction_attribution",
+      "object_type": "group of three glass jellyfish models",
+      "physical_object_count_reported": 3,
+      "taxon_or_label": "One paper label reads 'Cyclops?'",
+      "mounting": "iron rods on ebonised cylindrically turned bases",
+      "dimensions": "20 cm / 8 in high",
+      "condition": "Suffered losses; at least one loose part; glass top to right-hand piece broken during viewing.",
+      "result": {"status": "sold", "amount": 4600, "currency": "GBP", "price_type": "auction_house_sold_for"},
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "sources": [{"type": "auction_house_lot_page", "url": "https://fineart.cheffins.co.uk/auction/lot/lot-621---three-19th-century-glass-models-of-jelly-fish-possibly-by-rudolf-blaschka-1857-1939/?lot=135088&sd=1"}],
+      "notes": ["Retained because the market appearance is relevant, but the maker attribution remains explicitly qualified."]
+    },
+    {
+      "record_id": "AUC-2019-CHRISTIES-46-1877-381",
+      "auction_house": "Christie's London",
+      "auction_title": "Peter Petrou: Tales of the Unexpected",
+      "auction_date": "2019-01-30",
+      "year": 2019,
+      "lot": "46",
+      "title_as_catalogued": "A GLASS MODEL OF A PORTUGUESE MAN O' WAR",
+      "attribution_as_catalogued": "LEOPOLD BLASCHKA, CIRCA 1877",
+      "attribution_status": "auction_house_attribution",
+      "object_type": "glass model of Portuguese man o' war",
+      "taxon_or_label": "Physalia physalis",
+      "prior_institutional_identifier": "Science Museum 1877-381",
+      "dimensions": "8.5 x 4 x 3 in (21.5 x 10 x 8 cm)",
+      "condition_or_alteration": "Top bulb is a later replacement.",
+      "prior_institutional_provenance": "Acquired by the Science Museum, London in 1877; deaccessioned 1925-27.",
+      "estimate": {"low": 10000, "high": 15000, "currency": "GBP", "status": "revised_sale_room_estimate"},
+      "result": {"status": "secondary_report_only", "secondary_reported_amount": 10000, "currency": "GBP", "verification_status": "not_primary_verified"},
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "sources": [
+        {"type": "auction_house_lot_page", "url": "https://www.christies.com/en/lot/lot-6188456"},
+        {"type": "secondary_result_report", "url": "https://emmareynard.com/blog/2019/2/11/blaschka-model-sells-at-christies"}
+      ],
+      "notes": ["Earlier institutional custody does not trigger exclusion because the later buyer is not publicly identified; this is a deaccession-to-market provenance event."]
+    },
+    {
+      "record_id": "AUC-2019-CHRISTIES-47-1877-360",
+      "auction_house": "Christie's London",
+      "auction_title": "Peter Petrou: Tales of the Unexpected",
+      "auction_date": "2019-01-30",
+      "year": 2019,
+      "lot": "47",
+      "title_as_catalogued": "A GLASS MODEL OF A JELLYFISH",
+      "attribution_as_catalogued": "LEOPOLD BLASCHKA, CIRCA 1877",
+      "attribution_status": "auction_house_attribution",
+      "object_type": "glass model of a jellyfish",
+      "taxon_or_label": "Polyclonia frondosa",
+      "prior_institutional_identifier": "Science Museum 1877-360",
+      "dimensions": "7 x 4 3/4 x 3 1/2 in (18 x 11.5 x 9 cm)",
+      "condition_or_alteration": "Described as reassembled.",
+      "prior_institutional_provenance": "Acquired by the Science Museum, London in 1877; deaccessioned 1925-27.",
+      "estimate": {"low": 15000, "high": 25000, "currency": "GBP"},
+      "result": {"status": "not_publicly_recovered"},
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "sources": [
+        {"type": "auction_house_lot_page", "url": "https://www.christies.com/en/lot/lot-6188457"},
+        {"type": "aggregator_index", "url": "https://www.invaluable.com/artist/blaschka-leopold-49ejcqcd3j/sold-at-auction-prices/"}
+      ]
+    },
+    {
+      "record_id": "AUC-2019-CHRISTIES-48-1877-376",
+      "auction_house": "Christie's London",
+      "auction_title": "Peter Petrou: Tales of the Unexpected",
+      "auction_date": "2019-01-30",
+      "year": 2019,
+      "lot": "48",
+      "title_as_catalogued": "A GLASS MODEL OF A JELLYFISH",
+      "attribution_as_catalogued": "LEOPOLD BLASCHKA, CIRCA 1877",
+      "attribution_status": "auction_house_attribution",
+      "object_type": "glass model of a jellyfish",
+      "taxon_or_label": null,
+      "prior_institutional_identifier": "Science Museum 1877-376",
+      "mounting": "supported on an iron rod stand",
+      "dimensions": "8 x 3 x 3 in (20 x 8 x 8 cm)",
+      "prior_institutional_provenance": "Acquired by the Science Museum, London in 1877; deaccessioned 1925-27.",
+      "estimate": {"low": 15000, "high": 25000, "currency": "GBP"},
+      "result": {"status": "not_publicly_recovered"},
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "sources": [
+        {"type": "auction_house_lot_page", "url": "https://www.christies.com/lot/lot-6188458"},
+        {"type": "aggregator_index", "url": "https://www.invaluable.com/artist/blaschka-leopold-49ejcqcd3j/sold-at-auction-prices/"}
+      ]
+    },
+    {
+      "record_id": "AUC-2025-KREFELD-26",
+      "auction_house": "Kunst & Design Auktionshaus Schops Turowski",
+      "auction_title": "Auction May 2025 / K-15",
+      "auction_date": "2025-05-10",
+      "year": 2025,
+      "lot": "26",
+      "title_as_catalogued": "Glass model sea anemone, around 1870",
+      "attribution_as_catalogued": "Leopold and Rudolf Blaschka",
+      "attribution_status": "auction_house_attribution",
+      "object_type": "glass model of a sea anemone",
+      "dimensions": "10 x 13 x 13 cm",
+      "prior_institutional_label_provenance": "Drouot records an adhesive label: 'Zoolog. Institut Universität, Berlin' plus a handwritten botanical designation.",
+      "result": {"status": "hammer_price_reported", "amount": 28000, "currency": "EUR", "price_type": "hammer"},
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "sources": [
+        {"type": "auction_house_lot_page", "url": "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/glass-model-sea-anemone-around-1870-137451/"},
+        {"type": "auction_house_results", "url": "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/"},
+        {"type": "aggregator_lot_page_with_label", "url": "https://www.gazette-drouot.com/lots/28984163-leopold-and-rudolf-blaschka----"}
+      ],
+      "notes": ["The Berlin university label is prior-custody evidence, not evidence for the 2025 buyer."]
+    },
+    {
+      "record_id": "AUC-2025-KREFELD-27",
+      "auction_house": "Kunst & Design Auktionshaus Schops Turowski",
+      "auction_title": "Auction May 2025 / K-15",
+      "auction_date": "2025-05-10",
+      "year": 2025,
+      "lot": "27",
+      "title_as_catalogued": "Glass model of a stinging polyp, around 1870",
+      "attribution_as_catalogued": "Leopold and Rudolf Blaschka",
+      "attribution_status": "auction_house_attribution",
+      "object_type": "glass model of a stinging/spiny polyp",
+      "dimensions": "13 x 18 x 10 cm",
+      "result": {"status": "hammer_price_reported", "amount": 30000, "currency": "EUR", "price_type": "hammer"},
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "sources": [
+        {"type": "auction_house_results", "url": "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/"},
+        {"type": "aggregator_sale_page", "url": "https://www.gazette-drouot.com/en/auctions/164705--may-2025-art-fine-art--26amp-design-auction"}
+      ]
+    },
+    {
+      "record_id": "AUC-2026-KREFELD-39",
+      "auction_house": "Kunst & Design Auktionshaus Schops Turowski",
+      "auction_title": "May 2026 Art & Design Auction / K-17",
+      "auction_date": "2026-05-16",
+      "year": 2026,
+      "lot": "39",
+      "title_as_catalogued": "Glass model of a sea anemone, 1880s",
+      "attribution_as_catalogued": "Leopold and Rudolf Blaschka",
+      "attribution_status": "auction_house_attribution",
+      "object_type": "painted-glass sea anemone model",
+      "taxon_or_label": "Edwardsia; handwritten botanical name on paper label",
+      "dimensions": "glass case 5.5 x 12.5 x 10.5 cm",
+      "estimate": {"low": 5000, "high": 6000, "currency": "EUR"},
+      "result": {
+        "status": "platform_conflict",
+        "auction_house_reported_hammer": {"amount": 5000, "currency": "EUR"},
+        "liveauctioneers_status": "passed",
+        "resolution": "open"
+      },
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "sources": [
+        {"type": "auction_house_results", "url": "https://www.kunstunddesign-auktionen.de/en/auctions/K-17/list-of-results/"},
+        {"type": "liveauctioneers_catalog", "url": "https://www.liveauctioneers.com/catalog/413018_may-2026-art-and-design-auction/?page=2"},
+        {"type": "drouot_sale_page", "url": "https://www.gazette-drouot.com/en/auctions/178995-may-2026-art--26amp-design-auction"}
+      ]
+    },
+    {
+      "record_id": "AUC-2026-KREFELD-40",
+      "auction_house": "Kunst & Design Auktionshaus Schops Turowski",
+      "auction_title": "May 2026 Art & Design Auction / K-17",
+      "auction_date": "2026-05-16",
+      "year": 2026,
+      "lot": "40",
+      "title_as_catalogued": "Glass model of red precious coral, 1880s",
+      "attribution_as_catalogued": "Leopold and Rudolf Blaschka",
+      "attribution_status": "auction_house_attribution",
+      "object_type": "painted-glass red coral model",
+      "taxon_or_label": "Corallium rubrum; handwritten botanical description on paper label",
+      "dimensions": "glass case 6.5 x 21.5 x 15.5 cm",
+      "provenance_as_catalogued": "Private collection, Austria.",
+      "estimate": {"low": 5000, "high": 6000, "currency": "EUR"},
+      "result": {
+        "status": "platform_conflict",
+        "auction_house_reported_hammer": {"amount": 5000, "currency": "EUR"},
+        "liveauctioneers_status": "passed",
+        "resolution": "open"
+      },
+      "buyer_publicly_identified": false,
+      "post_sale_custody": "open",
+      "sources": [
+        {"type": "auction_house_lot_page", "url": "https://www.kunstunddesign-auktionen.de/en/auctions/K-17/highlights/blaschka-glass-model-of-red-precious-coral-1880s-144164/"},
+        {"type": "auction_house_results", "url": "https://www.kunstunddesign-auktionen.de/en/auctions/K-17/list-of-results/"},
+        {"type": "liveauctioneers_catalog", "url": "https://www.liveauctioneers.com/catalog/413018_may-2026-art-and-design-auction/?page=2"}
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "candidate_id": "REJ-2023-WIMBLEDON-33-37",
+      "auction_house_or_platform": "Wimbledon Auctions / The Saleroom / Easy Live Auction",
+      "date": "2023-02-13",
+      "lots": "33-37",
+      "reason": "Catalogued 'IN THE MANNER OF LEOPOLD AND RUDOLF BLASCHKA'; shell-and-wax anatomical sea-snail models rather than attributed Blaschka glass models.",
+      "url": "https://www.the-saleroom.com/en-gb/auction-catalogues/wimbledon-auctions/catalogue-id-wimb10002"
+    },
+    {
+      "candidate_id": "REJ-2016-PHILLIPS-MOCAFICO",
+      "auction_house_or_platform": "Phillips London",
+      "date": "2016-11-03",
+      "reason": "Guido Mocafico, twelve chromogenic photographs of Blaschka specimens; not a physical Blaschka model.",
+      "url": "https://www.phillips.com/detail/guido-mocafico/101810"
+    },
+    {
+      "candidate_id": "REJ-2018-SKINNER-WILLIAMS",
+      "auction_house_or_platform": "Skinner",
+      "date": "2018-05-11",
+      "lot": "129",
+      "reason": "Christopher Williams photograph titled with a Blaschka/Blauschka model reference; not a physical Blaschka model.",
+      "url": "https://www.skinnerinc.com/auctions/3100B/lots/129"
+    },
+    {
+      "candidate_id": "REJ-2017-DOROTHEUM-NOBILITY",
+      "auction_house_or_platform": "Dorotheum",
+      "date": "2017-11-27",
+      "reason": "Josef von Blaschka nobility diploma; unrelated person/name collision."
+    },
+    {
+      "candidate_id": "REJ-DRFISCHER-CASPARUS-BLASCHKA",
+      "auction_house_or_platform": "Dr. Fischer",
+      "date": null,
+      "reason": "Casparus Blaschka silver wine jug; unrelated maker/name collision."
+    },
+    {
+      "candidate_id": "REJ-SOTHEBYS-WENZEL-BLASCHKA",
+      "auction_house_or_platform": "Sotheby's",
+      "date": null,
+      "reason": "Wenzel Blaschka silver plates; unrelated maker/name collision."
+    }
+  ],
+  "search_coverage": [
+    {
+      "group": "high_signal_hits_or_cross_platform_confirmation",
+      "platforms_or_houses": ["James D. Julia legacy archive", "Cheffins", "Grisebach", "Christie's", "Kunst & Design Auktionshaus Schops Turowski", "LiveAuctioneers", "Invaluable", "Gazette Drouot", "The Saleroom", "AskART"],
+      "coverage_claim": "targeted searchable-domain pass"
+    },
+    {
+      "group": "targeted_search_returned_no_new_attributed_physical_blaschka_candidate",
+      "platforms_or_houses": ["Dreweatts", "Woolley & Wallis", "Tennants", "Sworders", "Roseberys", "Chiswick Auctions", "Special Auction Services", "Dominic Winter", "Neumeister", "Quittenbaum", "Van Ham", "Lempertz", "Dorotheum", "im Kinsky", "Hargesheimer", "Dr. Fischer", "Artcurial", "Ader", "Tajan", "Piasa", "Pandolfini", "Cambi", "Il Ponte", "Balclis", "Skinner", "Hindman", "Freeman's", "Rago", "Doyle", "Sotheby's", "Bonhams", "Heritage Auctions", "Auctionet", "Barnebys", "Lot-tissimo"],
+      "coverage_claim": "negative targeted web/domain pass only; not archive-exhaustive"
+    }
+  ],
+  "query_aliases": ["Blaschka", "Blashka", "Blauschka", "Blaschke", "Leopold and Rudolf Blaschka", "Leopold und Rudolf Blaschka", "Blaschka Glasmodell", "Blaschka Modelle", "modèle en verre Blaschka", "modello in vetro Blaschka", "modelo de vidrio Blaschka", "glass model Blaschka", "sea anemone Blaschka", "jellyfish Blaschka", "marine invertebrate Blaschka"],
+  "open_tasks": [
+    "Recover the exact primary Grisebach 26 Nov 2015 lot page, lot number, and result.",
+    "Clarify whether James D. Julia Winter 2005 lot 480A's $0.00 denotes unsold, withdrawn, or simply no archived realized price, and verify the probable same-object reoffer against images if available.",
+    "Recover primary realized results for Christie's 2019 lots 47 and 48 and independently verify the secondary £10,000 report for lot 46.",
+    "Resolve the Krefeld 2026 conflict between the auction-house results page (€5,000 hammer for lots 39 and 40) and LiveAuctioneers ('Lot Passed').",
+    "Extend beyond live/searchable web catalogues into older digitised PDF/printed auction catalogues, library sale catalogues, dealer archives, and newspaper auction notices.",
+    "Treat paywalled art-price databases as discovery leads only unless public or licensed metadata can be checked directly."
+  ]
+}
