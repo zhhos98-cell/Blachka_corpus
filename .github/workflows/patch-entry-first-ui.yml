@@ -1,0 +1,48 @@
+name: Patch entry-first bibliography UI
+
+on:
+  push:
+    paths:
+      - 'PATCH_ENTRY_FIRST_UI_TRIGGER.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch script loading
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('bibliography/index.html')
+          s = p.read_text()
+          old = '  <script src="bibliography-pass10.js?v=20260809-1" defer></script>\n  <script src="bibliography-tools.js?v=20260809-3" defer></script>'
+          new = '  <script src="bibliography-pass10.js?v=20260809-1" defer></script>\n  <script src="bibliography-pass11.js?v=20260809-1" defer></script>\n  <script src="bibliography-tools.js?v=20260809-4" defer></script>'
+          if new not in s:
+              if old not in s:
+                  raise SystemExit('bibliography script marker not found')
+              p.write_text(s.replace(old, new, 1))
+
+          p = Path('sources/index.html')
+          s = p.read_text()
+          include = '  <script src="sources-pass2.js?v=20260809-1" defer></script>\n'
+          if include not in s:
+              marker = '</body>\n</html>'
+              if marker not in s:
+                  raise SystemExit('sources body marker not found')
+              p.write_text(s.replace(marker, include + '</body>\n</html>', 1))
+          PY
+      - name: Commit patch
+        shell: bash
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bibliography/index.html sources/index.html
+          git commit -m "Expose entry-first sources and top bibliography tools"
+          git push
