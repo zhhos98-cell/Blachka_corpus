@@ -203,6 +203,11 @@
     <p class="bib-community-copy"><a href="https://www.zotero.org/groups/6634544/blaschka_bibliothek" target="_blank" rel="noopener">Open the Blaschka Bibliothek ↗</a>. The shared library is intended as a collaborative working bibliography for literature and source leads relevant to the Blaschka models and their histories. Researchers, curators, conservators, librarians, students, and other interested contributors are welcome to join and help maintain it by adding missing references, improving metadata, linking better copies, and flagging duplicates or errors.</p>`;
   toolbar.insertAdjacentElement('afterend', community);
 
+  const liveScript = document.createElement('script');
+  liveScript.src = 'zotero-live.js?v=20260810-1';
+  liveScript.defer = true;
+  document.head.appendChild(liveScript);
+
   const collator = new Intl.Collator(['en','de','fr','it','es'], { sensitivity:'base', numeric:true });
   let mode = 'year', observer;
   const authorSortKey = node => {
