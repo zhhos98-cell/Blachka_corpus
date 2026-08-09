@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "title": "The Blaschka Object Network — Upstream Living-Specimen Supply Register",
   "generated_date": "2026-08-10",
   "scope": "Sources for living marine organisms and other biological reference material moving into the Blaschka workshop before glass models moved outward. The register treats acquisition, forwarding, survival in transit, revival in aquaria and failed supply as part of model production rather than external background logistics.",
@@ -9,9 +9,10 @@
       "id": "UPSTREAM-RT-SMITH-WEYMOUTH",
       "name": "R. T. Smith",
       "address": "25 St. Alban's Street, Weymouth",
+      "active_evidence_span": "1873–1886 or later",
       "role_label": "aquarium/marine-specimen supplier and natural-history exchange participant",
       "identity_guard": "Initials are preserved. No fuller personal identity is assigned without independent evidence.",
-      "role_guard": "Leopold Blaschka's draft correspondence describes Smith as an aquarium dealer. Contemporary Science-Gossip evidence shows the same name and Weymouth address circulating slides and marine material. This supports a commercial/exchange role but does not by itself establish a formal incorporated firm.",
+      "role_guard": "Leopold Blaschka's draft correspondence describes Smith as an aquarium dealer. Hardwicke's Science-Gossip independently shows R. T. Smith in Weymouth and, from 1874 onward, at the exact 25 St. Alban's Street address circulating slides and marine material. This supports a commercial/exchange role but does not by itself establish a formal incorporated firm.",
       "workshop_evidence": [
         {
           "date": "1882-12-25",
@@ -31,12 +32,12 @@
         {
           "date": "undated / local OCR",
           "source": "Project OCR of Rakow correspondence",
-          "evidence": "A draft headed to R. T. Smith, Weymouth requests British sea anemones worth about 15 Reichsmarks, specifies preferred varieties, asks for as many different kinds as possible, and asks Smith to propose a forwarding method."
+          "evidence": "A draft headed to R. T. Smith, Weymouth requests British sea anemones worth about 15 Reichsmarks, specifies preferred varieties, asks for as many different kinds as possible, and asks Smith to propose a forwarding method. The same draft contrasts this with marine animals previously received from Italy."
         },
         {
           "date": "17 May / year pending image verification",
           "source": "Project OCR of Rakow correspondence",
-          "evidence": "A draft headed 'Mr. Smith Weymouth 17. Mai' reports that anemones arrived alive and recovered in the workshop tank despite very warm weather and several days in transit from Weymouth to Dresden."
+          "evidence": "A draft headed 'Mr. Smith Weymouth 17. Mai' reports that anemones arrived alive and recovered immediately in the workshop tank despite very warm weather and several days in transit from Weymouth to Dresden. The draft then discusses previous packing failure and a new test consignment, making packing practice part of the live-animal supply experiment."
         },
         {
           "date": "undated / local OCR",
@@ -46,33 +47,51 @@
       ],
       "independent_contemporary_network_evidence": [
         {
-          "date": "1874",
-          "source": "Hardwicke's Science-Gossip",
-          "evidence": "R. T. Smith, 25 St. Alban's Street, Weymouth offered well-mounted microscopic slides of marine algae, about forty varieties, and small starfish/unmounted material in exchange for good slides."
+          "date": "1873",
+          "source": "Hardwicke's Science-Gossip, project document D118, page-level record R43088",
+          "evidence": "R. T. Smith, Weymouth offers larvae in exchange for good microscopic slides. This is the earliest exact-name occurrence currently isolated in the microscopy corpus and shows Smith participating in exchange before the address-bearing notices."
         },
         {
           "date": "1874",
-          "source": "Hardwicke's Science-Gossip",
-          "evidence": "A second exchange notice at the same name/address offered microscopic slides of marine algae and starfish plus small unmounted starfish for good slides."
+          "source": "Hardwicke's Science-Gossip, project document D125, record R44448",
+          "evidence": "R. T. Smith, 25 St. Alban's Street, Weymouth offers well-mounted microscopic slides of marine algae, forty varieties, plus small unmounted starfish for good slides."
         },
         {
-          "date": "same nineteenth-century microscopy exchange corpus",
-          "source": "Hardwicke's Science-Gossip / project microscopy corpus",
-          "evidence": "Additional notices at the same address offer marine shells and material for mounting, placing Smith within amateur microscopy and marine-specimen exchange rather than only the Blaschka correspondence network."
+          "date": "1874",
+          "source": "Hardwicke's Science-Gossip, project document D125, record R44496",
+          "evidence": "The same name/address offers microscopic slides of marine algae and starfish plus small unmounted starfish for good slides."
+        },
+        {
+          "date": "1874",
+          "source": "Hardwicke's Science-Gossip, project document D125, record R44688",
+          "evidence": "The same name/address offers named, well-mounted marine-algae slides for mounted sections of the human body, showing repeated participation rather than a single advertisement."
+        },
+        {
+          "date": "1876",
+          "source": "Hardwicke's Science-Gossip, project document D120, record R43515",
+          "evidence": "R. T. Smith, 25 St. Alban's Street, Weymouth offers Bulla hydatis and other material for mounting palates in exchange for good slides, plus palates and jaws of Gyrodus. The exchange repertoire therefore extended beyond algae and starfish."
         }
       ],
+      "contemporary_collector_list_ambiguity": {
+        "source": "William R. Hughes, On the Principles and Management of the Marine Aquarium, paper read 1874, published 1875",
+        "project_document": "D105",
+        "evidence": "A list of marine-animal collectors, said to be taken principally from W. A. Lloyd's handbook, contains an OCR reading 'E. J. Smith, 25, St. Alban's Row, Weymouth.' The address is strikingly close to the repeated R. T. Smith Science-Gossip address, and the context is explicitly suppliers of marine animals.",
+        "guard": "Do not merge E. J. Smith with R. T. Smith yet. The initials and Row/Street wording require image-level verification against the 1875 printed page and, if possible, Lloyd's underlying list. This may be OCR error, a related person at the same address, or a separate collector."
+      },
       "research_value": [
         "connects Blaschka model-making to British amateur microscopy and exchange networks",
         "shows living reference organisms as logistics-dependent research material",
         "makes weather, season, rail transit duration and revival in aquaria part of production history",
         "allows comparison between circulation of mounted marine slides, unmounted specimens and living animals",
-        "creates a person/address bridge across two otherwise separate project corpora"
+        "creates a person/address bridge across two otherwise separate project corpora",
+        "shows a repeated exchange practice over at least 1873–1876 rather than a one-off encounter before the Blaschka supply correspondence"
       ],
       "next_actions": [
-        "Run exact-name/address search across all microscopy pages for R. T. Smith / 25 St. Alban's Street / Weymouth.",
+        "Align all five exact R. T. Smith microscopy records to page images and preserve original typography/address forms.",
         "Run exact-name search across all Rakow OCR records and align each Smith draft to manuscript page/image.",
         "Build one chronological table of requested species, price, weather, dispatch method, transit duration, survival and subsequent model references.",
-        "Search Weymouth directories and natural-history society records for a secure expansion of R. T. Smith's initials only after the primary corpus is exhausted."
+        "Verify the Hughes/Lloyd collector-list initials and address against page image before entity merging.",
+        "Search Weymouth directories and census/address records only to resolve identity, keeping business-role evidence independent of genealogy."
       ]
     }
   ],
