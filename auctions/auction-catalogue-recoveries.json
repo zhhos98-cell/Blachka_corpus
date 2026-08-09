@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Auction catalogue identifier recoveries",
+  "purpose": "Store catalogue-level metadata recovered after the first canonical lot ingest, especially sale codes, exact lot numbers and single-owner sale context that can close fields without altering evidential status elsewhere.",
+  "recoveries": [
+    {
+      "recovery_id": "REC-2015-GRISEBACH-249-483",
+      "canonical_record_id": "AUC-2015-GRISEBACH-SERPULA-343",
+      "auction_house": "Grisebach",
+      "sale_title": "ORANGERIE. Selected Objects / Orangerie: ausgewählte Objekte",
+      "sale_code": "249",
+      "auction_date": "2015-11-26",
+      "place": "Berlin",
+      "sale_lot_range": "400-485",
+      "lot": "483",
+      "object": "Leopold and Rudolph Blaschka, Model of a Serpulidae worm (Serpula contortuplicata), L. No. 343",
+      "estimate": {"low": 3000, "high": 5000, "currency": "EUR"},
+      "realized_result": null,
+      "result_status": "not_publicly_recovered",
+      "exact_aggregator_lot_url": "https://www.invaluable.com/auction-lot/leopold-and-rudolph-blaschka-model-of-a-serpulida-483-c-a084c25853",
+      "primary_grisebach_object_page": null,
+      "primary_page_status": "not_recovered",
+      "evidence": [
+        {
+          "source_type": "Invaluable artist sold-lot index",
+          "url": "https://www.invaluable.com/artist/blaschka-leopold-49ejcqcd3j/sold-at-auction-prices/",
+          "supports": "26 Nov 2015, Grisebach, object description, L. No. 343, dimensions and EUR 3,000-5,000 estimate"
+        },
+        {
+          "source_type": "Invaluable exact lot URL",
+          "url": "https://www.invaluable.com/auction-lot/leopold-and-rudolph-blaschka-model-of-a-serpulida-483-c-a084c25853",
+          "supports": "URL-level lot identifier 483; current research runtime could not fetch the page body"
+        },
+        {
+          "source_type": "Open Library catalogue metadata imported from Harvard",
+          "url": "https://openlibrary.org/works/OL43709635W/Third_floor",
+          "supports": "sale code 249, Orangerie: ausgewählte Objekte, 26 Nov 2015, lots 400-485, Berlin"
+        },
+        {
+          "source_type": "Grisebach press release",
+          "url": "https://www.grisebach.com/en/auction-house/press/the-orangerie-selected-objects-auction-tells-the-story-of-the-world-in-100-objects-from-andrea-pisano-to-gunter-sachs",
+          "supports": "ORANGERIE Selected Objects auction held 26 Nov 2015"
+        }
+      ],
+      "confidence": {
+        "sale_identity": "high",
+        "lot_number": "high_from_exact_aggregator_URL",
+        "result": "open"
+      },
+      "canonical_update_needed": true,
+      "canonical_fields_to_update": {
+        "auction_title": "ORANGERIE. Selected Objects",
+        "lot": "483",
+        "primary_lot_page": "https://www.invaluable.com/auction-lot/leopold-and-rudolph-blaschka-model-of-a-serpulida-483-c-a084c25853",
+        "needs_primary_lot_page": true
+      },
+      "guard": "The exact Invaluable lot URL is an aggregator record, not a recovered primary Grisebach object page. Do not mark the primary-page gap closed or invent a realized price."
+    },
+    {
+      "recovery_id": "REC-2019-CHRISTIES-PETROU-COLLECTION",
+      "canonical_record_ids": [
+        "AUC-2019-CHRISTIES-46-1877-381",
+        "AUC-2019-CHRISTIES-47-1877-360",
+        "AUC-2019-CHRISTIES-48-1877-376"
+      ],
+      "auction_house": "Christie's London",
+      "sale_title": "Peter Petrou: Tales of the Unexpected",
+      "auction_date": "2019-01-30",
+      "single_collection_context": "Christie's described the auction as offering the collection of Peter Petrou; 150 lots spanning science, natural history, decorative arts and other categories.",
+      "safe_provenance_bridge": "The three ex-Science Museum Blaschka models were lots 46-48 in a Christie’s sale explicitly presented as the collection of Peter Petrou. They can therefore be described as being in the Peter Petrou sale/collection context by January 2019.",
+      "provenance_chain": [
+        "Science Museum acquisition/registration in 1877",
+        "Science Museum deaccession in 1925-1927",
+        "unresolved post-deaccession ownership/custody gap",
+        "Peter Petrou collection/sale context by January 2019",
+        "Christie's auction 30 January 2019",
+        "post-sale buyer/custody open"
+      ],
+      "unresolved_fields": [
+        "when Peter Petrou acquired each model",
+        "from whom Peter Petrou acquired each model",
+        "whether the three models shared one post-1927 chain",
+        "intermediate owners between Science Museum deaccession and Petrou",
+        "2019 buyer identities"
+      ],
+      "evidence": [
+        {
+          "source_type": "Christie's official press release",
+          "url": "https://press.christies.com/press-release-peter-petrou-tales-of-the-unexpected-nbsplondon-30-january/",
+          "supports": "auction of the collection of Peter Petrou, 150 lots, 30 Jan 2019"
+        },
+        {
+          "source_type": "Christie's lot 46",
+          "url": "https://www.christies.com/en/lot/lot-6188456",
+          "supports": "Science Museum 1877-381 provenance and sale placement"
+        },
+        {
+          "source_type": "Christie's lot 47",
+          "url": "https://www.christies.com/en/lot/lot-6188457",
+          "supports": "Science Museum 1877-360 provenance and sale placement"
+        },
+        {
+          "source_type": "Christie's lot 48",
+          "url": "https://www.christies.com/lot/lot-6188458",
+          "supports": "Science Museum 1877-376 provenance and sale placement"
+        }
+      ],
+      "guard": "Single-owner sale context establishes Petrou collection custody/context by the sale date; it does not establish acquisition date, direct purchase from the Science Museum, or an uninterrupted 1927-2019 chain."
+    }
+  ],
+  "bounded_negative_checks": [
+    {
+      "target": "Grisebach lot 483 realized result",
+      "result": "not publicly recovered; Invaluable requires sold-price access and no primary Grisebach result page was found"
+    },
+    {
+      "target": "Science Museum 1877-360 / 1877-376 / 1877-381 + Peter Petrou intermediate provenance",
+      "result": "no pre-2019 Petrou acquisition date, vendor or intermediate owner recovered in targeted searches"
+    }
+  ]
+}
