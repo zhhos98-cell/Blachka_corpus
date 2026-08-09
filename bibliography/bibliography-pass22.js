@@ -73,4 +73,11 @@
 
   const scopeTitle = document.querySelector('#bib-scope-title');
   if (scopeTitle) scopeTitle.textContent = '1883–2026 · twenty-second expanded pass';
+
+  if (!document.querySelector('script[data-bib-pass23-loader]')) {
+    const pass23 = document.createElement('script');
+    pass23.src = 'bibliography-pass23.js?v=20260809-1';
+    pass23.dataset.bibPass23Loader = 'true';
+    document.head.appendChild(pass23);
+  }
 })();
