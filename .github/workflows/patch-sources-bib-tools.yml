@@ -19,50 +19,49 @@ jobs:
           python - <<'PY'
           from pathlib import Path
 
-          def replace_if(path, old, new):
+          def replace_once(path, old, new):
               p = Path(path)
-              if not p.exists():
-                  return
+              if not p.exists(): return
               s = p.read_text()
-              if new in s:
-                  return
+              if new in s: return
               if old not in s:
                   print(f'pattern not found in {path}: {old!r}')
                   return
               p.write_text(s.replace(old, new, 1))
 
-          # Root static navigation.
-          replace_if(
-              'index.html',
+          # Main-page static and runtime navigation.
+          replace_once('index.html',
               '        <a href="bibliography/">Bibliography</a>\n        <a href="auctions/">Auctions</a>',
-              '        <a href="bibliography/">Bibliography</a>\n        <a href="sources/">Sources</a>\n        <a href="auctions/">Auctions</a>'
-          )
-
-          # Runtime navigation written by motion.js.
-          replace_if(
-              'motion.js',
+              '        <a href="bibliography/">Bibliography</a>\n        <a href="sources/">Sources</a>\n        <a href="auctions/">Auctions</a>')
+          replace_once('motion.js',
               '      <a href="bibliography/">Bibliography</a>\n      <a href="auctions/">Auctions</a>',
-              '      <a href="bibliography/">Bibliography</a>\n      <a href="sources/">Sources</a>\n      <a href="auctions/">Auctions</a>'
-          )
+              '      <a href="bibliography/">Bibliography</a>\n      <a href="sources/">Sources</a>\n      <a href="auctions/">Auctions</a>')
 
-          # Secondary-page navigation.
-          for path in ['bibliography/index.html', 'auctions/index.html', 'blog/index.html', 'privacy/index.html']:
-              replace_if(
-                  path,
-                  '      <a href="../bibliography/">Bibliography</a>\n      <a href="../auctions/">Auctions</a>',
-                  '      <a href="../bibliography/">Bibliography</a>\n      <a href="../sources/">Sources</a>\n      <a href="../auctions/">Auctions</a>'
-              )
+          # Bibliography uses a self-link rather than ../bibliography/.
+          replace_once('bibliography/index.html',
+              '      <a href="./" aria-current="page">Bibliography</a>\n      <a href="../auctions/">Auctions</a>',
+              '      <a href="./" aria-current="page">Bibliography</a>\n      <a href="../sources/">Sources</a>\n      <a href="../auctions/">Auctions</a>')
 
-          # Load every bibliography layer directly and cache-bust it. This avoids a stale
-          # multi-hop dynamic-loader chain hiding the sort/export controls in browsers.
+          # Other secondary pages.
+          for path in ['auctions/index.html', 'blog/index.html', 'privacy/index.html']:
+              p = Path(path)
+              if not p.exists(): continue
+              s = p.read_text()
+              source_line = '      <a href="../sources/">Sources</a>'
+              if source_line not in s and '      <a href="../bibliography/">Bibliography</a>' in s:
+                  s = s.replace('      <a href="../bibliography/">Bibliography</a>',
+                                '      <a href="../bibliography/">Bibliography</a>\n' + source_line, 1)
+                  p.write_text(s)
+
+          # Ensure direct, cache-busted loading of every bibliography pass and the tools.
           p = Path('bibliography/index.html')
           s = p.read_text()
-          old = '  <script src="bibliography-form.js?v=20260809-1" defer></script>'
-          stack = '''  <script src="bibliography-form.js?v=20260809-5" defer></script>\n  <script src="bibliography-pass6.js?v=20260809-2" defer></script>\n  <script src="bibliography-pass7.js?v=20260809-3" defer></script>\n  <script src="bibliography-pass8.js?v=20260809-2" defer></script>\n  <script src="bibliography-pass9.js?v=20260809-1" defer></script>\n  <script src="bibliography-tools.js?v=20260809-3" defer></script>'''
-          if 'bibliography-tools.js?v=20260809-3' not in s:
-              if old not in s:
-                  raise SystemExit('bibliography script include not found')
-              s = s.replace(old, stack, 1)
+          if 'bibliography-pass10.js?v=20260809-1' not in s:
+              marker = '  <script src="bibliography-tools.js?v=20260809-3" defer></script>'
+              if marker not in s:
+                  raise SystemExit('bibliography tools marker missing')
+              s = s.replace(marker,
+                    '  <script src="bibliography-pass10.js?v=20260809-1" defer></script>\n' + marker, 1)
               p.write_text(s)
           PY
       - name: Commit patch
@@ -72,5 +71,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html motion.js bibliography/index.html auctions/index.html blog/index.html privacy/index.html 2>/dev/null || true
-          git commit -m "Expose Sources and bibliography tools"
+          git commit -m "Finish Sources navigation and bibliography loading"
           git push
