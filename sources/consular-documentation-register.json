@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Consular Certification and Route Documentation Register",
+  "generated_date": "2026-08-10",
+  "scope": "Primary-source evidence showing U.S. consular certification and consular-post infrastructure as part of Blaschka transatlantic shipment practice, plus the federal archival record group in which post-level documentation may survive.",
+  "methodological_guard": "The existence of U.S. consular records for Germany does not prove that a Blaschka consular certificate or invoice is preserved in Record Group 84. Workshop-side certificates and correspondence are direct evidence; RG 84 is the government-side retrieval universe. Bremen is named in the Blaschka correspondence, but a surviving Bremen-post file must be located through NARA finding aids before a specific archival citation is asserted.",
+  "events": [
+    {
+      "id": "CONSULAR-1906-INVOICE",
+      "date": "1906-10-27",
+      "status": "direct_primary_evidence",
+      "event": "Insured Harvard shipment with consular invoice",
+      "evidence": "Rudolf's dispatch letter says the Bremen-bound Harvard consignment was insured and that a consular invoice had been made out to the value of approximately three years of work.",
+      "research_value": "The shipment acquired an official declared-value identity before ocean carriage, distinct from the workshop's internal model prices and later freight/customs charges."
+    },
+    {
+      "id": "CONSULAR-1922-BREMEN-POSTWAR",
+      "date": "1922-02-27",
+      "status": "direct_primary_evidence",
+      "event": "Return of the American consulate in Bremen as a condition for resumed trade",
+      "evidence": "While planning the first major postwar shipment, Rudolf wrote that one sign of progress was that 'we have now the American consulate again in Bremen', but that a renewed commercial treaty was still needed to restore the old order. He simultaneously described export declaration, licensing and taxation as unresolved obstacles.",
+      "research_value": "Consular presence itself appears as part of the infrastructure that made a familiar shipping route usable again after war and regulatory rupture."
+    },
+    {
+      "id": "CONSULAR-1929-ROUTE-PATH-DEPENDENCE",
+      "date": "1929-04-22",
+      "status": "direct_primary_evidence",
+      "event": "Cheaper direct-Boston route rejected because it would require new consular paperwork",
+      "evidence": "Ehrhorn, Emden & Mayer proposed direct Bremen-to-Boston carriage, but Rudolf rejected the cheaper route because changing the already prepared itinerary would require a new consular certificate/invoice and create delay. He retained the New York-in-bond-to-Boston route.",
+      "research_value": "Documentation created path dependence: once consular paperwork was prepared for one route, the cheaper physical route could become administratively more expensive."
+    },
+    {
+      "id": "CONSULAR-1932-CERTIFICATE",
+      "date": "1932",
+      "status": "direct_archival_document",
+      "event": "Consular Certificate for Shipment to Harvard University",
+      "evidence": "The Rakow finding aid explicitly lists a 1932 'Consular Certificate for Shipment to Harvard University' in Series 04, Business Files.",
+      "research_value": "A surviving formal consular document can be read against the 1932 invoice, crate sketches, shipment contents and Harvard arrival/unpacking correspondence."
+    }
+  ],
+  "government_archive_target": {
+    "repository": "U.S. National Archives",
+    "reference": "Record Group 84 — Records of Foreign Service Posts of the Department of State",
+    "coverage": "1788–1990; consular-post records include Germany, 1821–1955",
+    "relevant_record_types": [
+      "post correspondence",
+      "records relating to U.S. vessels and cargo",
+      "certifications of merchandise shipped from or received in the consular district",
+      "records of notarial, shipping and other fees",
+      "post-to-post and local business correspondence"
+    ],
+    "recordkeeping_note": "For 1912–1948, post files are generally grouped by year/block of years and arranged by a subject decimal filing scheme. Additional finding aids, including Special List 9, are required to identify exact Bremen/Dresden post holdings.",
+    "research_questions": [
+      "Do Bremen consular files preserve certificates, invoices, fee records or local correspondence for Blaschka/Harvard consignments in 1906, 1923, 1929 or 1932?",
+      "Can consular certification dates be matched to Ehrhorn, Emden & Mayer forwarding dates and Norddeutscher Lloyd sailings?",
+      "Do local business correspondence files document route changes, export certification or the re-establishment of American consular services after World War I?"
+    ],
+    "locators": [
+      "https://www.archives.gov/research/foreign-policy/state-dept/rg-84",
+      "https://www.archives.gov/research/foreign-policy/state-dept/rg-84/records.html",
+      "https://www.archives.gov/research/foreign-policy/state-dept/rg-84/finding-aids"
+    ]
+  },
+  "research_observation": "Consular paperwork was not a passive certificate added after a route had been chosen. It helped constitute the route. The 1929 refusal to adopt a cheaper direct-Boston service because new consular documentation would be required makes administrative paperwork an observable source of logistical path dependence."
+}
