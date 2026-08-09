@@ -1,4 +1,4 @@
-# Bibliography expansion: Central European / workshop-primary route, passes 26–27
+# Bibliography expansion: Central European / workshop-primary route, passes 26–28
 
 Date: 2026-08-09
 
@@ -24,6 +24,16 @@ Added four further records, concentrating on workshop-authored / commercial prim
 - Leopold Blaschka, *Katalog über Blaschka’s Modelle von wirbellosen Thieren dargestellt von Leopold Blaschka in Hosterwitz bei Dresden*. Druck Gustav Winter, Stolpen, 1885. Tübingen reproduces the catalogue and gives copy-level provenance: National Museums and Galleries of Wales; scan supplied by Sternwarte Kremsmünster.
 - Chris Meechan, “A Glass Menagerie: The Works of Leopold and Rudolph Blaschka,” *The Conchologists’ Newsletter* 138 (1996): 690–697. This is distinct from Meechan’s already-listed 1995 *Glass Cone* article; the Conchological Society confirms the newsletter run and external malacological bibliography supplies the issue/pages.
 - J. P. Short, “Arc of the Anemone: Modeling Nature from the Wunderkammer to the Warenwelt,” in *Before Photography: German Visual Culture in the Nineteenth Century* (De Gruyter, 2021), 181–204. Direct chapter centred substantially on Blaschka marine models and nineteenth-century commodity/model culture; DOI 10.1515/9783110696448-010.
+
+## Pass 28: Vienna / Central European collection scholarship
+
+Added five direct records after exact-title repository checks:
+
+- Claudia Feigl, “Glasmodell einer Blumenkohlqualle,” University of Vienna, *Objekt des Monats* (January 2016). Direct treatment of Blaschka scientific-model production, teaching use and the Vienna collection.
+- Claudia Feigl, “Glasmodell eines Röhrenpolypen,” University of Vienna, *Objekt des Monats* (January 2017). Especially useful because it reconstructs the Vienna/Trieste/Blaschka exchange relationship, including live-animal shipments and the 1884–1887 order sequence.
+- Maximilian Petrasko, “Glasmodell einer Seenelke,” University of Vienna, *Objekt des Monats* (August 2018). Direct object study incorporating Ward-catalogue identification, material-analysis literature, micro-CT work and the model's changing teaching/research status.
+- Ines Kaffka, “Glasbläserkunst für die Wissenschaft: Lupenreine Täuschungen,” *Der Spiegel* (18 July 2019). Direct Blaschka feature centred on Guido Mocafico's photographic documentation of models in European collections.
+- Claudia Feigl, “Die Glasmodelle mariner Wirbelloser von Leopold und Rudolf Blaschka als Ergebnis eines Netzwerks europäischer Wissenschaftler des ausgehenden 19. Jahrhunderts,” in Johannes Seidl and Ingrid Kästner, eds., *Tauschen und Schenken: Wissenschaftliche Sammlungen als Resultat europäischer Zusammenarbeit* (Düren: Shaker, 2020), 57–72. This is a substantial direct Blaschka chapter; the host volume's imprint gives ISBN 978-3-8440-6490-2 and ISSN 1868-6125.
 
 ## Tübingen sourcebook audit
 
@@ -52,9 +62,13 @@ The project source index contains two early discovery records:
 
 Independent Reichenbach bibliography confirms these titles, and later scholarship securely establishes Reichenbach’s 1863 presentation/promotion of Leopold Blaschka’s early marine models. However, the exact original issue text has not yet been inspected to prove that these two bibliographic notices themselves are explicitly about Blaschka. They therefore remain outside the public bibliography for now. No artificial extension of the public chronology from 1870 back to 1863 is made without original-text confirmation.
 
-## Other hold
+## Other holds / dedupe results
 
 The 1996 Glass Art Society Boston conference literature contains a paper titled “The Blaschka Glass Flowers at Harvard,” pp. 40–44, in the 26th conference / *Critical Mass* proceedings. Later scholarly citation confirms title, venue and pages, but the author has not yet been securely recovered. Do not assign an author by inference.
+
+A fresh citation-chain audit against María Isabel Herráez Martín's 2014 *Los modelos Blaschka* recovered no major unrepresented core literature: Fulton/Rossi-Wilcox 2008, Brierley 2009, Pirotte 2009, Pinto's Harvard thesis, Daston 2004, the 2008 *Historical Biology* papers, Whitehouse 2007 and the standard conservation literature are already represented in the repository. This confirms that the remaining yield is increasingly in local-language, grey, museum and regional publication layers rather than the obvious English-language core.
+
+Two direct institutional web publications are still held only because their publication dates are not exposed reliably: Natural History Museum London's “Colour in the collections: Blaschka glass models” (Katie Pavid; demonstrably online by January 2021), and National Museums Scotland's “The glass artists who mastered museum models.” Both are substantial enough for scope if a reliable publication date is recovered.
 
 ## Next route
 
