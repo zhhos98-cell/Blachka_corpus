@@ -229,4 +229,11 @@
     if (note) note.insertAdjacentElement('afterend', section);
     else main.appendChild(section);
   }
+
+  if (!document.querySelector('script[data-bib-pass6-loader]')) {
+    const pass6 = document.createElement('script');
+    pass6.src = 'bibliography-pass6.js?v=20260809-1';
+    pass6.dataset.bibPass6Loader = 'true';
+    document.head.appendChild(pass6);
+  }
 })();
