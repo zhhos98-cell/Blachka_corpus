@@ -4,11 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       bundle:
-        description: "One click can fan out across many slide-collection institutions. High-yield is the recommended first pass."
+        description: "One click can fan out across many slide-collection institutions. Use remaining-automatable after the high-yield reconnaissance pass."
         required: true
-        default: "high-yield"
+        default: "remaining-automatable"
         type: choice
         options:
+          - remaining-automatable
           - high-yield
           - all-automatable
           - uk-high-yield
@@ -17,7 +18,7 @@ on:
           - geology-petrology
           - single
       institution_key:
-        description: "Only used when bundle=single. Use the slug from the matrix artifact."
+        description: "Only used when bundle=single. Use the canonical key from the matrix artifact."
         required: false
         default: ""
         type: string
