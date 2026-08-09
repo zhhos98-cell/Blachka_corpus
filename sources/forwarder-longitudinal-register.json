@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Ehrhorn, Emden & Mayer Longitudinal Forwarding Register",
+  "generated_date": "2026-08-10",
+  "actor": "Ehrhorn, Emden & Mayer",
+  "base": "Bremen",
+  "role": "forwarding and travel agents repeatedly used by the Blaschkas",
+  "archive_survival": "dedicated_fonds_not_identified_in_public_catalogue_pass",
+  "scope": "Direct workshop evidence for a long-lived commercial relationship with the Bremen forwarding firm from at least 1891 through 1929, plus Rudolf Blaschka's retrospective statement in 1929 that the New York-in-bond-to-Boston route had been used since 1888. The register separates direct dated evidence from retrospective continuity claims.",
+  "normalization_guard": "OCR produces variants including Ehrhorn/Elkhorn/Ethelhorn and Emden/Enden plus Mayer/Meyer. Clean typescripts and repeated context support normalization to Ehrhorn, Emden & Mayer. Publication-level spelling should be checked against manuscript images where relevant.",
+  "events": [
+    {
+      "date": "1891-01-22",
+      "status": "direct_primary_evidence",
+      "context": "Five large cases of Harvard botanical models",
+      "evidence": "Leopold and Rudolf state that five cases sent from Dresden to Bremen would leave Bremerhaven for New York by express steamer and that the forwarding agents Ehrhorn, Emden & Mayer in Bremen would send the receiving advice.",
+      "functions": ["forwarding", "carrier coordination", "shipping advice"]
+    },
+    {
+      "date": "1892-02",
+      "status": "direct_primary_evidence",
+      "context": "Rudolf Blaschka's American research journey",
+      "evidence": "From Bremen Rudolf writes that the firm's comptoir was next to his Central Hotel and that 'our agent' Ehrhorn, Emden & Mayer supplied his travel documents. He travelled onward on the Norddeutscher Lloyd steamer Saale with a first-class ticket priced at 400 Marks.",
+      "functions": ["travel documents", "passenger booking/interface", "Norddeutscher Lloyd connection"],
+      "research_value": "The firm served the family as a general mobility intermediary, not merely a crate-forwarding contractor."
+    },
+    {
+      "date": "1906-10-27",
+      "status": "direct_primary_evidence",
+      "context": "Harvard botanical-model shipment",
+      "evidence": "Rudolf reports that the consignment had left Dresden on 23 October for Bremen, would be shipped on the next North German Lloyd steamer by the agents, was insured, and had a consular invoice made out to the value of approximately three years' work.",
+      "functions": ["forwarding", "carrier booking/interface", "insurance interface", "consular/shipping-document interface"]
+    },
+    {
+      "date": "1922",
+      "status": "direct_primary_evidence",
+      "context": "Postwar planning before renewed Harvard shipment",
+      "evidence": "Rudolf calls Ehrhorn, Emden & Mayer 'our old forwarding agents in Bremen' and says they had recently offered their services. He intended to ask them for information because the first condition for his delicate work was no repacking in Germany or New York, while export licensing and taxation remained uncertain.",
+      "functions": ["route advice", "risk-management consultation", "regulatory/logistics information"],
+      "research_value": "The forwarder functioned as a source of procedural knowledge before the physical shipment existed."
+    },
+    {
+      "date": "1923-09-12",
+      "status": "direct_primary_evidence",
+      "context": "Four cases R.B. No. 1–4",
+      "evidence": "Rudolf states that the cases went to Dresden station for Bremen, where Ehrhorn, Emden & Mayer would arrange the next steamer to New York; the cases would then travel in bond to Boston in care of E. A. Snow, custom-house broker and forwarding agent, for Harvard University Museum.",
+      "functions": ["forwarding", "carrier booking", "route sequencing", "handoff to bonded/customs-broker chain"]
+    },
+    {
+      "date": "1929-04-22 to 1929-04-24",
+      "status": "direct_primary_evidence_plus_retrospective_route_claim",
+      "context": "Four cases R.B. No. 1–4",
+      "evidence": "Rudolf says the forwarding firm had 'always' been ordered for the forwarding, though he suspected the business might by then have other owners. The firm proposed a cheaper direct steamer to Boston; Rudolf rejected the change because it would require new consular paperwork and delay, insisting on the New York-in-bond-to-Boston route. On 24 April he reported that the agents had informed him the cases were loaded aboard President Harding for New York on 25 April.",
+      "functions": ["route proposal", "cost comparison", "carrier booking", "bill-of-lading/document interface", "shipping notification"],
+      "retrospective_claim": "Rudolf described the route as the one used since 1888 under Goodale's arrangements. This is preserved as Rudolf's retrospective statement and is not independently treated as an 1888 firm record until an 1888 document is isolated."
+    }
+  ],
+  "role_model": [
+    "forwarding of cases from Bremen",
+    "selection or booking of ocean carrier",
+    "shipping advice to sender/receiver",
+    "travel-document and passenger-service work",
+    "route and cost advice",
+    "interface with insurance and consular paperwork",
+    "handoff to bonded movement and customs brokers",
+    "bill-of-lading and shipment-notification interface"
+  ],
+  "archive_targets": [
+    {
+      "repository": "Staatsarchiv Bremen / Bremen commercial records",
+      "status": "unresolved",
+      "research_question": "Can firm registration, partnership changes, address, owners, correspondence or forwarding-company records be identified for Ehrhorn, Emden & Mayer between the 1880s and 1920s?"
+    },
+    {
+      "repository": "Bremen address books, commercial directories and chamber-of-commerce records",
+      "status": "identity_and_continuity_target",
+      "research_question": "Resolve the firm's street address, business classification, principals and the ownership change Rudolf suspected by 1929."
+    },
+    {
+      "repository": "Staatsarchiv Bremen, StAB 7.2010 Norddeutscher Lloyd",
+      "status": "counterpart_carrier_archive",
+      "research_question": "Cross-walk dated Blaschka consignments and passenger travel with Lloyd schedules, freight documentation and surviving ship material; the NDL archive is fragmentary and is not the forwarder's own archive."
+    }
+  ],
+  "negative_discovery_result": "Exact-name public-web and archival-catalogue searches in this pass did not surface a dedicated Ehrhorn, Emden & Mayer corporate fonds. This is not evidence of destruction; the firm should next be pursued through Bremen commercial registration and directory infrastructure rather than another generic web sweep.",
+  "research_observation": "The forwarding relationship adds a form of commercial memory to the Blaschka circulation network. Across prewar, wartime aftermath and postwar regulatory regimes, the workshop repeatedly returned to a Bremen intermediary that knew its preferred carriers, route, paperwork and prohibition on repacking. Logistics therefore depended on durable institutional relationships, not on ad hoc transport purchased anew for each consignment."
+}
