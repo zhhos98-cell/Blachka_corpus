@@ -1,0 +1,288 @@
+{
+  "schema_version": "1.0.0-liege-afterlife-delta",
+  "created": "2026-08-09",
+  "target_backend_module": "university_of_liege_aquarium_museum_blaschka_collection",
+  "target_node_id": "BE-LIEGE-ULIEGE-AQUARIUM-MUSEUM-BLASCHKA",
+  "base_backend": "06_Blaschka_Global_Object_Archive_Provenance_BACKEND_MASTER_2026-08-07_v3.json",
+  "mutation_status": "delta_only_pending_fulltext_and_identifier_crosswalk",
+  "purpose": "Extend the existing Liège acquisition–survival–restoration chain into a source-explicit afterlife chain that distinguishes conservation, experimental reconstruction, gesture capture and digital motion surrogates.",
+  "existing_chain_retained": [
+    "1886-09-24 direct Van Beneden order for 77 models selected from the 1885 Blaschka catalogue",
+    "1887-05-26 delivery",
+    "1926 register checkpoint: 58 pieces",
+    "1990 register checkpoint: 49 pieces, most in poor condition",
+    "pre-2012 IRPA materials analysis",
+    "2012 reported restoration cohort: 37 pieces, Isabelle Pirotte",
+    "2017 legal protected ensemble: 49 models",
+    "TréZOOr permanent display and preventive-conservation environment"
+  ],
+  "source_register_additions": [
+    {
+      "source_id": "LIE-PIROTTE-ROUSSEAU-THESIS-2007-CATALOGUE",
+      "source_type": "official library catalogue record for conservation-restoration thesis",
+      "authors": [
+        "Isabelle Pirotte",
+        "Valérie Rousseau"
+      ],
+      "title": "Modèles en verre d’invertébrés marins de Léopold et Rudolf Blaschka : conservation préventive et proposition d’un traitement de restauration : collection de l’Institut de zoologie de l’Université de Liège",
+      "year": 2007,
+      "institution": "ESA Saint-Luc Liège",
+      "degree_context": "Mémoire de master, Conservation-restauration des objets d'art, option céramique et verre",
+      "extent": "199 f.",
+      "illustrations": "black-and-white and colour",
+      "format": "30 cm",
+      "shelfmark": "TFE CROA 2007 1 PIR",
+      "barcode": "SL 20809",
+      "location": "Réserve",
+      "loan_status": "Exclu du prêt",
+      "url": "https://bibliotheque.saint-luc.be/opac_css/index.php?id=5564&lvl=author_see",
+      "supports_now": [
+        "a dedicated 199-folio conservation-restoration study of the Liège Blaschka collection exists",
+        "the thesis includes substantial visual documentation",
+        "the source is an unusually high-value route to preventive-conservation and proposed-treatment evidence"
+      ],
+      "does_not_yet_support": [
+        "which individual Liège objects were treated",
+        "a 37-object treatment table",
+        "object-specific before/after claims",
+        "object-specific status for Clava multicornis"
+      ],
+      "fulltext_needed": true
+    },
+    {
+      "source_id": "LIE-ULIEGE-CATALOGUE-2012-CURRENT-PAGE",
+      "source_type": "official Aquarium-Muséum publication page",
+      "title": "Blaschka: Maîtres et modèles",
+      "authors": [
+        "Sonia Wanson",
+        "Isabelle Pirotte",
+        "Jacques Ninane"
+      ],
+      "publisher": "Presses Universitaires de Liège",
+      "year": 2012,
+      "pages": 50,
+      "language": "French",
+      "url": "https://www.aquarium-museum.uliege.be/cms/c_18521412/en/aquamuse-blaschka-masters-and-models",
+      "supports": [
+        "official description as more than a collection catalogue",
+        "collection history",
+        "results of analyses",
+        "conservation treatments",
+        "artistic photography"
+      ],
+      "upgrade_note": "Tightens the earlier backend page-count ambiguity to the current official statement of 50 pages."
+    },
+    {
+      "source_id": "LIE-CERFAV-BLASCHKA-RENAISSANCE",
+      "source_type": "official project site",
+      "project": "Blaschka Renaissance",
+      "institution": "Centre Européen de Recherches et de Formation aux Arts Verriers (Cerfav)",
+      "programme": "Programme national de Numérisation et Valorisation des contenus culturels – Grand Est",
+      "programme_year": 2021,
+      "url": "https://www.pnv-cerfav-blaschka.fr/",
+      "supports": [
+        "ULiège partnership gave visual access to the TréZOOr Blaschka display",
+        "the reference object is the Clava multicornis glass teaching model",
+        "the project gives the object identifier MAR-AMLG-RE11201",
+        "the object is dated 1887",
+        "the project selected it for technical complexity and its ability to expose fundamental lampworking gestures",
+        "motion-capture sequences are published as downloadable 3D gesture files"
+      ]
+    },
+    {
+      "source_id": "LIE-ARNAUD-SARACENO-2025",
+      "source_type": "peer-reviewed journal article / project reflection",
+      "authors": [
+        "David Arnaud",
+        "Marco Saraceno"
+      ],
+      "title": "Qui regarde la traduction métrique du geste ?",
+      "journal": "Socio-anthropologie",
+      "volume": "51",
+      "year": 2025,
+      "pages": "189–194",
+      "doi": "10.4000/14av6",
+      "url": "https://journals.openedition.org/socio-anthropologie/19441?lang=fr",
+      "supports": [
+        "reference to the 1887 assembled-glass Clava multicornis model held at ULiège",
+        "formal study of the reference object before reconstruction",
+        "reconstruction by glassworker Frédéric Demoisson after a period of training",
+        "capture of bodily and finger movement using inertial sensors and sensor gloves",
+        "digital reconstruction of the craftsperson's biomechanical skeleton",
+        "explicit framing of the exercise as preservation of a digital trace of contemporary gestures used to remake a nineteenth-century glass object",
+        "explicit acknowledgment that nineteenth-century and contemporary lampworking conditions differ materially and technically"
+      ],
+      "guard": "The article reports millimetric precision as a claim associated with the capture technologies; this delta does not convert that statement into an independently validated accuracy measurement."
+    }
+  ],
+  "physical_object_record_addition": {
+    "record_key": "LIE-MAR-AMLG-RE11201-CLAVA-MULTICORNIS",
+    "entity_class": "direct_source_identified_physical_object_reference",
+    "local_identifier_raw": "MAR-AMLG-RE11201",
+    "taxon_raw_current_source": "Clava multicornis",
+    "description": "didactic model in assembled glass",
+    "date_source": 1887,
+    "maker_source_attribution": "Léopold Blaschka",
+    "institution": "Aquarium-Muséum Universitaire de Liège",
+    "source_ids": [
+      "LIE-CERFAV-BLASCHKA-RENAISSANCE",
+      "LIE-ARNAUD-SARACENO-2025"
+    ],
+    "Blaschka_catalogue_number": null,
+    "historical_order_row": null,
+    "restoration_status_object_specific": null,
+    "current_R_E_identifier_normalized": null,
+    "guard": "Do not silently normalize MAR-AMLG-RE11201 to R.E. 11201 until the Aquarium-Muséum identifier system is checked. The object is distinct from the existing R.E. 11215 Renilla muelleri record."
+  },
+  "afterlife_events": [
+    {
+      "event_id": "LIE-CONSERVATION-STUDY-2007",
+      "date": 2007,
+      "event_type": "collection_level_conservation_research",
+      "actors": [
+        "Isabelle Pirotte",
+        "Valérie Rousseau"
+      ],
+      "source_id": "LIE-PIROTTE-ROUSSEAU-THESIS-2007-CATALOGUE",
+      "object_specific": false,
+      "status": "bibliographic existence and scope secure; full treatment content pending thesis inspection"
+    },
+    {
+      "event_id": "LIE-CATALOGUE-CONSERVATION-SYNTHESIS-2012",
+      "date": 2012,
+      "event_type": "collection_catalogue_and_conservation_synthesis",
+      "source_id": "LIE-ULIEGE-CATALOGUE-2012-CURRENT-PAGE",
+      "object_specific": "partially, pending full catalogue",
+      "status": "official source confirms analyses and conservation treatments are treated in the volume"
+    },
+    {
+      "event_id": "LIE-CLAVA-BLASCHKA-RENAISSANCE",
+      "date_context": "project awarded in 2021; exact reconstruction-session date not recovered in current sources",
+      "event_type": "experimental_reconstruction_and_gesture_capture",
+      "reference_object": "LIE-MAR-AMLG-RE11201-CLAVA-MULTICORNIS",
+      "project": "Blaschka Renaissance",
+      "institution": "Cerfav",
+      "craftsperson": "Frédéric Demoisson",
+      "operations": [
+        "formal expertise of the historical reference object against contemporary lampworking practice",
+        "training period",
+        "physical reconstruction of the glass form in several sessions",
+        "capture of body-segment motion with inertial sensors",
+        "capture of finger motion with sensor gloves",
+        "software reconstruction of a biomechanical skeleton"
+      ],
+      "outputs": [
+        "reconstructed glass piece",
+        "captured movement data",
+        "downloadable 3D gesture-sequence files"
+      ],
+      "source_ids": [
+        "LIE-CERFAV-BLASCHKA-RENAISSANCE",
+        "LIE-ARNAUD-SARACENO-2025"
+      ]
+    },
+    {
+      "event_id": "LIE-CLAVA-METROLOGICAL-REFLECTION-2025",
+      "date": 2025,
+      "event_type": "interpretive_publication_of_reconstruction",
+      "source_id": "LIE-ARNAUD-SARACENO-2025",
+      "research_value": "Makes the reconstruction itself an object of technical and metrological analysis rather than treating it as a neutral copy."
+    }
+  ],
+  "process_mismatch_record": {
+    "record_key": "LIE-CLAVA-HISTORICAL-CONTEMPORARY-PROCESS-MISMATCH",
+    "reference_object": "LIE-MAR-AMLG-RE11201-CLAVA-MULTICORNIS",
+    "nineteenth_century_conditions_as_reported_2025": [
+      "alcohol lamps",
+      "air bellows",
+      "softer and more fragile soda-lime-silica glass"
+    ],
+    "contemporary_reconstruction_conditions_as_reported_2025": [
+      "gas and oxygen torches",
+      "transformed industrial glass compositions including borosilicate"
+    ],
+    "interpretive_guard": "The Blaschka Renaissance output is an experimental reconstruction under changed technical conditions, not a literal replication of the nineteenth-century production process.",
+    "research_payoff": "The mismatch is evidence-producing: reconstruction identifies which historical gestures, materials and process parameters cannot simply be recovered by copying visible form."
+  },
+  "digital_afterlife_schema": {
+    "relation_types": [
+      "conservation_study",
+      "restoration",
+      "experimental_reconstruction",
+      "replica_object",
+      "gesture_capture",
+      "digital_motion_surrogate",
+      "3D_object_scan",
+      "CT_or_Xray",
+      "photogrammetry",
+      "digital_twin",
+      "interpretive_publication"
+    ],
+    "mandatory_distinction": "A 3D gesture sequence is not a 3D scan of the historical object. Digital records must state what exactly was digitised: object geometry, internal structure, surface photography, or human movement."
+  },
+  "network_edges_additions": [
+    {
+      "edge_id": "LIEGE-CERFAV-BLASCHKA-RENAISSANCE",
+      "from": "Aquarium-Muséum Universitaire de Liège / Blaschka collection",
+      "to": "Cerfav",
+      "relation": "reference-object access and partnership for experimental reconstruction and gesture digitisation",
+      "date_context": "2021 project"
+    },
+    {
+      "edge_id": "CLAVA-DEMOISSON-RECONSTRUCTION",
+      "from": "MAR-AMLG-RE11201 Clava multicornis",
+      "to": "Frédéric Demoisson",
+      "relation": "historical reference object for contemporary lampworking reconstruction"
+    },
+    {
+      "edge_id": "DEMOISSON-GESTURE-DIGITAL-SURROGATE",
+      "from": "Frédéric Demoisson reconstruction sessions",
+      "to": "3D biomechanical motion data",
+      "relation": "motion capture and digital translation of contemporary craft gesture"
+    }
+  ],
+  "upgrade_effect": {
+    "before": "Liège backend was already strong on acquisition chronology, count checkpoints, collection-level restoration and protected-heritage status, but had only one direct public local object identifier and no formal reconstruction/digital-afterlife event class.",
+    "after": [
+      "A second distinct source-identified Liège object is now anchored: Clava multicornis, MAR-AMLG-RE11201.",
+      "The Liège chain extends from teaching object to conservation research, restoration/publication, experimental reconstruction, motion capture and digital craft-gesture surrogate.",
+      "The 2007 thesis is promoted to the top fulltext target with exact library locator data.",
+      "The schema now prevents replica/restoration/reconstruction/digitisation from collapsing into one generic afterlife field."
+    ],
+    "afterlife_chain_grade": "S",
+    "object_level_collection_grade": "A+/S-candidate pending treatment table and 49-object identifier crosswalk"
+  },
+  "fulltext_trigger_for_2007_thesis": {
+    "when_available_extract": [
+      "complete table/list of objects discussed",
+      "all local identifiers and historical catalogue numbers",
+      "condition terminology by object",
+      "materials and analytical references",
+      "preventive-conservation recommendations",
+      "proposed treatment sequence",
+      "actual versus proposed interventions",
+      "before/after photographs and captions",
+      "packing, movement, handling and storage instructions",
+      "cross-references to the 37 restored objects",
+      "status of the remaining 12 objects in the 49-piece 1990 ensemble",
+      "Clava multicornis / MAR-AMLG-RE11201 mentions"
+    ],
+    "backend_targets": [
+      "physical_object_records",
+      "conservation_and_analysis_records",
+      "lifecycle_events",
+      "archive_sources",
+      "claim_audit",
+      "object_catalogue_status"
+    ]
+  },
+  "unresolved_questions_added": [
+    "Does MAR-AMLG-RE11201 normalize to the Aquarium-Muséum R.E. 11201 identifier, and what is the exact identifier history?",
+    "What Blaschka catalogue number and 1886 order row correspond to Clava multicornis?",
+    "Was Clava multicornis among Pirotte's 37 restored pieces, and if so what treatment was performed?",
+    "Did the reconstruction use measurements, material-analysis results or treatment documentation from the original object beyond visual/formal examination?",
+    "Where is the reconstructed glass piece now held?",
+    "What exact capture-session dates, raw motion-data formats and calibration records survive?",
+    "Can the downloadable gesture files be versioned and linked to named operation segments without confusing them with object scans?"
+  ]
+}
