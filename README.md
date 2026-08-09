@@ -41,6 +41,8 @@ Quantity namespaces also remain separate. Slide count, microscopic-preparation c
 - `data/survey/harvest_families_v1.json` plus expansion files: shared extraction contracts.
 - `data/survey/institution_harvest_profiles.json`: institution profiles plus automatic fallback profiles.
 - `data/evidence/targeted_deep_4/`: normalised evidence and residual checklist from the final targeted harvest pass. It is an enrichment layer and does not reopen the census.
+- `data/analysis/slide_155_analysis_v1/`: read-only derived analytical classifications over the frozen 155.
+- `data/analysis/slide_155_corpus_expansion_v1/`: object-to-text routing, verified bridges, bounded primary-source targets and catalogue/circulation crosswalks.
 - `docs/19C_SCOPE_RULES.md`: nineteenth-century scope rule.
 - `scripts/prepare_survey_inputs.py`: merges modular inputs, skips 07AR superseded aliases, and collapses repeated `entry_id`s.
 - `scripts/build_frozen_strict_membership.py`: reconstructs and count-checks the immutable 155-entry closure membership.
@@ -62,6 +64,28 @@ The automatic reconnaissance/enumeration phase is complete. Four manual workflow
 The final targeted pass yielded particularly strong machine-readable evidence at Copenhagen (510 unique SNM slide identifiers after de-duplicating repeated species rows), Farlow/Cheever (3,363 public position rows with 3,362 unique box/slide tokens, retained as mixed-period position evidence), and the St Andrews Bell-Pettigrew hierarchy. ANSP Symbiota results are retained only as a review pool because a nominal `pre-1900` query demonstrably returned later material, including 1938 Preston Smith records.
 
 No further general-purpose Actions harvesting is recommended for this closed version. Remaining edge cases are listed in `data/evidence/targeted_deep_4/MANUAL_RESIDUALS.md` and should be handled manually when a specific research use justifies the effort.
+
+## Derived analysis and corpus expansion — 2026-08-09
+
+The frozen 155 catalogue is now treated as a **read-only object/provenance corpus**. New analytical fields and textual links live only in derived layers and do not reopen the 307/155 census.
+
+`data/analysis/slide_155_analysis_v1/` classifies the 155 nodes by unit level, production period, subject cluster, institutional/commercial context, circulation mode, count namespace and historical actor role. The purpose is analytical grouping without rewriting source wording or quantity semantics.
+
+`data/analysis/slide_155_corpus_expansion_v1/` uses surviving-object nodes to route expansion of the existing UK microscopy corpus. Initial object-to-text work has already closed bounded maker, trade, exchange and publication relations for Eulenstein, Charles Collins Jr., H. L. Smith, Kitton and the Stazione Zoologica Napoli/Fritz Meyer programme.
+
+### Naples catalogue case
+
+The Naples microscope-slide price catalogue in *Mittheilungen aus der Zoologischen Station zu Neapel*, Bd. II, is signed **Neapel, August 1880**. Its numbered list contains **423 historical catalogue offerings**. This is an offering count, not a surviving-slide total. The uploaded primary text has been parsed at row level; 148 prices are securely row-aligned and 275 remain unresolved because OCR detached or reordered price columns.
+
+The UK circulation crosswalk currently records eight physical/object circulation events, plus separate catalogue-reception and method-circulation evidence. It distinguishes finished-slide circulation, specimen circulation followed by local British remanufacture, and circulation of preparation methods.
+
+A reverse taxon/preparation pass produced the first item-level catalogue-to-Britain closure. The **9 June 1880 Royal Microscopical Society** record first notes `Zoological Station of Naples—12 slides`, sent through A. W. Waters and exhibited under microscopes (`R24204`, p. 733); a later record in the same issue lists all twelve physical slides (`R24207`, p. 736). Comparison with the 423-offering catalogue yields **nine exact/strong item matches** — nos. `42, 43, 67, 68, 71, 72, 86, 182, 186` — and three bounded matches: `5|6`, `43-49`, and `231|232`.
+
+The detailed mapping is `data/analysis/slide_155_corpus_expansion_v1/NAPLES_1880_RMS_12_SLIDES_ITEM_CROSSWALK_V1.csv`.
+
+This closes `catalogue offering -> named British physical slide shipment/exhibition` for nine items. It does **not** establish `catalogue -> Britain -> surviving St Andrews slide` identity. The surviving-object relation remains `NOT_ASSERTED` unless an independent object-level source closes it.
+
+A compact dated research log is maintained at `data/analysis/slide_155_corpus_expansion_v1/PROGRESS_LOG_2026-08-09.md`.
 
 ## Closure notes
 
