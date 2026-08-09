@@ -40,10 +40,10 @@
 
   const sourceKind = node => {
     const section = node.closest('.source-section');
-    const sectionText = clean(section?.textContent);
-    const text = `${clean(node.textContent)} ${sectionText}`;
     const heading = clean(section?.querySelector('h2')?.textContent);
-    if (/Repositories used for source discovery|Discovery infrastructure/i.test(heading + ' ' + sectionText)) return 'Discovery portal';
+    const kicker = clean(section?.querySelector('.source-kicker')?.textContent);
+    const text = `${clean(node.textContent)} ${heading} ${kicker}`;
+    if (/Repositories used for source discovery|Discovery infrastructure/i.test(`${heading} ${kicker}`)) return 'Discovery portal';
     if (/correspondence|letters?\b|outward letter|inward letter/i.test(text)) return 'Correspondence';
     if (/archive|finding aid|fonds\b|papers\b|record group|manuscript/i.test(text)) return 'Archive / manuscript';
     if (/catalogue|price list|inventory|register|ledger|database|index card|card catalogue/i.test(text)) return 'Catalogue / register';
@@ -101,7 +101,7 @@
   let records = [];
 
   const firstLetter = title => {
-    const stripped = titleForSort({querySelector: () => ({textContent:title})});
+    const stripped = clean(title).replace(/^[“"'‘’]+/, '').replace(/^the\s+/i, '');
     const first = stripped.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').charAt(0).toUpperCase();
     return /[A-Z]/.test(first) ? first : '#';
   };
