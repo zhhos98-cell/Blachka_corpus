@@ -72,4 +72,11 @@
   if (workingNote) {
     workingNote.textContent = 'The bibliography now includes a deliberately bounded material-context layer. The University of Sheffield Elmfield Collection is being used as a seed bibliography for scientific glassblowing, lampworking, glass composition and durability. These entries contextualize workshop practice and conservation questions; they are marked as material-context sources and are not presented as publications about the Blaschkas themselves.';
   }
+
+  if (!document.querySelector('script[data-bib-pass17-loader]')) {
+    const pass17 = document.createElement('script');
+    pass17.src = 'bibliography-pass17.js?v=20260809-1';
+    pass17.dataset.bibPass17Loader = 'true';
+    document.head.appendChild(pass17);
+  }
 })();
