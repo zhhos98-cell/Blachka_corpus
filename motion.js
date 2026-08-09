@@ -5,6 +5,7 @@
       <a href="#project">Project</a>
       <a href="#cases">Cases</a>
       <a href="bibliography/">Bibliography</a>
+      <a href="sources/">Sources</a>
       <a href="auctions/">Auctions</a>
       <a href="blog/">Blog</a>
     `;
