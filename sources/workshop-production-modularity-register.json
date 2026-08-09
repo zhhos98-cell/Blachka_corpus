@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Workshop Production Modularity Register",
+  "generated_date": "2026-08-10",
+  "scope": "Material evidence that parts of marine-invertebrate models were produced in advance, stored as labelled component stock and assembled only after an order. This register links order chronology to workshop organization without assuming that every model was made from standardized stock in the same way.",
+  "direct_object_evidence": [
+    {
+      "object": "Matchbox Containing 197 Glass Parts of Marine Animals",
+      "repository": "Corning Museum of Glass",
+      "accession": "93.3.74-4",
+      "date": "1863–1890",
+      "contents": "197 glass parts in a labelled wooden matchbox",
+      "museum_interpretation": "Corning states that Leopold and Rudolf made different glass body parts ahead of time to streamline and standardize production and compiled those parts into a model only after receiving an order, assembling with wire and glue before painting/embellishment.",
+      "locator": "https://glasscollection.cmog.org/objects/25057/component"
+    },
+    {
+      "object": "Matchbox Containing Assorted Glass Parts of Marine Animals",
+      "repository": "Corning Museum of Glass",
+      "accession": "93.3.74-12",
+      "date": "1863–1890",
+      "contents": "several hundred assorted parts in a labelled matchbox",
+      "museum_interpretation": "Part of a group of forty matchboxes containing premade components for different invertebrate models. Labels can include German/Latin text and illustrations describing contents.",
+      "locator": "https://glasscollection.cmog.org/objects/25058/component"
+    },
+    {
+      "object": "Specimen Parts for Marine Invertebrate Model",
+      "repository": "Corning Museum of Glass",
+      "accession": "93.3.273-66",
+      "date": "1863–1890",
+      "museum_interpretation": "Corning identifies preformed parts including anemone bodies, sea-jelly domes and sea-star central disks.",
+      "locator": "https://glasscollection.cmog.org/objects/42007/model"
+    }
+  ],
+  "production_chain": [
+    "anticipatory production of generic or repeatable component forms",
+    "sorting and storage in labelled/illustrated matchboxes",
+    "receipt of institutional/dealer order",
+    "selection/combination of appropriate stored parts",
+    "assembly with wire and glue",
+    "painting and embellishment",
+    "mounting/labeling/packing",
+    "dispatch"
+  ],
+  "research_implications": [
+    "An order did not necessarily initiate manufacture from raw glass; it could trigger assembly from a partly pre-produced component inventory.",
+    "The catalogue/order system and workshop stock system may therefore have been coupled: repeated catalogue forms could correspond to reusable component families.",
+    "Standardization and lifelikeness were not opposites. Standardized components could be combined and finished to produce individual variation.",
+    "Lead time, order size and packing schedules should be interpreted against the possibility of existing component stock rather than assuming all labour occurred after the order date.",
+    "A fragile final object could emerge from a more robust internal logistics of tiny labelled components."
+  ],
+  "evidence_guard": "Corning's object interpretation demonstrates a component-stock practice, not the proportion of all marine models made this way or the exact component inventory available on any historical order date. Order-to-production timing must still be reconstructed case by case from business books and correspondence.",
+  "crosswalk_targets": [
+    "Notizbüchel 1869–1871",
+    "Geschäfts-Anmerkungen 1872–1887",
+    "Lieferungs-Buch 1883–1892",
+    "catalogue model numbers",
+    "surviving matchbox labels/illustrations",
+    "finished models with repeated body forms",
+    "workshop schematic drawings"
+  ]
+}
