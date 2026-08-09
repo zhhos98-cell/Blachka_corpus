@@ -10,6 +10,7 @@ This directory contains the public auction page and the structured market-proven
 - `auction-historical-market-seeds.json` — pre-2005 and market-adjacent worklist: sale notices, estate/dealer dispersals, deaccession-register neighbourhoods and institutional-label targets used to search beyond maker-name indexes without inflating the public-auction count.
 - `auction-newspaper-audit.json` — bounded reuse of the project's historical British Newspaper Archive query matrix, including maker-specific Blaschka/Blaschke searches, query-level completeness flags and explicit exclusion of institutional acquisitions from the auction layer.
 - `auction-catalogue-recoveries.json` — later catalogue-level closures such as sale codes, exact lot numbers and single-owner sale context that improve existing records without creating duplicate auction events.
+- `auction-archive-router.json` — exact archival record identifiers, object-number search keys and order of attack for unresolved deaccession/market chains once generic web search reaches diminishing returns.
 
 ## Admission rule
 
@@ -37,6 +38,8 @@ The historical-seed pass also adds two search strategies that should matter more
 
 The newspaper audit reuses an earlier 1850–1886 British Newspaper Archive matrix. Its one fully screened maker-specific row, `Blaschke presented models`, produced two retained events and both resolve to institutional acquisitions rather than public auction lots. A generic `glass models auction` query produced 123,990 displayed hits and was already classified as unusably noisy. This means future newspaper work should be provenance-seeded rather than another generic maker-name rerun.
 
+The archive-router pass now fixes the next documentary route. For the Science Museum 1925–27 dispersal, the priority order is `CORP/SCM/02/02/7/421` (Transfer/Disposal index, 1913–1960) -> the relevant portions of the 1920–27 transfer/disposal composite -> `CORP/SCM/Z/048` store-register ultimate-disposal annotations keyed by old object numbers. The official catalogue also exposes `CORP/SCM/Z/039/02`, an open-access 1877–1900 rough register copy for Western Galleries/Educational Division objects, as a possible bridge from the original registration cohort to later disposal records. Generic indexed-web searching has now become lower-yield than these exact archive routes.
+
 Detailed method and evidence are recorded in:
 
 - `../research/logs/2026-08-10-auction-deep-sweep-pass01.md`
@@ -44,9 +47,12 @@ Detailed method and evidence are recorded in:
 - `../research/logs/2026-08-10-auction-deep-sweep-pass04-early-market-and-archive-seeds.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass05-newspaper-matrix-reuse.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass06-catalogue-identifiers.md`
+- `../research/logs/2026-08-10-auction-deep-sweep-pass07-archive-router.md`
 
 ## Next search layer
 
 Priority now shifts to older digitised and printed sale catalogues, library auction-catalogue collections, dealer archives, newspaper sale notices, school/university collection dispersals, and any licensed art-price databases that can expose verifiable source metadata. Search should increasingly proceed by **sale-catalogue family and provenance seed**, not only by maker-name indexing: scientific instruments, natural-history cabinets, teaching apparatus, museum duplicates, school closures, named collectors, old institutional labels, model numbers, taxa and former museum inventory numbers can all recover lots missed by weak OCR or absent maker attribution.
+
+The immediate order is now archival: Science Museum transfer index and store registers; Berlin `OS001-02`; Glasgow `1909.66` / Mason purchase files; then identification of Loudon's London dealer and English public school. Another generic auction-house sweep should come after those routes yield new names, numbers or provenance anchors.
 
 False positives, count wording conflicts and spelling variants are retained in the structured backend/search logs to prevent repeated rediscovery or accidental conversion of ambiguous market evidence into settled provenance.
