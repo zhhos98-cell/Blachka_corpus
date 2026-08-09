@@ -125,9 +125,10 @@ jobs:
               echo "targeted-deep is an enumeration run; choose mode=full" >&2
               exit 2
             fi
-            python scripts/harvest_targeted.py \
+            python scripts/harvest_targeted_institution.py \
               --institution-key "${{ matrix.institution_key }}" \
               --adapter "${{ matrix.targeted_adapter }}" \
+              --mode "${{ inputs.mode }}" \
               --depth "${{ inputs.depth }}"
           else
             python scripts/harvest_institution.py \
