@@ -10,7 +10,7 @@ The workflow run itself ended `cancelled` because the Sorbonne job was interrupt
 
 - `manifest.json`: counts, artifact identity, scope warnings and the normalisation decisions established from run 4.
 - `MANUAL_RESIDUALS.md`: the small remainder worth checking manually if a concrete research use requires it.
-- `../../..//scripts/normalize_targeted_deep_artifact.py`: reproducible normaliser for an extracted copy of the combined Actions artifact.
+- `../../../scripts/normalize_targeted_deep_artifact.py`: reproducible normaliser for an extracted copy of the combined Actions artifact.
 
 The large row-level derivatives are intentionally **not committed automatically** to the repository. Running the normaliser writes:
 
