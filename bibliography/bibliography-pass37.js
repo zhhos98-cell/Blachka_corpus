@@ -34,11 +34,21 @@
     .sort((a, b) => (a.year - b.year) || (a.index - b.index))
     .forEach(({ node }) => list.appendChild(node));
 
+  // Keep research-process bookkeeping in the repository, not in the public interface.
   const scopeTitle = document.querySelector('#bib-scope-title');
-  if (scopeTitle) scopeTitle.textContent = '1870–2026 · thirty-seventh expanded pass · bibliography closure audit';
+  if (scopeTitle) scopeTitle.textContent = 'Published literature and historical reception';
 
-  const workingNote = document.querySelector('#bib-note-title')?.nextElementSibling;
-  if (workingNote) {
-    workingNote.textContent = 'The closure audit adds three high-value records missed by general English-language discovery: a 2007 French conservation thesis from Liège, a 2019 Japanese exhibition catalogue centred on nineteenth-century scientific teaching models, and a 2025 French article on the Blaschka Renaissance gesture-capture reconstruction. Duplicate checks were run against passes 6–36. Portuguese, Polish/Russian, South Asian and African searches were retained as negative audit trails when they produced only translations, derivative pages or contextual references without substantial Blaschka-specific content. The bibliography is now frozen for this research phase; future additions should be evidence-led rather than another general sweep.';
-  }
+  document.querySelector('.bib-note')?.remove();
+
+  const cleanPublicStatus = () => {
+    const status = document.querySelector('.bib-tools-status');
+    if (status) {
+      const cleaned = status.textContent.replace(/^\s*\d+\s+records\s*·\s*/i, '').trim();
+      if (cleaned !== status.textContent.trim()) status.textContent = cleaned;
+    }
+  };
+
+  const statusObserver = new MutationObserver(() => cleanPublicStatus());
+  statusObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
+  cleanPublicStatus();
 })();
