@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Workshop Drawing / Object Production Crosswalk Register",
+  "generated_date": "2026-08-10",
+  "scope": "Cases in which surviving workshop drawings, component evidence or conservation examination can be matched to construction features in finished marine models. This register is intended to move from generic statements about technique to model-number-level production history.",
+  "cases": [
+    {
+      "id": "PRODUCTION-CROSSWALK-SEA-CUCUMBERS-282-284-287",
+      "repository_context": "Corning Museum of Glass conservation study; models lent by Cornell University",
+      "model_family": "sea cucumbers / Synapta-type models",
+      "models": [
+        {
+          "blaschka_number": 287,
+          "historical_name": "Synapta maculata",
+          "date": "1885",
+          "cornell_accession": "L.17.3.63-8",
+          "construction": "long tubular body constructed in three separate sections, with one section inserted into the next; joins originally concealed under paint/adhesive"
+        },
+        {
+          "blaschka_number": 282,
+          "historical_name": "Synapta Beselii",
+          "date": "1885",
+          "cornell_accession": "L.17.3.63-229",
+          "construction": "similar segmented tubular body; joins found after re-examination in approximately the same locations as Nr. 287"
+        },
+        {
+          "blaschka_number": 284,
+          "historical_name": "Synapta glabra",
+          "modern_name_in_2016_record": "Opheodesoma glabra",
+          "date": "1885",
+          "cornell_accession": "L.17.3.63-20",
+          "construction": "similar segmented tubular body with joins in approximately the same locations; surface treatment differs from the other models"
+        }
+      ],
+      "drawing_crosswalk": {
+        "model_number": 284,
+        "source": "digitised Blaschka archival schematic drawing in Corning Museum of Glass collection",
+        "evidence": "Corning conservators report that the schematic drawing shows the twisted tubular sea-cucumber body divided into three sections and that the locations of the joins exactly match the joins in model Nr. 284.",
+        "status": "exact drawing-to-object construction crosswalk"
+      },
+      "comparative_observation": "The three models create a similar overall serpentine effect through a standardized segmented construction, while the shapes of the sections and surface treatments vary enough to produce individual lifelike differences.",
+      "museum_guard": "Corning explicitly says the reason for making the models in sections remains uncertain; possible limits of purchased glass tubing or production simplification are hypotheses, not established causes.",
+      "locator": "https://blog.cmog.org/2017/secret-glass-sea-cucumbers"
+    }
+  ],
+  "research_value": [
+    "links archival drawing to hidden joins in a finished object at exact model-number level",
+    "shows how conservation can recover workshop planning otherwise invisible beneath paint and adhesive",
+    "permits standardization and individual variation to be studied together",
+    "creates a template for cross-walking schematic drawings, component stock, model numbers and conservation imaging",
+    "provides a way to distinguish an original workshop join from a later repair"
+  ],
+  "next_actions": [
+    "Locate the digital archival identifier for the Nr. 284 schematic drawing and store it beside the model record.",
+    "Search Corning's digitised drawings for other model numbers with explicit assembly marks or section boundaries.",
+    "Compare model-family construction across different institutional collections to test whether the same internal scheme travelled with catalogue number/model type.",
+    "Cross-walk order dates for Nrs. 282, 284 and 287 against the premade-component and business-book corpus if customer/order data permit."
+  ]
+}
