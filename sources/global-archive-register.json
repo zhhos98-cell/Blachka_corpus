@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Global Archive Register",
+  "generated_date": "2026-08-10",
+  "scope": "Named archival collections, record groups, manuscript series, accession registers and institutional archives with demonstrated or high-priority relevance to Blaschka objects, orders, distribution, custody or afterlives. Object repositories without a specific archival trail are excluded until a usable source series can be named.",
+  "status_vocabulary": {
+    "direct_blaschka_archive": "The archival unit explicitly names Blaschka or is a dedicated Blaschka archive.",
+    "dealer_business_archive": "Business archive of a documented Blaschka dealer or distributor.",
+    "direct_receiving_side_archive": "Museum or institutional records explicitly document a Blaschka transaction, custody event or collection.",
+    "receiving_side_archive": "Archive is directly tied to a Blaschka-holding institution and contains the relevant class of acquisition, accession, correspondence or museum records, but the decisive Blaschka item remains to be isolated.",
+    "candidate_archival_bridge": "A named personal or institutional fonds is historically well positioned to close a known provenance gap, but a Blaschka-specific item has not yet been verified."
+  },
+  "entries": [
+    {
+      "id": "US-HARVARD-HUH-BLASCHKA-WARE",
+      "country": "United States",
+      "repository": "Botany Libraries, Harvard University Herbaria",
+      "collection": "The Archives of Rudolf and Leopold Blaschka and the Ware Collection of Blaschka Glass Models of Plants",
+      "reference": "ecb00006",
+      "status": "direct_blaschka_archive",
+      "coverage": "1886–2020, with studio correspondence and earlier Blaschka material",
+      "research_use": ["studio correspondence", "Ware correspondence", "drawings and paintings", "ephemera and artifacts", "model and section labels", "shipping lists", "packing documentation", "photographs", "loan and use records"],
+      "locator": "https://hollisarchives.lib.harvard.edu/catalog/ecb00006"
+    },
+    {
+      "id": "US-CMOG-RAKOW-BLASCHKA",
+      "country": "United States",
+      "repository": "Juliette K. and Leonard S. Rakow Research Library, Corning Museum of Glass",
+      "collection": "Leopold and Rudolf Blaschka Archive",
+      "reference": null,
+      "status": "direct_blaschka_archive",
+      "coverage": "nineteenth to twentieth century workshop archive",
+      "research_use": ["correspondence", "account books", "notebooks", "sketchbooks", "travel books", "drawings", "family photographs", "studio and technical history", "orders and packing"],
+      "locator": "https://whatson.cmog.org/exhibitions-galleries/blaschka-sea-creatures-inspiration-and-creation"
+    },
+    {
+      "id": "US-ROCHESTER-WARD-AW23-D231",
+      "country": "United States",
+      "repository": "Rare Books, Special Collections, and Preservation, University of Rochester",
+      "collection": "Henry Augustus Ward Papers and Ward's Natural Science Establishment Papers",
+      "reference": "A.W23; D.231",
+      "status": "dealer_business_archive",
+      "coverage": "Henry Augustus Ward Papers, 1840–1933; Ward's Natural Science Establishment Papers, 1876–1988",
+      "research_use": ["dealer correspondence", "catalogues", "purchase and sales records", "institutional transactions", "North American distribution"],
+      "locator": "https://www.library.rochester.edu/rbscp/special-collections-development-and-management"
+    },
+    {
+      "id": "US-VASSAR-NATURAL-HISTORY",
+      "country": "United States",
+      "repository": "Vassar College Archives & Special Collections",
+      "collection": "Vassar College Natural History Museum Records, 1866–1969; Natural History Department files",
+      "reference": "Box 6 Folder 4.82; Box 6 Folder 4.83; Natural History Museum Records",
+      "status": "receiving_side_archive",
+      "coverage": "1866–1969; priority files 1887–1891",
+      "research_use": ["1887 purchase", "vendor and collector correspondence", "inventories", "specimen and model descriptions", "purchase records", "loans", "cabinet agreements and documents"],
+      "locator": "https://digitallibrary.vassar.edu/sites/default/files/2025-01/Guide%20to%20the%20Vassar%20College%20Natural%20History%20Museum%20Records%2C%201866-1969%20%28bulk%201906-1944%29.pdf"
+    },
+    {
+      "id": "US-TUFTS-UA152",
+      "country": "United States",
+      "repository": "Tufts Archival Research Center",
+      "collection": "Department of Biology Records",
+      "reference": "UA152",
+      "status": "direct_receiving_side_archive",
+      "coverage": "1960–1989",
+      "research_use": ["Russell Carpenter correspondence", "Corning loan and custody", "ownership language", "documentary rediscovery", "Department of Biology custody"],
+      "locator": "https://tarc.tufts.edu/about/news/blaschka-beach-vacation"
+    },
+    {
+      "id": "NZ-AUCKLAND-CHEESEMAN-WARD",
+      "country": "New Zealand",
+      "repository": "Auckland War Memorial Museum Tāmaki Paenga Hira",
+      "collection": "Cheeseman–Ward manuscript correspondence",
+      "reference": "MUS-1996-6-2; MUS-1995-38 and related Ward correspondence",
+      "status": "direct_receiving_side_archive",
+      "coverage": "1878–1905; Blaschka procurement sequence 1882–1887",
+      "research_use": ["priced catalogue request", "exchange terms", "sample request", "delivery", "triangular settlement", "deferred larger order"],
+      "locator": "https://doi.org/10.32912/ram.2019.54.2"
+    },
+    {
+      "id": "AU-AUSTRALIAN-MUSEUM-BLASCHKA",
+      "country": "Australia",
+      "repository": "Australian Museum Archives, Rare Books and Library Collections",
+      "collection": "Blaschka glass-model archival records and nineteenth-century museum registers",
+      "reference": "Old Collection register; Trustee Minutes; Outward Letter Books; AMS582 object archive",
+      "status": "direct_receiving_side_archive",
+      "coverage": "nineteenth century to present",
+      "research_use": ["1879 order", "Václav Frič intermediary", "three shipments", "mixed shipment contents", "historical labels", "current archival custody"],
+      "locator": "https://australian.museum/about/history/stories/researching-the-blaschka-glass-models/"
+    },
+    {
+      "id": "GB-DUNDEE-DARCY-THOMPSON",
+      "country": "United Kingdom",
+      "repository": "University of Dundee Archive Services",
+      "collection": "University collection and D'Arcy Wentworth Thompson records",
+      "reference": "UR-SF 2/12/2 for later Thompson correspondence",
+      "status": "receiving_side_archive",
+      "coverage": "University records from 1881 onward; UR-SF 2/12/2, 1891–1946",
+      "research_use": ["institutional minutes and reports", "correspondence", "museum and teaching context", "later Thompson papers"],
+      "locator": "https://www.dundee.ac.uk/archives/university-collection"
+    },
+    {
+      "id": "GB-NHM-DF-ZOO-200-BLASCHKA",
+      "country": "United Kingdom",
+      "repository": "Natural History Museum Archives",
+      "collection": "Keeper of Zoology's Correspondence and Files",
+      "reference": "DF/ZOO/200/1/169-170; DF/ZOO/200/30/38",
+      "status": "direct_blaschka_archive",
+      "coverage": "1875; 1886",
+      "research_use": ["two 1875 Leopold Blaschka letters to A. C. L. G. Günther", "enclosed catalogue of sea-animal models with prices", "1886 postcard to Stuart Oliver Ridley", "join to zoological accession registers"],
+      "locator": "https://www.nhm.ac.uk/CalmView/record/catalog/DF/ZOO/200/1/169-170"
+    },
+    {
+      "id": "US-ANSP-2012-027",
+      "country": "United States",
+      "repository": "Academy of Natural Sciences Archives, Drexel University",
+      "collection": "Glass Models of Marine Invertebrates by Leopold and Rudolph Blaschka",
+      "reference": "ANSP-2012-027-Artifact; related ANSP-2012-060",
+      "status": "direct_blaschka_archive",
+      "coverage": "1879–1938",
+      "research_use": ["48 glass models", "original back boards and labels", "fragments", "condition and cleaning notes", "Ward labels", "1879 Ward commercial pamphlet"],
+      "locator": "https://archivalcollections.drexel.edu/repositories/3/resources/842"
+    },
+    {
+      "id": "US-CORNELL-RMC-ENGST-WARE",
+      "country": "United States",
+      "repository": "Division of Rare and Manuscript Collections, Cornell University Library",
+      "collection": "Elaine D. Engst papers; Barlow Ware papers",
+      "reference": "13-6-4088 Box 1 Folder 66; 4-3-2587 Box 4 Folder 18",
+      "status": "direct_receiving_side_archive",
+      "coverage": "1963–1990 and 2006-centered afterlife documentation",
+      "research_use": ["permanent-loan correspondence with Corning", "restoration project", "unveiling and display", "later collection history"],
+      "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA04088.html"
+    },
+    {
+      "id": "NZ-ATL-HAAST-BLASCHKA-YALDWYN",
+      "country": "New Zealand",
+      "repository": "Alexander Turnbull Library, National Library of New Zealand",
+      "collection": "Haast family papers; John Cameron Yaldwyn papers",
+      "reference": "MS-Papers-0037-165; MS-Copy-Micro-0717-13; MS-Papers-10780-26",
+      "status": "direct_blaschka_archive",
+      "coverage": "Haast correspondence through 1885; acquisition correspondence 1879–1884; later loan correspondence 1974–1975",
+      "research_use": ["Canterbury order correspondence", "Sir Julius von Haast acquisition", "later inter-museum loan", "German correspondence network"],
+      "locator": "https://natlib.govt.nz/records/23093415"
+    },
+    {
+      "id": "IE-NMI-NATURAL-HISTORY-ARCHIVES",
+      "country": "Ireland",
+      "repository": "National Museum of Ireland Archives and Records Service",
+      "collection": "Natural History Division archives",
+      "reference": null,
+      "status": "receiving_side_archive",
+      "coverage": "NMI administrative and collection records from 1877 onward",
+      "research_use": ["Museum Accession Registers", "correspondence", "curator research files", "exhibition briefs", "minutes", "draft annual reports", "Natural History collection transfers and loans"],
+      "locator": "https://www.museum.ie/en-IE/Collections-Research/Research-Services/Archives-and-Records-Service"
+    },
+    {
+      "id": "CZ-NM-ARCHIV-FRIC",
+      "country": "Czech Republic",
+      "repository": "Archiv Národního muzea, Prague",
+      "collection": "Personal fonds of Antonín Frič",
+      "reference": null,
+      "status": "candidate_archival_bridge",
+      "coverage": "nineteenth and early twentieth century museum career",
+      "research_use": ["museum zoological collecting", "Frič dealer and curator network", "receiving-side provenance for the 1884 Blaschka gift", "possible correspondence and institutional administration"],
+      "locator": "https://publikace.nm.cz/periodicke-publikace/anrhmah/182-1-2/archiv-narodniho-muzea-predstavuje-osobni-fondy-antonina-frice-a-bohuslava-jiruse1"
+    },
+    {
+      "id": "CA-MCGILL-MG1022-REDPATH",
+      "country": "Canada",
+      "repository": "McGill University Archives",
+      "collection": "Dawson-Harrington Families Fonds",
+      "reference": "CA MUA MG1022-2-1; CA MUA MG1022-2-3-0073",
+      "status": "candidate_archival_bridge",
+      "coverage": "John William Dawson correspondence, 1837–1899; Redpath Museum manuscript material",
+      "research_use": ["Ward correspondence search", "museum furnishing and procurement", "Natural Science at McGill", "Peter Redpath Museum administration"],
+      "locator": "https://archivalcollections.library.mcgill.ca/index.php/informationobject/browse?collection=139989&levels=224&repos=440&showAdvanced=1&sort=identifier&sortDir=desc&topLod=0&view=table"
+    },
+    {
+      "id": "NZ-OTAGO-REGISTER-HOCKEN",
+      "country": "New Zealand",
+      "repository": "Tūhura Otago Museum Archive and Hocken Collections, University of Otago",
+      "collection": "First Register of Museum Specimens, 1868–1892; Hutton/Hector institutional papers",
+      "reference": "First Register of Museum Specimens, 1868–1892; associated Hocken archival series",
+      "status": "receiving_side_archive",
+      "coverage": "1860s–1890s",
+      "research_use": ["57-model accession chronology", "original museum numbering", "receipt and vendor fields", "Hutton collection-building context", "Hector correspondence network"],
+      "locator": "https://www.otago.ac.nz/library/hocken"
+    }
+  ]
+}
