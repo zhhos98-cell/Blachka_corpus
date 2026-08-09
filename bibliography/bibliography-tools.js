@@ -182,7 +182,7 @@
   style.id = 'bib-tools-style';
   style.textContent = `
     .bib-tools{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px 26px;margin:18px 0 30px;padding:14px 0 16px;border-top:1px solid rgba(242,238,233,.16);border-bottom:1px solid rgba(242,238,233,.16);font-family:Arial,Helvetica,sans-serif}
-    .bib-tools-group{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.bib-tools-label,.bib-tools-note{margin:0;color:rgba(242,238,233,.58);font-size:.66rem;line-height:1.4}.bib-tools-label{margin-right:3px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.bib-tool-button{min-height:34px;padding:0 11px;border:1px solid rgba(242,238,233,.3);background:transparent;color:rgba(242,238,233,.88);font:600 .66rem/1 Arial,Helvetica,sans-serif;letter-spacing:.025em;cursor:pointer}.bib-tool-button:hover,.bib-tool-button:focus-visible{border-color:rgba(242,238,233,.62);color:#fff;outline:none}.bib-tool-button[aria-pressed="true"]{background:rgba(242,238,233,.11);border-color:rgba(242,238,233,.56);color:#fff}.bib-tools-meta{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:2px}@media(max-width:720px){.bib-tools{display:block}.bib-tools-group+.bib-tools-group{margin-top:12px}.bib-tools-meta{margin-top:12px}}
+    .bib-tools-group{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.bib-tools-label,.bib-tools-note{margin:0;color:rgba(242,238,233,.58);font-size:.66rem;line-height:1.4}.bib-tools-label{margin-right:3px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.bib-tool-button{min-height:34px;padding:0 11px;border:1px solid rgba(242,238,233,.3);background:transparent;color:rgba(242,238,233,.88);font:600 .66rem/1 Arial,Helvetica,sans-serif;letter-spacing:.025em;cursor:pointer}.bib-tool-button:hover,.bib-tool-button:focus-visible{border-color:rgba(242,238,233,.62);color:#fff;outline:none}.bib-tool-button[aria-pressed="true"]{background:rgba(242,238,233,.11);border-color:rgba(242,238,233,.56);color:#fff}.bib-tools-meta{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:2px}.bib-community{max-width:900px;margin:-10px 0 34px;font-family:Arial,Helvetica,sans-serif}.bib-community-label{margin:0 0 7px;color:rgba(242,238,233,.58);font-size:.66rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.bib-community-copy{margin:0;color:rgba(242,238,233,.78);font-size:.82rem;line-height:1.65}.bib-community-copy a{color:#f2eee9;text-decoration-thickness:1px;text-underline-offset:3px}.bib-community-copy a:hover,.bib-community-copy a:focus-visible{color:#fff}@media(max-width:720px){.bib-tools{display:block}.bib-tools-group+.bib-tools-group{margin-top:12px}.bib-tools-meta{margin-top:12px}.bib-community{margin-top:-6px}}
   `;
   document.head.appendChild(style);
 
@@ -194,6 +194,14 @@
     <div class="bib-tools-group" role="group" aria-label="Export bibliography"><span class="bib-tools-label">Export</span><button class="bib-tool-button" type="button" data-export="csv">CSV</button><button class="bib-tool-button" type="button" data-export="tsv">TSV</button><button class="bib-tool-button" type="button" data-export="csl">CSL JSON</button><button class="bib-tool-button" type="button" data-export="bib">BibTeX</button><button class="bib-tool-button" type="button" data-export="ris">RIS</button></div>
     <div class="bib-tools-meta"><p class="bib-tools-note">Zotero Connector metadata is embedded per record. DOI, ISBN, title, authors, year, journal/book fields and stable URLs are exposed where they can be recovered safely from the working citation.</p></div>`;
   if (intro) intro.insertAdjacentElement('afterend', toolbar); else section.insertAdjacentElement('beforebegin', toolbar);
+
+  const community = document.createElement('section');
+  community.className = 'bib-community';
+  community.setAttribute('aria-label', 'Shared Zotero library');
+  community.innerHTML = `
+    <p class="bib-community-label">Shared Zotero library</p>
+    <p class="bib-community-copy"><a href="https://www.zotero.org/groups/6634544/blaschka_bibliothek" target="_blank" rel="noopener">Open the Blaschka Bibliothek ↗</a>. The shared library is intended as a collaborative working bibliography for literature and source leads relevant to the Blaschka models and their histories. Researchers, curators, conservators, librarians, students, and other interested contributors are welcome to join and help maintain it by adding missing references, improving metadata, linking better copies, and flagging duplicates or errors.</p>`;
+  toolbar.insertAdjacentElement('afterend', community);
 
   const collator = new Intl.Collator(['en','de','fr','it','es'], { sensitivity:'base', numeric:true });
   let mode = 'year', observer;
