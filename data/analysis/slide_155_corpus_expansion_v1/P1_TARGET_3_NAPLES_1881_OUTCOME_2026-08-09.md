@@ -6,7 +6,7 @@ Object node: `UK-STANDREWS-NAPOLI-FRITZ-MEYER-SLIDES-1881`
 
 ## Outcome
 
-The target is now parsed at catalogue-entry level from the uploaded Internet Archive DJVU text.
+The target is now parsed at catalogue-entry level from the uploaded Internet Archive DJVU text and has produced the first item-level catalogue-to-Britain crosswalk.
 
 Primary source:
 
@@ -85,7 +85,7 @@ Individual preparer attribution remains open unless another source closes it. Th
 3. Quekett proceedings 1882 p.194 record chick-embryo specimens explicitly prepared by Fritz Meyer in British club use.
 4. Surviving St Andrews slides provide the present object-side endpoint.
 
-Historical chain:
+Historical chain at programme level:
 
 `preparation department -> standardized priced catalogue -> distribution/British use -> surviving institutional objects`.
 
@@ -101,6 +101,37 @@ The DJVU plain text reorders number/description/price columns on several pages. 
 - source classification is preserved, including Tunicata under `Mollusca`;
 - the extraction never converts catalogue offering numbers into surviving-object counts.
 
-Status: **`PARSED_423_OCR_TEXT_V1_PRICE_PARTIAL`**.
+Base parse status: **`PARSED_423_OCR_TEXT_V1_PRICE_PARTIAL`**.
 
-A page-image pass is only necessary if complete price-level quantitative work or publication-level verification of the column-scrambled rows becomes important. No further discovery work is required for this source.
+## Post-parse reverse match: 9 June 1880 RMS shipment
+
+The taxon/preparation reverse pass recovered a much stronger British source than the earlier broad event summary.
+
+- JRMS `R24204`, document `D057`, printed p. **733**, records `Zoological Station of Naples—12 slides`, donated by the Station through **A. W. Waters**. Mr Crisp called special attention to them and they were exhibited under microscopes.
+- The same issue, `R24207`, printed p. **736**, names all twelve physical slides.
+
+Comparison against the parsed catalogue gives **nine exact or strong item-level matches**:
+
+- no. **42** — *Asterias glacialis*, gastrula;
+- no. **43** — *Asterias glacialis*, mesoderm formation;
+- no. **67** — *Toxopneustes brevispinosus* / *Sphaerechinus granularis*, larva 3rd day;
+- no. **68** — same, 5th day;
+- no. **71** — same, 15th day;
+- no. **72** — *Echinocardium cordatum*, larva; catalogue specifies 3 days, RMS label omits age;
+- no. **86** — *Stichopus regalis*, ovary;
+- no. **182** — *Pseudodidemnum Listerianum*, ova with embryo;
+- no. **186** — *Pyrosoma elegans*, young colony.
+
+Three further physical slides are **bounded but unresolved**:
+
+- *Amphioxus lanceolatus* → catalogue **231 or 232** (`Vorderer Körpertheil` versus `Ganzes Thier`);
+- *Ascetta bianca* → **5 or 6** (unstained versus stained);
+- *Asteracanthion/Asterias glacialis* `Larva` → developmental block **43-49**, because the RMS label does not state the exact developmental condition.
+
+The row-level evidence is stored in `NAPLES_1880_RMS_12_SLIDES_ITEM_CROSSWALK_V1.csv`.
+
+This is the first defensible `catalogue offering -> named British physical slide shipment/exhibition` closure for this source. It upgrades the analytical Naples target to **`PARSED_423_PLUS_RMS_ITEM_CROSSWALK_9_EXACT_3_BOUNDED`**.
+
+It does **not** establish that any of these twelve RMS slides is the same physical object as a surviving St Andrews slide. A three-point `catalogue -> Britain -> surviving object` identity remains open and must not be inferred from shared taxon or programme provenance.
+
+A page-image pass on the Naples catalogue is only necessary if complete price-level quantitative work or publication-level verification of the column-scrambled rows becomes important. No further open-ended discovery work is required for this source; future work should be bounded reverse matching against known British circulation events.
