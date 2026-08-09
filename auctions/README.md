@@ -9,6 +9,7 @@ This directory contains the public auction page and the structured market-proven
 - `auction-provenance-crosslinks.json` — supplementary cross-source layer for inferred object/collector matches, prior institutional labels, dealer-market dispersals, date conflicts and other evidence that should not be flattened into canonical lot facts without an explicit bridge.
 - `auction-historical-market-seeds.json` — pre-2005 and market-adjacent worklist: sale notices, estate/dealer dispersals, deaccession-register neighbourhoods and institutional-label targets used to search beyond maker-name indexes without inflating the public-auction count.
 - `auction-newspaper-audit.json` — bounded reuse of the project's historical British Newspaper Archive query matrix, including maker-specific Blaschka/Blaschke searches, query-level completeness flags and explicit exclusion of institutional acquisitions from the auction layer.
+- `auction-catalogue-recoveries.json` — later catalogue-level closures such as sale codes, exact lot numbers and single-owner sale context that improve existing records without creating duplicate auction events.
 
 ## Admission rule
 
@@ -26,7 +27,11 @@ The first deep searchable-web pass was completed on 10 August 2026. It covers di
 
 The earliest **canonical public-auction lot** recovered so far remains James D. Julia in **2005**. The historical market search now reaches back earlier: a December **1904** *Museums Journal* notice offered **300 Blaschka invertebrate models** from the Philip Brookes Mason estate. That notice does not enter the canonical auction count because the documented Blaschka-specific endpoint is Mrs Mason's **1909 institutional sale to Glasgow Museums for £275**; the exact 1909 quantity remains unresolved.
 
-A cross-link pass tied the 2015 Grisebach `Serpula contortuplicata / L. No. 343` appearance to the sale title `ORANGERIE. Selected Objects` and established a strong but still inferential match to George Loudon's first-person account of buying a Blaschka Serpulidae model at auction in Berlin. It also established that **both** Krefeld 2025 Blaschka lots carry `Zoolog. Institut Universität, Berlin` labels, creating a new institutional-provenance and dating problem that now requires an MfN/HU register crosswalk. The archived Museum für Naturkunde Historical Division page exposes the exact inventory target `OS001-02 Blaschka Glasmodelle`; its PDF URL is recorded in the historical-seed file even though the current research runtime could not fetch the PDF body.
+The 2015 Grisebach `Serpula contortuplicata / L. No. 343` appearance has now been tightened from an unidentified lot to **ORANGERIE. Selected Objects, sale code 249, lot 483**, Berlin, 26 November 2015. Open Library catalogue metadata derived from a Harvard record establishes that sale 249 covered lots 400–485; Grisebach confirms the ORANGERIE date; and the exact Invaluable lot URL embeds lot 483. The original Grisebach object page and realized result remain open, so this metadata is stored as a catalogue recovery rather than overclaiming primary-page closure.
+
+The same catalogue-recovery pass adds a defensible pre-sale custody/context layer to the three Christie’s 2019 Science Museum models. Christie’s explicitly described the auction as offering **the collection of Peter Petrou**. The safest chain is therefore `Science Museum 1877 -> deaccession 1925–27 -> unresolved gap -> Peter Petrou collection/sale context by Jan 2019 -> Christie’s auction -> buyer open`. No direct Science Museum-to-Petrou transfer or acquisition date is inferred.
+
+A separate cross-link pass established that **both** Krefeld 2025 Blaschka lots carry `Zoolog. Institut Universität, Berlin` labels, creating an institutional-provenance and dating problem that now requires an MfN/HU register crosswalk. The archived Museum für Naturkunde Historical Division page exposes the exact inventory target `OS001-02 Blaschka Glasmodelle`; its PDF URL is recorded in the historical-seed file even though the current research runtime could not fetch the PDF body.
 
 The historical-seed pass also adds two search strategies that should matter more than another generic maker-name sweep: identify the unnamed English public school and London dealer behind part of George Loudon's collection, and search Science Museum 1925–27 disposal **register-number neighbourhoods** because adjacent 1877 inventory numbers demonstrably split between later institutional and private-market pathways.
 
@@ -38,6 +43,7 @@ Detailed method and evidence are recorded in:
 - `../research/logs/2026-08-10-auction-deep-sweep-pass03-provenance-crosslinks.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass04-early-market-and-archive-seeds.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass05-newspaper-matrix-reuse.md`
+- `../research/logs/2026-08-10-auction-deep-sweep-pass06-catalogue-identifiers.md`
 
 ## Next search layer
 
