@@ -1,0 +1,43 @@
+name: Attach bibliography pass 6
+
+on:
+  push:
+    paths:
+      - '.github/workflows/attach-bib-pass6.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Load sixth bibliography pass
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('bibliography/bibliography-form.js')
+          s = p.read_text()
+          marker = "  if (!document.querySelector('script[data-bib-pass6-loader]')) {"
+          if marker not in s:
+              pos = s.rfind('})();')
+              if pos < 0:
+                  raise SystemExit('Could not locate runtime closure')
+              loader = """  if (!document.querySelector('script[data-bib-pass6-loader]')) {
+    const pass6 = document.createElement('script');
+    pass6.src = 'bibliography-pass6.js?v=20260809-1';
+    pass6.dataset.bibPass6Loader = 'true';
+    document.head.appendChild(pass6);
+  }\n"""
+              s = s[:pos] + loader + s[pos:]
+              p.write_text(s)
+          PY
+      - name: Commit loader
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bibliography/bibliography-form.js
+          git commit -m "Load sixth bibliography expansion"
+          git push
