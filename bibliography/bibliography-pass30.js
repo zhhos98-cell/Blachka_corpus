@@ -31,4 +31,11 @@
 
   const scopeTitle = document.querySelector('#bib-scope-title');
   if (scopeTitle) scopeTitle.textContent = '1870–2026 · thirtieth expanded pass';
+
+  if (!document.querySelector('script[data-bib-pass31-loader]')) {
+    const pass31 = document.createElement('script');
+    pass31.src = 'bibliography-pass31.js?v=20260809-1';
+    pass31.dataset.bibPass31Loader = 'true';
+    document.head.appendChild(pass31);
+  }
 })();
