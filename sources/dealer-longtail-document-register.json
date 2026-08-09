@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Dealer Long-Tail Document Corpus Register",
+  "generated_date": "2026-08-10",
+  "scope": "Document-level long-tail archives for Ward, Damon and Frič that expose the ordinary paperwork of nineteenth- and early-twentieth-century natural-history trade. These records are retained as comparators unless Blaschka content is explicit. The purpose is to build a vocabulary of catalogues, specimen lists, prices, purchases, exchanges, approval, dispatch and museum inventory against which Blaschka transactions can be tested.",
+  "evidence_guard": "Same dealer plus same period does not equal a Blaschka transaction. Every record below states whether it is direct Blaschka evidence, same-period dealer-business evidence, or a later longitudinal control.",
+  "records": [
+    {
+      "id": "LONGTAIL-DAMON-SIA-RU007095",
+      "dealer": "Robert Damon",
+      "repository": "Smithsonian Institution Archives",
+      "collection": "Joseph Ashmead Clay and John Randolph Clay Papers",
+      "reference": "SIA RU007095, Box 1 — Specimen Lists",
+      "date_range": "1861–1865",
+      "document_type": "specimen lists, correspondence and financial records",
+      "status": "same_period_pre_agency_dealer_business_control",
+      "evidence": "The finding aid states that the papers include detailed specimen lists and accounts of specimens bought, sold and exchanged. Twenty-six specimen-list items from 1861–1865 contain financial information about purchases and exchanges; named dealers include Robert Damon, Richard Talling and William S. Vaux.",
+      "research_value": "A pre-Blaschka-agency control for Damon's commercial documentary repertoire: lists, prices/accounts, purchase, sale and exchange. It also permits comparison of Damon with competing British mineral/natural-history suppliers inside one customer archive.",
+      "blaschka_guard": "No Blaschka content is claimed. The papers predate Damon's documented Blaschka agency and concern mineralogical collections.",
+      "locator": "https://siarchives.si.edu/collections/siris_arc_217253"
+    },
+    {
+      "id": "LONGTAIL-DAMON-MNCN-CATALOGUES",
+      "dealer": "Robert F. Damon",
+      "repository": "Archivo del Museo Nacional de Ciencias Naturales, CSIC, Madrid",
+      "collection": "Fondo Museo / Simurg",
+      "reference": "Catalogues of fossils and rocks from England from the collection of Robert Damon, plus a French note of species sent to Castañon, Monge y Cia.",
+      "date_range": "1885-06 to 1906-11-14",
+      "document_type": "dealer catalogues and dispatch/species note",
+      "status": "same_period_dealer_business_control",
+      "evidence": "The archival catalogue attributes the material to Robert F. Damon in Weymouth and describes catalogues of fossils and rocks together with a French-language note listing species sent by Damon.",
+      "research_value": "Direct survival of Damon's catalogue-and-dispatch paperwork beginning in 1885, the same period as his Blaschka agency. It is useful for the form of commercial lists and international customer communication.",
+      "blaschka_guard": "The catalogued subject is fossils and rocks, not Blaschka glass models.",
+      "locator": "https://simurg.csic.es/browse/collection/1176699"
+    },
+    {
+      "id": "LONGTAIL-DAMON-BL-ADD-MS-42579-221",
+      "dealer": "Robert Damon",
+      "repository": "British Library Archives and Manuscripts",
+      "collection": "Sherborn autograph collection",
+      "reference": "Add MS 42579, f. 221",
+      "date": "1859",
+      "document_type": "letter from Robert Damon to Richard Owen",
+      "status": "early_dealer_network_control",
+      "evidence": "The British Library catalogue explicitly describes f. 221 as a letter from Robert Damon, geologist, to R. Owen, dated 1859.",
+      "research_value": "Early evidence of Damon's direct correspondence with a major British natural-history authority before the Blaschka agency period.",
+      "blaschka_guard": "Not Blaschka correspondence and not evidence for glass-model trade.",
+      "locator": "https://searcharchives.bl.uk/catalog/040-002003171"
+    },
+    {
+      "id": "LONGTAIL-FRIC-ANTIPA-168-172",
+      "dealer": "Václav Frič / V. Frič natural-history business",
+      "repository": "Archive of the Grigore Antipa National Museum of Natural History, Bucharest",
+      "collection": "Grigore Antipa correspondence and museum acquisition records",
+      "reference": "Frič–Antipa letters nos. 168–172",
+      "date_range": "1907-02 to 1908-11",
+      "document_type": "five dealer letters cross-walked to labels, inventory and museum registers",
+      "status": "longitudinal_dealer_business_control",
+      "evidence": "A published archival reconstruction reports five Frič–Antipa letters (nos. 168–172), old jar labels, Antipa's inventory, other museum registers and National Archives records. The acquisition was from 'Naturalien Handlung V. Frič in Prague, Wladislawgasse 21 a'. The historical collection recorded 908 items, of which 642 were still preserved when catalogued; it included natural specimens and didactic/model material.",
+      "research_value": "An unusually complete dealer → correspondence/list → museum inventory → surviving-object comparator. It shows how a Frič transaction can be reconstructed when company correspondence, receiving-side inventory and extant material survive together.",
+      "blaschka_guard": "This acquisition postdates the Blaschka marine-model business and is not treated as Blaschka evidence. It is a longitudinal control for Frič's dealer practice and museum paperwork.",
+      "locator": "https://olteniastudiisicomunicaristiintelenaturii.ro/v34_2.html"
+    }
+  ],
+  "comparison_axes": [
+    "catalogue form and circulation",
+    "specimen/model lists",
+    "prices and financial information",
+    "purchase, sale and exchange",
+    "dispatch/species notes",
+    "dealer-customer correspondence",
+    "museum inventory and surviving-object crosswalk"
+  ],
+  "next_retrieval": [
+    "Read/photograph SIA RU007095 Box 1 specimen lists to isolate Damon's list and account formats.",
+    "Retrieve the Madrid Damon catalogue images and transcribe headings, prices, customer names and dispatch notation.",
+    "Use the Frič–Antipa published figures and archive references as a coding template for Frič-mediated Blaschka receiving-side files.",
+    "Keep the British Library Damon–Owen letter as network context unless its content reveals a specific commercial transaction."
+  ]
+}
