@@ -1,12 +1,12 @@
 # Frozen 155 → UK microscopy corpus expansion queue — v1
 
-This is a **derived routing layer** over the sealed `CLOSED_2026-08-09` 155-entry microscope-slide catalogue. It does not alter the frozen catalogue or reopen discovery.
+This is a **derived routing and evidence layer** over the sealed `CLOSED_2026-08-09` 155-entry microscope-slide catalogue. It does not alter the frozen catalogue or reopen discovery.
 
-The purpose is to use surviving-object nodes to decide what textual material is worth adding next to the nineteenth-century microscopy corpus.
+The purpose is to use surviving-object nodes to decide what textual material is worth adding next to the nineteenth-century microscopy corpus, and then to record object↔text closures without rewriting the source catalogue.
 
 ## Current text corpus used for routing
 
-Literal routing checks were run against the seven current UK microscopy masters:
+Literal routing checks and contextual verification use the seven current UK microscopy masters:
 
 - `01A_UK_Microscopy_Core_Early_Central_1844-1877`
 - `01B_UK_Microscopy_Core_Professional_1869-1886`
@@ -22,6 +22,8 @@ The practical corpus window is therefore treated as approximately **1844-1886**.
 
 `exact actor` and `distinctive surname` signals are routing evidence only. They are fixed-string/OCR presence tests, not verified historical hits. Counts can be inflated by repeated metadata, indexes, OCR duplicates, or repeated source units. Every positive signal still requires inspection of the actual text context before it becomes evidence.
 
+The same rule now applies to catalogue reverse matching: taxon, stage and preparation-language matches are candidates until a contextual source record establishes Naples provenance or another explicit relation.
+
 ## Queue structure
 
 The external planning workbook/CSV separates four tracks:
@@ -31,7 +33,7 @@ The external planning workbook/CSV separates four tracks:
 3. **Serial sets** — published/distributed numbered preparations, kept separate because serial endpoints are not surviving-slide totals.
 4. **Custody gaps** — surviving nodes for which the museum-facing object source gives present custody but no explicit historical acquisition/transfer route.
 
-The queue also stores suggested source families, three bounded search strings, event hooks, corpus-window fit, and manual status fields.
+The queue also stores suggested source families, bounded search strings, event hooks, corpus-window fit, and manual status fields.
 
 ## v1 routing counts
 
@@ -43,55 +45,87 @@ The queue also stores suggested source families, three bounded search strings, e
 - 7 nodes are isolated as published/distributed `Serial_Sets`.
 - 76 nodes are marked as `Custody_Gaps`.
 
-## P1 tranche
-
-The first short tranche is deliberately small:
-
-- `UK-UCL-GRANT-MUSEUM-HISTORICAL-SLIDES-MID19C-MIXED` — Robert Edmund Grant / dealer-slide / borrowing and purchase trail.
-- `US-FARLOW-HL-SMITH-DIATOMACEARUM-1876` — Hamilton Lanphere Smith; published/distributed diatom set.
-- `AU-POWERHOUSE-BOX-19-SLIDES-1860` — Dancer / Watson object node; control bridge rather than a new-name gap.
-- `UK-STANDREWS-CHARLES-COLLINS-SLIDES` — commercial zoological slides and sale route.
-- `UK-STANDREWS-NAPOLI-FRITZ-MEYER-SLIDES-1881` — Naples preparation/distribution route.
-- `US-FARLOW-EULENSTEIN-DIATOMACEARUM-1867` — Eulenstein numbered/published diatom set.
-- `US-FARLOW-KITTON-NORFOLK-DIATOMS-1885` — Kitton numbered/published diatom set.
-
-Canonical Quekett/RMS material is not allowed to dominate the queue merely because it produces many corpus hits; it is retained only where a specific object/event gap warrants inspection.
-
 ## First contextual verification pass
 
-The literal-routing layer understated several actors because initials, OCR variants and name forms disrupted exact matching. Contextual reading of the corpus nevertheless validated the object-first method very quickly.
+The literal-routing layer understated several actors because initials, OCR variants and name forms disrupted exact matching. Contextual reading validated the object-first method quickly.
 
 ### Eulenstein
 
-Direct contemporary material is already present. QJMS 1867 pp. 64-65 describes two series, slide format, labelling, five 100-species parts and ordering through R. & J. Beck. *Science-Gossip* 1867 p. 188 describes five sections of 100 mounted slides and solicits English diatom gatherings. QJMS 1869 pp. 325-326 records Eulenstein's purchase of the late Dr Arnott's diatom material and his readiness to issue series from it. The 1869 Arnott event is retained as related circulation evidence, not silently equated with the surviving 1867 Farlow set.
+QJMS 1867 pp. 64-65 describes two series, slide format, labelling, five 100-species parts and ordering through R. & J. Beck. *Science-Gossip* 1867 p. 188 describes five sections of 100 mounted slides and solicits English diatom gatherings. QJMS 1869 pp. 325-326 records Eulenstein's purchase of the late Dr Arnott's diatom material and his readiness to issue series from it. The 1869 Arnott event is retained as related circulation evidence, not silently equated with the surviving 1867 Farlow set.
 
 ### Charles Collins
 
-The corpus directly closes the commercial fish-scale/fish-skin series. *Science-Gossip* 1884 p. 87 identifies the issuing slide maker as Charles Collins Jr., nephew of the better-known microscope maker. An 1885 advertisement in the *Journal of Microscopy and Natural Science* lists three priced `Special` Micro Slide series and states that Collins Jr.'s slides were stocked at the senior Collins shop. The RMS bibliography also points to *Microscopical News* IV (1884), p. 109, which remains a bounded source-ingest target. Senior and junior Collins remain separate identities.
-
-### Fritz Meyer / Stazione Zoologica Napoli
-
-JRMS 1880 p. 700 reports Naples slides sent to the Society through A. W. Waters and says a Fritz Meyer-managed department had begun large-scale preparation of microscopical objects, with a list forthcoming. Quekett proceedings in 1882 p. 194 record chick-embryo specimens explicitly prepared by Fritz Meyer. The obvious next primary source is the sixteen-page 1881 Naples price catalogue described by St Andrews.
+*Science-Gossip* 1884 p. 87 identifies the issuing slide maker as Charles Collins Jr., nephew of the microscope maker. An 1885 advertisement in the *Journal of Microscopy and Natural Science* lists three priced `Special` Micro Slide series and states that Collins Jr.'s slides were stocked at the senior Collins shop. *Microscopical News and Northern Microscopist* IV (1884), p. 109, `Fish Scales`, is bibliographically located through a source-specific transcription; the primary scan remains optional.
 
 ### H. L. Smith
 
-The corpus already contains strong actor/circulation evidence, but not yet the primary American text for the specific published set. The RMS cabinet report records 146 diatom slides presented by Smith in 1867; these predate the 1876-1888 set and are kept separate. Quekett 1876 p. 177 contains Smith's own mounting method. Most importantly, JRMS 1878 p. 304 gives a precise bibliographic pointer to `Notes on Century III of the Species Typicae Diatomacearum` in the August American microscopy journal. That American item is now a P1 ingest target.
+The RMS cabinet report records 146 diatom slides presented by Smith in 1867; these predate the 1876-1888 published set and remain separate. Quekett 1876 p. 177 contains Smith's mounting method. The *Monthly Microscopical Journal* XVII (1877), pp. 100-101, directly describes Century I: 100 slides, five pasteboard trays, numbered catalogue/labels, diamond-written slide numbers, and material obtained from Smith's own gatherings, the de Brébisson collection, and exchange or otherwise. The August 1878 Century III item is bibliographically located in the *American Journal of Microscopy and Popular Science*, vol. 3; its primary page text remains unparsed.
 
 ### Kitton
 
-The current corpus directly closes at least the first two published Norfolk slide series. *Science-Gossip* 1884 p. 260 reports the first series issued in a case, with named slides and catalogue; the 1885 volume p. 18 reports the second series of the `Century`. Quekett 1885 p. 178 supplies the link to Kitton's broader Norfolk diatom list. A contemporary notice/prospectus for Series III-IV remains a bounded follow-up if the full four-series publication sequence is needed.
+*Science-Gossip* 1884 p. 260 reports the first Norfolk Diatomaceae series issued in a case, with named slides and catalogue; the 1885 volume p. 18 reports the second series of the `Century`. Quekett 1885 p. 178 links the set to Kitton's broader Norfolk diatom work. A direct contemporary source for Series III-IV remains optional rather than urgent.
 
-The verified rows are stored in `OBJECT_TEXT_BRIDGES_V1.csv`; sources still worth adding are isolated in `OPEN_PRIMARY_SOURCE_TARGETS_V1.csv`.
+## Naples / Fritz Meyer P1 sequence
+
+The Naples target has moved from discovery to a product-level historical corpus.
+
+### Source and parse
+
+The primary source is Anton Dohrn, `Preis-Verzeichniss der mikroskopischen Präparate, welche durch die Zoologische Station zu Neapel zu beziehen sind`, *Mittheilungen aus der Zoologischen Station zu Neapel*, Bd. II, pp. 238-253. The catalogue is signed **Neapel, August 1880**. The numbered offerings run 1-423.
+
+The uploaded IA DJVU text was parsed into **423 sequential historical catalogue offerings**. The 423 figure is a catalogue-offering count, not a surviving-slide total. Source-group counts are Protozoa 4; Coelenterata 33; Echinodermata 49; Vermes 33; Arthropoda 57; Mollusca in the source classification 54; Vertebrata 193. Price extraction remains partial: 148 row prices are securely aligned and 275 remain unresolved because OCR detached or reordered table columns.
+
+The parse manifest is `NAPLES_1880_CATALOGUE_423_PARSE_MANIFEST_V1.json`.
+
+### British circulation crosswalk
+
+The first UK pass records eight physical/object circulation events, plus separate catalogue-reception and method-circulation layers. These include institutional dispatch, RMS/Quekett exhibition, Bolton and Birmingham provincial use, chick-embryo preparations explicitly prepared by Fritz Meyer, and Arthur Pennington's off-catalogue remanufacture of a Naples *Cerianthus solitarius* specimen into a British slide.
+
+The event layer is `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1.csv` with methodological notes in `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1_README.md`.
+
+### First item-level catalogue → Britain closure
+
+A reverse taxon/preparation pass recovered the detailed list for the **9 June 1880 Royal Microscopical Society** shipment.
+
+- `R24204`, JRMS printed p. 733: the Station donated **12 slides** through A. W. Waters; Mr Crisp called attention to them and they were exhibited under microscopes.
+- `R24207`, printed p. 736: all twelve slides are named.
+
+Comparison with the 423 catalogue yields **nine exact/strong item matches**:
+
+`42, 43, 67, 68, 71, 72, 86, 182, 186`.
+
+Three further slides are bounded but unresolved at item level:
+
+- *Amphioxus lanceolatus* → `231|232`;
+- *Ascetta bianca* → `5|6`;
+- *Asteracanthion/Asterias glacialis* larva → developmental block `43-49`.
+
+The exact row-level mapping is `NAPLES_1880_RMS_12_SLIDES_ITEM_CROSSWALK_V1.csv`.
+
+This is the first defensible `catalogue offering → named British physical slide shipment/exhibition` closure in the Naples pass. It is **not** yet a three-point `catalogue → Britain → surviving St Andrews object` identity. `same_physical_object_as_st_andrews` remains `NOT_ASSERTED` throughout.
+
+## Working files
+
+- `OBJECT_TEXT_BRIDGES_V1.csv` — contextually verified object↔text bridges.
+- `OPEN_PRIMARY_SOURCE_TARGETS_V1.csv` — bounded source targets and resolved statuses.
+- `P1_TARGETS_1_2_OUTCOME_2026-08-09.md` — Smith/Collins source pass.
+- `P1_TARGET_3_NAPLES_1881_OUTCOME_2026-08-09.md` — Naples source location, parse and follow-up.
+- `NAPLES_1880_CATALOGUE_423_PARSE_MANIFEST_V1.json` — 423-row parse manifest.
+- `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1.csv` — UK object-circulation event layer.
+- `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1_README.md` — crosswalk method and interpretation.
+- `NAPLES_1880_RMS_12_SLIDES_ITEM_CROSSWALK_V1.csv` — twelve-slide RMS shipment mapped to catalogue items.
+- `PROGRESS_LOG_2026-08-09.md` — compact dated research log.
 
 ## Recommended use
 
 For each queue row:
 
-1. run the bounded actor + object / actor + event / actor + hook queries;
-2. inspect actual text context;
+1. run bounded actor/object/event or taxon/preparation queries;
+2. inspect the actual text context;
 3. record source ID, page/date, and the exact relationship asserted;
-4. set `text_hit_verified` only after contextual review;
+4. distinguish `EXACT`, bounded family/programme correspondence, and unresolved identity;
 5. add genuinely new source units to the text corpus;
-6. never infer preparation from ownership/use, and never collapse serial endpoints, cabinet capacities, current aggregates, or database rows into slide counts.
+6. never infer preparation from ownership/use;
+7. never collapse serial endpoints, cabinet capacities, current aggregates, catalogue offerings, database rows or surviving slides into one quantity namespace.
 
-This layer is intended to replace open-ended periodical sweeping with object-generated, event-specific corpus expansion.
+This layer is intended to replace open-ended periodical sweeping with object-generated and catalogue-generated event-specific corpus expansion.
