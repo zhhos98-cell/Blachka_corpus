@@ -4,11 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       bundle:
-        description: "One click can fan out across many slide-collection institutions. Use remaining-automatable after the high-yield reconnaissance pass."
+        description: "Third wave: targeted-deep enumerates the catalogues that proved high-yield in reconnaissance."
         required: true
-        default: "remaining-automatable"
+        default: "targeted-deep"
         type: choice
         options:
+          - targeted-deep
           - remaining-automatable
           - high-yield
           - all-automatable
@@ -23,7 +24,7 @@ on:
         default: ""
         type: string
       mode:
-        description: "dry-run builds plans only; full fetches bounded public metadata."
+        description: "Use full for targeted-deep. dry-run remains available for the generic institution harvester."
         required: true
         default: "full"
         type: choice
@@ -31,7 +32,7 @@ on:
           - full
           - dry-run
       depth:
-        description: "Per-institution page-budget multiplier. balanced is intended for routine harvesting."
+        description: "Request-budget multiplier. balanced is recommended; targeted-deep is already catalogue-specific."
         required: true
         default: "balanced"
         type: choice
@@ -95,7 +96,7 @@ jobs:
       max-parallel: 8
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
 
     steps:
       - name: Check out frozen slide-survey branch
@@ -117,19 +118,33 @@ jobs:
           python scripts/audit_19c_scope.py
 
       - name: Harvest ${{ matrix.institution }}
+        shell: bash
         run: |
-          python scripts/harvest_institution.py \
-            --institution-key "${{ matrix.institution_key }}" \
-            --profile "${{ matrix.profile }}" \
-            --mode "${{ inputs.mode }}" \
-            --depth "${{ inputs.depth }}"
+          if [[ "${{ inputs.bundle }}" == "targeted-deep" ]]; then
+            if [[ "${{ inputs.mode }}" != "full" ]]; then
+              echo "targeted-deep is an enumeration run; choose mode=full" >&2
+              exit 2
+            fi
+            python scripts/harvest_targeted.py \
+              --institution-key "${{ matrix.institution_key }}" \
+              --adapter "${{ matrix.targeted_adapter }}" \
+              --depth "${{ inputs.depth }}"
+          else
+            python scripts/harvest_institution.py \
+              --institution-key "${{ matrix.institution_key }}" \
+              --profile "${{ matrix.profile }}" \
+              --mode "${{ inputs.mode }}" \
+              --depth "${{ inputs.depth }}"
+          fi
 
       - name: Upload institution metadata
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: institution-${{ matrix.institution_key }}
-          path: outputs/institution_harvest/${{ matrix.institution_key }}/
+          path: |
+            outputs/institution_harvest/${{ matrix.institution_key }}/
+            outputs/targeted_harvest/${{ matrix.institution_key }}/
           retention-days: 30
           if-no-files-found: warn
 
