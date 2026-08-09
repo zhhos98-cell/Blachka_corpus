@@ -50,4 +50,9 @@
   });
 
   longtailSection.insertAdjacentElement('afterend', section);
+
+  const next = document.createElement('script');
+  next.src = 'sources-pass24.js?v=20260810-1';
+  next.defer = true;
+  document.body.appendChild(next);
 })();
