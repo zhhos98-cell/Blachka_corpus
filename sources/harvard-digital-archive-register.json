@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Harvard Digital Archive Corpus Register",
+  "generated_date": "2026-08-10",
+  "repository": "Archives of the Economic Botany Herbarium of Oakes Ames / Botany Libraries, Harvard University",
+  "collection": "The Archives of Rudolf and Leopold Blaschka and the Ware Collection of Blaschka Glass Models of Plants, 1886–2020",
+  "call_number": "ecb00006",
+  "extent": "59 linear feet",
+  "current_catalogue_snapshot": {
+    "total_components": 2749,
+    "digital_content": 897,
+    "metric_guard": "HOLLIS 'digital content' is a catalogue/component metric, not a count of letters or digitised pages. Do not describe the collection as containing 897 digitised letters.",
+    "catalogue_locator": "https://hollisarchives.lib.harvard.edu/catalog/ecb00006"
+  },
+  "scope": "Harvard's large digital and physical archive for the Ware Collection, treated as a corpus architecture rather than one source. The register separates correspondence, artwork, labels, photographs and fragile physical ephemera, and records which layers HOLLIS states are already digitised.",
+  "digital_layers": [
+    {
+      "id": "HARVARD-EBC-SERIES-I-CORRESPONDENCE",
+      "series": "Series I. Correspondence",
+      "date_range": "1870–1957",
+      "digital_status": "most correspondence digitised",
+      "subseries": [
+        {
+          "title": "Blaschka correspondence from studio",
+          "date_range": "circa 1870–1944",
+          "digital_status": "digitised",
+          "scope_note": "Chiefly Rudolf Blaschka correspondence to his parents Leopold and Karolina during his 1892 United States trip and summer 1895, plus miscellaneous family and Glass Flowers documents."
+        },
+        {
+          "title": "Ware correspondence",
+          "date_range": "1887–1936",
+          "digital_status": "digitised",
+          "scope_note": "Correspondence kept by Mary Lee Ware and Elizabeth Ware, arranged chronologically. No correspondence is listed for 1917–1919. The bulk is among Rudolf Blaschka, George Lincoln Goodale, Mary Lee Ware and Oakes Ames."
+        }
+      ],
+      "research_value": [
+        "direct chronological correspondence corpus",
+        "patronage and contract relations",
+        "shipment and customs feedback",
+        "workshop technique and supply problems",
+        "travel and plant collection",
+        "receiving-side handling and museum administration"
+      ]
+    },
+    {
+      "id": "HARVARD-EBC-SERIES-II-ARTWORK",
+      "series": "Series II. Drawings and paintings",
+      "date_range": "circa 1836–1933",
+      "digital_status": "digitised except one framed painting",
+      "research_value": "Visual source corpus for reference drawing, observation, model planning and workshop representation."
+    },
+    {
+      "id": "HARVARD-EBC-SERIES-V-LABELS",
+      "series": "Series V. Ware Collection of Glass Flower Models — Model and section labels",
+      "digital_status": "most labels digitised",
+      "research_value": "Object-document crosswalk: scientific naming, sectioning, mounting and later collection identification."
+    },
+    {
+      "id": "HARVARD-EBC-SERIES-V-PHOTOGRAPHS",
+      "series": "Series V. Ware Collection of Glass Flower Models — photographic images",
+      "digital_status": "digitised",
+      "research_value": "Display, teaching, conservation and visual afterlife of the models."
+    }
+  ],
+  "physical_layers": [
+    {
+      "id": "HARVARD-EBC-SERIES-III-EPHEMERA",
+      "series": "Series III. Blaschka ephemera and artifacts",
+      "digital_status": "mixed / physical access restricted",
+      "contents": [
+        "newspapers and books",
+        "clothing",
+        "tools and workshop items",
+        "glass cullet and rods",
+        "glass dyes and solvents",
+        "original boxes and mailing material"
+      ],
+      "research_value": "Material evidence for packing, mailing, workshop tools and glass handling that cannot be reduced to correspondence."
+    }
+  ],
+  "direct_digital_examples": [
+    {
+      "description": "Rudolf Blaschka letter to George Lincoln Goodale, 6 January 1896",
+      "stable_locator": "https://nrs.harvard.edu/urn-3:FMUS.WARE:22853820?n=59"
+    }
+  ],
+  "related_source_systems": [
+    {
+      "name": "BHL Rudolf Blaschka letters to Walter Deane, 1895–1927",
+      "relationship": "separate digitised correspondence corpus held by Harvard Botany Libraries and published through BHL; overlaps chronologically and socially with ecb00006 but must retain its own provenance and metadata"
+    },
+    {
+      "name": "Rakow Research Library, Leopold and Rudolf Blaschka Archive",
+      "relationship": "workshop-side archive with drawings, notebooks, business records and correspondence; Harvard HOLLIS points researchers to digitised Rakow material as related sources"
+    }
+  ],
+  "ingest_strategy": {
+    "phase_1": "Download the HOLLIS finding-aid CSV and create a component-level inventory preserving call number, hierarchy, date, box/folder and digital-link fields.",
+    "phase_2": "Harvest digital-surrogate URLs for Series I correspondence and map individual digital objects to the finding-aid hierarchy.",
+    "phase_3": "Cross-walk dates and correspondents with BHL Deane and the local Rakow OCR corpus while retaining repository provenance as a first-class field.",
+    "guard": "Do not deduplicate texts across Harvard, BHL and Rakow solely because dates or correspondents match. Copies, drafts and enclosures can be distinct documentary witnesses."
+  },
+  "source_quality_note": "This archive changes the corpus-building problem: a large part of the Harvard correspondence universe is already digitally accessible. The bottleneck is normalization and cross-walking rather than repository discovery."
+}
