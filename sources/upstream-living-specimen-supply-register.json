@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Upstream Living-Specimen Supply Register",
+  "generated_date": "2026-08-10",
+  "scope": "Sources for living marine organisms and other biological reference material moving into the Blaschka workshop before glass models moved outward. The register treats acquisition, forwarding, survival in transit, revival in aquaria and failed supply as part of model production rather than external background logistics.",
+  "network_observation": "The workshop depended on a reverse circulation: fragile living reference organisms moved inward to Dresden, where they could be observed in aquaria, before durable but fragile glass representations moved outward to museums and teaching collections.",
+  "actors": [
+    {
+      "id": "UPSTREAM-RT-SMITH-WEYMOUTH",
+      "name": "R. T. Smith",
+      "address": "25 St. Alban's Street, Weymouth",
+      "role_label": "aquarium/marine-specimen supplier and natural-history exchange participant",
+      "identity_guard": "Initials are preserved. No fuller personal identity is assigned without independent evidence.",
+      "role_guard": "Leopold Blaschka's draft correspondence describes Smith as an aquarium dealer. Contemporary Science-Gossip evidence shows the same name and Weymouth address circulating slides and marine material. This supports a commercial/exchange role but does not by itself establish a formal incorporated firm.",
+      "workshop_evidence": [
+        {
+          "date": "1882-12-25",
+          "source": "Leopold Blaschka to R. T. Smith, draft, notebook of draft correspondence 1880–1885, LRBC MS 0013 Box 23",
+          "evidence": "Published archival citation identifies an order timed for weather favourable to anemone fishing and forwarding, showing that season and transport conditions entered the procurement decision."
+        },
+        {
+          "date": "1886-03-01?",
+          "source": "Leopold Blaschka to R. T. Smith, draft, notebook 1886–1887, LRBC MS 0013 Box 23",
+          "evidence": "Published archival citation identifies continuing requests for small consignments of living anemones from Weymouth."
+        },
+        {
+          "date": "late March 1886?",
+          "source": "Leopold Blaschka to R. T. Smith, undated draft, notebook 1886–1887, LRBC MS 0013 Box 23",
+          "evidence": "Published transcription reports weakness after arrival and four specimens that did not revive, possibly after night frost on the railway."
+        },
+        {
+          "date": "undated / local OCR",
+          "source": "Project OCR of Rakow correspondence",
+          "evidence": "A draft headed to R. T. Smith, Weymouth requests British sea anemones worth about 15 Reichsmarks, specifies preferred varieties, asks for as many different kinds as possible, and asks Smith to propose a forwarding method."
+        },
+        {
+          "date": "17 May / year pending image verification",
+          "source": "Project OCR of Rakow correspondence",
+          "evidence": "A draft headed 'Mr. Smith Weymouth 17. Mai' reports that anemones arrived alive and recovered in the workshop tank despite very warm weather and several days in transit from Weymouth to Dresden."
+        },
+        {
+          "date": "undated / local OCR",
+          "source": "Project OCR of Rakow correspondence",
+          "evidence": "Leopold recalls having received Smith's address several years earlier as an aquarium dealer and asks for an alternative Devon supplier for Caryophyllia Smithii because it could not be obtained in Weymouth; he explicitly asks for an address from which marine animals could be forwarded in small quantities as Smith had done."
+        }
+      ],
+      "independent_contemporary_network_evidence": [
+        {
+          "date": "1874",
+          "source": "Hardwicke's Science-Gossip",
+          "evidence": "R. T. Smith, 25 St. Alban's Street, Weymouth offered well-mounted microscopic slides of marine algae, about forty varieties, and small starfish/unmounted material in exchange for good slides."
+        },
+        {
+          "date": "1874",
+          "source": "Hardwicke's Science-Gossip",
+          "evidence": "A second exchange notice at the same name/address offered microscopic slides of marine algae and starfish plus small unmounted starfish for good slides."
+        },
+        {
+          "date": "same nineteenth-century microscopy exchange corpus",
+          "source": "Hardwicke's Science-Gossip / project microscopy corpus",
+          "evidence": "Additional notices at the same address offer marine shells and material for mounting, placing Smith within amateur microscopy and marine-specimen exchange rather than only the Blaschka correspondence network."
+        }
+      ],
+      "research_value": [
+        "connects Blaschka model-making to British amateur microscopy and exchange networks",
+        "shows living reference organisms as logistics-dependent research material",
+        "makes weather, season, rail transit duration and revival in aquaria part of production history",
+        "allows comparison between circulation of mounted marine slides, unmounted specimens and living animals",
+        "creates a person/address bridge across two otherwise separate project corpora"
+      ],
+      "next_actions": [
+        "Run exact-name/address search across all microscopy pages for R. T. Smith / 25 St. Alban's Street / Weymouth.",
+        "Run exact-name search across all Rakow OCR records and align each Smith draft to manuscript page/image.",
+        "Build one chronological table of requested species, price, weather, dispatch method, transit duration, survival and subsequent model references.",
+        "Search Weymouth directories and natural-history society records for a secure expansion of R. T. Smith's initials only after the primary corpus is exhausted."
+      ]
+    }
+  ],
+  "parallel_supply_routes": [
+    {
+      "id": "UPSTREAM-TRIESTE-ZOOLOGICAL-STATION",
+      "supplier": "Imperial Austrian Zoological Station, Trieste",
+      "status": "institutional living-specimen source",
+      "evidence": "Rudolf Blaschka's 6 January 1896 account to George Lincoln Goodale states that the workshop's seawater tanks contained living animals sent partly from the Imperial Austrian Zoological Station at Trieste and partly from England and northern coasts.",
+      "research_use": "Institutional comparator to Smith's small-scale commercial/exchange route."
+    }
+  ],
+  "analytic_chain": [
+    "capture/collection",
+    "species selection",
+    "price or exchange",
+    "packing/forwarding",
+    "weather and season",
+    "rail or other transit",
+    "arrival alive/weak/dead",
+    "revival or failure in aquarium",
+    "observation/drawing",
+    "glass model production",
+    "outbound model circulation"
+  ]
+}
