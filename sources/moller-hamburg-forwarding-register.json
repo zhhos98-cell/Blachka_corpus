@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — M. Otto W. Möller Hamburg Forwarding Register",
+  "generated_date": "2026-08-10",
+  "actor": "M. Otto W. Möller / M. O. W. Möller, Hamburg",
+  "role": "Hamburg forwarding intermediary in Damon-mediated British orders",
+  "scope": "Direct workshop-side evidence for Möller's handling of at least two Blaschka marine-model consignments in 1887: Marlborough College and Liverpool Museum. The register preserves case marks, insurance, invoice/account layers and onward consignee instructions where legible.",
+  "name_guard": "The longer form 'M. Otto W. Moller' occurs in the 11 October 1887 workshop OCR; the Liverpool record abbreviates the name to 'M. O. W. Moller'. The spelling Möller is a normalized German form for discovery only. No modern company or later Hamburg Möller business is identified as the same firm without contemporary directory evidence.",
+  "archive_survival": "dedicated_fonds_not_identified",
+  "events": [
+    {
+      "id": "MOLLER-MARLBOROUGH-IB266",
+      "date": "1887-10-11 letter; case dispatched 1887-10-08 according to workshop text",
+      "customer": "Marlborough College",
+      "dealer": "Robert Damon",
+      "case_mark": "I.B. 266",
+      "forwarder": "M. Otto W. Möller, Hamburg",
+      "onward_recipient": "Rev. T. A. Preston, Marlborough-area address as OCR-read; exact address requires image verification",
+      "insurance": "200 Marks",
+      "invoice": "196 Marks",
+      "dealer_account": "Workshop letter records 443 Marks prepaid and approximately 242 Marks remaining to Damon's credit after the invoice; arithmetic/OCR should be checked against the manuscript image before publication.",
+      "status": "direct_primary_transaction_evidence",
+      "research_value": "The source explicitly connects case mark, model destination, insured value, forwarding firm, onward consignee, invoice and dealer credit in one transaction document."
+    },
+    {
+      "id": "MOLLER-LIVERPOOL-IB268",
+      "date": "early December 1887; exact day to be image-verified",
+      "customer": "Liverpool Museum",
+      "dealer": "Robert Damon",
+      "case_mark": "I.B. 268",
+      "forwarder": "M. O. W. Möller, Hamburg",
+      "onward_recipient": "Higgins, Liverpool; exact title/name should be checked against the manuscript image and Liverpool receiving-side records",
+      "insurance": "Insurance figure is OCR-ambiguous in the dispatch record and is not normalized here.",
+      "invoice": "268 Marks total stated in the dispatch letter",
+      "preceding_value_layers": "A 23 November letter states that 247 Marks already prepaid for Liverpool covered the models only and asks for about 50 Marks more for packing. These figures are preserved as distinct model-value, packing-estimate and later invoice/account layers rather than forced into one total.",
+      "payment_layer": "The dispatch letter acknowledges a £25 draft, OCR-converted by a Dresden bank to 506 Reichsmarks, and carries remaining Damon credit forward toward Galway and Cardiff orders.",
+      "status": "direct_primary_transaction_evidence",
+      "research_value": "The source shows Möller reused as a forwarding node only weeks after Marlborough and connects the Hamburg handoff to Liverpool's case mark, invoice and rolling Damon account."
+    }
+  ],
+  "network_observation": "Möller was not a one-off Liverpool name. The 1887 workshop record places the same Hamburg forwarder inside at least two Damon-mediated British consignments, with sequential case marks I.B. 266 and I.B. 268. This suggests a recurrent Hamburg forwarding channel linking Dresden production to British institutional customers. The missing I.B. 267 has not been identified and is not reconstructed from sequence alone.",
+  "archive_targets": [
+    {
+      "repository": "Staats- und Universitätsbibliothek Hamburg",
+      "resource": "Hamburger address books and commercial directories",
+      "status": "identity-resolution target",
+      "research_question": "Identify the exact 1887 firm entry, business description, principals and street address for M. Otto W. Möller / M. O. W. Möller.",
+      "locator": "https://adressbuecher.sub.uni-hamburg.de/"
+    },
+    {
+      "repository": "Staatsarchiv Hamburg / Hamburg Chamber of Commerce records",
+      "status": "corporate-record target after directory identification",
+      "research_question": "Once the exact legal firm identity is established, search registration, partnership, forwarding, shipping-agent or commercial correspondence records for the 1880s."
+    }
+  ]
+}
