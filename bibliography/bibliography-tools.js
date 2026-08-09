@@ -4,6 +4,10 @@
   const intro = document.querySelector('.page-intro');
   if (!list || !section || document.querySelector('.bib-tools')) return;
 
+  const scopeTitle = document.querySelector('#bib-scope-title');
+  if (scopeTitle) scopeTitle.textContent = scopeTitle.textContent.replace(/\s*·\s*.*$/, '');
+  document.querySelector('.bib-note')?.remove();
+
   const SOURCE_ID = 'info:sid/zhhos98-cell.github.io:Blachka_corpus';
   const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
   const entries = () => [...list.querySelectorAll('.bib-entry')];
@@ -178,7 +182,7 @@
   style.id = 'bib-tools-style';
   style.textContent = `
     .bib-tools{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px 26px;margin:18px 0 30px;padding:14px 0 16px;border-top:1px solid rgba(242,238,233,.16);border-bottom:1px solid rgba(242,238,233,.16);font-family:Arial,Helvetica,sans-serif}
-    .bib-tools-group{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.bib-tools-label,.bib-tools-status,.bib-tools-note{margin:0;color:rgba(242,238,233,.58);font-size:.66rem;line-height:1.4}.bib-tools-label{margin-right:3px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.bib-tool-button{min-height:34px;padding:0 11px;border:1px solid rgba(242,238,233,.3);background:transparent;color:rgba(242,238,233,.88);font:600 .66rem/1 Arial,Helvetica,sans-serif;letter-spacing:.025em;cursor:pointer}.bib-tool-button:hover,.bib-tool-button:focus-visible{border-color:rgba(242,238,233,.62);color:#fff;outline:none}.bib-tool-button[aria-pressed="true"]{background:rgba(242,238,233,.11);border-color:rgba(242,238,233,.56);color:#fff}.bib-tools-meta{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:2px}@media(max-width:720px){.bib-tools{display:block}.bib-tools-group+.bib-tools-group{margin-top:12px}.bib-tools-meta{margin-top:12px}}
+    .bib-tools-group{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.bib-tools-label,.bib-tools-note{margin:0;color:rgba(242,238,233,.58);font-size:.66rem;line-height:1.4}.bib-tools-label{margin-right:3px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.bib-tool-button{min-height:34px;padding:0 11px;border:1px solid rgba(242,238,233,.3);background:transparent;color:rgba(242,238,233,.88);font:600 .66rem/1 Arial,Helvetica,sans-serif;letter-spacing:.025em;cursor:pointer}.bib-tool-button:hover,.bib-tool-button:focus-visible{border-color:rgba(242,238,233,.62);color:#fff;outline:none}.bib-tool-button[aria-pressed="true"]{background:rgba(242,238,233,.11);border-color:rgba(242,238,233,.56);color:#fff}.bib-tools-meta{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:2px}@media(max-width:720px){.bib-tools{display:block}.bib-tools-group+.bib-tools-group{margin-top:12px}.bib-tools-meta{margin-top:12px}}
   `;
   document.head.appendChild(style);
 
@@ -188,7 +192,7 @@
   toolbar.innerHTML = `
     <div class="bib-tools-group" role="group" aria-label="Sort bibliography"><span class="bib-tools-label">Sort</span><button class="bib-tool-button" type="button" data-sort="year" aria-pressed="true">Year ↑</button><button class="bib-tool-button" type="button" data-sort="author" aria-pressed="false">Author A–Z</button></div>
     <div class="bib-tools-group" role="group" aria-label="Export bibliography"><span class="bib-tools-label">Export</span><button class="bib-tool-button" type="button" data-export="csv">CSV</button><button class="bib-tool-button" type="button" data-export="tsv">TSV</button><button class="bib-tool-button" type="button" data-export="csl">CSL JSON</button><button class="bib-tool-button" type="button" data-export="bib">BibTeX</button><button class="bib-tool-button" type="button" data-export="ris">RIS</button></div>
-    <div class="bib-tools-meta"><p class="bib-tools-status" aria-live="polite"></p><p class="bib-tools-note">Zotero Connector metadata is embedded per record. DOI, ISBN, title, authors, year, journal/book fields and stable URLs are exposed where they can be recovered safely from the working citation.</p></div>`;
+    <div class="bib-tools-meta"><p class="bib-tools-note">Zotero Connector metadata is embedded per record. DOI, ISBN, title, authors, year, journal/book fields and stable URLs are exposed where they can be recovered safely from the working citation.</p></div>`;
   if (intro) intro.insertAdjacentElement('afterend', toolbar); else section.insertAdjacentElement('beforebegin', toolbar);
 
   const collator = new Intl.Collator(['en','de','fr','it','es'], { sensitivity:'base', numeric:true });
@@ -200,11 +204,6 @@
     return parsed.family || parsed.literal || names[0];
   };
 
-  const updateStatus = () => {
-    const status = toolbar.querySelector('.bib-tools-status');
-    if (status) status.textContent = `${entries().length} records · ${mode === 'author' ? 'author A–Z' : 'year ascending'} · Zotero-ready`;
-  };
-
   const applySort = () => {
     const rows = entries().map((node,index) => ({node,index,year:yearOf(node),author:authorSortKey(node),citation:citationText(node)}));
     if (observer) observer.disconnect();
@@ -212,7 +211,6 @@
     let changed = false;
     entries().forEach(node => { if (attachZoteroMetadata(node)) changed = true; });
     toolbar.querySelectorAll('[data-sort]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.sort === mode)));
-    updateStatus();
     if (changed) notifyZotero();
     if (observer) observer.observe(list,{childList:true});
   };
