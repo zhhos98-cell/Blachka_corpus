@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "title": "Blaschka source corpus ingest priority",
   "generated_date": "2026-08-10",
   "principle": "Prioritize sources that can be ingested now or retrieved by a precise archival unit. Repository discovery alone has lower value than document-level or corpus-level access.",
@@ -21,10 +21,25 @@
     },
     {
       "priority": "P0",
+      "target": "Rakow Notizbüchel 1869–1871 + Geschäfts-Anmerkungen 1872–1887",
+      "access": "open/downloadable digital primary sources identified by Corning Museum of Glass",
+      "action": "Ingest page-by-page customer/order/account entries from the two business books and align with local OCR, dealer registers and current-holder census without collapsing historical purchaser into present repository.",
+      "reason": "These books are the transaction backbone for original customers, sales and dealer shares and were explicitly used by Corning's global census reconstruction."
+    },
+    {
+      "priority": "P0",
       "target": "Existing Rakow/Blaschka OCR workshop corpus already in project backend",
       "access": "local project corpus",
-      "action": "Cross-walk Harvard and Deane dates/names against business letters, Lieferungs-Buch, Geschäfts Anmerkungen, packing and shipping records while preserving drafts/copies/enclosures as distinct witnesses.",
+      "action": "Cross-walk Harvard and Deane dates/names against business letters, Lieferungs-Buch, Geschäfts-Anmerkungen, packing and shipping records while preserving drafts/copies/enclosures as distinct witnesses.",
       "reason": "Provides the workshop/business side needed to interpret the Harvard receiving/patronage and Deane correspondence layers."
+    },
+    {
+      "priority": "P0",
+      "target": "R. T. Smith, Weymouth — cross-project living-specimen and microscopy corpus",
+      "access": "local Rakow OCR + local Hardwicke's Science-Gossip corpus + published archival locators",
+      "action": "Build one chronology from all Smith witnesses: five exact microscopy notices (1873–1876), the 1882 and 1886 workshop drafts, species requests, 15-Mark order, forwarding language, weather, transit duration, aquarium recovery/failure and alternative Devon supplier search. Image-verify every manuscript/page before diplomatic quotation.",
+      "reason": "This is an immediately actionable bridge between two local corpora and exposes the upstream circulation of living reference organisms before glass model production.",
+      "guard": "Preserve initials only. Do not merge the Hughes/Lloyd OCR reading 'E. J. Smith, 25 St. Alban's Row' with R. T. Smith until the printed page is checked."
     },
     {
       "priority": "P1",
