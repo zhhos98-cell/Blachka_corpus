@@ -26,4 +26,11 @@
 
   const scopeTitle = document.querySelector('#bib-scope-title');
   if (scopeTitle) scopeTitle.textContent = '1870–2026 · thirty-fifth expanded pass';
+
+  if (!document.querySelector('script[data-bib-pass36-loader]')) {
+    const pass36 = document.createElement('script');
+    pass36.src = 'bibliography-pass36.js?v=20260809-1';
+    pass36.dataset.bibPass36Loader = 'true';
+    document.head.appendChild(pass36);
+  }
 })();
