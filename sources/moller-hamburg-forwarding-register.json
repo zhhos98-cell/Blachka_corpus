@@ -1,13 +1,33 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "title": "The Blaschka Object Network — M. Otto W. Möller Hamburg Forwarding Register",
   "generated_date": "2026-08-10",
   "actor": "M. Otto W. Möller / M. O. W. Möller, Hamburg",
-  "role": "Hamburg forwarding intermediary in Damon-mediated British orders",
-  "scope": "Direct workshop-side evidence for Möller's handling of at least two Blaschka marine-model consignments in 1887: Marlborough College and Liverpool Museum. The register preserves case marks, insurance, invoice/account layers and onward consignee instructions where legible.",
-  "name_guard": "The longer form 'M. Otto W. Moller' occurs in the 11 October 1887 workshop OCR; the Liverpool record abbreviates the name to 'M. O. W. Moller'. The spelling Möller is a normalized German form for discovery only. No modern company or later Hamburg Möller business is identified as the same firm without contemporary directory evidence.",
+  "role": "Hamburg forwarding intermediary in Damon-mediated British and Irish orders",
+  "scope": "Direct workshop-side evidence for Möller's handling of Blaschka marine-model consignments in 1887, with a guarded earlier Dublin/Haddon record whose OCR reads 'M.Miller' and may represent the same Hamburg forwarder. The register preserves case marks, insurance, invoice/account layers, onward consignee instructions and transport-failure feedback where legible.",
+  "name_guard": "The longer form 'M. Otto W. Moller' occurs in the 11 October 1887 workshop OCR; the Liverpool record abbreviates the name to 'M. O. W. Moller'. A mid-1887 Dublin/Haddon record reads 'M.Miller' in OCR and is therefore treated only as a probable earlier occurrence pending image verification. The spelling Möller is a normalized German form for discovery only. No modern company or later Hamburg Möller business is identified as the same firm without contemporary directory evidence.",
   "archive_survival": "dedicated_fonds_not_identified",
   "events": [
+    {
+      "id": "MOLLER-HADDON-DUBLIN-262",
+      "date": "17 June [1887?]; day/month legible in OCR, year corrupt and retained as uncertain",
+      "customer": "Alfred Cort Haddon, Royal College of Science, Dublin",
+      "dealer": "Robert Damon",
+      "case_mark": "OCR reads L.D. 262; original image required before normalizing the prefix",
+      "forwarder": "OCR reads 'M.Miller' in Hamburg; probable M. Otto W. Möller but not promoted to certain identity",
+      "insurance": "500 Marks",
+      "invoice": "495 Marks",
+      "dealer_account": "Workshop OCR records 695 Marks prepaid and approximately 200 Marks remaining to Damon credit.",
+      "status": "direct_primary_transaction_evidence_with_forwarder_identity_guard",
+      "linked_failure_feedback": {
+        "customer": "Prof. W. J. Sollas, Trinity College Dublin",
+        "event": "A preceding Dublin consignment reached Sollas about two weeks late because, according to the workshop letter, a mistake in the shipper's note caused it to be landed at Bristol.",
+        "damage": "Models numbered 239 and 356 are reported broken, probably as a consequence of the misrouting/handling sequence.",
+        "response": "Fresh examples were enclosed with Haddon's consignment as replacements.",
+        "guard": "The continuation OCR states that the workshop disclaimed compensation for transport damage in this context, but the addressee and exact contractual wording should be checked against the manuscript image before quotation."
+      },
+      "research_value": "This record ties insurance, Hamburg forwarding, invoice/accounting and a contemporaneous failure report together. It also shows repair/replacement knowledge moving across separate institutional orders: Sollas's damaged models were replaced inside Haddon's outgoing case."
+    },
     {
       "id": "MOLLER-MARLBOROUGH-IB266",
       "date": "1887-10-11 letter; case dispatched 1887-10-08 according to workshop text",
@@ -38,19 +58,35 @@
       "research_value": "The source shows Möller reused as a forwarding node only weeks after Marlborough and connects the Hamburg handoff to Liverpool's case mark, invoice and rolling Damon account."
     }
   ],
-  "network_observation": "Möller was not a one-off Liverpool name. The 1887 workshop record places the same Hamburg forwarder inside at least two Damon-mediated British consignments, with sequential case marks I.B. 266 and I.B. 268. This suggests a recurrent Hamburg forwarding channel linking Dresden production to British institutional customers. The missing I.B. 267 has not been identified and is not reconstructed from sequence alone.",
+  "network_observation": "The Hamburg forwarding route is now broader than a Liverpool microhistory. Exact Möller wording is secure for Marlborough and Liverpool; the earlier Haddon record probably points to the same firm but remains image-dependent. Across the cluster, the workshop records case identity, insurance, invoice, dealer credit and onward routing, while a Dublin misrouting to Bristol demonstrates how documentary error in the shipper's note could become delay, breakage and replacement. Missing case numbers such as I.B. 267 are not reconstructed from sequence alone.",
   "archive_targets": [
     {
       "repository": "Staats- und Universitätsbibliothek Hamburg",
       "resource": "Hamburger address books and commercial directories",
       "status": "identity-resolution target",
-      "research_question": "Identify the exact 1887 firm entry, business description, principals and street address for M. Otto W. Möller / M. O. W. Möller.",
+      "research_question": "Identify the exact 1887 firm entry, business description, principals and street address for M. Otto W. Möller / M. O. W. Möller and test whether the OCR 'M.Miller' in the Haddon record resolves to the same firm.",
       "locator": "https://adressbuecher.sub.uni-hamburg.de/"
     },
     {
       "repository": "Staatsarchiv Hamburg / Hamburg Chamber of Commerce records",
       "status": "corporate-record target after directory identification",
       "research_question": "Once the exact legal firm identity is established, search registration, partnership, forwarding, shipping-agent or commercial correspondence records for the 1880s."
+    },
+    {
+      "repository": "University College Dublin Archives",
+      "collection": "Records of the Royal College of Science for Ireland",
+      "reference": "IE UCDA RCSI",
+      "coverage": "1867–1929",
+      "status": "receiving-side institutional target",
+      "research_question": "Search 1887 college accounts, equipment/supply order books, correspondence and zoology records for Haddon, Damon, Blaschka, the insured case and receipt/condition evidence.",
+      "locator": "https://www.ucd.ie/archives/collections/universityarchives/items/collectionname235376en.html"
+    },
+    {
+      "repository": "Trinity College Dublin Manuscripts & Archives",
+      "collection": "Trinity College archives and departmental records",
+      "status": "receiving-side target for Sollas",
+      "research_question": "Search W. J. Sollas / geology-zoology departmental correspondence and financial or museum records for the misrouted Blaschka consignment, Bristol landing, damage to nos. 239 and 356, and replacements.",
+      "locator": "https://www.tcd.ie/library/research-collections/subject-strengths/archives.php"
     }
   ]
 }
