@@ -36,4 +36,11 @@
 
   const scopeTitle = document.querySelector('#bib-scope-title');
   if (scopeTitle) scopeTitle.textContent = '1883–2026 · twelfth expanded pass';
+
+  if (!document.querySelector('script[data-bib-pass13-loader]')) {
+    const pass13 = document.createElement('script');
+    pass13.src = 'bibliography-pass13.js?v=20260809-1';
+    pass13.dataset.bibPass13Loader = 'true';
+    document.head.appendChild(pass13);
+  }
 })();
