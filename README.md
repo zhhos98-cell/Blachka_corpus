@@ -77,13 +77,17 @@ The frozen 155 catalogue is now treated as a **read-only object/provenance corpu
 
 The Naples microscope-slide price catalogue in *Mittheilungen aus der Zoologischen Station zu Neapel*, Bd. II, is signed **Neapel, August 1880**. Its numbered list contains **423 historical catalogue offerings**. This is an offering count, not a surviving-slide total. The uploaded primary text has been parsed at row level; 148 prices are securely row-aligned and 275 remain unresolved because OCR detached or reordered price columns.
 
-The UK circulation crosswalk currently records eight physical/object circulation events, plus separate catalogue-reception and method-circulation evidence. It distinguishes finished-slide circulation, specimen circulation followed by local British remanufacture, and circulation of preparation methods.
+The bounded UK circulation crosswalk now records **eleven distinct object/specimen circulation or exhibition events**, plus separate catalogue-reception and method-circulation evidence. It distinguishes finished-slide circulation, preserved/biological specimen circulation, specimen circulation followed by local British remanufacture, and circulation of preparation methods. Generic source phrases such as `preserved specimens` and `Marine Objects` are retained without silently recoding them as slides.
 
 A reverse taxon/preparation pass produced the first item-level catalogue-to-Britain closure. The **9 June 1880 Royal Microscopical Society** record first notes `Zoological Station of Naples—12 slides`, sent through A. W. Waters and exhibited under microscopes (`R24204`, p. 733); a later record in the same issue lists all twelve physical slides (`R24207`, p. 736). Comparison with the 423-offering catalogue yields **nine exact/strong item matches** — nos. `42, 43, 67, 68, 71, 72, 86, 182, 186` — and three bounded matches: `5|6`, `43-49`, and `231|232`.
 
 The detailed mapping is `data/analysis/slide_155_corpus_expansion_v1/NAPLES_1880_RMS_12_SLIDES_ITEM_CROSSWALK_V1.csv`.
 
 This closes `catalogue offering -> named British physical slide shipment/exhibition` for nine items. It does **not** establish `catalogue -> Britain -> surviving St Andrews slide` identity. The surviving-object relation remains `NOT_ASSERTED` unless an independent object-level source closes it.
+
+A source correction was made during the bounded follow-up. The *Field* notice of **24 February 1883** describes Bell exhibiting a selection of Naples microscopical preparations at the **Zoological Society**. It is separate from the **14 March 1883 Royal Microscopical Society** meeting, where Bell explained **nineteen slides** received from Naples (`R27785`, p. 318; `R27787`, p. 320). Shared actor and provenance do not prove the same physical preparations appeared at both events.
+
+The same bounded pass added two further events: T. Bolton's **11 November 1884 Birmingham** exhibition of `preserved specimens from the zoological stations at Naples`, and C. Baker's **May 1886 RMS** exhibition of `Marine Objects from Zoological Station, Naples`. Neither is promoted to slide status without source evidence.
 
 A compact dated research log is maintained at `data/analysis/slide_155_corpus_expansion_v1/PROGRESS_LOG_2026-08-09.md`.
 
