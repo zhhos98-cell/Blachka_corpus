@@ -91,24 +91,45 @@ jobs:
           const scopeTitle = { textContent: '' };
           const noteParagraph = { textContent: '' };
           const noteTitle = { nextElementSibling: noteParagraph };
+          let noteRemoved = false;
+          const noteBlock = { remove() { noteRemoved = true; } };
           const fakeDocument = {
+            body: {},
             head: { appendChild() {} },
             querySelector(selector) {
               if (selector === '.bib-list') return list;
               if (selector === '#bib-scope-title') return scopeTitle;
               if (selector === '#bib-note-title') return noteTitle;
+              if (selector === '.bib-note') return noteRemoved ? null : noteBlock;
+              if (selector === '.bib-tools-status') return null;
               if (selector.startsWith('script[')) return null;
               return null;
             },
             createElement(tag) { return new FakeNode(tag); }
           };
 
+          class FakeMutationObserver {
+            constructor(callback) { this.callback = callback; }
+            observe() {}
+            disconnect() {}
+          }
+
           const passFiles = fs.readdirSync(bibDir)
             .filter(name => /^bibliography-pass\d+\.js$/.test(name))
             .sort((a, b) => Number(a.match(/\d+/)[0]) - Number(b.match(/\d+/)[0]));
           if (!passFiles.length) throw new Error('No bibliography pass files found');
+          if (passFiles[0] !== 'bibliography-pass6.js' || passFiles[passFiles.length - 1] !== 'bibliography-pass37.js') {
+            throw new Error(`Unexpected pass range: ${passFiles[0]} through ${passFiles[passFiles.length - 1]}`);
+          }
 
-          const context = { document: fakeDocument, console, window: {}, setTimeout, clearTimeout };
+          const context = {
+            document: fakeDocument,
+            console,
+            window: {},
+            MutationObserver: FakeMutationObserver,
+            setTimeout,
+            clearTimeout
+          };
           passFiles.forEach(file => {
             const code = fs.readFileSync(path.join(bibDir, file), 'utf8');
             vm.runInNewContext(code, context, { filename: file });
@@ -200,11 +221,12 @@ jobs:
           if (!listToNoteRe.test(html)) throw new Error('Could not replace bibliography list block');
           html = html.replace(listToNoteRe, replacement);
 
-          const frozenScope = `${minYear}–${maxYear} · v1.0 frozen bibliography · closure audit complete`;
-          html = html.replace(/(<h2 id="bib-scope-title">)[\s\S]*?(<\/h2>)/, `$1${frozenScope}$2`);
+          const publicScope = scopeTitle.textContent || 'Published literature and historical reception';
+          html = html.replace(/(<h2 id="bib-scope-title">)[\s\S]*?(<\/h2>)/, `$1${publicScope}$2`);
 
-          const finalNote = noteParagraph.textContent || 'This bibliography is frozen for the current research phase. Future additions should be evidence-led rather than another general sweep.';
-          html = html.replace(/(<h2 id="bib-note-title">[\s\S]*?<\/h2>\s*<p>)[\s\S]*?(<\/p>)/, `$1${finalNote}$2`);
+          if (noteRemoved) {
+            html = html.replace(/\s*<section class="bib-note"[\s\S]*?<\/section>/, '');
+          }
 
           html = html.replace(/\s*<script[^>]+src=["']bibliography-pass\d+\.js[^"']*["'][^>]*><\/script>/g, '');
           fs.writeFileSync(indexPath, html);
@@ -216,11 +238,13 @@ jobs:
             generated_utc: new Date().toISOString(),
             scope_year_start: minYear,
             scope_year_end: maxYear,
+            public_scope_label: publicScope,
             entry_count: records.length,
             provenance: {
               base_html_entries: baseArticles.length,
               historical_pass_files: passFiles,
-              flatten_rule: 'Exact normalized citation+year duplicates are collapsed; chronology and citation/link HTML are otherwise preserved.'
+              flatten_rule: 'Exact normalized citation+year duplicates are collapsed; chronology and citation/link HTML are otherwise preserved.',
+              public_interface_rule: 'Research-pass bookkeeping is retained in repository provenance, not displayed on the public bibliography page.'
             },
             entries: records.map(({ _order, ...r }) => r)
           };
@@ -241,6 +265,7 @@ jobs:
           report.push(`- Exact normalized citation+year duplicates removed: ${exactDuplicates.length}`);
           report.push(`- Frozen v1.0 entries: ${records.length}`);
           report.push(`- Chronological scope: ${minYear}–${maxYear}`);
+          report.push(`- Public scope label: ${publicScope}`);
           report.push(`- Entries lacking link blocks: ${missingLinks.length}`);
           report.push(`- Malformed link targets: ${malformedLinks.length}`);
           report.push(`- Suspicious year values: ${suspiciousYears.length}`);
@@ -265,6 +290,7 @@ jobs:
           report.push('- `bibliography/index.html` now contains the full static bibliography and no longer loads numbered pass scripts.');
           report.push('- `bibliography/bibliography-data.json` is the canonical machine-readable v1.0 source.');
           report.push('- Historical numbered pass scripts are retained under `bibliography/legacy/passes/` for provenance and debugging.');
+          report.push('- Public process bookkeeping remains suppressed, matching the pass-37 interface state.');
           report.push('- `bibliography-tools.js` and `bibliography-form.js` remain active and unchanged.');
           report.push('');
           report.push('## Freeze policy');
@@ -285,6 +311,8 @@ jobs:
             finalEntries: records.length,
             minYear,
             maxYear,
+            publicScope,
+            noteRemoved,
             missingLinks: missingLinks.length,
             malformedLinks: malformedLinks.length,
             crossYearDuplicates: crossYearDuplicates.length
