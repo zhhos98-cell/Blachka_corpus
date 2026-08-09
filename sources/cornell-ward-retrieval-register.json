@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Cornell Ward Procurement and Custody Retrieval Register",
+  "generated_date": "2026-08-10",
+  "scope": "Cornell archival units that can test the chronology of Ward-mediated acquisition and the later custody/restoration history of the Blaschka marine-invertebrate collection. Direct finding-aid evidence is separated from a published secondary claim about individual Ward letters.",
+  "records": [
+    {
+      "id": "CORNELL-COMSTOCK-WARD-1885",
+      "repository": "Cornell University Library, Division of Rare and Manuscript Collections",
+      "collection": "John Henry and Anna Botsford Comstock papers",
+      "collection_number": "21-23-25",
+      "reference": "Box 2, Folder 7",
+      "status": "direct_archival_locator_content_pending",
+      "items": [
+        "Henry Augustus Ward to John Henry Comstock, 3 October 1885",
+        "Henry Augustus Ward to John Henry Comstock, 8 October 1885",
+        "Henry Augustus Ward to John Henry Comstock, 23 October 1885"
+      ],
+      "finding_aid_evidence": "Cornell's official finding aid lists three Henry Augustus Ward letters in Box 2, Folder 7 and identifies Ward as a natural scientist.",
+      "secondary_content_claim": "William Warmus states that the 23 October 1885 Ward-to-Comstock letter refers to a shipment of glass models. He also reports a 16 October 1882 Ward-to-President Andrew D. White letter referring to 'beautiful glass models' of jellyfish/medusae and uses this to argue for an earlier Cornell acquisition layer.",
+      "guard": "The 1885 folder location is primary-catalogue evidence, but the glass-model content claim is secondary until the letter is inspected. The 1882 Ward-to-White letter has not yet been matched to a stable Cornell finding-aid reference in this pass and is therefore a retrieval lead, not a document-level archival citation.",
+      "research_questions": [
+        "Does the 23 October 1885 letter identify a shipment date, quantity, catalogue numbers, price, packing or payment?",
+        "Do the 3 and 8 October letters form part of the same order sequence?",
+        "Can the reported 16 October 1882 Ward-to-White letter be located in Andrew D. White presidential/personal correspondence and compared with the 1885 sequence?",
+        "Was Cornell's collection acquired in more than one Ward-mediated purchase rather than one 1885 event?"
+      ],
+      "locators": [
+        "https://rmc.library.cornell.edu/EAD/htmldocs/RMA00025.html",
+        "https://www.warmus.com/Blaschka%20Sea%20Creatures%20Cornell%20Warmus.htm"
+      ]
+    },
+    {
+      "id": "CORNELL-ENGST-PERMANENT-LOAN",
+      "repository": "Cornell University Library, Division of Rare and Manuscript Collections",
+      "collection": "Elaine D. Engst papers",
+      "collection_number": "13-6-4088",
+      "reference": "Box 1, Folder 66",
+      "dates": "1963, 1990",
+      "status": "direct_afterlife_archival_locator",
+      "title": "Correspondence on the Permanent Loan of the Blaschka Models to the Corning Museum of Glass",
+      "research_value": "A precise custody file for the Corning loan, useful for ownership language, object lists, loan conditions and later institutional memory.",
+      "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA04088.html"
+    },
+    {
+      "id": "CORNELL-BARLOW-WARE-RESTORATION",
+      "repository": "Cornell University Library, Division of Rare and Manuscript Collections",
+      "collection": "Barlow Ware papers",
+      "collection_number": "4-3-2587",
+      "reference": "Box 4, Folder 18",
+      "date": "2006",
+      "status": "direct_afterlife_archival_locator",
+      "title": "Blaschka Marine Invertebrate Collection project",
+      "content_note": "The finding aid describes a binder on the restoration project and images of the November 2006 unveiling celebration in Corson-Mudd Hall.",
+      "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA02587.html"
+    },
+    {
+      "id": "CORNELL-BARLOW-WARE-COLLECTIONS",
+      "repository": "Cornell University Library, Division of Rare and Manuscript Collections",
+      "collection": "Barlow Ware papers",
+      "collection_number": "4-3-2587",
+      "reference": "Box 4, Folder 19",
+      "dates": "1993–2006",
+      "status": "direct_afterlife_archival_locator",
+      "title": "Blaschka Collections",
+      "content_note": "Photographs, publications, clippings and other items concerning the Cornell and Harvard Blaschka collections and Ware-family support.",
+      "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA02587.html"
+    },
+    {
+      "id": "CORNELL-MANN-2003-EXHIBIT",
+      "repository": "Cornell University Library, Division of Rare and Manuscript Collections",
+      "collection": "Albert R. Mann Library exhibition materials",
+      "collection_number": "36-1-3601",
+      "reference": "Box 3",
+      "dates": "March–July 2003",
+      "status": "direct_afterlife_archival_locator",
+      "title": "Blaschka Glass Invertebrates exhibition materials",
+      "research_value": "Exhibition-making archive for the modern redisplay and interpretation of the collection.",
+      "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA03601.html"
+    }
+  ],
+  "research_observation": "Cornell is unusually useful because a possible nineteenth-century Ward procurement sequence and multiple twentieth-/twenty-first-century custody, loan, restoration and exhibition files survive in the same institutional archive. This permits a long object biography without treating later collection history as a substitute for the still-unresolved original purchase chronology."
+}
