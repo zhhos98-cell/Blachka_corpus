@@ -22,7 +22,7 @@ The practical corpus window is therefore treated as approximately **1844-1886**.
 
 `exact actor` and `distinctive surname` signals are routing evidence only. They are fixed-string/OCR presence tests, not verified historical hits. Counts can be inflated by repeated metadata, indexes, OCR duplicates, or repeated source units. Every positive signal still requires inspection of the actual text context before it becomes evidence.
 
-The same rule now applies to catalogue reverse matching: taxon, stage and preparation-language matches are candidates until a contextual source record establishes Naples provenance or another explicit relation.
+The same rule applies to catalogue reverse matching: taxon, stage and preparation-language matches are candidates until a contextual source record establishes Naples provenance or another explicit relation. Shared taxonomy alone never establishes physical-object identity.
 
 ## Queue structure
 
@@ -79,7 +79,11 @@ The parse manifest is `NAPLES_1880_CATALOGUE_423_PARSE_MANIFEST_V1.json`.
 
 ### British circulation crosswalk
 
-The first UK pass records eight physical/object circulation events, plus separate catalogue-reception and method-circulation layers. These include institutional dispatch, RMS/Quekett exhibition, Bolton and Birmingham provincial use, chick-embryo preparations explicitly prepared by Fritz Meyer, and Arthur Pennington's off-catalogue remanufacture of a Naples *Cerianthus solitarius* specimen into a British slide.
+The bounded UK pass now records **eleven distinct object/specimen circulation or exhibition events**, plus separate catalogue-reception and method-circulation layers. The event layer distinguishes finished slides, preserved/biological specimens, off-catalogue British remanufacture, and preparation-method circulation.
+
+A correction is important: the *Field* notice of 24 February 1883 reports a **Zoological Society** Bell exhibition of a selection of Naples preparations. It is separate from the **14 March 1883 RMS** event in which Bell explained **nineteen slides** received from Naples. Physical overlap is possible but remains `NOT_ASSERTED`.
+
+New bounded events include T. Bolton's **11 November 1884 Birmingham** exhibition of `preserved specimens from the zoological stations at Naples`, and C. Baker's **May 1886 RMS** `Marine Objects from Zoological Station, Naples`. Neither wording is silently converted into `slides`.
 
 The event layer is `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1.csv` with methodological notes in `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1_README.md`.
 
@@ -104,6 +108,10 @@ The exact row-level mapping is `NAPLES_1880_RMS_12_SLIDES_ITEM_CROSSWALK_V1.csv`
 
 This is the first defensible `catalogue offering → named British physical slide shipment/exhibition` closure in the Naples pass. It is **not** yet a three-point `catalogue → Britain → surviving St Andrews object` identity. `same_physical_object_as_st_andrews` remains `NOT_ASSERTED` throughout.
 
+### Bounded negative results matter
+
+Immediate-context checks around the 1881 Crisp RMS selection, the 1882 C. Baker RMS Conversazione display and the 14 March 1883 Bell nineteen-slide RMS event did **not** recover a detailed Naples item list. Their catalogue-item identity therefore remains unresolved. These are recorded as bounded negative checks rather than prompts for open-ended crawling.
+
 ## Working files
 
 - `OBJECT_TEXT_BRIDGES_V1.csv` — contextually verified object↔text bridges.
@@ -111,8 +119,8 @@ This is the first defensible `catalogue offering → named British physical slid
 - `P1_TARGETS_1_2_OUTCOME_2026-08-09.md` — Smith/Collins source pass.
 - `P1_TARGET_3_NAPLES_1881_OUTCOME_2026-08-09.md` — Naples source location, parse and follow-up.
 - `NAPLES_1880_CATALOGUE_423_PARSE_MANIFEST_V1.json` — 423-row parse manifest.
-- `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1.csv` — UK object-circulation event layer.
-- `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1_README.md` — crosswalk method and interpretation.
+- `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1.csv` — UK object/specimen-circulation event layer.
+- `NAPLES_1880_UK_CIRCULATION_CROSSWALK_V1_README.md` — crosswalk method, correction log and interpretation.
 - `NAPLES_1880_RMS_12_SLIDES_ITEM_CROSSWALK_V1.csv` — twelve-slide RMS shipment mapped to catalogue items.
 - `PROGRESS_LOG_2026-08-09.md` — compact dated research log.
 
@@ -125,7 +133,7 @@ For each queue row:
 3. record source ID, page/date, and the exact relationship asserted;
 4. distinguish `EXACT`, bounded family/programme correspondence, and unresolved identity;
 5. add genuinely new source units to the text corpus;
-6. never infer preparation from ownership/use;
+6. never infer preparation from ownership/use or slides from generic `objects/specimens`;
 7. never collapse serial endpoints, cabinet capacities, current aggregates, catalogue offerings, database rows or surviving slides into one quantity namespace.
 
 This layer is intended to replace open-ended periodical sweeping with object-generated and catalogue-generated event-specific corpus expansion.
