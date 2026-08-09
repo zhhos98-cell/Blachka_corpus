@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Reference-Material Ecology Register",
+  "generated_date": "2026-08-10",
+  "scope": "Source-controlled map of the heterogeneous reference materials used before and during production of Blaschka marine-invertebrate models. Published images, preserved specimens, living organisms and workshop drawings are treated as distinct evidential media that could overlap, correct or contradict one another.",
+  "methodological_guard": "A model need not derive from one reference source. Published illustrations, preserved specimens, living observations and drawings could be combined. Exact model-to-source attribution is asserted only when a drawing, catalogue number, archival statement or later source-based identification makes the connection explicit.",
+  "reference_modes": [
+    {
+      "id": "REF-PUBLISHED-ILLUSTRATION",
+      "mode": "published scientific illustration",
+      "material_properties": "portable, repeatable, already selected and flattened into two dimensions",
+      "direct_or_institutional_evidence": [
+        {
+          "source": "Corning Museum of Glass, Exploring the Archives: Sketchbooks, the Artist's Mind Externalized",
+          "evidence": "CMoG states that Leopold copied marine-invertebrate watercolours directly from Otto Friedrich Müller's 1778 Zoologia danica and that, even after the workshop obtained an aquarium, Leopold and Rudolf frequently based drawings on published illustrations by Müller and Philip Henry Gosse.",
+          "locator": "https://blog.cmog.org/2016/exploring-archives-sketchbooks-artists-mind-externalized"
+        },
+        {
+          "source": "Australian Museum archival reconstruction",
+          "evidence": "The Museum states that early replicas were based on illustrated publications by naturalists including Philip Henry Gosse, G. B. Sowerby and Ernst Haeckel; it also notes that some surviving models can be linked back to specific illustrations, for example in Gosse's Actinologia Britannica.",
+          "locator": "https://australian.museum/about/history/stories/identifying-the-museums-blaschka-glass-models/"
+        }
+      ],
+      "epistemic_risk": "A two-dimensional published image could preserve an illustrator's selection, symmetry or error. A glass model faithful to that image may therefore be faithful to a representation rather than to a living organism."
+    },
+    {
+      "id": "REF-PRESERVED-SPECIMEN",
+      "mode": "preserved marine specimen",
+      "material_properties": "three-dimensional and transportable but altered by preservation, fixation, storage and loss of colour/form",
+      "direct_or_institutional_evidence": [
+        {
+          "source": "Stazione Zoologica Anton Dohrn / reported 4 February 1877 Leopold Blaschka letter",
+          "evidence": "A letter examined in the Naples archive reportedly requests 41 preserved marine animals for use in constructing scientifically accurate glass replicas; later scholarship separately cites March and November 1877 Anton Dohrn archive documents.",
+          "locator": "https://www.sej.org/publications/between-lines/scientist-finds-natures-art-beneath-seas"
+        },
+        {
+          "source": "Corning Museum of Glass, Fragile Legacy exhibition description",
+          "evidence": "CMoG states that preparatory drawings drew on preserved invertebrates among several reference sources.",
+          "locator": "https://press.cmog.org/2016/blaschka-glass-marine-creatures-exhibition-opens-may-2016"
+        }
+      ],
+      "epistemic_risk": "Preservation solved transport but could distort soft-bodied anatomy and colour; the preserved specimen was therefore a materially altered reference, not a neutral substitute for life."
+    },
+    {
+      "id": "REF-LIVING-ORGANISM",
+      "mode": "living organism in aquarium or field observation",
+      "material_properties": "dynamic, colour-bearing and behaviourally informative but difficult to capture, transport and keep alive",
+      "direct_or_institutional_evidence": [
+        {
+          "source": "Rudolf Blaschka retrospective workshop history",
+          "evidence": "Rudolf states that seawater tanks in the Dresden house contained living animals sent from the Imperial Austrian Zoological Station at Trieste and from England/northern coasts and explicitly says that this improved the zoological-model work."
+        },
+        {
+          "source": "University of Vienna collection history",
+          "evidence": "From 1878 live marine animals from Trieste were sent to Dresden; several aquaria enabled close study. The same source records survival selection, temperature-sensitive dispatch and a reciprocal exchange with glass models.",
+          "locator": "https://bibliothek.univie.ac.at/sammlungen/objekt_des_monats/003878.html"
+        },
+        {
+          "source": "R. T. Smith workshop correspondence / project OCR",
+          "evidence": "Workshop drafts request living sea anemones from Weymouth and record both successful revival in Dresden aquaria and failures after transport stress or possible frost."
+        }
+      ],
+      "epistemic_risk": "Only organisms robust enough to be captured, packed, transported and revived could be observed after a long journey. The live reference arriving in Dresden was therefore already selected by logistics."
+    },
+    {
+      "id": "REF-WORKSHOP-DRAWING",
+      "mode": "workshop drawing / sketch / watercolor",
+      "material_properties": "a manipulable intermediate representation that could translate, combine and annotate information from other source media",
+      "direct_or_institutional_evidence": [
+        {
+          "source": "Corning Museum of Glass, Fragile Legacy",
+          "evidence": "CMoG describes pencil, watercolor, colored-pencil and ink studies with notes and marginalia as preparatory sketches for marine models and says the drawings derived from published illustrations, preserved invertebrates and living creatures.",
+          "locator": "https://press.cmog.org/2016/blaschka-glass-marine-creatures-exhibition-opens-may-2016"
+        },
+        {
+          "source": "University of Vienna collection history",
+          "evidence": "The Vienna collection page states that drawings and sketches, including those made by scientists, served as important model sources alongside living animals.",
+          "locator": "https://bibliothek.univie.ac.at/sammlungen/objekt_des_monats/003866.html"
+        }
+      ],
+      "research_value": "The drawing is not merely preparatory art: it is the workshop surface on which information from heterogeneous references could be selected, stabilized, enlarged, corrected or recombined before glassmaking."
+    }
+  ],
+  "explicit_cross_media_examples": [
+    {
+      "case": "Müller → Leopold watercolor → marine model design",
+      "status": "institutionally documented",
+      "evidence": "Corning identifies Leopold watercolors copied directly from Zoologia danica and describes such sketches as practice for eventual design drawings and models."
+    },
+    {
+      "case": "Gosse illustration → Australian Museum model identification",
+      "status": "later object/source crosswalk",
+      "evidence": "Australian Museum staff linked some surviving models to catalogue numbers and specific illustrations in Gosse's Actinologia Britannica."
+    },
+    {
+      "case": "Trieste live animal → Dresden aquarium → improved zoological modelling",
+      "status": "direct workshop statement plus institutional reconstruction",
+      "evidence": "Rudolf's account supplies the causal claim; University of Vienna reconstructs the reciprocal shipment relationship."
+    }
+  ],
+  "research_implication": "The central production problem was not choosing between 'life' and 'representation'. The workshop operated across a reference ecology in which images, preserved bodies, living organisms and drawings had different affordances and failure modes. Scientific accuracy was produced by navigating between those media, while logistics determined which kinds of reference could reach Dresden at all.",
+  "coding_axes": [
+    "reference mode",
+    "source author/institution",
+    "species/model number",
+    "two-dimensional vs three-dimensional",
+    "living vs preserved",
+    "transport required",
+    "known distortion/failure",
+    "drawing intermediary present",
+    "explicit model crosswalk",
+    "confidence"
+  ]
+}
