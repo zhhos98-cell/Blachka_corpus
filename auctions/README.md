@@ -8,6 +8,7 @@ This directory contains the public auction page and the structured market-proven
 - `auction-data.json` — canonical structured auction lot records recovered from public auction-house and aggregator archives.
 - `auction-provenance-crosslinks.json` — supplementary cross-source layer for inferred object/collector matches, prior institutional labels, dealer-market dispersals, date conflicts and other evidence that should not be flattened into canonical lot facts without an explicit bridge.
 - `auction-historical-market-seeds.json` — pre-2005 and market-adjacent worklist: sale notices, estate/dealer dispersals, deaccession-register neighbourhoods and institutional-label targets used to search beyond maker-name indexes without inflating the public-auction count.
+- `auction-newspaper-audit.json` — bounded reuse of the project's historical British Newspaper Archive query matrix, including maker-specific Blaschka/Blaschke searches, query-level completeness flags and explicit exclusion of institutional acquisitions from the auction layer.
 
 ## Admission rule
 
@@ -29,11 +30,14 @@ A cross-link pass tied the 2015 Grisebach `Serpula contortuplicata / L. No. 343`
 
 The historical-seed pass also adds two search strategies that should matter more than another generic maker-name sweep: identify the unnamed English public school and London dealer behind part of George Loudon's collection, and search Science Museum 1925–27 disposal **register-number neighbourhoods** because adjacent 1877 inventory numbers demonstrably split between later institutional and private-market pathways.
 
+The newspaper audit reuses an earlier 1850–1886 British Newspaper Archive matrix. Its one fully screened maker-specific row, `Blaschke presented models`, produced two retained events and both resolve to institutional acquisitions rather than public auction lots. A generic `glass models auction` query produced 123,990 displayed hits and was already classified as unusably noisy. This means future newspaper work should be provenance-seeded rather than another generic maker-name rerun.
+
 Detailed method and evidence are recorded in:
 
 - `../research/logs/2026-08-10-auction-deep-sweep-pass01.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass03-provenance-crosslinks.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass04-early-market-and-archive-seeds.md`
+- `../research/logs/2026-08-10-auction-deep-sweep-pass05-newspaper-matrix-reuse.md`
 
 ## Next search layer
 
