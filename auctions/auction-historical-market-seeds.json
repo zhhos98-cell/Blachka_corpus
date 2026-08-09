@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Historical and market-adjacent Blaschka sale seeds",
+  "purpose": "Persistent worklist for pre-2005 market discovery and provenance-led auction searching. These records do not change the canonical public-auction lot count unless a qualifying auction event is independently recovered.",
+  "canonical_auction_boundary": {
+    "earliest_canonical_public_auction_lot_recovered": 2005,
+    "earliest_market_adjacent_sale_notice_recovered": 1904,
+    "guard": "A private sale notice, dealer transaction, estate dispersal, museum transfer, or institutional purchase is not automatically a public auction lot. Explicit institutional acquisitions stay in the provenance/collection layer even when preceded by a market advertisement."
+  },
+  "seeds": [
+    {
+      "seed_id": "HIST-1904-MASON-300-GLASGOW-1909",
+      "priority": "very_high",
+      "seed_type": "secondary_market_sale_notice_with_known_institutional_resolution",
+      "canonical_auction_inclusion": false,
+      "person": "Philip Brookes Mason",
+      "estate_actor": "Mrs Mason / Mason estate",
+      "timeline": [
+        {
+          "date": "1903-11-06",
+          "event": "Philip Brookes Mason died; collection passed into estate custody."
+        },
+        {
+          "date": "1904-12",
+          "event": "Museums Journal published an announcement offering 300 Blaschka invertebrate models for sale by Mason's widow.",
+          "advertised_quantity": 300,
+          "publication": "Museums Journal, vols. 4-5, p. 215"
+        },
+        {
+          "date": "1909",
+          "event": "Mrs Mason sold Mason's Blaschka models to Glasgow Museums for GBP 275.",
+          "price_gbp": 275,
+          "exact_quantity_transferred": null,
+          "candidate_accession_group": "1909.66"
+        }
+      ],
+      "policy_reason_for_exclusion": "The known endpoint is an institutional purchase by Glasgow Museums, so the 1909 acquisition belongs in the collection/provenance layer. The 1904 notice is retained here only as a market-discovery seed.",
+      "important_quantity_guard": "The 300 figure is the December 1904 advertised quantity. It is not automatically the number received by Glasgow in 1909.",
+      "auction_context_guard": "Reliable sources establish that parts of Mason's wider estate were auctioned, including his library by Stevens on 17 May, 21 June and 12 July 1904 and his Lepidoptera collection at auction. No source recovered in this pass establishes that the 300 Blaschka models themselves were auctioned. Their documented Blaschka-specific event is a Museums Journal sale announcement followed by the Glasgow institutional purchase.",
+      "sources": [
+        {
+          "type": "museum_research_account",
+          "url": "https://blog.cmog.org/2016/4747-models-174-collections-25-countries-and-counting",
+          "supports": "1904 sale announcement of 300 models; 1909 Glasgow purchase for GBP 275"
+        },
+        {
+          "type": "natural_history_biographical_database",
+          "url": "https://coleoptera.org.uk/node/23291",
+          "supports": "Mason death context; wider collection dispersal; Stevens library-sale dates; Lepidoptera auction statement"
+        }
+      ],
+      "project_backend_crosscheck": "30_Blaschka_Glasgow_Museums_Philip_Brookes_Mason_300_Model_1909_275_Pound_Private_to_Municipal_1909_66_Numbered_Objects_2026-08-07.json",
+      "next_searches": [
+        "Recover a full scan of Museums Journal vols. 4-5 p. 215 and transcribe the complete December 1904 advertisement.",
+        "Locate Glasgow 1909 accession register and municipal purchase minutes for accession group 1909.66.",
+        "Search Stevens 1904 Mason sale catalogues and other estate auction catalogues only to determine whether any Blaschka models entered auction separately from the advertised 300-model group.",
+        "Search Mason estate correspondence for negotiations between the 1904 advertisement and 1909 Glasgow purchase."
+      ]
+    },
+    {
+      "seed_id": "HIST-LOUDON-DEALER-PUBLIC-SCHOOL",
+      "priority": "very_high",
+      "seed_type": "dealer_dispersal_from_unnamed_school",
+      "canonical_auction_inclusion": false,
+      "collector": "George Loudon",
+      "market_route": "unnamed English public school -> unnamed London dealer -> George Loudon",
+      "evidence": [
+        "Loudon states that he found Blaschka models for sale with a London dealer and that the dealer said they came from a public school quietly disposing of them.",
+        "His first-person Corning account describes several purchases through a London dealer, including slugs/snails, a sea anemone and a Portuguese man o' war."
+      ],
+      "why_high_value": "Identification of the school could recover a previously dispersed educational collection, historical inventory numbers, disposal records and potentially older public auction or dealer records.",
+      "sources": [
+        {
+          "type": "collector_interview",
+          "url": "https://www.masterpiecefair.com/blog-details/89/masterpiece-collecting-stories-george-loudon"
+        },
+        {
+          "type": "collector_first_person_museum_blog",
+          "url": "https://blog.cmog.org/2016/modern-day-cabinet-curiosity"
+        }
+      ],
+      "count_wording_guard": {
+        "2019_institutional_exhibition": "Intermediatheque stated that its 50-item Loudon exhibition included 14 Blaschka glass specimens.",
+        "2024_interview_wording": "A 2024 interview called the Portuguese man o' war and Serpulidae model Loudon's two glass Blaschka pieces / pride and joy.",
+        "interpretation": "Do not infer that Loudon disposed of twelve Blaschka models between 2019 and 2024. The 2024 wording is inconsistent with the documented 2019 exhibition count and may refer to highlighted favourites or a narrower category.",
+        "sources": [
+          "https://www.intermediatheque.jp/en/press/view/id/PR053/year/2019/module/default",
+          "https://auctiondaily.com/news/george-loudon-exhibits-his-cabinet-of-curiosities-in-venice/"
+        ]
+      },
+      "next_searches": [
+        "Identify the London dealer from Loudon exhibition catalogues, book acknowledgements, dealer credits, invoices or interviews.",
+        "Identify the English public school through disposal notices, school museum histories, educational collection catalogues and local auction records.",
+        "Crosswalk the school/dealer models to Loudon's 2019 fourteen-object Blaschka exhibition subset.",
+        "Search for any auction before or after the dealer transaction without assuming that the dealer obtained the objects at auction."
+      ]
+    },
+    {
+      "seed_id": "HIST-SCIENCE-MUSEUM-1925-27-DISPOSAL-NEIGHBOURHOOD",
+      "priority": "very_high",
+      "seed_type": "deaccession_register_neighbourhood_search",
+      "canonical_auction_inclusion": false,
+      "institution": "Science Museum / South Kensington science collections",
+      "event_window": "1925-1927",
+      "evidence": "UCL states that Science Museum Blaschka models were transferred to UCL and six other institutions during the 1925-1927 deaccession. Project backend reconstruction also shows adjacent 1877 register numbers later diverging into institutional and private-market pathways.",
+      "known_market_survivors": [
+        {
+          "science_museum_number": "1877-360",
+          "later_event": "Christie's London lot 47, 2019"
+        },
+        {
+          "science_museum_number": "1877-376",
+          "later_event": "Christie's London lot 48, 2019"
+        },
+        {
+          "science_museum_number": "1877-381",
+          "later_event": "Christie's London lot 46, 2019"
+        }
+      ],
+      "adjacent_institutional_survivors_from_project_backend": [
+        {
+          "science_museum_number": "1877.361",
+          "recipient": "Cardiff",
+          "recipient_number": "NMW 27.407.09"
+        },
+        {
+          "science_museum_number": "1877.380",
+          "recipient": "Cardiff",
+          "recipient_number": "NMW 27.407.07"
+        },
+        {
+          "science_museum_number": "1877.385",
+          "recipient": "Cardiff",
+          "recipient_number": "NMW 27.407.06"
+        }
+      ],
+      "search_method": "Use register-number neighbourhoods and disposal-register language as auction/provenance seeds. Search surviving numbers and adjacent ranges in old sale catalogues, dealer catalogues, institutional transfer lists and auction descriptions even where the maker is omitted.",
+      "sources": [
+        {
+          "type": "institutional_collection_history",
+          "url": "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/highlights/blaschka-glass-models-invertebrates"
+        },
+        {
+          "type": "auction_house_primary",
+          "url": "https://www.christies.com/en/lot/lot-6188457"
+        },
+        {
+          "type": "auction_house_primary",
+          "url": "https://www.christies.com/lot/lot-6188458"
+        },
+        {
+          "type": "auction_house_primary",
+          "url": "https://www.christies.com/en/lot/lot-6188456"
+        }
+      ],
+      "project_backend_crosscheck": "21_Blaschka_Science_Museum_Group_South_Kensington_1877_1888_Dispersal_1925_1927_Transaction_Hub_2026-08-07.json",
+      "next_searches": [
+        "Recover the Science Museum 1925-1927 disposal register or corporate-archive transfer list.",
+        "Identify all seven institutional recipients before classifying residual objects as possible market disposals.",
+        "Search exact Science Museum inventory numbers and neighbouring 1877 ranges in twentieth-century auction catalogues and dealer lists."
+      ]
+    },
+    {
+      "seed_id": "HIST-BERLIN-KREFELD-2025-REGISTER-CROSSWALK",
+      "priority": "very_high",
+      "seed_type": "institutional_label_to_market_crosswalk",
+      "canonical_auction_inclusion": false,
+      "related_canonical_lots": [
+        "AUC-2025-KREFELD-26",
+        "AUC-2025-KREFELD-27"
+      ],
+      "label": "Zoolog. Institut Universität, Berlin",
+      "institutional_context": "Museum für Naturkunde's archived historical-division page identifies OS001 as its model collection and exposes an inventory link titled 'Inventarliste OS001-02 Blaschka Glasmodelle'.",
+      "inventory_url": "https://website-archiv.museumfuernaturkunde.berlin/sites/default/files/221010_Inventarliste_OS001-02_Blaschka.pdf",
+      "access_status_2026_08_10": "inventory link resolved, PDF fetch failed in current research runtime",
+      "chronology_conflict": "Krefeld dates both lots around 1870, while MfN's institutional account states that all Berlin Blaschka models in its historical corpus were created between 1884 and 1889. Preserve both date layers until an object-level register crosswalk is recovered.",
+      "sources": [
+        "https://www.museumfuernaturkunde.berlin/en/research/object-collection-historical-divison",
+        "https://artsandculture.google.com/story/works-of-art-for-science-museum-fuer-naturkunde-berlin/MwVBFWmlRzwzPQ?hl=en",
+        "https://www.kunstunddesign-auktionen.de/de/auktionen/K-15/glasmodell-stachelpolyp-um-1870-137452/",
+        "https://www.gazette-drouot.com/lots/28984163-leopold-and-rudolf-blaschka----"
+      ],
+      "next_searches": [
+        "Obtain or index the OS001-02 inventory list.",
+        "Search old HU/MfN inventory numbers, taxa, display-case descriptions and movement records against Krefeld lots 26 and 27.",
+        "Look for deaccession, loss, transfer or postwar movement records explaining how Berlin-labelled models entered the market."
+      ]
+    }
+  ],
+  "bounded_catalogue_sweep_2026_08_10": {
+    "result": "No additional pre-2005 physical Blaschka public-auction lot was independently verified in this continuation pass.",
+    "catalogue_families_and_indexes_checked": [
+      "Google Books auction and sale-catalogue indexing",
+      "Internet Archive / HathiTrust-targeted web indexing",
+      "Stevens/Mason estate queries",
+      "natural-history auction and scientific-instrument auction queries",
+      "historical newspaper auction/sale queries in Papers Past and Trove-targeted web search",
+      "exact object-label searches including L. No. 330, L. No. 343 and Blaschka's Modelle"
+    ],
+    "negative_search_guard": "This does not establish absence. Print-only, subscriber-only, weak-OCR and unindexed catalogues remain the principal blind spot."
+  }
+}
