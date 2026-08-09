@@ -1,65 +1,14 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "title": "The Blaschka Object Network — M. Otto W. Möller Hamburg Forwarding Corridor",
   "generated_date": "2026-08-10",
   "actor": "M. Otto W. Möller / M. O. W. Möller, Hamburg",
   "role": "recurrent Hamburg forwarding intermediary in Robert Damon-mediated British and Irish orders",
-  "scope": "Workshop-side evidence now shows a repeated Hamburg forwarding corridor across 1886–1887, not a one-off Liverpool handoff. Exact Möller wording occurs in the Galway/Cardiff, Dublin Museum, Marlborough and Liverpool sequences. A separate Haddon record has OCR 'M.Miller' and is retained as a probable but unverified occurrence. The register preserves case marks, invoices, prepayments, insurance where secure, onward recipients and failure/replacement evidence.",
+  "scope": "Workshop-side evidence shows a repeated Hamburg forwarding corridor across 1887–1888, not a one-off Liverpool handoff. Exact Möller wording occurs in the Galway/Cardiff, Dublin Museum, Marlborough and Liverpool sequences. A separate Haddon record has OCR 'M.Miller' and is retained as a probable but unverified occurrence. The register preserves case marks, invoices, prepayments, insurance where secure, onward recipients and failure/replacement evidence.",
+  "chronology_guard": "Several OCR year readings in this block are corrupt. In particular the Galway/Cardiff letter is OCR-read '28 Jan. 1886', but that date conflicts with the transaction sequence: the December 1887 Liverpool letter carries Damon credit forward toward Galway and Cardiff, the next cases are I.B. 269 and 270, and the following Dublin Museum cases are 271–272 and later 275–276. The working chronology therefore places Galway/Cardiff and the Dublin Museum instalments in 1888. This is an explicit sequence-based reconstruction and should be verified against manuscript images before publication.",
   "name_guard": "OCR variants include N./M. Otto W. Moller, M. O'To W. Mollu, O.W. Müller and M. O. W. Moller. The recurrence of Hamburg, Damon, sequential case marks and the clean October 1887 form supports normalization to M. Otto W. Möller for the secure cluster. The Haddon record's shorter 'M.Miller' remains separately guarded. No modern Möller company is identified as successor without contemporary directory evidence.",
   "archive_survival": "dedicated_fonds_not_identified",
   "events": [
-    {
-      "id": "MOLLER-GALWAY-CARDIFF-1886",
-      "date": "1886-01-28 letter; cases sent two days earlier",
-      "dealer": "Robert Damon",
-      "forwarder": "M. Otto W. Möller, Hamburg (OCR variant N. Otto W. Moller)",
-      "shipments": [
-        {
-          "customer": "Natural History Museum / Queen's College Galway",
-          "recipient": "Prof. R. J. Anderson",
-          "case_mark": "I.B. 269",
-          "parenthetical_value": "290 Marks; function OCR-unclear and not labelled as insurance without image verification",
-          "invoice": "288 Marks"
-        },
-        {
-          "customer": "University Museum, Cardiff",
-          "recipient": "Prof. Parker",
-          "case_mark": "OCR reads L.B. 270",
-          "invoice": "197 Marks"
-        }
-      ],
-      "dealer_account": "The two invoices total 485 Marks, matching the 485 Marks prepaid, so the workshop describes the account as fully balanced.",
-      "status": "direct_primary_transaction_evidence",
-      "research_value": "One Damon letter sends two institutional orders through the same Hamburg forwarder while keeping their cases, recipients and invoice values distinct."
-    },
-    {
-      "id": "MOLLER-DUBLIN-MUSEUM-FIRST-1886",
-      "date": "early 1886 after the January Galway/Cardiff dispatch; exact letter date not secure in OCR",
-      "customer": "Dublin Museum",
-      "dealer": "Robert Damon",
-      "forwarder": "M. Otto W. Möller, Hamburg (OCR: M. O'To W. Mollu)",
-      "case_marks": ["L.B. 271", "L.B. 272"],
-      "shipment_layer": "first consignment for the Dublin Museum",
-      "invoice": "380 Marks",
-      "prepayment": "264 Marks",
-      "debit_after_invoice": "116 Marks",
-      "physical_note": "The workshop says the consignment contained many large objects and required two cases.",
-      "status": "direct_primary_transaction_evidence",
-      "research_value": "The first Dublin-Museum instalment shows how a large order was divided into case-level consignments and carried as a continuing dealer account."
-    },
-    {
-      "id": "MOLLER-DUBLIN-MUSEUM-LATER-1886",
-      "date": "28 July [1886 sequence]",
-      "customer": "Dublin Museum",
-      "dealer": "Robert Damon",
-      "forwarder": "M. Otto W. Möller, Hamburg (OCR variant O.W. Müller)",
-      "case_marks": ["OCR: U.B. 275", "OCR: 276; prefixes require image verification"],
-      "invoice": "900 Marks",
-      "prepayment": "900 Marks total",
-      "dealer_account": "Workshop states that the account is perfectly balanced.",
-      "status": "direct_primary_transaction_evidence_with_case_prefix_guard",
-      "research_value": "A later Dublin consignment reuses the Hamburg channel and closes a 900-Mark account, giving a second instalment-level view of the museum order."
-    },
     {
       "id": "MOLLER-HADDON-DUBLIN-262",
       "date": "17 June [1887?]; day/month legible in OCR, year corrupt and retained as uncertain",
@@ -108,15 +57,68 @@
       "payment_layer": "The dispatch letter acknowledges a £25 draft, OCR-converted by a Dresden bank to 506 Reichsmarks, and carries remaining Damon credit forward toward Galway and Cardiff orders.",
       "status": "direct_primary_transaction_evidence",
       "research_value": "The Liverpool record places Möller inside a rolling Damon account that linked multiple institutional orders rather than treating each shipment as financially closed."
+    },
+    {
+      "id": "MOLLER-GALWAY-CARDIFF-1888",
+      "date": "28 January 1888 working chronology; OCR year reads 1886 and requires manuscript verification",
+      "dealer": "Robert Damon",
+      "forwarder": "M. Otto W. Möller, Hamburg (OCR variant N. Otto W. Moller)",
+      "chronology_basis": "The December 1887 Liverpool account explicitly points forward to Galway/Cardiff; case numbers 269–270 immediately follow Liverpool I.B. 268.",
+      "shipments": [
+        {
+          "customer": "Natural History Museum / Queen's College Galway",
+          "recipient": "Prof. R. J. Anderson",
+          "case_mark": "I.B. 269",
+          "parenthetical_value": "290 Marks; function OCR-unclear and not labelled as insurance without image verification",
+          "invoice": "288 Marks"
+        },
+        {
+          "customer": "University Museum, Cardiff",
+          "recipient": "Prof. Parker",
+          "case_mark": "OCR reads L.B. 270",
+          "invoice": "197 Marks"
+        }
+      ],
+      "dealer_account": "The two invoices total 485 Marks, matching the 485 Marks prepaid, so the workshop describes the account as fully balanced.",
+      "status": "direct_primary_transaction_evidence_with_reconstructed_year",
+      "research_value": "One Damon letter sends two institutional orders through the same Hamburg forwarder while keeping their cases, recipients and invoice values distinct."
+    },
+    {
+      "id": "MOLLER-DUBLIN-MUSEUM-FIRST-1888",
+      "date": "early 1888 after the Galway/Cardiff dispatch; exact date requires image verification",
+      "customer": "Dublin Museum",
+      "dealer": "Robert Damon",
+      "forwarder": "M. Otto W. Möller, Hamburg (OCR: M. O'To W. Mollu)",
+      "case_marks": ["L.B. 271", "L.B. 272"],
+      "shipment_layer": "first consignment for the Dublin Museum",
+      "invoice": "380 Marks",
+      "prepayment": "264 Marks",
+      "debit_after_invoice": "116 Marks",
+      "physical_note": "The workshop says the consignment contained many large objects and required two cases.",
+      "status": "direct_primary_transaction_evidence_with_reconstructed_year",
+      "research_value": "The first Dublin-Museum instalment shows how a large order was divided into case-level consignments and carried as a continuing dealer account."
+    },
+    {
+      "id": "MOLLER-DUBLIN-MUSEUM-LATER-1888",
+      "date": "28 July 1888 working chronology; year reconstructed from case/account sequence",
+      "customer": "Dublin Museum",
+      "dealer": "Robert Damon",
+      "forwarder": "M. Otto W. Möller, Hamburg (OCR variant O.W. Müller)",
+      "case_marks": ["OCR: U.B. 275", "OCR: 276; prefixes require image verification"],
+      "invoice": "900 Marks",
+      "prepayment": "900 Marks total",
+      "dealer_account": "Workshop states that the account is perfectly balanced.",
+      "status": "direct_primary_transaction_evidence_with_reconstructed_year_and_case_prefix_guard",
+      "research_value": "A later Dublin consignment reuses the Hamburg channel and closes a 900-Mark account, giving a second instalment-level view of the museum order."
     }
   ],
-  "network_observation": "Möller now emerges as a recurrent logistics node across Ireland, Wales and England. In January 1886 the same Hamburg intermediary handled Galway and Cardiff simultaneously; Dublin Museum instalments followed through the same node; Marlborough and Liverpool appear again in 1887. The workshop repeatedly bound case marks, invoice values, prepaid dealer balances and forwarding instructions together. The Dublin/Sollas failure adds a counterexample in which a shipper-note error changed the port, delayed the shipment and broke models. Missing case numbers are not reconstructed from sequence alone.",
+  "network_observation": "Möller emerges as a recurrent logistics node across Ireland, Wales and England. Marlborough and Liverpool are securely dated in late 1887; the Liverpool rolling account then points directly into the Galway/Cardiff and Dublin Museum case sequence reconstructed as 1888. The workshop repeatedly bound case marks, invoice values, prepaid dealer balances and forwarding instructions together. The Dublin/Sollas failure adds a counterexample in which a shipper-note error changed the port, delayed the shipment and broke models. Missing case numbers are not reconstructed from sequence alone.",
   "receiving_side_archive_targets": [
     {
       "institution": "Queen's College Galway / present University of Galway",
       "repository": "University of Galway Archives",
       "target": "Bursar's Office records UGA COL/BU, 1870–1935, plus College/Natural History Museum records",
-      "research_question": "Search early 1886 accounts/correspondence for Anderson, Damon, Blaschka, I.B. 269, 288/290 Marks and receipt of the Natural History Museum models.",
+      "research_question": "Search January 1888 accounts/correspondence for Anderson, Damon, Blaschka, I.B. 269, 288/290 Marks and receipt of the Natural History Museum models.",
       "context": "University history identifies R. J. Anderson as Professor of Natural History from 1883 and credits his international contacts with major growth of the Natural History Museum.",
       "locator": "https://archivesearch.library.universityofgalway.ie/index.php/informationobject/browse?collection=11742&showAdvanced=1&sort=identifier&sortDir=asc&topLod=0"
     },
@@ -137,7 +139,7 @@
     {
       "institution": "University Museum, Cardiff",
       "repository": "Cardiff University Special Collections and Archives",
-      "status": "institution-level target; exact 1886 museum series not isolated in this pass",
+      "status": "institution-level target; exact 1888 museum series not isolated in this pass",
       "research_question": "Locate institutional or natural-history museum records around Prof. Parker, case L.B. 270 and the 197-Mark invoice before promoting this to a precise archival series."
     }
   ],
@@ -146,13 +148,13 @@
       "repository": "Staats- und Universitätsbibliothek Hamburg",
       "resource": "Hamburger address books and commercial directories",
       "status": "identity-resolution target",
-      "research_question": "Identify the exact 1886–1887 firm entry, business description, principals and street address for M. Otto W. Möller / M. O. W. Möller and test whether the OCR 'M.Miller' in the Haddon record resolves to the same firm.",
+      "research_question": "Identify the exact 1887–1888 firm entry, business description, principals and street address for M. Otto W. Möller / M. O. W. Möller and test whether the OCR 'M.Miller' in the Haddon record resolves to the same firm.",
       "locator": "https://adressbuecher.sub.uni-hamburg.de/"
     },
     {
       "repository": "Staatsarchiv Hamburg / Hamburg Chamber of Commerce records",
       "status": "corporate-record target after directory identification",
-      "research_question": "Once the legal firm identity is established, search registration, partnership, forwarding, shipping-agent or commercial correspondence records for the 1880s."
+      "research_question": "Once the legal firm identity is established, search registration, partnership, forwarding, shipping-agent or commercial correspondence records for the late 1880s."
     }
   ]
 }
