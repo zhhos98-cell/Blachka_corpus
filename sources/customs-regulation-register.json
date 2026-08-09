@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Customs and Border Regulation Archive Register",
+  "generated_date": "2026-08-10",
+  "scope": "Archival targets created when Blaschka shipments crossed fiscal, customs, quarantine and inspection regimes. The register separates German export/customs administration from U.S. customs and agricultural quarantine and uses the 1923 and 1929 Ware Collection shipments as source-rich test cases.",
+  "methodological_guard": "An administrative fonds is included because its jurisdiction and dates overlap a documented Blaschka regulatory encounter; no individual government file is claimed to concern Blaschka until a name, case mark, consignee, date or transaction is located. Workshop descriptions of officials and rules are preserved as primary evidence even when the corresponding state file has not survived or been identified.",
+  "cases": [
+    {
+      "id": "CUSTOMS-1923-GERMANY",
+      "date_range": "1923",
+      "shipment": "Ware Collection four cases R.B. 1–4",
+      "primary_problem": "German export permission, export-tax valuation and physical customs revision threatened to require unpacking of fragile models before export. Rudolf reorganised the encounter so that packing could be completed under customs observation and the cases sealed.",
+      "documented_actions": [
+        "application for export permission",
+        "claim for exemption or special treatment in export taxation",
+        "valuation in the context of postwar currency instability",
+        "physical customs inspection",
+        "sealed cases after supervised packing",
+        "rail dispatch from Dresden toward Bremen"
+      ],
+      "archive_targets": [
+        {
+          "repository": "Sächsisches Staatsarchiv, Hauptstaatsarchiv Dresden",
+          "reference": "11177 Oberfinanzpräsident Dresden",
+          "coverage": "1916–1949",
+          "jurisdiction_note": "The Landesfinanzamt/Oberfinanzpräsident Dresden supervised customs and excise through Abteilung II and was the direct superior authority for customs officials in its district after the 1919 Reich finance reorganisation.",
+          "status": "jurisdiction-level target",
+          "research_question": "Do files on export duties, customs exemptions, art/scientific teaching objects, Dresden customs offices or extraordinary export permissions contain the 1923 Blaschka case?",
+          "locator": "https://www.archiv.sachsen.de/archiv/bestand.jsp?bestandid=11177&oid=02.04.01.01&syg_id=139233"
+        },
+        {
+          "repository": "Sächsisches Staatsarchiv",
+          "reference": "Zollämter / Reichsfinanzverwaltung holdings",
+          "coverage": "from 1920",
+          "jurisdiction_note": "After the Reichsfinanzverwaltung reform, the Dresden district included Hauptzollamt Dresden-Altstadt and Dresden-Neustadt and subordinate customs offices responsible for collection and supervision of duties and excise.",
+          "status": "administrative-system target",
+          "guard": "The public holdings overview establishes the responsible customs structure but does not expose a Blaschka-specific Dresden customs file.",
+          "locator": "https://www.archiv.sachsen.de/archiv/bestand.jsp?oid=02.04.01.03"
+        },
+        {
+          "repository": "Sächsisches Staatsarchiv, Hauptstaatsarchiv Dresden",
+          "reference": "11168 Ministerium für Wirtschaft",
+          "coverage": "1783–1947; ministry active 1919–1935",
+          "jurisdiction_note": "The ministry's relevant subject fields included customs, commercial treaties, consulates, transport, industrial exhibitions, craft and commercial schools, banking and trade matters.",
+          "status": "policy-context target",
+          "research_question": "Use only if the 1923 dispute escalated beyond routine customs administration into economic-policy, export or consular correspondence.",
+          "locator": "https://www.archiv.sachsen.de/archiv/bestand.jsp?bestandid=11168&oid=02.03.07.01&syg_id=142800"
+        }
+      ]
+    },
+    {
+      "id": "CUSTOMS-1906-US",
+      "date_range": "1906-11",
+      "shipment": "incoming Blaschka glass-model boxes to Harvard",
+      "primary_problem": "A customary Boston customs-broker arrangement had become obsolete because consignee E. A. Snow was no longer in business, forcing Harvard to reassemble the clearance chain. The shipment was then opened at the University Museum under a custom-house inspector.",
+      "documented_actions": [
+        "consignment to custom-house broker",
+        "freight and charges paid from Ware appropriation",
+        "customs-supervised unpacking at Harvard"
+      ],
+      "archive_target": {
+        "repository": "National Archives at Boston",
+        "reference": "Record Group 36, Records of the U.S. Customs Service",
+        "status": "jurisdiction-and-record-type target",
+        "research_question": "Search Boston customs records for November 1906 entries, consignee E. A. Snow, Harvard/University Museum, glass models, Rudolf Blaschka, Bremen/North German Lloyd and inspection records.",
+        "locator": "https://www.archives.gov/boston/finding-aids/maritime.html"
+      }
+    },
+    {
+      "id": "CUSTOMS-1923-US",
+      "date_range": "1923-09 to 1923-10",
+      "shipment": "four cases R.B. 1–4",
+      "primary_problem": "The cases travelled from New York in bond to Boston and generated a surviving T. D. Downing Co. customs/freight invoice to Harvard.",
+      "documented_actions": [
+        "bonded movement",
+        "customs entry",
+        "estimated duties and charges",
+        "ocean freight and charges",
+        "broker handling"
+      ],
+      "direct_surviving_document": "T. D. Downing Co. invoice dated 20 October 1923, ref. L 16091, for four packages glassware marked RB 1/4.",
+      "archive_target": {
+        "repository": "National Archives at Boston",
+        "reference": "Record Group 36, Records of the U.S. Customs Service",
+        "status": "high-priority retrieval target",
+        "research_question": "Can Downing ref. L 16091 or RB 1/4 be cross-walked to customs entry, bond, manifest, warehouse, appraisement or clearance paperwork?",
+        "locator": "https://www.archives.gov/research/guide-fed-records/groups/036.html"
+      }
+    },
+    {
+      "id": "CUSTOMS-1929-PLANT-QUARANTINE",
+      "date_range": "1929",
+      "shipment": "four cases / twenty-seven framed boxes of botanical glass models",
+      "primary_problem": "Straw or hay used as packing material was reclassified as regulated plant material under U.S. quarantine practice. The border problem therefore attached to the protective packaging rather than the glass objects themselves.",
+      "documented_actions": [
+        "customs clearance",
+        "inspection of packing material",
+        "plant-quarantine classification",
+        "communication between Harvard and Blaschka about acceptable packing material"
+      ],
+      "archive_targets": [
+        {
+          "repository": "National Archives",
+          "reference": "Record Group 7, Records of the Bureau of Entomology and Plant Quarantine",
+          "coverage": "1863–1956; Bureau of Plant Quarantine and predecessors 1912–1952",
+          "relevant_series": [
+            "records of the Bureau of Plant Quarantine and its predecessors",
+            "Branch of Foreign Plant Quarantines",
+            "Plant Quarantine Division general correspondence and reports, 1927–1951",
+            "violation cases, 1926–1941"
+          ],
+          "status": "high-priority federal policy/enforcement target",
+          "research_question": "Search 1929 foreign-plant-quarantine correspondence and violation material for packing straw/hay, glass models, Harvard, Boston/New York ports, Germany, or case-specific correspondence.",
+          "locator": "https://www.archives.gov/research/guide-fed-records/groups/007.html"
+        },
+        {
+          "repository": "National Archives at Boston",
+          "reference": "Record Group 36, Records of the U.S. Customs Service",
+          "status": "port-level customs target",
+          "research_question": "Cross-walk any quarantine intervention with the customs entry and port handling of the four cases.",
+          "locator": "https://www.archives.gov/boston/finding-aids/maritime.html"
+        }
+      ]
+    }
+  ],
+  "comparative_observation": "Customs did not encounter a stable category called 'Blaschka model'. The same shipment could be valued as art/scientific teaching material for export taxation, treated as glassware by a customs broker, moved under bond as freight, inspected physically at a museum, and subjected to plant-quarantine rules because of its straw packing. Regulatory classification therefore changed with jurisdiction and with the material component being examined."
+}
