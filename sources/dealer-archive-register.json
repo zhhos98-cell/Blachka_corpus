@@ -1,283 +1,434 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "2.0.0",
   "title": "The Blaschka Object Network — Dealer Archive Register",
   "generated_date": "2026-08-10",
-  "scope": "Archival survival of the three documented commercial dealers/distributors of Blaschka marine-invertebrate models: Henry Augustus Ward / Ward's Natural Science Establishment, Robert Damon / Robert Ferris Damon, and Václav Frič. The register distinguishes intact business archives from dispersed dealer correspondence preserved by the Blaschka workshop, customers, museums and later manuscript collections.",
-  "methodological_guard": "A museum holding objects bought from a dealer is not treated as a dealer archive unless a named correspondence, acquisition, accounts or business-record series can be identified. 'No dedicated corporate fonds identified' means only that this project pass has not located one; it is not a claim that no such records survive anywhere. Dealer correspondence is kept distinct from Blaschka-specific transaction evidence until item content establishes the link.",
+  "phase_status": "broad_discovery_closed_evidence_led_updates_only",
+  "scope": "Archival survival of the three documented commercial dealer/distributor routes for Blaschka marine-invertebrate models: Henry Augustus Ward / Ward's Natural Science Establishment, Robert Damon / Robert Ferris Damon, and Václav Frič / V. Frič. The register separates workshop-side business evidence, dealer-side corporate survival, customer-side correspondence, museum acquisition files, and later business-context records.",
+  "methodological_guard": "A museum holding objects bought from a dealer is not a dealer archive unless a named correspondence, acquisition, accounts, catalogue, invoice, or business-record series can be identified. Dealer correspondence is not treated as Blaschka-specific until the document, finding aid, or an archival reconstruction explicitly establishes that link. 'No dedicated corporate fonds identified' records the result of this public-catalogue pass only and is not proof that records do not survive.",
   "dealer_count": 3,
   "status_vocabulary": {
-    "intact_business_archive": "A named personal/business archive survives as a collection of record or corporate archive.",
-    "distributed_business_correspondence": "No dedicated corporate fonds has been identified in this pass; business evidence survives across workshop and customer-side archives.",
-    "direct_blaschka_dealer_evidence": "The source explicitly concerns Blaschka models, their catalogue, order, payment, packing, shipment or agency arrangement.",
-    "receiving_side_dealer_file": "Customer or museum records explicitly document transactions with the dealer but require item-level checking for Blaschka content.",
-    "general_dealer_business_context": "Dealer correspondence demonstrating the firm's wider commercial practice; useful for network reconstruction but not evidence for a Blaschka transaction by itself.",
-    "post_blaschka_business_context": "Dealer correspondence after marine-model production ended; useful for the firm's wider commercial history but not evidence for a Blaschka transaction by itself."
+    "intact_business_archive": "A named personal and/or corporate archive survives as a collection of record.",
+    "distributed_business_correspondence": "No dedicated corporate fonds has been identified; the business must be reconstructed across workshop, customer, museum, and manuscript repositories.",
+    "direct_blaschka_dealer_evidence": "The source explicitly concerns Blaschka models, catalogue, order, payment, agency, packing, shipment, receipt, breakage, or resale.",
+    "receiving_side_dealer_file": "A customer or museum record explicitly documents transactions with the dealer but Blaschka content must be checked item by item.",
+    "general_dealer_business_context": "Same-period business correspondence documenting the dealer's commercial practice without establishing a Blaschka transaction.",
+    "post_production_business_context": "Dealer-business material after the marine-model production period; useful for institutional continuity and commercial practice only."
   },
+  "cross_dealer_comparators": [
+    {
+      "id": "DEALER-COMPARATOR-BAYHSTA-ZSS-113-124-127",
+      "repository": "Bayerisches Hauptstaatsarchiv",
+      "record_group": "Zoologische Staatssammlung acquisition files",
+      "signatures": [
+        {
+          "reference": "BayHStA, Zoologische Staatssammlung 113",
+          "dealer": "Václav Frič, Prague",
+          "title": "Erwerbungen beim Naturalienhändler V. Fric (Prag)",
+          "dates": "1864–1869, 1883"
+        },
+        {
+          "reference": "BayHStA, Zoologische Staatssammlung 124",
+          "dealer": "Robert Damon, Weymouth",
+          "title": "Erwerbungen beim Naturalienhändler Robert Damon (Weymouth)",
+          "dates": "1873"
+        },
+        {
+          "reference": "BayHStA, Zoologische Staatssammlung 127",
+          "dealer": "Henry Augustus Ward / Ward's Museum, Rochester",
+          "title": "Erwerbungen bei Ward's Museum of Mineralogy, Geology & Zoology (Rochester)",
+          "dates": "1875"
+        }
+      ],
+      "research_value": "The same receiving institution and administrative series preserves dealer-specific acquisition files for all three major Blaschka distribution routes. Even if individual files contain no glass models, they offer an unusually controlled comparison of nineteenth-century natural-history dealership, ordering, pricing, documentation, and museum receipt practices.",
+      "blaschka_guard": "The finding aid establishes dealer-specific acquisition files, not Blaschka content. Each file requires inspection before any Blaschka transaction is asserted.",
+      "locator": "https://www.gda.bayern.de/service/findmitteldatenbank/Kapitel/a1f20232-b9e9-410d-9ba2-131684437bc8"
+    }
+  ],
   "dealers": [
     {
       "id": "DEALER-WARD-ROCHESTER",
       "name": "Henry Augustus Ward / Ward's Natural Science Establishment",
       "base": "Rochester, New York, United States",
-      "blaschka_market": "North America",
+      "blaschka_market": "North America, with wider international museum trade",
       "archive_survival": "intact_business_archive",
-      "core_repository": "Rare Books, Special Collections, and Preservation, University of Rochester",
-      "core_collections": [
+      "core_archive": {
+        "repository": "Rare Books, Special Collections, and Preservation, University of Rochester",
+        "institutional_status": "University of Rochester identifies Henry Augustus Ward as a collection of record and preserves both personal/family papers and the corporate archive of Ward's Natural Science Establishment.",
+        "collections": [
+          {
+            "title": "Henry Augustus Ward Papers, 1840–1933",
+            "reference": "A.W23"
+          },
+          {
+            "title": "Ward's Natural Science Establishment Papers, 1876–1988",
+            "reference": "D.231"
+          }
+        ],
+        "locators": [
+          "https://www.library.rochester.edu/rbscp/special-collections-development-and-management",
+          "https://www.library.rochester.edu/rbscp/blog/searching-ward",
+          "https://wardproject.org/"
+        ]
+      },
+      "direct_blaschka_transaction_witnesses": [
         {
-          "title": "Henry Augustus Ward Papers, 1840-1933",
+          "repository": "Academy of Natural Sciences of Drexel University Archives",
+          "reference": "ANSP-2012-060",
+          "date": "1879-06-01",
+          "source": "Ward's Museum of Mineralogy, Geology and Zoology pamphlet",
+          "status": "direct_blaschka_dealer_evidence",
+          "evidence": "The archival item is catalogued under Leopold and Rudolf Blaschka and the related Blaschka collection finding aid identifies the pamphlet as advertising Ward's sale of Blaschka glass models.",
+          "locator": "https://archivalcollections.drexel.edu/agents/corporate_entities/72"
+        },
+        {
+          "repository": "Boston Society of Natural History / successor archive context",
+          "date": "1880",
+          "status": "direct_blaschka_dealer_evidence",
+          "evidence": "Project primary-source reconstruction records a Ward-mediated second invoice and delivery to the Boston Society of Natural History in summer 1880. The Blaschka commission and the dealer invoice are kept as distinct transaction layers."
+        },
+        {
+          "repository": "Auckland War Memorial Museum manuscript collections",
+          "references": [
+            "MUS-1996-6-2",
+            "MUS-1995-38"
+          ],
+          "dates": "1882–1887",
+          "status": "direct_blaschka_dealer_evidence",
+          "evidence": "Cheeseman–Ward correspondence documents a Blaschka catalogue request, exchange terms, sample request, seven supplied models, payment routing, and an unrealised larger order. Ward appears as catalogue distributor, supplier, exchange broker, and credit/payment intermediary."
+        },
+        {
+          "repository": "University of Rochester, Henry Augustus Ward Papers",
           "reference": "A.W23",
-          "status": "collection of record"
-        },
-        {
-          "title": "Ward's Natural Science Establishment Papers, 1876-1988",
-          "reference": "D.231",
-          "status": "corporate archive"
+          "dates": "1893-11-07 and 1893-11-18",
+          "status": "direct_blaschka_dealer_evidence",
+          "evidence": "Project reconstruction identifies Ward's offer to the Columbian Museum and the subsequent purchase contract for the broader World's Columbian Exposition collection, which included Blaschka marine models. The $95,000 figure belongs to the broader collection purchase and is not a Blaschka subset price."
         }
       ],
-      "research_value": [
-        "dealer correspondence",
-        "institutional customers",
-        "catalogues and model-number concordance",
-        "orders and sales",
-        "pricing and exchange",
-        "North-American distribution",
-        "dealer-side comparison with Dresden workshop accounts"
-      ],
-      "blaschka_specific_evidence": [
+      "receiving_side_and_distributed_witnesses": [
         {
-          "source": "Ruthanna Dyer, Learning through glass (2008)",
-          "status": "direct_blaschka_dealer_evidence",
-          "note": "Dyer explicitly states that historical records of purchase in the Henry Augustus Ward papers were examined together with Leopold Blaschka's business notebooks and correspondence to reconstruct North-American receipt and distribution."
+          "repository": "Smithsonian Institution Archives",
+          "collection": "SIA RU000189, Assistant Secretary in charge of the United States National Museum Records",
+          "reference": "Box 139, Folders 1–3",
+          "dates": "1879–1895",
+          "status": "receiving_side_dealer_file",
+          "evidence": "Henry Augustus Ward correspondence; the finding aid says the bulk concerns business transactions between the U.S. National Museum and Ward's Natural Science Establishment, especially taxidermic work and exchange of natural-history specimens.",
+          "blaschka_guard": "Blaschka content has not been isolated at item level.",
+          "locator": "https://siarchives.si.edu/collections/siris_arc_216765"
         },
         {
-          "source": "Ward's Natural Science Establishment catalogue, 1888",
-          "status": "direct_blaschka_dealer_evidence",
-          "note": "A copy is preserved in A.W23 and is a principal commercial concordance for the Blaschka marine-model series."
+          "repository": "Smithsonian Institution Archives",
+          "collection": "SIA RU000208, National Museum of Natural History Division of Mammals Records",
+          "reference": "Box 13, Folder 6",
+          "dates": "1884, 1887–1895, 1899–1900, 1902–1904",
+          "status": "receiving_side_dealer_file",
+          "evidence": "A long Ward's Natural Science Establishment correspondence file overlaps the late Blaschka marine-model period.",
+          "blaschka_guard": "No glass-model content is asserted without inspection.",
+          "locator": "https://siarchives.si.edu/collections/siris_arc_216776"
         },
-        {
-          "source": "Auckland Museum Cheeseman–Ward correspondence",
-          "status": "direct_blaschka_dealer_evidence",
-          "references": ["MUS-1996-6-2", "MUS-1995-38"],
-          "coverage": "1882-1887 Blaschka catalogue request, exchange terms, sample request, payment arrangement and deferred larger order",
-          "note": "This receiving-side sequence documents Ward functioning as catalogue distributor, exchange broker, credit/payment intermediary and supplier."
-        }
-      ],
-      "distributed_archival_witnesses": [
         {
           "repository": "Alexander Turnbull Library / National Library of New Zealand",
           "collection": "Haast family papers",
-          "reference": "MS-Papers-0037-146 and Micro-MS-0086",
-          "coverage": "Ward letters to Julius von Haast, 1875-1884; Haast letters to Ward, 1876-1884",
+          "references": [
+            "MS-Papers-0037-146",
+            "Micro-MS-0086"
+          ],
+          "dates": "1875–1884",
           "status": "receiving_side_dealer_file",
-          "blaschka_guard": "The sequence is a major Ward dealer/customer archive but Blaschka content must be established letter by letter.",
+          "evidence": "Ward letters to Julius von Haast survive together with a microfilm sequence of Haast letters to Ward, creating a two-direction dealer/customer corpus.",
+          "blaschka_guard": "The collection is a major same-period Ward route but individual letters require Blaschka-specific checking.",
           "locator": "https://natlib.govt.nz/records/22356344"
         },
         {
           "repository": "Cornell University Library, Division of Rare and Manuscript Collections",
           "collection": "John Henry and Anna Botsford Comstock papers",
           "reference": "Box 2, Folder 7",
-          "coverage": "three Henry Augustus Ward letters dated 3, 8 and 23 October 1885",
+          "dates": "1885-10-03, 1885-10-08, 1885-10-23",
           "status": "receiving_side_dealer_file",
-          "blaschka_guard": "Dealer/customer correspondence in the Blaschka era; item content must be checked before linking to glass models.",
-          "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA00025.html"
-        },
-        {
-          "repository": "Smithsonian Institution Archives",
-          "collection": "Assistant Secretary in charge of the United States National Museum records",
-          "reference": "SIA RU000189, Box 139, Folders 1-3",
-          "coverage": "Henry Augustus Ward correspondence, 1879-1895",
-          "status": "receiving_side_dealer_file",
-          "evidence": "The finding aid describes the bulk of the correspondence as business transactions, especially taxidermic work and exchanges of natural-history specimens, between the U.S. National Museum and Ward's Natural Science Establishment.",
-          "blaschka_guard": "Blaschka content has not yet been isolated within these folders.",
-          "locator": "https://siarchives.si.edu/collections/siris_arc_216765"
+          "evidence": "Three Henry Augustus Ward letters survive in a Cornell scientific correspondence archive during the active Blaschka trade.",
+          "blaschka_guard": "Content has not been verified as glass-model business."
         },
         {
           "repository": "Bayerisches Hauptstaatsarchiv",
           "collection": "Zoologische Staatssammlung",
           "reference": "BayHStA, Zoologische Staatssammlung 127",
-          "coverage": "Erwerbungen bei Ward's Museum of Mineralogy, Geology & Zoology (Rochester), 1875",
+          "date": "1875",
           "status": "receiving_side_dealer_file",
-          "blaschka_guard": "Dealer-network context; no Blaschka content is asserted without file inspection.",
+          "evidence": "Dealer-specific acquisition file for Ward's Museum of Mineralogy, Geology & Zoology, Rochester.",
+          "blaschka_guard": "No Blaschka content asserted without file inspection.",
           "locator": "https://www.gda.bayern.de/service/findmitteldatenbank/Kapitel/a1f20232-b9e9-410d-9ba2-131684437bc8"
         }
       ],
-      "locators": [
-        "https://www.library.rochester.edu/rbscp/special-collections-development-and-management",
-        "https://wardproject.org/"
+      "later_business_context": [
+        {
+          "repository": "American Museum of Natural History, Gottesman Research Library",
+          "collection": "Henry Augustus Ward papers relating to the Ward-Coonley collection of meteorites",
+          "reference": "Mss .W37",
+          "dates": "1896–1901",
+          "status": "post_production_business_context",
+          "locator": "https://data.library.amnh.org/archives/agents/corporate_entities/3097"
+        },
+        {
+          "repository": "American Museum of Natural History, Gottesman Research Library",
+          "collection": "Edmund Otis Hovey papers",
+          "references": [
+            "Mss .H682, Box 4, Folder 206",
+            "Mss .H682, Box 4, Folder 204"
+          ],
+          "dates": "1907, 1913–1914; 1918–1921",
+          "status": "post_production_business_context",
+          "evidence": "Later Ward's Natural Science Establishment correspondence includes specimen negotiations, postal receipts, estimates, account statements, invoices, and shipping-insurance certificates, making it useful for the firm's mature documentary practices.",
+          "locators": [
+            "https://data.library.amnh.org/archives/repositories/3/archival_objects/6934",
+            "https://data.library.amnh.org/archives/repositories/3/archival_objects/6932"
+          ]
+        }
       ],
-      "priority": "highest"
+      "critical_gaps": [
+        "The Rochester archive is clearly the central dealer corpus, but a public item-level list of Blaschka-specific order books, invoices, customer correspondence, and shipping records has not been recovered in this pass.",
+        "The next gain is document retrieval inside A.W23 and D.231, not further discovery of generic Ward references.",
+        "Customer-side Ward files must be cross-walked against workshop account/order dates before individual letters are promoted to Blaschka evidence."
+      ],
+      "research_priority": "highest_document_retrieval"
     },
     {
       "id": "DEALER-DAMON-WEYMOUTH",
       "name": "Robert Damon / Robert Ferris Damon",
       "base": "Weymouth, Dorset, United Kingdom",
-      "blaschka_market": "Great Britain and Ireland",
+      "blaschka_market": "Great Britain and Ireland, with additional international natural-history trade",
       "archive_survival": "distributed_business_correspondence",
       "dedicated_corporate_fonds_identified": false,
-      "workshop_side_counterpart": {
-        "repository": "Rakow Research Library, Corning Museum of Glass",
+      "workshop_side_core": {
+        "repository": "Juliette K. and Leonard S. Rakow Research Library, Corning Museum of Glass",
         "series": [
-          "Drafts of business letters, 1880-1885, Box 13 / Microfiche 15,211",
-          "Lieferungs-Buch 1883-1892, Box 11",
-          "Geschäfts Anmerkungen 1872-1887, Box 11 / Microfilm Roll 641b"
+          "Drafts of business letters, 1880–1885, Box 13 / Microfiche 15,211",
+          "Lieferungs-Buch, 1883–1892, Box 11",
+          "Geschäfts Anmerkungen, 1872–1887, Box 11 / Microfilm Roll 641b"
         ],
         "direct_blaschka_cluster": [
-          "September 1880 draft granting Damon sole agency for Great Britain and Ireland",
-          "10 February 1883 draft concerning Henry Woodward's British Museum catalogue/order enquiry",
+          "September 1880 draft establishing Damon as the principal/sole agency route for Great Britain and Ireland in the relevant correspondence context",
+          "10 February 1883 draft concerning Henry Woodward and a British Museum catalogue/order enquiry",
           "28 October 1883 draft referring to British Museum and Marlborough College orders",
-          "2-13 November 1883 pencil draft requesting additional packing money",
-          "28 November 1883 dispatch/account letter and Lieferungs-Buch model list",
+          "November 1883 request for additional packing money",
+          "28 November 1883 dispatch/account material and Lieferungs-Buch model list",
           "23 December 1883 damage/breakage correspondence",
-          "28 November and 26 December 1884 Damon drafts"
+          "1884 Damon business-letter drafts",
+          "1886–1887 Jeypore and Liverpool order/finance/route correspondence"
         ],
-        "research_value": "Agency terms, prepayment, mark-up freedom, prices, packing, insurance, breakage, institutional orders and disputes."
+        "research_value": "Agency rules, prepayment, mark-up freedom, order aggregation, prices, packing, insurance, breakage, institutional customers, and routing decisions."
       },
-      "distributed_archival_witnesses": [
+      "direct_blaschka_transaction_witnesses": [
+        {
+          "node": "British Museum / Natural History Museum London",
+          "dates": "1883",
+          "status": "direct_blaschka_dealer_evidence",
+          "evidence": "Published archival reconstruction based on Rakow business drafts and delivery records links Damon to the British Museum order, packing charges, insurance, dispatch, and breakage complaint. The publication is a guide to the primary archive rather than a substitute for the original documents."
+        },
+        {
+          "node": "Jeypore Museum / Albert Hall Museum, Jaipur",
+          "dates": "1886–1887",
+          "status": "direct_blaschka_dealer_evidence",
+          "evidence": "Project workshop OCR records Damon arranging or advancing payment for an amended Jeypore Museum order. The models were stated at 640 Marks before the full packing/freight account; two large cases were expected and the full total was expected above 700 Marks. Later correspondence asks Damon about routing; final dispatch used packages LB 285–286 by rail to Trieste, Austro-Hungarian Lloyd to Bombay, with approximately 698 Marks prepaid and an approximately 61.5-Mark balance.",
+          "guard": "OCR quality is uneven; figures are preserved as documentary layers and no corrupt apparent total is converted into an object count."
+        },
+        {
+          "node": "Liverpool Museum / Free Public Museum of Liverpool",
+          "dates": "1887",
+          "status": "direct_blaschka_dealer_evidence",
+          "evidence": "Workshop correspondence places the Liverpool commission in the Damon agency sequence. Project reconstruction separates a 247-Mark models-only figure, an approximately 50-Mark packing estimate, a later dispatch-letter invoice OCR of 268 Marks, and freight case mark I.B. 268 routed through M. O. W. Möller in Hamburg.",
+          "guard": "The father/son identity behind every 'Mr Damon' letter is not assigned without image-level verification; the 21-Mark arithmetic difference is not labelled as a historical charge."
+        }
+      ],
+      "receiving_side_and_distributed_witnesses": [
         {
           "repository": "McGill University Archives",
           "collection": "Dawson-Harrington Families Fonds",
           "reference": "MG1022, John William Dawson correspondence",
-          "coverage": "ten letters created by Robert Damon, 1877-1881, plus one letter to Damon",
-          "creator_dates": [
-            "13 February 1879",
-            "15 January 1879",
-            "21 April 1881",
-            "21 March 1881",
-            "22 February 1881",
-            "25 October 1877",
-            "26 April 1878",
-            "3 March 1879",
-            "5 January 1881",
-            "9 April 1879"
-          ],
-          "recipient_date": "7 February 1881",
-          "verified_examples": [
-            "CA MUA MG1022-2-1-135-0011 (13 February 1879)",
-            "CA MUA MG1022-2-1-117-0019 (25 October 1877)",
-            "CA MUA MG1022-2-1-136-0004 (3 March 1879)"
-          ],
-          "catalogue_correction_note": "An earlier project pass mis-associated CA MUA MG1022-2-1-109-0007 with Damon. McGill's catalogue identifies that item as a 13 February 1877 letter from C. A. White. The Damon reference for 13 February 1879 is MG1022-2-1-135-0011; the Damon item on 3 March 1879 is MG1022-2-1-136-0004.",
+          "dates": "1877–1881",
           "status": "receiving_side_dealer_file",
-          "blaschka_guard": "Dealer correspondence in the Blaschka era; Blaschka content must be verified item by item.",
+          "evidence": "The Robert Damon authority record identifies ten letters created by Damon and one letter to Damon. Creator dates are 25 October 1877; 26 April 1878; 15 January, 13 February, 3 March, and 9 April 1879; and 5 January, 22 February, 21 March, and 21 April 1881. The recipient-side letter is dated 7 February 1881.",
+          "verified_item_examples": [
+            "CA MUA MG1022-2-1-117-0019 — Robert Damon to John William Dawson, 25 October 1877",
+            "CA MUA MG1022-2-1-135-0011 — Robert Damon to John William Dawson, 13 February 1879",
+            "CA MUA MG1022-2-1-136-0004 — Robert Damon to John William Dawson, 3 March 1879"
+          ],
+          "correction_guard": "CA MUA MG1022-2-1-109-0007, dated 13 February 1877, is a C. A. White letter and must not be cited as Damon.",
+          "blaschka_guard": "Searchable catalogue metadata does not expose the letter texts sufficiently to claim Blaschka content.",
           "locator": "https://archivalcollections.library.mcgill.ca/index.php/damon-robert"
         },
         {
           "repository": "Natural History Museum Archives, London",
           "collection": "Zoology and Palaeontology departmental correspondence and acquisition records",
-          "reference": "DF/ZOO/200; DF/PAL/100; DF/PAL/105",
-          "coverage": "Robert Damon and Robert Ferris Damon transactions across the nineteenth century",
-          "examples": [
-            "DF/ZOO/200/19/70 — Damon, Robert",
-            "DF/ZOO/200/20/106-108 — Damon, Robert",
-            "DF/PAL/100/20/11 — letter from Robert F. Damon, Weymouth, 1884",
-            "DF/PAL/100/9/21 — Damon, R., Weymouth, 1861"
+          "references": [
+            "DF/ZOO/200/19/70",
+            "DF/ZOO/200/20/106-108",
+            "DF/PAL/100/20/11 — Robert F. Damon, Weymouth, 1884",
+            "DF/PAL/100/9/21 — Damon, Weymouth, 1861",
+            "DF/PAL/105/3/14",
+            "DF/PAL/105/1/20",
+            "DF/PAL/105/2/34",
+            "DF/PAL/105/1/21"
           ],
           "status": "receiving_side_dealer_file",
-          "blaschka_guard": "These files document the museum's commercial relationship with Damon; individual records require inspection before being assigned to Blaschka orders.",
+          "evidence": "The NHM Damon authority record exposes a long purchasing and correspondence relationship with Robert Damon across zoology and palaeontology.",
+          "blaschka_guard": "Only records independently tied to Blaschka orders should be promoted to direct Blaschka evidence.",
           "locator": "https://www.nhm.ac.uk/CalmView/Record.aspx?id=PX32&src=CalmView.Persons"
         },
         {
           "repository": "Bayerisches Hauptstaatsarchiv",
           "collection": "Zoologische Staatssammlung",
           "reference": "BayHStA, Zoologische Staatssammlung 124",
-          "coverage": "Erwerbungen beim Naturalienhändler Robert Damon (Weymouth), 1873",
+          "date": "1873",
           "status": "receiving_side_dealer_file",
-          "blaschka_guard": "Dealer-network context; no Blaschka model content is asserted without file inspection.",
+          "evidence": "Dealer-specific acquisition file for Robert Damon of Weymouth.",
+          "blaschka_guard": "No Blaschka content asserted without inspection.",
           "locator": "https://www.gda.bayern.de/service/findmitteldatenbank/Kapitel/a1f20232-b9e9-410d-9ba2-131684437bc8"
         },
         {
           "repository": "Morgan Library & Museum",
           "collection": "John Ruskin letters to Robert Damon",
-          "reference": "MA 1406.1-18",
-          "coverage": "13 autograph letters, 1884-1885, concerning minerals and additions to Ruskin's collection",
+          "reference": "MA 1406.1–18",
+          "dates": "1884–1885",
           "status": "general_dealer_business_context",
-          "blaschka_guard": "Not Blaschka correspondence; useful for reconstructing Damon's active mid-1880s dealer practice and customer relationships.",
+          "evidence": "Thirteen autograph letters concern minerals and Ruskin's dealings with Damon, providing same-period evidence of Damon's customer practice outside Blaschka trade.",
           "locator": "https://www.themorgan.org/literary-historical/191319"
         },
         {
           "repository": "Museum of New Zealand Te Papa Tongarewa Archives",
           "collection": "Unregistered Inwards Correspondence",
           "reference": "MU000147/007/0017",
-          "coverage": "Robert Damon letter, 1 March 1889, concerning dispersal of the Godfrey Collection",
+          "date": "1889-03-01",
           "status": "general_dealer_business_context",
-          "blaschka_guard": "Late dealer-business context; not a Blaschka transaction by itself.",
+          "evidence": "Robert Damon letter concerning dispersal of the Godfrey Collection.",
           "locator": "https://collections.tepapa.govt.nz/object/293561"
         }
       ],
       "critical_gaps": [
-        "A dedicated Damon firm archive, order book or invoice series has not been located in this pass.",
-        "The dealer's incoming side of the Blaschka agency correspondence remains substantially less visible than the workshop's outgoing drafts.",
-        "Customer-side Damon files need item-level inspection for Blaschka catalogue lists, prices, packing, remittances and damage reports."
+        "No dedicated Damon firm archive, invoice series, order book, or incoming-correspondence fonds surfaced in this broad public-catalogue sweep.",
+        "The workshop's outgoing business drafts are much more visible than the dealer's incoming side, producing a structural asymmetry in the surviving archive.",
+        "The McGill 10+1 sequence is now bibliographically controlled, but its item texts still need direct inspection for catalogues, prices, glass models, remittances, or order references.",
+        "NHM Damon files need item-level inspection against the Rakow dates to distinguish general specimen trade from Blaschka agency business."
       ],
-      "priority": "highest"
+      "research_priority": "highest_item_level_retrieval"
     },
     {
       "id": "DEALER-FRIC-PRAGUE",
       "name": "Václav Frič / V. Frič natural-history and teaching-aids business",
       "base": "Prague, Bohemia / Austria-Hungary",
-      "blaschka_market": "Austria-Hungary; additional international resale routes",
+      "blaschka_market": "Austria-Hungary with additional international resale routes",
       "archive_survival": "distributed_business_correspondence",
       "dedicated_corporate_fonds_identified": false,
-      "business_history_guard": "The firm was founded in 1861, continued under Jaromír Frič after Václav Frič, and ended in 1959. The National Museum in Prague received remaining natural-history stock; this transfer of stock is not treated as proof that a complete company paper archive was transferred.",
-      "workshop_side_counterpart": {
-        "repository": "Rakow Research Library, Corning Museum of Glass",
-        "series": "Blaschka business notebooks and letter drafts",
-        "notable_item": "8 November 1884 draft to Václav Frič concerning a commercial shipment and four glass models sent as a gift to the Prague museum",
-        "research_value": "Reseller relations, shipment composition, gifts, catalogue commerce and workshop-side dealer correspondence."
+      "business_history_guard": "The firm continued under Jaromír Frič after Václav and ended in 1959. The National Museum in Prague received remaining natural-history stock. Transfer of stock is not proof that the company's complete paper archive was transferred.",
+      "workshop_side_core": {
+        "repository": "Juliette K. and Leonard S. Rakow Research Library, Corning Museum of Glass",
+        "series": "Blaschka business notebooks, accounts, and letter drafts",
+        "direct_blaschka_anchor": "8 November 1884 draft to Václav Frič concerning a commercial shipment and four glass models sent as a gift to the Prague museum.",
+        "research_value": "Reseller relations, shipment composition, gifts, catalogue commerce, and workshop-side dealer correspondence."
       },
-      "distributed_archival_witnesses": [
+      "direct_blaschka_transaction_witnesses": [
         {
           "repository": "Australian Museum Archives",
-          "collection": "Trustee Minutes, Outward Letter Books and purchase-of-specimens correspondence",
-          "coverage": "1879-1883 procurement through Frič",
+          "records": "Trustee Minutes, Outward Letter Books, purchase-of-specimens correspondence, and historical registers",
+          "dates": "1879–1883",
           "status": "direct_blaschka_dealer_evidence",
-          "evidence": "The museum's archival reconstruction found the 1879 instruction to Frič to obtain Blaschka glass invertebrates and later correspondence about three mixed consignments.",
-          "locator": "https://australian.museum/about/history/stories/researching-the-blaschka-glass-models/"
+          "evidence": "The museum's archival reconstruction identifies the instruction to Frič to obtain Blaschka glass invertebrates and later correspondence concerning three mixed consignments. Project backend preserves the route as Blaschka workshop → Frič → Australian Museum."
         },
         {
-          "repository": "National Museum Archives, Prague",
-          "collection": "National Museum registry and Antonín Frič personal fonds",
-          "coverage": "institutional records of the National Museum plus Antonín Frič's written estate",
+          "repository": "National Museum, Prague",
+          "records": "Museum accession/registry records, read against Rakow workshop correspondence",
+          "date": "1884",
+          "status": "direct_blaschka_dealer_evidence",
+          "evidence": "The 8 November 1884 workshop draft is joined to a museum accession record for four Blaschka models delivered through Frič; project reconstruction keeps model catalogue numbers 36, 224, 235, and 553 distinct from museum accession numbers."
+        },
+        {
+          "repository": "Stift Kremsmünster / Sternwarte natural-history collection records",
+          "dates": "before/circa 1884",
+          "status": "direct_blaschka_dealer_evidence",
+          "evidence": "Published and project provenance reconstruction gives the chain Blaschka workshop → Václav Frič → Karl Eggerth senior → Stift Kremsmünster. Exact Frič invoice, quantity, price, and object list remain open."
+        }
+      ],
+      "receiving_side_and_distributed_witnesses": [
+        {
+          "repository": "Museum für Naturkunde Berlin Archive",
+          "collection": "Document collection / Schriftgutbestand",
+          "holding_identifier": "S",
           "status": "receiving_side_dealer_file",
-          "evidence": "Published reconstruction joins the 8 November 1884 workshop draft to a National Museum accession record for Frič's delivery of four Blaschka models. The archive also preserves the personal fonds of Antonín Frič, a major museum-side natural-history actor.",
-          "blaschka_guard": "Antonín Frič's fonds is distinct from the commercial papers of Václav Frič's firm; no complete V. Frič corporate archive is inferred.",
-          "locator": "https://publikace.nm.cz/en/historical-museum/national-museum-archives"
+          "evidence": "The museum's official archive description explicitly lists correspondence with Václav Frič's natural-history trade in Prague. The same written-records collection includes correspondence, catalogues, object lists, administrative files, and collection documentation.",
+          "access_constraint": "The written records collection is inaccessible from 1 July 2026 and is expected to remain inaccessible until the fourth quarter of 2027; enquiries can still be directed to the archive.",
+          "locators": [
+            "https://www.museumfuernaturkunde.berlin/en/research/collection/archive/document-collection/",
+            "https://www.museumfuernaturkunde.berlin/en/research/records-collection"
+          ]
+        },
+        {
+          "repository": "Stadtarchiv Hildesheim",
+          "collection": "Bestand 741",
+          "reference": "StadtA HI, Best. 741, Nr. 301",
+          "date": "1880",
+          "status": "receiving_side_dealer_file",
+          "title": "Zoologie: Erwerbungen von der Lehrmittel- und Naturalienhandlung V. Fric in Prag",
+          "blaschka_guard": "Dealer-specific acquisition file; Blaschka content unknown until inspection.",
+          "locator": "https://www.arcinsys.niedersachsen.de/arcinsys/list.action?nodeid=g312285&page=1"
         },
         {
           "repository": "Bayerisches Hauptstaatsarchiv",
-          "collection": "Zoologische Staatssammlung acquisition files",
+          "collection": "Zoologische Staatssammlung",
           "reference": "BayHStA, Zoologische Staatssammlung 113",
-          "coverage": "Erwerbungen beim Naturalienhändler V. Fric (Prag), 1864-1869 and 1883",
+          "dates": "1864–1869, 1883",
           "status": "receiving_side_dealer_file",
-          "blaschka_guard": "The finding aid proves a dedicated Frič acquisition file at the receiving institution, not that it contains Blaschka models.",
+          "title": "Erwerbungen beim Naturalienhändler V. Fric (Prag)",
+          "blaschka_guard": "The file is a dealer-specific acquisition record, not direct proof of Blaschka content.",
           "locator": "https://www.gda.bayern.de/service/findmitteldatenbank/Kapitel/a1f20232-b9e9-410d-9ba2-131684437bc8"
         },
         {
           "repository": "Archivo del Museo Nacional de Ciencias Naturales, CSIC, Madrid",
           "collection": "Personal Científico Ignacio Bolívar y Urrutia — Correspondencia. Entidades",
           "reference": "ACN0364/007",
-          "coverage": "Václav Frič letter from Prague to Ignacio Bolívar, 18 July 1885, offering insects for purchase",
+          "date": "1885-07-18",
           "status": "general_dealer_business_context",
-          "evidence": "The fully catalogued manuscript explicitly identifies V. Frič. Lehrmittel und Naturalien-Handlung and is digitally available through Simurg.",
-          "blaschka_guard": "Not a Blaschka transaction; direct evidence of Frič's international dealer correspondence in the same commercial period.",
+          "evidence": "Digitised original letter from Václav Frič in Prague to Ignacio Bolívar offering insects for purchase; the catalogue explicitly identifies V. Fric. Lehrmittel und Naturalien-Handlung.",
+          "blaschka_guard": "This is same-period dealer-business evidence, not a Blaschka transaction.",
           "locator": "https://simurg.csic.es/view/CSICAR000061499/carta-de-vaclav-fric-a-ignacio-bolivar-sobre-oferta-de-compra-de-insectos"
         },
+        {
+          "repository": "National Museum Archives, Prague",
+          "collection": "Antonín Frič personal fonds and National Museum institutional records",
+          "status": "receiving_side_dealer_file",
+          "evidence": "The archive preserves Antonín Frič's written estate and institutional museum records relevant to the museum-side dealer network.",
+          "identity_guard": "Antonín Frič's personal fonds is distinct from the commercial papers of Václav Frič's firm; the two must not be conflated."
+        }
+      ],
+      "later_business_context": [
         {
           "repository": "Natural History Museum Archives, London",
           "collection": "Crustacea Section Correspondence and Papers",
           "reference": "DF/ZOO/252/1/2/52",
-          "coverage": "three items from V. Fric, Prague, 1905",
-          "status": "post_blaschka_business_context",
-          "blaschka_guard": "Post-production business context only unless item content establishes an earlier collection link.",
-          "locator": "https://www.nhm.ac.uk/CalmView/Record.aspx?id=DF%2FZOO%2F252%2F1%2F2%2F52&src=CalmView.Catalog"
+          "date": "1905",
+          "status": "post_production_business_context",
+          "evidence": "Three items from V. Frič, Prague; useful for later commercial continuity only unless content establishes an earlier collection link."
+        },
+        {
+          "repository": "Grigore Antipa National Museum of Natural History, Bucharest",
+          "dates": "1907–1908",
+          "status": "post_production_business_context",
+          "evidence": "Published archival research reports five Václav Frič letters to Grigore Antipa, together with labels and historical inventory/register evidence. This is a useful dealer/customer corpus but falls after the marine-model production period.",
+          "source_guard": "The five-letter count is retained as a published archival report; a current public item-level finding aid has not been recovered in this pass."
         }
       ],
       "critical_gaps": [
-        "A dedicated V. Frič company correspondence/account archive has not been identified in this pass.",
-        "The relationship between surviving company stock transferred to the National Museum in 1959 and surviving business papers remains unresolved.",
-        "Dealer-side order books, invoices and customer ledgers would be the decisive source for reconstructing the Austria-Hungary network at scale."
+        "No dedicated V. Frič company correspondence/account archive surfaced in this public-catalogue sweep.",
+        "The relationship between company stock transferred to the National Museum in 1959 and surviving business papers remains unresolved.",
+        "The newly identified Museum für Naturkunde Berlin correspondence is a major lead, but physical access to the written-records collection is currently suspended until the expected Q4 2027 reopening.",
+        "Hildesheim and BayHStA dealer-specific files should be inspected before they are connected to Blaschka models.",
+        "Dealer-side order books, invoices, customer ledgers, and shipment accounts remain the decisive missing source for reconstructing Frič's Blaschka network at scale."
       ],
-      "priority": "highest"
+      "research_priority": "highest_document_retrieval_but_berlin_access_delayed"
     }
   ],
-  "network_observation": "The archival asymmetry is itself significant. Ward has an identifiable personal and corporate archive. Damon and Frič currently have to be reconstructed from the Blaschka workshop archive plus customer-side correspondence, museum acquisition files and scattered manuscript collections. The distribution system therefore survives in the same fragmented form as the objects it moved: concentrated at one dealer, institutionally dispersed at the others."
+  "negative_search_audit": {
+    "Damon": "No dedicated Damon corporate fonds or business order-book series was identified in the broad public archive-catalogue sweep. Evidence remains distributed across Rakow, McGill, NHM, BayHStA, Morgan, Te Papa, and transaction-specific institutional archives.",
+    "Fric": "No dedicated V. Frič corporate fonds was identified. Strong business correspondence survives in Museum für Naturkunde Berlin and several receiving-side dealer files; later company-stock transfer to the National Museum is not treated as archival transfer proof.",
+    "Ward": "No archival absence problem comparable to Damon or Frič: Rochester is clearly the collection of record. The remaining problem is item-level targeting inside a large surviving personal/corporate corpus."
+  },
+  "closure_statement": "The broad dealer-archive discovery phase is frozen at this version. Further additions should be evidence-led: a newly identified named record group or item, a digitised document, a published archival citation with usable reference, or an archivist/curator response. Research effort should now move from discovering repositories to retrieving and cross-walking documents across workshop → dealer → customer → museum accession chains.",
+  "network_observation": "The archival asymmetry is historically productive. Ward survives as a concentrated personal/corporate archive; Damon and Frič survive as distributed business archives reconstructed from the Blaschka workshop and receiving institutions. The same commercial network therefore produces different archival topologies, and provenance has to be rebuilt across institutional boundaries rather than assumed to reside in one dealer fonds."
 }
