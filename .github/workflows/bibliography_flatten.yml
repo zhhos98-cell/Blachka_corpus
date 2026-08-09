@@ -1,0 +1,305 @@
+name: Flatten bibliography v1.0
+
+on:
+  push:
+    paths:
+      - '.github/workflows/bibliography_flatten.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  flatten:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Flatten bibliography passes and audit metadata
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const vm = require('vm');
+
+          const bibDir = 'bibliography';
+          const indexPath = path.join(bibDir, 'index.html');
+          let html = fs.readFileSync(indexPath, 'utf8');
+
+          const listStart = html.indexOf('<div class="bib-list">');
+          const noteStart = html.indexOf('<section class="bib-note"');
+          if (listStart < 0 || noteStart < 0 || noteStart <= listStart) {
+            throw new Error('Could not isolate bibliography list in index.html');
+          }
+
+          const listRegion = html.slice(listStart, noteStart);
+          const baseArticles = [];
+          const articleRe = /<article class="bib-entry"([^>]*)>([\s\S]*?)<\/article>/g;
+          let m;
+          while ((m = articleRe.exec(listRegion)) !== null) {
+            baseArticles.push({ attrs: m[1] || '', innerHTML: m[2] });
+          }
+          if (!baseArticles.length) throw new Error('No base bibliography entries found');
+
+          class FakeNode {
+            constructor(tag = 'article') {
+              this.tagName = tag.toUpperCase();
+              this.className = '';
+              this.dataset = {};
+              this.innerHTML = '';
+              this.textContent = '';
+              this.src = '';
+            }
+            querySelector(selector) {
+              if (selector === '.bib-year') {
+                const mm = this.innerHTML.match(/<p class="bib-year">([\s\S]*?)<\/p>/);
+                return mm ? { textContent: mm[1].replace(/<[^>]+>/g, '').trim() } : null;
+              }
+              return null;
+            }
+          }
+
+          const list = {
+            nodes: [],
+            querySelector(selector) {
+              const mm = selector.match(/^\[data-bib-pass="([^"]+)"\]$/);
+              if (mm) return this.nodes.find(n => String(n.dataset.bibPass || '') === mm[1]) || null;
+              return null;
+            },
+            querySelectorAll(selector) {
+              return selector === '.bib-entry' ? [...this.nodes] : [];
+            },
+            appendChild(node) {
+              const i = this.nodes.indexOf(node);
+              if (i >= 0) this.nodes.splice(i, 1);
+              this.nodes.push(node);
+              return node;
+            }
+          };
+
+          baseArticles.forEach(({ attrs, innerHTML }) => {
+            const n = new FakeNode('article');
+            n.className = 'bib-entry';
+            n.innerHTML = innerHTML;
+            const pass = attrs.match(/data-(?:bib-pass|source-pass)="([^"]+)"/);
+            n.dataset.bibPass = pass ? pass[1] : 'base';
+            list.nodes.push(n);
+          });
+
+          const scopeTitle = { textContent: '' };
+          const noteParagraph = { textContent: '' };
+          const noteTitle = { nextElementSibling: noteParagraph };
+          const fakeDocument = {
+            head: { appendChild() {} },
+            querySelector(selector) {
+              if (selector === '.bib-list') return list;
+              if (selector === '#bib-scope-title') return scopeTitle;
+              if (selector === '#bib-note-title') return noteTitle;
+              if (selector.startsWith('script[')) return null;
+              return null;
+            },
+            createElement(tag) { return new FakeNode(tag); }
+          };
+
+          const passFiles = fs.readdirSync(bibDir)
+            .filter(name => /^bibliography-pass\d+\.js$/.test(name))
+            .sort((a, b) => Number(a.match(/\d+/)[0]) - Number(b.match(/\d+/)[0]));
+          if (!passFiles.length) throw new Error('No bibliography pass files found');
+
+          const context = { document: fakeDocument, console, window: {}, setTimeout, clearTimeout };
+          passFiles.forEach(file => {
+            const code = fs.readFileSync(path.join(bibDir, file), 'utf8');
+            vm.runInNewContext(code, context, { filename: file });
+          });
+
+          function extract(re, s) {
+            const mm = s.match(re);
+            return mm ? mm[1].trim() : '';
+          }
+          function normalizeText(s) {
+            return s
+              .replace(/<[^>]+>/g, ' ')
+              .replace(/&amp;/g, '&')
+              .replace(/&nbsp;/g, ' ')
+              .replace(/&quot;/g, '"')
+              .replace(/&#39;/g, "'")
+              .replace(/\s+/g, ' ')
+              .trim()
+              .toLowerCase();
+          }
+
+          const rawRecords = list.nodes.map((node, order) => {
+            const yearText = node.querySelector('.bib-year')?.textContent || '';
+            const year = Number.parseInt(yearText, 10);
+            const citation = extract(/<h3>([\s\S]*?)<\/h3>/, node.innerHTML);
+            const links = extract(/<p class="bib-links">([\s\S]*?)<\/p>/, node.innerHTML);
+            return {
+              year,
+              citation_html: citation,
+              links_html: links,
+              source_pass: String(node.dataset.bibPass || 'base'),
+              _order: order
+            };
+          });
+
+          const exactSeen = new Map();
+          const exactDuplicates = [];
+          const records = [];
+          for (const r of rawRecords) {
+            const key = `${r.year}|${normalizeText(r.citation_html)}`;
+            if (exactSeen.has(key)) {
+              exactDuplicates.push({ kept: exactSeen.get(key), removed: r });
+              continue;
+            }
+            exactSeen.set(key, r);
+            records.push(r);
+          }
+
+          records.sort((a, b) => (a.year - b.year) || (a._order - b._order));
+
+          const missingYear = records.filter(r => !Number.isInteger(r.year));
+          const missingCitation = records.filter(r => !r.citation_html);
+          const missingLinks = records.filter(r => !r.links_html);
+          const suspiciousYears = records.filter(r => Number.isInteger(r.year) && (r.year < 1800 || r.year > 2035));
+          const malformedLinks = [];
+          const hrefRe = /href="([^"]+)"/g;
+          for (const r of records) {
+            let hm;
+            while ((hm = hrefRe.exec(r.links_html)) !== null) {
+              if (!/^(https?:\/\/|mailto:|#|\.\.?\/)/.test(hm[1])) malformedLinks.push({ year: r.year, href: hm[1], citation_html: r.citation_html });
+            }
+          }
+
+          const byCitation = new Map();
+          for (const r of records) {
+            const k = normalizeText(r.citation_html);
+            if (!byCitation.has(k)) byCitation.set(k, []);
+            byCitation.get(k).push(r);
+          }
+          const crossYearDuplicates = [...byCitation.entries()]
+            .filter(([, vals]) => new Set(vals.map(v => v.year)).size > 1)
+            .map(([citation, vals]) => ({ citation, years: vals.map(v => v.year), source_passes: vals.map(v => v.source_pass) }));
+
+          if (missingYear.length || missingCitation.length) {
+            throw new Error(`Fatal metadata gaps: missingYear=${missingYear.length}, missingCitation=${missingCitation.length}`);
+          }
+
+          const years = records.map(r => r.year);
+          const minYear = Math.min(...years);
+          const maxYear = Math.max(...years);
+
+          const staticArticles = records.map(r => {
+            const source = r.source_pass.replace(/"/g, '&quot;');
+            return `        <article class="bib-entry" data-source-pass="${source}"><p class="bib-year">${r.year}</p><div><h3>${r.citation_html}</h3><p class="bib-links">${r.links_html}</p></div></article>`;
+          }).join('\n');
+
+          const replacement = `<div class="bib-list">\n<!-- Bibliography v1.0: flattened from the historical pass files. Canonical machine-readable data: bibliography-data.json -->\n${staticArticles}\n      </div>\n    </section>\n\n    `;
+          const listToNoteRe = /<div class="bib-list">[\s\S]*?<\/div>\s*<\/section>\s*(?=<section class="bib-note")/;
+          if (!listToNoteRe.test(html)) throw new Error('Could not replace bibliography list block');
+          html = html.replace(listToNoteRe, replacement);
+
+          const frozenScope = `${minYear}–${maxYear} · v1.0 frozen bibliography · closure audit complete`;
+          html = html.replace(/(<h2 id="bib-scope-title">)[\s\S]*?(<\/h2>)/, `$1${frozenScope}$2`);
+
+          const finalNote = noteParagraph.textContent || 'This bibliography is frozen for the current research phase. Future additions should be evidence-led rather than another general sweep.';
+          html = html.replace(/(<h2 id="bib-note-title">[\s\S]*?<\/h2>\s*<p>)[\s\S]*?(<\/p>)/, `$1${finalNote}$2`);
+
+          html = html.replace(/\s*<script[^>]+src=["']bibliography-pass\d+\.js[^"']*["'][^>]*><\/script>/g, '');
+          fs.writeFileSync(indexPath, html);
+
+          const data = {
+            schema_version: '1.0.0',
+            title: 'The Blaschka Object Network — Bibliography',
+            status: 'frozen_v1',
+            generated_utc: new Date().toISOString(),
+            scope_year_start: minYear,
+            scope_year_end: maxYear,
+            entry_count: records.length,
+            provenance: {
+              base_html_entries: baseArticles.length,
+              historical_pass_files: passFiles,
+              flatten_rule: 'Exact normalized citation+year duplicates are collapsed; chronology and citation/link HTML are otherwise preserved.'
+            },
+            entries: records.map(({ _order, ...r }) => r)
+          };
+          fs.writeFileSync(path.join(bibDir, 'bibliography-data.json'), JSON.stringify(data, null, 2) + '\n');
+
+          const sourceCounts = {};
+          records.forEach(r => { sourceCounts[r.source_pass] = (sourceCounts[r.source_pass] || 0) + 1; });
+          const report = [];
+          report.push('# Bibliography v1.0 flatten and consistency audit');
+          report.push('');
+          report.push('Date: 2026-08-09');
+          report.push('');
+          report.push('## Result');
+          report.push('');
+          report.push(`- Historical base HTML entries: ${baseArticles.length}`);
+          report.push(`- Historical pass files executed: ${passFiles.length} (${passFiles[0]} through ${passFiles[passFiles.length - 1]})`);
+          report.push(`- Raw combined entries: ${rawRecords.length}`);
+          report.push(`- Exact normalized citation+year duplicates removed: ${exactDuplicates.length}`);
+          report.push(`- Frozen v1.0 entries: ${records.length}`);
+          report.push(`- Chronological scope: ${minYear}–${maxYear}`);
+          report.push(`- Entries lacking link blocks: ${missingLinks.length}`);
+          report.push(`- Malformed link targets: ${malformedLinks.length}`);
+          report.push(`- Suspicious year values: ${suspiciousYears.length}`);
+          report.push(`- Same normalized citation appearing under different years: ${crossYearDuplicates.length}`);
+          report.push('');
+          report.push('## Source-layer counts');
+          report.push('');
+          Object.entries(sourceCounts).sort((a,b) => String(a[0]).localeCompare(String(b[0]), undefined, {numeric:true})).forEach(([k,v]) => report.push(`- ${k}: ${v}`));
+          report.push('');
+          report.push('## Exact duplicates removed');
+          report.push('');
+          if (!exactDuplicates.length) report.push('- None.');
+          exactDuplicates.forEach((d, i) => report.push(`- ${i+1}. ${d.removed.year}: ${normalizeText(d.removed.citation_html)} (kept source ${d.kept.source_pass}; removed source ${d.removed.source_pass})`));
+          report.push('');
+          report.push('## Cross-year duplicate flags');
+          report.push('');
+          if (!crossYearDuplicates.length) report.push('- None.');
+          crossYearDuplicates.forEach((d, i) => report.push(`- ${i+1}. Years ${d.years.join(', ')}; sources ${d.source_passes.join(', ')}: ${d.citation}`));
+          report.push('');
+          report.push('## Structural changes');
+          report.push('');
+          report.push('- `bibliography/index.html` now contains the full static bibliography and no longer loads numbered pass scripts.');
+          report.push('- `bibliography/bibliography-data.json` is the canonical machine-readable v1.0 source.');
+          report.push('- Historical numbered pass scripts are retained under `bibliography/legacy/passes/` for provenance and debugging.');
+          report.push('- `bibliography-tools.js` and `bibliography-form.js` remain active and unchanged.');
+          report.push('');
+          report.push('## Freeze policy');
+          report.push('');
+          report.push('The bibliography is frozen for this research phase. Future additions should be evidence-led and entered into the canonical dataset rather than restarting a general multilingual sweep.');
+          report.push('');
+          fs.mkdirSync('research/logs', { recursive: true });
+          fs.writeFileSync('research/logs/2026-08-09-bibliography-v1-flatten-audit.md', report.join('\n'));
+
+          fs.mkdirSync(path.join(bibDir, 'legacy', 'passes'), { recursive: true });
+          passFiles.forEach(file => fs.renameSync(path.join(bibDir, file), path.join(bibDir, 'legacy', 'passes', file)));
+
+          console.log(JSON.stringify({
+            baseEntries: baseArticles.length,
+            passFiles: passFiles.length,
+            rawEntries: rawRecords.length,
+            exactDuplicatesRemoved: exactDuplicates.length,
+            finalEntries: records.length,
+            minYear,
+            maxYear,
+            missingLinks: missingLinks.length,
+            malformedLinks: malformedLinks.length,
+            crossYearDuplicates: crossYearDuplicates.length
+          }, null, 2));
+          NODE
+
+      - name: Commit flattened bibliography
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bibliography research/logs/2026-08-09-bibliography-v1-flatten-audit.md
+          if git diff --cached --quiet; then
+            echo "No bibliography changes to commit."
+            exit 0
+          fi
+          git commit -m "Flatten bibliography into frozen v1.0 dataset"
+          git push
