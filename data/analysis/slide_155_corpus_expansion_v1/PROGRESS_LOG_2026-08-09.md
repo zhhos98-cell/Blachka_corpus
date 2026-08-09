@@ -80,15 +80,18 @@ The catalogue establishes Fritz Meyer as director/organizer of the preparation d
 
 ## 7. Naples → UK circulation crosswalk
 
-The first British crosswalk records eight physical/object circulation events, plus separate catalogue-reception and method-circulation evidence.
+The bounded British crosswalk now records **eleven** distinct object/specimen circulation or exhibition events, plus separate catalogue-reception and method-circulation evidence.
 
 The evidence distinguishes:
 
 - finished-slide circulation;
+- preserved or biological specimen circulation;
 - biological specimen circulation followed by British remanufacture;
 - circulation of preparation methods.
 
 Arthur Pennington's 1884 *Cerianthus solitarius* case is retained as `OFF_CATALOGUE_REWORKING`: the specimen came from Naples, but Pennington stained, embedded, sectioned and mounted it in Britain.
+
+A further 11 November 1884 Birmingham record is deliberately kept as **preserved specimens from Naples** because the source separately names mounted specimens from other suppliers; no slide status is inferred. A May 1886 RMS C. Baker entry likewise remains `Marine Objects from Zoological Station, Naples`, not slides.
 
 ## 8. First item-level catalogue → Britain closure
 
@@ -111,14 +114,34 @@ The row-level mapping is `NAPLES_1880_RMS_12_SLIDES_ITEM_CROSSWALK_V1.csv`.
 
 This is a defensible **catalogue offering → named British physical slide shipment/exhibition** closure. It is not yet a `catalogue → Britain → surviving St Andrews slide` identity; all surviving-object identity fields remain `NOT_ASSERTED`.
 
-## 9. Current next step
+## 9. Bell event correction
 
-Continue only bounded reverse matching around already known British Naples events. Highest-value targets are detailed exhibit lists adjacent to:
+The first crosswalk incorrectly treated the *Field*, 24 February 1883, Bell notice as corroboration of the RMS nineteen-slide exhibition.
 
-- the 1883 F. Jeffrey Bell nineteen-slide RMS event;
-- the 1881 Crisp RMS selection;
-- the 1882 C. Baker RMS Conversazione display.
+The sources establish **two distinct society events**:
 
-Search taxon + preparation-stage combinations only after an explicit Naples relation has been established. Common taxa alone are insufficient evidence.
+- February 1883, **Zoological Society**: Bell exhibited a selection of microscopical preparations received from the Zoological Station at Naples; the *Field* report supplies no number or taxa.
+- **14 March 1883, Royal Microscopical Society**: `R27785`, p. 318, records Bell calling attention to **nineteen slides** received from Naples and explaining their points; `R27787`, p. 320, repeats the nineteen-slide exhibit listing.
+
+Physical overlap between these two Bell events is possible but remains `NOT_ASSERTED`. Adjacent RMS proceedings do not recover the taxa of the nineteen March slides.
+
+## 10. Bounded negative checks and newly recovered events
+
+The current pass also checked the immediate context of the previously generic 1881 Crisp and 1882 C. Baker Naples entries. No detailed Naples item list was recovered, so their item-level catalogue identity remains `UNRESOLVED`.
+
+New bounded events added without open-ended discovery:
+
+- **11 November 1884, Birmingham Biological Section** — T. Bolton exhibited `preserved specimens from the zoological stations at Naples`; the source separately lists mounted specimens from Watson, Ward, C. Vance Smith, Joshua and Vize.
+- **May 1886, RMS second Conversazione** — C. Baker exhibited `Marine Objects from Zoological Station, Naples`; exact object type and count are unstated. The date heading OCR reads `bth May, 1886`, probably 5 May, but the exact day is deliberately left unasserted pending page-image verification.
+
+## 11. Current next step
+
+Continue only bounded reverse matching around explicit Naples relations. Priority is now lower because the highest-yield 1880 shipment has already produced item-level mappings, while the 1881 Crisp, 1882 Baker and 1883 Bell nineteen-slide contexts have been checked without a detailed list.
+
+Useful future targets are therefore:
+
+- object-side labels or accession records for surviving Naples slides that might independently preserve a catalogue number;
+- explicit British exhibit lists that give both Naples provenance and taxon/stage;
+- bounded method/specimen language such as `obtained from the Zoological Station`, `preserved specimens from Naples`, or `Marine Objects from Zoological Station`.
 
 Do not resume general-purpose harvesting, do not reopen the 307/155 discovery census, and do not equate shared catalogue taxonomy with physical-object identity.
