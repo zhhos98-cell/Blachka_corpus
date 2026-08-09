@@ -16,10 +16,29 @@ ACTIVE = Path("data/normalized/scope_19c_active_ids.json")
 PROFILES = Path("data/survey/institution_harvest_profiles.json")
 OUT = Path("outputs/institution_harvest_matrix.json")
 SKIP_AUTOMATION = {"manual only", "blocked"}
+ACTIONS_BLOCKED_PROFILES = {"smg", "smithsonian", "museums_victoria"}
+
+# These aliases are intentionally narrow. They collapse spelling/custody variants
+# that hit the same public catalogue, while leaving genuinely different museums
+# (for example Sedgwick vs. Cambridge Zoology, or NMAH vs. NMNH) separate.
+INSTITUTION_GROUP_RULES = [
+    (r"Farlow Herbarium", "farlow-herbarium", "Farlow Herbarium, Harvard University"),
+    (r"Mus[eéu-]*um national d.Histoire naturelle.*Paris|MNHN.*Paris", "mnhn-paris", "Muséum national d'Histoire naturelle, Paris"),
+    (r"Powerhouse", "powerhouse-collection", "Powerhouse Collection"),
+    (r"Royal College of Surgeons of England|Hunterian Museum.*Royal College of Surgeons", "rcs-hunterian", "Royal College of Surgeons of England / Hunterian Museum"),
+    (r"Naturhistorisches Museum Wien", "nhmw-vienna", "Naturhistorisches Museum Wien"),
+]
 
 
 def slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-") or "institution"
+
+
+def canonical_institution_group(institution: str) -> tuple[str, str]:
+    for pattern, key, label in INSTITUTION_GROUP_RULES:
+        if re.search(pattern, institution, flags=re.I):
+            return key, label
+    return slugify(institution), institution
 
 
 def load_rows() -> list[dict[str, str]]:
@@ -61,9 +80,11 @@ def choose_profile(institution: str, rows: list[dict[str, str]], profiles: dict[
     return "generic_seed"
 
 
-def bundle_match(bundle: str, institution: str, profile: dict, rows: list[dict[str, str]]) -> bool:
+def bundle_match(bundle: str, institution: str, profile_key: str, profile: dict, rows: list[dict[str, str]]) -> bool:
     if bundle == "all-automatable":
-        return True
+        return profile_key not in ACTIONS_BLOCKED_PROFILES
+    if bundle == "remaining-automatable":
+        return "high-yield" not in profile.get("tags", []) and profile_key not in ACTIONS_BLOCKED_PROFILES
     if bundle == "high-yield":
         return "high-yield" in profile.get("tags", [])
     if bundle == "uk-high-yield":
@@ -87,7 +108,7 @@ def bundle_match(bundle: str, institution: str, profile: dict, rows: list[dict[s
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--bundle", default="high-yield", choices=[
-        "high-yield", "all-automatable", "uk-high-yield", "diatoms",
+        "high-yield", "remaining-automatable", "all-automatable", "uk-high-yield", "diatoms",
         "medical-histology", "geology-petrology", "single",
     ])
     parser.add_argument("--institution-key", default="")
@@ -101,42 +122,50 @@ def main() -> int:
     if active:
         rows = [row for row in rows if row.get("entry_id") in active]
 
+    # First collapse spelling variants that represent one current catalogue.
     grouped: dict[str, list[dict[str, str]]] = defaultdict(list)
-    names: dict[str, str] = {}
+    labels: dict[str, str] = {}
+    raw_names: dict[str, set[str]] = defaultdict(set)
     for row in rows:
         if row.get("automation_feasibility", "") in SKIP_AUTOMATION:
             continue
         institution = row.get("institution_current", "").strip()
         if not institution:
             continue
-        key = slugify(institution)
+        key, label = canonical_institution_group(institution)
         grouped[key].append(row)
-        names[key] = institution
+        labels[key] = label
+        raw_names[key].add(institution)
 
     include = []
+    skipped_actions_blocked: list[dict[str, str]] = []
     for key in sorted(grouped):
-        institution = names[key]
+        institution = labels[key]
         inst_rows = grouped[key]
         profile_key = choose_profile(institution, inst_rows, profiles)
         profile = profiles[profile_key]
         if args.bundle == "single":
             if key != args.institution_key:
                 continue
-        elif not bundle_match(args.bundle, institution, profile, inst_rows):
+        elif not bundle_match(args.bundle, institution, profile_key, profile, inst_rows):
+            if profile_key in ACTIONS_BLOCKED_PROFILES and args.bundle in {"all-automatable", "remaining-automatable"}:
+                skipped_actions_blocked.append({"institution_key": key, "institution": institution, "profile": profile_key})
             continue
         include.append({
             "institution_key": key,
             "institution": institution,
             "profile": profile_key,
             "row_count": len(inst_rows),
+            "institution_alias_count": len(raw_names[key]),
         })
 
     payload = {
-        "schema_version": "slide-survey-institution-matrix-v1",
+        "schema_version": "slide-survey-institution-matrix-v2-canonical-groups",
         "bundle": args.bundle,
         "active_strict_only": bool(active),
         "institution_count": len(include),
         "include": include,
+        "skipped_actions_blocked": skipped_actions_blocked,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
