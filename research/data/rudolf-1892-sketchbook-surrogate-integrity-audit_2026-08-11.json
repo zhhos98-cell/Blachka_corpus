@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-08-11",
+  "title": "Rudolf Blaschka 1892 sketchbook digital-surrogate integrity and full-pass audit",
+  "scope": "Backend-only inspection of all 30 pages in Rakow_1000043361_BlaschkaSketchbook.pdf. Blank leaves are classified but not treated as evidence. The audit distinguishes substantive marks, show-through, covers, and digital duplication.",
+  "frontend_policy": "No sketchbook image, thumbnail, image-derived layer, or inferred geometry is to be added to public Pages in this phase.",
+  "source": {
+    "repository": "Rakow Research Library, The Corning Museum of Glass",
+    "catalogue_title": "R. Blaschka [sketchbook].",
+    "bib_id": "87384",
+    "alma_mms": "99873843504126",
+    "physical_description": "1 v. (ca. 80 p.) : ill. ; 11 x 18 cm.",
+    "digital_surrogate": "Rakow_1000043361_BlaschkaSketchbook.pdf",
+    "pdf_pages": 30,
+    "embedded_image_character": "one 300-ppi JPEG image per PDF page",
+    "catalogue_note": "Most physical pages are blank and were not filmed; a few laid-in island/palm sketches were filmed. Catalogue also says the beginning sketch is captioned Tempe, Arizona, 22 April 1892."
+  },
+  "full_pass": [
+    {"page": 1, "class": "cover", "evidence_use": "none"},
+    {"page": 2, "class": "blank", "evidence_use": "none"},
+    {"page": 3, "class": "blank_or_faint_showthrough", "evidence_use": "none"},
+    {"page": 4, "class": "substantive_caption_plus_showthrough", "evidence_use": "high", "note": "Caption securely reads 'Wüste bei Maricopa (Arizona) / 24. April 1892'; landscape visible faintly through paper."},
+    {"page": 5, "class": "landscape_drawing", "evidence_use": "high", "note": "Maricopa desert panorama associated with page-4 caption."},
+    {"page": 6, "class": "blank", "evidence_use": "none"},
+    {"page": 7, "class": "blank", "evidence_use": "none"},
+    {"page": 8, "class": "substantive_caption_plus_showthrough", "evidence_use": "high", "note": "High-probability reading: 'Cactus-Wüste bei Maricopa (Arizona) / 24. April 1892'; botanical annotation probably 'Opuntia bigelovii'."},
+    {"page": 9, "class": "landscape_drawing", "evidence_use": "high", "note": "Dense cactus desert and mountain mass associated with page-8 caption."},
+    {"page": 10, "class": "blank_or_showthrough", "evidence_use": "none"},
+    {"page": 11, "class": "blank_or_showthrough", "evidence_use": "none"},
+    {"page": 12, "class": "landscape_drawing", "evidence_use": "medium", "note": "Abrupt rocky massif over sparse desert; no inscription; candidate Arizona-Yuma-Salton-San Jacinto rail-corridor view."},
+    {"page": 13, "class": "digital_exact_duplicate", "evidence_use": "none_as_independent_evidence", "duplicates_page": 12, "note": "Rendered RGB pixels are exactly identical to page 12. PDF image objects are separate object IDs but carry identical visual content. This is a digital-surrogate duplication, not a second independent drawing."},
+    {"page": 14, "class": "blank_or_showthrough", "evidence_use": "none"},
+    {"page": 15, "class": "blank_or_showthrough", "evidence_use": "none"},
+    {"page": 16, "class": "faint_showthrough", "evidence_use": "none_as_independent_evidence", "note": "Compatible with show-through from the following Yucca landscape; no independent inscription identified."},
+    {"page": 17, "class": "landscape_drawing_plus_botanical_note", "evidence_use": "high", "note": "Joshua-tree/Yucca desert. Visible graphite at right is probably 'Yucca brevifolia'; no secure place/date inscription. Hesperia identification rests on correspondence/ecology synchronization."},
+    {"page": 18, "class": "blank", "evidence_use": "none"},
+    {"page": 19, "class": "blank", "evidence_use": "none"},
+    {"page": 20, "class": "blank_or_laid_in_support", "evidence_use": "none"},
+    {"page": 21, "class": "laid_in_tropical_landscape", "evidence_use": "medium", "note": "Harbour/lagoon, palms, buildings and mountain background; probable Jamaica group."},
+    {"page": 22, "class": "blank", "evidence_use": "none"},
+    {"page": 23, "class": "laid_in_tropical_landscape", "evidence_use": "high", "note": "Banded lighthouse, harbour water, palm-covered island/shore and mountains. Strong probable Port Antonio configuration: Folly Point Lighthouse + Navy Island."},
+    {"page": 24, "class": "blank", "evidence_use": "none"},
+    {"page": 25, "class": "laid_in_tropical_landscape", "evidence_use": "medium", "note": "Palm-lined water/shore; likely same material group as pages 21 and 23, but no diagnostic landmark."},
+    {"page": 26, "class": "working_address_logistics_note", "evidence_use": "medium", "note": "Includes 'Chr. Baldewein & Sohn / am Wall', 'Schüsselkorb 14', a probable Brinkmann/address line, 'am Markt', and arithmetic. First two place the note securely in Bremen address space; exact journey function undated."},
+    {"page": 27, "class": "travel_distance_calculation", "evidence_use": "high", "note": "Secure reading: 'Von New York bis Bremen sind 880 geographische Meilen'. At 7.42044 km per German geographical mile, the noted value is about 6,530 km; likely rounded route/travel calculation rather than geodesic measurement."},
+    {"page": 28, "class": "measurement_conversion_note", "evidence_use": "medium", "note": "Secure numerical core: '27 1/2 Centimeter' and '11 Engl. Inches'. 27.5 cm equals about 10.83 inches, showing practical metric-English conversion. The heading appears to refer to a length/cylinder but is not yet diplomatically secure; object measured is unknown."},
+    {"page": 29, "class": "inside_or_back_cover", "evidence_use": "none"},
+    {"page": 30, "class": "back_cover", "evidence_use": "none"}
+  ],
+  "digital_integrity_findings": {
+    "exact_duplicate_pairs": [[12, 13]],
+    "duplicate_test": "Page-12 and page-13 renders have identical dimensions and zero mean absolute RGB pixel difference.",
+    "interpretive_consequence": "The 30-page PDF is not a transparently one-to-one sequence of unique physical leaves. At least one exact duplicated scan exists. Therefore the catalogue-surrogate Tempe conflict must remain unresolved; missing/duplicated/reassembled delivery content is a live explanation alongside catalogue metadata error.",
+    "page_number_guard": "Digital PDF page number is a surrogate frame identifier, not a physical folio number. Do not infer physical adjacency, recto/verso order, or chronology from PDF sequence alone without additional controls."
+  },
+  "functional_reassessment": {
+    "old_description": "travel landscape sketchbook",
+    "revised_description": "travel working sketchbook/notebook combining landscape observation, botanical annotation, address/logistics notes, transatlantic distance calculation, and metric-English measurement conversion",
+    "knowledge_production_implication": "The object participated in travel operations as well as representation. It stored environmental views, plant names, practical addresses, distances and measurements in the same portable medium."
+  },
+  "external_control_targets": [
+    {"target": "Bremer Adressbuch 1892", "institution": "Staats- und Universitätsbibliothek Bremen", "url": "https://brema.suub.uni-bremen.de/bremensien/periodical/structure/997904", "purpose": "verify Baldewein, Schüsselkorb 14, probable Brinkmann line, and determine whether page 26 records suppliers/hotels/logistics"},
+    {"target": "Rakow 30 individual JPG delivery files", "purpose": "compare frame list with PDF assembly; determine whether the duplicated page 12/13 reflects source delivery and whether a Tempe 22 April frame exists outside the PDF"}
+  ],
+  "next_actions": [
+    "Search the 1892 Bremen resident/street/business directories for every legible page-26 name/address; do not create itinerary points until function/date is known.",
+    "If accessible, compare the Primo 30-JPG list against this PDF frame-by-frame; prioritize resolving the catalogue claim for Tempe 22 April and the page-12/13 duplicate.",
+    "Treat page 28 as measurement-practice evidence and seek a correspondence/object context before identifying the measured item.",
+    "Keep all sketchbook-derived imagery and geospatial hypotheses backend-only."
+  ]
+}
