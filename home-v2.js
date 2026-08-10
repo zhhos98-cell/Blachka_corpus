@@ -20,6 +20,7 @@
   if (!compact) addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
   addStyle('mobile-v3.css?v=20260810-4', 'mobile-v3.css');
   addStyle('accessibility.css?v=20260810-1', 'accessibility.css');
+  addStyle('scale-balance.css?v=20260810-1', 'scale-balance.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
