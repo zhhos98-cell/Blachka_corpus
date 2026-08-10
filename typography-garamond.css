@@ -1,6 +1,4 @@
-@import url("fluid-motion.css?v=20260810-4");
-@import url("site-cleanup.css?v=20260810-2");
-@import url("nav-glide.css?v=20260810-2");
+@import url("header-minimal.css?v=20260810-1");
 
 @font-face{
   font-family:'EB Garamond Local';
@@ -24,16 +22,8 @@
 }
 
 html{font-synthesis:none}
-body{
-  font-family:var(--font-reading);
-  font-optical-sizing:auto;
-  font-kerning:normal;
-  text-rendering:optimizeLegibility;
-}
-h1,h2,h3,h4,.subpage-brand{
-  font-family:var(--font-display);
-  font-optical-sizing:auto;
-}
+body{font-family:var(--font-reading);font-optical-sizing:auto;font-kerning:normal;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,.subpage-brand{font-family:var(--font-display);font-optical-sizing:auto}
 button,input,select,textarea,
 .top-nav,.subpage-nav,.prototype-mark,
 .eyebrow,.hero-kicker,.origin-kicker,
@@ -41,6 +31,4 @@ button,input,select,textarea,
 .market-scope-label,.auction-year,.auction-house,.lot-no,.lot-links,
 .bib-tools,.bib-year,.bib-links,.bib-community-copy,
 .case-years,.case-tags,.case-closure,.case-tile-kicker,
-footer,.subpage-footer{
-  font-family:var(--font-ui)!important;
-}
+footer,.subpage-footer{font-family:var(--font-ui)!important}
