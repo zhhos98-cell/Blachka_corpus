@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0-working",
+  "generated": "2026-08-10",
+  "project": "Rudolf Blaschka 1892 America/Jamaica research pass",
+  "status": "working evidence layer; paid-database newspaper tranche pending",
+  "source_priority": [
+    "04_Blaschka_Archive_015-040_MASTER.json",
+    "05B_Blaschka_Digital_Archive_Literature_Technical_MASTER",
+    "Rudolf_Blaschka_America_1892_sources.csv",
+    "06_Blaschka_Global_Object_Archive_Provenance_BACKEND_MASTER_2026-08-10_v4_through_49.json"
+  ],
+  "editorial_guard": "Separate planned routes, documented movements, retrospective summaries, and press syndication. Do not convert a plan or later newspaper paraphrase into an observed itinerary node without contemporary corroboration.",
+  "research_thesis": "The 1892 journey is best treated as a mobile extension of the Blaschka workshop: Rudolf moved through a distributed infrastructure of botanical gardens, field companions, local botanists, railways, steamships, hotels, postal forwarding and telegraphy while converting living plants into multiple portable reference forms for later glass manufacture.",
+  "evidence_channels": [
+    {
+      "channel": "direct observation",
+      "forms": ["field observation", "microscope study", "colour drawing"]
+    },
+    {
+      "channel": "preserved reference",
+      "forms": ["alcohol specimens", "dried herbarium specimens"]
+    },
+    {
+      "channel": "living transfer",
+      "forms": ["seeds", "bulbs", "cacti/cuttings", "later local supply by botanists"]
+    },
+    {
+      "channel": "coordination",
+      "forms": ["letters forwarded through Goodale", "telegraph", "local institutional introductions"]
+    },
+    {
+      "channel": "mobility infrastructure",
+      "forms": ["steamship", "railway", "streetcar", "buggy", "hotel/boarding house", "route guides and timetables"]
+    }
+  ],
+  "route_nodes": [
+    {"date":"1892-02-01","place":"Bremen","status":"documented","evidence":"04 source 017:1"},
+    {"date":"1892-02-02","place":"Bremerhaven/Nordenham, aboard S.S. Saale","status":"documented","evidence":"04 source 017:7-11"},
+    {"date":"1892-02-12","place":"aboard S.S. Saale","status":"documented","evidence":"04 source 017:22"},
+    {"date":"1892-02-15","place":"Cambridge, Massachusetts","status":"documented","evidence":"04 source 017:32"},
+    {"date":"1892-03-01","place":"Annotto Bay, Jamaica","status":"documented retrospectively in 6 March letter","evidence":"04 source 017:58; route via north-coast ports including Port Maria"},
+    {"date":"1892-03-06","place":"Hope Garden, Kingston, Jamaica","status":"documented","evidence":"04 source 017:58"},
+    {"date":"1892-03-27","place":"Jamaica","status":"documented/citation-level count conflict","evidence":"newspaper-source register HARV-006 reports 106 completed species; Jamaica Botanical Department report gives 116 coloured drawings"},
+    {"date":"1892-04-10","place":"Jamaica departure phase","status":"documented/citation-level","evidence":"newspaper-source register HARV-008; seed dispatch toward Dresden"},
+    {"date":"1892-04-12","place":"Cambridge, Massachusetts","status":"documented","evidence":"04 source 017:98-99; westward departure plan"},
+    {"date":"1892-04-14","place":"Chicago, Illinois","status":"documented","evidence":"04 source 017:105"},
+    {"date":"1892-04-20","place":"Tempe near Phoenix, Arizona","status":"documented","evidence":"04 source 017:133"},
+    {"date":"1892-04-24","place":"Maricopa, Arizona","status":"documented","evidence":"04 source 017:140"},
+    {"date":"1892-04-30","place":"San Diego, California","status":"documented","evidence":"04 source 017:158"},
+    {"date":"1892-05-04","place":"San Diego -> San Bernardino, California","status":"documented","evidence":"04 source 017:164; translated companion copy describes departure that morning"},
+    {"date":"1892-05-06","place":"Banning, California","status":"documented","evidence":"04 source 017:176"},
+    {"date":"1892-05-09","place":"Agua Caliente, California","status":"documented","evidence":"04 source 017:184"},
+    {"date":"1892-05-15","place":"Oakland, California","status":"documented","evidence":"04 source 017:205"},
+    {"date":"1892-05-20","place":"Elko, Nevada","status":"documented","evidence":"04 source 017:213"},
+    {"date":"1892-05-22","place":"Colorado Springs, Colorado","status":"documented","evidence":"04 source 017:219"},
+    {"date":"1892-05-31","place":"St. Louis, Missouri","status":"documented","evidence":"04 translated letter at source 017:251"},
+    {"date":"1892-06-05","place":"Chicago, Illinois","status":"documented","evidence":"04 source 017:260"},
+    {"date":"1892-06-06","place":"Niagara/Buffalo/Clifton corridor","status":"documented","evidence":"04 source 017:262-266"},
+    {"date":"1892-06-10","place":"Cambridge, Massachusetts","status":"documented","evidence":"04 source 017:278"},
+    {"date":"1892-06-16","place":"Cambridge, Massachusetts","status":"documented","evidence":"04 source 017:283; intended Fall River Line connection to New York"},
+    {"date":"1892-06-17","place":"New York, Cedar Street","status":"documented","evidence":"04 source 017:285"},
+    {"date":"1892-06-18","place":"New York departure on S.S. Aller","status":"documented plan immediately before sailing","evidence":"04 letter of 10 June states booked passage on Bremer steamship Aller for 18 June"}
+  ],
+  "decision_points": [
+    {
+      "issue": "westward itinerary",
+      "evidence": "10 April/12 April planning text gives Chicago, Missouri, Kansas, Colorado, New Mexico, Arizona, San Diego, Los Angeles, San Francisco and return via Colorado; actual letter sequence must be kept distinct from this plan.",
+      "status": "planned route partially verified by subsequent dated correspondence"
+    },
+    {
+      "issue": "Shasta / Darlingtonia",
+      "evidence": "Oakland correspondence reports waiting for Goodale's telegraphic decision and receiving an instruction not to go to Shasta, while a later St. Louis translation can be read as if the Shasta journey had occurred.",
+      "status": "translation/OCR conflict; image-level and German-text check required before mapping Shasta as visited"
+    },
+    {
+      "issue": "phenology changes route value",
+      "evidence": "letters repeatedly note missed flowering seasons, species already past bloom, and arrangements for local botanists to send flowers, seeds or bulbs later.",
+      "status": "stable interpretive finding"
+    }
+  ],
+  "distributed_workshop_examples": [
+    {
+      "place":"Jamaica",
+      "evidence":"Cameron procures material, prepares plants in white rum/water and dries herbarium specimens; Hope/Castleton facilities provide work rooms and local access.",
+      "implication":"model reference production is divided among people and preservation formats"
+    },
+    {
+      "place":"San Diego",
+      "evidence":"Orcutt supplies plant material; Rudolf reports 36 species completed and sends cacti/bulbs onward to Cambridge; later asks for additional seeds and bulbs after flowering windows close.",
+      "implication":"field absence is compensated by later specimen supply"
+    },
+    {
+      "place":"Oakland/California",
+      "evidence":"Ganong participates in excursions and route decisions; Goodale can alter itinerary remotely by telegraph.",
+      "implication":"authority and logistical decision-making remain distributed across the moving party and Cambridge"
+    },
+    {
+      "place":"St. Louis",
+      "evidence":"Botanic Garden supplies a work room; local contacts arrange accommodation; Rudolf records colour and preserves specimens in alcohol.",
+      "implication":"institutional rooms temporarily become workshop stations"
+    },
+    {
+      "place":"Cambridge return",
+      "evidence":"Rudolf repairs damaged Harvard models while still managing incoming material from California and preparing departure.",
+      "implication":"travel, collection, repair and future production overlap rather than form a simple linear sequence"
+    }
+  ],
+  "press_layer": {
+    "finding": "The press does not simply report the completed route. It circulates a projected itinerary and a public explanation of the collection-to-glass process.",
+    "examples": [
+      "American Register, 16 Apr 1892: Jamaica study followed by Cambridge visit",
+      "Custer Weekly Chronicle, 14 May 1892 and syndicated variants: Cambridge then travel west collecting typical American flowers before return to Germany",
+      "New-York Tribune, 25 Nov 1894: retrospective confirmation of California/Arizona study and later conversion of collected reference material into models"
+    ],
+    "methodological_use": "Compare publication date with Rudolf's actual dated letters to measure information lag and the persistence of planned-route language."
+  },
+  "archive_ephemera_to_crosswalk": [
+    "Fidelity & Casualty Co. travel insurance receipts, 1892",
+    "S.S. Saale passenger list, 1892",
+    "Southern California Railway Company local timetable, 1892",
+    "Map of Part of San Diego County, circa 1889",
+    "Rand McNally New Guide to the Pacific Coast / Santa Fe Route, 1891",
+    "Niagara Falls guides",
+    "San Francisco and Jamaica souvenir albums"
+  ],
+  "open_checks": [
+    "Resolve 106 versus 116 Jamaica study/drawing count from original letters and Jamaican bulletin chronology.",
+    "Resolve Shasta as planned, cancelled, or visited by checking German originals and item-level scans.",
+    "Export item-level 1892 Harvard correspondence URLs and sequence numbers.",
+    "Obtain specimen-level Harvard herbarium data and separate 1892 from 1895 collections.",
+    "Crosswalk dated letters to maps, timetables, passenger lists, hotel/business cards and photographs.",
+    "Ingest the pending paid-database newspaper tranche as a delta layer; deduplicate syndication families before treating newspaper hit counts quantitatively."
+  ]
+}
