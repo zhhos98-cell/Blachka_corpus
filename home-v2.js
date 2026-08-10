@@ -15,10 +15,11 @@
     document.head.appendChild(link);
   };
   addStyle('site-polish.css?v=20260810-2', 'site-polish.css');
-  addStyle('home-curation.css?v=20260810-6', 'home-curation.css');
+  addStyle('home-curation-v2.css?v=20260810-1', 'home-curation-v2.css');
   addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
   if (!compact) addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
   addStyle('mobile-v3.css?v=20260810-3', 'mobile-v3.css');
+  addStyle('accessibility.css?v=20260810-1', 'accessibility.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
@@ -91,7 +92,7 @@
     mobileNav.className = 'family-mobile-nav';
     mobileNav.setAttribute('aria-label', 'Meet the Blaschka family');
     mobileNav.innerHTML = people.map(person => `<button type="button" data-mobile-person="${person.key}" aria-pressed="false">${person.short}</button>`).join('');
-    familyFigure.append(mobileNav);
+    familyFigure.appendChild(mobileNav);
 
     let locked = '';
     const setActive = key => {
