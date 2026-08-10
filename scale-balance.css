@@ -2,92 +2,33 @@
    Keep display type from becoming billboard-sized, while lifting controls,
    metadata and source labels above squint-level. No new decorative layer. */
 
-:root{
-  --balanced-ui-small:.70rem;
-  --balanced-meta:.68rem;
-}
+:root{--balanced-ui-small:.70rem;--balanced-meta:.68rem}
 
 /* Navigation and small UI */
-.top-nav a,.subpage-nav a{font-size:.79rem!important}
-.prototype-mark{font-size:.67rem!important}
-.eyebrow,.hero-kicker,.origin-kicker,.source-kicker,.market-scope-label{font-size:.70rem!important}
-.hero-credit{font-size:.67rem!important}
+.top-nav a,.subpage-nav a{font-size:.79rem!important}.prototype-mark{font-size:.67rem!important}.eyebrow,.hero-kicker,.origin-kicker,.source-kicker,.market-scope-label{font-size:.70rem!important}.hero-credit{font-size:.67rem!important}
 
 /* Home: preserve hierarchy, trim the extremes. */
-.hero h1{max-width:900px!important;font-size:clamp(3.9rem,7.7vw,7.25rem)!important;line-height:.89!important}
-.hero-subtitle{font-size:clamp(1.05rem,1.35vw,1.24rem)!important}
-.network-search select{font-size:.84rem!important}.network-search input{font-size:.94rem!important}.network-search button{font-size:.82rem!important}
-.project-proposition h2{font-size:clamp(2.45rem,4.1vw,4.05rem)!important}
-.project-proposition p{font-size:1.04rem!important;line-height:1.58!important}
-.origin-copy h3{font-size:clamp(2.2rem,3.55vw,3.65rem)!important}
-.origin-bio h4{font-size:clamp(1.15rem,1.45vw,1.36rem)!important}
-.origin-bio p{font-size:clamp(.98rem,1.05vw,1.06rem)!important}
-.origin-photo figcaption,.origin-source{font-size:.70rem!important}
-.featured-head h2{font-size:clamp(2.45rem,4.05vw,4rem)!important}
-.feature-copy h3{font-size:clamp(2.05rem,3.35vw,3.55rem)!important}
-.contact-copy h2,.subscribe-copy h2{font-size:clamp(2.35rem,4vw,4rem)!important}
+.hero h1{max-width:900px!important;font-size:clamp(3.9rem,7.7vw,7.25rem)!important;line-height:.89!important}.hero-subtitle{font-size:clamp(1.05rem,1.35vw,1.24rem)!important}.network-search select{font-size:.84rem!important}.network-search input{font-size:.94rem!important}.network-search button{font-size:.82rem!important}.project-proposition h2{font-size:clamp(2.45rem,4.1vw,4.05rem)!important}.project-proposition p{font-size:1.04rem!important;line-height:1.58!important}.origin-copy h3{font-size:clamp(2.2rem,3.55vw,3.65rem)!important}.origin-bio h4{font-size:clamp(1.15rem,1.45vw,1.36rem)!important}.origin-bio p{font-size:clamp(.98rem,1.05vw,1.06rem)!important}.origin-photo figcaption,.origin-source{font-size:.70rem!important}.featured-head h2{font-size:clamp(2.45rem,4.05vw,4rem)!important}.feature-copy h3{font-size:clamp(2.05rem,3.35vw,3.55rem)!important}.contact-copy h2,.subscribe-copy h2{font-size:clamp(2.35rem,4vw,4rem)!important}
 
 /* The project-to-origin handoff had accumulated too much vertical air. */
-.project-inner{padding-top:clamp(62px,6vw,88px)!important;padding-bottom:0!important}
-.project-proposition{padding-bottom:clamp(30px,3.2vw,44px)!important}
-.origin-story{padding-top:clamp(38px,4vw,54px)!important;padding-bottom:clamp(68px,7vw,96px)!important}
+.project-inner{padding-top:clamp(62px,6vw,88px)!important;padding-bottom:0!important}.project-proposition{padding-bottom:clamp(30px,3.2vw,44px)!important}.origin-story{padding-top:clamp(38px,4vw,54px)!important;padding-bottom:clamp(68px,7vw,96px)!important}
 
 /* Secondary-page display scale. */
-body.subpage .page-intro{padding-top:clamp(58px,6vw,78px)!important;padding-bottom:clamp(38px,4vw,54px)!important}
-body.subpage .page-intro h1{max-width:920px!important;font-size:clamp(3rem,5vw,4.9rem)!important;line-height:.96!important}
-body.subpage .page-intro .page-dek{font-size:1.04rem!important}
+body.subpage .page-intro{padding-top:clamp(58px,6vw,78px)!important;padding-bottom:clamp(38px,4vw,54px)!important}body.subpage .page-intro h1{max-width:920px!important;font-size:clamp(3rem,5vw,4.9rem)!important;line-height:.96!important}body.subpage .page-intro .page-dek{font-size:1.04rem!important}
 
 /* Bibliography: the row itself is the selection target. */
-body.subpage .bib-tools-label{font-size:.66rem!important}
-body.subpage .bib-tool-button{min-height:38px!important;padding-inline:13px!important;font-size:.76rem!important}
-body.subpage .bib-selected-count{font-size:.68rem!important}
-body.subpage .bib-export-note{font-size:.66rem!important;line-height:1.45!important}
-body.subpage .bib-community-copy{font-size:.72rem!important}
-body.subpage .bib-section-head h2{font-size:clamp(1.85rem,2.5vw,2.3rem)!important}
-body.subpage .bib-entry{cursor:pointer!important;padding:16px 10px 20px 7px!important;border-radius:10px!important;transition:background 150ms ease,box-shadow 150ms ease!important}
-body.subpage .bib-entry:hover{background:rgba(255,255,255,.025)!important}
-body.subpage .bib-entry.is-selected{background:rgba(208,160,120,.085)!important;box-shadow:inset 2px 0 0 rgba(214,161,126,.72)!important}
-body.subpage .bib-entry>.bib-year{font-size:.68rem!important}
-body.subpage .bib-entry h3{font-size:clamp(1.08rem,1.32vw,1.20rem)!important;line-height:1.48!important}
-body.subpage .bib-links{font-size:.68rem!important}
-body.subpage .bib-select{pointer-events:none!important}
-body.subpage .bib-select span{width:17px!important;height:17px!important;opacity:.68!important}
-body.subpage .bib-entry.is-selected .bib-select span{opacity:1!important;box-shadow:0 0 0 3px rgba(208,160,120,.10)!important}
-body.subpage .bib-entry a{cursor:pointer!important}
+body.subpage .bib-tools-label{font-size:.66rem!important}body.subpage .bib-tool-button{min-height:44px!important;padding-inline:13px!important;font-size:.76rem!important}body.subpage .bib-selected-count{font-size:.68rem!important}body.subpage .bib-export-note{font-size:.66rem!important;line-height:1.45!important}body.subpage .bib-community-copy{font-size:.72rem!important}body.subpage .bib-section-head h2{font-size:clamp(1.85rem,2.5vw,2.3rem)!important}body.subpage .bib-entry{cursor:pointer!important;padding:16px 10px 20px 7px!important;border-radius:10px!important;transition:background 150ms ease,box-shadow 150ms ease!important}body.subpage .bib-entry:hover{background:rgba(255,255,255,.025)!important}body.subpage .bib-entry.is-selected{background:rgba(208,160,120,.085)!important;box-shadow:inset 2px 0 0 rgba(214,161,126,.72)!important}body.subpage .bib-entry>.bib-year{font-size:.68rem!important}body.subpage .bib-entry h3{font-size:clamp(1.08rem,1.32vw,1.20rem)!important;line-height:1.48!important}body.subpage .bib-links{font-size:.68rem!important}body.subpage .bib-select span{width:17px!important;height:17px!important;opacity:.68!important}body.subpage .bib-entry.is-selected .bib-select span{opacity:1!important;box-shadow:0 0 0 3px rgba(208,160,120,.10)!important}body.subpage .bib-entry a{cursor:pointer!important}
 
-/* Sources, auctions and case metadata: bring small labels up one notch. */
-.source-type,.source-meta,.source-links,.auction-year,.auction-house,.lot-no,.lot-links,.case-years,.case-tags,.case-closure,.case-tile-kicker{font-size:var(--balanced-meta)!important}
-.source-entry h3,.source-az-entry h3{font-size:clamp(1.06rem,1.25vw,1.18rem)!important}
-.auction-case h2,.open-case h2{font-size:clamp(2rem,3vw,3rem)!important}
-body.cases-page .cases-directory-copy h2{font-size:clamp(2.15rem,3.5vw,3.45rem)!important}
-body.cases-page .case-wall .case-tile-front-copy strong{font-size:clamp(1.2rem,1.55vw,1.55rem)!important}
-body.cases-page .case-wall .case-tile-back strong{font-size:clamp(1.35rem,1.75vw,1.75rem)!important}
-.cases-page .sample-main h2{font-size:clamp(2.15rem,3.5vw,3.55rem)!important}
+/* Sources: keep each record in normal document flow. Historical presentation
+   rules had allowed metadata labels to drift far from their titles. */
+.source-type,.source-meta,.source-links,.auction-year,.auction-house,.lot-no,.lot-links,.case-years,.case-tags,.case-closure,.case-tile-kicker{font-size:var(--balanced-meta)!important}.source-entry,.source-az-entry{display:block!important;position:relative!important;min-height:0!important;height:auto!important;margin:0!important;padding:14px 4px 18px!important}.source-entry::before,.source-entry::after,.source-az-entry::before,.source-az-entry::after{content:none!important;display:none!important}.source-entry>*,.source-az-entry>*{position:static!important;inset:auto!important;float:none!important;transform:none!important;max-width:72ch!important}.source-entry h3,.source-az-entry h3{margin:0!important;font-size:clamp(1.06rem,1.25vw,1.18rem)!important;line-height:1.48!important}.source-type{margin:0 0 5px!important}.source-meta,.source-links,.source-az-context{margin:6px 0 0!important}.source-az-letter{margin:28px 0 8px!important}.source-az-heading{margin-bottom:24px!important}.source-az-results{padding-top:4px!important}.source-az-alpha button,.source-az-reset button,.source-az-search button,.source-az-filters select,.source-az-filters input{min-height:44px!important}
+
+/* Auctions and cases. */
+.auction-case h2,.open-case h2{font-size:clamp(2rem,3vw,3rem)!important}body.cases-page .cases-directory-copy h2{font-size:clamp(2.15rem,3.5vw,3.45rem)!important}body.cases-page .case-wall{grid-template-columns:repeat(5,minmax(0,1fr))!important}body.cases-page .case-wall .case-tile-front-copy strong{font-size:clamp(1.2rem,1.55vw,1.55rem)!important}body.cases-page .case-wall .case-tile-back strong{font-size:clamp(1.35rem,1.75vw,1.75rem)!important}.cases-page .sample-main h2{font-size:clamp(2.15rem,3.5vw,3.55rem)!important}
 
 /* People: readable metadata, restrained names. */
-.person-role,.people-group-label{font-size:.67rem!important}
-.person-record h2{font-size:clamp(1.65rem,2.35vw,2.25rem)!important}
-.person-record-meta{font-size:.63rem!important}
-.people-intro-note,.people-role-index{font-size:.72rem!important}
+.person-role,.people-group-label{font-size:.67rem!important}.person-record h2{font-size:clamp(1.65rem,2.35vw,2.25rem)!important}.person-record-meta{font-size:.66rem!important}.people-intro-note,.people-role-index{font-size:.72rem!important}
 
-@media(max-width:900px){
-  .project-inner{padding-top:54px!important}
-  .project-proposition{padding-bottom:26px!important}
-  .origin-story{padding-top:34px!important;padding-bottom:58px!important}
-  body.subpage .page-intro{padding-top:48px!important;padding-bottom:34px!important}
-  body.subpage .page-intro h1{font-size:clamp(2.7rem,10vw,4.1rem)!important}
-}
+@media(max-width:900px){.project-inner{padding-top:54px!important}.project-proposition{padding-bottom:26px!important}.origin-story{padding-top:34px!important;padding-bottom:58px!important}body.subpage .page-intro{padding-top:48px!important;padding-bottom:34px!important}body.subpage .page-intro h1{font-size:clamp(2.7rem,10vw,4.1rem)!important}body.cases-page .case-wall{grid-template-columns:repeat(2,minmax(0,1fr))!important}.source-entry,.source-az-entry{padding:13px 0 16px!important}}
 
-@media(max-width:560px){
-  .top-nav a,.subpage-nav a{font-size:.75rem!important}
-  .hero h1{font-size:clamp(3.25rem,16vw,4.7rem)!important;line-height:.91!important}
-  .project-proposition h2,.featured-head h2,.contact-copy h2,.subscribe-copy h2{font-size:clamp(2.05rem,10vw,3rem)!important}
-  .origin-copy h3{font-size:clamp(2rem,9vw,2.8rem)!important}
-  body.subpage .page-intro h1{font-size:clamp(2.55rem,12vw,3.7rem)!important}
-  body.subpage .bib-tools{gap:8px!important}
-  body.subpage .bib-tool-button{min-height:38px!important;font-size:.74rem!important}
-  body.subpage .bib-entry{padding:14px 7px 18px 5px!important}
-  body.subpage .bib-entry h3{font-size:1.04rem!important}
-  body.subpage .bib-entry>.bib-year,body.subpage .bib-links{font-size:.66rem!important}
-  .source-type,.source-meta,.source-links,.auction-year,.auction-house,.lot-no,.lot-links,.case-years,.case-tags,.case-closure,.case-tile-kicker{font-size:.66rem!important}
-}
+@media(max-width:560px){.top-nav a,.subpage-nav a{font-size:.75rem!important}.hero h1{font-size:clamp(3.25rem,16vw,4.7rem)!important;line-height:.91!important}.project-proposition h2,.featured-head h2,.contact-copy h2,.subscribe-copy h2{font-size:clamp(2.05rem,10vw,3rem)!important}.origin-copy h3{font-size:clamp(2rem,9vw,2.8rem)!important}body.subpage .page-intro h1{font-size:clamp(2.55rem,12vw,3.7rem)!important}body.subpage .bib-tools{gap:8px!important}body.subpage .bib-tool-button{min-height:44px!important;font-size:.74rem!important}body.subpage .bib-entry{padding:14px 7px 18px 5px!important}body.subpage .bib-entry h3{font-size:1.04rem!important}body.subpage .bib-entry>.bib-year,body.subpage .bib-links{font-size:.66rem!important}.source-type,.source-meta,.source-links,.auction-year,.auction-house,.lot-no,.lot-links,.case-years,.case-tags,.case-closure,.case-tile-kicker{font-size:.66rem!important}}
