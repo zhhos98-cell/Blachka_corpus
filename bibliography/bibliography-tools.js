@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-9';
+    ui.src = '../unified-ui.js?v=20260810-12';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -62,7 +62,7 @@
     <div class="bib-tools-group"><span class="bib-tools-label">Sort</span><button class="bib-tool-button" type="button" data-sort="year" aria-pressed="true">Year ↑</button><button class="bib-tool-button" type="button" data-sort="author" aria-pressed="false">Author A–Z</button></div>
     <div class="bib-tools-group"><span class="bib-tools-label">Select</span><button class="bib-tool-button" type="button" data-select="visible">Visible</button><button class="bib-tool-button" type="button" data-select="clear">Clear</button><span class="bib-selected-count" aria-live="polite">0 selected</span></div>
     <div class="bib-tools-group"><span class="bib-tools-label">Export</span><button class="bib-tool-button" type="button" data-export="bib">BibTeX</button><button class="bib-tool-button" type="button" data-export="ris">RIS</button><button class="bib-tool-button" type="button" data-export="csv">CSV</button></div>
-    <p class="bib-export-note">Select individual references, or export the current visible list.</p>`;
+    <p class="bib-export-note">Click a reference row to select it; click again to remove it. Links still open normally. With no selection, export uses the visible list.</p>`;
   if (intro) intro.insertAdjacentElement('afterend', toolbar); else section.insertAdjacentElement('beforebegin', toolbar);
 
   const community = document.createElement('section');
@@ -85,25 +85,52 @@
 
   const entryKey = (node, index) => node.dataset.selectionKey || (node.dataset.selectionKey = `bib-${yearOf(node)}-${index}-${fold(titleGuess(node)).slice(0,32).replace(/[^a-z0-9]+/g,'-')}`);
 
-  const attachSelection = () => {
-    entries().forEach((node,index) => {
-      const key = entryKey(node,index);
-      if (node.querySelector(':scope > .bib-select')) return;
-      const label = document.createElement('label');
-      label.className = 'bib-select';
-      label.title = 'Select this reference for export';
-      label.innerHTML = `<input type="checkbox" aria-label="Select reference for export"><span aria-hidden="true"></span>`;
-      node.prepend(label);
-      label.querySelector('input').addEventListener('change', event => {
-        if (event.target.checked) selected.add(key); else selected.delete(key);
-        updateSelected();
-      });
-    });
-  };
-
   const updateSelected = () => {
     const count = toolbar.querySelector('.bib-selected-count');
     if (count) count.textContent = `${selected.size} selected`;
+  };
+
+  const setEntrySelected = (node, key, checked) => {
+    if (checked) selected.add(key); else selected.delete(key);
+    node.classList.toggle('is-selected', checked);
+    node.dataset.selected = checked ? 'true' : 'false';
+    const box = node.querySelector('.bib-select input');
+    if (box && box.checked !== checked) box.checked = checked;
+  };
+
+  const toggleEntry = (node, key) => {
+    setEntrySelected(node, key, !selected.has(key));
+    updateSelected();
+  };
+
+  const attachSelection = () => {
+    entries().forEach((node,index) => {
+      const key = entryKey(node,index);
+      if (!node.querySelector(':scope > .bib-select')) {
+        const label = document.createElement('label');
+        label.className = 'bib-select';
+        label.title = 'Selection indicator';
+        label.innerHTML = `<input type="checkbox" aria-label="Select reference for export"><span aria-hidden="true"></span>`;
+        node.prepend(label);
+        label.querySelector('input').addEventListener('change', event => {
+          setEntrySelected(node, key, event.target.checked);
+          updateSelected();
+        });
+      }
+
+      node.tabIndex = 0;
+      node.title = 'Click this reference to select or deselect it for export';
+      node.addEventListener('click', event => {
+        if (event.target.closest('a,button,input,label')) return;
+        if (window.getSelection?.().toString()) return;
+        toggleEntry(node, key);
+      });
+      node.addEventListener('keydown', event => {
+        if (event.target !== node || (event.key !== 'Enter' && event.key !== ' ')) return;
+        event.preventDefault();
+        toggleEntry(node, key);
+      });
+    });
   };
 
   const applyFilter = () => {
@@ -182,21 +209,13 @@
     }
     if (button.dataset.select === 'visible') {
       entries().forEach((node,index) => {
-        if (!node.hidden) {
-          selected.add(entryKey(node,index));
-          const box = node.querySelector('.bib-select input');
-          if (box) box.checked = true;
-        }
+        if (!node.hidden) setEntrySelected(node, entryKey(node,index), true);
       });
       updateSelected();
       return;
     }
     if (button.dataset.select === 'clear') {
-      selected.clear();
-      entries().forEach(node => {
-        const box = node.querySelector('.bib-select input');
-        if (box) box.checked = false;
-      });
+      entries().forEach((node,index) => setEntrySelected(node, entryKey(node,index), false));
       updateSelected();
       return;
     }
