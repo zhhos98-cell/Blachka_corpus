@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-7';
+    ui.src = '../unified-ui.js?v=20260810-8';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -23,7 +23,7 @@
     document.body.appendChild(script);
   });
 
-  loadScript('./case-wall-media.js?v=20260810-3').catch(console.error);
+  loadScript('./case-wall-media.js?v=20260810-4').catch(console.error);
 
   const revealCases = () => {
     const samples = [...document.querySelectorAll('#case-sections .sample')];
@@ -76,7 +76,7 @@
     try {
       await loadScript('../maps-v3.js?v=20260809-2');
       await loadScript('../maps-v4.js?v=20260809-1');
-      await loadScript('../map-ratio-fix.js?v=20260810-2');
+      await loadScript('../map-ratio-fix.js?v=20260810-3');
       await loadScript('../visuals-v1.js?v=20260809-2');
       await loadScript('../visuals-v2.js?v=20260809-1');
     } catch (error) { console.error(error); }
@@ -88,6 +88,8 @@
       if (!response.ok) throw new Error(`Base case source returned ${response.status}`);
       const html = await response.text();
       const doc = new DOMParser().parseFromString(`<main>${html}</main>`, 'text/html');
+      doc.querySelectorAll('img[src^="http://"],img[src^="https://"]').forEach(img => img.setAttribute('referrerpolicy','no-referrer'));
+      doc.querySelectorAll('a[href^="http://"],a[href^="https://"]').forEach(a => a.setAttribute('rel','noopener noreferrer'));
       const baseSamples = [...doc.querySelectorAll('main > .sample')];
       if (baseSamples.length !== 5) throw new Error(`Expected 5 base cases, found ${baseSamples.length}.`);
       baseSamples.forEach(sample => target.appendChild(document.importNode(sample, true)));
