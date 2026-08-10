@@ -20,199 +20,52 @@ jobs:
           node-version: '20'
       - name: Install DOM serializer
         run: npm install jsdom@24 --no-save --no-package-lock
-      - name: Render Sources once and replace runtime with a tiny filter
+      - name: Render Sources once
         run: |
           node <<'NODE'
           const fs = require('fs');
           const path = require('path');
           const { JSDOM } = require('jsdom');
-
-          const root = process.cwd();
-          const sourceDir = path.join(root, 'sources');
+          const sourceDir = path.join(process.cwd(), 'sources');
           const indexPath = path.join(sourceDir, 'index.html');
           const runtimePath = path.join(sourceDir, 'sources-runtime.js');
           const html = fs.readFileSync(indexPath, 'utf8');
           const runtime = fs.readFileSync(runtimePath, 'utf8');
           const marker = '/* ---- sources/sources-az.js ---- */';
           const cut = runtime.indexOf(marker);
-          if (cut < 0) throw new Error('A–Z runtime marker not found');
-          const coreRuntime = runtime.slice(0, cut);
-          const azRuntime = runtime.slice(cut + marker.length);
-
-          const dom = new JSDOM(html, {
-            url: 'https://example.test/sources/',
-            runScripts: 'outside-only',
-            pretendToBeVisual: true
-          });
-          const { window } = dom;
+          if (cut < 0) throw new Error('A-Z runtime marker not found');
+          const dom = new JSDOM(html, {url:'https://example.test/sources/', runScripts:'outside-only', pretendToBeVisual:true});
+          const window = dom.window;
           window.matchMedia = window.matchMedia || (() => ({matches:false,addEventListener(){},removeEventListener(){}}));
           window.requestAnimationFrame = window.requestAnimationFrame || (cb => setTimeout(cb, 0));
-          // Prevent pass 12 from dynamically reloading pass 13; all deep passes are evaluated explicitly below.
           window.requestIdleCallback = () => 0;
           window.cancelIdleCallback = () => {};
           window.CSS = window.CSS || {};
-          window.CSS.escape = window.CSS.escape || (value => String(value).replace(/[^a-zA-Z0-9_-]/g, '\\$&'));
-
-          window.eval(coreRuntime);
-
-          const passFiles = fs.readdirSync(sourceDir)
-            .filter(name => /^sources-pass\d+\.js$/.test(name))
-            .sort((a,b) => Number(a.match(/\d+/)[0]) - Number(b.match(/\d+/)[0]));
-          for (const name of passFiles) {
-            const n = Number(name.match(/\d+/)[0]);
-            if (n < 13) continue;
-            window.eval(fs.readFileSync(path.join(sourceDir, name), 'utf8'));
+          window.CSS.escape = window.CSS.escape || (value => String(value));
+          window.eval(runtime.slice(0, cut));
+          const passes = fs.readdirSync(sourceDir).filter(name => /^sources-pass\d+\.js$/.test(name)).sort((a,b) => Number(a.match(/\d+/)[0]) - Number(b.match(/\d+/)[0]));
+          for (const name of passes) {
+            const number = Number(name.match(/\d+/)[0]);
+            if (number >= 13) window.eval(fs.readFileSync(path.join(sourceDir, name), 'utf8'));
           }
-
-          window.eval(azRuntime);
-
+          window.eval(runtime.slice(cut + marker.length));
           setTimeout(() => {
             const doc = window.document;
-            const browser = doc.querySelector('.source-az');
-            const results = doc.querySelector('.source-az-results');
             const entries = [...doc.querySelectorAll('.source-az-entry')];
-            if (!browser || !results || entries.length < 20) {
-              throw new Error(`Static Sources render incomplete: browser=${!!browser}, entries=${entries.length}`);
-            }
-
-            doc.body.classList.add('sources-az-ready','sources-static');
+            if (!doc.querySelector('.source-az') || entries.length < 20) throw new Error('Static Sources render incomplete: ' + entries.length);
+            doc.body.classList.add('sources-az-ready', 'sources-static');
             doc.querySelectorAll('script[src*="sources-runtime.js"],script[src*="unified-ui.js"]').forEach(node => node.remove());
             doc.querySelectorAll('[data-source-pass]').forEach(node => node.removeAttribute('data-source-pass'));
-
             const filter = doc.createElement('script');
             filter.src = 'sources-filter.js?v=20260810-1';
             filter.defer = true;
             doc.body.appendChild(filter);
-
-            let out = '<!doctype html>\n' + doc.documentElement.outerHTML;
-            out = out.replace(/<html([^>]*)>/, '<html$1>');
-            fs.writeFileSync(indexPath, out, 'utf8');
-
-            const filterJS = String.raw`(() => {
-  const browser = document.querySelector('.source-az');
-  if (!browser) return;
-  document.body.classList.add('sources-az-ready','sources-static');
-
-  const clean = value => String(value || '').replace(/\s+/g,' ').trim();
-  const fold = value => clean(value).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-  const firstLetter = title => {
-    const stripped = clean(title).replace(/^[“"'‘’]+/,'').replace(/^the\s+/i,'');
-    const first = stripped.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').charAt(0).toUpperCase();
-    return /[A-Z]/.test(first) ? first : '#';
-  };
-
-  const kindSelect = browser.querySelector('[data-filter="kind"]');
-  const regionSelect = browser.querySelector('[data-filter="region"]');
-  const searchInput = browser.querySelector('[data-filter="q"]');
-  const resetBar = browser.querySelector('.source-az-reset');
-  const empty = document.createElement('p');
-  empty.className = 'source-az-empty';
-  empty.textContent = 'No sources match these filters.';
-  let letter = '';
-
-  const records = [...browser.querySelectorAll('.source-az-entry')].map(node => {
-    const title = clean(node.querySelector('h3')?.textContent);
-    const context = clean(node.querySelector('.source-az-context')?.textContent);
-    const parts = context.split(' · ');
-    return {
-      node,
-      title,
-      letter:firstLetter(title),
-      kind:parts[0] || 'Other',
-      region:parts[1] || 'Unspecified',
-      haystack:fold(`${title} ${node.querySelector('.source-type')?.textContent || ''} ${node.querySelector('.source-meta')?.textContent || ''} ${context}`)
-    };
-  });
-  const letterHeads = [...browser.querySelectorAll('.source-az-letter')];
-
-  const updateURL = () => {
-    const params = new URLSearchParams(location.search);
-    const set = (key,value) => value ? params.set(key,value) : params.delete(key);
-    set('q',clean(searchInput?.value));
-    set('kind',kindSelect?.value || '');
-    set('region',regionSelect?.value || '');
-    set('a',letter);
-    const query = params.toString();
-    history.replaceState(null,'',`${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
-  };
-
-  const apply = () => {
-    const q = fold(searchInput?.value);
-    const kind = kindSelect?.value || '';
-    const region = regionSelect?.value || '';
-    let visible = 0;
-    const available = new Set();
-
-    records.forEach(record => {
-      const base = (!q || record.haystack.includes(q)) && (!kind || record.kind === kind) && (!region || record.region === region);
-      if (base) available.add(record.letter);
-      const show = base && (!letter || record.letter === letter);
-      record.node.hidden = !show;
-      if (show) visible++;
-    });
-
-    letterHeads.forEach(head => {
-      const key = clean(head.textContent);
-      head.hidden = !records.some(record => !record.node.hidden && record.letter === key);
-    });
-    browser.querySelectorAll('[data-letter]').forEach(button => {
-      const key = button.dataset.letter || '';
-      button.setAttribute('aria-pressed',String(key === letter));
-      button.disabled = Boolean(key && !available.has(key));
-    });
-
-    const results = browser.querySelector('.source-az-results');
-    if (results) {
-      if (!visible && !empty.isConnected) results.appendChild(empty);
-      else if (visible && empty.isConnected) empty.remove();
-    }
-    if (resetBar) resetBar.hidden = !(q || kind || region || letter);
-    updateURL();
-  };
-
-  const loadURL = () => {
-    const params = new URLSearchParams(location.search);
-    if (searchInput) searchInput.value = params.get('q') || '';
-    if (kindSelect && [...kindSelect.options].some(option => option.value === (params.get('kind') || ''))) kindSelect.value = params.get('kind') || '';
-    if (regionSelect && [...regionSelect.options].some(option => option.value === (params.get('region') || ''))) regionSelect.value = params.get('region') || '';
-    const requested = (params.get('a') || '').toUpperCase();
-    letter = /^[A-Z#]$/.test(requested) ? requested : '';
-  };
-
-  browser.querySelector('form')?.addEventListener('submit',event => { event.preventDefault(); apply(); });
-  kindSelect?.addEventListener('change',apply);
-  regionSelect?.addEventListener('change',apply);
-  let timer;
-  searchInput?.addEventListener('input',() => { clearTimeout(timer); timer=setTimeout(apply,70); });
-  browser.querySelector('.source-az-alpha')?.addEventListener('click',event => {
-    const button = event.target.closest('[data-letter]');
-    if (!button || button.disabled) return;
-    letter = button.dataset.letter || '';
-    apply();
-  });
-  resetBar?.querySelector('button')?.addEventListener('click',() => {
-    if (searchInput) searchInput.value='';
-    if (kindSelect) kindSelect.value='';
-    if (regionSelect) regionSelect.value='';
-    letter='';
-    apply();
-  });
-  window.addEventListener('popstate',() => { loadURL(); apply(); });
-  loadURL();
-  apply();
-})();
-`;
-            fs.writeFileSync(path.join(sourceDir, 'sources-filter.js'), filterJS, 'utf8');
-
-            // Runtime assemblers are no longer part of the public site or repository payload.
+            fs.writeFileSync(indexPath, '<!doctype html>\n' + doc.documentElement.outerHTML, 'utf8');
             for (const name of fs.readdirSync(sourceDir)) {
-              if (/^sources-pass\d+\.js$/.test(name) || name === 'sources-runtime.js' || name === 'sources-az.js') {
-                fs.rmSync(path.join(sourceDir, name), {force:true});
-              }
+              if (/^sources-pass\d+\.js$/.test(name) || name === 'sources-runtime.js' || name === 'sources-az.js') fs.rmSync(path.join(sourceDir, name), {force:true});
             }
-
-            console.log(`Staticized ${entries.length} Sources entries; removed ${passFiles.length + 1} runtime assembler files.`);
-          }, 80);
+            console.log('Staticized ' + entries.length + ' Sources entries.');
+          }, 100);
           NODE
           sleep 1
       - name: Verify static Sources
@@ -224,7 +77,7 @@ jobs:
           COUNT=$(grep -o 'source-az-entry' sources/index.html | wc -l)
           echo "Static source entries: $COUNT"
           test "$COUNT" -ge 20
-      - name: Commit static Sources and remove this one-shot workflow
+      - name: Commit and remove one-shot workflow
         run: |
           rm -f .github/workflows/one-shot-staticize-sources.yml
           git config user.name "github-actions[bot]"
