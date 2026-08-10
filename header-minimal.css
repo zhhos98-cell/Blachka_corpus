@@ -1,39 +1,8 @@
-/* Fast subpage header layer: text first, no decorative pseudo-image collage. */
-html body.subpage .page-intro{
-  min-height:0!important;
-  padding:clamp(66px,7vw,90px) 0 clamp(40px,5vw,58px)!important;
-  border:0!important;
-  background:none!important;
-  overflow:visible!important;
-}
-html body.subpage .page-intro::before,
-html body.subpage .page-intro::after,
-html body.subpage .page-intro h1::before,
-html body.subpage .page-intro .page-dek::before{
-  content:none!important;
-  display:none!important;
-  background-image:none!important;
-  animation:none!important;
-  box-shadow:none!important;
-}
-html body.subpage .page-intro h1{
-  max-width:860px!important;
-  margin:0 0 18px!important;
-  font-size:clamp(3.35rem,6.1vw,6.15rem)!important;
-  line-height:.92!important;
-  letter-spacing:-.046em!important;
-  font-weight:490!important;
-}
-html body.subpage .page-intro .page-dek{
-  max-width:720px!important;
-  margin:0!important;
-  font-size:1.06rem!important;
-  line-height:1.54!important;
-  color:rgba(242,238,233,.70)!important;
-}
+/* Fast subpage frame: text first, no decorative collage or persistent blur. */
+html body.subpage .subpage-header{background:#18120f!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important}
+html body.subpage .page-intro{min-height:0!important;padding:clamp(66px,7vw,90px) 0 clamp(40px,5vw,58px)!important;border:0!important;background:none!important;overflow:visible!important}
+html body.subpage .page-intro::before,html body.subpage .page-intro::after,html body.subpage .page-intro h1::before,html body.subpage .page-intro .page-dek::before{content:none!important;display:none!important;background-image:none!important;animation:none!important;box-shadow:none!important}
+html body.subpage .page-intro h1{max-width:860px!important;margin:0 0 18px!important;font-size:clamp(3.35rem,6.1vw,6.15rem)!important;line-height:.92!important;letter-spacing:-.046em!important;font-weight:490!important}
+html body.subpage .page-intro .page-dek{max-width:720px!important;margin:0!important;font-size:1.06rem!important;line-height:1.54!important;color:rgba(242,238,233,.70)!important}
 html body.subpage .source-intro-credit{display:none!important}
-@media(max-width:760px){
-  html body.subpage .page-intro{padding:46px 0 32px!important}
-  html body.subpage .page-intro h1{font-size:clamp(3rem,15vw,4.75rem)!important}
-  html body.subpage .page-intro .page-dek{max-width:42ch!important;font-size:.98rem!important}
-}
+@media(max-width:760px){html body.subpage .page-intro{padding:46px 0 32px!important}html body.subpage .page-intro h1{font-size:clamp(3rem,15vw,4.75rem)!important}html body.subpage .page-intro .page-dek{max-width:42ch!important;font-size:.98rem!important}}
