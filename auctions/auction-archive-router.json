@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "generated_date": "2026-08-10",
   "title": "Archive router for unresolved Blaschka market and deaccession chains",
   "purpose": "Route auction/provenance gaps to specific archival series and record identifiers instead of repeating low-yield generic web searches.",
@@ -67,22 +67,39 @@
       "priority": 1,
       "institution": "Humboldt-Universität zu Berlin, Zoologische Lehrsammlung / historical Zoologisches Institut",
       "research_problem": "Test whether Krefeld 2025 lots 26-27, both labelled Zoolog. Institut Universität, Berlin, can be identified in the HU teaching-collection inventory or in its documented dispersal history.",
-      "current_public_proof": "HU's collections portal exposes multiple surviving Blaschka teaching models dated 1885 and 1887 and also preserves the exact institutional label formula Zoolog. Institut/ Universität Berlin on other teaching objects.",
-      "high_value_event": {
-        "date": "1970",
-        "description": "HU records a decision to reduce the teaching collection; parts were given away, many specimens were lost, and other parts were transferred to the Museum für Naturkunde.",
-        "status": "documented collection-level dispersal window; no Krefeld object bridge yet"
-      },
+      "current_public_proof": "HU's collections portal exposes multiple surviving Blaschka teaching models dated 1885 and 1887 and also preserves the institutional label formula Zoolog. Institut/ Universität Berlin on teaching objects.",
+      "current_catalogue_scope": "HU describes the online object list as a Teil-Katalog and currently exposes 1,339 records for the Zoologische Lehrsammlung; absence from this portal is therefore not treated as a complete-inventory negative.",
+      "old_identifier_evidence": "Current HU object records demonstrate surviving historical inventory layers such as 'ZI' and 'IfZ' numbers on teaching specimens. These prefixes should be searched in historical inventories and on auction labels alongside taxon/model numbers.",
+      "exact_krefeld_lot27_keys": ["Hydractinia echinata", "Stachelpolyp", "Blaschka no. 156", "Blaschka Nr. 156", "156", "Zoolog. Institut Universität, Berlin", "ZI", "IfZ"],
+      "high_value_events": [
+        {
+          "date": "1884-04-01",
+          "description": "Franz Eilhard Schulze founded an independent zoological teaching institute/collection at the university.",
+          "status": "collection-level foundation"
+        },
+        {
+          "date": "1886-02-19",
+          "description": "HU records a large transfer from the Zoologisches Museum into the teaching collection, including 80 Coelenterata among many other zoological groups.",
+          "status": "documented transfer into teaching collection; no Blaschka object-level link yet"
+        },
+        {
+          "date": "1970",
+          "description": "HU records a decision to reduce the teaching collection; parts were given away, many specimens were lost, and other parts were transferred to the Museum für Naturkunde.",
+          "status": "documented collection-level dispersal window; no Krefeld object bridge yet"
+        }
+      ],
       "search_targets": [
         "historical Zoologisches Institut / Lehrsammlung inventory books",
         "Blaschka purchase/acquisition entries circa 1884-1889",
+        "1886 transfer schedules from Zoologisches Museum to the teaching collection",
         "1968-1970 collection-reduction files",
         "gift / Abgabe / Verlust / Aussonderung lists",
-        "old inventory numbers and taxon names for anemone/polyp models"
+        "old ZI / IfZ inventory numbers and taxon names for Hydractinia and anemone/polyp models"
       ],
-      "search_fields": ["taxon", "old inventory number", "Blaschka catalogue/model number", "dimensions", "label wording", "purchase price", "gift/transfer/loss annotation"],
+      "search_fields": ["taxon", "old inventory number", "ZI/IfZ identifier", "Blaschka catalogue/model number", "dimensions", "label wording", "purchase price", "gift/transfer/loss annotation"],
       "official_collection_url": "https://www.sammlungen.hu-berlin.de/sammlungen/zoologische-lehrsammlung/",
-      "structured_audit": "berlin-krefeld-provenance-audit.json",
+      "structured_audits": ["berlin-krefeld-provenance-audit.json", "krefeld-hydractinia-156-crosswalk.json"],
+      "contact_target": "Current HU collection contact listed by the portal: Prof. Dr. John Nyakatura, Institut für Biologie / Vergleichende Zoologie.",
       "guard": "Do not infer that either lot left in 1970. The event is a provenance hypothesis window until an object-level record is recovered."
     },
     {
@@ -91,11 +108,59 @@
       "institution": "Museum für Naturkunde Berlin, Historical Division",
       "research_problem": "Crosswalk Krefeld 2025 lots 26-27 and any HU transfer candidates against the separate MfN historical Blaschka inventory.",
       "record_target": "Inventarliste OS001-02 Blaschka Glasmodelle",
-      "resolved_pdf_url": "https://website-archiv.museumfuernaturkunde.berlin/sites/default/files/221010_Inventarliste_OS001-02_Blaschka.pdf",
-      "runtime_status": "link resolved from archived institutional page; PDF body not fetched in current research runtime",
-      "search_fields_when_obtained": ["old inventory number", "taxon", "model/catalogue number", "dimensions", "label wording", "movement/deaccession/loss notes"],
+      "inventory_url": "https://www.museumfuernaturkunde.berlin/sites/default/files/221010_Inventarliste_OS001-02_Blaschka.pdf",
+      "project_capture_status": "complete 40-row public inventory transcription already captured in the project backend; minimum 59 explicitly stated physical components and 28 distinct Blaschka catalogue-number segments",
+      "lot27_exact_crosscheck": "No Hydractinia echinata, Stachelpolyp or Blaschka catalogue no. 156 occurs in the complete 40-row project transcription of the published OS001-02 inventory.",
+      "negative_scope_guard": "This excludes a direct match to a currently published OS001-02 row; it does not prove that a Hydractinia no. 156 never existed in Berlin or never passed through MfN.",
+      "lot26_comparison_candidates_only": [
+        "OS001-02 25 Actinia equina",
+        "OS001-02 30 Anemonia sulcata",
+        "OS001-02 35 Epizoanthus couchii / Blaschka no. 117"
+      ],
       "relationship_to_hu": "Keep MfN separate from HU. HU records that some teaching-collection material was transferred to MfN during the 1970 reduction, but this does not prove either Krefeld lot followed that route.",
-      "dating_conflict": "Krefeld catalogues both objects around 1870; current HU Blaschka examples recovered publicly are dated 1885 or 1887. Preserve the auction dates until an object-level crosswalk resolves the chronology."
+      "dating_conflict": "Krefeld catalogues both objects around 1870; current HU and MfN material includes documented 1884-1887 dates. Preserve the auction dates until an object-level crosswalk resolves the chronology."
+    },
+    {
+      "router_id": "AR-BERLIN-MFN-RECORDS-SERIES",
+      "priority": 1,
+      "institution": "Museum für Naturkunde Berlin Archive, records collection (S)",
+      "research_problem": "Route the Berlin institutional-history problem into the correct administrative record groups rather than treating the current OS001-02 object inventory as the only evidence layer.",
+      "official_series": [
+        {
+          "identifier": "S001",
+          "title": "Zoologisches Museum",
+          "date_range": "1810-1888",
+          "use": "Potential source for pre-1889 museum-side acquisition/transfer records, including the documented 1886 transfer into Schulze's teaching collection."
+        },
+        {
+          "identifier": "S003",
+          "title": "Zoologisches Institut der Universität",
+          "date_range": "1889-1960",
+          "use": "Highest-value MfN-held records series for Zoologisches Institut administrative files, correspondence and acquisition/collection documentation after the institute moved into the museum complex."
+        },
+        {
+          "identifier": "S004-04",
+          "title": "Institut für Spezielle Zoologie und Zoologisches Museum der HU zu Berlin",
+          "date_range": "1960-1968",
+          "use": "Immediate predecessor period to the 1968 university restructuring and therefore a bridge toward the 1970 collection reduction."
+        },
+        {
+          "identifier": "S005-02",
+          "title": "Bereich Zoologisches Museum",
+          "date_range": "1969 onward",
+          "use": "Museum-side records after the 1968 restructuring; useful for incoming transfers from the HU teaching collection, but not automatically the HU-side disposal file."
+        }
+      ],
+      "official_overview_url": "https://www.museumfuernaturkunde.berlin/en/research/records-collection-chronological-overview",
+      "current_access_status": "MfN states that the records collection is inaccessible from 1 July 2026 until approximately Q4 2027 during Museum Evolution work. Email information requests remain possible.",
+      "contact": "archiv@mfn.berlin",
+      "remote_query_priority": [
+        "S003: Hydractinia echinata / Stachelpolyp / Blaschka 156 / Glasmodelle / Lehrsammlung",
+        "S001: 19 Feb 1886 transfer schedule from Zoologisches Museum to Schulze's teaching collection, especially Coelenterata",
+        "S004-04: Blaschka / Glasmodelle / Lehrsammlung inventories and movement records before 1968",
+        "S005-02: 1970-era incoming transfers of HU teaching material to MfN"
+      ],
+      "guard": "The published archive tectonic establishes series relevance, not the presence of Hydractinia or Blaschka in a specific file. Exact file identifiers remain to be supplied by the archive or a finding aid."
     },
     {
       "router_id": "AR-GLASGOW-MASON-1909",
@@ -119,7 +184,15 @@
     }
   ],
   "strategy": {
-    "order": ["Science Museum transfer/disposal index before generic recipient search", "HU teaching-collection/dispersal records before treating Berlin as a single collection", "exact historical number before generic maker name", "known prior institution before broad auction-house search", "institutional acquisition stays outside canonical auction count"],
-    "rationale": "Generic Blaschka and glass-model auction searches have reached sharply diminishing returns. The remaining high-value gaps are archival routing, institutional branch separation and object-number crosswalk problems."
+    "order": [
+      "Science Museum transfer/disposal index before generic recipient search",
+      "Hydractinia echinata / Stachelpolyp / Blaschka no. 156 before generic Berlin maker-name search",
+      "HU teaching-collection/dispersal records before treating Berlin as a single collection",
+      "MfN S003/S004-04 series routing before assuming the OS001-02 object inventory exhausts institutional history",
+      "exact historical number before generic maker name",
+      "known prior institution before broad auction-house search",
+      "institutional acquisition stays outside canonical auction count"
+    ],
+    "rationale": "Generic Blaschka and glass-model auction searches have reached sharply diminishing returns. The remaining high-value gaps are archival routing, institutional branch separation and exact taxon/model/inventory-number crosswalk problems."
   }
 }
