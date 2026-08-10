@@ -80,22 +80,23 @@
   box-shadow:0 0 16px rgba(220,151,87,.24);
 }
 
-/* Portrait remains underlit. A faint warm face cue is always present; hover/focus/click selects the matching biography. */
+/* Portrait remains underlit. Hotspots are anchored to the image itself, not to a guessed aspect ratio. */
 .origin-photo{position:relative!important}
-.origin-photo>a{position:relative!important;isolation:isolate!important;background:#0d0a08!important;box-shadow:0 22px 54px rgba(0,0,0,.28)!important}
-.origin-photo img{position:relative;z-index:0;filter:grayscale(.80) sepia(.10) saturate(.36) brightness(.27) contrast(1.13)!important;transition:none!important}
-.origin-photo>a::after{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(7,5,4,.13),rgba(7,5,4,.25) 48%,rgba(7,5,4,.68)),radial-gradient(ellipse at 52% 42%,transparent 13%,rgba(8,5,4,.34) 61%,rgba(6,4,3,.66))}
+.origin-image-stage{position:relative!important;overflow:hidden;border-radius:18px;background:#0d0a08!important;box-shadow:0 22px 54px rgba(0,0,0,.28)!important}
+.origin-image-stage>a{position:relative!important;display:block!important;isolation:isolate!important;background:#0d0a08!important}
+.origin-photo img{position:relative;z-index:0;width:100%;height:auto;filter:grayscale(.80) sepia(.10) saturate(.36) brightness(.27) contrast(1.13)!important;transition:none!important}
+.origin-image-stage>a::after{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(7,5,4,.13),rgba(7,5,4,.25) 48%,rgba(7,5,4,.68)),radial-gradient(ellipse at 52% 42%,transparent 13%,rgba(8,5,4,.34) 61%,rgba(6,4,3,.66))}
 .origin-photo figcaption{color:rgba(232,220,209,.34)!important}.origin-photo figcaption a{color:rgba(242,226,211,.54)!important}
 
-.family-portrait-layer{position:absolute;z-index:3;left:0;right:0;top:0;bottom:auto;aspect-ratio:4/5;pointer-events:none}
+.family-portrait-layer{position:absolute;z-index:3;inset:0;pointer-events:none}
 .family-person{--x:50%;--y:30%;position:absolute;left:var(--x);top:var(--y);width:82px;height:82px;transform:translate(-50%,-50%);pointer-events:auto}
 .family-person button{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;border-radius:50%;background:transparent;box-shadow:none;cursor:pointer;opacity:1}
 .family-person button::before{content:"";position:absolute;inset:-19px;border-radius:50%;opacity:.62;background:radial-gradient(circle,rgba(255,225,166,.32) 0 8%,rgba(231,175,97,.17) 27%,rgba(206,139,69,.055) 52%,transparent 72%);box-shadow:0 0 28px rgba(226,167,89,.16),0 0 62px rgba(184,116,54,.08);transition:opacity 180ms ease,box-shadow 220ms ease,transform 260ms cubic-bezier(.16,1,.3,1)}
 .family-person:hover button::before,.family-person:focus-within button::before,.family-person.is-active button::before{opacity:1;transform:scale(1.08);box-shadow:0 0 38px rgba(235,178,96,.26),0 0 82px rgba(194,126,57,.15)}
 .family-person-tooltip{display:none!important}
-.family-person--karolina{--x:16%;--y:48%}
-.family-person--leopold{--x:37%;--y:19%}
-.family-person--rudolf{--x:78%;--y:46%}
+.family-person--karolina{--x:17%;--y:44%}
+.family-person--leopold{--x:39%;--y:18%}
+.family-person--rudolf{--x:76%;--y:44%}
 .family-photo-hint{display:none!important}
 .family-mobile-nav,.family-mobile-bio{display:none}
 
