@@ -1,4 +1,11 @@
 (() => {
+  if (!window.__blaschkaUnifiedUIRequested) {
+    window.__blaschkaUnifiedUIRequested = true;
+    const ui = document.createElement('script');
+    ui.src = '../unified-ui.js?v=20260810-1';
+    document.head.appendChild(ui);
+  }
+
   const target = document.getElementById('case-sections');
   const loading = document.getElementById('cases-loading');
   if (!target) return;
@@ -29,6 +36,29 @@
     samples.forEach((sample) => observer.observe(sample));
   };
 
+  const applyIncomingSearch = () => {
+    const raw = (new URLSearchParams(location.search).get('q') || '').trim();
+    if (!raw) return;
+    const q = raw.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const samples = [...target.querySelectorAll('.sample')];
+    let visible = 0;
+    samples.forEach((sample) => {
+      const haystack = (sample.textContent || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+      const show = haystack.includes(q);
+      sample.hidden = !show;
+      if (show) visible++;
+    });
+    const intro = document.querySelector('.page-intro');
+    if (intro && !document.querySelector('.cases-query-bar')) {
+      const bar = document.createElement('div');
+      bar.className = 'cases-query-bar';
+      bar.innerHTML = `<span>Search</span><strong></strong><em></em><a href="./">Clear</a>`;
+      bar.querySelector('strong').textContent = `“${raw}”`;
+      bar.querySelector('em').textContent = `${visible} matching case${visible === 1 ? '' : 's'}`;
+      intro.insertAdjacentElement('afterend', bar);
+    }
+  };
+
   const restoreHash = () => {
     if (!location.hash) return;
     const id = decodeURIComponent(location.hash.slice(1));
@@ -57,6 +87,7 @@
       await loadScript('../visuals-v2.js?v=20260809-1');
 
       document.body.classList.add('cases-ready');
+      applyIncomingSearch();
       revealCases();
       restoreHash();
     } catch (error) {
