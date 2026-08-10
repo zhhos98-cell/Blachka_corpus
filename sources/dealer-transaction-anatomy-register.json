@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Dealer Transaction Anatomy Register",
+  "generated_date": "2026-08-10",
+  "scope": "Receiving-side archival controls that preserve multiple document types from natural-history dealer transactions. The register is a retrieval guide for recognising the paperwork expected around Blaschka orders: catalogues and price lists, correspondence, specimen/model lists, estimates, invoices, payment requests, bills of lading, postal receipts, account statements and shipping-insurance certificates.",
+  "evidence_guard": "Most records below are not Blaschka transactions. Their purpose is to reconstruct the documentary anatomy of dealer-mediated scientific commerce so that missing or dispersed Blaschka transaction layers can be targeted systematically rather than inferred.",
+  "records": [
+    {
+      "id": "ANATOMY-DAMON-ANSP-1868",
+      "dealer": "Robert Damon",
+      "repository": "Academy of Natural Sciences of Drexel University Archives",
+      "reference": "Conchological Section papers, Box 4 Folder 24, with adjacent financial series",
+      "date": "1868",
+      "document_bundle": ["invoice", "cash books", "ledger", "receipts", "vouchers"],
+      "status": "pre_agency_transaction_control",
+      "evidence": "The finding aid explicitly lists Damon's invoice for British shells and places dealer documents inside a broader receiving-side accounting archive.",
+      "research_value": "Shows how a dealer invoice could be absorbed into institutional financial records that survive independently from the dealer's own papers.",
+      "locator": "https://findingaids.library.upenn.edu/records/ANSP_ANSP.COLL.0081"
+    },
+    {
+      "id": "ANATOMY-WARD-MISSOURI-1889",
+      "dealer": "Ward's Natural Science Establishment",
+      "repository": "University of Missouri Archives",
+      "reference": "(UW:1/4/1), Box 7, FF 2G",
+      "date": "1889",
+      "document_bundle": ["correspondence", "advertisement", "payment requests", "bills of lading"],
+      "status": "same_period_transaction_control",
+      "evidence": "The official inventory groups Ward correspondence concerning museum specimen purchases with requests for payment and bills of lading.",
+      "research_value": "A compact receiving-side example in which sales, payment and freight paperwork survive together.",
+      "locator": "https://muarchives.missouri.edu/uw-rg1-s1-4.html"
+    },
+    {
+      "id": "ANATOMY-WARD-SMITHSONIAN-RU208",
+      "dealer": "Ward's Natural Science Establishment",
+      "repository": "Smithsonian Institution Archives",
+      "reference": "SIA RU000208, Box 13 Folder 6; Series 5 Invoices, ca. 1867–1951",
+      "date_range": "Ward file 1884, 1887–1895, 1899–1900, 1902–1904; invoice series begins ca.1867",
+      "document_bundle": ["dealer correspondence", "shipment invoices", "catalog number", "collector", "locality", "terms sent"],
+      "status": "receiving_side_document_system",
+      "evidence": "RU000208 contains a dedicated Ward's Natural Science Establishment correspondence file. Its invoice series is described as divisional copies for specimen distribution recording specimen descriptions, catalogue numbers, collectors, localities and terms under which material was sent.",
+      "research_value": "Provides a field schema for coding museum-side transaction documents. Even when a dealer letter is missing, invoice fields can preserve actor, object, place and transfer terms.",
+      "blaschka_guard": "No Blaschka content is assigned to RU000208 without item-level inspection.",
+      "locator": "https://siarchives.si.edu/collections/siris_arc_216776"
+    },
+    {
+      "id": "ANATOMY-WARD-AMNH-HOVEY-206",
+      "dealer": "Ward's Natural Science Establishment",
+      "repository": "American Museum of Natural History, Gottesman Research Library",
+      "reference": "Mss .H682, Box 4 Folder 206",
+      "date_range": "1907, 1913–1914",
+      "document_bundle": ["correspondence", "postal receipts", "estimate", "account statement", "index to letters"],
+      "status": "longitudinal_transaction_control",
+      "evidence": "The file documents negotiations for specimen purchases and preserves both cost estimation and account reconciliation alongside postal evidence.",
+      "research_value": "Shows that the economic life of a dealer transaction could leave multiple records before and after payment, rather than a single invoice.",
+      "locator": "https://data.library.amnh.org/archives/repositories/3/archival_objects/6934"
+    },
+    {
+      "id": "ANATOMY-WARD-AMNH-HOVEY-204",
+      "dealer": "Ward's Natural Science Establishment",
+      "repository": "American Museum of Natural History, Gottesman Research Library",
+      "reference": "Mss .H682, Box 4 Folder 204",
+      "date_range": "1918–1921",
+      "document_bundle": ["correspondence", "notes", "invoices", "shipping insurance certificates"],
+      "status": "longitudinal_transaction_control",
+      "evidence": "The file groups specimen-sale correspondence with invoices and shipping-insurance certificates.",
+      "research_value": "A later but unusually explicit control for the point at which object description, price and transit risk become separate documentary layers.",
+      "locator": "https://data.library.amnh.org/archives/repositories/3/archival_objects/6932"
+    },
+    {
+      "id": "ANATOMY-WARD-AMNH-PRICE-LISTS-1906",
+      "dealer": "Ward's Natural Science Establishment",
+      "repository": "American Museum of Natural History, Gottesman Research Library",
+      "reference": "Mss .H682, Box 1 Folder 55",
+      "date": "1906",
+      "document_bundle": ["price lists", "catalogues", "letter to Ward's"],
+      "status": "longitudinal_selection_control",
+      "evidence": "The archival description identifies Ward price lists and catalogues kept together with correspondence.",
+      "research_value": "Confirms that printed selection tools could remain attached to the correspondence they generated on the receiving side.",
+      "locator": "https://data.library.amnh.org/archives/"
+    }
+  ],
+  "document_type_vocabulary": [
+    "catalogue / price list",
+    "enquiry / correspondence",
+    "selection or specimen/model list",
+    "estimate / quotation",
+    "invoice",
+    "payment request / cheque / remittance",
+    "receipt / postal receipt",
+    "bill of lading / forwarding instruction",
+    "insurance certificate",
+    "account statement / reconciliation",
+    "museum accession / distribution invoice"
+  ],
+  "research_observation": "A transaction should be reconstructed as a document bundle rather than as an invoice event. Different institutions often preserve different stages of the same commercial action. This provides a practical search template for Blaschka provenance: when one layer is present, adjacent record series should be checked for the missing selection, payment, freight, insurance and accession layers.",
+  "next_retrieval": [
+    "Use the document-type vocabulary to recode existing Blaschka dealer cases and identify which transaction layers are genuinely absent versus merely unsearched.",
+    "For Ward, cross-check Rochester customer correspondence against receiving-side bills of lading and account statements.",
+    "For Damon, search customer financial series adjacent to known correspondence, not only name-indexed letters.",
+    "For Frič, inspect dealer-specific museum acquisition files for catalogues, quotations and receipts even when correspondence has not survived."
+  ]
+}
