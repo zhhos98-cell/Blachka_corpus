@@ -22,6 +22,9 @@
   addStyle(`${prefix}apple-unified.css?v=20260810-2`, 'apple-unified.css');
   if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-1`, 'subpage-v2.css');
   addStyle(`${prefix}fluid-motion.css?v=20260810-3`, 'fluid-motion.css?v=20260810-3');
+  /* Canonical spacing/alignment contract. Keep last so old page-specific borders and
+     offsets cannot reintroduce visual drift. */
+  addStyle(`${prefix}site-rhythm.css?v=20260810-1`, 'site-rhythm.css');
   addScript(`${prefix}nav-glide.js?v=20260810-1`, 'nav-glide.js');
 
   if (!window.__blaschkaFluidMotionRequested) {
