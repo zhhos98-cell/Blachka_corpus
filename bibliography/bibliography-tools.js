@@ -1,4 +1,11 @@
 (() => {
+  if (!window.__blaschkaUnifiedUIRequested) {
+    window.__blaschkaUnifiedUIRequested = true;
+    const ui = document.createElement('script');
+    ui.src = '../unified-ui.js?v=20260810-1';
+    document.head.appendChild(ui);
+  }
+
   const list = document.querySelector('.bib-list');
   const section = document.querySelector('.bib-section');
   const intro = document.querySelector('.page-intro');
