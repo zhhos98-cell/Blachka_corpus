@@ -30,7 +30,7 @@
     {
       type: 'Damon · 1857–1859 · pre-agency catalogue controls',
       title: 'Robert Damon used printed shell catalogues decades before taking the Blaschka agency.',
-      meta: 'BHL records Damon’s 1857 catalogue of British and Irish shells, while a complete 1859 Generic catalogue of recent & fossil shells by S. P. Woodward survives with the imprint “Printed for R. Damon” at Weymouth. These publications give a baseline for Damon's use of taxonomy, lists and printed selection before glass models entered his commercial repertoire.',
+      meta: "BHL records Damon’s 1857 catalogue of British and Irish shells, while a complete 1859 Generic catalogue of recent & fossil shells by S. P. Woodward survives with the imprint “Printed for R. Damon” at Weymouth. These publications give a baseline for Damon's use of taxonomy, lists and printed selection before glass models entered his commercial repertoire.",
       links: '<a href="https://commons.wikimedia.org/wiki/File:Generic_catalogue_of_recent_%26_fossil_shells_%28IA_genericcatalogue00wood%29.pdf" target="_blank" rel="noopener">1859 Damon catalogue ↗</a> · <a href="https://www.biodiversitylibrary.org/" target="_blank" rel="noopener">BHL ↗</a>'
     },
     {
