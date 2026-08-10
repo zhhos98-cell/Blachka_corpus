@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>The Blaschka Object Network</title>
+    <link>https://zhhos98-cell.github.io/Blachka_corpus/</link>
+    <description>Public updates from a research project tracing Blaschka glass models through workshop records, transactions, movement, collections, conservation and surviving objects.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Aug 2026 04:00:00 GMT</lastBuildDate>
+    <generator>GitHub Pages</generator>
+    <item>
+      <title>The Blaschka Object Network: public research prototype</title>
+      <link>https://zhhos98-cell.github.io/Blachka_corpus/</link>
+      <guid isPermaLink="true">https://zhhos98-cell.github.io/Blachka_corpus/</guid>
+      <pubDate>Mon, 10 Aug 2026 04:00:00 GMT</pubDate>
+      <description>The public site brings together documentary cases, bibliography, sources and auction traces while keeping secure links, comparisons and open provenance gaps distinct.</description>
+    </item>
+  </channel>
+</rss>
