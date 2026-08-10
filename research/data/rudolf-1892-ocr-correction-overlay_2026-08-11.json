@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-08-11",
+  "purpose": "Non-destructive correction layer for Rudolf Blaschka's 1892 correspondence and related itinerary metadata. The 04 archive master remains unchanged for traceability.",
+  "policy": {
+    "raw_master": "04_Blaschka_Archive_015-040_MASTER.json remains authoritative as the preserved OCR layer.",
+    "corrections": "Corrections are stored separately and should be applied only in research views, itinerary extraction, and public-facing prose after source-level review.",
+    "authority_order": [
+      "human translation/transcription embedded in the lossless archive source",
+      "legible date/place headers in the lossless source",
+      "Rossi-Wilcox 2007 when reproducing or discussing the same letter",
+      "route/context inference, explicitly labelled as inference"
+    ]
+  },
+  "record_corrections": [
+    {
+      "record_id": "BLA-D00878",
+      "primary": "017:232",
+      "field": "date_place_header",
+      "raw_compact_reading": "24. Mar. 1892",
+      "corrected_reading": "Colorado Springs, 24 May 1892",
+      "confidence": "high",
+      "basis": "The lossless source preserves the human-translation header 'Colorado Springs 24 May 1892' immediately above the translated letter; the compact OCR captured the date incorrectly from an image/postmark layer."
+    }
+  ],
+  "metadata_corrections": [
+    {
+      "record_scope": "Rudolf_Blaschka_America_1892_MASTER.csv HARV-007",
+      "field": "place / route_stage",
+      "old_value": "Jamaica / late Jamaica fieldwork",
+      "corrected_value": "Cambridge, Massachusetts / retrospective account of Jamaica fieldwork",
+      "confidence": "high",
+      "basis": "The correspondence sequence shows Rudolf had already returned to Cambridge by early April; the late-night Jamaica work is described retrospectively."
+    },
+    {
+      "record_scope": "Rudolf_Blaschka_America_1892_MASTER.csv HARV-008",
+      "field": "place / route_stage",
+      "old_value": "Jamaica / departure phase",
+      "corrected_value": "Cambridge, Massachusetts / sorting and dispatch of Jamaican materials before western journey",
+      "confidence": "high",
+      "basis": "The letter belongs to the Cambridge return phase before departure west on 12 April."
+    }
+  ],
+  "corning_2007_use": {
+    "role": "control text, not replacement primary source",
+    "useful_for": [
+      "checking dates and place names where the compact OCR is degraded",
+      "checking botanical names quoted from the same letters",
+      "identifying which translated passages Rossi-Wilcox used",
+      "distinguishing travel chronology from retrospective description"
+    ],
+    "guard": "Do not silently replace archival wording with the 2007 publication's edited prose."
+  }
+}
