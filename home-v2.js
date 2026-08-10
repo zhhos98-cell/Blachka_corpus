@@ -20,7 +20,7 @@
   if (!compact) addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
   addStyle('mobile-v3.css?v=20260810-4', 'mobile-v3.css');
   addStyle('accessibility.css?v=20260810-1', 'accessibility.css');
-  addStyle('scale-balance.css?v=20260810-1', 'scale-balance.css');
+  addStyle('scale-balance.css?v=20260810-2', 'scale-balance.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
@@ -38,6 +38,15 @@
   }
 
   document.querySelectorAll('img[src^="http://"],img[src^="https://"]').forEach(img => { img.referrerPolicy = 'no-referrer'; });
+
+  const hero = document.querySelector('.hero');
+  if (hero && !hero.querySelector('.hero-explore')) {
+    const explore = document.createElement('a');
+    explore.className = 'hero-explore';
+    explore.href = '#project';
+    explore.innerHTML = '<span>Explore</span><b aria-hidden="true">↓</b>';
+    hero.appendChild(explore);
+  }
 
   const form = document.getElementById('network-search');
   const input = document.getElementById('network-search-input');
@@ -88,6 +97,12 @@
         <button type="button" aria-label="Highlight ${person.name}" aria-expanded="false"></button>
       </span>`).join('');
     familyStage.appendChild(layer);
+
+    const cue = document.createElement('p');
+    cue.className = 'origin-interaction-cue';
+    cue.setAttribute('aria-hidden', 'true');
+    cue.innerHTML = '<span>Hover a face</span>';
+    familyStage.appendChild(cue);
 
     const mobileNav = document.createElement('div');
     mobileNav.className = 'family-mobile-nav';
