@@ -1,17 +1,21 @@
-/* Canonical site shell · one header rhythm and one footer rhythm everywhere. */
+/* Canonical site shell · home navigation is the single header model everywhere. */
 :root{--shell-max:1440px;--subpage-shell-max:1180px;--shell-gutter:20px}
 .top-nav a[href="#project"],.subpage-nav a[href$="#project"]{display:none!important}
-.hero-header,.subpage-header{min-height:72px!important;height:auto!important;margin:0 auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:24px!important;padding:0!important;border-bottom:1px solid rgba(255,255,255,.11)!important;box-shadow:none!important}
-.hero-header{width:min(calc(100% - 40px),var(--shell-max))!important}
-.subpage-header{width:min(calc(100% - 40px),var(--subpage-shell-max))!important;position:relative!important;top:auto!important;z-index:30!important;background:#18120f!important}
+
+.hero-header,.subpage-header{min-height:68px!important;height:auto!important;margin:0 auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:24px!important;padding:0!important;border-bottom:1px solid rgba(255,255,255,.11)!important;box-shadow:none!important}
+.hero-header,.subpage-header{width:min(calc(100% - 40px),var(--shell-max))!important}
+.subpage-header{position:relative!important;top:auto!important;z-index:30!important;background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 .subpage-main{width:min(calc(100% - 40px),var(--subpage-shell-max))!important;margin-inline:auto!important}
+
 .hero-brand,.subpage-brand{flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;min-height:44px!important;color:rgba(255,255,255,.88)!important;font:600 .72rem/1.15 var(--font-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif)!important;letter-spacing:.02em!important;text-decoration:none!important;white-space:nowrap!important}
-.top-nav,.subpage-nav{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:2px!important;min-width:0!important;margin:0!important;padding:4px 0!important;overflow:visible!important;white-space:nowrap!important}
-.top-nav a,.subpage-nav a,.nav-map-trigger{flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:44px!important;padding:0 13px!important;border:1px solid transparent!important;border-radius:999px!important;color:rgba(255,255,255,.72)!important;background:transparent!important;box-shadow:none!important;font:560 .76rem/1 var(--font-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif)!important;text-decoration:none!important;transform:none!important;transition:color 160ms ease,background 180ms ease!important;cursor:pointer!important}
+.top-nav,.subpage-nav{position:relative!important;isolation:isolate!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:2px!important;min-width:0!important;margin:0!important;padding:4px!important;overflow:visible!important;white-space:nowrap!important}
+.top-nav a,.subpage-nav a,.nav-map-trigger{position:relative!important;z-index:2!important;flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:44px!important;padding:0 18px!important;border:1px solid transparent!important;border-radius:999px!important;color:rgba(255,255,255,.72)!important;background:transparent!important;box-shadow:none!important;font:560 .76rem/1 var(--font-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif)!important;letter-spacing:0!important;text-transform:none!important;text-decoration:none!important;transform:none!important;transition:color 160ms ease,background 180ms ease!important;cursor:pointer!important}
 .top-nav a:hover,.top-nav a:focus-visible,.subpage-nav a:hover,.subpage-nav a:focus-visible,.nav-map-trigger:hover,.nav-map-trigger:focus-visible{color:#fff!important;background:rgba(255,255,255,.07)!important}
 .top-nav a[aria-current='page'],.subpage-nav a[aria-current='page'],.nav-map-trigger.is-current,.nav-map-menu[open]>.nav-map-trigger{color:#fff!important;background:rgba(255,255,255,.09)!important}
+/* Kill legacy underline treatments inherited from older subpage styles. */
+.top-nav a::after,.subpage-nav>a::after{content:none!important;display:none!important}
 
-.nav-map-menu{position:relative;flex:0 0 auto}
+.nav-map-menu{position:relative;z-index:3;flex:0 0 auto}
 .nav-map-menu>summary{list-style:none}.nav-map-menu>summary::-webkit-details-marker{display:none}.nav-map-menu>summary::marker{display:none;content:''}
 .nav-map-trigger::after{content:'⌄';margin-left:6px;color:rgba(255,255,255,.46);font-size:.72em;transform:translateY(-1px)}
 .nav-map-menu[open]>.nav-map-trigger::after{content:'⌃'}
@@ -31,7 +35,7 @@
   .hero-brand,.subpage-brand{min-height:36px!important;font-size:.69rem!important}
   .top-nav,.subpage-nav{justify-content:flex-start!important;margin:0 -4px!important;padding:2px 4px 5px!important;overflow-x:auto!important;overflow-y:visible!important;overscroll-behavior-x:contain!important;scrollbar-width:none!important;scroll-padding-inline:4px!important}
   .top-nav::-webkit-scrollbar,.subpage-nav::-webkit-scrollbar{display:none!important}
-  .top-nav a,.subpage-nav a,.nav-map-trigger{min-height:40px!important;padding:0 12px!important;font-size:.72rem!important}
+  .top-nav a,.subpage-nav a,.nav-map-trigger{min-height:40px!important;padding:0 14px!important;font-size:.72rem!important}
   .nav-map-panel{position:fixed;top:82px;left:14px;right:14px;min-width:0;transform:none}
   .footer-inner,.subpage-footer{width:calc(100% - 28px)!important;grid-template-columns:1fr!important;align-items:start!important;gap:13px!important;padding:22px 0 26px!important}
   .footer-links{justify-content:flex-start!important;gap:4px 14px!important}
