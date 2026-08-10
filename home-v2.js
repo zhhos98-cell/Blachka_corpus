@@ -15,12 +15,12 @@
     document.head.appendChild(link);
   };
   addStyle('site-polish.css?v=20260810-2', 'site-polish.css');
-  addStyle('home-curation-v2.css?v=20260810-3', 'home-curation-v2.css');
+  addStyle('home-curation-v2.css?v=20260810-4', 'home-curation-v2.css');
   addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
   if (!compact) addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
   addStyle('mobile-v3.css?v=20260810-4', 'mobile-v3.css');
   addStyle('accessibility.css?v=20260810-1', 'accessibility.css');
-  addStyle('scale-balance.css?v=20260810-2', 'scale-balance.css');
+  addStyle('scale-balance.css?v=20260810-3', 'scale-balance.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
