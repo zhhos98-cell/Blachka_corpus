@@ -1,6 +1,19 @@
 (() => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  if (!document.querySelector('link[href*="home-nav-glide.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'home-nav-glide.css?v=20260810-1';
+    document.head.appendChild(link);
+  }
+  if (!document.querySelector('script[src*="nav-glide.js"]')) {
+    const script = document.createElement('script');
+    script.src = 'nav-glide.js?v=20260810-1';
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
   const form = document.getElementById('network-search');
   const input = document.getElementById('network-search-input');
   const scope = document.getElementById('network-search-scope');
