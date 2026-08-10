@@ -15,6 +15,7 @@ This directory contains the public auction page and the structured market-proven
 - `krefeld-hydractinia-156-crosswalk.json` — pass-10 crosswalk resolving Krefeld lot 27's `Stachelpolyp` to `Hydractinia echinata`, recovering Blaschka catalogue no. 156, and checking that exact key against the complete project transcription of the published MfN OS001-02 inventory.
 - `auction-science-museum-recipient-audit.json` — bounded public-web audit of the Science Museum 1925–27 dispersal, retaining UCL and Cardiff as the two currently secure named recipients and routing the remaining five names into archive work.
 - `science-museum-register-neighborhoods.json` — pass-12 object-number crosswalk showing consecutive Science Museum register numbers splitting between Cardiff institutional transfer and later private-market circulation, plus the Blaschka no. 330 institutional/auction naming conflict.
+- `ucl-science-museum-transfer-candidate-audit.json` — pass-13 partition of eight publicly named UCL Blaschka accessions into explicit Lankester records, one pre-transfer UCL teaching object, and four still-unresolved candidates for the Lankester-versus-Science-Museum provenance problem.
 
 ## Admission rule
 
@@ -70,6 +71,16 @@ The same Cardiff crosswalk also clarifies Blaschka catalogue no. **330**. Scienc
 
 The next Science Museum route remains archival and number-led: `CORP/SCM/02/02/7/421` transfer/disposal index -> relevant 1920–27 nominal files -> `CORP/SCM/Z/048` store-register ultimate-disposal annotations, now queried by paired number neighborhoods as well as individual identifiers.
 
+### UCL branch: one transfer candidate eliminated without guessing
+
+Pass 13 revisits the eight publicly named UCL Blaschka accessions. Three current Collections Online records are explicitly assigned to the `Lankester 1890 Grant Museum Catalogue` layer: `LDUCZ-P130` (*Clione limacina*), `LDUCZ-P161` (*Ercolania funerea*), and `LDUCZ-P191` (*Arion ater*). Five public anchors had previously remained unassigned between the Lankester and Science Museum layers.
+
+One of those five can now be removed from the Science Museum transfer candidate pool. UCL's own 2017 object-history feature identifies `LDUCZ-C182`, *Haliclystus auricula*, in a **1911 Practical Zoology student notebook**. The same surviving accession was therefore in UCL teaching use well before the 1925–27 Science Museum deaccession. C182 is now classified as `pre-transfer UCL custody confirmed`; its exact relationship to the twenty entries in Lankester's 1890 catalogue remains open.
+
+The public partition is therefore now **3 explicit Lankester + 1 independently pre-transfer + 4 unresolved + 0 explicitly Science Museum**. The four remaining unresolved accession anchors are `LDUCZ-P202` (*Limax arborum*), `LDUCZ-P196` (*Arianta arbustorum*), `LDUCZ-C373` (*Actinia equina*), and `LDUCZ-S73` (female sea cucumber, taxon unresolved). UCL explicitly warns that its online catalogue is incomplete, so failure to recover a collection field or old Science Museum number for these four is not a provenance negative.
+
+Two documentary targets now outrank another generic UCL web search. First, UCL elsewhere describes the `1890 Lankester Grant Museum Catalogue` as its earliest accession register; recovering its twenty Blaschka entries could remove further objects from the Science Museum candidate pool, though catalogue appearance still requires corroboration. Second, a 2015 UCL feature cites Sarah E. Parker's now-dead `Blaschka Glass Models at the Grant Museum` document (`GMZ_Blaschkas`), which may preserve an earlier model list or provenance distinctions that disappeared from currently indexed records.
+
 ### Loudon dealer route
 
 George Loudon's first-person accounts remain a separate dealer-provenance problem: a London dealer supplied his first Blaschkas and said they came from an English public school / school natural-history department being disposed of for financial reasons. No dealer or school name was recovered in the present open-web pass. This route stays outside the canonical auction count unless a public auction event is found.
@@ -87,19 +98,21 @@ George Loudon's first-person accounts remain a separate dealer-provenance proble
 - `../research/logs/2026-08-10-auction-deep-sweep-pass10-krefeld-hydractinia-156.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass11-berlin-archive-series-router.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass12-science-museum-register-neighborhoods.md`
+- `../research/logs/2026-08-10-auction-deep-sweep-pass13-ucl-transfer-candidate-audit.md`
 
 ## Next search layer
 
 Priority remains away from another broad auction-house sweep. The immediate order is:
 
-1. Science Museum archive metadata and later archive access: search the paired register neighborhoods `1877-360/361` and `1877-380/381`, then the wider `376/380/381/385/397` cluster; recover the administrative logic of the 1877 numbering before interpreting adjacency historically.
-2. UCL object-level work: attempt to recover old Science Museum numbers on the transfer-derived subset while keeping Lankester 1890 models separate.
-3. HU historical inventory plus 1886-transfer and 1968–1970 reduction/gift/transfer/loss records using exact keys `Hydractinia echinata`, `Stachelpolyp`, **Blaschka no. 156**, `ZI`, and `IfZ`.
-4. MfN archive remote routing into `S001`, `S003`, `S004-04`, and `S005-02`; physical records access is currently suspended, so seek file-level identifiers by email before any later visit.
-5. Image-level audit of Krefeld lot 27 for any additional label, handwritten taxon, catalogue number or old inventory number; keep lot 26 open until equivalent evidence appears.
-6. Rakow MS 0013 `Hydractinia echinata` drawing record as a design-comparison source, without converting visual similarity into provenance proof.
-7. Glasgow `1909.66` / Mason purchase files.
-8. Identification of Loudon's London dealer and English public school.
-9. Return to old auction catalogues only after these routes yield new names, catalogue numbers, taxa or provenance anchors.
+1. Recover the twenty Blaschka entries in UCL's 1890 Lankester register and Sarah E. Parker's legacy `GMZ_Blaschkas` document; compare P202/P196/C373/S73 against those historical entries before asking which public UCL objects might belong to the Science Museum transfer.
+2. Seek a UCL Blaschka collections export or documentation response with `Collection`, `Alternative Number`, historical labels and previous-institution numbers; ask specifically for any `1877-xxx` or `1888-xx` Science Museum identifiers.
+3. Science Museum archive metadata and later archive access: search the paired register neighborhoods `1877-360/361` and `1877-380/381`, then the wider `376/380/381/385/397` cluster; recover the administrative logic of the 1877 numbering before interpreting adjacency historically.
+4. HU historical inventory plus 1886-transfer and 1968–1970 reduction/gift/transfer/loss records using exact keys `Hydractinia echinata`, `Stachelpolyp`, **Blaschka no. 156**, `ZI`, and `IfZ`.
+5. MfN archive remote routing into `S001`, `S003`, `S004-04`, and `S005-02`; physical records access is currently suspended, so seek file-level identifiers by email before any later visit.
+6. Image-level audit of Krefeld lot 27 for any additional label, handwritten taxon, catalogue number or old inventory number; keep lot 26 open until equivalent evidence appears.
+7. Rakow MS 0013 `Hydractinia echinata` drawing record as a design-comparison source, without converting visual similarity into provenance proof.
+8. Glasgow `1909.66` / Mason purchase files.
+9. Identification of Loudon's London dealer and English public school.
+10. Return to old auction catalogues only after these routes yield new names, catalogue numbers, taxa or provenance anchors.
 
 False positives, count wording conflicts, inferred identities and spelling variants are retained in the structured backend/search logs to prevent repeated rediscovery or accidental conversion of ambiguous market evidence into settled provenance.
