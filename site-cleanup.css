@@ -9,8 +9,8 @@
   --clean-paper:#eee9e0;
   --clean-ink:#f3eee7;
   --clean-muted:rgba(243,238,231,.66);
-  --clean-rule:rgba(243,238,231,.14);
-  --clean-rule-strong:rgba(243,238,231,.22);
+  --clean-rule:rgba(243,238,231,.10);
+  --clean-rule-strong:rgba(243,238,231,.16);
   --clean-accent:#d0a078;
 }
 
@@ -48,7 +48,7 @@ body.subpage .page-intro::after{
   opacity:.84!important;
 }
 body.subpage .page-intro{
-  border-bottom:1px solid var(--clean-rule-strong)!important;
+  border-bottom:0!important;
 }
 
 /* Open lists instead of card walls. */
@@ -72,7 +72,8 @@ body.subpage .bib-entry:hover,
 body.subpage .source-entry:hover,
 body.subpage .source-row:hover,
 body.subpage .auction-lot:hover{
-  transform:translateX(3px)!important;
+  transform:none!important;
+  background:rgba(255,255,255,.016)!important;
 }
 
 /* Remove decorative chronology/count labels while preserving useful publication years. */
@@ -90,8 +91,8 @@ body.subpage .bib-section-head h2::after,
   background:transparent!important;
   box-shadow:none!important;
   border-radius:0!important;
-  border-top:1px solid var(--clean-rule-strong)!important;
-  border-bottom:1px solid var(--clean-rule)!important;
+  border-top:0!important;
+  border-bottom:0!important;
   gap:clamp(26px,5vw,56px)!important;
 }
 .status>div{
@@ -103,11 +104,11 @@ body.subpage .bib-section-head h2::after,
 /* Cases directory: use an editorial index rather than ten boxed image tiles. */
 body.cases-page .cases-directory{
   align-items:start!important;
-  border-bottom:1px solid var(--clean-rule-strong)!important;
+  border-bottom:0!important;
 }
 body.cases-page .case-index-table{
   display:block!important;
-  border-top:1px solid var(--clean-rule-strong)!important;
+  border-top:0!important;
   background:transparent!important;
 }
 body.cases-page .case-index-row{
@@ -119,12 +120,14 @@ body.cases-page .case-index-row{
     "years tags arrow"!important;
   align-items:center!important;
   gap:4px 24px!important;
-  padding:18px 2px 20px!important;
+  padding:20px 8px 22px!important;
   border:0!important;
-  border-bottom:1px solid var(--clean-rule)!important;
   background:transparent!important;
   box-shadow:none!important;
   transform:none!important;
+}
+body.cases-page .case-index-row + .case-index-row{
+  border-top:1px solid rgba(243,238,231,.055)!important;
 }
 body.cases-page .case-index-row::after,
 body.cases-page .case-thumb{
@@ -147,10 +150,13 @@ body.cases-page .sample,
 body.cases-page .sample:nth-of-type(even){
   background:transparent!important;
   box-shadow:none!important;
-  border-top:1px solid var(--clean-rule-strong)!important;
+  border-top:0!important;
+}
+body.cases-page .sample + .sample{
+  border-top:1px solid rgba(243,238,231,.07)!important;
 }
 
-/* Keep the home page's three deliberate surfaces, remove extra texture/watermark layers. */
+/* Keep the home page's deliberate surfaces, remove extra texture/watermark layers. */
 body:not(.subpage) .project::before,
 body:not(.subpage) .origin-story::before,
 body:not(.subpage) .home-contact::before{
@@ -180,13 +186,110 @@ body:not(.subpage) .home-contact{
 .cases-query-bar{
   background:transparent!important;
   box-shadow:none!important;
+  border:0!important;
+}
+
+/* Bibliography: negative space does the grouping. The tool ribbon is functional,
+   but it no longer sits inside a bordered box or generates extra headings. */
+body.subpage .bib-tools{
+  position:sticky!important;
+  top:74px!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:10px 22px!important;
+  margin:16px 0 8px!important;
+  padding:8px 0 10px!important;
+  border:0!important;
   border-radius:0!important;
+  background:rgba(29,23,20,.86)!important;
+  box-shadow:none!important;
+  backdrop-filter:saturate(112%) blur(14px)!important;
+  -webkit-backdrop-filter:saturate(112%) blur(14px)!important;
 }
-.bib-community::before{
-  content:"Working bibliography + live Blaschka Bibliothek"!important;
+body.subpage .bib-tools-group{gap:6px!important}
+body.subpage .bib-tools-label{
+  margin-right:2px!important;
+  color:rgba(243,238,231,.36)!important;
+  font-size:.56rem!important;
+  letter-spacing:.08em!important;
 }
-.bib-community::after{
-  content:"Additions and corrections are welcome."!important;
+body.subpage .bib-tool-button{
+  min-height:36px!important;
+  padding:0 12px!important;
+  border:0!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.052)!important;
+  box-shadow:none!important;
+  color:rgba(243,238,231,.78)!important;
+}
+body.subpage .bib-tool-button:hover,
+body.subpage .bib-tool-button:focus-visible{
+  background:rgba(255,255,255,.095)!important;
+  color:#fff!important;
+}
+body.subpage .bib-tool-button[aria-pressed="true"]{
+  background:rgba(208,160,120,.16)!important;
+  color:#fff!important;
+}
+body.subpage .bib-export-note{
+  flex-basis:100%!important;
+  margin:0!important;
+  color:rgba(243,238,231,.34)!important;
+  font-size:.58rem!important;
+}
+body.subpage .bib-community{
+  max-width:860px!important;
+  margin:2px 0 44px!important;
+  padding:0!important;
+  border:0!important;
+}
+body.subpage .bib-community::before,
+body.subpage .bib-community::after{
+  content:none!important;
+  display:none!important;
+}
+body.subpage .bib-community-label{display:none!important}
+body.subpage .bib-community-copy{
+  margin:0!important;
+  color:rgba(243,238,231,.56)!important;
+  font-size:.72rem!important;
+  line-height:1.55!important;
+}
+body.subpage .bib-community-copy a{color:rgba(243,238,231,.88)!important}
+body.subpage .bib-section{padding-top:6px!important}
+body.subpage .bib-section-head{
+  margin:0 0 18px!important;
+  padding:0!important;
+  border:0!important;
+}
+body.subpage .bib-section-head>.eyebrow,
+body.subpage .bib-section-head p{display:none!important}
+body.subpage .bib-section-head h2{
+  margin:0!important;
+  font-size:clamp(2.1rem,4vw,3.5rem)!important;
+}
+body.subpage .bib-list{
+  border:0!important;
+}
+body.subpage .bib-entry{
+  grid-template-columns:86px minmax(0,1fr)!important;
+  gap:24px!important;
+  margin:0!important;
+  padding:16px 8px 19px!important;
+  border:0!important;
+}
+body.subpage .bib-entry + .bib-entry{
+  border-top:0!important;
+}
+body.subpage .bib-year{
+  margin-top:4px!important;
+  color:rgba(208,160,120,.74)!important;
+}
+body.subpage .bib-select span{
+  width:15px!important;
+  height:15px!important;
+  border-radius:50%!important;
+  border-color:rgba(243,238,231,.28)!important;
 }
 
 @media(max-width:760px){
@@ -203,6 +306,16 @@ body:not(.subpage) .home-contact{
   body.subpage .page-intro::after{
     opacity:.76!important;
   }
+  body.subpage .bib-tools{
+    position:static!important;
+    margin:10px 0 8px!important;
+    padding:6px 0!important;
+    background:transparent!important;
+  }
+  body.subpage .bib-tools-group{width:100%!important;overflow-x:auto!important;flex-wrap:nowrap!important;padding-bottom:2px!important}
+  body.subpage .bib-export-note{display:none!important}
+  body.subpage .bib-community{margin:4px 0 30px!important}
+  body.subpage .bib-entry{grid-template-columns:48px minmax(0,1fr)!important;gap:14px!important;padding:15px 0 17px!important}
 }
 
 @media(prefers-reduced-motion:reduce){
