@@ -18,7 +18,6 @@
     '.status > div',
     '.source-row',
     '.bib-community',
-    '.bib-entry',
     '.source-az-heading > *',
     '.source-az-entry',
     '.market-scope > *',
@@ -42,7 +41,6 @@
     nodes.forEach((el) => {
       if (el.classList.contains('reveal') || el.classList.contains('ui-reveal')) return;
       el.classList.add('ui-reveal');
-      /* Keep stagger short so lists feel connected instead of theatrical. */
       el.style.setProperty('--ui-reveal-delay', `${Math.min(sequence % 4, 3) * 38}ms`);
       sequence += 1;
       observer.observe(el);
@@ -60,7 +58,6 @@
   });
   mutationObserver.observe(document.body, { childList:true, subtree:true });
 
-  /* Same-page navigation keeps spatial continuity and avoids abrupt anchor jumps. */
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href]');
     if (!link || event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
