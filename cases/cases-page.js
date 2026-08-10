@@ -11,6 +11,7 @@
   if (!target) return;
   const compactViewport = matchMedia('(max-width:900px)').matches;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const saveData = Boolean(navigator.connection?.saveData);
 
   const loadScript = src => new Promise((resolve, reject) => {
     const script = document.createElement('script');
@@ -69,7 +70,7 @@
 
   const loadWall = () => loadScript('./case-wall-media.js?v=20260810-4').catch(console.error);
   const loadSecondaryVisuals = () => {
-    if (compactViewport) return;
+    if (compactViewport || saveData) return;
     loadScript('../cases-visuals-bundle.js?v=20260810-1').catch(console.error);
   };
 
@@ -78,11 +79,21 @@
   revealCases();
   restoreHash();
 
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(loadWall, {timeout:450});
-    requestIdleCallback(loadSecondaryVisuals, {timeout:1200});
-  } else {
-    setTimeout(loadWall, 80);
-    setTimeout(loadSecondaryVisuals, 360);
+  /* The directory interaction is tiny and can arrive quickly. The 43 KB secondary
+     visual bundle waits until the reader scrolls or the page has been quiet for a few seconds. */
+  if ('requestIdleCallback' in window) requestIdleCallback(loadWall, {timeout:900});
+  else setTimeout(loadWall, 180);
+
+  if (!compactViewport && !saveData) {
+    let secondaryQueued = false;
+    const queueSecondary = () => {
+      if (secondaryQueued) return;
+      secondaryQueued = true;
+      if ('requestIdleCallback' in window) requestIdleCallback(loadSecondaryVisuals, {timeout:3000});
+      else setTimeout(loadSecondaryVisuals, 0);
+    };
+    if (scrollY > 320) queueSecondary();
+    else addEventListener('scroll', queueSecondary, {once:true, passive:true});
+    setTimeout(queueSecondary, 3500);
   }
 })();
