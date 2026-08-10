@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Science Museum 1925-1927 Blaschka dispersal recipient web audit",
+  "purpose": "Record what can and cannot be recovered from publicly indexed web sources before moving the recipient problem into exact Science Museum Group archive series.",
+  "dispersal_statement": {
+    "source": "UCL Grant Museum",
+    "statement": "UCL states that the Science Museum deaccessioned its glass-model collection between 1925 and 1927 and transferred models to University College London and six other institutions.",
+    "url": "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/highlights/blaschka-glass-models-invertebrates"
+  },
+  "publicly_identified_recipients_in_this_audit": [
+    {
+      "institution": "University College London, Grant Museum of Zoology",
+      "status": "direct_official_recipient_proof",
+      "evidence": "UCL's own collection page states that its later Blaschka models entered from the Science Museum during the 1925-1927 deaccession.",
+      "url": "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/highlights/blaschka-glass-models-invertebrates"
+    },
+    {
+      "institution": "Cardiff / Amgueddfa Cymru - National Museum Wales",
+      "status": "direct_official_recipient_proof",
+      "quantity": 62,
+      "transfer_year": 1927,
+      "evidence": "Museum Wales and NatSCA state that 62 Blaschka models came to Cardiff from the Science Museum in 1927.",
+      "urls": [
+        "https://museum.wales/blog/1308/Spectacular-glass-sea-creatures-of-the-deep/",
+        "https://natsca.blog/2025/03/27/packing-the-blaschka-glass-models/"
+      ]
+    }
+  ],
+  "unresolved_recipient_count": {
+    "ucl_wording": "UCL plus six other institutions",
+    "secure_names_recovered": 2,
+    "additional_names_required_if_ucl_wording_is_complete": 5,
+    "status": "unresolved"
+  },
+  "bounded_web_search_result": {
+    "result": "No third recipient was securely identified in the targeted publicly indexed web pass.",
+    "query_families": [
+      "Blaschka Science Museum 1927 transfer institution excluding UCL/Cardiff",
+      "Blaschka Science Museum deaccessioned transferred 1925 1927",
+      "Blaschka Science Museum six other institutions",
+      "Blaschka South Kensington 1927 models transfer"
+    ],
+    "guard": "This is a bounded negative web result, not evidence that the five remaining recipients are unknowable or absent from archive records."
+  },
+  "private_market_counterexamples_from_same_deaccession": [
+    {
+      "science_museum_number": "1877-360",
+      "object": "Polyclonia frondosa jellyfish",
+      "later_market_event": "Christie's London, lot 47, 30 January 2019",
+      "source": "https://www.christies.com/en/lot/lot-6188457"
+    },
+    {
+      "science_museum_number": "1877-376",
+      "object": "jellyfish",
+      "later_market_event": "Christie's London, lot 48, 30 January 2019",
+      "source": "https://www.christies.com/lot/lot-6188458"
+    },
+    {
+      "science_museum_number": "1877-381",
+      "object": "Physalia physalis",
+      "later_market_event": "Christie's London, lot 46, 30 January 2019",
+      "source": "https://www.christies.com/en/lot/lot-6188456"
+    }
+  ],
+  "interpretive_value": "The Science Museum deaccession cannot be treated as a single institutional-transfer event. Secure evidence already shows institutional recipients and later private-market survivals. Exact old register numbers are therefore more useful than maker-name searches for reconstructing the split.",
+  "archive_route": [
+    {
+      "priority": 1,
+      "target": "CORP/SCM/02/02/7/421",
+      "function": "Transfer/Disposal index, 1913-1960",
+      "status": "identifier recovered from project provenance backend; contents not publicly indexed"
+    },
+    {
+      "priority": 2,
+      "target": "relevant 1920-1927 transfer/disposal nominal-file portions",
+      "function": "recipient names, transfer authorisations, sale/disposal wording, object lists"
+    },
+    {
+      "priority": 2,
+      "target": "CORP/SCM/Z/048 Museum Store Registers",
+      "function": "running-number records with store location and ultimate-disposal notes",
+      "verified_public_child": "CORP/SCM/Z/048/01",
+      "official_url": "https://collection.sciencemuseumgroup.org.uk/documents/aa110149903"
+    },
+    {
+      "priority": 3,
+      "target": "CORP/SCM/Z/039/02",
+      "function": "1877-1900 rough copy of Science Library register entries for Western Galleries/Educational Division objects; possible bridge into the original cohort",
+      "official_url": "https://collection.sciencemuseumgroup.org.uk/documents/aa110135491"
+    }
+  ],
+  "number_neighbourhood_search_keys": [
+    "1877-360",
+    "1877-361",
+    "1877-376",
+    "1877-380",
+    "1877-381",
+    "1877-385",
+    "1877-397"
+  ],
+  "policy_guard": "If an archive record identifies a museum, university or comparable institution as buyer/recipient, that event belongs in the collection/provenance layer and does not increase the canonical auction count."
+}
