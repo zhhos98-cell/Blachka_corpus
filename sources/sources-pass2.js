@@ -6,27 +6,8 @@
     ui.defer = true;
     document.head.appendChild(ui);
   }
-  if (!document.querySelector('link[href*="source-hero-v2.css"]')) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'source-hero-v2.css?v=20260810-2';
-    document.head.appendChild(link);
-  }
-  if (!document.querySelector('link[href*="sources-bib-parity.css"]')) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'sources-bib-parity.css?v=20260810-1';
-    document.head.appendChild(link);
-  }
 
   const intro = document.querySelector('.source-intro');
-  if (intro && !intro.querySelector('.source-intro-credit')) {
-    const credit = document.createElement('p');
-    credit.className = 'source-intro-credit';
-    credit.innerHTML = `Visuals: <a href="https://evolution.earthathome.org/blaschka/biography/" target="_blank" rel="noopener">Ward's 1878 catalogue title page ↗</a> · <a href="https://collections.museumsvictoria.com.au/specimens/616326" target="_blank" rel="noopener">Museums Victoria, <em>Chrysaora hysoscella</em>, Rodney Start, CC BY 4.0 ↗</a>`;
-    intro.appendChild(credit);
-  }
-
   const firstSection = document.querySelector('.source-section');
   const list = firstSection?.querySelector('.source-list');
   if (!intro || !list || list.querySelector('[data-source-pass="2"]')) return;
@@ -46,7 +27,7 @@
     {date:'1885 · workshop catalogue',citation:'Leopold Blaschka, <em>Katalog über Blaschka’s Modelle von wirbellosen Thieren dargestellt von Leopold Blaschka in Hosterwitz bei Dresden</em>. Stolpen: Druck Gustav Winter, 1885.',meta:'The Tübingen exhibition catalogue reproduces the title and identifies the copy as National Museums and Galleries of Wales, with the scan supplied by Sternwarte Kremsmünster.',links:'<a href="https://www.stadtmuseum-tuebingen.de/wp-content/uploads/2024/06/Kunstformen-des-Meeres.pdf" target="_blank" rel="noopener">Tübingen copy-level locator ↗</a>'}
   ];
 
-  [...records].reverse().forEach((record) => {
+  [...records].reverse().forEach(record => {
     const article = document.createElement('article');
     article.className = 'source-entry';
     article.dataset.sourcePass = '2';
