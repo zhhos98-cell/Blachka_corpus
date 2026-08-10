@@ -2,7 +2,13 @@
   if (!document.querySelector('link[href*="source-hero-v2.css"]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'source-hero-v2.css?v=20260810-1';
+    link.href = 'source-hero-v2.css?v=20260810-2';
+    document.head.appendChild(link);
+  }
+  if (!document.querySelector('link[href*="sources-bib-parity.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'sources-bib-parity.css?v=20260810-1';
     document.head.appendChild(link);
   }
 
