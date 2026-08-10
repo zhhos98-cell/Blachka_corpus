@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Berlin university provenance audit for Krefeld 2025 Blaschka lots 26-27",
+  "purpose": "Separate the Humboldt University Zoologische Lehrsammlung, the Museum für Naturkunde historical collections, and the 2025 Krefeld auction evidence before making any object-level provenance claim.",
+  "canonical_auction_records": ["AUC-2025-KREFELD-26", "AUC-2025-KREFELD-27"],
+  "auction_evidence": [
+    {
+      "lot": "26",
+      "object": "glass model of a sea anemone",
+      "auction_date": "2025-05-10",
+      "catalogued_date": "around 1870",
+      "dimensions": "10 x 13 x 13 cm",
+      "label_transcription": "Zoolog. Institut Universität, Berlin / handwritten botanical designation",
+      "hammer_price_eur": 28000,
+      "sources": [
+        "https://www.gazette-drouot.com/lots/28984163-leopold-and-rudolf-blaschka----",
+        "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/list-of-results/"
+      ]
+    },
+    {
+      "lot": "27",
+      "object": "glass model of a stinging polyp",
+      "auction_date": "2025-05-10",
+      "catalogued_date": "around 1870",
+      "dimensions": "13 x 18 x 10 cm",
+      "label_transcription": "Zoolog. Institut Universität, Berlin / handwritten botanical designation",
+      "condition": "Glass case with light use/soiling; small corner crack in top pane and right-side pane; otherwise overall good condition.",
+      "hammer_price_eur": 30000,
+      "sources": [
+        "https://www.kunstunddesign-auktionen.de/de/auktionen/K-15/glasmodell-stachelpolyp-um-1870-137452/",
+        "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/list-of-results/"
+      ]
+    }
+  ],
+  "hu_zoologische_lehrsammlung": {
+    "institution": "Humboldt-Universität zu Berlin, Zoologische Lehrsammlung",
+    "collection_founded": "1884-04-01",
+    "founder": "Franz Eilhard Schulze",
+    "present_scale": "approximately 30,000 objects",
+    "collection_history_events_relevant_to_provenance": [
+      {
+        "date": "1884",
+        "event": "Teaching collection founded; material also transferred from the anatomical-zootomical collection."
+      },
+      {
+        "date": "1886-02-19",
+        "event": "Large transfer of zoological material from the Zoologisches Museum into the teaching collection."
+      },
+      {
+        "date": "1970",
+        "event": "Decision to reduce the collection. Parts were given away, many specimens were lost, and other parts were transferred by museum staff to the Museum für Naturkunde.",
+        "provenance_significance": "This creates a documented dispersal window that could explain how historically labelled teaching material left stable HU custody, but no Krefeld object is yet tied to this event."
+      }
+    ],
+    "source": "https://www.sammlungen.hu-berlin.de/sammlungen/zoologische-lehrsammlung/"
+  },
+  "hu_current_blaschka_examples": [
+    {
+      "hu_object_id": "8308",
+      "inventory_number": "14.1.2.3-3",
+      "taxon": "Lanice conchilega",
+      "date": "1885",
+      "maker": "Leopold und Rudolf Blaschka",
+      "dimensions": "4.5 x 20.5 x 12.5 cm",
+      "source": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8308/"
+    },
+    {
+      "hu_object_id": "8310",
+      "inventory_number": "14.1.2.5-6",
+      "taxon": "Spirorbis spirorbis",
+      "date": "1887",
+      "maker": "Leopold und Rudolf Blaschka",
+      "source": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8310/"
+    },
+    {
+      "hu_object_id": "8311",
+      "inventory_number": "14.1.2.2-6",
+      "taxon": "Arenicola marina",
+      "date": "1885",
+      "maker": "Leopold und Rudolf Blaschka",
+      "dimensions": "4.5 x 25.5 x 10 cm",
+      "source": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8311/"
+    },
+    {
+      "hu_object_id": "8312",
+      "inventory_number": "14.1.2.4-1",
+      "taxon": "Sabellaria alveolata",
+      "date": "1887",
+      "maker": "Leopold und Rudolf Blaschka",
+      "documented_purchase_price": "3 Mark",
+      "source": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8312/"
+    },
+    {
+      "hu_object_id": "8314",
+      "inventory_number": "14.1.1.2-6",
+      "taxon": "Proceraea cornuta",
+      "date": "1887",
+      "maker": "Leopold und Rudolf Blaschka",
+      "source": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8314/"
+    },
+    {
+      "hu_object_id": "8317",
+      "inventory_number": "4.4.2-1",
+      "taxon": "Heliosphaera actinota",
+      "date": "1885",
+      "maker": "Leopold und Rudolf Blaschka",
+      "source": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8317/"
+    },
+    {
+      "hu_object_id": "8320",
+      "inventory_number": "4.3.1-1",
+      "taxon": "Actinophrys sol",
+      "date": "1885",
+      "maker": "Leopold und Rudolf Blaschka",
+      "source": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8320/"
+    }
+  ],
+  "hu_label_style_corroboration": [
+    {
+      "hu_object_id": "15970",
+      "object": "Asterias rubens Brachiolaria microscope slides",
+      "label": "Zoolog. Institut/ Universität Berlin",
+      "source": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/15970/"
+    },
+    {
+      "hu_object_id": "15872",
+      "object": "Sagitta sp. microscope slides",
+      "label": "Zoolog. Institut/ Universität Berlin",
+      "source": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/15872/"
+    }
+  ],
+  "label_assessment": {
+    "finding": "The wording on the Krefeld labels is independently documented on objects in the HU Zoologische Lehrsammlung.",
+    "strength": "strong institutional-style continuity",
+    "limit": "A matching label style does not by itself prove that either auction object was part of the surviving/current HU Blaschka group, nor does it supply an inventory number or disposal date."
+  },
+  "museum_fuer_naturkunde_branch": {
+    "relationship": "The Museum für Naturkunde zoological collections and the HU Zoologische Lehrsammlung must be kept distinct. HU's collection history states that Schulze created a teaching collection independent of the museum in 1884; later, during the 1970 reduction, some teaching-collection material was transferred to the Museum für Naturkunde.",
+    "historical_inventory_target": "OS001-02 Blaschka Glasmodelle",
+    "inventory_pdf": "https://website-archiv.museumfuernaturkunde.berlin/sites/default/files/221010_Inventarliste_OS001-02_Blaschka.pdf",
+    "runtime_status": "PDF target resolved, body not recovered in this pass.",
+    "guard": "Do not collapse HU and MfN into one Berlin collection and do not assume a Krefeld object passed through MfN without an object-level crosswalk."
+  },
+  "dating_conflict": {
+    "auction_layer": "Krefeld catalogues both lots as around 1870.",
+    "hu_public_object_examples": "Current HU Blaschka examples recovered in this pass are dated 1885 or 1887.",
+    "interpretation": "The conflict is material and unresolved. The HU collection foundation in 1884 and current 1885/1887 examples make a later date plausible for HU-associated material, but older objects could also have entered a later-founded collection. The auction date must therefore remain unchanged until the objects are identified against a historical inventory or purchase record."
+  },
+  "ranked_provenance_hypotheses": [
+    {
+      "rank": 1,
+      "hypothesis": "Lots 26-27 were once part of the HU Zoologische Lehrsammlung or its Zoologisches Institut teaching stock and later left university custody.",
+      "status": "plausible_not_proven",
+      "basis": "Exact institutional label wording plus independently documented HU label style and surviving HU Blaschka models."
+    },
+    {
+      "rank": 2,
+      "hypothesis": "The objects may have left during or after the documented 1970 downsizing, when some HU teaching material was given away or lost.",
+      "status": "plausible_event_window_not_object_link",
+      "basis": "HU collection biography records a 1970 reduction/dispersal event; no object list or disposal annotation has yet linked these two lots to it."
+    },
+    {
+      "rank": 3,
+      "hypothesis": "One or both objects may have transferred to the Museum für Naturkunde before later entering the market.",
+      "status": "possible_unproven",
+      "basis": "HU states some material was transferred to MfN during the 1970 reduction; MfN has a separate OS001-02 Blaschka inventory."
+    },
+    {
+      "rank": 4,
+      "hypothesis": "The labels could represent another Berlin university zoological-institute stock sequence not represented by the presently indexed HU examples.",
+      "status": "possible",
+      "basis": "No auction object-level inventory number has yet been recovered."
+    }
+  ],
+  "object_level_status": "unresolved",
+  "next_actions": [
+    "Search HU historical inventory/acquisition records for sea anemone and stinging-polyp Blaschka entries, including pre-1970 inventory numbers.",
+    "Search HU 1968-1970 collection-reduction, gift, transfer and loss documentation before broad auction searching.",
+    "Obtain and search MfN OS001-02 for matching taxon, dimensions, label, model number, missing/deaccessioned status or old inventory number.",
+    "Compare auction photographs with historical/current HU and MfN photographs only after candidate taxa/model numbers are recovered.",
+    "Preserve the circa-1870 auction date as market metadata until an object-level documentary bridge resolves it."
+  ]
+}
