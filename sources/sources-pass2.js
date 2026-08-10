@@ -1,4 +1,7 @@
 (() => {
+  const css = document.querySelector('link[href*="sources.css"]');
+  if (css) css.href = 'sources.css?v=20260810-4';
+
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
