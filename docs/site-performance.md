@@ -19,7 +19,8 @@ On `Save-Data`, `slow-2g`, or `2g`, optional animation and speculative media loa
 - `navigation-shell.css` uses `content-visibility:auto` for source, bibliography, and people records so long static indexes remain in the DOM and searchable while offscreen layout/paint can be deferred.
 - `cases/cases-page.js` loads the small directory interaction first and waits to load the 42,955-byte secondary visual bundle until scroll/idle; it skips that bundle on compact or Save-Data clients.
 - `home-v2.js` gives the first hero image priority. Navigation glide and speculative carousel preloading now wait until after `load`/idle; automatic carousel traffic is disabled on reduced-motion or bandwidth-constrained clients while manual slide selection remains available.
-- `unified-ui.js` treats nav glide as decoration. Secondary pages load it only after `load`/idle and skip it on reduced-motion, mobile/tablet, Save-Data, or 2G clients.
+- `unified-ui.js` treats nav glide as decoration. Secondary pages load the script only after `load`/idle and skip it on reduced-motion, mobile/tablet, Save-Data, or 2G clients.
+- Ordinary secondary pages no longer request separate `navigation-shell.css` or `nav-glide.css` copies because both rule sets are already embedded in `site-core.css`. Bibliography remains the exception because it intentionally skips `site-core.css`.
 - The old `sources-pass14.js`–`sources-pass37.js` paths are temporary 90-byte no-op compatibility files. The public source records are already static in `sources/index.html`; the script tags should disappear when the Sources shell is next rebuilt.
 
 ## Current large assets / structural targets
@@ -35,6 +36,8 @@ Repository sizes at this checkpoint:
 
 These figures are source sizes, not compressed transfer sizes and not measured browser timings.
 
+The detailed bundle anatomy is recorded in [`development/css-bundle-audit-2026-08-11.md`](development/css-bundle-audit-2026-08-11.md). `site-core.css` is a concatenation of at least thirteen historical layers, while `home-core.css` contains seven. Several constituent layers mix selectors for Home, Cases, Bibliography, Sources, Auctions, People, and generic subpages, so the next split must be selector-aware rather than filename-only.
+
 ## Next cleanup order
 
 ### A. Remove dead compatibility requests
@@ -43,15 +46,19 @@ When `sources/index.html` is next regenerated, delete its 24 legacy `sources-pas
 
 ### B. Split CSS by page family
 
-`home-core.css` and especially `site-core.css` are consolidated historical bundles containing rules for page families that do not need them. The next structural optimization should extract stable bundles rather than minify blindly:
+`home-core.css` and especially `site-core.css` are consolidated historical bundles containing rules for page families that do not need them. The structural optimization should extract stable bundles rather than minify blindly:
 
-- home shell + home sections;
-- common subpage shell;
+- shared subpage shell, typography, footer and accessibility;
 - cases;
-- long indexes (People / Bibliography / Sources);
-- auctions / specialist pages.
+- long-index mechanics shared by People / Bibliography / Sources;
+- bibliography-only controls and rows;
+- Sources-only filters and records;
+- auctions / specialist pages;
+- homepage-only rules.
 
-Keep the current rendered design as the visual invariant. Do not remove a selector merely because its filename looks legacy; first verify which live page uses it.
+Keep the current rendered design as the visual invariant. Preserve cascade order. Do not remove a selector merely because its historical filename looks obsolete; first verify which live page uses it.
+
+The first low-risk part of this split is already complete: redundant `navigation-shell.css` and `nav-glide.css` requests were removed from ordinary secondary pages without changing their CSS cascade. The next pass should rebuild the actual large bundles, with before/after request totals and visual checks.
 
 ### C. Revisit long HTML only after a canonical data source exists
 
