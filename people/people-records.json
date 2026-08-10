@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "generated": "2026-08-10",
   "site_section": "people",
-  "record_count": 103,
+  "record_count": 132,
   "scope": "Working authority records for people connected to documented Blaschka object chains. External links verify identity or broader biography; project-specific claims remain bounded by project evidence.",
   "groups": {
     "workshop_household": "Workshop & household",
@@ -23,6 +23,9 @@
     "people-part-08.json",
     "people-part-09.json",
     "people-part-10.json",
-    "people-part-11.json"
+    "people-part-11.json",
+    "people-part-12.json",
+    "people-part-13.json",
+    "people-part-14.json"
   ]
 }
