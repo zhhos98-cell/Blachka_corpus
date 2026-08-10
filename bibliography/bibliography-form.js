@@ -1,6 +1,6 @@
 (() => {
   const css = document.querySelector('link[href*="bibliography.css"]');
-  if (css) css.href = 'bibliography.css?v=20260810-5';
+  if (css) css.href = 'bibliography.css?v=20260810-6';
 
   const list = document.querySelector('.bib-list');
   if (!list) return;
