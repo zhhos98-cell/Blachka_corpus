@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A map of current and near-current institutions connected to documented Blaschka glass model collections.">
+  <title>Map · The Blaschka Object Network</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../secondary.css">
+  <link rel="stylesheet" href="../navigation-shell.css?v=20260810-3">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="map.css?v=20260810-1">
+</head>
+<body class="subpage map-page">
+  <header class="subpage-header">
+    <a class="subpage-brand" href="../">The Blaschka Object Network</a>
+    <nav class="subpage-nav" aria-label="Site navigation"><a href="../cases/">Cases</a><a href="./" aria-current="page">Map</a><a href="../people/">People</a><a href="../bibliography/">Bibliography</a><a href="../sources/">Sources</a><a href="../auctions/">Auctions</a><a href="../about/">About</a></nav>
+  </header>
+
+  <main class="subpage-main" id="main-content">
+    <section class="page-intro" aria-labelledby="map-title">
+      <p class="eyebrow">Spatial index</p>
+      <h1 id="map-title">Collections map</h1>
+      <p class="page-dek">Current and near-current institutional endpoints documented in the project. The map is an index of collections and custody questions, not a claim that every surviving Blaschka object has been located.</p>
+    </section>
+
+    <section class="map-section" aria-labelledby="map-section-title">
+      <div class="map-section-head">
+        <div>
+          <p class="eyebrow">Modern institutions</p>
+          <h2 id="map-section-title">Where the collections are now</h2>
+        </div>
+        <label class="map-search" for="map-search"><span>Search institutions</span><input id="map-search" type="search" autocomplete="off" placeholder="Museum, city or country"></label>
+      </div>
+
+      <div class="map-frame">
+        <div id="collection-map" role="region" aria-label="Interactive map of Blaschka collection institutions"></div>
+        <p class="map-load-note" id="map-load-note">Loading map…</p>
+      </div>
+
+      <div class="map-legend" aria-label="Map status legend">
+        <span><i class="map-key map-key--confirmed"></i><b>Documented current/recent holding</b></span>
+        <span><i class="map-key map-key--partial"></i><b>Collection documented; current total or custody incomplete</b></span>
+        <span><i class="map-key map-key--open"></i><b>Modern endpoint identified; survival unresolved</b></span>
+      </div>
+      <p class="map-method">Points use approximate public institutional locations for orientation. They do not identify storage rooms or object-level coordinates. Counts retain their source date and precision; an old exact count is not silently converted into a current total.</p>
+    </section>
+
+    <section class="map-index" aria-labelledby="map-index-title">
+      <div class="map-index-head"><p class="eyebrow">Institution index</p><div><h2 id="map-index-title">Mapped institutions</h2><p id="map-result-count" aria-live="polite">Loading records…</p></div></div>
+      <div class="map-institution-list" id="map-institution-list"></div>
+      <noscript><p class="map-method">The interactive map requires JavaScript. The underlying institutional data remain available in <a href="map-data.json">map-data.json</a>.</p></noscript>
+    </section>
+  </main>
+
+  <footer class="subpage-footer"><div class="footer-identity"><a class="footer-title" href="../">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network">Contact</a><a href="../rights/">Image rights</a><a href="../privacy/">Privacy</a><a href="../accessibility/">Accessibility</a><a href="../feed.xml">RSS</a></div></footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="map.js?v=20260810-1" defer></script>
+  <script src="../unified-ui.js?v=20260810-16" defer></script>
+</body>
+</html>
