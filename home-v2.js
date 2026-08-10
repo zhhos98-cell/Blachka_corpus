@@ -8,10 +8,11 @@
     link.href = href;
     document.head.appendChild(link);
   };
-  addStyle('site-polish.css?v=20260810-1', 'site-polish.css');
-  addStyle('home-curation.css?v=20260810-1', 'home-curation.css');
-  addStyle('origin-divider.css?v=20260810-1', 'origin-divider.css');
-  addStyle('home-nav-glide.css?v=20260810-1', 'home-nav-glide.css');
+  addStyle('site-polish.css?v=20260810-2', 'site-polish.css');
+  addStyle('home-curation.css?v=20260810-2', 'home-curation.css');
+  addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
+  addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
+  addStyle('mobile-v3.css?v=20260810-1', 'mobile-v3.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
@@ -23,7 +24,7 @@
   }
   if (!document.querySelector('script[src*="nav-glide.js"]')) {
     const script = document.createElement('script');
-    script.src = 'nav-glide.js?v=20260810-1';
+    script.src = 'nav-glide.js?v=20260810-2';
     script.defer = true;
     document.head.appendChild(script);
   }
@@ -59,29 +60,99 @@
     });
   }
 
+  /* Family portrait: identities come from the source-backed caption/archive context;
+     the visual hotspots are merely interaction regions, not face recognition. */
+  const people = [
+    {
+      key:'karolina',
+      name:'Karolina (Caroline) Riegel Blaschka',
+      short:'Karolina',
+      bio:'Born 1834. Leopold’s second wife, married in 1854, and Rudolf’s mother. Family records preserve her alongside the workshop household and later property history.'
+    },
+    {
+      key:'leopold',
+      name:'Leopold Blaschka',
+      short:'Leopold',
+      bio:'1822–1895. Glassworker and modeller whose zoological glass models developed into an international scientific trade.'
+    },
+    {
+      key:'rudolf',
+      name:'Rudolf Blaschka',
+      short:'Rudolf',
+      bio:'1857–1939. Son of Leopold and Karolina. He joined the workshop in 1876 and later continued the Harvard botanical commission.'
+    }
+  ];
+
   const familyFigure = document.querySelector('.origin-photo');
   if (familyFigure && !familyFigure.querySelector('.family-portrait-layer')) {
     const layer = document.createElement('div');
     layer.className = 'family-portrait-layer';
     layer.setAttribute('aria-label', 'Blaschka family portrait biographies');
-    const people = [
-      ['karolina','Karolina (Caroline) Riegel Blaschka','Born 1834. Leopold’s second wife, married in 1854, and Rudolf’s mother. Archive records also preserve the family naturalization and later property transfers.'],
-      ['leopold','Leopold Blaschka','1822–1895. Glassworker and modeller whose zoological glass models developed into an international scientific trade.'],
-      ['rudolf','Rudolf Blaschka','1857–1939. Son of Leopold and Karolina. He joined the workshop in 1876 and later continued the Harvard botanical commission.']
-    ];
-    layer.innerHTML = people.map(([key,name,bio]) => `
-      <span class="family-person family-person--${key}">
-        <button type="button" aria-label="About ${name}"></button>
-        <span class="family-person-tooltip" role="tooltip"><strong>${name}</strong><span>${bio}</span></span>
+    layer.innerHTML = people.map(person => `
+      <span class="family-person family-person--${person.key}" data-person="${person.key}">
+        <button type="button" aria-label="About ${person.name}" aria-expanded="false"></button>
+        <span class="family-person-tooltip" role="tooltip"><strong>${person.name}</strong><span>${person.bio}</span></span>
       </span>`).join('');
     const caption = familyFigure.querySelector('figcaption');
     familyFigure.insertBefore(layer, caption || null);
+
     if (caption && !familyFigure.querySelector('.family-photo-hint')) {
       const hint = document.createElement('p');
       hint.className = 'family-photo-hint';
-      hint.textContent = 'Hover or focus the portrait to meet the family.';
+      hint.textContent = 'Hover or select a person for a short biography.';
       caption.insertAdjacentElement('afterend', hint);
     }
+
+    const mobileNav = document.createElement('div');
+    mobileNav.className = 'family-mobile-nav';
+    mobileNav.setAttribute('aria-label', 'Meet the Blaschka family');
+    mobileNav.innerHTML = people.map(person => `<button type="button" data-mobile-person="${person.key}" aria-pressed="false">${person.short}</button>`).join('');
+    const mobileBio = document.createElement('div');
+    mobileBio.className = 'family-mobile-bio';
+    mobileBio.setAttribute('aria-live', 'polite');
+    familyFigure.append(mobileNav, mobileBio);
+
+    const closeDesktop = except => {
+      layer.querySelectorAll('.family-person').forEach(person => {
+        const keep = except && person === except;
+        person.classList.toggle('is-active', !!keep);
+        person.querySelector('button')?.setAttribute('aria-expanded', keep ? 'true' : 'false');
+      });
+    };
+
+    layer.querySelectorAll('.family-person button').forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        const person = button.closest('.family-person');
+        const active = person.classList.contains('is-active');
+        closeDesktop(active ? null : person);
+      });
+    });
+
+    document.addEventListener('click', event => {
+      if (!familyFigure.contains(event.target)) closeDesktop(null);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeDesktop(null);
+    });
+
+    mobileNav.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+        const key = button.dataset.mobilePerson;
+        const person = people.find(item => item.key === key);
+        const wasActive = button.getAttribute('aria-pressed') === 'true';
+        mobileNav.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', 'false'));
+        if (wasActive || !person) {
+          mobileBio.classList.remove('is-visible');
+          mobileBio.innerHTML = '';
+          return;
+        }
+        button.setAttribute('aria-pressed', 'true');
+        mobileBio.innerHTML = `<strong>${person.name}</strong>${person.bio}`;
+        mobileBio.classList.add('is-visible');
+      });
+    });
   }
 
   const originFirst = document.querySelector('.origin-columns p:first-child');
@@ -90,6 +161,7 @@
     originFirst.insertAdjacentText('beforeend', ' After returning, Leopold married Karolina Riegel in 1854; their son Rudolf was born in 1857.');
   }
 
+  /* Quiet subscription close. RSS is the machine-readable channel. */
   const footer = document.querySelector('footer');
   if (footer && !document.querySelector('.home-subscribe')) {
     footer.insertAdjacentHTML('beforebegin', `
@@ -129,7 +201,10 @@
     }
   }
 
-  if (reduced) return;
+  if (reduced) {
+    document.querySelectorAll('.reveal').forEach(node => node.classList.add('is-visible'));
+    return;
+  }
 
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
