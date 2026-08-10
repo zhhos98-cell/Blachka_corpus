@@ -12,6 +12,14 @@
     document.head.appendChild(link);
   }
 
+  if (!window.__blaschkaFluidMotionRequested) {
+    window.__blaschkaFluidMotionRequested = true;
+    const motion = document.createElement('script');
+    motion.src = isSubpage ? '../fluid-motion.js?v=20260810-1' : 'fluid-motion.js?v=20260810-1';
+    motion.defer = true;
+    document.head.appendChild(motion);
+  }
+
   const main = document.querySelector('main');
   if (main && !main.id) main.id = 'main-content';
   if (main && !document.querySelector('.ui-skip-link')) {
