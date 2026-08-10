@@ -19,13 +19,14 @@
     document.head.appendChild(script);
   };
 
-  addStyle(`${prefix}apple-unified.css?v=20260810-2`, 'apple-unified.css');
-  if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-1`, 'subpage-v2.css');
+  addStyle(`${prefix}apple-unified.css?v=20260810-3`, 'apple-unified.css');
+  if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-2`, 'subpage-v2.css');
   addStyle(`${prefix}fluid-motion.css?v=20260810-4`, 'fluid-motion.css');
-  addStyle(`${prefix}site-rhythm.css?v=20260810-1`, 'site-rhythm.css');
-  addStyle(`${prefix}site-polish.css?v=20260810-1`, 'site-polish.css');
-  addStyle(`${prefix}footer-legal.css?v=20260810-1`, 'footer-legal.css');
-  addScript(`${prefix}nav-glide.js?v=20260810-1`, 'nav-glide.js');
+  addStyle(`${prefix}site-rhythm.css?v=20260810-2`, 'site-rhythm.css');
+  addStyle(`${prefix}site-polish.css?v=20260810-2`, 'site-polish.css');
+  addStyle(`${prefix}footer-legal.css?v=20260810-2`, 'footer-legal.css');
+  addStyle(`${prefix}mobile-v3.css?v=20260810-1`, 'mobile-v3.css');
+  addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
