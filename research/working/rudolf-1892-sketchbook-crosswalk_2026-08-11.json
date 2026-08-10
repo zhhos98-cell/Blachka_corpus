@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-08-11",
+  "title": "Rudolf Blaschka 1892 sketchbook-to-itinerary crosswalk",
+  "status": "scaffold_pending_page_level_images",
+  "corning_record": {
+    "title": "R. Blaschka [sketchbook].",
+    "alternate_title": "Rudolf Blaschka sketchbook, circa 1892",
+    "creator": "Rudolf Blaschka (1857-1939)",
+    "repository": "Rakow Research Library, The Corning Museum of Glass",
+    "identifier": "87384",
+    "alma_mms": "99873843504126",
+    "physical_description": "1 v. (ca. 80 p.) : ill. ; 11 x 18 cm.",
+    "catalogue_notes": [
+      "Beginning sketch is captioned '... Tempe, Arizona, 22. April 1892'.",
+      "Sketches of desert country.",
+      "Most pages are blank and were not filmed.",
+      "A few laid-in sketches of islands with palm trees were included in filming.",
+      "Digitized September 2009 by Boston Photo Imaging.",
+      "Displayed at the Rakow Research Library in 2007."
+    ]
+  },
+  "research_distinction": {
+    "travel_sketchbook": "A small landscape/travel sketchbook, beginning securely at Tempe on 22 April and described as containing desert-country views plus a few laid-in island/palm sketches.",
+    "botanical_study_drawings": "A separate, much larger drawing corpus catalogued primarily by plant taxon, including many items dated '1892 or 1895'. Corning's 2007 chapter uses these individual botanical studies, for example Jacaranda filicifolia, rather than identifying them as pages of this sketchbook.",
+    "working_hypothesis": "The underused research opportunity is not discovery of the sketchbook but systematic synchronization of its page sequence with the letter itinerary, followed by cross-linking to separately catalogued botanical studies, preserved specimens, and finished models."
+  },
+  "secure_anchor_points": [
+    {
+      "date": "1892-04-22",
+      "place": "Tempe, Arizona",
+      "evidence": "catalogue caption on beginning sketch",
+      "itinerary_relation": "Rudolf's letters place active desert excursions and cactus drawing in Tempe on the same date",
+      "confidence": "high"
+    }
+  ],
+  "candidate_unresolved_layers": [
+    {
+      "description": "laid-in island sketches with palm trees",
+      "possible_relation": "Jamaica / Caribbean phase",
+      "status": "unresolved",
+      "guard": "Do not identify as Jamaica without page image, inscription, or landscape-level corroboration."
+    }
+  ],
+  "next_fields_per_page": [
+    "digital_page_or_frame",
+    "visible_caption_or_date",
+    "place",
+    "landscape_or_subject",
+    "letter_date_match",
+    "letter_record_ids",
+    "botanical_drawing_candidates",
+    "material/specimen candidates",
+    "finished_model candidates",
+    "confidence",
+    "notes"
+  ]
+}
