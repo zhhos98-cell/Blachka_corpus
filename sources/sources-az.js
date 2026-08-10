@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-5';
+    ui.src = '../unified-ui.js?v=20260810-13';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -56,9 +56,6 @@
     return /[A-Z]/.test(first) ? first : '#';
   };
 
-  /* Passes 13–37 are progressively chained by the existing research corpus. Keep the
-     useful source prose visible while that chain completes, then build the A–Z once.
-     A timeout prevents one unavailable legacy pass from blocking the page indefinitely. */
   if (!document.querySelector('#dealer-transaction-anatomy-title')) {
     await new Promise(resolve => {
       const deadline = Date.now() + 12000;
