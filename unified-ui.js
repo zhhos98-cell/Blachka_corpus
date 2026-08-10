@@ -5,10 +5,15 @@
   const isSubpage = document.body.classList.contains('subpage');
   const prefix = isSubpage ? '../' : '';
   const addStyle = (href, token) => {
-    if ([...document.querySelectorAll('link[rel="stylesheet"]')].some(link => link.href.includes(token))) return;
+    const wanted = new URL(href, location.href).href;
+    const existing = [...document.querySelectorAll('link[rel="stylesheet"]')].find(link => link.href.includes(token));
+    if (existing) {
+      if (existing.href !== wanted) existing.href = wanted;
+      return;
+    }
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = href;
+    link.href = wanted;
     document.head.appendChild(link);
   };
   const addScript = (src, token) => {
@@ -51,7 +56,6 @@
     ];
     const path = location.pathname.replace(/index\.html$/, '');
     nav.innerHTML = links.map(([label,href]) => {
-      const absolute = new URL(href, location.href);
       const current = label !== 'Home' && path.includes(`/${label.toLowerCase()}/`);
       return `<a href="${href}"${current ? ' aria-current="page"' : ''}>${label}</a>`;
     }).join('');
