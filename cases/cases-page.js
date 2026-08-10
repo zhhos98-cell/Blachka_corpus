@@ -2,13 +2,19 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-2';
+    ui.src = '../unified-ui.js?v=20260810-4';
     document.head.appendChild(ui);
   }
   if (!document.querySelector('link[href*="case-wall-matrix.css"]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'case-wall-matrix.css?v=20260810-1';
+    link.href = 'case-wall-matrix.css?v=20260810-2';
+    document.head.appendChild(link);
+  }
+  if (!document.querySelector('link[href*="mobile-v3.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '../mobile-v3.css?v=20260810-1';
     document.head.appendChild(link);
   }
 
@@ -91,7 +97,7 @@
       await loadScript('../map-ratio-fix.js?v=20260810-2');
       await loadScript('../visuals-v1.js?v=20260809-2');
       await loadScript('../visuals-v2.js?v=20260809-1');
-      await loadScript('./case-wall-media.js?v=20260810-1');
+      await loadScript('./case-wall-media.js?v=20260810-2');
 
       document.body.classList.add('cases-ready');
       applyIncomingSearch();
