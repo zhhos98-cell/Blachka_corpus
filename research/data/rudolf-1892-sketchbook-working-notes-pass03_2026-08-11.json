@@ -1,17 +1,19 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "created": "2026-08-11",
   "updated": "2026-08-11",
-  "title": "Rudolf Blaschka 1892 sketchbook working-note and surrogate-delivery audit — pass 03",
+  "title": "Rudolf Blaschka sketchbook working-note and surrogate-delivery audit — pass 03",
   "scope": "Backend-only refinement of sketchbook pages 26-28 and digital-surrogate integrity. This file supersedes the provisional p26-p28 readings in the earlier crosswalk where they differ.",
   "frontend_policy": "Do not expose sketchbook images, thumbnails, page-derived geometries, or these working-note inferences on public GitHub Pages in this phase.",
+  "dating_guard": "Pages 26-28 carry no secure written date. Do not date them to 1892 merely because the catalogue describes the sketchbook as circa 1892. Rudolf demonstrably reused the same Bremen hotel/agent network on his 1895 American journey, so later reuse must remain an explicit alternative until physical sequence, ink, or an independent dated reference resolves it.",
   "supersedes": {
     "crosswalk_file": "research/working/rudolf-1892-sketchbook-crosswalk_2026-08-11.json",
     "fields": ["page_matches:p26", "page_matches:p27", "p28 absence/provisional interpretation"],
-    "reason": "higher-resolution visual reading plus external historical controls"
+    "reason": "higher-resolution visual reading, external historical controls, and a later-trip reuse guard"
   },
   "page_26": {
     "entry_type": "urban_address_or_errand_note",
+    "date_status": "undated",
     "diplomatic_reading": [
       "Chr. Baldewein & Sohn",
       "am Wall.",
@@ -36,13 +38,13 @@
         "business": "metalware factory; originated in Christian Baldewein's tinsmithing business",
         "source": "Weser-Kurier regional-history article on Am Wall 165",
         "url": "https://wkgeschichte.weser-kurier.de/eine-etwas-andere-wallfahrt/",
-        "evidential_role": "strong identity/location control; does not prove what Rudolf purchased or why he noted the firm"
+        "evidential_role": "identity/location control only; it does not prove what Rudolf purchased or why he noted the firm"
       },
       {
         "entity": "Brinckmann & Lange",
         "historical_location": "Sögestraße/Obernstraße corner, Bremen",
         "business": "gold- and silverware / jeweler with workshop and retail business",
-        "source": "Bremen monument/history material and family/company chronicle",
+        "source": "Bremen local monument/company-history controls",
         "url": "https://www.denkmalpflege.bremen.de/denkmaeler/unser-lieben-frauen-kirchhof-51177",
         "evidential_role": "strong corner-location control; the firm name Brinckmann & Lange was adopted in 1891"
       },
@@ -50,11 +52,11 @@
         "entity": "Bremer Adressbuch 1892",
         "source": "Staats- und Universitätsbibliothek Bremen",
         "url": "https://brema.suub.uni-bremen.de/bremensien/periodical/structure/997904",
-        "evidential_role": "period directory control. The digitized volume exposes separate resident, street, commercial and trade directories. Exact Schüsselkorb 14 occupant still to be extracted."
+        "evidential_role": "period directory control with resident, street, commercial and trade sections; exact Schüsselkorb 14 occupant remains to be extracted"
       }
     ],
     "spatial_sequence": {
-      "working_hypothesis": "The lines form a spatially coherent Bremen Altstadt sequence rather than unrelated later notes: Am Wall -> Schüsselkorb -> Sögestraße/Obernstraße -> Markt.",
+      "working_hypothesis": "The lines form a spatially coherent Bremen Altstadt sequence rather than unrelated place names: Am Wall -> Schüsselkorb -> Sögestraße/Obernstraße -> Markt.",
       "modern_control_coordinates": [
         {"label": "Am Wall 165", "lat": 53.077270, "lon": 8.811058, "status": "modern address proxy only"},
         {"label": "Schüsselkorb 14", "lat": 53.077657, "lon": 8.809759, "status": "modern address proxy only"},
@@ -66,34 +68,44 @@
         {"from": "Schüsselkorb 14", "to": "Sögestraße/Obernstraße corner", "distance_m": 238},
         {"from": "Sögestraße/Obernstraße corner", "to": "Marktplatz", "distance_m": 99}
       ],
-      "guard": "Distances are modern geometric controls, not reconstructed 1892 walking distances."
+      "guard": "Distances are modern geometric controls, not reconstructed nineteenth-century walking distances."
     },
-    "itinerary_link": {
-      "candidate_date": "1892-02-01",
-      "candidate_context": "Bremen layover before the 2 February Saale departure",
-      "archive_anchor": "Bremen letter of 1 February 1892: Rudolf says he stayed at the Central Hotel opposite the station, called on the shipping agents Ehrhorn, Emden & Mayer next door, and remained in Bremen until the next morning's special train to Bremerhaven.",
-      "association_confidence": 0.76,
-      "reason": "The note is wholly Bremen-specific and its internal order is spatially coherent with an urban errand sequence during the documented layover. No independent date is written on p26."
-    },
-    "interpretive_limit": "Do not claim procurement of metalware, jewelry, tools, or travel goods. The businesses are identifiable, but Rudolf's purpose at each address is presently unknown."
+    "dated_context_candidates": [
+      {
+        "date": "1892-02-01",
+        "archive_anchor": "BLA-D00652 · 017:5",
+        "context": "On the first American journey Rudolf stayed at the Central Hotel opposite Bremen station, visited the nearby shipping agents Ehrhorn, Emden & Mayer, and remained in Bremen until the following morning's special Lloyd train to Bremerhaven.",
+        "assessment": "plausible and presently preferred context because the catalogue associates the object with circa 1892, but the page itself is undated"
+      },
+      {
+        "date": "1895 outbound journey",
+        "archive_anchor": "BLA-D00936 · 017:291",
+        "context": "On the second American journey Rudolf again stayed at the Central Hotel, handled ticket business in Bremen, revisited Ehrhorn, Emden & Mayer, was recognized by the bookkeeper, and remarked that hardly anything had changed in Bremen in three years.",
+        "assessment": "real reuse alternative showing that the same Bremen logistical ecology persisted; cannot be excluded for p26"
+      }
+    ],
+    "current_assessment": "The note is securely Bremen-specific and probably records an urban errand/address sequence. Its exact trip/date is unresolved. Treat 1892-02-01 as a working candidate, not a dated fact.",
+    "interpretive_limit": "Do not claim procurement of metalware, jewelry, tools, or travel goods. The businesses are identifiable, but Rudolf's purpose at each address is unknown."
   },
   "page_27": {
     "entry_type": "travel_distance_calculation",
+    "date_status": "undated",
     "diplomatic_reading": "Von New York bis Bremen sind 880 geographische Meilen",
     "calculation_visible": "3520 / 4 = 880",
     "reading_confidence": "high",
     "interpretation": "Rudolf was converting or simplifying a source distance of 3520 into 880 'geographische Meilen' by an explicit 4:1 rule. The notebook therefore records travel arithmetic, not merely a copied place-name.",
-    "journey_relation": "Strongly associated with the New York-Bremen Atlantic route and probably the return journey; the page itself is undated.",
-    "guard": "Do not force the 880 figure into one standardized modern geographical-mile value. Rudolf's own arithmetic, source unit for 3520, and contemporary route convention have not yet been identified."
+    "journey_relation": "Compatible with a New York-Bremen Atlantic passage on either the 1892 or a later American journey; the page itself does not distinguish them.",
+    "guard": "Do not force the 880 figure into one standardized modern geographical-mile value. Rudolf's source unit for 3520 and the contemporary route convention have not yet been identified."
   },
   "page_28": {
     "entry_type": "measurement_conversion_note",
+    "date_status": "undated",
     "probable_heading": "Länge Cylinder",
     "heading_confidence": "medium-high",
     "secure_numerical_core": ["27 1/2 Centimeter", "11 Engl. Inches"],
     "relationship": "27.5 cm is approximately 10.83 English inches, close to Rudolf's rounded 11-inch note.",
     "interpretation": "Practical metric-English dimensional conversion for a cylinder or cylindrical object. This extends the notebook's function from landscape observation and route calculation into measurement/translation between unit systems.",
-    "guard": "The measured cylinder/object is unidentified. Do not connect it to a microscope, specimen jar, shipping cylinder, model component, or other apparatus without a separate source."
+    "guard": "The measured cylinder/object and date are unidentified. Do not connect the note to a microscope, specimen jar, shipping cylinder, model component, or other apparatus without a separate source."
   },
   "digital_surrogate_integrity": {
     "pdf_derivative_metadata": {
@@ -103,11 +115,10 @@
       "pdf_creation_date_utc": "2011-02-16T19:24:20Z",
       "pdf_pages": 30,
       "embedded_jpeg_count": 30,
-      "assessment": "The downloadable PDF is a later image-conversion derivative assembled after the 2009 digitization event, not the primary camera capture itself. This makes derivative-level ordering/duplication an evidential issue worth auditing."
+      "assessment": "The downloadable PDF is a later image-conversion derivative assembled after the 2009 digitization event, not the primary camera capture itself. Derivative-level ordering and duplication must therefore be audited rather than treated as physical foliation."
     },
     "pdf_duplicate": {
       "pages": [12, 13],
-      "pdf_image_object_character": "separate PDF object references",
       "finding": "The two PDF pages embed byte-identical JPEG images despite separate PDF object references.",
       "jpeg_dimensions": [2741, 1668],
       "jpeg_byte_length": 241256,
@@ -116,7 +127,7 @@
     },
     "older_backend_control": {
       "source": "05B_Blaschka_Digital_Archive_Literature_Technical_MASTER(1).json -> Corning_Rakow_notebook_1-700.pdf_by_PaddleOCR-VL-1.6.json",
-      "finding": "The final 30 records of the older 700-frame Rakow OCR batch align with the current 30-page sketchbook PDF. Old records 682 and 683 contain the same extracted image filename (img_in_image_box_0_1_1315_801.jpg), matching the current p12/p13 duplication. Records 696-698 also independently preserve low-quality OCR of the same p26-p28 notes.",
+      "finding": "The final 30 records of the older 700-frame Rakow OCR batch align with the current 30-page sketchbook PDF. Old records 682 and 683 already contain the same extracted image filename, matching the current p12/p13 duplication. Records 696-698 independently preserve low-quality OCR of the same p26-p28 working notes.",
       "interpretation": "The duplicate predates the user's current PDF download and belongs to an earlier Corning/Rakow digital-delivery or processing chain. It is not a corruption introduced by the current local file."
     },
     "catalogue_tempe_implication": "Because the surrogate demonstrably contains a duplicated frame and the catalogue says the beginning sketch is Tempe, 22 April 1892 while the current PDF exposes Maricopa, 24 April as its first legible landscape caption, omission/reassembly in digital delivery remains a live explanation. Do not downgrade the catalogue to error without checking the individual JPG representation."
@@ -124,8 +135,9 @@
   "digital_delivery_target": {
     "record": "alma99873843504126 / BIB 87384",
     "known_public_delivery": "Primo full display reports two digital representations: one PDF and 30 JPGs.",
-    "technical_control": "Ex Libris Alma Digital documentation states that digital delivery can be addressed by MMS ID or representation ID and exposes IIIF presentation manifests and per-file binary delivery once the representation identifier is known.",
-    "next_step": "Capture the actual 'Zoomable view' URL from Primo, extract its representation ID, request the corresponding IIIF manifest/file list, and compare all 30 JPG file identities/order with the PDF and old OCR batch. Priority question: does any delivered JPG contain the catalogued Tempe 22 April sketch?",
+    "technical_control": "Ex Libris Alma Digital supports digital delivery and IIIF presentation at representation/file level. Once the item's representation identifier is recovered, its file list can be compared with the PDF derivative and older OCR batch.",
+    "search_result": "No representation ID for this sketchbook is exposed in ordinary web indexing. Other Corning records demonstrate direct Primo discovery/delivery URLs, but guessing an identifier would be evidentially unsafe.",
+    "next_step": "Capture the actual 'Zoomable view' target URL from Primo, extract its representation ID, request the corresponding file/IIIF list, and compare all 30 JPG identities/order with the PDF and old OCR batch. Priority question: does any delivered JPG contain the catalogued Tempe 22 April sketch?",
     "status": "representation_id_not_yet_recovered"
   },
   "functional_reassessment": {
