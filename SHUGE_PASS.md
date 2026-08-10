@@ -1,0 +1,1 @@
+Homepage visual pass informed by the supplied Shuge reference: full-image portal, search-led entry, three concise principles, and split case masonry. Blaschka content, evidence structure, typography, palette, and source imagery remain project-specific.
