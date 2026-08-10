@@ -1,6 +1,7 @@
 (() => {
   const routeData = window.RUDOLF_1892_ROUTE_DATA;
   const knowledgeData = window.RUDOLF_1892_KNOWLEDGE_DATA;
+  const sourceData = window.RUDOLF_1892_SOURCE_DATA || { nodeOverrides:{}, nodeEnhancements:{}, nodeLinks:{} };
   if (!routeData || !knowledgeData || typeof L === 'undefined') return;
 
   const documented = routeData.documentedRoute;
@@ -8,8 +9,14 @@
   const knowledge = knowledgeData.nodes;
   const operations = knowledgeData.operationTypes;
   const flows = knowledgeData.flows;
+  const overrides = sourceData.nodeOverrides || {};
+  const enhancements = sourceData.nodeEnhancements || {};
+  const linksByNode = sourceData.nodeLinks || {};
   const byId = new Map(documented.map((item, index) => [item.id, { ...item, index }]));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const displayItem = item => ({ ...item, ...(overrides[item.id] || {}) });
+  const displayKnowledge = item => ({ ...(knowledge[item.id] || fallbackKnowledge(item)), ...(enhancements[item.id] || {}) });
 
   const map = L.map('journey-map', { scrollWheelZoom: true, worldCopyJump: false, zoomControl: true });
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -39,13 +46,22 @@
   const markerMap = new Map();
   const flowNodeIds = new Set(flows.flatMap(flow => [flow.from, flow.to]));
   let currentIndex = 0;
-  let currentMode = 'journey';
 
   const pad = value => String(value).padStart(2, '0');
   const numberFor = index => pad(index + 1);
 
+  function fallbackKnowledge(item) {
+    return {
+      primary: 'transit',
+      encountered: item.summary,
+      done: item.detail,
+      moved: 'The travelling party, working notes and accumulated reference material.',
+      enabled: 'The journey’s distributed working record could continue into the next stop.'
+    };
+  }
+
   function markerIcon(item, index, mode) {
-    const nodeKnowledge = knowledge[item.id] || {};
+    const nodeKnowledge = { ...(knowledge[item.id] || {}), ...(enhancements[item.id] || {}) };
     const op = operations[nodeKnowledge.primary] || operations.transit;
     const color = mode === 'operations' ? op.color : '#b67a51';
     const faded = mode === 'flows' && !flowNodeIds.has(item.id);
@@ -58,11 +74,12 @@
     });
   }
 
-  documented.forEach((item, index) => {
-    const marker = L.marker([item.lat, item.lng], { icon: markerIcon(item, index, 'journey') }).addTo(markerLayer);
-    marker.bindPopup(`<strong>${numberFor(index)} · ${item.title}</strong><br>${item.date}<br><span>${item.summary}</span>`);
+  documented.forEach((rawItem, index) => {
+    const item = displayItem(rawItem);
+    const marker = L.marker([rawItem.lat, rawItem.lng], { icon: markerIcon(rawItem, index, 'journey') }).addTo(markerLayer);
+    marker.bindPopup(`<strong>${numberFor(index)} · ${item.title}</strong><br>${item.date}<br><span>${rawItem.summary}</span>`);
     marker.on('click', () => setDetail(index, true));
-    markerMap.set(item.id, marker);
+    markerMap.set(rawItem.id, marker);
   });
 
   const allGroup = L.featureGroup([documentedLine, plannedLine, ...Array.from(markerMap.values())]);
@@ -81,34 +98,41 @@
   const detailWhy = document.getElementById('detail-why');
   const detailWhyBlock = document.getElementById('detail-why-block');
   const detailSource = document.getElementById('detail-source');
+  const detailLinks = document.getElementById('detail-links');
   const routeIndex = document.getElementById('route-index');
   const modeCopy = document.getElementById('mode-copy');
   const modeLegend = document.getElementById('mode-legend');
 
-  function fallbackKnowledge(item) {
-    return {
-      primary: 'transit',
-      encountered: item.summary,
-      done: item.detail,
-      moved: 'The travelling party, working notes and accumulated reference material.',
-      enabled: 'The journey’s distributed working record could continue into the next stop.'
-    };
+  function renderNodeLinks(item) {
+    if (!detailLinks) return;
+    detailLinks.innerHTML = '';
+    const links = linksByNode[item.id] || [];
+    detailLinks.hidden = links.length === 0;
+    links.forEach(link => {
+      const a = document.createElement('a');
+      a.href = link.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.innerHTML = `<span>${link.kind}</span><b>${link.label}</b><i aria-hidden="true">↗</i>`;
+      detailLinks.appendChild(a);
+    });
   }
 
   function setDetail(index, focusMap = false) {
     currentIndex = index;
-    const item = documented[index];
-    const k = knowledge[item.id] || fallbackKnowledge(item);
+    const rawItem = documented[index];
+    const item = displayItem(rawItem);
+    const k = displayKnowledge(rawItem);
     detailNo.textContent = numberFor(index);
     detailDate.textContent = item.date;
     detailTitle.textContent = item.title;
-    detailSummary.textContent = item.summary;
+    detailSummary.textContent = rawItem.summary;
     detailEncountered.textContent = k.encountered;
     detailDone.textContent = k.done;
     detailMoved.textContent = k.moved;
     detailEnabled.textContent = k.enabled;
     detailTags.innerHTML = '';
-    (item.category || []).slice(0, 6).forEach(tag => {
+    (rawItem.category || []).slice(0, 6).forEach(tag => {
       const span = document.createElement('span');
       span.className = 'journey-tag';
       span.textContent = tag;
@@ -122,6 +146,7 @@
       detailWhy.textContent = '';
     }
     detailSource.textContent = k.source || 'Correspondence sequence in the 1892 archive layer';
+    renderNodeLinks(rawItem);
 
     routeIndex.querySelectorAll('[data-route-index]').forEach(button => {
       const active = Number(button.dataset.routeIndex) === index;
@@ -137,15 +162,16 @@
     });
 
     if (focusMap) {
-      const marker = markerMap.get(item.id);
+      const marker = markerMap.get(rawItem.id);
       const targetZoom = Math.max(map.getZoom(), 5);
-      if (reduced) map.setView([item.lat, item.lng], targetZoom);
-      else map.flyTo([item.lat, item.lng], targetZoom, { duration: .7 });
+      if (reduced) map.setView([rawItem.lat, rawItem.lng], targetZoom);
+      else map.flyTo([rawItem.lat, rawItem.lng], targetZoom, { duration: .7 });
       marker?.openPopup();
     }
   }
 
-  documented.forEach((item, index) => {
+  documented.forEach((rawItem, index) => {
+    const item = displayItem(rawItem);
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'route-index-item';
@@ -192,7 +218,6 @@
   }
 
   function setMode(mode) {
-    currentMode = mode;
     document.querySelectorAll('[data-map-mode]').forEach(button => {
       const active = button.dataset.mapMode === mode;
       button.classList.toggle('is-active', active);
