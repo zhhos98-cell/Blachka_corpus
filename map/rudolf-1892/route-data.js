@@ -1,0 +1,272 @@
+window.RUDOLF_1892_ROUTE_DATA = {
+  title: "Rudolf Blaschka’s 1892 American Journey",
+  subtitle: "A mobile extension of the Blaschka workshop",
+  documentedRoute: [
+    {
+      id: "bremen-1892-02-01",
+      title: "Bremen",
+      date: "1892-02-01",
+      lat: 53.0793,
+      lng: 8.8017,
+      stage: "documented",
+      category: ["departure", "mobility infrastructure"],
+      summary: "Departure phase before Atlantic crossing.",
+      detail: "The journey begins in north Germany. The departure should be read as the outward movement of a working project rather than a merely personal trip."
+    },
+    {
+      id: "saale-1892-02-02",
+      title: "Aboard S.S. Saale",
+      date: "1892-02-02",
+      lat: 54.1,
+      lng: -17.0,
+      stage: "documented",
+      category: ["steamship", "mobility infrastructure"],
+      summary: "Atlantic crossing on the Saale.",
+      detail: "The voyage itself belongs to the logistical chain. Passenger movement, baggage, and the transport of working materials shaped what Rudolf could do upon arrival."
+    },
+    {
+      id: "cambridge-1892-02-15",
+      title: "Cambridge, Massachusetts",
+      date: "1892-02-15",
+      lat: 42.3736,
+      lng: -71.1097,
+      stage: "documented",
+      category: ["Harvard", "commissioning", "display", "receiving-side learning"],
+      summary: "Initial Cambridge arrival and Harvard-side orientation.",
+      detail: "Cambridge was both a social and technical station. Rudolf saw the receiving side of the Harvard commission, discussed the range of future botanical models with Goodale and Ware, and observed the handling and display environment of the models."
+    },
+    {
+      id: "annotto-bay-1892-03-01",
+      title: "Annotto Bay / north-coast Jamaica phase",
+      date: "1892-03-01",
+      lat: 18.2711,
+      lng: -76.7652,
+      stage: "documented retrospectively",
+      category: ["Jamaica", "fieldwork", "route reconstruction"],
+      summary: "North-coast movement later described from Hope Garden.",
+      detail: "This node stands for the northern Jamaican field phase reconstructed retrospectively: Port Antonio, Port Maria, Annotto Bay, and movement inland. It shows how the route itself must sometimes be rebuilt from later letters."
+    },
+    {
+      id: "hope-garden-1892-03-06",
+      title: "Hope Garden, Kingston",
+      date: "1892-03-06",
+      lat: 18.0127,
+      lng: -76.7487,
+      stage: "documented",
+      category: ["fieldwork", "microscope", "colour drawing", "preservation", "botanical garden"],
+      summary: "Microscope work, drawing, and specimen preparation in Jamaica.",
+      detail: "One of the strongest workflow nodes. Rudolf describes microscope and drawing work, while Cameron procures material and prepares specimens in white rum and water and as dried herbarium specimens. Hope and Castleton function as temporary workshop infrastructure. Count discrepancy to preserve: 106 studied species in a letter versus 116 coloured drawings in the botanical report."
+    },
+    {
+      id: "cambridge-return-1892-04-05",
+      title: "Cambridge return",
+      date: "1892-04-05",
+      lat: 42.3736,
+      lng: -71.1097,
+      stage: "documented",
+      category: ["sorting", "seeds", "Arboretum", "planning"],
+      summary: "Jamaica material sorted and westward trip prepared.",
+      detail: "Back in Cambridge Rudolf sorted Jamaican seeds and preserved materials, used work space associated with the Arnold Arboretum, and prepared the westward journey. This is an important editorial correction: by this point he is no longer in Jamaica even if later newspaper notices still say so."
+    },
+    {
+      id: "chicago-1892-04-14",
+      title: "Chicago",
+      date: "1892-04-14",
+      lat: 41.8781,
+      lng: -87.6298,
+      stage: "documented",
+      category: ["transit", "route"],
+      summary: "Entry into the western route.",
+      detail: "Chicago is the first clearly documented inland node of the westward movement and also a useful anchor against delayed newspaper reports."
+    },
+    {
+      id: "tempe-1892-04-20",
+      title: "Tempe, Arizona",
+      date: "1892-04-20",
+      lat: 33.4255,
+      lng: -111.9400,
+      stage: "documented",
+      category: ["fieldwork", "colour drawing", "desert flora"],
+      summary: "Desert excursion and species drawing.",
+      detail: "Rudolf reports active fieldwork in desert conditions and the production of drawings. This node helps widen the journey beyond the eastern institutional axis."
+    },
+    {
+      id: "maricopa-1892-04-24",
+      title: "Maricopa, Arizona",
+      date: "1892-04-24",
+      lat: 33.0581,
+      lng: -112.0476,
+      stage: "documented",
+      category: ["route", "fieldwork"],
+      summary: "Arizona route continuation.",
+      detail: "A documented stop in the southwestern movement, valuable for reconstructing the physical order of travel before California."
+    },
+    {
+      id: "san-diego-1892-04-30",
+      title: "San Diego, California",
+      date: "1892-04-30",
+      lat: 32.7157,
+      lng: -117.1611,
+      stage: "documented",
+      category: ["fieldwork", "Orcutt", "bulbs", "cacti", "later supply"],
+      summary: "A key California production node.",
+      detail: "San Diego is one of the clearest examples of the distributed workshop. With local botanical help, Rudolf reports around 36 species completed, sends a box of cacti and flowering bulbs onward, and later continues to rely on delayed Californian supply after he has already departed."
+    },
+    {
+      id: "san-bernardino-1892-05-04",
+      title: "San Bernardino",
+      date: "1892-05-04",
+      lat: 34.1083,
+      lng: -117.2898,
+      stage: "documented",
+      category: ["route", "fieldwork"],
+      summary: "Movement inland from San Diego.",
+      detail: "The move from the coast into inland southern California marks another ecological shift in the plant-searching process."
+    },
+    {
+      id: "banning-1892-05-06",
+      title: "Banning, California",
+      date: "1892-05-06",
+      lat: 33.9256,
+      lng: -116.8764,
+      stage: "documented",
+      category: ["route", "fieldwork", "phenology"],
+      summary: "Southern California field stop.",
+      detail: "Letters from this phase repeatedly show how flowering windows affected the value of particular routes and led to later attempts to secure seeds and bulbs."
+    },
+    {
+      id: "agua-caliente-1892-05-09",
+      title: "Agua Caliente / Palm Springs region",
+      date: "1892-05-09",
+      lat: 33.8303,
+      lng: -116.5453,
+      stage: "documented",
+      category: ["route", "fieldwork"],
+      summary: "Desert edge stop in southern California.",
+      detail: "Used here as a route node for the California interior phase."
+    },
+    {
+      id: "oakland-1892-05-15",
+      title: "Oakland, California",
+      date: "1892-05-15",
+      lat: 37.8044,
+      lng: -122.2712,
+      stage: "documented",
+      category: ["Ganong", "telegraph", "decision-making"],
+      summary: "Remote decision-making intersects with the route.",
+      detail: "Oakland is important because Goodale could still alter movement at a distance by telegraph. It is a good place to illustrate that authority and route choice remained distributed rather than lodged entirely in the travelling party."
+    },
+    {
+      id: "elko-1892-05-20",
+      title: "Elko, Nevada",
+      date: "1892-05-20",
+      lat: 40.8324,
+      lng: -115.7631,
+      stage: "documented",
+      category: ["transit", "route"],
+      summary: "Intermountain transit node.",
+      detail: "A useful fixed point in the eastward return across the interior West."
+    },
+    {
+      id: "colorado-springs-1892-05-22",
+      title: "Colorado Springs",
+      date: "1892-05-22",
+      lat: 38.8339,
+      lng: -104.8214,
+      stage: "documented",
+      category: ["fieldwork", "seed search", "delay"],
+      summary: "Later supply and seed-search logic becomes explicit.",
+      detail: "Colorado Springs is especially important for the argument that the chain remained open after immediate field observation. Rudolf was already thinking about where to secure wild seeds or later material when blooming windows had closed."
+    },
+    {
+      id: "st-louis-1892-05-31",
+      title: "St. Louis, Missouri",
+      date: "1892-05-31",
+      lat: 38.6270,
+      lng: -90.1994,
+      stage: "documented",
+      category: ["botanical garden", "work room", "colour sketch", "alcohol specimen"],
+      summary: "A temporary workshop station in a botanical institution.",
+      detail: "Through local contacts, Rudolf was given accommodation and a botanical-garden work room. He reports making a colour sketch and preserving a specimen in alcohol. This is one of the best cases where an institution becomes a temporary working annex of the workshop."
+    },
+    {
+      id: "chicago-return-1892-06-05",
+      title: "Chicago return",
+      date: "1892-06-05",
+      lat: 41.8781,
+      lng: -87.6298,
+      stage: "documented",
+      category: ["return"],
+      summary: "Return through Chicago.",
+      detail: "Part of the documented eastward return."
+    },
+    {
+      id: "niagara-1892-06-06",
+      title: "Niagara / Buffalo / Clifton corridor",
+      date: "1892-06-06",
+      lat: 43.0962,
+      lng: -79.0377,
+      stage: "documented",
+      category: ["tourist infrastructure", "route"],
+      summary: "Late route corridor before final Cambridge return.",
+      detail: "This node stands for the Niagara–Buffalo–Clifton corridor recorded in the correspondence. It is also linked to surviving guidebook ephemera."
+    },
+    {
+      id: "cambridge-june-1892-06-10",
+      title: "Cambridge, Massachusetts",
+      date: "1892-06-10",
+      lat: 42.3736,
+      lng: -71.1097,
+      stage: "documented",
+      category: ["repair", "receiving-side work", "Harvard"],
+      summary: "Return to Harvard-side work before departure.",
+      detail: "Rudolf is again in Cambridge, repairing damaged Harvard models and still managing plant material and correspondence. Fieldwork and aftercare overlap."
+    },
+    {
+      id: "new-york-1892-06-17",
+      title: "New York",
+      date: "1892-06-17",
+      lat: 40.7128,
+      lng: -74.0060,
+      stage: "documented",
+      category: ["departure", "mobility infrastructure"],
+      summary: "Pre-sailing departure point.",
+      detail: "The documented New York node anchors the final Atlantic departure."
+    },
+    {
+      id: "aller-1892-06-18",
+      title: "Aboard S.S. Aller",
+      date: "1892-06-18",
+      lat: 41.5,
+      lng: -45.0,
+      stage: "documented plan / departure",
+      category: ["steamship", "return journey"],
+      summary: "Return crossing on the Aller.",
+      detail: "Booked Atlantic return. This stop completes the mobile field phase but not the knowledge-production chain."
+    },
+    {
+      id: "hosterwitz-1892-06-30",
+      title: "Hosterwitz",
+      date: "1892-06-30",
+      lat: 51.0283,
+      lng: 13.8237,
+      stage: "documented",
+      category: ["workshop", "reassembly", "model production"],
+      summary: "Journey closes at the workshop, where model production restarts.",
+      detail: "By early July Rudolf reports that he has already resumed making models from plants flowering in the garden and will use preserved material from the journey to guide later selection. This is crucial because it closes the chain: travel feeds back into workshop production."
+    }
+  ],
+  plannedPublicRoute: [
+    { title: "Cambridge", lat: 42.3736, lng: -71.1097, note: "Starting point in published route narratives." },
+    { title: "Chicago", lat: 41.8781, lng: -87.6298, note: "Named in planned western route." },
+    { title: "St. Louis / Missouri", lat: 38.6270, lng: -90.1994, note: "Representative Missouri node in the projected route." },
+    { title: "Kansas", lat: 39.0119, lng: -98.4842, note: "Projected route region." },
+    { title: "Colorado", lat: 39.5501, lng: -105.7821, note: "Projected route region." },
+    { title: "New Mexico", lat: 34.5199, lng: -105.8701, note: "Projected route region." },
+    { title: "Arizona", lat: 34.0489, lng: -111.0937, note: "Projected route region." },
+    { title: "San Diego", lat: 32.7157, lng: -117.1611, note: "Projected western endpoint named in newspapers." },
+    { title: "Los Angeles", lat: 34.0522, lng: -118.2437, note: "Projected route stop." },
+    { title: "San Francisco / Oakland", lat: 37.7749, lng: -122.4194, note: "Projected route stop and public-west-coast horizon." },
+    { title: "Colorado", lat: 39.5501, lng: -105.7821, note: "Projected return by Colorado." }
+  ]
+};
