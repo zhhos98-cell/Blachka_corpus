@@ -31,7 +31,7 @@
   addStyle(`${prefix}site-rhythm.css?v=20260810-2`, 'site-rhythm.css');
   addStyle(`${prefix}site-polish.css?v=20260810-2`, 'site-polish.css');
   if (isSubpage) addStyle(`${prefix}header-minimal.css?v=20260810-1`, 'header-minimal.css');
-  addStyle(`${prefix}footer-legal.css?v=20260810-2`, 'footer-legal.css');
+  addStyle(`${prefix}footer-legal.css?v=20260810-3`, 'footer-legal.css');
   if (!phoneOrTablet) {
     addStyle(`${prefix}nav-glide.css?v=20260810-2`, 'nav-glide.css');
     addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
@@ -39,7 +39,7 @@
   addStyle(`${prefix}mobile-v3.css?v=20260810-3`, 'mobile-v3.css');
   if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-3`, 'mobile-fixes.css');
   addStyle(`${prefix}accessibility.css?v=20260810-1`, 'accessibility.css');
-  addStyle(`${prefix}scale-balance.css?v=20260810-2`, 'scale-balance.css');
+  addStyle(`${prefix}scale-balance.css?v=20260810-3`, 'scale-balance.css');
   addScript(`${prefix}accessibility.js?v=20260810-1`, 'accessibility.js');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
@@ -51,21 +51,21 @@
     document.head.appendChild(rss);
   }
 
+  const path = location.pathname.replace(/index\.html$/, '');
   const nav = document.querySelector('.subpage-nav');
   if (isSubpage && nav) {
+    /* The brand is the Home control on every page. Keep the primary sequence fixed
+       so entering a section never forces the reader to relearn the header. */
     const links = [
-      ['Home', `${prefix}`],
-      ['Cases', `${prefix}cases/`],
-      ['Bibliography', `${prefix}bibliography/`],
-      ['Sources', `${prefix}sources/`],
-      ['Auctions', `${prefix}auctions/`],
-      ['About', `${prefix}about/`]
+      ['Cases', `${prefix}cases/`, '/cases/'],
+      ['Bibliography', `${prefix}bibliography/`, '/bibliography/'],
+      ['Sources', `${prefix}sources/`, '/sources/'],
+      ['Auctions', `${prefix}auctions/`, '/auctions/'],
+      ['About', `${prefix}about/`, '/about/']
     ];
-    const path = location.pathname.replace(/index\.html$/, '');
-    nav.innerHTML = links.map(([label,href]) => {
-      const current = label !== 'Home' && path.includes(`/${label.toLowerCase()}/`);
-      return `<a href="${href}"${current ? ' aria-current="page"' : ''}>${label}</a>`;
-    }).join('');
+    nav.innerHTML = links.map(([label, href, match]) =>
+      `<a href="${href}"${path.includes(match) ? ' aria-current="page"' : ''}>${label}</a>`
+    ).join('');
   }
 
   document.querySelectorAll('img[src^="http://"],img[src^="https://"]').forEach(img => {
@@ -83,8 +83,18 @@
   }
 
   const footer = document.querySelector('.subpage-footer, footer');
-  if (footer && !footer.querySelector('.footer-copyright')) {
+  if (footer) {
     const target = footer.querySelector('.footer-inner') || footer;
-    target.innerHTML = `<div class="footer-identity"><a class="footer-title" href="${prefix}">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="${prefix}cases/">Cases</a><a href="${prefix}bibliography/">Bibliography</a><a href="${prefix}sources/">Sources</a><a href="${prefix}auctions/">Auctions</a><a href="${prefix}about/">About</a><a href="${prefix}people/">People</a><a href="${prefix}rights/">Image rights</a><a href="${prefix}privacy/">Privacy</a><a href="${prefix}accessibility/">Accessibility</a><a class="footer-rss" href="${prefix}feed.xml" aria-label="RSS feed">RSS</a></div>`;
+    const utilityLinks = [
+      ['People', `${prefix}people/`, '/people/'],
+      ['Contact', 'mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network', ''],
+      ['Image rights', `${prefix}rights/`, '/rights/'],
+      ['Privacy', `${prefix}privacy/`, '/privacy/'],
+      ['Accessibility', `${prefix}accessibility/`, '/accessibility/']
+    ];
+    const utility = utilityLinks.map(([label, href, match]) =>
+      `<a href="${href}"${match && path.includes(match) ? ' aria-current="page"' : ''}>${label}</a>`
+    ).join('');
+    target.innerHTML = `<div class="footer-identity"><a class="footer-title" href="${prefix}">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links">${utility}<a class="footer-rss" href="${prefix}feed.xml" aria-label="RSS feed">RSS</a></div>`;
   }
 })();
