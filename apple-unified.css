@@ -1,0 +1,329 @@
+/* User-first interface unification · 2026-08-10
+   Apple-inspired principles without copying Apple branding: clarity, generous touch targets,
+   progressive disclosure, soft geometry, restrained motion, and consistent navigation. */
+
+:root{
+  --ui-radius-xs:10px;
+  --ui-radius-sm:14px;
+  --ui-radius-md:20px;
+  --ui-radius-lg:28px;
+  --ui-pill:999px;
+  --ui-hit:44px;
+  --ui-glass:rgba(29,23,20,.76);
+  --ui-glass-strong:rgba(24,18,15,.88);
+  --ui-soft:rgba(255,255,255,.045);
+  --ui-soft-hover:rgba(255,255,255,.075);
+  --ui-line:rgba(245,239,232,.12);
+  --ui-line-strong:rgba(245,239,232,.20);
+  --ui-shadow:0 18px 54px rgba(0,0,0,.16);
+  --ui-shadow-small:0 8px 28px rgba(0,0,0,.13);
+  --ui-ease:cubic-bezier(.2,.75,.2,1);
+}
+
+html{scroll-behavior:smooth}
+body{font-kerning:normal}
+button,input,select,textarea{font:inherit}
+button,select,a{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+
+/* Navigation: one grammar everywhere, with comfortable hit areas and no sharp tabs. */
+.top-nav,.subpage-nav{align-items:center}
+.top-nav a,.subpage-nav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  padding:0 12px;
+  border-radius:var(--ui-pill);
+  transition:background .2s ease,color .2s ease,transform .2s var(--ui-ease)!important;
+}
+.top-nav a:hover,.subpage-nav a:hover,
+.subpage-nav a[aria-current="page"]{
+  background:rgba(255,255,255,.075);
+  color:#fff!important;
+}
+.top-nav a:active,.subpage-nav a:active{transform:scale(.97)}
+.top-nav a::after,.subpage-nav a::after{display:none!important}
+
+.subpage-header{
+  min-height:64px!important;
+  background:var(--ui-glass-strong)!important;
+  border-bottom:1px solid rgba(245,239,232,.09)!important;
+  box-shadow:0 10px 34px rgba(0,0,0,.09)!important;
+  backdrop-filter:saturate(125%) blur(24px)!important;
+  -webkit-backdrop-filter:saturate(125%) blur(24px)!important;
+}
+.subpage-brand{
+  display:inline-flex;
+  align-items:center;
+  min-height:40px;
+  border-radius:var(--ui-pill);
+}
+
+/* Homepage search: one obvious action, soft integrated control, no secondary navigation below it. */
+body:not(.subpage) .network-search{max-width:760px!important}
+body:not(.subpage) .network-search-shell{
+  min-height:58px!important;
+  padding:5px!important;
+  gap:4px!important;
+  border:1px solid rgba(255,255,255,.32)!important;
+  border-radius:30px!important;
+  background:rgba(248,245,240,.95)!important;
+  box-shadow:0 16px 48px rgba(0,0,0,.20)!important;
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+  overflow:hidden;
+}
+body:not(.subpage) .network-search-scope{
+  min-width:138px!important;
+  height:48px!important;
+  padding-left:18px!important;
+  border:0!important;
+  border-radius:24px!important;
+  background:rgba(45,35,30,.055)!important;
+  color:#2d241f!important;
+}
+body:not(.subpage) .network-search input{
+  height:48px!important;
+  border:0!important;
+  background:transparent!important;
+  color:#241c18!important;
+  outline:0!important;
+}
+body:not(.subpage) .network-search input::placeholder{color:rgba(36,28,24,.48)!important}
+body:not(.subpage) .network-search button{
+  min-width:92px!important;
+  height:48px!important;
+  border:0!important;
+  border-radius:24px!important;
+  background:#31251f!important;
+  color:#fff!important;
+  box-shadow:none!important;
+  transition:transform .18s var(--ui-ease),background .18s ease!important;
+}
+body:not(.subpage) .network-search button:hover{background:#1f1714!important;transform:scale(1.015)}
+body:not(.subpage) .network-search button:active{transform:scale(.97)}
+body:not(.subpage) .network-search-status:not(:empty){
+  width:max-content;
+  max-width:100%;
+  padding:7px 11px;
+  border-radius:var(--ui-pill);
+  background:rgba(18,13,11,.45);
+}
+
+/* Images: softer physical presence without turning the site into a card grid. */
+.origin-photo>a,.case-figure,.page-intro::before,.page-intro::after{
+  border-radius:var(--ui-radius-md)!important;
+}
+.origin-photo>a,.case-figure{overflow:hidden!important}
+.origin-photo img,.case-figure img{transition:transform .65s var(--ui-ease),filter .45s ease}
+@media(hover:hover){
+  .origin-photo:hover img,.case-figure:hover img{transform:scale(1.012)}
+}
+.page-intro::before,.page-intro::after{box-shadow:var(--ui-shadow)!important}
+
+/* Home case directory: open rows, rounded only on interaction. */
+body:not(.subpage) .case-index-table{border-top:0!important}
+body:not(.subpage) .case-index-row{
+  margin:7px 0!important;
+  padding:20px 18px!important;
+  border:0!important;
+  border-radius:var(--ui-radius-md)!important;
+  background:rgba(255,255,255,.018)!important;
+  transition:background .22s ease,transform .22s var(--ui-ease),box-shadow .22s ease!important;
+}
+@media(hover:hover){
+  body:not(.subpage) .case-index-row:hover{
+    padding-left:18px!important;
+    padding-right:18px!important;
+    background:rgba(255,255,255,.055)!important;
+    box-shadow:var(--ui-shadow-small);
+    transform:translateY(-2px);
+  }
+}
+.all-cases-link,.contact-actions a{
+  display:inline-flex!important;
+  align-items:center;
+  min-height:var(--ui-hit);
+  padding:0 16px!important;
+  border:1px solid rgba(245,239,232,.18)!important;
+  border-radius:var(--ui-pill)!important;
+  background:rgba(255,255,255,.035)!important;
+  text-decoration:none!important;
+  transition:background .2s ease,border-color .2s ease,transform .2s var(--ui-ease)!important;
+}
+.all-cases-link:hover,.contact-actions a:hover{background:rgba(255,255,255,.075)!important;border-color:rgba(245,239,232,.28)!important}
+.all-cases-link:active,.contact-actions a:active{transform:scale(.97)}
+
+/* Long case pages: preserve editorial openness, make dense evidence easier to scan. */
+.sample{scroll-margin-top:82px}
+.event{
+  border-radius:var(--ui-radius-sm);
+  transition:background .18s ease,transform .18s var(--ui-ease)!important;
+}
+@media(hover:hover){.event:hover{background:rgba(255,255,255,.025)!important;transform:translateX(3px)}}
+.status>div{border-radius:var(--ui-radius-sm)}
+.object-register-grid p{border-radius:var(--ui-radius-xs)}
+.source-row{border-radius:var(--ui-radius-xs)}
+
+/* Bibliography: the selection/export tool is a calm, discoverable utility rather than a control strip. */
+.bib-tools{
+  gap:10px 18px!important;
+  padding:12px 14px!important;
+  border:1px solid var(--ui-line)!important;
+  border-radius:var(--ui-radius-md)!important;
+  background:rgba(255,255,255,.035)!important;
+  box-shadow:var(--ui-shadow-small)!important;
+  backdrop-filter:blur(16px)!important;
+  -webkit-backdrop-filter:blur(16px)!important;
+}
+.bib-tool-button{
+  min-height:38px!important;
+  padding:0 13px!important;
+  border:0!important;
+  border-radius:var(--ui-pill)!important;
+  background:rgba(255,255,255,.055)!important;
+  transition:background .18s ease,transform .18s var(--ui-ease)!important;
+}
+.bib-tool-button:hover,.bib-tool-button:focus-visible{background:rgba(255,255,255,.105)!important}
+.bib-tool-button[aria-pressed="true"]{background:rgba(212,161,116,.18)!important;color:#fff!important}
+.bib-tool-button:active{transform:scale(.96)}
+.bib-select{border-radius:8px}
+.bib-select span{width:16px!important;height:16px!important;border-radius:5px!important}
+.bib-entry{
+  margin:4px 0!important;
+  padding-left:14px!important;
+  padding-right:14px!important;
+  border-radius:var(--ui-radius-sm)!important;
+  transition:background .18s ease,transform .18s var(--ui-ease)!important;
+}
+@media(hover:hover){.bib-entry:hover{background:rgba(255,255,255,.028)!important;transform:translateX(3px)!important}}
+.bib-community,.bib-community-live{border-radius:var(--ui-radius-sm)!important}
+
+/* Sources: controls read as controls, records remain open typography. */
+.source-az-filters{
+  border-radius:var(--ui-radius-md)!important;
+  background:rgba(255,255,255,.028)!important;
+}
+.source-az-filters select,.source-az-filters input{
+  min-height:46px!important;
+  border-radius:var(--ui-radius-sm)!important;
+}
+.source-az-filters button,.source-az-alpha button,.source-az-reset button{
+  min-height:38px!important;
+  padding-inline:12px!important;
+  border-radius:var(--ui-pill)!important;
+  transition:background .18s ease,transform .18s var(--ui-ease)!important;
+}
+.source-az-alpha button{min-width:38px!important}
+.source-az-filters button:active,.source-az-alpha button:active,.source-az-reset button:active{transform:scale(.96)}
+.source-az-entry{border-radius:var(--ui-radius-sm)!important}
+
+/* Auction records: retain provenance-led structure, soften hover affordance only. */
+.auction-case{border-radius:0!important}
+.auction-lot{
+  margin:5px -14px!important;
+  padding-left:14px!important;
+  padding-right:14px!important;
+  border-radius:var(--ui-radius-sm)!important;
+  transition:background .18s ease,transform .18s var(--ui-ease)!important;
+}
+@media(hover:hover){.auction-lot:hover{background:rgba(255,255,255,.03)!important;transform:translateX(3px)!important}}
+.market-caution{border-radius:var(--ui-radius-sm)!important}
+.auction-query-bar{
+  border-radius:var(--ui-radius-sm)!important;
+  padding:11px 14px!important;
+  background:rgba(255,255,255,.035)!important;
+}
+
+/* Footer and inline actions. */
+.subpage-footer{align-items:center}
+.subpage-footer a{border-radius:var(--ui-pill)}
+
+/* Keyboard and accessibility. */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
+  outline:2px solid rgba(212,161,116,.9)!important;
+  outline-offset:3px!important;
+}
+.ui-skip-link{
+  position:fixed;
+  z-index:9999;
+  left:16px;
+  top:10px;
+  transform:translateY(-160%);
+  padding:10px 14px;
+  border-radius:var(--ui-pill);
+  background:#f5efe8;
+  color:#1d1714;
+  font:700 .72rem/1 Arial,Helvetica,sans-serif;
+  text-decoration:none;
+  transition:transform .18s ease;
+}
+.ui-skip-link:focus{transform:translateY(0)}
+
+/* Mobile: fewer decisions per row, horizontal navigation, full-width controls, large tap areas. */
+@media(max-width:760px){
+  html{scroll-behavior:auto}
+  .subpage-header{
+    display:block!important;
+    min-height:0!important;
+    padding:10px 14px 9px!important;
+  }
+  .subpage-brand{min-height:36px;font-size:.9rem!important}
+  .subpage-nav{
+    width:100%;
+    gap:4px!important;
+    padding-top:4px;
+    overflow-x:auto;
+    overscroll-behavior-x:contain;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    white-space:nowrap;
+  }
+  .subpage-nav::-webkit-scrollbar{display:none}
+  .subpage-nav a{flex:0 0 auto;min-height:38px;padding:0 11px;font-size:.62rem!important}
+  .subpage-main{width:min(calc(100% - 28px),var(--max))!important}
+
+  body:not(.subpage) .network-search-shell{
+    grid-template-columns:1fr auto!important;
+    border-radius:22px!important;
+    padding:5px!important;
+  }
+  body:not(.subpage) .network-search-scope{
+    grid-column:1/-1!important;
+    height:40px!important;
+    border-radius:17px!important;
+    text-align:center;
+    text-align-last:center;
+  }
+  body:not(.subpage) .network-search input{height:46px!important;padding-left:13px!important}
+  body:not(.subpage) .network-search button{height:46px!important;min-width:82px!important;border-radius:18px!important}
+
+  .page-intro::before,.page-intro::after{border-radius:18px!important}
+  .origin-photo>a,.case-figure{border-radius:18px!important}
+
+  body:not(.subpage) .case-index-row{margin:8px 0!important;padding:17px 15px!important;border-radius:17px!important}
+  .all-cases-link,.contact-actions a{min-height:42px;padding-inline:14px!important}
+
+  .bib-tools{
+    position:static!important;
+    display:block!important;
+    margin-inline:0!important;
+    padding:12px!important;
+    border-radius:17px!important;
+  }
+  .bib-tools-group{gap:6px!important;margin:7px 0!important}
+  .bib-tool-button{min-height:40px!important;padding-inline:12px!important}
+  .bib-entry{padding-left:8px!important;padding-right:8px!important}
+
+  .source-az-filters{padding:12px!important;border-radius:17px!important}
+  .source-az-filters label{width:100%!important}
+  .source-az-alpha{gap:5px!important}
+
+  .auction-lot{margin-inline:-8px!important;padding-left:8px!important;padding-right:8px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
