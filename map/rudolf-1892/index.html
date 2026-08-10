@@ -7,9 +7,10 @@
   <title>A workshop on the move · Rudolf Blaschka 1892 · The Blaschka Object Network</title>
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../secondary.css">
-  <link rel="stylesheet" href="../../navigation-shell.css?v=20260810-4">
+  <link rel="stylesheet" href="../../navigation-shell.css?v=20260811-1">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./styles.css?v=20260811-1">
+  <link rel="stylesheet" href="./visual-matches.css?v=20260811-1">
 </head>
 <body class="subpage rudolf-1892-page">
   <header class="subpage-header">
@@ -58,7 +59,7 @@
           <div class="map-frame journey-map-frame">
             <div id="journey-map" role="region" aria-label="Interactive map of Rudolf Blaschka’s 1892 journey"></div>
           </div>
-          <p class="map-method journey-map-note">Numbers are chronological sequence markers, not confidence rankings. Exact times come from dated correspondence where available; close but non-contemporaneous timetable values are labelled as contextual controls. The dashed public itinerary is retained only in Journey mode. Flow lines identify documented or explicitly prospective transfers and remote coordination rather than a second travel route.</p>
+          <p class="map-method journey-map-note">Numbers are chronological sequence markers, not confidence rankings. Exact times come from dated correspondence where available; close but non-contemporaneous timetable values are labelled as contextual controls. The dashed public itinerary is retained only in Journey mode. Flow lines identify documented or explicitly prospective transfers and remote coordination rather than a second travel route. Gold <strong>S</strong> diamonds are separate visual-evidence markers: they show public-domain historical views that closely match landscapes recorded in Rudolf’s sketchbook without turning those views into numbered itinerary stops. Hover on desktop or tap on touch screens to open the comparison note and source.</p>
         </div>
 
         <aside class="journey-detail" id="detail-panel" aria-live="polite">
@@ -105,7 +106,7 @@
       <p class="eyebrow">Method</p>
       <div>
         <h2 id="journey-method-title">The route and the knowledge chain are kept separate.</h2>
-        <p>The documented journey, the publicly circulated itinerary, the movement of plant material, and the movement of instructions are different evidential objects. They are shown together only when their difference remains visible. A dated place can prove presence without proving a separate collecting excursion; a timetable can constrain an observation window without proving an exact train unless the issue and date match. Unresolved locations remain outside the secure route. Dates and identifications are corrected in the public view only when the archival layer or a cited control source supports the correction; the preserved OCR remains unchanged in the research backend.</p>
+        <p>The documented journey, the publicly circulated itinerary, the movement of plant material, and the movement of instructions are different evidential objects. They are shown together only when their difference remains visible. A dated place can prove presence without proving a separate collecting excursion; a timetable can constrain an observation window without proving an exact train unless the issue and date match. The sketchbook-match diamonds are likewise evidential controls rather than route nodes: a historical view can strongly support landscape identification while leaving the exact drawing point unresolved. Unresolved locations remain outside the secure route. Dates and identifications are corrected in the public view only when the archival layer or a cited control source supports the correction; the preserved OCR remains unchanged in the research backend.</p>
       </div>
     </section>
 
@@ -113,8 +114,8 @@
       <div class="journey-references-head">
         <p class="eyebrow">References &amp; source routes</p>
         <div>
-          <h2 id="journey-references-title">Follow the evidence without reproducing the images here.</h2>
-          <p>Archival images and published figures are linked to their holding institutions or publication pages rather than copied into this map. The Corning study is used as a secondary control layer; the correspondence remains the primary chronological backbone.</p>
+          <h2 id="journey-references-title">Follow the evidence; reproduce only rights-safe controls.</h2>
+          <p>Rights-restricted archival images and published figures remain linked to their holding institutions or publication pages. The map reproduces only public-domain historical control images where they make a close sketchbook landscape match visible. Rudolf’s sketchbook itself remains linked rather than reproduced here. The Corning study is used as a secondary control layer; the correspondence remains the primary chronological backbone.</p>
         </div>
       </div>
 
@@ -156,7 +157,8 @@
   <script src="./route-data.js?v=20260811-2"></script>
   <script src="./knowledge-data.js?v=20260811-2"></script>
   <script src="./source-data.js?v=20260811-2"></script>
-  <script src="./map.js?v=20260811-1"></script>
-  <script src="../../unified-ui.js?v=20260810-17" defer></script>
+  <script src="./visual-match-data.js?v=20260811-1"></script>
+  <script src="./map.js?v=20260811-2"></script>
+  <script src="../../unified-ui.js?v=20260811-2" defer></script>
 </body>
 </html>
