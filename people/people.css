@@ -1,126 +1,28 @@
-/* People index · role-first biography architecture · 2026-08-10 */
+@import url("../typography-garamond.css?v=20260810-4");
+@import url("../mobile-v3.css?v=20260810-4");
 
-.people-intro-note{
-  max-width:760px;
-  margin:0 0 28px 260px;
-  color:rgba(235,226,217,.62);
-  font:500 .72rem/1.55 var(--font-ui,Arial,Helvetica,sans-serif);
-}
-.people-role-index{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px 18px;
-  margin:0 0 38px 260px;
-  font:620 .72rem/1.4 var(--font-ui,Arial,Helvetica,sans-serif);
-}
-.people-role-index a{
-  color:rgba(244,236,228,.68);
-  text-decoration:none;
-  border-bottom:1px solid rgba(207,142,103,.28);
-}
-.people-role-index a:hover,.people-role-index a:focus-visible{color:#fff3e7;border-color:rgba(207,142,103,.7)}
+/* People · text-first authority index, intentionally aligned with Bibliography. */
+body.subpage{background:#1d1714!important;background-image:none!important;color:#f2eee9!important}
+html body.subpage .page-intro{min-height:0!important;padding:clamp(66px,7vw,90px) 0 clamp(38px,5vw,54px)!important;border:0!important;background:none!important}
+.page-intro .eyebrow{margin:0 0 15px!important}
+.page-intro h1{max-width:900px!important;margin:0 0 18px!important;color:#f3eee8!important;font-size:clamp(3.35rem,6.1vw,6.15rem)!important;line-height:.92!important;letter-spacing:-.046em!important;font-weight:490!important}
+.page-intro .page-dek{max-width:760px!important;margin:0!important;color:rgba(242,238,233,.70)!important;font-size:1.06rem!important;line-height:1.54!important}
+.page-intro::before,.page-intro::after,.page-intro h1::before,.page-intro .page-dek::before{content:none!important;display:none!important;background-image:none!important}
 
-.people-groups{padding:0 0 64px}
-.people-group{
-  display:grid;
-  grid-template-columns:160px minmax(0,1fr);
-  gap:clamp(30px,6vw,84px);
-  align-items:start;
-  align-content:start;
-  min-height:0!important;
-  padding:34px 0 38px;
-  border-top:1px solid rgba(244,236,228,.10);
-}
-.people-group:first-child{border-top:0;padding-top:0}
-.people-group-label{
-  margin:4px 0 0;
-  color:#d6a17e;
-  font:700 .67rem/1.45 var(--font-ui,Arial,Helvetica,sans-serif);
-  letter-spacing:.11em;
-  text-transform:uppercase;
-}
-.people-group-body{
-  display:grid;
-  grid-auto-rows:max-content;
-  align-content:start;
-  gap:0;
-  max-width:920px;
-  min-height:0!important;
-}
-.person-record{
-  position:relative;
-  display:grid;
-  grid-template-columns:minmax(180px,.60fr) minmax(0,1.40fr);
-  grid-auto-rows:max-content;
-  gap:clamp(22px,3.4vw,46px);
-  align-items:start;
-  align-content:start;
-  min-height:0!important;
-  height:auto!important;
-  margin:0!important;
-  padding:22px 0 25px;
-  border-top:1px solid rgba(244,236,228,.075);
-  scroll-margin-top:96px;
-}
-.person-record:first-child{border-top:0;padding-top:0}
-.person-heading{min-width:0;align-self:start}
-.person-role{
-  margin:0 0 6px;
-  color:rgba(214,161,126,.72);
-  font:650 .67rem/1.35 var(--font-ui,Arial,Helvetica,sans-serif);
-  letter-spacing:.075em;
-  text-transform:uppercase;
-}
-.person-record h2{
-  margin:0;
-  color:#f3ece4;
-  font-size:clamp(1.65rem,2.35vw,2.25rem);
-  font-weight:510;
-  line-height:1.03;
-  letter-spacing:-.025em;
-}
-.person-record p{margin:0;color:rgba(238,229,220,.68);font-size:1.01rem;line-height:1.54}
-.person-links{margin-top:9px!important;color:rgba(238,229,220,.48)!important;font:520 .69rem/1.5 var(--font-ui,Arial,Helvetica,sans-serif)!important}
-.person-links a{text-underline-offset:3px;text-decoration-color:rgba(207,142,103,.36)}
-.person-record-meta{
-  grid-column:1/-1;
-  margin:7px 0 0!important;
-  color:rgba(238,229,220,.34)!important;
-  font:540 .66rem/1.45 var(--font-ui,Arial,Helvetica,sans-serif)!important;
-  letter-spacing:.025em;
-}
-.person-record:target::before{
-  content:"";
-  position:absolute;
-  left:-12px;
-  top:18px;
-  bottom:18px;
-  width:2px;
-  background:#d49a73;
-  box-shadow:0 0 18px rgba(212,154,115,.28);
-}
-.people-method-note{
-  display:grid;
-  grid-template-columns:160px minmax(0,1fr);
-  gap:clamp(30px,6vw,84px);
-  align-items:start;
-  padding:36px 0 58px;
-  border-top:1px solid rgba(244,236,228,.10);
-}
-.people-method-note p:last-child{max-width:760px;margin:0;color:rgba(238,229,220,.56);font-size:.98rem;line-height:1.58}
+.people-tools{position:sticky;top:68px;z-index:8;display:grid;grid-template-columns:auto minmax(220px,420px) auto minmax(180px,260px) 1fr;align-items:center;gap:8px 10px;width:min(100%,1040px);margin:6px 0 28px;padding:9px 0 11px;background:#1d1714;border-bottom:1px solid rgba(242,238,233,.08)}
+.people-search-label,.people-filter-label{color:rgba(242,238,233,.38);font:650 .56rem/1.3 var(--font-ui,Arial,Helvetica,sans-serif);letter-spacing:.08em;text-transform:uppercase}
+.people-tools input,.people-tools select{min-height:36px;border:1px solid rgba(242,238,233,.15);border-radius:2px;background:rgba(255,255,255,.035);color:#f2eee9;font:520 .74rem/1.2 var(--font-ui,Arial,Helvetica,sans-serif);outline:none}
+.people-tools input{width:100%;padding:0 11px}.people-tools select{padding:0 28px 0 10px}.people-tools input::placeholder{color:rgba(242,238,233,.33)}
+.people-tools input:focus,.people-tools select:focus{border-color:rgba(214,161,126,.62);background:rgba(255,255,255,.055)}
+.people-result-count{justify-self:end;margin:0;color:rgba(242,238,233,.40);font:560 .61rem/1.3 var(--font-ui,Arial,Helvetica,sans-serif)}
 
-@media(max-width:900px){
-  .people-intro-note,.people-role-index{margin-left:0}
-  .people-intro-note{margin-bottom:22px}
-  .people-role-index{margin-bottom:30px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px;white-space:nowrap;-webkit-overflow-scrolling:touch}
-  .people-group,.people-method-note{grid-template-columns:1fr;gap:14px;padding:30px 0 34px}
-  .person-record{grid-template-columns:1fr;gap:10px;padding:20px 0 22px}
-  .person-record-meta{margin-top:1px!important}
-}
-@media(max-width:560px){
-  .people-groups{padding-bottom:44px}
-  .people-group{padding:25px 0 28px}
-  .person-record h2{font-size:1.65rem}
-  .person-record p{font-size:.98rem;line-height:1.52}
-  .people-intro-note{font-size:.70rem}
-}
+.people-section{width:min(100%,1040px);margin:0;padding:4px 0 56px}.people-section-head{display:grid;grid-template-columns:150px minmax(0,1fr);gap:26px;margin:0 0 17px;padding:0}
+.people-section-head>.eyebrow{margin:5px 0 0;color:rgba(214,161,126,.74);font:700 .60rem/1.4 var(--font-ui,Arial,Helvetica,sans-serif);letter-spacing:.09em;text-transform:uppercase}
+.people-section-head h2{margin:0;color:#f2eee9;font-size:clamp(1.9rem,2.8vw,2.45rem);line-height:1;font-weight:500}.people-section-head>div>p{max-width:690px;margin:8px 0 0;color:rgba(242,238,233,.48);font-size:.78rem;line-height:1.5}
+.people-list{width:100%;margin:0;padding:0;border-top:1px solid rgba(242,238,233,.09)}
+.person-record{position:relative;display:grid;grid-template-columns:150px minmax(0,1fr);gap:26px;width:100%;margin:0;padding:20px 6px 22px 0;border-bottom:1px solid rgba(242,238,233,.075);background:transparent;scroll-margin-top:126px;content-visibility:auto;contain-intrinsic-size:auto 176px}
+.person-record:hover{background:rgba(255,255,255,.014)}.person-index{padding-top:3px}.person-group{margin:0 0 6px;color:rgba(214,161,126,.70);font:650 .59rem/1.35 var(--font-ui,Arial,Helvetica,sans-serif);letter-spacing:.065em;text-transform:uppercase}.person-dates{margin:0;color:rgba(242,238,233,.36);font:560 .61rem/1.4 var(--font-ui,Arial,Helvetica,sans-serif)}
+.person-copy{min-width:0;max-width:790px}.person-copy h2{margin:0;color:#f2eee9;font-family:var(--font-reading);font-size:clamp(1.28rem,1.9vw,1.58rem);font-weight:490;line-height:1.08;letter-spacing:-.018em}.person-role{margin:5px 0 9px;color:rgba(242,238,233,.48);font:590 .62rem/1.4 var(--font-ui,Arial,Helvetica,sans-serif);letter-spacing:.025em}.person-bio{max-width:74ch;margin:0;color:rgba(242,238,233,.72);font-family:var(--font-reading);font-size:1.02rem;line-height:1.52}.person-open{max-width:74ch;margin:9px 0 0;color:rgba(242,238,233,.52);font-size:.78rem;line-height:1.5}.person-open span{color:#d6a17e;font:650 .60rem/1 var(--font-ui,Arial,Helvetica,sans-serif);letter-spacing:.06em;text-transform:uppercase}.person-links{max-width:76ch;margin:9px 0 0;color:rgba(242,238,233,.46);font:520 .62rem/1.5 var(--font-ui,Arial,Helvetica,sans-serif)}.person-links a{color:rgba(242,238,233,.78);text-decoration-color:rgba(242,238,233,.24);text-underline-offset:3px}.person-record-meta{margin:7px 0 0;color:rgba(242,238,233,.29);font:520 .57rem/1.45 var(--font-ui,Arial,Helvetica,sans-serif);letter-spacing:.015em}.person-record:target::before{content:"";position:absolute;left:-10px;top:18px;bottom:18px;width:2px;background:#d49a73}.person-record[hidden]{display:none!important}.people-no-results{margin:28px 0;color:rgba(242,238,233,.55);font-size:.9rem}
+.people-method-note{display:grid;grid-template-columns:150px minmax(0,1fr);gap:26px;width:min(100%,1040px);padding:30px 0 54px;border-top:1px solid rgba(242,238,233,.09)}.people-method-label{margin:3px 0 0;color:rgba(214,161,126,.72);font:700 .60rem/1.4 var(--font-ui,Arial,Helvetica,sans-serif);letter-spacing:.09em;text-transform:uppercase}.people-method-note p:last-child{max-width:720px;margin:0;color:rgba(242,238,233,.50);font-size:.82rem;line-height:1.55}
+
+@media(max-width:760px){html body.subpage .page-intro{padding:46px 0 30px!important}.page-intro h1{font-size:clamp(3rem,15vw,4.75rem)!important}.page-intro .page-dek{font-size:.98rem!important}.people-tools{position:static;grid-template-columns:1fr;gap:6px;margin:3px 0 24px;padding:0 0 16px;background:transparent}.people-search-label,.people-filter-label{margin-top:5px}.people-result-count{justify-self:start;margin-top:3px}.people-section-head{grid-template-columns:1fr;gap:5px}.people-section-head>.eyebrow{margin:0}.person-record{grid-template-columns:1fr;gap:8px;padding:18px 0 20px;contain-intrinsic-size:auto 210px}.person-index{display:flex;gap:10px;align-items:baseline;padding-top:0}.person-group,.person-dates{margin:0}.person-copy h2{font-size:1.32rem}.person-bio{font-size:1rem;line-height:1.5}.people-method-note{grid-template-columns:1fr;gap:8px}}
