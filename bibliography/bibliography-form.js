@@ -1,6 +1,14 @@
 (() => {
+  if (!window.__blaschkaUnifiedUIRequested) {
+    window.__blaschkaUnifiedUIRequested = true;
+    const ui = document.createElement('script');
+    ui.src = '../unified-ui.js?v=20260810-14';
+    ui.defer = true;
+    document.head.appendChild(ui);
+  }
+
   const css = document.querySelector('link[href*="bibliography.css"]');
-  if (css) css.href = 'bibliography.css?v=20260810-6';
+  if (css) css.href = 'bibliography.css?v=20260810-7';
 
   const list = document.querySelector('.bib-list');
   if (!list) return;
