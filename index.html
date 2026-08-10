@@ -3,30 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The Blaschka Object Network traces glass models through workshop records, transactions, transport, museum collections, conservation, rediscovery, and present custody.">
-  <meta name="theme-color" content="#201916">
+  <meta name="description" content="The Blaschka Object Network traces glass models through workshop records, transactions, movement, collections and surviving objects.">
   <title>The Blaschka Object Network</title>
-  <link rel="stylesheet" href="home-v2.css?v=20260810-2">
-  <link rel="stylesheet" href="site-rhythm.css?v=20260810-2">
-  <link rel="stylesheet" href="site-polish.css?v=20260810-2">
-  <link rel="stylesheet" href="home-curation-v2.css?v=20260810-3">
-  <link rel="stylesheet" href="origin-divider.css?v=20260810-2">
-  <link rel="stylesheet" href="home-nav-glide.css?v=20260810-2" media="(min-width:901px)">
-  <link rel="stylesheet" href="mobile-v3.css?v=20260810-4">
-  <link rel="stylesheet" href="accessibility.css?v=20260810-1">
-  <link rel="stylesheet" href="scale-balance.css?v=20260810-1">
-  <link rel="alternate" type="application/rss+xml" title="The Blaschka Object Network" href="feed.xml">
+  <link rel="stylesheet" href="home-v2.css?v=20260810-4">
 </head>
 <body>
-  <a class="ui-skip-link" href="#main-content">Skip to content</a>
-
   <section class="hero" id="top" aria-labelledby="hero-title">
-    <img class="hero-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea%20cucumber%2C%20model%20by%20Leopold%20and%20Rudolph%20Blaschka%2C%20glass%20-%20Harvard%20Museum%20of%20Comparative%20Zoology%20-%20DSC06169.jpg?width=1600" alt="Blaschka glass model of a sea cucumber at Harvard Museum of Comparative Zoology" fetchpriority="high" decoding="async" referrerpolicy="no-referrer">
-    <div class="hero-overlay" aria-hidden="true"></div>
-
+    <img class="hero-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea%20cucumber%2C%20model%20by%20Leopold%20and%20Rudolph%20Blaschka%2C%20glass%20-%20Harvard%20Museum%20of%20Comparative%20Zoology%20-%20DSC06169.jpg?width=1600" alt="Blaschka glass sea cucumber model" decoding="async" fetchpriority="high" referrerpolicy="no-referrer">
+    <div class="hero-overlay"></div>
     <header class="hero-header">
-      <nav class="top-nav" aria-label="Site navigation">
-        <a href="#project" aria-current="page">Project</a>
+      <a class="hero-brand" href="#top">The Blaschka Object Network</a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#project">Project</a>
         <a href="cases/">Cases</a>
         <a href="bibliography/">Bibliography</a>
         <a href="sources/">Sources</a>
@@ -36,13 +24,14 @@
     </header>
 
     <div class="hero-copy">
-      <p class="hero-kicker">Glass models in motion</p>
+      <p class="hero-kicker">A public research project</p>
       <h1 id="hero-title">The Blaschka<br>Object Network</h1>
-      <p class="hero-subtitle">Tracing glass models through workshop records, transactions, transport, collections, damage, conservation, rediscovery, and present custody.</p>
-
-      <form class="network-search" id="network-search" role="search" aria-label="Search the Blaschka Object Network">
+      <p class="hero-subtitle">Tracing glass models through workshop records, transactions, transport, collections, conservation and surviving objects.</p>
+      <form class="network-search" id="network-search" role="search">
+        <label class="sr-only" for="network-search-scope">Search area</label>
+        <label class="sr-only" for="network-search-input">Search the project</label>
         <div class="network-search-shell">
-          <select id="network-search-scope" aria-label="Choose search collection">
+          <select id="network-search-scope" aria-label="Search area">
             <option value="cases">Cases</option>
             <option value="bibliography">Bibliography</option>
             <option value="sources">Sources</option>
@@ -78,6 +67,7 @@
                     <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rudolf%2C%20Leopold%20and%20Caroline%20Blaschka%20in%20garden%20cropped.jpg?width=760" alt="Rudolf, Leopold and Carolina Blaschka standing together in a garden" loading="lazy" decoding="async" referrerpolicy="no-referrer">
                   </a>
                 </div>
+                <p class="family-photo-hint">Explore the portrait <span aria-hidden="true">↗</span></p>
                 <figcaption>Rudolf, Leopold and Caroline Blaschka in the garden. Public domain. <a href="https://commons.wikimedia.org/wiki/File:Rudolf,_Leopold_and_Caroline_Blaschka_in_garden_cropped.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons ↗</a></figcaption>
               </figure>
             </div>
@@ -150,16 +140,9 @@
         <div class="contact-grid reveal">
           <p class="eyebrow">Contact</p>
           <div class="contact-copy">
-            <h2 id="contact-title">Corrections and source leads are welcome.</h2>
-            <p>Accession numbers, labels, archival references, movement records, conservation evidence and documented corrections can help close or reopen object chains. Please include a source or collection reference where possible.</p>
-            <div class="contact-actions">
-              <a href="mailto:zhhos98@gmail.com">Email the project</a>
-              <a href="about/">About &amp; method</a>
-              <a href="people/">People &amp; roles</a>
-              <a href="https://github.com/zhhos98-cell/Blachka_corpus" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
-              <a href="sources/">Sources</a>
-              <a href="bibliography/">Bibliography</a>
-            </div>
+            <h2 id="contact-title">Corrections, source leads and collection records are welcome.</h2>
+            <p>If you hold documentation that helps close a chain, identify an object or correct a record, please get in touch.</p>
+            <div class="contact-actions"><a href="mailto:zhhos98@gmail.com">Email the project</a></div>
           </div>
         </div>
       </div>
@@ -167,10 +150,11 @@
   </main>
 
   <footer>
-    <div class="footer-inner"><a href="#top">The Blaschka Object Network</a><div class="footer-links"><a href="about/">About</a><a href="people/">People</a><a href="cases/">Cases</a><a href="bibliography/">Bibliography</a><a href="sources/">Sources</a><a href="auctions/">Auctions</a><a href="rights/">Image rights</a><a href="privacy/">Privacy</a><a href="accessibility/">Accessibility</a></div></div>
+    <div class="footer-inner">
+      <a href="#top">The Blaschka Object Network</a>
+      <span><a href="cases/">Cases</a> · <a href="bibliography/">Bibliography</a> · <a href="sources/">Sources</a> · <a href="auctions/">Auctions</a> · <a href="privacy/">Privacy</a></span>
+    </div>
   </footer>
-
-  <script src="home-v2.js?v=20260810-11" defer></script>
-  <script src="accessibility.js?v=20260810-1" defer></script>
+  <script src="home-v2.js?v=20260810-8" defer></script>
 </body>
 </html>
