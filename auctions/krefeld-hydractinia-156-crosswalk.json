@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Krefeld 2025 lot 27: Hydractinia echinata / Blaschka no. 156 crosswalk",
+  "purpose": "Resolve the catalogue-facing taxonomic identity of Krefeld lot 27, convert it into exact historical search keys, and cross-check those keys against the project's complete transcription of the published MfN OS001-02 inventory without overclaiming object identity or disposal history.",
+  "canonical_auction_record": "AUC-2025-KREFELD-27",
+  "auction_record": {
+    "auction_house": "Kunst & Design Auktionshaus Schops Turowski",
+    "sale": "K-15 / Auction May 2025",
+    "date": "2025-05-10",
+    "lot": "27",
+    "title_raw_de": "Glasmodell Stachelpolyp, um 1870",
+    "title_raw_en": "Glass model of a stinging polyp, around 1870",
+    "dimensions": "13 x 18 x 10 cm",
+    "label_transcription": "Zoolog. Institut Universität, Berlin / handwritten botanical designation",
+    "hammer_price": {"amount": 30000, "currency": "EUR"},
+    "source_urls": [
+      "https://www.kunstunddesign-auktionen.de/de/auktionen/K-15/highlights/glasmodell-stachelpolyp-um-1870-137452/",
+      "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/list-of-results/"
+    ]
+  },
+  "taxonomic_resolution": {
+    "normalized_taxon": "Hydractinia echinata",
+    "vernacular_bridge": "Stachelpolyp",
+    "confidence": "high_for_taxonomic_name_resolution",
+    "identity_guard": "Resolving the German object name to Hydractinia echinata does not identify this physical auction object with any surviving institutional specimen.",
+    "evidence": [
+      {
+        "institution": "Universität Leipzig, Zoologische Sammlung",
+        "source_type": "official collection page",
+        "finding": "The collection explicitly captions a Blaschka glass model as 'Stachelpolyp (Hydractinia echinata)'.",
+        "url": "https://www.lw.uni-leipzig.de/institut-fuer-biologie/abteilungen/molekulare-evolution-und-systematik-der-tiere/zoologische-sammlung"
+      }
+    ]
+  },
+  "blaschka_catalogue_resolution": {
+    "taxon": "Hydractinia echinata",
+    "blaschka_number": "156",
+    "cornell_number": "381",
+    "confidence": "high_for_model_design_number",
+    "source": {
+      "institution": "Cornell University Library Digital Collections",
+      "collection": "Cornell Collection of Blaschka Invertebrate Models",
+      "url": "https://digital.library.cornell.edu/catalog/ss%3A20107896"
+    },
+    "guard": "Blaschka no. 156 is a catalogue/model-design number and is not a unique serial number for one physical object. Multiple institutions could have ordered the same design."
+  },
+  "mfn_os001_02_crosscheck": {
+    "source_basis": "06_Blaschka_Global_Object_Archive_Provenance_BACKEND_MASTER_2026-08-07_v3.json, Berlin HU/MfN numbered-object module",
+    "published_inventory": "Museum für Naturkunde Berlin, OS001-02 Blaschka Glasmodelle",
+    "inventory_rows_transcribed_in_project_backend": 40,
+    "minimum_explicit_physical_components": 59,
+    "distinct_blaschka_catalogue_number_segments": 28,
+    "search_keys_checked": [
+      "Hydractinia echinata",
+      "Hydractinia",
+      "Stachelpolyp",
+      "Blaschka-Katalog Nr. 156",
+      "Blaschka-Katalog-Nr. 156",
+      "catalogue number 156"
+    ],
+    "result": "No Hydractinia echinata / Stachelpolyp entry and no Blaschka catalogue number 156 occurs in the complete 40-row OS001-02 transcription captured by the project backend.",
+    "negative_scope": "This is a strong negative for the presently published OS001-02 inventory only. It does not prove that Berlin never held a Hydractinia no. 156, that HU never held one, or that the auction object never passed through MfN before the current inventory was constituted.",
+    "provenance_effect": "A direct match between Krefeld lot 27 and a currently published MfN OS001-02 record is therefore unsupported. HU historical teaching-stock and reduction/dispersal records become the higher-priority route."
+  },
+  "hu_branch": {
+    "institution": "Humboldt-Universität zu Berlin, Zoologische Lehrsammlung",
+    "current_public_index_result": "No Hydractinia echinata result was recovered in the current indexed public-portal pass.",
+    "public_index_guard": "The HU public portal is not treated as a complete historical inventory, so this negative is weaker than the complete 40-row MfN cross-check.",
+    "documented_dispersal_window": {
+      "date": 1970,
+      "event": "HU records a decision to reduce the collection; some material was given away, many preparations were lost, and other parts were transferred to the Museum für Naturkunde.",
+      "source": "https://www.sammlungen.hu-berlin.de/sammlungen/zoologische-lehrsammlung/",
+      "object_link_status": "not established"
+    }
+  },
+  "rakow_design_archive_seed": {
+    "finding": "The Rakow Research Library MS 0013 finding aid includes a marine-invertebrate drawing entry for Hydractinia echinata within the Blaschka drawing series.",
+    "source": "Leopold and Rudolf Blaschka Collection, MS 0013, Rakow Research Library finding aid",
+    "use": "Potential future image/design comparison source after the auction-object imagery and exact drawing record are inspected at object level.",
+    "guard": "Presence of a Hydractinia drawing does not establish provenance for the Krefeld object."
+  },
+  "lot_26_control": {
+    "canonical_auction_record": "AUC-2025-KREFELD-26",
+    "status": "taxon_unresolved",
+    "reason": "The auction record gives only 'sea anemone' plus a handwritten botanical designation not yet transcribed to a taxon. The complete MfN inventory contains several potentially relevant actiniarian/zoantharian records, but dimensions and broad morphology are insufficient for identification.",
+    "mfn_rows_worth_comparing_only_after_label_or_photo_resolution": [
+      {"record": "OS001-02 25", "taxon": "Actinia equina", "dimensions": "7.5 x 8 cm"},
+      {"record": "OS001-02 30", "taxon": "Anemonia sulcata", "dimensions": "10.5 x 20 cm", "date": "1885"},
+      {"record": "OS001-02 35", "taxon": "Epizoanthus couchii", "dimensions": "3.5 x 4.5 cm", "blaschka_number": "117"}
+    ],
+    "guard": "These are comparison candidates, not proposed identities."
+  },
+  "provenance_hypothesis_update": {
+    "strongest_current_hypothesis": "Lot 27 was once part of HU/Zoologisches Institut teaching stock or another Berlin university zoological teaching sequence and later left that custody.",
+    "status": "plausible_not_proven",
+    "why_strengthened": "The institutional label style is independently corroborated at HU; the taxon is now resolved to Hydractinia echinata and catalogue no. 156; that design is absent from the complete present MfN OS001-02 transcription; HU documents a later collection-reduction/dispersal event.",
+    "do_not_claim": [
+      "that lot 27 definitely belonged to HU",
+      "that lot 27 left HU in 1970",
+      "that lot 27 was transferred to MfN",
+      "that the Krefeld circa-1870 date is wrong",
+      "that catalogue no. 156 uniquely identifies one physical specimen"
+    ]
+  },
+  "next_actions": [
+    "Search HU historical inventories and acquisition records for Hydractinia echinata, Stachelpolyp and Blaschka no. 156.",
+    "Search HU 1968-1970 reduction, gift, loss and transfer files for Hydractinia, no. 156 and old Zoologisches Institut inventory numbers.",
+    "Inspect Krefeld lot 27 photographs for any second label, handwritten species wording, catalogue number or old inventory number.",
+    "Inspect the Rakow MS 0013 Hydractinia echinata drawing record and image as a model-design comparison, without treating design similarity as provenance proof.",
+    "Keep Krefeld lot 26 taxonomically open until its handwritten designation or a stronger image/identifier bridge is recovered."
+  ]
+}
