@@ -58,7 +58,7 @@
       ['Bibliography', `${prefix}bibliography/`],
       ['Sources', `${prefix}sources/`],
       ['Auctions', `${prefix}auctions/`],
-      ['Contact', `${prefix}#contact`]
+      ['About', `${prefix}about/`]
     ];
     const path = location.pathname.replace(/index\.html$/, '');
     nav.innerHTML = links.map(([label,href]) => {
@@ -84,6 +84,6 @@
   const footer = document.querySelector('.subpage-footer, footer');
   if (footer && !footer.querySelector('.footer-copyright')) {
     const target = footer.querySelector('.footer-inner') || footer;
-    target.innerHTML = `<div class="footer-identity"><a class="footer-title" href="${prefix}">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="${prefix}cases/">Cases</a><a href="${prefix}bibliography/">Bibliography</a><a href="${prefix}sources/">Sources</a><a href="${prefix}auctions/">Auctions</a><a href="${prefix}rights/">Image rights</a><a href="${prefix}privacy/">Privacy</a><a href="${prefix}accessibility/">Accessibility</a><a class="footer-rss" href="${prefix}feed.xml" aria-label="RSS feed">RSS</a></div>`;
+    target.innerHTML = `<div class="footer-identity"><a class="footer-title" href="${prefix}">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="${prefix}cases/">Cases</a><a href="${prefix}bibliography/">Bibliography</a><a href="${prefix}sources/">Sources</a><a href="${prefix}auctions/">Auctions</a><a href="${prefix}about/">About</a><a href="${prefix}rights/">Image rights</a><a href="${prefix}privacy/">Privacy</a><a href="${prefix}accessibility/">Accessibility</a><a class="footer-rss" href="${prefix}feed.xml" aria-label="RSS feed">RSS</a></div>`;
   }
 })();
