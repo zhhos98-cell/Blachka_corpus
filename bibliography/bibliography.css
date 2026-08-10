@@ -1,221 +1,215 @@
-/* Bibliography · compact editorial view */
+@import url("../typography-garamond.css?v=20260810-3");
+
+/* Bibliography · stable text-first view */
 body.subpage{
-  background-color:#1d1714;
-  background-image:
-    radial-gradient(circle at 84% 8%,rgba(171,105,68,.15),transparent 31rem),
-    radial-gradient(circle at 8% 74%,rgba(126,91,66,.08),transparent 34rem),
-    repeating-linear-gradient(0deg,rgba(255,255,255,.011) 0 1px,transparent 1px 8px);
+  background:#1d1714!important;
+  background-image:none!important;
 }
 .subpage-nav a[href*="blog"],.subpage-footer a[href*="blog"]{display:none!important}
 
-/* Header: title + short description, archive fragments on the left and two models on the right. */
 .page-intro{
   position:relative!important;
   display:block!important;
   max-width:1180px!important;
-  min-height:650px!important;
-  padding:92px 390px 76px 0!important;
-  isolation:isolate;
-  overflow:visible;
-  border-bottom:1px solid rgba(242,238,233,.24)!important;
+  min-height:500px!important;
+  padding:82px 360px 58px 0!important;
+  overflow:visible!important;
+  border-bottom:1px solid rgba(242,238,233,.16)!important;
 }
-.page-intro .eyebrow{margin-bottom:17px!important}
+.page-intro .eyebrow{margin:0 0 15px!important}
 .page-intro h1{
   position:relative;
-  z-index:4;
-  max-width:720px!important;
-  margin:0 0 25px!important;
+  z-index:3;
+  max-width:760px!important;
+  margin:0 0 22px!important;
   color:#f3eee8!important;
-  font-size:clamp(3.5rem,7vw,6.8rem)!important;
-  line-height:.88!important;
-  letter-spacing:-.055em!important;
+  font-size:clamp(3.5rem,6.4vw,6.4rem)!important;
+  line-height:.9!important;
+  letter-spacing:-.052em!important;
   font-weight:500!important;
 }
 .page-intro .page-dek{
   position:relative;
-  z-index:4;
-  max-width:670px!important;
+  z-index:3;
+  max-width:690px!important;
   margin:0!important;
-  color:rgba(242,238,233,.78)!important;
-  font-size:clamp(1.02rem,1.8vw,1.25rem)!important;
+  color:rgba(242,238,233,.74)!important;
+  font-size:clamp(1rem,1.65vw,1.2rem)!important;
   line-height:1.58!important;
 }
 .page-intro::before,.page-intro::after{
   content:""!important;
   position:absolute!important;
-  z-index:2!important;
-  border:1px solid rgba(245,239,232,.13)!important;
+  z-index:1!important;
+  right:0!important;
+  border:0!important;
+  border-radius:20px!important;
   background-repeat:no-repeat!important;
   background-size:cover!important;
-  box-shadow:0 28px 72px rgba(0,0,0,.28)!important;
-  filter:saturate(.74) sepia(.05) contrast(1.02) brightness(.84)!important;
-  transform-origin:center;
+  box-shadow:none!important;
+  filter:saturate(.76) brightness(.83)!important;
+  animation:none!important;
 }
 .page-intro::before{
-  top:68px!important;
-  right:0!important;
-  left:auto!important;
-  bottom:auto!important;
-  width:270px!important;
-  height:360px!important;
-  transform:rotate(2.2deg)!important;
-  background-image:linear-gradient(rgba(20,14,11,.02),rgba(20,14,11,.18)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea%20cucumber%2C%20model%20by%20Leopold%20and%20Rudolph%20Blaschka%2C%20glass%20-%20Harvard%20Museum%20of%20Comparative%20Zoology%20-%20DSC06169.jpg?width=1000")!important;
+  top:70px!important;
+  width:250px!important;
+  height:335px!important;
+  transform:rotate(1.8deg)!important;
+  background-image:linear-gradient(rgba(20,14,11,.03),rgba(20,14,11,.15)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea%20cucumber%2C%20model%20by%20Leopold%20and%20Rudolph%20Blaschka%2C%20glass%20-%20Harvard%20Museum%20of%20Comparative%20Zoology%20-%20DSC06169.jpg?width=1000")!important;
   background-position:center!important;
-  animation:bib-float-a 10s ease-in-out infinite alternate;
 }
 .page-intro::after{
-  top:292px!important;
-  right:210px!important;
-  left:auto!important;
-  bottom:auto!important;
-  width:205px!important;
-  height:285px!important;
-  transform:rotate(-4.2deg)!important;
-  background-image:linear-gradient(rgba(20,14,11,.02),rgba(20,14,11,.17)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Blaschka%20Natural%20History%20Museum%20Londres%2028072013%201.jpg?width=760")!important;
+  top:250px!important;
+  right:195px!important;
+  width:180px!important;
+  height:245px!important;
+  transform:rotate(-3.2deg)!important;
+  background-image:linear-gradient(rgba(20,14,11,.03),rgba(20,14,11,.15)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Blaschka%20Natural%20History%20Museum%20Londres%2028072013%201.jpg?width=760")!important;
   background-position:center!important;
-  animation:bib-float-b 12s ease-in-out infinite alternate;
 }
-@keyframes bib-float-a{from{translate:0 0}to{translate:-7px 9px}}
-@keyframes bib-float-b{from{translate:0 0}to{translate:9px -6px}}
-.page-intro h1::before{
-  content:"";
-  position:absolute;
-  z-index:-2;
-  left:10px;
-  top:235px;
-  width:176px;
-  height:246px;
-  border:1px solid rgba(245,239,232,.13);
-  background:#d8cdbb url("https://commons.wikimedia.org/w/thumb.php?f=Flowers_that_never_fade._An_account_of_the_Ware_collection_of_Blaschka_glass_models_in_the_Harvard_university_museum_%28IA_flowersthatnever00wileiala%29.pdf&page=1&width=520") center/cover no-repeat;
-  box-shadow:0 20px 48px rgba(0,0,0,.18);
-  filter:sepia(.22) saturate(.58) brightness(.72);
-  transform:rotate(-6deg);
-  opacity:.56;
-}
-.page-intro .page-dek::before{
-  content:"HOLLIS  ECB00006\A SERIES VIII\A CORRESPONDENCE\A CATALOGUES\A COLLECTION RECORDS";
-  white-space:pre;
-  position:absolute;
-  z-index:-1;
-  left:176px;
-  top:125px;
-  width:206px;
-  min-height:230px;
-  padding:28px 24px;
-  border:1px solid rgba(245,239,232,.12);
-  background:repeating-linear-gradient(0deg,rgba(47,36,30,.045) 0 1px,transparent 1px 23px),#cfc3b1;
-  color:rgba(55,42,34,.55);
-  box-shadow:0 20px 48px rgba(0,0,0,.15);
-  transform:rotate(4deg);
-  font:700 .56rem/2 Arial,Helvetica,sans-serif;
-  letter-spacing:.08em;
-  opacity:.52;
-}
+.page-intro h1::before,.page-intro .page-dek::before{display:none!important;content:none!important}
 
-/* Keep utilities, remove explanatory prose. Search remains on the homepage. */
-.bib-tools{
-  margin:20px 0 24px!important;
-  padding:12px 0 13px!important;
-  border-top:0!important;
-  border-bottom:1px solid rgba(242,238,233,.14)!important;
-}
-.bib-tools-meta{display:none!important}
-.bib-tools-label{color:rgba(242,238,233,.42)!important}
-.bib-tool-button{border:0!important;border-bottom:1px solid rgba(242,238,233,.24)!important;padding-inline:6px!important}
-.bib-tool-button:hover,.bib-tool-button:focus-visible{border-bottom-color:var(--accent)!important}
-
-/* One compact Zotero line instead of a second explanatory essay. */
-.bib-community,.bib-community-live{
-  position:relative!important;
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) auto!important;
-  align-items:center!important;
-  gap:18px 30px!important;
-  max-width:980px!important;
-  margin:0 0 28px!important;
-  padding:18px 0 20px!important;
-  border:0!important;
-  border-bottom:1px solid rgba(242,238,233,.16)!important;
-  font-family:Arial,Helvetica,sans-serif!important;
-}
-.bib-community-live>div:first-child,.bib-community>div:first-child{display:none!important}
-.bib-community::before{
-  content:"Working bibliography · 1870–present · site records + live Blaschka Bibliothek";
-  display:block;
-  color:rgba(242,238,233,.78);
-  font:600 .72rem/1.5 Arial,Helvetica,sans-serif;
-  letter-spacing:.02em;
-}
-.bib-community::after{
-  content:"Additions and corrections are welcome through Zotero or the project repository.";
-  grid-column:1/-1;
-  display:block;
-  margin-top:-6px;
-  color:rgba(242,238,233,.46);
-  font:500 .64rem/1.45 Arial,Helvetica,sans-serif;
-}
-.bib-community-actions{display:flex!important;justify-content:flex-end!important;gap:8px!important}
-.bib-community-action{
-  min-height:34px!important;
-  padding:0 0 5px!important;
-  border:0!important;
-  border-bottom:1px solid var(--accent)!important;
-  color:#f2eee9!important;
-  background:transparent!important;
-  font:700 .67rem/1 Arial,Helvetica,sans-serif!important;
-  letter-spacing:.03em!important;
-  text-decoration:none!important;
-}
-.bib-zotero-status{display:none!important}
-
-/* The long Scope block is deliberately suppressed. */
 .bib-scope{display:none!important}
 
-.bib-section{max-width:980px;padding:20px 0 50px;border-bottom:1px solid rgba(242,238,233,.16)}
-.bib-section-head{margin:0 0 18px!important;padding:0!important}
+/* Utilities remain available but no longer dominate the page. */
+.bib-tools{
+  position:static!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  gap:10px 18px!important;
+  max-width:980px!important;
+  margin:22px 0 14px!important;
+  padding:10px 0 14px!important;
+  border:0!important;
+  border-bottom:1px solid rgba(242,238,233,.12)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+}
+.bib-tools-group{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:6px!important}
+.bib-tools-label{color:rgba(242,238,233,.42)!important;font-size:.61rem!important;letter-spacing:.07em!important;text-transform:uppercase!important}
+.bib-tool-button{
+  min-height:34px!important;
+  padding:0 10px!important;
+  border:0!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.04)!important;
+  color:rgba(242,238,233,.82)!important;
+}
+.bib-tool-button:hover,.bib-tool-button:focus-visible{background:rgba(255,255,255,.09)!important;color:#fff!important}
+.bib-selected-count{color:rgba(242,238,233,.48)!important;font-size:.63rem!important}
+.bib-export-note{flex-basis:100%!important;margin:0!important;color:rgba(242,238,233,.40)!important;font-size:.61rem!important}
+
+.bib-community,.bib-community-live{
+  display:block!important;
+  max-width:980px!important;
+  margin:0 0 22px!important;
+  padding:0 0 15px!important;
+  border:0!important;
+  border-bottom:1px solid rgba(242,238,233,.12)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.bib-community-label{margin:0 0 5px!important;color:rgba(242,238,233,.43)!important;font-size:.61rem!important;text-transform:uppercase!important;letter-spacing:.07em!important}
+.bib-community-copy{margin:0!important;color:rgba(242,238,233,.70)!important;font-size:.76rem!important;line-height:1.5!important}
+.bib-community-actions{margin-top:8px!important;justify-content:flex-start!important}
+.bib-community-action,.bib-community-copy a{color:#f2eee9!important;text-underline-offset:3px!important}
+.bib-zotero-status{display:none!important}
+
+.bib-query-banner{
+  max-width:980px!important;
+  margin:0 0 18px!important;
+  padding:0 0 13px!important;
+  border:0!important;
+  border-bottom:1px solid rgba(242,238,233,.11)!important;
+  border-radius:0!important;
+  background:transparent!important;
+}
+
+.bib-section{
+  max-width:980px!important;
+  padding:18px 0 56px!important;
+  border:0!important;
+}
+.bib-section-head{margin:0 0 12px!important;padding:0!important}
 .bib-section-head .eyebrow,.bib-section-head>div>p{display:none!important}
 .bib-section-head h2{
   margin:0!important;
   color:#f2eee9!important;
-  font-size:clamp(1.75rem,2.8vw,2.45rem)!important;
-  line-height:1.05!important;
+  font-size:clamp(1.75rem,2.6vw,2.35rem)!important;
+  line-height:1.08!important;
   font-weight:500!important;
 }
-.bib-section-head h2::after{
-  content:"  1870–present";
-  margin-left:12px;
-  color:rgba(242,238,233,.34);
-  font:600 .62rem/1 Arial,Helvetica,sans-serif;
-  letter-spacing:.06em;
-  vertical-align:.3em;
-}
-.bib-list{position:relative;border-top:1px solid rgba(242,238,233,.20)}
-.bib-list::before{content:"";position:absolute;top:0;bottom:0;left:-24px;width:1px;background:linear-gradient(to bottom,rgba(212,161,116,.42),rgba(212,161,116,.03) 72%,transparent);pointer-events:none}
-.bib-entry{position:relative;padding:15px 0 17px;border-bottom:1px solid rgba(242,238,233,.10);transition:transform .32s ease}
-.bib-entry:hover{transform:translateX(6px)}
-.bib-entry:nth-child(12n+1)::before{content:"";position:absolute;left:-27px;top:23px;width:7px;height:7px;border-radius:50%;background:rgba(212,161,116,.58);box-shadow:0 0 0 4px rgba(212,161,116,.06)}
-.bib-year,.bib-links{font-family:Arial,Helvetica,sans-serif}
-.bib-year{margin:0 0 4px;color:rgba(242,238,233,.58);font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.bib-entry h3{max-width:940px;margin:0;color:#f2eee9;font-size:clamp(.98rem,1.45vw,1.18rem);line-height:1.38;font-weight:450}
-.bib-entry p:not(.bib-year):not(.bib-links){max-width:880px;margin:5px 0 0;color:rgba(242,238,233,.72)!important;font-size:.85rem;line-height:1.55}
-.bib-links{margin:5px 0 0;color:#f2eee9;font-size:.65rem;letter-spacing:.012em}
-.bib-links a{color:#f2eee9;text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:rgba(242,238,233,.42)}
+.bib-section-head h2::after{display:none!important;content:none!important}
 
-@media(max-width:980px){
-  .page-intro{min-height:610px!important;padding-right:300px!important}
-  .page-intro::before{width:225px!important;height:310px!important}
-  .page-intro::after{right:150px!important;top:310px!important;width:175px!important;height:240px!important}
+.bib-list{
+  position:relative!important;
+  border-top:1px solid rgba(242,238,233,.18)!important;
 }
+.bib-list::before{display:none!important;content:none!important}
+.bib-entry,
+html.ui-fluid-motion .bib-entry.ui-reveal{
+  position:relative!important;
+  display:grid!important;
+  grid-template-columns:74px minmax(0,1fr)!important;
+  gap:18px!important;
+  margin:0!important;
+  padding:15px 0 17px!important;
+  border:0!important;
+  border-bottom:1px solid rgba(242,238,233,.09)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  opacity:1!important;
+  transform:none!important;
+  filter:none!important;
+  transition:background 180ms ease!important;
+}
+.bib-entry::before{display:none!important;content:none!important}
+.bib-entry:hover{background:rgba(255,255,255,.018)!important;transform:none!important}
+.bib-year{
+  margin:2px 0 0!important;
+  color:rgba(242,238,233,.50)!important;
+  font-family:var(--font-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif)!important;
+  font-size:.64rem!important;
+  font-weight:650!important;
+  letter-spacing:.06em!important;
+}
+.bib-entry h3{
+  max-width:none!important;
+  margin:0!important;
+  color:#f2eee9!important;
+  font-family:var(--font-reading,'EB Garamond Local',Garamond,Georgia,serif)!important;
+  font-size:clamp(1.02rem,1.35vw,1.17rem)!important;
+  line-height:1.42!important;
+  font-weight:450!important;
+}
+.bib-links{
+  margin:5px 0 0!important;
+  color:rgba(242,238,233,.62)!important;
+  font-family:var(--font-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif)!important;
+  font-size:.64rem!important;
+  line-height:1.45!important;
+}
+.bib-links a{color:rgba(242,238,233,.82)!important;text-decoration-color:rgba(242,238,233,.30)!important;text-underline-offset:3px!important}
+.bib-select{position:static!important;grid-column:1!important;grid-row:1/span 2!important;align-self:start!important;margin-top:26px!important;margin-left:0!important}
+.bib-entry[hidden]{display:none!important}
+
+@media(max-width:900px){
+  .page-intro{min-height:470px!important;padding-right:280px!important}
+  .page-intro::before{width:205px!important;height:280px!important}
+  .page-intro::after{right:150px!important;top:250px!important;width:145px!important;height:205px!important}
+}
+
 @media(max-width:760px){
-  .page-intro{min-height:0!important;padding:72px 0 330px!important}
-  .page-intro::before{top:auto!important;right:2px!important;bottom:58px!important;width:158px!important;height:210px!important}
-  .page-intro::after{top:auto!important;right:125px!important;bottom:22px!important;width:130px!important;height:184px!important}
-  .page-intro h1::before{left:2px;top:315px;width:118px;height:168px;opacity:.40}
-  .page-intro .page-dek::before{left:78px;top:232px;width:132px;min-height:150px;padding:18px;font-size:.47rem;opacity:.40}
-  .bib-community,.bib-community-live{display:block!important}
-  .bib-community-actions{justify-content:flex-start!important;margin-top:13px!important}
-  .bib-community::after{margin-top:11px!important}
-  .bib-list::before,.bib-entry:nth-child(12n+1)::before{display:none}
-  .bib-entry{padding:13px 0 15px}
+  .page-intro{min-height:0!important;padding:64px 0 245px!important}
+  .page-intro::before{top:auto!important;right:0!important;bottom:36px!important;width:138px!important;height:184px!important}
+  .page-intro::after{top:auto!important;right:108px!important;bottom:12px!important;width:112px!important;height:152px!important}
+  .bib-tools{display:block!important}
+  .bib-tools-group{margin:7px 0!important}
+  .bib-entry,html.ui-fluid-motion .bib-entry.ui-reveal{grid-template-columns:54px minmax(0,1fr)!important;gap:12px!important;padding:14px 0 16px!important}
+  .bib-select{grid-column:1!important;margin-top:24px!important}
 }
-@media(prefers-reduced-motion:reduce){.page-intro::before,.page-intro::after{animation:none!important}}
