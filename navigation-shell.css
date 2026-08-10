@@ -1,6 +1,10 @@
 /* Canonical site shell · one header rhythm and one footer rhythm everywhere. */
 :root{--shell-max:1440px;--shell-gutter:20px}
 
+/* Project is a homepage chapter, not a global destination. Hide any legacy
+   static copy before the canonical JS shell replaces older markup. */
+.top-nav a[href="#project"],.subpage-nav a[href$="#project"]{display:none!important}
+
 .hero-header,.subpage-header{
   width:min(calc(100% - 40px),var(--shell-max))!important;
   min-height:72px!important;
@@ -42,7 +46,6 @@
 .top-nav::-webkit-scrollbar,.subpage-nav::-webkit-scrollbar{display:none!important}
 .top-nav a,.subpage-nav a{
   flex:0 0 auto!important;
-  display:inline-flex!important;
   align-items:center!important;
   justify-content:center!important;
   min-height:44px!important;
@@ -57,6 +60,7 @@
   transform:none!important;
   transition:color 160ms ease,background 180ms ease!important;
 }
+.top-nav a:not([href="#project"]),.subpage-nav a:not([href$="#project"]){display:inline-flex!important}
 .top-nav a:hover,.top-nav a:focus-visible,.subpage-nav a:hover,.subpage-nav a:focus-visible{color:#fff!important;background:rgba(255,255,255,.07)!important}
 .top-nav a[aria-current='page'],.subpage-nav a[aria-current='page']{color:#fff!important;background:rgba(255,255,255,.09)!important}
 
