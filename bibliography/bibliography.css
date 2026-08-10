@@ -1,23 +1,23 @@
 @import url("../typography-garamond.css?v=20260810-3");
 
-/* Bibliography · stable text-first view */
+/* Bibliography · text-first, optically left-aligned */
 body.subpage{
   background:#1d1714!important;
   background-image:none!important;
 }
 .subpage-nav a[href*="blog"],.subpage-footer a[href*="blog"]{display:none!important}
 
-.page-intro{
+body.subpage .page-intro{
   position:relative!important;
   display:block!important;
   max-width:1180px!important;
   min-height:500px!important;
   padding:82px 360px 58px 0!important;
   overflow:visible!important;
-  border-bottom:1px solid rgba(242,238,233,.16)!important;
+  border:0!important;
 }
-.page-intro .eyebrow{margin:0 0 15px!important}
-.page-intro h1{
+body.subpage .page-intro .eyebrow{margin:0 0 15px!important}
+body.subpage .page-intro h1{
   position:relative;
   z-index:3;
   max-width:760px!important;
@@ -28,7 +28,7 @@ body.subpage{
   letter-spacing:-.052em!important;
   font-weight:500!important;
 }
-.page-intro .page-dek{
+body.subpage .page-intro .page-dek{
   position:relative;
   z-index:3;
   max-width:690px!important;
@@ -37,7 +37,7 @@ body.subpage{
   font-size:clamp(1rem,1.65vw,1.2rem)!important;
   line-height:1.58!important;
 }
-.page-intro::before,.page-intro::after{
+body.subpage .page-intro::before,body.subpage .page-intro::after{
   content:""!important;
   position:absolute!important;
   z-index:1!important;
@@ -50,7 +50,7 @@ body.subpage{
   filter:saturate(.76) brightness(.83)!important;
   animation:none!important;
 }
-.page-intro::before{
+body.subpage .page-intro::before{
   top:70px!important;
   width:250px!important;
   height:335px!important;
@@ -58,7 +58,7 @@ body.subpage{
   background-image:linear-gradient(rgba(20,14,11,.03),rgba(20,14,11,.15)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea%20cucumber%2C%20model%20by%20Leopold%20and%20Rudolph%20Blaschka%2C%20glass%20-%20Harvard%20Museum%20of%20Comparative%20Zoology%20-%20DSC06169.jpg?width=1000")!important;
   background-position:center!important;
 }
-.page-intro::after{
+body.subpage .page-intro::after{
   top:250px!important;
   right:195px!important;
   width:180px!important;
@@ -67,149 +67,170 @@ body.subpage{
   background-image:linear-gradient(rgba(20,14,11,.03),rgba(20,14,11,.15)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Blaschka%20Natural%20History%20Museum%20Londres%2028072013%201.jpg?width=760")!important;
   background-position:center!important;
 }
-.page-intro h1::before,.page-intro .page-dek::before{display:none!important;content:none!important}
+body.subpage .page-intro h1::before,body.subpage .page-intro .page-dek::before{display:none!important;content:none!important}
 
 .bib-scope{display:none!important}
 
-/* Utilities remain available but no longer dominate the page. */
-.bib-tools{
-  position:static!important;
+/* Utilities: grouped by proximity; no enclosing box or divider stack. */
+body.subpage .bib-tools{
+  position:sticky!important;
+  top:68px!important;
+  z-index:8!important;
   display:flex!important;
   flex-wrap:wrap!important;
   align-items:center!important;
-  gap:10px 18px!important;
-  max-width:980px!important;
-  margin:22px 0 14px!important;
-  padding:10px 0 14px!important;
+  gap:8px 22px!important;
+  width:min(100%,1050px)!important;
+  max-width:none!important;
+  margin:14px 0 8px!important;
+  padding:8px 0 10px!important;
   border:0!important;
-  border-bottom:1px solid rgba(242,238,233,.12)!important;
   border-radius:0!important;
-  background:transparent!important;
+  background:rgba(29,23,20,.90)!important;
   box-shadow:none!important;
-  backdrop-filter:none!important;
+  backdrop-filter:saturate(110%) blur(12px)!important;
+  -webkit-backdrop-filter:saturate(110%) blur(12px)!important;
+  text-align:left!important;
 }
-.bib-tools-group{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:6px!important}
-.bib-tools-label{color:rgba(242,238,233,.42)!important;font-size:.61rem!important;letter-spacing:.07em!important;text-transform:uppercase!important}
-.bib-tool-button{
-  min-height:34px!important;
-  padding:0 10px!important;
+body.subpage .bib-tools-group{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:6px!important}
+body.subpage .bib-tools-label{margin-right:2px!important;color:rgba(242,238,233,.38)!important;font-size:.58rem!important;letter-spacing:.07em!important;text-transform:uppercase!important}
+body.subpage .bib-tool-button{
+  min-height:36px!important;
+  padding:0 12px!important;
   border:0!important;
   border-radius:999px!important;
-  background:rgba(255,255,255,.04)!important;
+  background:rgba(255,255,255,.05)!important;
   color:rgba(242,238,233,.82)!important;
+  box-shadow:none!important;
 }
-.bib-tool-button:hover,.bib-tool-button:focus-visible{background:rgba(255,255,255,.09)!important;color:#fff!important}
-.bib-selected-count{color:rgba(242,238,233,.48)!important;font-size:.63rem!important}
-.bib-export-note{flex-basis:100%!important;margin:0!important;color:rgba(242,238,233,.40)!important;font-size:.61rem!important}
+body.subpage .bib-tool-button:hover,body.subpage .bib-tool-button:focus-visible{background:rgba(255,255,255,.095)!important;color:#fff!important}
+body.subpage .bib-tool-button[aria-pressed="true"]{background:rgba(208,160,120,.16)!important;color:#fff!important}
+body.subpage .bib-selected-count{margin-left:2px!important;color:rgba(242,238,233,.46)!important;font-size:.61rem!important}
+body.subpage .bib-export-note{flex-basis:100%!important;margin:0!important;color:rgba(242,238,233,.34)!important;font-size:.58rem!important}
 
-.bib-community,.bib-community-live{
+body.subpage .bib-community,body.subpage .bib-community-live{
   display:block!important;
-  max-width:980px!important;
-  margin:0 0 22px!important;
-  padding:0 0 15px!important;
+  width:min(100%,860px)!important;
+  max-width:none!important;
+  margin:2px 0 42px!important;
+  padding:0!important;
   border:0!important;
-  border-bottom:1px solid rgba(242,238,233,.12)!important;
   border-radius:0!important;
   background:transparent!important;
   box-shadow:none!important;
+  text-align:left!important;
 }
-.bib-community-label{margin:0 0 5px!important;color:rgba(242,238,233,.43)!important;font-size:.61rem!important;text-transform:uppercase!important;letter-spacing:.07em!important}
-.bib-community-copy{margin:0!important;color:rgba(242,238,233,.70)!important;font-size:.76rem!important;line-height:1.5!important}
-.bib-community-actions{margin-top:8px!important;justify-content:flex-start!important}
-.bib-community-action,.bib-community-copy a{color:#f2eee9!important;text-underline-offset:3px!important}
-.bib-zotero-status{display:none!important}
+body.subpage .bib-community::before,body.subpage .bib-community::after{display:none!important;content:none!important}
+body.subpage .bib-community-label{display:none!important}
+body.subpage .bib-community-copy{margin:0!important;color:rgba(242,238,233,.58)!important;font-size:.72rem!important;line-height:1.55!important;text-align:left!important}
+body.subpage .bib-community-copy a{color:rgba(242,238,233,.90)!important;text-underline-offset:3px!important}
+body.subpage .bib-zotero-status{display:none!important}
+body.subpage .bib-query-banner{width:min(100%,1050px)!important;margin:0 0 22px!important;padding:0!important;border:0!important;background:transparent!important;text-align:left!important}
 
-.bib-query-banner{
-  max-width:980px!important;
-  margin:0 0 18px!important;
-  padding:0 0 13px!important;
+/* Reading list. The citation now begins close to the page axis instead of being
+   pushed right by a separate year column. Year belongs to the citation block. */
+body.subpage .bib-section{
+  width:min(100%,1050px)!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:auto!important;
+  padding:6px 0 72px!important;
   border:0!important;
-  border-bottom:1px solid rgba(242,238,233,.11)!important;
-  border-radius:0!important;
-  background:transparent!important;
+  text-align:left!important;
 }
+body.subpage .bib-section-head{margin:0 0 24px!important;padding:0!important;border:0!important;text-align:left!important}
+body.subpage .bib-section-head .eyebrow,body.subpage .bib-section-head>div>p{display:none!important}
+body.subpage .bib-section-head h2{margin:0!important;color:#f2eee9!important;font-size:clamp(2rem,3vw,2.65rem)!important;line-height:1!important;font-weight:500!important;text-align:left!important}
+body.subpage .bib-section-head h2::after{display:none!important;content:none!important}
+body.subpage .bib-list{width:100%!important;margin:0!important;padding:0!important;border:0!important;text-align:left!important}
+body.subpage .bib-list::before{display:none!important;content:none!important}
 
-.bib-section{
-  max-width:980px!important;
-  padding:18px 0 56px!important;
-  border:0!important;
-}
-.bib-section-head{margin:0 0 12px!important;padding:0!important}
-.bib-section-head .eyebrow,.bib-section-head>div>p{display:none!important}
-.bib-section-head h2{
-  margin:0!important;
-  color:#f2eee9!important;
-  font-size:clamp(1.75rem,2.6vw,2.35rem)!important;
-  line-height:1.08!important;
-  font-weight:500!important;
-}
-.bib-section-head h2::after{display:none!important;content:none!important}
-
-.bib-list{
-  position:relative!important;
-  border-top:1px solid rgba(242,238,233,.18)!important;
-}
-.bib-list::before{display:none!important;content:none!important}
-.bib-entry,
-html.ui-fluid-motion .bib-entry.ui-reveal{
+body.subpage .bib-entry,
+html.ui-fluid-motion body.subpage .bib-entry.ui-reveal{
   position:relative!important;
   display:grid!important;
-  grid-template-columns:74px minmax(0,1fr)!important;
-  gap:18px!important;
+  grid-template-columns:18px minmax(0,1fr)!important;
+  grid-template-rows:auto auto!important;
+  column-gap:14px!important;
+  row-gap:0!important;
+  align-items:start!important;
+  width:100%!important;
   margin:0!important;
-  padding:15px 0 17px!important;
+  padding:18px 8px 24px 0!important;
   border:0!important;
-  border-bottom:1px solid rgba(242,238,233,.09)!important;
   border-radius:0!important;
   background:transparent!important;
   box-shadow:none!important;
   opacity:1!important;
   transform:none!important;
   filter:none!important;
-  transition:background 180ms ease!important;
+  text-align:left!important;
 }
-.bib-entry::before{display:none!important;content:none!important}
-.bib-entry:hover{background:rgba(255,255,255,.018)!important;transform:none!important}
-.bib-year{
-  margin:2px 0 0!important;
-  color:rgba(242,238,233,.50)!important;
+body.subpage .bib-entry+ .bib-entry{margin-top:2px!important}
+body.subpage .bib-entry::before{display:none!important;content:none!important}
+body.subpage .bib-entry:hover{background:rgba(255,255,255,.015)!important;transform:none!important}
+body.subpage .bib-entry>.bib-select{
+  position:static!important;
+  grid-column:1!important;
+  grid-row:1 / span 2!important;
+  align-self:start!important;
+  margin:5px 0 0!important;
+  left:auto!important;
+  top:auto!important;
+}
+body.subpage .bib-entry>.bib-year{
+  grid-column:2!important;
+  grid-row:1!important;
+  margin:0 0 7px!important;
+  color:rgba(242,238,233,.46)!important;
   font-family:var(--font-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif)!important;
-  font-size:.64rem!important;
+  font-size:.62rem!important;
   font-weight:650!important;
-  letter-spacing:.06em!important;
+  letter-spacing:.055em!important;
+  text-align:left!important;
 }
-.bib-entry h3{
-  max-width:none!important;
+body.subpage .bib-entry>div{
+  grid-column:2!important;
+  grid-row:2!important;
+  min-width:0!important;
+  text-align:left!important;
+}
+body.subpage .bib-entry h3{
+  max-width:76ch!important;
   margin:0!important;
   color:#f2eee9!important;
   font-family:var(--font-reading,'EB Garamond Local',Garamond,Georgia,serif)!important;
-  font-size:clamp(1.02rem,1.35vw,1.17rem)!important;
-  line-height:1.42!important;
+  font-size:clamp(1.05rem,1.45vw,1.2rem)!important;
+  line-height:1.46!important;
   font-weight:450!important;
+  text-align:left!important;
 }
-.bib-links{
-  margin:5px 0 0!important;
-  color:rgba(242,238,233,.62)!important;
+body.subpage .bib-links{
+  max-width:76ch!important;
+  margin:7px 0 0!important;
+  color:rgba(242,238,233,.58)!important;
   font-family:var(--font-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif)!important;
-  font-size:.64rem!important;
-  line-height:1.45!important;
+  font-size:.63rem!important;
+  line-height:1.5!important;
+  text-align:left!important;
 }
-.bib-links a{color:rgba(242,238,233,.82)!important;text-decoration-color:rgba(242,238,233,.30)!important;text-underline-offset:3px!important}
-.bib-select{position:static!important;grid-column:1!important;grid-row:1/span 2!important;align-self:start!important;margin-top:26px!important;margin-left:0!important}
-.bib-entry[hidden]{display:none!important}
+body.subpage .bib-links a{color:rgba(242,238,233,.82)!important;text-decoration-color:rgba(242,238,233,.28)!important;text-underline-offset:3px!important}
+body.subpage .bib-select span{width:15px!important;height:15px!important;border-radius:50%!important}
+body.subpage .bib-entry[hidden]{display:none!important}
 
 @media(max-width:900px){
-  .page-intro{min-height:470px!important;padding-right:280px!important}
-  .page-intro::before{width:205px!important;height:280px!important}
-  .page-intro::after{right:150px!important;top:250px!important;width:145px!important;height:205px!important}
+  body.subpage .page-intro{min-height:470px!important;padding-right:280px!important}
+  body.subpage .page-intro::before{width:205px!important;height:280px!important}
+  body.subpage .page-intro::after{right:150px!important;top:250px!important;width:145px!important;height:205px!important}
 }
-
 @media(max-width:760px){
-  .page-intro{min-height:0!important;padding:64px 0 245px!important}
-  .page-intro::before{top:auto!important;right:0!important;bottom:36px!important;width:138px!important;height:184px!important}
-  .page-intro::after{top:auto!important;right:108px!important;bottom:12px!important;width:112px!important;height:152px!important}
-  .bib-tools{display:block!important}
-  .bib-tools-group{margin:7px 0!important}
-  .bib-entry,html.ui-fluid-motion .bib-entry.ui-reveal{grid-template-columns:54px minmax(0,1fr)!important;gap:12px!important;padding:14px 0 16px!important}
-  .bib-select{grid-column:1!important;margin-top:24px!important}
+  body.subpage .page-intro{min-height:0!important;padding:58px 0 236px!important}
+  body.subpage .page-intro::before{top:auto!important;right:0!important;bottom:34px!important;width:138px!important;height:184px!important}
+  body.subpage .page-intro::after{top:auto!important;right:108px!important;bottom:10px!important;width:112px!important;height:152px!important}
+  body.subpage .bib-tools{position:static!important;display:block!important;margin:8px 0!important;padding:6px 0!important;background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  body.subpage .bib-tools-group{width:100%!important;margin:6px 0!important;overflow-x:auto!important;flex-wrap:nowrap!important;padding-bottom:2px!important}
+  body.subpage .bib-export-note{display:none!important}
+  body.subpage .bib-community{margin-bottom:30px!important}
+  body.subpage .bib-entry,html.ui-fluid-motion body.subpage .bib-entry.ui-reveal{grid-template-columns:17px minmax(0,1fr)!important;column-gap:12px!important;padding:15px 0 20px!important}
+  body.subpage .bib-entry h3{font-size:1.05rem!important;line-height:1.43!important}
 }
