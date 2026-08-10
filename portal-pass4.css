@@ -1,0 +1,239 @@
+/* Homepage / case-map refinement · 2026-08-10
+   Smaller left-shifted family image, wider copy, chronology as watermark,
+   maps weighted toward unused page space, and a cleaner scoped search. */
+
+/* Search: the scope selector is the navigation. Remove duplicated helper links. */
+body:not(.subpage) .network-search-mode,
+body:not(.subpage) .network-search-links{display:none!important}
+body:not(.subpage) .network-search-status:empty{display:none!important}
+body:not(.subpage) .network-search-status:not(:empty){margin:9px 0 0!important}
+body:not(.subpage) .network-search{margin-top:26px!important}
+
+/* Origin story: keep the photograph deliberately smaller and further left. */
+body:not(.subpage) .origin-story{
+  position:relative!important;
+  margin-top:24px!important;
+  padding:62px 0 68px!important;
+  overflow:visible!important;
+  isolation:isolate;
+}
+body:not(.subpage) .origin-body{
+  position:relative!important;
+  isolation:isolate;
+}
+body:not(.subpage) .origin-visual,
+body:not(.subpage) .origin-copy{
+  position:relative!important;
+  z-index:2!important;
+}
+
+@media(min-width:1180px){
+  body:not(.subpage) .origin-body{
+    width:calc(100% + 220px)!important;
+    margin-left:-220px!important;
+    grid-template-columns:minmax(330px,390px) minmax(0,1fr)!important;
+    gap:clamp(56px,6vw,96px)!important;
+  }
+  body:not(.subpage) .origin-visual{
+    min-height:485px!important;
+    transform:translateX(-18px)!important;
+  }
+  body:not(.subpage) .origin-photo{
+    width:min(100%,365px)!important;
+  }
+  body:not(.subpage) .origin-photo>a{
+    height:440px!important;
+  }
+  body:not(.subpage) .origin-photo img{
+    object-position:center 32%!important;
+  }
+  body:not(.subpage) .origin-visual::before,
+  body:not(.subpage) .origin-visual::after{
+    width:43%!important;
+    opacity:.38!important;
+  }
+  body:not(.subpage) .origin-visual::before{right:-10%!important;top:48px!important}
+  body:not(.subpage) .origin-visual::after{right:-3%!important;top:124px!important}
+  body:not(.subpage) .origin-copy{
+    padding-top:0!important;
+    max-width:900px!important;
+  }
+  body:not(.subpage) .origin-copy h3{
+    max-width:860px!important;
+    margin-bottom:25px!important;
+    font-size:clamp(2.75rem,4vw,4.5rem)!important;
+  }
+  body:not(.subpage) .origin-columns p,
+  body:not(.subpage) .origin-source{
+    max-width:840px!important;
+  }
+  body:not(.subpage) .origin-columns p{
+    font-size:1rem!important;
+    line-height:1.62!important;
+    margin-bottom:17px!important;
+  }
+}
+
+@media(min-width:901px) and (max-width:1179px){
+  body:not(.subpage) .origin-body{
+    width:calc(100% + 100px)!important;
+    margin-left:-100px!important;
+    grid-template-columns:minmax(290px,340px) minmax(0,1fr)!important;
+    gap:clamp(42px,5vw,68px)!important;
+  }
+  body:not(.subpage) .origin-visual{min-height:450px!important}
+  body:not(.subpage) .origin-photo{width:min(100%,330px)!important}
+  body:not(.subpage) .origin-photo>a{height:405px!important}
+  body:not(.subpage) .origin-copy h3{max-width:760px!important;font-size:clamp(2.45rem,4vw,3.9rem)!important}
+  body:not(.subpage) .origin-columns p,
+  body:not(.subpage) .origin-source{max-width:760px!important}
+}
+
+/* Chronology is no longer a section in the flow. It sits behind the origin story. */
+body:not(.subpage) .origin-roadmap{
+  position:absolute!important;
+  z-index:0!important;
+  left:-7vw!important;
+  right:-4vw!important;
+  top:43%!important;
+  width:auto!important;
+  height:330px!important;
+  margin:0!important;
+  overflow:hidden!important;
+  opacity:.48!important;
+  pointer-events:none!important;
+  background:none!important;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 78%,transparent 100%)!important;
+  mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 78%,transparent 100%)!important;
+}
+body:not(.subpage) .origin-roadmap::before{
+  top:53%!important;
+  color:rgba(38,32,28,.025)!important;
+  font-size:clamp(2rem,4.8vw,5.2rem)!important;
+}
+body:not(.subpage) .origin-roadmap::after{
+  inset:0!important;
+  background:
+    linear-gradient(90deg,rgba(238,233,224,.78),rgba(238,233,224,.10) 13%,rgba(238,233,224,.03) 64%,rgba(238,233,224,.72)),
+    linear-gradient(180deg,rgba(238,233,224,.94),transparent 25%,transparent 72%,rgba(238,233,224,.96))!important;
+}
+body:not(.subpage) .origin-roadmap svg{opacity:.15!important}
+body:not(.subpage) .origin-roadmap .road-base{stroke:rgba(54,45,40,.065)!important;stroke-width:19!important}
+body:not(.subpage) .origin-roadmap .road-line{stroke:rgba(166,95,69,.20)!important;stroke-width:1.15!important}
+body:not(.subpage) .origin-roadmap .road-stop{opacity:.58!important}
+body:not(.subpage) .origin-roadmap .road-stop::before{width:6px!important;height:6px!important;border-width:1px!important;box-shadow:none!important}
+body:not(.subpage) .origin-roadmap .road-stop b{font-size:.61rem!important}
+body:not(.subpage) .origin-roadmap .road-stop span{font-size:.53rem!important}
+
+/* Case maps: use the otherwise empty rail, fade aggressively under prose. */
+@media(min-width:901px){
+  .sample.map-v3-host>.case-map-bg.map-v3{
+    top:52px!important;
+    bottom:auto!important;
+    left:-11vw!important;
+    width:min(76vw,1120px)!important;
+    height:clamp(520px,50vw,760px)!important;
+    max-height:78vh!important;
+    transform:none!important;
+    opacity:.54!important;
+    overflow:hidden!important;
+    mix-blend-mode:screen!important;
+    -webkit-mask-image:linear-gradient(90deg,#000 0,#000 34%,rgba(0,0,0,.38) 52%,rgba(0,0,0,.08) 66%,transparent 82%)!important;
+    mask-image:linear-gradient(90deg,#000 0,#000 34%,rgba(0,0,0,.38) 52%,rgba(0,0,0,.08) 66%,transparent 82%)!important;
+  }
+  .sample.sample-alt.map-v3-host>.case-map-bg.map-v3{
+    left:auto!important;
+    right:-11vw!important;
+    -webkit-mask-image:linear-gradient(270deg,#000 0,#000 34%,rgba(0,0,0,.38) 52%,rgba(0,0,0,.08) 66%,transparent 82%)!important;
+    mask-image:linear-gradient(270deg,#000 0,#000 34%,rgba(0,0,0,.38) 52%,rgba(0,0,0,.08) 66%,transparent 82%)!important;
+  }
+  .case-map-bg.map-v3 svg{
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    overflow:visible!important;
+  }
+  .case-map-bg.map-v3 .map-land{fill:rgba(208,160,120,.006)!important;stroke:rgba(208,160,120,.055)!important}
+  .case-map-bg.map-v3 .map-boundary,
+  .case-map-bg.map-v3 .map-lake{stroke:rgba(208,160,120,.028)!important}
+  .case-map-bg.map-v3 .map-route{stroke:rgba(180,68,52,.13)!important;filter:none!important}
+  .case-map-bg.map-v3 .map-route.relational{stroke:rgba(180,68,52,.10)!important}
+  .case-map-bg.map-v3 .map-point.secondary{opacity:.30!important}
+  .case-map-bg.map-v3 .map-point:not(.secondary){opacity:.72!important}
+  .case-map-bg.map-v3 .map-ring{opacity:.54!important;animation:none!important}
+  .case-map-bg.map-v3 .map-label{opacity:.20!important}
+  .case-map-bg.map-v3 .map-label.primary{opacity:.72!important}
+  .case-map-bg.map-v3 .map-note{opacity:.18!important}
+}
+
+/* Tablet: keep origin compact; maps remain peripheral instead of crossing copy. */
+@media(max-width:900px){
+  body:not(.subpage) .origin-body{
+    width:100%!important;
+    margin-left:0!important;
+    grid-template-columns:minmax(230px,300px) minmax(0,1fr)!important;
+    gap:32px!important;
+  }
+  body:not(.subpage) .origin-visual{
+    width:100%!important;
+    min-height:405px!important;
+    margin-left:-18px!important;
+  }
+  body:not(.subpage) .origin-photo{width:min(100%,285px)!important}
+  body:not(.subpage) .origin-photo>a{height:350px!important}
+  body:not(.subpage) .origin-copy h3{font-size:clamp(2.2rem,5.8vw,3.5rem)!important}
+  body:not(.subpage) .origin-columns p{font-size:.94rem!important;line-height:1.58!important}
+  body:not(.subpage) .origin-roadmap{top:47%!important;height:270px!important;opacity:.34!important}
+  .sample.map-v3-host>.case-map-bg.map-v3{
+    top:55px!important;
+    bottom:auto!important;
+    left:-20vw!important;
+    width:88vw!important;
+    height:460px!important;
+    opacity:.34!important;
+    -webkit-mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.4) 46%,transparent 82%)!important;
+    mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.4) 46%,transparent 82%)!important;
+  }
+  .sample.sample-alt.map-v3-host>.case-map-bg.map-v3{
+    left:auto!important;
+    right:-20vw!important;
+    -webkit-mask-image:linear-gradient(270deg,#000,rgba(0,0,0,.4) 46%,transparent 82%)!important;
+    mask-image:linear-gradient(270deg,#000,rgba(0,0,0,.4) 46%,transparent 82%)!important;
+  }
+}
+
+/* Phones: no decorative overlap. Image, copy and cases become a single clean column. */
+@media(max-width:700px){
+  body:not(.subpage) .origin-story{padding:44px 0 50px!important}
+  body:not(.subpage) .origin-body{display:block!important}
+  body:not(.subpage) .origin-visual{
+    width:calc(100% + 12px)!important;
+    min-height:0!important;
+    margin:0 0 30px -12px!important;
+  }
+  body:not(.subpage) .origin-photo{width:min(76vw,300px)!important}
+  body:not(.subpage) .origin-photo>a{height:340px!important}
+  body:not(.subpage) .origin-visual::before,
+  body:not(.subpage) .origin-visual::after{display:none!important}
+  body:not(.subpage) .origin-photo figcaption{font-size:.58rem!important;max-width:290px!important}
+  body:not(.subpage) .origin-copy h3{font-size:clamp(2.15rem,10.4vw,3.25rem)!important;margin-bottom:22px!important}
+  body:not(.subpage) .origin-columns p{font-size:.94rem!important;line-height:1.58!important;margin-bottom:16px!important}
+  body:not(.subpage) .origin-source{font-size:.58rem!important}
+  body:not(.subpage) .origin-roadmap{display:none!important}
+  body:not(.subpage) .network-search{margin-top:20px!important}
+  .sample.map-v3-host>.case-map-bg.map-v3{
+    top:20px!important;
+    left:-36vw!important;
+    width:110vw!important;
+    height:360px!important;
+    opacity:.18!important;
+    -webkit-mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.22) 52%,transparent 82%)!important;
+    mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.22) 52%,transparent 82%)!important;
+  }
+  .sample.sample-alt.map-v3-host>.case-map-bg.map-v3{
+    left:auto!important;
+    right:-36vw!important;
+    -webkit-mask-image:linear-gradient(270deg,#000,rgba(0,0,0,.22) 52%,transparent 82%)!important;
+    mask-image:linear-gradient(270deg,#000,rgba(0,0,0,.22) 52%,transparent 82%)!important;
+  }
+}
