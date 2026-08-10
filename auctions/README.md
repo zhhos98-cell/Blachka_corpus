@@ -45,6 +45,12 @@ Pass 10 materially sharpens lot 27. The German auction title `Stachelpolyp` can 
 
 That key has now been checked against the project's complete transcription of the published Museum für Naturkunde `OS001-02 Blaschka Glasmodelle` inventory: **40 rows, minimum 59 explicitly stated physical components, 28 distinct Blaschka catalogue-number segments**. No `Hydractinia echinata`, `Stachelpolyp`, or catalogue no. `156` occurs in those 40 rows. This is a meaningful negative for the presently published OS001-02 inventory, not proof that Berlin never held such a model or that the object never passed through MfN. It does, however, make the HU historical teaching-stock and reduction/dispersal records the stronger next route.
 
+Pass 11 turns that conclusion into named archive series. HU records an additional **19 February 1886 transfer from the Zoologisches Museum into the teaching collection, including 80 Coelenterata**, so a HU teaching object need not have originated as a direct post-1884 purchase. The HU online object list is explicitly a `Teil-Katalog`; its current 1,339 records therefore cannot support a complete-inventory negative. Current HU records also preserve old identifier systems such as `ZI` and `IfZ`, which are now included as exact search keys alongside `Hydractinia echinata`, `Stachelpolyp`, and no. 156.
+
+MfN's records-collection tectonic now supplies the administrative route behind the current object inventory: `S001` Zoologisches Museum (1810–1888), `S003` Zoologisches Institut der Universität (1889–1960), `S004-04` Institut für Spezielle Zoologie und Zoologisches Museum der HU (1960–1968), and `S005-02` Bereich Zoologisches Museum (1969 onward). `S003` and `S004-04` are the highest-value MfN-held series for pre-1968 institutional files; `S001` can test the 1886 museum-to-teaching transfer; and `S005-02` can test material entering MfN after the HU collection reduction. Exact file identifiers remain unresolved.
+
+A practical constraint is now recorded in the router: MfN states that its records collection is inaccessible from **1 July 2026 until approximately Q4 2027** during Museum Evolution work, although targeted email information requests remain possible. The immediate Berlin route is therefore a compact remote query to the archive plus HU historical-inventory work, rather than a planned physical sweep.
+
 HU and Museum für Naturkunde remain distinct institutional branches. The HU teaching collection was founded independently in 1884; MfN has a separate OS001-02 inventory; and HU records later transfers of some teaching material to MfN. The earlier pass-08 runtime note that the OS001-02 PDF body was unavailable is superseded for research purposes by reuse of the project's previously captured complete 40-row transcription.
 
 Krefeld lot 26 remains taxonomically open. The MfN inventory contains possible actiniarian/zoantharian comparison records such as `Actinia equina`, `Anemonia sulcata`, and `Epizoanthus couchii`, but none is promoted to an identity match without the auction object's handwritten taxon, a catalogue number, or stronger image evidence.
@@ -72,17 +78,19 @@ George Loudon's first-person accounts remain a separate dealer-provenance proble
 - `../research/logs/2026-08-10-auction-deep-sweep-pass08-berlin-hu-krefeld-provenance.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass09-science-museum-recipient-web-audit.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass10-krefeld-hydractinia-156.md`
+- `../research/logs/2026-08-10-auction-deep-sweep-pass11-berlin-archive-series-router.md`
 
 ## Next search layer
 
 Priority remains away from another broad auction-house sweep. The immediate order is:
 
-1. HU historical inventory plus 1968–1970 reduction/gift/transfer/loss records using exact keys `Hydractinia echinata`, `Stachelpolyp`, and **Blaschka no. 156**.
-2. Image-level audit of Krefeld lot 27 for any additional label, handwritten taxon, catalogue number or old inventory number; keep lot 26 open until equivalent evidence appears.
-3. Rakow MS 0013 `Hydractinia echinata` drawing record as a design-comparison source, without converting visual similarity into provenance proof.
-4. Science Museum transfer/disposal index and store registers keyed by exact 1877 object numbers.
-5. Glasgow `1909.66` / Mason purchase files.
-6. Identification of Loudon's London dealer and English public school.
-7. Return to old auction catalogues only after these routes yield new names, catalogue numbers, taxa or provenance anchors.
+1. HU historical inventory plus 1886-transfer and 1968–1970 reduction/gift/transfer/loss records using exact keys `Hydractinia echinata`, `Stachelpolyp`, **Blaschka no. 156**, `ZI`, and `IfZ`.
+2. MfN archive remote routing into `S001`, `S003`, `S004-04`, and `S005-02`; physical records access is currently suspended, so seek file-level identifiers by email before any later visit.
+3. Image-level audit of Krefeld lot 27 for any additional label, handwritten taxon, catalogue number or old inventory number; keep lot 26 open until equivalent evidence appears.
+4. Rakow MS 0013 `Hydractinia echinata` drawing record as a design-comparison source, without converting visual similarity into provenance proof.
+5. Science Museum transfer/disposal index and store registers keyed by exact 1877 object numbers.
+6. Glasgow `1909.66` / Mason purchase files.
+7. Identification of Loudon's London dealer and English public school.
+8. Return to old auction catalogues only after these routes yield new names, catalogue numbers, taxa or provenance anchors.
 
 False positives, count wording conflicts, inferred identities and spelling variants are retained in the structured backend/search logs to prevent repeated rediscovery or accidental conversion of ambiguous market evidence into settled provenance.
