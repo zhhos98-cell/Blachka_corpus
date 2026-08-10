@@ -3,19 +3,23 @@
   window.__blaschkaUnifiedUI = true;
 
   const isSubpage = document.body.classList.contains('subpage');
-  const cssHref = isSubpage ? '../apple-unified.css?v=20260810-2' : 'apple-unified.css?v=20260810-2';
-  if (![...document.querySelectorAll('link[rel="stylesheet"]')].some(link => link.href.includes('apple-unified.css'))) {
+  const prefix = isSubpage ? '../' : '';
+  const addStyle = (href, token) => {
+    if ([...document.querySelectorAll('link[rel="stylesheet"]')].some(link => link.href.includes(token))) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = cssHref;
-    link.dataset.appleUnified = 'true';
+    link.href = href;
     document.head.appendChild(link);
-  }
+  };
+
+  addStyle(`${prefix}apple-unified.css?v=20260810-2`, 'apple-unified.css');
+  /* Loaded last on purpose: this is the current motion contract and overrides older imported motion rules. */
+  addStyle(`${prefix}fluid-motion.css?v=20260810-3`, 'fluid-motion.css?v=20260810-3');
 
   if (!window.__blaschkaFluidMotionRequested) {
     window.__blaschkaFluidMotionRequested = true;
     const motion = document.createElement('script');
-    motion.src = isSubpage ? '../fluid-motion.js?v=20260810-1' : 'fluid-motion.js?v=20260810-1';
+    motion.src = `${prefix}fluid-motion.js?v=20260810-2`;
     motion.defer = true;
     document.head.appendChild(motion);
   }
