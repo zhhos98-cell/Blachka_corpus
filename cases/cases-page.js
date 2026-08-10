@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-6';
+    ui.src = '../unified-ui.js?v=20260810-7';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -12,6 +12,7 @@
   const target = document.getElementById('case-sections');
   const loading = document.getElementById('cases-loading');
   if (!target) return;
+  const compactViewport = matchMedia('(max-width:900px)').matches;
 
   const loadScript = src => new Promise((resolve, reject) => {
     const script = document.createElement('script');
@@ -26,7 +27,7 @@
 
   const revealCases = () => {
     const samples = [...document.querySelectorAll('#case-sections .sample')];
-    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (compactViewport || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
       samples.forEach(sample => sample.classList.add('case-visible'));
       return;
     }
@@ -71,12 +72,11 @@
   };
 
   const loadSecondaryVisuals = async () => {
+    if (compactViewport) return;
     try {
-      if (!matchMedia('(max-width:900px)').matches) {
-        await loadScript('../maps-v3.js?v=20260809-2');
-        await loadScript('../maps-v4.js?v=20260809-1');
-        await loadScript('../map-ratio-fix.js?v=20260810-2');
-      }
+      await loadScript('../maps-v3.js?v=20260809-2');
+      await loadScript('../maps-v4.js?v=20260809-1');
+      await loadScript('../map-ratio-fix.js?v=20260810-2');
       await loadScript('../visuals-v1.js?v=20260809-2');
       await loadScript('../visuals-v2.js?v=20260809-1');
     } catch (error) { console.error(error); }
@@ -99,8 +99,8 @@
       revealCases();
       restoreHash();
 
-      if ('requestIdleCallback' in window) requestIdleCallback(loadSecondaryVisuals, { timeout:800 });
-      else setTimeout(loadSecondaryVisuals, 120);
+      if ('requestIdleCallback' in window) requestIdleCallback(loadSecondaryVisuals, { timeout:900 });
+      else setTimeout(loadSecondaryVisuals, 180);
     } catch (error) {
       console.error(error);
       loading?.remove();
