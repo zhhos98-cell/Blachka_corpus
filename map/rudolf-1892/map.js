@@ -2,6 +2,7 @@
   const routeData = window.RUDOLF_1892_ROUTE_DATA;
   const knowledgeData = window.RUDOLF_1892_KNOWLEDGE_DATA;
   const sourceData = window.RUDOLF_1892_SOURCE_DATA || { nodeOverrides:{}, nodeEnhancements:{}, nodeLinks:{} };
+  const visualMatches = window.RUDOLF_1892_VISUAL_MATCHES || [];
   if (!routeData || !knowledgeData || typeof L === 'undefined') return;
 
   const documented = routeData.documentedRoute;
@@ -28,6 +29,7 @@
   const markerLayer = L.layerGroup().addTo(map);
   const flowLayer = L.layerGroup().addTo(map);
   const plannedPointLayer = L.layerGroup().addTo(map);
+  const visualMatchLayer = L.layerGroup().addTo(map);
 
   const documentedLine = L.polyline(documented.map(d => [d.lat, d.lng]), {
     color: '#b67a51', weight: 4, opacity: .92, lineCap: 'round'
@@ -74,6 +76,77 @@
     });
   }
 
+  function visualMatchIcon() {
+    return L.divIcon({
+      className: 'journey-visual-match-icon',
+      html: '<span class="journey-match-marker"><span>S</span></span>',
+      iconSize: [28, 28],
+      iconAnchor: [14, 14],
+      popupAnchor: [0, -13]
+    });
+  }
+
+  function visualMatchPopup(match) {
+    const imagePosition = match.imagePosition || 'center';
+    return `<article class="journey-match-card">
+      <a class="journey-match-image-link" href="${match.sourceUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open image source and rights information">
+        <img class="journey-match-image" src="${match.image}" alt="${match.alt}" loading="lazy" decoding="async" style="object-position:${imagePosition}">
+      </a>
+      <div class="journey-match-body">
+        <p class="journey-match-kicker">Sketchbook match · ${match.page}</p>
+        <p class="journey-match-status">${match.status}</p>
+        <h3 class="journey-match-title">${match.title}</h3>
+        <p class="journey-match-summary">${match.summary}</p>
+        <p class="journey-match-source"><strong>${match.sourceLabel}</strong>${match.rights}<br><a href="${match.sourceUrl}" target="_blank" rel="noopener noreferrer">View source &amp; rights ↗</a></p>
+      </div>
+    </article>`;
+  }
+
+  function renderVisualMatches() {
+    visualMatches.forEach(match => {
+      const marker = L.marker([match.lat, match.lng], {
+        icon: visualMatchIcon(),
+        keyboard: true,
+        riseOnHover: true,
+        title: `Sketchbook match: ${match.title}`
+      }).addTo(visualMatchLayer);
+
+      marker.bindPopup(visualMatchPopup(match), {
+        className: 'visual-match-popup',
+        maxWidth: 340,
+        minWidth: 280,
+        autoPan: false,
+        closeButton: true
+      });
+
+      let closeTimer = 0;
+      const cancelClose = () => {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = 0;
+      };
+      const scheduleClose = () => {
+        cancelClose();
+        closeTimer = window.setTimeout(() => {
+          const popupEl = marker.getPopup()?.getElement();
+          if (!popupEl || !popupEl.matches(':hover')) marker.closePopup();
+        }, 180);
+      };
+
+      marker.on('mouseover', () => {
+        cancelClose();
+        marker.openPopup();
+      });
+      marker.on('mouseout', scheduleClose);
+      marker.on('popupopen', () => {
+        const popupEl = marker.getPopup()?.getElement();
+        if (!popupEl || popupEl.dataset.hoverBound === 'true') return;
+        popupEl.dataset.hoverBound = 'true';
+        popupEl.addEventListener('mouseenter', cancelClose);
+        popupEl.addEventListener('mouseleave', scheduleClose);
+      });
+    });
+  }
+
   documented.forEach((rawItem, index) => {
     const item = displayItem(rawItem);
     const marker = L.marker([rawItem.lat, rawItem.lng], { icon: markerIcon(rawItem, index, 'journey') }).addTo(markerLayer);
@@ -81,6 +154,8 @@
     marker.on('click', () => setDetail(index, true));
     markerMap.set(rawItem.id, marker);
   });
+
+  renderVisualMatches();
 
   const allGroup = L.featureGroup([documentedLine, plannedLine, ...Array.from(markerMap.values())]);
   const allBounds = allGroup.getBounds().pad(.12);
@@ -205,16 +280,20 @@
     flows: '<strong>Flows</strong> separates Rudolf’s bodily route from the movement of plants, specimens, drawings, instructions and later supply. Greyed nodes are outside the selected flow network.'
   };
 
+  function matchLegend() {
+    return visualMatches.length ? '<span><i class="is-match"></i>sketchbook landscape match</span>' : '';
+  }
+
   function renderLegend(mode) {
     if (mode === 'operations') {
-      modeLegend.innerHTML = Object.entries(operations).map(([key, op]) => `<span><i style="--legend-color:${op.color}"></i>${op.label}</span>`).join('');
+      modeLegend.innerHTML = Object.entries(operations).map(([key, op]) => `<span><i style="--legend-color:${op.color}"></i>${op.label}</span>`).join('') + matchLegend();
       return;
     }
     if (mode === 'flows') {
-      modeLegend.innerHTML = '<span><i style="--legend-color:#6f91a4"></i>material</span><span><i style="--legend-color:#8a718c"></i>information / instruction</span><span><i style="--legend-color:#9b8866"></i>prospective supply</span>';
+      modeLegend.innerHTML = '<span><i style="--legend-color:#6f91a4"></i>material</span><span><i style="--legend-color:#8a718c"></i>information / instruction</span><span><i style="--legend-color:#9b8866"></i>prospective supply</span>' + matchLegend();
       return;
     }
-    modeLegend.innerHTML = '<span><i style="--legend-color:#b67a51"></i>documented movement</span><span><i class="is-dashed" style="--legend-color:#71889a"></i>planned / public itinerary</span>';
+    modeLegend.innerHTML = '<span><i style="--legend-color:#b67a51"></i>documented movement</span><span><i class="is-dashed" style="--legend-color:#71889a"></i>planned / public itinerary</span>' + matchLegend();
   }
 
   function setMode(mode) {
