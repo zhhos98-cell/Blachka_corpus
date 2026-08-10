@@ -1,6 +1,12 @@
 (() => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  if (!document.querySelector('link[href*="site-polish.css"]')) {
+    const polish = document.createElement('link');
+    polish.rel = 'stylesheet';
+    polish.href = 'site-polish.css?v=20260810-1';
+    document.head.appendChild(polish);
+  }
   if (!document.querySelector('link[href*="home-nav-glide.css"]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
