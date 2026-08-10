@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../../secondary.css">
   <link rel="stylesheet" href="../../navigation-shell.css?v=20260810-4">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="./styles.css?v=20260810-2">
+  <link rel="stylesheet" href="./styles.css?v=20260811-1">
 </head>
 <body class="subpage rudolf-1892-page">
   <header class="subpage-header">
@@ -82,6 +82,7 @@
           </div>
 
           <p class="detail-source"><span>Evidence anchor</span><b id="detail-source">Correspondence sequence in the 1892 archive layer</b></p>
+          <div class="detail-links" id="detail-links" hidden aria-label="External source links"></div>
 
           <div class="journey-controls">
             <button type="button" id="prev-stop">Previous</button>
@@ -104,7 +105,40 @@
       <p class="eyebrow">Method</p>
       <div>
         <h2 id="journey-method-title">The route and the knowledge chain are kept separate.</h2>
-        <p>The documented journey, the publicly circulated itinerary, the movement of plant material, and the movement of instructions are different evidential objects. They are shown together only when their difference remains visible. Unresolved locations remain outside the secure route.</p>
+        <p>The documented journey, the publicly circulated itinerary, the movement of plant material, and the movement of instructions are different evidential objects. They are shown together only when their difference remains visible. Unresolved locations remain outside the secure route. Dates and identifications are corrected in the public view only when the archival layer or a cited control source supports the correction; the preserved OCR remains unchanged in the research backend.</p>
+      </div>
+    </section>
+
+    <section class="journey-references" aria-labelledby="journey-references-title">
+      <div class="journey-references-head">
+        <p class="eyebrow">References &amp; source routes</p>
+        <div>
+          <h2 id="journey-references-title">Follow the evidence without reproducing the images here.</h2>
+          <p>Archival images and published figures are linked to their holding institutions or publication pages rather than copied into this map. The Corning study is used as a secondary control layer; the correspondence remains the primary chronological backbone.</p>
+        </div>
+      </div>
+
+      <div class="journey-reference-list">
+        <article class="journey-reference">
+          <p class="journey-reference-type">Secondary study</p>
+          <p class="journey-reference-citation">Rossi-Wilcox, Susan M. “The Botanical Models (1886–1936).” In <em>Drawing upon Nature: Studies for the Blaschkas’ Glass Models</em>, selected and introduced by Susan M. Rossi-Wilcox and David Whitehouse, 20–33. Corning, NY: The Corning Museum of Glass, 2007. ISBN 9780872901667.</p>
+          <p class="journey-reference-note">Used for chronology checks, selected identifications, and the published pairing of Castleton Gardens, Rudolf’s 1892 <em>Jacaranda filicifolia</em> drawing, and the later glass model.</p>
+          <a href="https://info.cmog.org/publication/drawing-upon-nature-studies-blaschkas-glass-models" target="_blank" rel="noopener noreferrer">Corning publication page ↗</a>
+        </article>
+
+        <article class="journey-reference">
+          <p class="journey-reference-type">Primary archive</p>
+          <p class="journey-reference-citation"><em>Archives of Rudolf and Leopold Blaschka and the Ware Collection of Blaschka Glass Models of Plants</em>, Botanical Museum–Harvard University Herbaria.</p>
+          <p class="journey-reference-note">Primary correspondence backbone for dates, route reconstruction, working practices, repairs, material circulation and workshop return.</p>
+          <a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener noreferrer">Harvard HOLLIS archive record ↗</a>
+        </article>
+
+        <article class="journey-reference">
+          <p class="journey-reference-type">Primary visual source</p>
+          <p class="journey-reference-citation">Rudolf Blaschka, <em>R. Blaschka [sketchbook]</em>, circa 1892. Rakow Research Library, The Corning Museum of Glass. Identifier 87384; Alma MMS 99873843504126.</p>
+          <p class="journey-reference-note">The catalogue identifies the beginning sketch as “Tempe, Arizona, 22. April 1892.” Page-level synchronization with the correspondence and separate botanical study drawings remains ongoing.</p>
+          <a href="https://info.cmog.org/library" target="_blank" rel="noopener noreferrer">Rakow Research Library ↗</a>
+        </article>
       </div>
     </section>
   </main>
@@ -114,7 +148,8 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./route-data.js?v=20260810-1"></script>
   <script src="./knowledge-data.js?v=20260810-1"></script>
-  <script src="./map.js?v=20260810-1"></script>
+  <script src="./source-data.js?v=20260811-1"></script>
+  <script src="./map.js?v=20260811-1"></script>
   <script src="../../unified-ui.js?v=20260810-17" defer></script>
 </body>
 </html>
