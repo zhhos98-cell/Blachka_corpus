@@ -1,3 +1,4 @@
+# rerun after source syntax repair
 name: One-shot Sources staticization
 
 on:
