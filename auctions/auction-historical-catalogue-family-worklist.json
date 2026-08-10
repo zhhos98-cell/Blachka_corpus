@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Historical auction catalogue family worklist for unindexed Blaschka discovery",
+  "purpose": "Move the deep auction search beyond maker-name web indexes by identifying catalogue families whose subject scope is plausibly capable of hiding Blaschka models even when individual lot text is not indexed. This is a search worklist, not evidence that a Blaschka lot occurs in any listed catalogue.",
+  "canonical_auction_count_effect": 0,
+  "method": {
+    "selection_logic": [
+      "scientific instruments, scientific/engineering models and apparatus",
+      "natural-history object sales",
+      "English/Continental/European glass sales",
+      "science-and-marine or collector-technology sales where zoological teaching models could be misclassified"
+    ],
+    "search_terms_when_scan_available": [
+      "Blaschka", "Blashka", "Blauschka", "Blaschke", "Dresden", "Blaschka's Modelle", "Blaschka’s Modelle", "L. No.", "Nr.", "glass model", "zoological model", "anatomical model", "natural history model", "teaching model", "jellyfish", "jelly fish", "sea anemone", "coral", "hydroid", "mollusc", "slug", "worm"
+    ],
+    "negative_claim_guard": "Catalogue metadata or search-engine failure is never treated as proof that the catalogue contains no Blaschka material. Lot-level negative status requires inspection of searchable/OCR text or a complete scan."
+  },
+  "families": [
+    {
+      "family_id": "CATFAM-CHRISTIES-SCIENTIFIC-MODELS",
+      "priority": "A",
+      "auction_house": "Christie's / Christie's South Kensington",
+      "scope": "Scientific, medical and engineering instruments, models, tools and apparatus",
+      "why_high_priority": "Several sale titles explicitly include 'models' or broad scientific apparatus, making this a stronger hiding place for zoological teaching models than general decorative-glass sales.",
+      "sample_catalogues": [
+        {"date":"1979-04-05","title":"Sale of Scientific Instruments, Domestic and Other Equipment","venue":"Christie's South Kensington","source":"The Catalog Star metadata"},
+        {"date":"1983-11-24","title":"Scientific Instruments, Watches and Clocks","venue":"Christie's London","lots":208,"pages":40,"source":"The Catalog Star metadata"},
+        {"date":"1991-07-04","title":"Scientific and Medical Instruments, Models, Tools and Other Apparatus","venue":"Christie's South Kensington","source":"The Catalog Star metadata"},
+        {"date":"1994-03-03","title":"Scientific and Medical Instruments, Tools, Ornamental Turning and Other Apparatus","venue":"Christie's South Kensington","source":"The Catalog Star metadata"},
+        {"date":"1995-08-24","title":"Medical and Scientific Instruments","venue":"Christie's South Kensington","lots":256,"source":"The Catalog Star metadata"},
+        {"date":"1995-10-04","title":"Fine Scientific Instruments","venue":"Christie's South Kensington","lots":160,"pages":49,"source":"The Catalog Star metadata"},
+        {"date":"1995-11-16","title":"Scientific and Medical Instruments, Tools, Ornamental Turning and Other Apparatus","venue":"Christie's South Kensington","source":"The Catalog Star metadata"},
+        {"date":"1996-07-18","title":"Scientific Instruments, Tools and Other Apparatus","venue":"Christie's South Kensington","lots":234,"source":"The Catalog Star metadata"},
+        {"date":"1997-05-29","title":"Scientific and Engineering Works of Art, Instruments and Models","venue":"Christie's South Kensington","lots":255,"source":"The Catalog Star metadata"},
+        {"date":"1997-11-13","title":"Scientific Instruments, Tools and Other Apparatus","venue":"Christie's South Kensington","lots":308,"source":"The Catalog Star metadata"}
+      ],
+      "scan_access_note": "The Catalog Star lists physical and, for some sales, paid digital scans. Exact-title searches did not recover free Internet Archive scans in this pass.",
+      "status": "catalogue_metadata_mapped_lot_text_not_screened"
+    },
+    {
+      "family_id": "CATFAM-CHRISTIES-NATURAL-HISTORY",
+      "priority": "A",
+      "auction_house": "Christie's London",
+      "scope": "Natural History",
+      "why_high_priority": "The sale category can include specimens, models, scientific illustrations and cabinet material that may not be indexed under the maker name.",
+      "sample_catalogues": [
+        {"date":"1998-05-19","title":"Natural History","lots":160,"pages_reported_by_catalog_trade":190,"source":"The Catalog Star / antiquarian catalogue metadata"},
+        {"date":"1998-11-11","title":"Natural History","lots":208,"pages_reported_by_catalog_trade":"211-228 depending pagination convention","source":"The Catalog Star / antiquarian bookseller metadata"},
+        {"date":"1999-10-19","title":"Natural History","lots":107,"pages_reported_by_catalog_trade":"116-138 depending listing","source":"The Catalog Star / antiquarian bookseller metadata"},
+        {"date":"2001-06-04","title":"Natural History","source":"The Catalog Star digital-scan metadata"}
+      ],
+      "scan_access_note": "1998-2001 catalogues are visible in the antiquarian trade and some are offered as paid digital scans; exact-title free Internet Archive copies were not recovered in this pass.",
+      "status": "catalogue_metadata_mapped_lot_text_not_screened"
+    },
+    {
+      "family_id": "CATFAM-SOTHEBYS-GLASS",
+      "priority": "B",
+      "auction_house": "Sotheby's London / Belgravia",
+      "scope": "English, Continental and European glass; glass paperweights",
+      "why_priority": "Blaschka zoological models can be catalogued by medium rather than scientific function, especially after provenance is lost. The family is broad and therefore lower-yield per catalogue than explicit scientific-model sales, but it is long-running.",
+      "metadata_range_recovered": "1962-2002, with dense runs in the 1970s-1980s",
+      "representative_catalogues": [
+        {"date":"1962-07-09","title":"Fine English and Continental Glass and French Paperweights","lots":194,"pages":41},
+        {"date":"1965-05-17","title":"English & Continental Glass & French Paperweights","lots":208,"pages":47},
+        {"date":"1966-04-25","title":"English and Continental Glass including the property of Messrs Thomas Webb & Sons","scan_status":"paid digital scan listed"},
+        {"date":"1969-06-02","title":"Continental Glass","lots":142,"pages":34},
+        {"date":"1970-06-01","title":"A Collection of English and Continental Glass","lots":224,"pages":47},
+        {"date":"1974-10-14","title":"Fine English and Continental Glass","lots":213,"pages":30},
+        {"date":"1975-07-14","title":"Fine English and Continental Glass","lots":331,"pages":47},
+        {"date":"1976-12-20","title":"Glass Paperweights and English and Continental Glass","lots":253},
+        {"date":"1978-04-17","title":"English and Continental Glass","lots":184,"pages":29,"scan_status":"paid digital scan listed"},
+        {"date":"1979-02-12","title":"English and Continental Glass","lots":205,"pages":19,"scan_status":"paid digital scan listed"},
+        {"date":"1980-06-30","title":"English and Continental Glass","lots":233,"pages":61},
+        {"date":"1981-05-26","title":"English and Continental Glass","lots":207,"pages":40},
+        {"date":"1982-02-01","title":"English Glass, Continental Glass and Paperweights","lots":341,"pages":45},
+        {"date":"1983-07-18","title":"English, Continental Glass and Paperweights","lots":388,"pages":79},
+        {"date":"1984-11-12","title":"English and Continental Glass and Paperweights","lots":569},
+        {"date":"1986-11-24","title":"English & Continental Glass and Paperweights","lots":484,"pages":91},
+        {"date":"1989-07-18","title":"Later English & Continental Ceramics & Glass","lots":439,"pages":134},
+        {"date":"2002-05-07","title":"British and Continental Glass","lots":308,"pages":137}
+      ],
+      "independent_catalogue_library": "Isle of Wight Museum of Glass publishes a substantial auction-catalogue holdings list including Sotheby's glass catalogues from the 1960s onward.",
+      "status": "family_mapped_sampled_metadata_only"
+    },
+    {
+      "family_id": "CATFAM-PHILLIPS-SCIENTIFIC",
+      "priority": "A",
+      "auction_house": "Phillips London / New Bond Street",
+      "scope": "Scientific instruments, barometers, clocks and watches",
+      "sample_catalogues": [
+        {"date":"1980-11-19","title":"Scientific Instruments also Barometers","lots":104,"pages":24},
+        {"date":"1986-09-10","title":"Scientific Instruments","lots":251,"pages":34},
+        {"date":"1988-11-16","title":"Scientific Instruments","lots":198,"pages":31},
+        {"date":"1995-09-26","title":"Clocks and Watches including Scientific Instruments and Barometers","lots":296,"pages":54}
+      ],
+      "status": "catalogue_metadata_mapped_lot_text_not_screened"
+    },
+    {
+      "family_id": "CATFAM-BONHAMS-SCIENCE",
+      "priority": "A",
+      "auction_house": "Bonhams London / Chelsea / Knightsbridge",
+      "scope": "Science and technology, scientific/medical instruments, mechanical music, cameras and marine material",
+      "sample_catalogues": [
+        {"date":"1989-05-20","title":"Science & Technology for the Collector","source":"The Catalog Star metadata"},
+        {"date":"1992-04-23","title":"Scientific Instruments, Mechanical Music, Autographs, Cameras and Related Material","lots":217,"pages":20},
+        {"date":"1993-03-12","title":"Scientific Instruments, Mechanical Music and Cameras","lots":318,"pages":35,"scan_status":"paid digital scan listed"},
+        {"date":"1996-11-07","title":"Scientific Instruments, Mechanical Music, Cameras and Photographs","lots":299,"pages":40},
+        {"date":"1998-03-18","title":"Relics, Scientific Instruments and Barometers, Mechanical Music, Cameras and Photographs","lots":233,"pages":32},
+        {"date":"1998-07-21","title":"Scientific and Medical Instruments, Barometers, Mechanical Music, Cameras and Photographs","lots":"282-293 depending catalogue copy metadata","pages":"43-44 depending listing"},
+        {"date":"2000-03-01","title":"Aeronautics, Scientific and Medical Instruments, Mechanical Music, Cameras and Photographs","lots":457,"pages":70},
+        {"date":"2002-05-28","title":"Fine Clocks, Scientific Instruments and Barometers","lots":204,"pages":87},
+        {"date":"2004-02-25","title":"Science and Marine","lots":141,"pages":29},
+        {"date":"2004-06-03","title":"Morse to Marconi and Scientific Instruments","lots":248,"pages":60}
+      ],
+      "why_high_priority": "The 1989 collector-science and 2004 Science and Marine titles are especially relevant to objects that sit between natural-history cabinet material and scientific apparatus.",
+      "status": "catalogue_metadata_mapped_lot_text_not_screened"
+    }
+  ],
+  "access_and_cost_strategy": {
+    "commercial_scan_source": "The Catalog Star lists full-catalogue or selected-lot scanning for many catalogues; examples display £30 full catalogue and £5 individual-lot scan pricing at the time captured.",
+    "zero_cost_first": [
+      "search exact catalogue title/date on institutional library catalogues and the open web",
+      "search Internet Archive / Google Books / HathiTrust-style indexes when accessible",
+      "search known artist/taxon/model-number phrases against OCR snippets",
+      "use antiquarian-book listings to confirm pagination and catalogue identity",
+      "only consider paid scans after a catalogue is prioritized by provenance seed, not for indiscriminate bulk purchase"
+    ],
+    "current_free_scan_result": "Exact-title Internet Archive web searches for several sampled high-priority catalogues produced no results in this pass. This is a bounded discovery result, not proof that no free institutional scan exists."
+  },
+  "priority_order_for_manual_or_OCR_screening": [
+    "Christie's Scientific and Engineering Works of Art, Instruments and Models, 29 May 1997",
+    "Christie's Scientific and Medical Instruments, Models, Tools and Other Apparatus, 4 July 1991",
+    "Bonhams Science & Technology for the Collector, 20 May 1989",
+    "Bonhams Science and Marine, 25 February 2004",
+    "Christie's Natural History, 11 November 1998",
+    "Christie's Natural History, 19 May 1998",
+    "Phillips Scientific Instruments, 10 September 1986",
+    "Phillips Scientific Instruments, 16 November 1988",
+    "Sotheby's English/Continental Glass dense run, sampled first at 1978-1986"
+  ],
+  "next_actions": [
+    "Search each A-priority exact sale title with Blaschka spelling variants, taxon names and model-number syntax before obtaining scans.",
+    "Search library holdings/catalogue-record notes for digitized copies or searchable full text.",
+    "If a complete scan is obtained, run the entire catalogue rather than stopping at the first hit and record page/lot-level negatives as bounded complete-catalogue screens.",
+    "Keep scientific-model and natural-history families separate from decorative-glass families so negative coverage can be reported by catalogue type.",
+    "Do not add a sale to auction-data.json merely because its catalogue family is plausible."
+  ],
+  "sources": [
+    "https://www.thecatalogstar.com/",
+    "https://isleofwightglassmuseum.wikidot.com/auction"
+  ]
+}
