@@ -1,0 +1,339 @@
+/* Homepage structural pass · 2026-08-10
+   Reduce the landing page to entry, origin story, two representative cases and contact. */
+
+body:not(.subpage) .network-pillars,
+body:not(.subpage) .research-chain,
+body:not(.subpage) .evidence-key,
+body:not(.subpage) .project-grid{
+  display:none!important;
+}
+
+body:not(.subpage) .project{
+  padding-top:88px!important;
+  padding-bottom:108px!important;
+}
+body:not(.subpage) .project-lede{
+  padding-bottom:44px!important;
+}
+
+/* Origin story: image-led left column, narrative on the right. */
+body:not(.subpage) .origin-story{
+  position:relative!important;
+  margin-top:34px!important;
+  padding:74px 0 88px!important;
+  border-top:1px solid rgba(38,32,28,.18)!important;
+  border-bottom:0!important;
+  overflow:visible!important;
+  isolation:isolate;
+}
+body:not(.subpage) .origin-story::before{
+  content:"1850   1852   1853   1863   1876   1890";
+  position:absolute;
+  z-index:-1;
+  left:-4vw;
+  right:-4vw;
+  bottom:76px;
+  color:rgba(38,32,28,.035);
+  font:800 clamp(2.7rem,6.7vw,7rem)/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.10em;
+  white-space:nowrap;
+  pointer-events:none;
+}
+body:not(.subpage) .origin-kicker{
+  margin:0 0 26px!important;
+  color:#a65f45!important;
+  font:700 .67rem/1 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
+body:not(.subpage) .origin-body{
+  display:grid!important;
+  grid-template-columns:minmax(280px,.88fr) minmax(0,1.12fr)!important;
+  gap:clamp(46px,8vw,112px)!important;
+  align-items:start!important;
+}
+body:not(.subpage) .origin-visual{
+  position:relative;
+  min-height:620px;
+}
+body:not(.subpage) .origin-photo{
+  display:block!important;
+  position:relative!important;
+  z-index:2;
+  width:min(100%,430px)!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  transform:rotate(-1.2deg);
+}
+body:not(.subpage) .origin-photo>a{
+  display:block!important;
+  height:clamp(430px,48vw,590px)!important;
+  overflow:hidden;
+  box-shadow:0 28px 60px rgba(71,49,38,.15)!important;
+}
+body:not(.subpage) .origin-photo img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center 34%!important;
+  filter:sepia(.08) saturate(.72) contrast(1.02)!important;
+}
+body:not(.subpage) .origin-photo figcaption{
+  padding:13px 0 0!important;
+  color:#665b53!important;
+  font:500 .64rem/1.5 Arial,Helvetica,sans-serif!important;
+}
+body:not(.subpage) .origin-photo figcaption span{
+  display:block;
+  margin-bottom:4px;
+  color:#a65f45!important;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+body:not(.subpage) .origin-photo figcaption p{margin:0!important;color:#665b53!important;font-size:inherit!important}
+body:not(.subpage) .origin-visual::before,
+body:not(.subpage) .origin-visual::after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  width:48%;
+  aspect-ratio:3/4;
+  border:1px solid rgba(38,32,28,.11);
+  background:
+    linear-gradient(rgba(244,238,225,.88),rgba(224,213,196,.90)),
+    repeating-linear-gradient(0deg,transparent 0 21px,rgba(72,54,44,.08) 22px 23px);
+  box-shadow:0 20px 46px rgba(71,49,38,.08);
+  opacity:.64;
+}
+body:not(.subpage) .origin-visual::before{
+  right:4%;
+  top:72px;
+  transform:rotate(6deg);
+}
+body:not(.subpage) .origin-visual::after{
+  right:11%;
+  top:166px;
+  transform:rotate(-6deg);
+  background:
+    linear-gradient(rgba(239,232,219,.83),rgba(224,213,196,.86)),
+    repeating-linear-gradient(0deg,transparent 0 17px,rgba(72,54,44,.075) 18px 19px);
+}
+body:not(.subpage) .origin-copy h3{
+  max-width:650px!important;
+  margin:0 0 32px!important;
+  color:#26201c!important;
+  font-size:clamp(2.55rem,4.5vw,4.7rem)!important;
+  line-height:.96!important;
+  letter-spacing:-.045em!important;
+  font-weight:500!important;
+}
+body:not(.subpage) .origin-columns{
+  display:block!important;
+  columns:auto!important;
+}
+body:not(.subpage) .origin-columns p{
+  max-width:650px!important;
+  margin:0 0 20px!important;
+  color:#5d534c!important;
+  font-size:1rem!important;
+  line-height:1.68!important;
+}
+body:not(.subpage) .origin-source{
+  max-width:650px!important;
+  margin:29px 0 0!important;
+  padding-top:18px!important;
+  border-top:1px solid rgba(38,32,28,.13)!important;
+  color:#7a6e65!important;
+  font:500 .64rem/1.55 Arial,Helvetica,sans-serif!important;
+}
+
+/* Winding chronology, inspired by a road map rather than a row of pills. */
+body:not(.subpage) .origin-roadmap{
+  position:relative;
+  grid-column:1/-1;
+  height:310px;
+  margin-top:54px;
+  overflow:hidden;
+}
+body:not(.subpage) .origin-roadmap svg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+body:not(.subpage) .origin-roadmap .road-base{
+  fill:none;
+  stroke:rgba(54,45,40,.11);
+  stroke-width:33;
+  stroke-linecap:round;
+}
+body:not(.subpage) .origin-roadmap .road-line{
+  fill:none;
+  stroke:rgba(166,95,69,.42);
+  stroke-width:2.4;
+  stroke-linecap:round;
+  stroke-dasharray:9 10;
+  animation:origin-road-drift 18s linear infinite;
+}
+@keyframes origin-road-drift{to{stroke-dashoffset:-190}}
+body:not(.subpage) .road-stop{
+  position:absolute;
+  left:var(--x);
+  top:var(--y);
+  width:128px;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  font-family:Arial,Helvetica,sans-serif;
+}
+body:not(.subpage) .road-stop::before{
+  content:"";
+  display:block;
+  width:11px;
+  height:11px;
+  margin:0 auto 10px;
+  border:3px solid #eee9e0;
+  border-radius:50%;
+  background:#a65f45;
+  box-shadow:0 0 0 1px rgba(166,95,69,.38),0 8px 22px rgba(76,51,38,.15);
+}
+body:not(.subpage) .road-stop b{
+  display:block;
+  color:#a65f45!important;
+  font-size:.72rem;
+  letter-spacing:.07em;
+}
+body:not(.subpage) .road-stop span{
+  display:block;
+  margin-top:3px;
+  color:#5e554e!important;
+  font-size:.61rem;
+  line-height:1.25;
+}
+
+/* Only two cases remain on the landing page. */
+body:not(.subpage) .case-index-head h2{
+  font-size:clamp(2.8rem,5vw,5rem)!important;
+}
+body:not(.subpage) .case-index-table{
+  grid-template-columns:1fr 1fr!important;
+}
+body:not(.subpage) .case-index-row{
+  min-height:390px!important;
+}
+body:not(.subpage) .case-index-row:nth-child(n+3){display:none!important}
+body:not(.subpage) .all-cases-link{
+  display:inline-flex;
+  align-items:center;
+  gap:13px;
+  margin-top:30px;
+  color:#f3eee7;
+  font:700 .68rem/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.08em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+body:not(.subpage) .all-cases-link::after{content:"↗";color:#d3997f;font-size:1rem}
+body:not(.subpage) .all-cases-link:hover{color:#d3997f}
+
+/* Contact closes the page as a research invitation, not a commercial form. */
+body:not(.subpage) .home-contact{
+  position:relative;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  padding:92px max(20px,calc((100vw - var(--max))/2)) 98px;
+  background:#eee9e0;
+  color:#26201c;
+  border-top:1px solid rgba(38,32,28,.14);
+}
+body:not(.subpage) .home-contact::before{
+  content:"CONTACT / SOURCE LEADS / CORRECTIONS";
+  position:absolute;
+  right:3vw;
+  top:26px;
+  color:rgba(38,32,28,.035);
+  font:800 clamp(2rem,5vw,5.2rem)/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.08em;
+  white-space:nowrap;
+  pointer-events:none;
+}
+body:not(.subpage) .contact-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(180px,.7fr) minmax(0,1.3fr);
+  gap:clamp(38px,8vw,120px);
+}
+body:not(.subpage) .contact-grid .eyebrow{color:#a65f45!important}
+body:not(.subpage) .contact-copy h2{
+  max-width:700px;
+  margin:0 0 20px;
+  font-size:clamp(2.5rem,5vw,5rem);
+  line-height:.94;
+  letter-spacing:-.045em;
+  font-weight:500;
+}
+body:not(.subpage) .contact-copy p{
+  max-width:720px;
+  color:#5e554e;
+}
+body:not(.subpage) .contact-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px 26px;
+  margin-top:28px;
+  font:700 .68rem/1.35 Arial,Helvetica,sans-serif;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+body:not(.subpage) .contact-actions a{
+  color:#26201c;
+  text-decoration:none;
+  border-bottom:1px solid #a65f45;
+  padding-bottom:5px;
+}
+body:not(.subpage) .contact-actions a:hover{color:#a65f45}
+
+/* Public navigation no longer advertises the internal project log. */
+.top-nav a[href*="blog"],
+.subpage-nav a[href*="blog"],
+footer a[href*="blog"]{display:none!important}
+
+@media(max-width:900px){
+  body:not(.subpage) .origin-body{grid-template-columns:1fr!important}
+  body:not(.subpage) .origin-visual{min-height:520px;max-width:620px}
+  body:not(.subpage) .origin-photo{width:min(78vw,430px)!important}
+  body:not(.subpage) .origin-copy h3{max-width:760px!important}
+  body:not(.subpage) .origin-columns p{max-width:760px!important}
+  body:not(.subpage) .case-index-table{grid-template-columns:1fr!important}
+  body:not(.subpage) .case-index-row{min-height:330px!important}
+}
+@media(max-width:700px){
+  body:not(.subpage) .project{padding-bottom:72px!important}
+  body:not(.subpage) .origin-story{padding-top:54px!important;padding-bottom:58px!important}
+  body:not(.subpage) .origin-visual{min-height:455px}
+  body:not(.subpage) .origin-photo>a{height:390px!important}
+  body:not(.subpage) .origin-roadmap{height:auto;margin-top:36px;padding:8px 0}
+  body:not(.subpage) .origin-roadmap svg{display:none}
+  body:not(.subpage) .road-stop{
+    position:relative;
+    left:auto!important;
+    top:auto!important;
+    width:auto;
+    transform:none;
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:12px;
+    align-items:center;
+    text-align:left;
+    padding:13px 0;
+    border-top:1px solid rgba(38,32,28,.11);
+  }
+  body:not(.subpage) .road-stop::before{display:none}
+  body:not(.subpage) .road-stop span{margin:0}
+  body:not(.subpage) .contact-grid{grid-template-columns:1fr;gap:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  body:not(.subpage) .origin-roadmap .road-line{animation:none!important}
+}
