@@ -7,14 +7,18 @@
   <title>Map · The Blaschka Object Network</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../secondary.css">
-  <link rel="stylesheet" href="../navigation-shell.css?v=20260810-3">
+  <link rel="stylesheet" href="../navigation-shell.css?v=20260810-4">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="map.css?v=20260810-2">
 </head>
 <body class="subpage map-page">
   <header class="subpage-header">
     <a class="subpage-brand" href="../">The Blaschka Object Network</a>
-    <nav class="subpage-nav" aria-label="Site navigation"><a href="../cases/">Cases</a><a href="./" aria-current="page">Map</a><a href="../people/">People</a><a href="../bibliography/">Bibliography</a><a href="../sources/">Sources</a><a href="../auctions/">Auctions</a><a href="../about/">About</a></nav>
+    <nav class="subpage-nav" aria-label="Site navigation">
+      <a href="../cases/">Cases</a>
+      <details class="nav-map-menu"><summary class="nav-map-trigger is-current">Map</summary><div class="nav-map-panel"><a href="./" aria-current="page">Collections map</a><a href="./rudolf-1892/">Rudolf 1892 journey</a></div></details>
+      <a href="../people/">People</a><a href="../bibliography/">Bibliography</a><a href="../sources/">Sources</a><a href="../auctions/">Auctions</a><a href="../about/">About</a>
+    </nav>
   </header>
 
   <main class="subpage-main" id="main-content">
@@ -27,17 +31,11 @@
 
     <section class="map-section" aria-labelledby="map-section-title">
       <div class="map-section-head">
-        <div>
-          <p class="eyebrow">Modern institutions</p>
-          <h2 id="map-section-title">Where the collections are now</h2>
-        </div>
+        <div><p class="eyebrow">Modern institutions</p><h2 id="map-section-title">Where the collections are now</h2></div>
         <label class="map-search" for="map-search"><span>Search institutions</span><input id="map-search" type="search" autocomplete="off" placeholder="Museum, city or country"></label>
       </div>
 
-      <div class="map-frame">
-        <div id="collection-map" role="region" aria-label="Interactive map of Blaschka collection institutions"></div>
-        <p class="map-load-note" id="map-load-note">Loading map…</p>
-      </div>
+      <div class="map-frame"><div id="collection-map" role="region" aria-label="Interactive map of Blaschka collection institutions"></div><p class="map-load-note" id="map-load-note">Loading map…</p></div>
 
       <div class="map-legend" aria-label="Map status legend">
         <span><i class="map-key map-key--confirmed"></i><b>Documented current/recent holding</b></span>
@@ -58,6 +56,6 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   <script src="map.js?v=20260810-3" defer></script>
-  <script src="../unified-ui.js?v=20260810-16" defer></script>
+  <script src="../unified-ui.js?v=20260810-17" defer></script>
 </body>
 </html>
