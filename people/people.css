@@ -1,0 +1,107 @@
+/* People index · role-first biography architecture · 2026-08-10 */
+
+.people-intro-note{
+  max-width:760px;
+  margin:0 0 44px 300px;
+  color:rgba(235,226,217,.62);
+  font:500 .7rem/1.55 var(--font-ui,Arial,Helvetica,sans-serif);
+}
+.people-role-index{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  margin:0 0 68px 300px;
+  font:620 .66rem/1.4 var(--font-ui,Arial,Helvetica,sans-serif);
+}
+.people-role-index a{
+  color:rgba(244,236,228,.68);
+  text-decoration:none;
+  border-bottom:1px solid rgba(207,142,103,.28);
+}
+.people-role-index a:hover,.people-role-index a:focus-visible{color:#fff3e7;border-color:rgba(207,142,103,.7)}
+
+.people-groups{padding:8px 0 100px}
+.people-group{
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr);
+  gap:clamp(38px,8vw,120px);
+  padding:56px 0 62px;
+  border-top:1px solid rgba(244,236,228,.10);
+}
+.people-group:first-child{border-top:0;padding-top:8px}
+.people-group-label{
+  margin:5px 0 0;
+  color:#d6a17e;
+  font:700 .66rem/1.45 var(--font-ui,Arial,Helvetica,sans-serif);
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.people-group-body{display:grid;gap:0;max-width:920px}
+.person-record{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(190px,.62fr) minmax(0,1.38fr);
+  gap:clamp(24px,4vw,56px);
+  padding:29px 0 32px;
+  border-top:1px solid rgba(244,236,228,.075);
+  scroll-margin-top:96px;
+}
+.person-record:first-child{border-top:0;padding-top:0}
+.person-heading{min-width:0}
+.person-role{
+  margin:0 0 6px;
+  color:rgba(214,161,126,.72);
+  font:650 .59rem/1.35 var(--font-ui,Arial,Helvetica,sans-serif);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.person-record h2{
+  margin:0;
+  color:#f3ece4;
+  font-size:clamp(1.65rem,2.7vw,2.55rem);
+  font-weight:510;
+  line-height:1.02;
+  letter-spacing:-.025em;
+}
+.person-record p{margin:0;color:rgba(238,229,220,.68);font-size:1.02rem;line-height:1.58}
+.person-links{margin-top:11px!important;color:rgba(238,229,220,.48)!important;font:520 .65rem/1.5 var(--font-ui,Arial,Helvetica,sans-serif)!important}
+.person-links a{text-underline-offset:3px;text-decoration-color:rgba(207,142,103,.36)}
+.person-record-meta{
+  grid-column:1/-1;
+  margin-top:10px;
+  color:rgba(238,229,220,.31);
+  font:540 .56rem/1.45 var(--font-ui,Arial,Helvetica,sans-serif);
+  letter-spacing:.035em;
+}
+.person-record:target::before{
+  content:"";
+  position:absolute;
+  left:-14px;
+  top:24px;
+  bottom:24px;
+  width:2px;
+  background:#d49a73;
+  box-shadow:0 0 18px rgba(212,154,115,.28);
+}
+.people-method-note{
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr);
+  gap:clamp(38px,8vw,120px);
+  padding:54px 0 90px;
+  border-top:1px solid rgba(244,236,228,.10);
+}
+.people-method-note p:last-child{max-width:760px;margin:0;color:rgba(238,229,220,.56);font-size:.98rem;line-height:1.6}
+
+@media(max-width:900px){
+  .people-intro-note,.people-role-index{margin-left:0}
+  .people-role-index{margin-bottom:44px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px;white-space:nowrap;-webkit-overflow-scrolling:touch}
+  .people-group,.people-method-note{grid-template-columns:1fr;gap:18px;padding:42px 0 48px}
+  .person-record{grid-template-columns:1fr;gap:12px;padding:24px 0 27px}
+  .person-record-meta{margin-top:2px}
+}
+@media(max-width:560px){
+  .people-groups{padding-bottom:64px}
+  .person-record h2{font-size:1.7rem}
+  .person-record p{font-size:.98rem;line-height:1.55}
+  .people-intro-note{font-size:.66rem}
+}
