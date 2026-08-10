@@ -1,0 +1,57 @@
+name: One-shot performance cleanup
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-performance-cleanup.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove obsolete runtime sources and font payloads
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          # Every active CSS face now points at WOFF2. Remove any old italic TTF face
+          # and normalize any forgotten Roman TTF reference before deleting the TTFs.
+          for p in Path('.').rglob('*.css'):
+              text = p.read_text(encoding='utf-8')
+              text = text.replace("assets/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype')", "assets/fonts/EBGaramond-VariableFont_wght.woff2') format('woff2')")
+              text = re.sub(r"@font-face\{[^{}]*EBGaramond-Italic-VariableFont_wght\.ttf[^{}]*\}\s*", '', text, flags=re.S)
+              p.write_text(text, encoding='utf-8')
+
+          # Rights page should describe only assets actually shipped by the site.
+          rights = Path('rights/index.html')
+          text = rights.read_text(encoding='utf-8')
+          text = re.sub(r'<p><strong>IM FELL English</strong>.*?</p>', '', text, count=1, flags=re.S)
+          rights.write_text(text, encoding='utf-8')
+          PY
+
+          rm -f assets/fonts/EBGaramond-VariableFont_wght.ttf
+          rm -f assets/fonts/EBGaramond-Italic-VariableFont_wght.ttf
+          rm -rf assets/fonts/experimental
+
+          # These implementation sources are now represented by consolidated public assets.
+          rm -f cases/base-cases.html cases-v2.js
+          rm -f sources/sources-pass{2..12}.js sources/sources-az.js
+
+          # Remove one-shot build scaffolding after it has done its job.
+          rm -f .github/workflows/one-shot-performance-bundles.yml
+          rm -f .github/workflows/one-shot-performance-wireup.yml
+          rm -f .github/workflows/one-shot-performance-finalize.yml
+          rm -f .github/workflows/one-shot-performance-cleanup.yml
+          rm -f tools/performance_wireup.py tools/performance_finalize.py
+      - name: Commit cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Remove obsolete performance scaffolding and payloads"
+          git push
