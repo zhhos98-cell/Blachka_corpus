@@ -1,0 +1,26 @@
+/* One restrained separator between the family photograph and the narrative opening. */
+.project-proposition::before,.project-proposition::after{content:none!important}
+.origin-copy{position:relative!important}
+.origin-copy::before{
+  content:"";
+  position:absolute;
+  left:clamp(-44px,-3vw,-28px);
+  top:8px;
+  width:1px;
+  height:58px;
+  border-radius:999px;
+  background:linear-gradient(180deg,transparent,rgba(172,111,70,.68) 24%,rgba(172,111,70,.42) 76%,transparent);
+  box-shadow:0 0 14px rgba(180,119,75,.10);
+}
+.origin-copy::after{
+  content:"";
+  position:absolute;
+  left:calc(clamp(-44px,-3vw,-28px) - 2px);
+  top:33px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#f4d9ae 0 20%,#c58a58 45%,#835338 100%);
+  box-shadow:0 0 0 4px rgba(184,120,73,.055),0 0 15px rgba(189,126,76,.20);
+}
+@media(max-width:820px){.origin-copy::before,.origin-copy::after{content:none!important}}
