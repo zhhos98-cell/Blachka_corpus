@@ -1,196 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Interactive research map of Rudolf Blaschka’s 1892 journey through Jamaica and the United States, reconstructed as a mobile extension of the Blaschka workshop." />
-  <title>Rudolf Blaschka’s 1892 American Journey · The Blaschka Object Network</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive research map of Rudolf Blaschka’s 1892 journey, showing travel, field operations, material circulation and workshop reassembly.">
+  <title>A workshop on the move · Rudolf Blaschka 1892 · The Blaschka Object Network</title>
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../secondary.css">
-  <link rel="stylesheet" href="../../navigation-shell.css?v=20260810-3">
+  <link rel="stylesheet" href="../../navigation-shell.css?v=20260810-4">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="./styles.css?v=20260810-1">
+  <link rel="stylesheet" href="./styles.css?v=20260810-2">
 </head>
 <body class="subpage rudolf-1892-page">
   <header class="subpage-header">
     <a class="subpage-brand" href="../../">The Blaschka Object Network</a>
-    <nav class="subpage-nav" aria-label="Site navigation"><a href="../../cases/">Cases</a><a href="../" aria-current="page">Map</a><a href="../../people/">People</a><a href="../../bibliography/">Bibliography</a><a href="../../sources/">Sources</a><a href="../../auctions/">Auctions</a><a href="../../about/">About</a></nav>
+    <nav class="subpage-nav" aria-label="Site navigation">
+      <a href="../../cases/">Cases</a>
+      <details class="nav-map-menu" open>
+        <summary class="nav-map-trigger is-current">Map</summary>
+        <div class="nav-map-panel">
+          <a href="../">Collections map</a>
+          <a href="./" aria-current="page">Rudolf 1892 journey</a>
+        </div>
+      </details>
+      <a href="../../people/">People</a><a href="../../bibliography/">Bibliography</a><a href="../../sources/">Sources</a><a href="../../auctions/">Auctions</a><a href="../../about/">About</a>
+    </nav>
   </header>
-  <main class="subpage-main" id="main-content">
-  <div class="page-wrap">
-    <header class="hero">
-      <div class="kicker">Journey dossier · 1892</div>
-      <h1>Rudolf Blaschka’s 1892 American Journey</h1>
-      <p class="back-link"><a href="../">← Back to collections map</a></p>
-      <p>
-        This page treats the 1892 journey as a mobile extension of the Blaschka workshop. It maps documented movement,
-        distinguishes it from the projected route circulated in newspapers, and foregrounds the multiple forms through which
-        living plants became future glass models: drawing, microscope work, dried and alcohol-preserved specimens, seeds,
-        bulbs, cacti, botanical-garden work rooms, and later supply by local intermediaries.
-      </p>
-    </header>
 
-    <section class="meta-grid" aria-label="Context summary">
-      <article class="meta-card">
-        <h3>Chronology</h3>
-        <p>1 February 1892 to 30 June 1892, from Bremen to Hosterwitz via Cambridge, Jamaica, the American Southwest, the Midwest, and back across the Atlantic.</p>
-      </article>
-      <article class="meta-card">
-        <h3>Main claim</h3>
-        <p>The journey redistributed workshop labour across places, people, and media. Travel did not merely precede model production. It actively reorganised it.</p>
-      </article>
-      <article class="meta-card">
-        <h3>Editorial guard</h3>
-        <p>Planned and publicly circulated routes are shown separately from documented movement. Unresolved points remain unresolved.</p>
-      </article>
-      <article class="meta-card">
-        <h3>How to use</h3>
-        <p>Click any point on the map to open a larger detail panel. Use next and previous to move sequentially through the documented route.</p>
-      </article>
+  <main class="subpage-main" id="main-content">
+    <section class="page-intro journey-intro" aria-labelledby="journey-title">
+      <p class="eyebrow">Journey dossier · 1892</p>
+      <h1 id="journey-title">A workshop on the move</h1>
+      <p class="page-dek">Rudolf Blaschka’s journey is mapped here as a knowledge-production system. The numbered route establishes chronology; the other views show where observation, drawing, preservation, circulation, coordination, repair and workshop reassembly occurred.</p>
+      <p class="journey-thesis">Fieldwork did not simply precede the workshop. In 1892, workshop practice was distributed across bodies, gardens, drawings, specimens, railways, steamships, post and telegraph.</p>
     </section>
 
-    <section class="layout">
-      <div>
-        <section class="map-panel">
-          <div class="panel-head">
-            <strong>Interactive route map</strong>
-            <div class="legend" aria-label="Map legend">
-              <span class="legend-item"><span class="legend-line" style="border-color: var(--route);"></span> documented route</span>
-              <span class="legend-item"><span class="legend-line planned" style="border-color: var(--planned);"></span> planned / public route</span>
-              <span class="legend-item"><span class="legend-dot" style="background: var(--route);"></span> documented stop</span>
-            </div>
-          </div>
-          <div id="map" role="region" aria-label="Map of Rudolf Blaschka’s 1892 route"></div>
-        </section>
-
-        <section class="method-panel">
-          <h3>Method notes</h3>
-          <ul>
-            <li>The solid line follows documented route nodes reconstructed from correspondence and associated source layers.</li>
-            <li>The dashed line follows the planned or publicly circulated route that appeared in letters and newspapers.</li>
-            <li>The point of the page is not only to say where Rudolf went, but to show how observation, specimen handling, seed circulation, and later workshop production were linked.</li>
-            <li>Jamaica, San Diego, St. Louis, Cambridge, and Hosterwitz are particularly strong nodes for reconstructing knowledge production.</li>
-          </ul>
-        </section>
+    <section class="journey-workspace" aria-labelledby="workspace-title">
+      <div class="journey-workspace-head">
+        <div>
+          <p class="eyebrow">Interactive map</p>
+          <h2 id="workspace-title">Three ways to read the same journey</h2>
+        </div>
+        <div class="map-mode-switch" role="group" aria-label="Map reading mode">
+          <button type="button" data-map-mode="journey" class="is-active" aria-pressed="true"><span>01</span> Journey</button>
+          <button type="button" data-map-mode="operations" aria-pressed="false"><span>02</span> Operations</button>
+          <button type="button" data-map-mode="flows" aria-pressed="false"><span>03</span> Flows</button>
+        </div>
       </div>
 
-      <aside class="detail-panel" id="detail-panel" aria-live="polite">
-        <div class="detail-date" id="detail-date">Select a stop</div>
-        <h2 id="detail-title">Route overview</h2>
-        <div class="detail-summary" id="detail-summary">Click a stop on the map to view route details, evidence forms, and interpretive notes.</div>
-        <div class="tag-row" id="detail-tags"></div>
-        <div class="detail-body" id="detail-body">
-          The route is designed as a research page for the Blaschka site. It visualises movement, but it also helps explain how the journey acted as a moving observational and logistical apparatus for later model production.
+      <div class="mode-explainer">
+        <p id="mode-copy"><strong>Journey</strong> follows Rudolf’s documented movement. The dashed route preserves the itinerary that circulated publicly even when the traveller had already moved on.</p>
+        <div class="mode-legend" id="mode-legend" aria-label="Current map legend"></div>
+      </div>
+
+      <div class="journey-layout">
+        <div class="journey-map-column">
+          <div class="map-frame journey-map-frame">
+            <div id="journey-map" role="region" aria-label="Interactive map of Rudolf Blaschka’s 1892 journey"></div>
+          </div>
+          <p class="map-method journey-map-note">Numbers are chronological sequence markers, not confidence rankings. The dashed public itinerary is retained only in Journey mode. Flow lines identify documented or explicitly prospective transfers and remote coordination rather than a second travel route.</p>
         </div>
-        <div class="controls">
-          <button class="route-nav" id="prev-stop" type="button">Previous stop</button>
-          <button class="route-nav" id="next-stop" type="button">Next stop</button>
-          <button class="route-reset" id="reset-view" type="button">Reset map</button>
-        </div>
-      </aside>
+
+        <aside class="journey-detail" id="detail-panel" aria-live="polite">
+          <div class="detail-heading">
+            <span class="detail-number" id="detail-no">01</span>
+            <div><p id="detail-date">1892-02-01</p><h2 id="detail-title">Bremen</h2></div>
+          </div>
+          <p class="detail-summary" id="detail-summary">Departure phase before Atlantic crossing.</p>
+          <div class="detail-tags" id="detail-tags"></div>
+
+          <dl class="knowledge-fields">
+            <div><dt>Encountered</dt><dd id="detail-encountered"></dd></div>
+            <div><dt>Done</dt><dd id="detail-done"></dd></div>
+            <div><dt>Moved onward</dt><dd id="detail-moved"></dd></div>
+            <div><dt>Enabled later</dt><dd id="detail-enabled"></dd></div>
+          </dl>
+
+          <div class="detail-why" id="detail-why-block" hidden>
+            <p class="detail-label">Why this node matters</p>
+            <p id="detail-why"></p>
+          </div>
+
+          <p class="detail-source"><span>Evidence anchor</span><b id="detail-source">Correspondence sequence in the 1892 archive layer</b></p>
+
+          <div class="journey-controls">
+            <button type="button" id="prev-stop">Previous</button>
+            <button type="button" id="next-stop">Next</button>
+            <button type="button" id="reset-view">Reset map</button>
+          </div>
+        </aside>
+      </div>
     </section>
-  </div>
+
+    <section class="route-directory" aria-labelledby="route-index-title">
+      <div class="route-directory-head">
+        <div><p class="eyebrow">Route index</p><h2 id="route-index-title">Follow the sequence</h2></div>
+        <p>Each number is shared by the map marker, the evidence panel and this index. Select any stop to return to it on the map.</p>
+      </div>
+      <div class="route-index" id="route-index" role="list" aria-label="Numbered route stops"></div>
+    </section>
+
+    <section class="journey-method" aria-labelledby="journey-method-title">
+      <p class="eyebrow">Method</p>
+      <div>
+        <h2 id="journey-method-title">The route and the knowledge chain are kept separate.</h2>
+        <p>The documented journey, the publicly circulated itinerary, the movement of plant material, and the movement of instructions are different evidential objects. They are shown together only when their difference remains visible. Unresolved locations remain outside the secure route.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="subpage-footer"><div class="footer-identity"><a class="footer-title" href="../../">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network">Contact</a><a href="../../rights/">Image rights</a><a href="../../privacy/">Privacy</a><a href="../../accessibility/">Accessibility</a><a href="../../feed.xml">RSS</a></div></footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./route-data.js?v=20260810-1"></script>
-  <script>
-    const data = window.RUDOLF_1892_ROUTE_DATA;
-    const documented = data.documentedRoute;
-    const planned = data.plannedPublicRoute;
-
-    const map = L.map('map', { scrollWheelZoom: true, worldCopyJump: false });
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    const documentedCoords = documented.map(d => [d.lat, d.lng]);
-    const plannedCoords = planned.map(d => [d.lat, d.lng]);
-
-    const documentedLine = L.polyline(documentedCoords, {
-      color: '#7d5330',
-      weight: 4,
-      opacity: 0.9
-    }).addTo(map);
-
-    const plannedLine = L.polyline(plannedCoords, {
-      color: '#5d7ea3',
-      weight: 3,
-      opacity: 0.85,
-      dashArray: '8 10'
-    }).addTo(map);
-
-    const documentedIcon = L.divIcon({
-      className: 'custom-doc-icon',
-      html: '<div style="width:14px;height:14px;background:#7d5330;border:2px solid #fff;border-radius:999px;box-shadow:0 0 0 1px rgba(30,27,23,.18);"></div>',
-      iconSize: [18,18],
-      iconAnchor: [9,9]
-    });
-
-    const markerMap = new Map();
-    let currentIndex = 0;
-
-    function setDetail(index) {
-      currentIndex = index;
-      const item = documented[index];
-      document.getElementById('detail-date').textContent = item.date;
-      document.getElementById('detail-title').textContent = item.title;
-      document.getElementById('detail-summary').textContent = item.summary;
-      document.getElementById('detail-body').textContent = item.detail;
-      const tags = document.getElementById('detail-tags');
-      tags.innerHTML = '';
-      (item.category || []).forEach(tag => {
-        const span = document.createElement('span');
-        span.className = 'tag';
-        span.textContent = tag;
-        tags.appendChild(span);
-      });
-      const marker = markerMap.get(item.id);
-      if (marker) {
-        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (reduced) map.setView([item.lat, item.lng], Math.max(map.getZoom(), 5));
-        else map.flyTo([item.lat, item.lng], Math.max(map.getZoom(), 5), { duration: 0.8 });
-        marker.openPopup();
-      }
-    }
-
-    documented.forEach((item, index) => {
-      const marker = L.marker([item.lat, item.lng], { icon: documentedIcon }).addTo(map);
-      marker.bindPopup(`<strong>${item.title}</strong><br>${item.date}<br><span style="color:#5f564d;">${item.summary}</span>`);
-      marker.on('click', () => setDetail(index));
-      markerMap.set(item.id, marker);
-    });
-
-    planned.forEach(item => {
-      L.circleMarker([item.lat, item.lng], {
-        radius: 4,
-        color: '#5d7ea3',
-        fillColor: '#5d7ea3',
-        fillOpacity: 0.75,
-        weight: 1
-      }).addTo(map).bindPopup(`<strong>${item.title}</strong><br><span style="color:#5f564d;">${item.note}</span>`);
-    });
-
-    const group = L.featureGroup([documentedLine, plannedLine, ...Array.from(markerMap.values())]);
-    map.fitBounds(group.getBounds().pad(0.18));
-
-    document.getElementById('prev-stop').addEventListener('click', () => {
-      setDetail((currentIndex - 1 + documented.length) % documented.length);
-    });
-
-    document.getElementById('next-stop').addEventListener('click', () => {
-      setDetail((currentIndex + 1) % documented.length);
-    });
-
-    document.getElementById('reset-view').addEventListener('click', () => {
-      map.fitBounds(group.getBounds().pad(0.18));
-    });
-
-    setDetail(0);
-  </script>
-  <script src="../../unified-ui.js?v=20260810-16" defer></script>
+  <script src="./knowledge-data.js?v=20260810-1"></script>
+  <script src="./map.js?v=20260810-1"></script>
+  <script src="../../unified-ui.js?v=20260810-17" defer></script>
 </body>
 </html>
