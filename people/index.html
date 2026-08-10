@@ -3,172 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="People in The Blaschka Object Network, organised by documented role in making, commissioning, trade, museum work, conservation and rediscovery.">
+  <meta name="description" content="A searchable working index of people in the Blaschka object network: makers, scientists, patrons, dealers, museum staff, collectors, conservators and researchers.">
   <title>People · The Blaschka Object Network</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../secondary.css">
-  <link rel="stylesheet" href="people.css?v=20260810-1">
+  <link rel="stylesheet" href="people.css?v=20260810-2">
 </head>
 <body class="subpage">
   <header class="subpage-header">
     <a class="subpage-brand" href="../">The Blaschka Object Network</a>
     <nav class="subpage-nav" aria-label="Site navigation">
-      <a href="../">Home</a><a href="../cases/">Cases</a><a href="../bibliography/">Bibliography</a><a href="../sources/">Sources</a><a href="../auctions/">Auctions</a><a href="../about/">About</a>
+      <a href="../cases/">Cases</a><a href="./" aria-current="page">People</a><a href="../bibliography/">Bibliography</a><a href="../sources/">Sources</a><a href="../auctions/">Auctions</a><a href="../about/">About</a>
     </nav>
   </header>
 
   <main class="subpage-main" id="main-content">
     <section class="page-intro" aria-labelledby="people-title">
-      <p class="eyebrow">Biographies</p>
+      <p class="eyebrow">Research biographies</p>
       <h1 id="people-title">People in the network</h1>
-      <p class="page-dek">A role-first index of people who made, commissioned, selected, sold, moved, conserved or recovered Blaschka objects. Roles are kept as narrow as the surviving evidence allows.</p>
+      <p class="page-dek">A searchable working index of makers, scientists, patrons, dealers, museum staff, collectors, conservators and researchers connected to documented Blaschka object chains.</p>
     </section>
 
-    <p class="people-intro-note">This is a selective working index, not a hall of fame. A person appears here because the project can connect them to a documented action in an object chain. Ambiguous or inferred roles remain qualified.</p>
-    <nav class="people-role-index" aria-label="Biography role groups">
-      <a href="#workshop">Workshop &amp; household</a>
-      <a href="#patronage">Patronage &amp; commissioning</a>
-      <a href="#trade">Trade &amp; logistics</a>
-      <a href="#museums">Museums &amp; collecting</a>
-      <a href="#conservation">Conservation &amp; rediscovery</a>
-    </nav>
+    <section class="people-tools" aria-label="Search and filter people">
+      <label class="people-search-label" for="people-search">Search</label>
+      <input id="people-search" type="search" autocomplete="off" placeholder="Name, role, institution or connection">
+      <label class="people-filter-label" for="people-role-filter">Role</label>
+      <select id="people-role-filter">
+        <option value="">All roles</option>
+        <option value="workshop_household">Workshop &amp; household</option>
+        <option value="patronage_commissioning">Patronage &amp; commissioning</option>
+        <option value="trade_logistics">Trade &amp; logistics</option>
+        <option value="scientific_collaboration">Science &amp; fieldwork</option>
+        <option value="museums_collecting">Museums &amp; collecting</option>
+        <option value="conservation_research">Conservation, rediscovery &amp; research</option>
+      </select>
+      <p class="people-result-count" id="people-result-count" aria-live="polite">Loading…</p>
+    </section>
 
-    <div class="people-groups">
-      <section class="people-group" id="workshop" aria-labelledby="workshop-label">
-        <p class="people-group-label" id="workshop-label">Workshop &amp; household</p>
-        <div class="people-group-body">
-          <article class="person-record" id="person-leopold-blaschka" data-record-id="PERS-BLASCHKA-LEOPOLD" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Maker · modeller · workshop proprietor</p><h2>Leopold Blaschka</h2></div>
-            <div><p>Leopold moved from the family glass and metal trade into scientific model making in the 1860s. Early botanical work, sea-anemone models and later zoological catalogues turned the Dresden studio into an international supplier of study objects. The record links observation, drawing, lampworked glass, cataloguing and commercial correspondence rather than treating the finished model as an isolated artwork.</p><p class="person-links"><a href="../about/">Project method</a> · <a href="../sources/">Primary sources</a></p></div>
-            <p class="person-record-meta">Record PERS-BLASCHKA-LEOPOLD · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-karolina-riegel-blaschka" data-record-id="PERS-BLASCHKA-KAROLINA" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Workshop household · knowledge mediation (qualified)</p><h2>Karolina (Carolina) Riegel Blaschka</h2></div>
-            <div><p>Karolina is visible in the surviving archive as more than a family label. Family papers preserve her legal and property presence in the workshop household, while correspondence repeatedly places her inside Rudolf’s working and visitor world. Harvard/Goodale papers also preserve a damaged 1897 note concerning a female geologist’s visit to Rudolf. The OCR does not support assigning Karolina a precise action during that visit, so this project treats knowledge mediation as a qualified research role rather than attributing model making or scientific authorship to her.</p><p class="person-links"><a href="../#project">Family and workshop chapter</a> · <a href="../sources/">Source index</a></p></div>
-            <p class="person-record-meta">Record PERS-BLASCHKA-KAROLINA · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-rudolf-blaschka" data-record-id="PERS-BLASCHKA-RUDOLF" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Maker · field observer · workshop successor</p><h2>Rudolf Blaschka</h2></div>
-            <div><p>Rudolf joined the studio in the 1870s and increasingly carried its scientific and technical work. His 1892 and 1895 American field trips fed botanical observation back into the Dresden workshop; the archive preserves sketchbooks, field photographs, travel material and correspondence from these journeys. After Leopold’s death he continued the Harvard botanical commission.</p><p class="person-links"><a href="../sources/">Archive and field sources</a> · <a href="../bibliography/">Bibliography</a></p></div>
-            <p class="person-record-meta">Record PERS-BLASCHKA-RUDOLF · version 1.0 · updated 2026-08-10</p>
-          </article>
+    <section class="people-section" aria-labelledby="people-list-title">
+      <div class="people-section-head">
+        <p class="eyebrow">A–Z by surname</p>
+        <div>
+          <h2 id="people-list-title">People</h2>
+          <p>Project-specific roles are kept as narrow as the surviving evidence allows. Authority and biographical links open the external record used to verify identity or context.</p>
         </div>
-      </section>
-
-      <section class="people-group" id="patronage" aria-labelledby="patronage-label">
-        <p class="people-group-label" id="patronage-label">Patronage &amp; commissioning</p>
-        <div class="people-group-body">
-          <article class="person-record" id="person-camille-de-rohan" data-record-id="PERS-ROHAN-CAMILLE" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Early patron</p><h2>Prince Camille de Rohan</h2></div>
-            <div><p>Rohan encountered Leopold’s early botanical work, commissioned one hundred exotic flower models for his private collection and supported further botanical study. He also connected Leopold with Ludwig Reichenbach, helping move the work from private patronage into a public scientific setting.</p></div>
-            <p class="person-record-meta">Record PERS-ROHAN-CAMILLE · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-ludwig-reichenbach" data-record-id="PERS-REICHENBACH-LUDWIG" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Naturalist · museum director · early scientific intermediary</p><h2>Ludwig Reichenbach</h2></div>
-            <div><p>As director of Dresden’s natural-history museum and botanical garden, Reichenbach arranged an exhibition of Leopold’s glass flowers in 1863. Later reconstructions also connect him to the early use of zoological source material. His importance here is institutional: he helped translate a glassworker’s modelling practice into a scientific museum context.</p></div>
-            <p class="person-record-meta">Record PERS-REICHENBACH-LUDWIG · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-george-lincoln-goodale" data-record-id="PERS-GOODALE-GEORGE" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Botanist · museum director · commissioner</p><h2>George Lincoln Goodale</h2></div>
-            <div><p>Goodale, founding director of Harvard’s Botanical Museum, negotiated the botanical commission with Leopold and Rudolf. The archive preserves the 1890 agreement as well as long-running correspondence. In this network he is both commissioner and scientific mediator, translating museum teaching needs into a sustained workshop programme.</p><p class="person-links"><a href="../sources/">Harvard and Corning sources</a></p></div>
-            <p class="person-record-meta">Record PERS-GOODALE-GEORGE · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-mary-lee-ware" data-record-id="PERS-WARE-MARY-LEE" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Principal sponsor · correspondent</p><h2>Mary Lee Ware</h2></div>
-            <div><p>The Rakow finding aid identifies Ware as the principal sponsor of the Blaschkas’ botanical models for Harvard. Her correspondence sits inside the same long-running scientific and financial relationship as Goodale’s. The project treats patronage here as infrastructure: sustained funding, communication and trust made the later workshop programme possible.</p></div>
-            <p class="person-record-meta">Record PERS-WARE-MARY-LEE · version 1.0 · updated 2026-08-10</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="people-group" id="trade" aria-labelledby="trade-label">
-        <p class="people-group-label" id="trade-label">Trade &amp; logistics</p>
-        <div class="people-group-body">
-          <article class="person-record" id="person-henry-augustus-ward" data-record-id="PERS-WARD-HENRY-A" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Natural-history dealer · supplier · intermediary</p><h2>Henry Augustus Ward</h2></div>
-            <div><p>Ward’s Natural Science Establishment connected the Blaschka workshop to museums and teaching collections, especially in North America. The Auckland case shows the mechanism clearly: catalogue circulation, exchange, samples, prices and a mixed account moved through Ward. The project does not assume that every American Blaschka acquisition passed through him; each route is proved separately.</p><p class="person-links"><a href="../cases/#sample-auckland">Auckland case</a></p></div>
-            <p class="person-record-meta">Record PERS-WARD-HENRY-A · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-robert-damon" data-record-id="PERS-DAMON-ROBERT" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">British dealer · commercial agent</p><h2>Robert Damon</h2></div>
-            <div><p>Workshop correspondence places Damon at the centre of British and Irish sales. An 1880 agency arrangement and later letters show him coordinating orders, advance payments and institutional delivery. The same agency could also constrain direct museum-to-Dresden dealing, as John Wesley Carr learned in Nottingham.</p><p class="person-links"><a href="../cases/#sample-liverpool">Liverpool case</a> · <a href="../cases/#sample-nottingham">Nottingham case</a></p></div>
-            <p class="person-record-meta">Record PERS-DAMON-ROBERT · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-charles-francis-adams" data-record-id="PERS-ADAMS-CHARLES-F" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Preparator · physical delivery actor</p><h2>Charles Francis Adams</h2></div>
-            <div><p>Adams appears in the Auckland procurement chain as the person who physically delivered Ward-linked Blaschka samples/models in 1885. A triangular settlement then linked what Auckland owed Ward, what Adams owed Ward and Ward’s Australian creditor. He is therefore treated as a carrier/preparator in the chain, not as the maker or seller of the models.</p><p class="person-links"><a href="../cases/#sample-auckland">Auckland case</a></p></div>
-            <p class="person-record-meta">Record PERS-ADAMS-CHARLES-F · version 1.0 · updated 2026-08-10</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="people-group" id="museums" aria-labelledby="museums-label">
-        <p class="people-group-label" id="museums-label">Museums &amp; collecting</p>
-        <div class="people-group-body">
-          <article class="person-record" id="person-thomas-frederick-cheeseman" data-record-id="PERS-CHEESEMAN-THOMAS-F" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Curator · buyer · correspondent</p><h2>Thomas Frederick Cheeseman</h2></div>
-            <div><p>Cheeseman’s long correspondence with Ward makes Auckland one of the clearest museum-side procurement stories in the project. He requested a priced catalogue, asked for samples before a larger commitment, worked within a restricted cash budget and repeatedly considered a much larger order that never materialised.</p><p class="person-links"><a href="../cases/#sample-auckland">Auckland case</a></p></div>
-            <p class="person-record-meta">Record PERS-CHEESEMAN-THOMAS-F · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-pietro-marchi" data-record-id="PERS-MARCHI-PIETRO" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Museum-side selector · collection architect</p><h2>Pietro Marchi</h2></div>
-            <div><p>The Florence evidence identifies Marchi as the architect of a systematic teaching collection assembled through multiple purchases. He selected catalogue models and built a local sequence that eventually numbered 118 objects. The surviving record does not justify saying that he personally made every payment or received every shipment.</p><p class="person-links"><a href="../cases/#sample-florence">Florence case</a></p></div>
-            <p class="person-record-meta">Record PERS-MARCHI-PIETRO · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-henry-higgins" data-record-id="PERS-HIGGINS-HENRY-H" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Invertebrate organiser · likely receiving actor</p><h2>Rev. Henry H. Higgins</h2></div>
-            <div><p>Higgins had already organised the Free Public Museum’s invertebrate collections and chaired its Museum Sub-Committee. The 1887 workshop dispatch for Liverpool names a Higgins as recipient; contextual identification with Henry H. Higgins is strong but remains guarded because the surviving workshop text is OCR-corrupted.</p><p class="person-links"><a href="../cases/#sample-liverpool">Liverpool case</a></p></div>
-            <p class="person-record-meta">Record PERS-HIGGINS-HENRY-H · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-john-wesley-carr" data-record-id="PERS-CARR-JOHN-W" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Museum director · teacher · correspondent</p><h2>John Wesley Carr</h2></div>
-            <div><p>Carr directed Nottingham’s municipal Natural History Museum while teaching natural sciences at University College Nottingham. Workshop correspondence shows him trying to engage the Dresden makers directly, but the British agency arrangement with Damon constrained that route. The letters document negotiation; they do not prove that Carr personally paid every invoice.</p><p class="person-links"><a href="../cases/#sample-nottingham">Nottingham case</a></p></div>
-            <p class="person-record-meta">Record PERS-CARR-JOHN-W · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-pt-barnum" data-record-id="PERS-BARNUM-PT" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Purchaser · museum benefactor</p><h2>P. T. Barnum</h2></div>
-            <div><p>Tufts archival research states that Barnum purchased Blaschka sea creatures in 1885 for exhibition in the Barnum Museum of Natural History. The purchase year, purchaser and purpose are strong; the exact model count, price and dealer route remain open.</p><p class="person-links"><a href="../cases/#sample-tufts">Tufts case</a></p></div>
-            <p class="person-record-meta">Record PERS-BARNUM-PT · version 1.0 · updated 2026-08-10</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="people-group" id="conservation" aria-labelledby="conservation-label">
-        <p class="people-group-label" id="conservation-label">Conservation &amp; rediscovery</p>
-        <div class="people-group-body">
-          <article class="person-record" id="person-stephen-koob" data-record-id="PERS-KOOB-STEPHEN" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Glass conservator</p><h2>Stephen Koob</h2></div>
-            <div><p>Koob’s work connects modern conservation directly to object biography. Corning conserved the ten Tufts models recovered from its loan custody, and Koob also worked on the additional Dana Laboratory finds. Vassar separately records an arrangement with him to repair and restore its Blaschka invertebrates. Complete object-level treatment registers are still a research target.</p><p class="person-links"><a href="../cases/#sample-tufts">Tufts case</a> · <a href="../cases/#sample-vassar">Vassar case</a></p></div>
-            <p class="person-record-meta">Record PERS-KOOB-STEPHEN · version 1.0 · updated 2026-08-10</p>
-          </article>
-
-          <article class="person-record" id="person-andrew-mcclellan" data-record-id="PERS-MCCLELLAN-ANDREW" data-record-version="1.0">
-            <div class="person-heading"><p class="person-role">Documentary rediscovery</p><h2>Andrew McClellan</h2></div>
-            <div><p>In 2006 McClellan rediscovered the Tufts archival correspondence that pointed back to Corning custody. That documentary find reopened a collection thought to have been destroyed in the 1975 Barnum Hall fire and led to the 2007 return of ten models. His role is a useful reminder that provenance can be recovered through records before objects themselves are found.</p><p class="person-links"><a href="../cases/#sample-tufts">Tufts case</a></p></div>
-            <p class="person-record-meta">Record PERS-MCCLELLAN-ANDREW · version 1.0 · updated 2026-08-10</p>
-          </article>
-        </div>
-      </section>
-    </div>
+      </div>
+      <div class="people-list" id="people-list"></div>
+      <p class="people-no-results" id="people-no-results" hidden>No matching people.</p>
+      <noscript><p class="people-no-results">This index uses a small script for search and filtering. The underlying records remain available in <a href="people-records.json">people-records.json</a>.</p></noscript>
+    </section>
 
     <section class="people-method-note">
-      <p class="people-group-label">Editorial rule</p>
-      <p>Roles are documentary claims, not honorifics. When the backend only supports “likely recipient,” “curator during the acquisition,” “route candidate” or another bounded formulation, this page keeps that qualifier. Future versions can add people when a transaction, source or object-level action is strong enough to justify a stable record.</p>
+      <p class="people-method-label">Editorial rule</p>
+      <p>These are working authority records, not a hall of fame. External databases establish identity, names, dates and broader biography; claims about a person’s place in the Blaschka network remain tied to project evidence. Qualified and unresolved relationships stay visible as such.</p>
     </section>
   </main>
 
   <footer class="subpage-footer"><a href="../">The Blaschka Object Network</a><span><a href="../about/">About</a> · <a href="./">People</a> · <a href="../rights/">Image rights</a> · <a href="../privacy/">Privacy</a> · <a href="../accessibility/">Accessibility</a></span></footer>
-  <script src="../unified-ui.js?v=20260810-11" defer></script>
+  <script src="people.js?v=20260810-2" defer></script>
+  <script src="../unified-ui.js?v=20260810-12" defer></script>
 </body>
 </html>
