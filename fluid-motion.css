@@ -1,61 +1,24 @@
 /* Motion system · restrained, GPU-friendly, and content-first */
-:root{
-  --fluid-ease:cubic-bezier(.16,1,.3,1);
-  --fluid-fast:220ms;
-  --fluid-medium:460ms;
-  --fluid-slow:620ms;
-}
+:root{--fluid-ease:cubic-bezier(.2,.8,.2,1);--fluid-fast:150ms;--fluid-medium:320ms;--fluid-slow:430ms}
 
 @view-transition{navigation:auto}
-::view-transition-group(root){animation-duration:460ms;animation-timing-function:var(--fluid-ease)}
-::view-transition-old(root){animation:ui-page-old 180ms ease-out both}
-::view-transition-new(root){animation:ui-page-new 460ms var(--fluid-ease) both}
-@keyframes ui-page-old{to{opacity:.84;transform:scale(.998)}}
-@keyframes ui-page-new{from{opacity:0;transform:translate3d(0,7px,0)}to{opacity:1;transform:none}}
+::view-transition-group(root){animation-duration:320ms;animation-timing-function:var(--fluid-ease)}
+::view-transition-old(root){animation:ui-page-old 130ms ease-out both}
+::view-transition-new(root){animation:ui-page-new 320ms var(--fluid-ease) both}
+@keyframes ui-page-old{to{opacity:.9;transform:scale(.999)}}
+@keyframes ui-page-new{from{opacity:0;transform:translate3d(0,5px,0)}to{opacity:1;transform:none}}
 
-/* Existing homepage compatibility. */
-.motion-ready .reveal{
-  opacity:0!important;
-  transform:translate3d(0,18px,0)!important;
-  transition:opacity var(--fluid-medium) var(--fluid-ease),transform var(--fluid-slow) var(--fluid-ease)!important;
-  transition-delay:var(--reveal-delay,0ms)!important;
-}
-.motion-ready .reveal.is-visible{opacity:1!important;transform:none!important}
+/* Homepage compatibility. */
+.motion-ready .reveal{opacity:0!important;transform:translate3d(0,15px,0)!important;transition:opacity var(--fluid-medium) var(--fluid-ease),transform var(--fluid-slow) var(--fluid-ease)!important;transition-delay:var(--reveal-delay,0ms)!important}.motion-ready .reveal.is-visible{opacity:1!important;transform:none!important}
 
-/* Subpages: animate sections, not hundreds of records. */
-html.ui-fluid-motion .ui-reveal{
-  opacity:0;
-  transform:translate3d(0,16px,0);
-  transition:opacity var(--fluid-medium) var(--fluid-ease),transform var(--fluid-slow) var(--fluid-ease);
-  transition-delay:var(--ui-reveal-delay,0ms);
-  will-change:opacity,transform;
-}
-html.ui-fluid-motion .ui-reveal.ui-visible{opacity:1;transform:none}
+/* Major subpage chapters: a small vertical reveal tied to scroll position. */
+.ui-section-reveal{opacity:0;transform:translate3d(0,18px,0);transition:opacity 360ms var(--fluid-ease),transform 470ms var(--fluid-ease);will-change:opacity,transform}.ui-section-reveal.ui-section-visible{opacity:1;transform:none;will-change:auto}
 
-/* Dense research lists must remain immediately readable. */
-.bib-entry,.source-az-entry,.source-entry,.auction-lot,.event,.source-row{
-  opacity:1!important;
-  transform:none!important;
-  filter:none!important;
-  will-change:auto!important;
-}
+/* Dense research lists are content, not scenery. Never hide them behind animation. */
+.bib-entry,.source-az-entry,.source-entry,.auction-lot,.event,.source-row{opacity:1!important;transform:none!important;filter:none!important;will-change:auto!important}
 
-/* Interactive surfaces use one motion curve. */
-.top-nav a,.subpage-nav a,.bib-tool-button,.source-az-alpha button,.source-az-filters button,
-.all-cases-link,.contact-actions a,.case-index-row,.auction-lot,.event,.case-figure img,.origin-photo img{
-  transition-timing-function:var(--fluid-ease)!important;
-}
-
+.top-nav a,.subpage-nav a,.bib-tool-button,.source-az-alpha button,.source-az-filters button,.all-cases-link,.contact-actions a,.case-index-row,.auction-lot,.event,.case-figure img,.origin-photo img{transition-timing-function:var(--fluid-ease)!important}
 .case-figure img,.origin-photo img,.case-thumb img{backface-visibility:hidden;transform:translateZ(0)}
-@media(hover:hover){
-  .case-figure:hover img,.origin-photo:hover img{transform:scale(1.012)}
-  body:not(.subpage) .case-index-row:hover .case-thumb img{transform:scale(1.02)!important}
-}
+@media(hover:hover){.case-figure:hover img,.origin-photo:hover img{transform:scale(1.009)}body:not(.subpage) .case-index-row:hover .case-thumb img{transform:scale(1.016)!important}}
 
-@media(prefers-reduced-motion:reduce){
-  @view-transition{navigation:none}
-  ::view-transition-old(root),::view-transition-new(root){animation:none!important}
-  html{scroll-behavior:auto!important}
-  html.ui-fluid-motion .ui-reveal,.motion-ready .reveal{opacity:1!important;transform:none!important;transition:none!important}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}::view-transition-old(root),::view-transition-new(root){animation:none!important}html{scroll-behavior:auto!important}.ui-section-reveal,.motion-ready .reveal{opacity:1!important;transform:none!important;transition:none!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
