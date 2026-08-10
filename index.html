@@ -7,7 +7,7 @@
   <title>The Blaschka Object Network</title>
   <link rel="stylesheet" href="home-v2.css?v=20260810-4">
   <link rel="stylesheet" href="hero-carousel.css?v=20260810-1">
-  <link rel="stylesheet" href="navigation-shell.css?v=20260810-2">
+  <link rel="stylesheet" href="navigation-shell.css?v=20260810-4">
   <link rel="stylesheet" href="home-core.css?v=20260810-1">
   <link rel="stylesheet" href="home-journey.css?v=20260810-2">
 </head>
@@ -19,7 +19,7 @@
       <a class="hero-brand" href="#top">The Blaschka Object Network</a>
       <nav class="top-nav" aria-label="Main navigation">
         <a href="cases/">Cases</a>
-        <a href="map/">Map</a>
+        <details class="nav-map-menu"><summary class="nav-map-trigger">Map</summary><div class="nav-map-panel"><a href="map/">Collections map</a><a href="map/rudolf-1892/">Rudolf 1892 journey</a></div></details>
         <a href="people/">People</a>
         <a href="bibliography/">Bibliography</a>
         <a href="sources/">Sources</a>
@@ -143,7 +143,7 @@
 
     <section class="journey-feature" id="journey-1892" aria-labelledby="journey-feature-title">
       <div class="journey-feature-inner">
-        <div class="journey-feature-head reveal">
+        <div class="journey-feature-head">
           <div>
             <p class="eyebrow">Knowledge in motion</p>
             <h2 id="journey-feature-title">A workshop on the move</h2>
@@ -151,7 +151,7 @@
           <p>Rudolf Blaschka’s 1892 journey makes it possible to follow more than a traveller. Field observation, drawing, microscopy, preservation, seeds, bulbs, correspondence and later workshop production moved through the same itinerary in different ways.</p>
         </div>
 
-        <a class="journey-feature-card reveal" href="map/rudolf-1892/" aria-label="Open the interactive map of Rudolf Blaschka’s 1892 journey">
+        <a class="journey-feature-card" href="map/rudolf-1892/" aria-label="Open the interactive map of Rudolf Blaschka’s 1892 journey">
           <div class="journey-feature-map" aria-hidden="true">
             <svg viewBox="0 0 760 430" preserveAspectRatio="xMidYMid meet">
               <path class="journey-feature-route-shadow" d="M64 132 C124 96 167 92 213 124 C255 153 272 225 330 253 C389 282 438 245 476 198 C512 153 560 129 613 148 C659 164 691 220 715 272"/>
@@ -209,6 +209,6 @@
     </div>
   </footer>
   <script src="home-v2.js?v=20260810-11" defer></script>
-  <script src="home-map-nav.js?v=20260810-2" defer></script>
+  <script src="home-map-nav.js?v=20260810-3" defer></script>
 </body>
 </html>
