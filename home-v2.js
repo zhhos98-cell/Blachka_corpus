@@ -1,6 +1,10 @@
 (() => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const compact = matchMedia('(max-width:900px)').matches;
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const saveData = Boolean(connection?.saveData);
+  const slowConnection = ['slow-2g','2g'].includes(connection?.effectiveType || '');
+  const bandwidthConstrained = saveData || slowConnection;
 
   const addStyle = (href, token) => {
     const wanted = new URL(href, location.href).href;
@@ -21,6 +25,14 @@
     script.defer = true;
     document.head.appendChild(script);
   };
+  const afterLoadIdle = (callback, timeout = 3200) => {
+    const queue = () => {
+      if ('requestIdleCallback' in window) requestIdleCallback(callback, {timeout});
+      else setTimeout(callback, 700);
+    };
+    if (document.readyState === 'complete') queue();
+    else addEventListener('load', queue, {once:true});
+  };
 
   addScript('accessibility.js?v=20260810-2', 'accessibility.js');
 
@@ -32,11 +44,11 @@
     rss.href = 'feed.xml';
     document.head.appendChild(rss);
   }
-  if (!compact && !document.querySelector('script[src*="nav-glide.js"]')) {
-    const script = document.createElement('script');
-    script.src = 'nav-glide.js?v=20260810-2';
-    script.defer = true;
-    document.head.appendChild(script);
+
+  /* The navigation remains fully usable without the glide effect. Load that small
+     decoration only after the page and hero have had first claim on bandwidth. */
+  if (!compact && !reduced && !bandwidthConstrained && !document.querySelector('script[src*="nav-glide.js"]')) {
+    afterLoadIdle(() => addScript('nav-glide.js?v=20260811-1', 'nav-glide.js'));
   }
 
   /* Invariant: brand = Home; the same seven primary destinations stay in the same slots. */
@@ -105,6 +117,10 @@
     description.querySelector('p').textContent = slides[0].description;
     hero.appendChild(description);
 
+    const autoRotationDisabled = reduced || bandwidthConstrained;
+    const pauseControl = controls.querySelector('.hero-carousel-pause');
+    if (autoRotationDisabled && pauseControl) pauseControl.hidden = true;
+
     let current = 0;
     let active = heroImage;
     let inactive = swap;
@@ -146,7 +162,7 @@
     };
     const startTimer = () => {
       stopTimer();
-      if (reduced || manuallyPaused || document.hidden) return;
+      if (autoRotationDisabled || manuallyPaused || document.hidden) return;
       timer = setInterval(() => showSlide((current + 1) % slides.length), 10000);
     };
 
@@ -168,16 +184,21 @@
     document.addEventListener('visibilitychange', startTimer);
     const preloaded = new Set();
     const preloadSlide = index => {
-      if (index === current || preloaded.has(index)) return;
+      if (autoRotationDisabled || index === current || preloaded.has(index)) return;
       preloaded.add(index);
       const img = new Image();
       img.decoding = 'async';
       img.src = slides[index].src;
     };
     const queueNext = () => {
+      if (autoRotationDisabled) return;
       const next = (current + 1) % slides.length;
-      if ('requestIdleCallback' in window) requestIdleCallback(() => preloadSlide(next), {timeout:2200});
-      else setTimeout(() => preloadSlide(next), 1000);
+      const preload = () => {
+        if ('requestIdleCallback' in window) requestIdleCallback(() => preloadSlide(next), {timeout:5000});
+        else setTimeout(() => preloadSlide(next), 1200);
+      };
+      if (document.readyState === 'complete') preload();
+      else addEventListener('load', preload, {once:true});
     };
     hero.addEventListener('transitionend', queueNext, {passive:true});
     queueNext();
