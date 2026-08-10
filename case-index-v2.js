@@ -13,6 +13,13 @@
   addStylesheet('portal-pass3.css?v=20260810-1', 'portalPass3');
   addStylesheet('search-scope-v2.css?v=20260810-1', 'searchScopeV2');
   addStylesheet('portal-pass4.css?v=20260810-1', 'portalPass4');
+  addStylesheet('apple-unified.css?v=20260810-1', 'appleUnified');
+
+  const main = document.querySelector('main');
+  if (main && !main.id) main.id = 'main-content';
+  if (main && !document.querySelector('.ui-skip-link')) {
+    document.body.insertAdjacentHTML('afterbegin', '<a class="ui-skip-link" href="#main-content">Skip to content</a>');
+  }
 
   if (!document.querySelector('script[data-map-ratio-fix]')) {
     const script = document.createElement('script');
