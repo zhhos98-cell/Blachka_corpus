@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Dealer Upstream Supply Register",
+  "generated_date": "2026-08-10",
+  "scope": "Evidence for the material supply systems feeding the three principal Blaschka distributors before objects reached museum customers. The register tracks collectors, specimen suppliers, preservation practices and procurement routes to test dealers as assemblers of heterogeneous natural-history commodities rather than passive resale points.",
+  "evidence_guard": "Upstream specimen supply is not automatically connected to Blaschka manufacture. The register compares the dealer infrastructure that moved specimens, teaching preparations and models while keeping individual shipments and object categories distinct unless a source explicitly joins them.",
+  "records": [
+    {
+      "id": "UPSTREAM-WARD-HORNADAY-1873-1879",
+      "dealer": "Ward's Natural Science Establishment",
+      "supplier_actor": "William Temple Hornaday",
+      "archive": "William T. Hornaday Papers, Manuscript Division, Library of Congress, MSS52126",
+      "date_range": "1873–1879",
+      "status": "dealer_upstream_collector_network",
+      "evidence": "The Library of Congress biographical chronology records Hornaday beginning work at Ward's Natural Science Establishment in 1873, followed by zoological expeditions to Florida, Cuba and the Bahamas in 1874, South America in 1876, and India, Ceylon, the Malay Peninsula and Borneo in 1877–1879. A contemporary Nature review of Hornaday's 1885 book says Ward sent him to India to collect zoological desiderata, especially skins and skeletons of larger mammals and crocodiles.",
+      "research_value": "Shows Ward creating supply by commissioning field collecting and preservation, not merely buying finished specimens at Rochester. The dealer network extended upstream into expedition labour, taxidermy and decisions about which bodies could be made transportable for museums.",
+      "blaschka_guard": "No claim is made that Hornaday collected reference material for the Blaschkas or that his specimens travelled with glass models.",
+      "locators": [
+        "https://findingaids.loc.gov/repositories/19/resources/5431",
+        "https://www.nature.com/articles/033173a0"
+      ]
+    },
+    {
+      "id": "UPSTREAM-DAMON-TABLE-CAPE-JOHNSTON",
+      "dealer": "Robert Damon",
+      "supplier_actor": "R. M. Johnston",
+      "receiving_repository": "Natural History Museum Archives, London",
+      "reference": "DF/PAL/105/2/34",
+      "status": "dealer_upstream_specimen_chain",
+      "evidence": "The NHM Damon authority record describes Mollusca from Table Cape, Tasmania, collected by R. M. Johnston and purchased from Robert Damon.",
+      "research_value": "A compact collector → dealer → museum chain demonstrating that Damon aggregated geographically distant specimen supply before resale to an institutional customer.",
+      "blaschka_guard": "The transaction concerns natural molluscan specimens, not Blaschka glass models.",
+      "locator": "https://www.nhm.ac.uk/CalmView/Record.aspx?id=PX32&src=CalmView.Persons"
+    },
+    {
+      "id": "UPSTREAM-DAMON-PAUL-MOHR-AMERICAN-SILURIAN",
+      "dealer": "Robert Damon",
+      "supplier_actor": "Paul Mohr",
+      "receiving_repository": "Natural History Museum Archives, London",
+      "reference": "DF/PAL/105/3/14",
+      "status": "dealer_upstream_specimen_chain",
+      "evidence": "The NHM Damon authority record lists a collection of American Silurian fossils sent by Paul Mohr through Robert Damon.",
+      "research_value": "The wording makes the dealer's routing role explicit: material from another collector passes through Damon to the museum. It is a useful comparator for understanding agency and forwarding functions in Blaschka sales.",
+      "blaschka_guard": "Not a Blaschka transaction.",
+      "locator": "https://www.nhm.ac.uk/CalmView/Record.aspx?id=PX32&src=CalmView.Persons"
+    },
+    {
+      "id": "UPSTREAM-FRIC-VRAZ-WEST-AFRICA",
+      "dealer": "Václav Frič / V. Frič natural-history business",
+      "supplier_actor": "Enrique Stanko Vráz",
+      "date_range": "late 1880s; West African collecting expedition 1885–1888",
+      "status": "dealer_upstream_collector_and_packing_network",
+      "evidence": "Grant Museum research, drawing on Reiling and Spunarová, reports that Frič wrote several letters to Vráz in Africa requesting zoological specimens including termites and sent crates containing alcohol-filled glass containers for preservation and shipment to Prague. Surviving Frič–Vráz termite preparations show multiple securing bands; the original jars were reportedly closed with paraffin-wax paper tied with twine to reduce leakage during travel.",
+      "research_value": "Exceptionally useful comparator because procurement instructions, preservation containers, internal stabilisation and long-distance shipment all appear inside the dealer's upstream chain. It demonstrates that fragility management and packaging expertise already existed in dealers' specimen traffic alongside their model trade.",
+      "blaschka_guard": "The termites and Vráz correspondence are not evidence for a Blaschka model shipment or reference specimen. The comparison concerns dealer logistics and preservation practice.",
+      "locator": "https://blogs.ucl.ac.uk/museums/2016/11/11/specimen-of-the-week-265-termite-collection/"
+    },
+    {
+      "id": "UPSTREAM-FRIC-CROSSCATEGORY-NAPLES",
+      "dealer": "Václav Frič / V. Frič natural-history business",
+      "status": "dealer_cross_category_supply_context",
+      "evidence": "Published business reconstruction identifies Frič as a dealer in zoological specimens and teaching aids on an international scale; separate project evidence already records his sale of marine material sourced from Naples as well as Blaschka glass invertebrates.",
+      "research_value": "Frič provides the clearest route for asking whether preserved natural specimens and manufactured models were alternatives or complements within one dealer repertoire and customer network.",
+      "guard": "No individual Naples specimen is linked to a specific Blaschka model without transaction- or object-level evidence.",
+      "locator": "https://publikace.nm.cz/periodicke-publikace/journal-of-the-national-museum-prague-natural-history-series/191-1/obchod-s-prirodninami-v-fric-a-jeho-prinos-mineralogicke-sbirce-narodniho-muzea-praha"
+    }
+  ],
+  "research_observation": "Dealer circulation had an upstream as well as a downstream side. Ward commissioned collectors and preservation labour; Damon routed specimens from named collectors into museum markets; Frič sent containers and preservation infrastructure outward to collectors before receiving material back in Prague. The same firms that made Blaschka models marketable were already experienced in making heterogeneous natural-history material collectable, documentable and transportable.",
+  "comparative_questions": [
+    "Which logistical practices were inherited from specimen trade when dealers began selling glass models?",
+    "Did manufactured glass require different liability, packing and insurance terms from skins, skeletons, shells, fossils and fluid specimens?",
+    "How did dealers decide whether to source nature as a specimen, preparation, cast or model for a given teaching market?",
+    "Can dealer catalogues and museum invoices show preserved specimens and models offered to the same customers as substitute or complementary commodities?"
+  ]
+}
