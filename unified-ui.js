@@ -48,15 +48,20 @@
     else addEventListener('load', queue, {once:true});
   };
 
-  addStyle(`${prefix}navigation-shell.css?v=20260811-1`, 'navigation-shell.css');
+  /* site-core already contains the canonical navigation-shell and nav-glide CSS.
+     Bibliography is the exception: it deliberately skips site-core, so it receives
+     the small shell CSS directly and the decorative glide CSS only after load/idle. */
   if (!isBibliography) addStyle(`${prefix}site-core.css?v=20260810-1`, 'site-core.css');
-  else addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
+  else {
+    addStyle(`${prefix}navigation-shell.css?v=20260811-1`, 'navigation-shell.css');
+    addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
+  }
 
-  /* Navigation works without the glide. Treat it as decoration and let content,
-     page CSS and search controls win the first-load bandwidth race. */
+  /* Navigation works without the glide. Treat the script as decoration and let
+     content, page CSS and search controls win the first-load bandwidth race. */
   if (!phoneOrTablet && !reducedMotion && !bandwidthConstrained) {
     afterLoadIdle(() => {
-      addStyle(`${prefix}nav-glide.css?v=20260811-1`, 'nav-glide.css');
+      if (isBibliography) addStyle(`${prefix}nav-glide.css?v=20260811-1`, 'nav-glide.css');
       addScript(`${prefix}nav-glide.js?v=20260811-1`, 'nav-glide.js');
     });
   }
