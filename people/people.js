@@ -55,9 +55,16 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     })
-    .then(data => {
-      groups = data.groups || {};
-      records = (data.records || []).slice().sort((a,b) => (a.sort || a.name).localeCompare(b.sort || b.name, 'en', {sensitivity:'base'}));
+    .then(manifest => {
+      groups = manifest.groups || {};
+      const parts = manifest.parts || [];
+      return Promise.all(parts.map(path => fetch(path).then(response => {
+        if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
+        return response.json();
+      })));
+    })
+    .then(parts => {
+      records = parts.flatMap(part => part.records || []).sort((a,b) => (a.sort || a.name).localeCompare(b.sort || b.name, 'en', {sensitivity:'base'}));
       render();
       const params = new URLSearchParams(location.search);
       if (params.get('q')) input.value = params.get('q');
@@ -69,6 +76,6 @@
     })
     .catch(() => {
       count.textContent = 'People index unavailable';
-      list.innerHTML = '<p class="people-no-results">The people data could not be loaded. The machine-readable file is <a href="people-records.json">available here</a>.</p>';
+      list.innerHTML = '<p class="people-no-results">The people data could not be loaded. The machine-readable manifest is <a href="people-records.json">available here</a>.</p>';
     });
 })();
