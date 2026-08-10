@@ -14,6 +14,7 @@ This directory contains the public auction page and the structured market-proven
 - `berlin-krefeld-provenance-audit.json` — dedicated audit separating Humboldt University's Zoologische Lehrsammlung from the Museum für Naturkunde branch behind the `Zoolog. Institut Universität, Berlin` labels on Krefeld 2025 lots 26–27.
 - `krefeld-hydractinia-156-crosswalk.json` — pass-10 crosswalk resolving Krefeld lot 27's `Stachelpolyp` to `Hydractinia echinata`, recovering Blaschka catalogue no. 156, and checking that exact key against the complete project transcription of the published MfN OS001-02 inventory.
 - `auction-science-museum-recipient-audit.json` — bounded public-web audit of the Science Museum 1925–27 dispersal, retaining UCL and Cardiff as the two currently secure named recipients and routing the remaining five names into archive work.
+- `science-museum-register-neighborhoods.json` — pass-12 object-number crosswalk showing consecutive Science Museum register numbers splitting between Cardiff institutional transfer and later private-market circulation, plus the Blaschka no. 330 institutional/auction naming conflict.
 
 ## Admission rule
 
@@ -57,11 +58,17 @@ Krefeld lot 26 remains taxonomically open. The MfN inventory contains possible a
 
 The Krefeld `around 1870` dating remains untouched as auction metadata. Current HU examples and the Berlin acquisition chronology make the date worth testing, but collection chronology alone cannot redetermine an unidentified physical object.
 
-### Science Museum branch: public web exhausted before archive routing
+### Science Museum branch: register numbers reveal mixed dispersal at object scale
 
 UCL states that the Science Museum's 1925–27 deaccession transferred Blaschka models to UCL and six other institutions. Cardiff / Amgueddfa Cymru is independently secure as one of those six, with **62 models transferred in 1927**. A fresh targeted public-web pass did not securely recover a third recipient. That is recorded as a bounded negative result, not an exhaustive historical claim.
 
-The next Science Museum route is therefore archival and number-led: `CORP/SCM/02/02/7/421` transfer/disposal index -> relevant 1920–27 nominal files -> `CORP/SCM/Z/048` store-register ultimate-disposal annotations. Exact numbers such as `1877-360`, `1877-376` and `1877-381` already demonstrate that the deaccession produced later market survivals as well as institutional transfers.
+Pass 12 sharpens the dispersal from collection level to exact historical register neighborhoods. The Cardiff curatorial inventory preserves `1877-361` as *Charybdea periphyllum* at NMW `27.407.09`, while Christie’s later market record preserves immediately preceding `1877-360` as *Polyclonia frondosa*. A second consecutive pair splits in the opposite direction: Cardiff holds `1877-380` as *Physalia arethusa*, while Christie’s lot 46 preserves `1877-381` as *Physalia physalis*. In both cases, consecutive Science Museum numbers now occupy different provenance regimes.
+
+This does **not** prove that adjacent numbers were transferred together or constituted one workshop set. It does establish register neighborhoods such as `360/361` and `376/380/381/385/397` as more powerful archival search units than the maker name alone. The priority question for the transfer/disposal papers is whether those neighboring numbers appear on common schedules with divergent disposition annotations.
+
+The same Cardiff crosswalk also clarifies Blaschka catalogue no. **330**. Science Museum `1877-202`, transferred to Cardiff as NMW `27.406.10`, is recorded as `Pontobdella (Hirudo) vittata`, catalogue no. 330; Cornell likewise associates no. 330 with old name `Pontobdella (Hirudo) vittata`. James D. Julia's 2005 auction page, however, transcribes its original label as `Pontobdella Muricata, L. No 330`. That discrepancy is retained as a source-level taxon/label conflict. Shared no. 330 demonstrates repeated circulation of one catalogue/model design; it does not make the Cardiff, Cornell, Glasgow or Julia examples the same physical object.
+
+The next Science Museum route remains archival and number-led: `CORP/SCM/02/02/7/421` transfer/disposal index -> relevant 1920–27 nominal files -> `CORP/SCM/Z/048` store-register ultimate-disposal annotations, now queried by paired number neighborhoods as well as individual identifiers.
 
 ### Loudon dealer route
 
@@ -79,18 +86,20 @@ George Loudon's first-person accounts remain a separate dealer-provenance proble
 - `../research/logs/2026-08-10-auction-deep-sweep-pass09-science-museum-recipient-web-audit.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass10-krefeld-hydractinia-156.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass11-berlin-archive-series-router.md`
+- `../research/logs/2026-08-10-auction-deep-sweep-pass12-science-museum-register-neighborhoods.md`
 
 ## Next search layer
 
 Priority remains away from another broad auction-house sweep. The immediate order is:
 
-1. HU historical inventory plus 1886-transfer and 1968–1970 reduction/gift/transfer/loss records using exact keys `Hydractinia echinata`, `Stachelpolyp`, **Blaschka no. 156**, `ZI`, and `IfZ`.
-2. MfN archive remote routing into `S001`, `S003`, `S004-04`, and `S005-02`; physical records access is currently suspended, so seek file-level identifiers by email before any later visit.
-3. Image-level audit of Krefeld lot 27 for any additional label, handwritten taxon, catalogue number or old inventory number; keep lot 26 open until equivalent evidence appears.
-4. Rakow MS 0013 `Hydractinia echinata` drawing record as a design-comparison source, without converting visual similarity into provenance proof.
-5. Science Museum transfer/disposal index and store registers keyed by exact 1877 object numbers.
-6. Glasgow `1909.66` / Mason purchase files.
-7. Identification of Loudon's London dealer and English public school.
-8. Return to old auction catalogues only after these routes yield new names, catalogue numbers, taxa or provenance anchors.
+1. Science Museum archive metadata and later archive access: search the paired register neighborhoods `1877-360/361` and `1877-380/381`, then the wider `376/380/381/385/397` cluster; recover the administrative logic of the 1877 numbering before interpreting adjacency historically.
+2. UCL object-level work: attempt to recover old Science Museum numbers on the transfer-derived subset while keeping Lankester 1890 models separate.
+3. HU historical inventory plus 1886-transfer and 1968–1970 reduction/gift/transfer/loss records using exact keys `Hydractinia echinata`, `Stachelpolyp`, **Blaschka no. 156**, `ZI`, and `IfZ`.
+4. MfN archive remote routing into `S001`, `S003`, `S004-04`, and `S005-02`; physical records access is currently suspended, so seek file-level identifiers by email before any later visit.
+5. Image-level audit of Krefeld lot 27 for any additional label, handwritten taxon, catalogue number or old inventory number; keep lot 26 open until equivalent evidence appears.
+6. Rakow MS 0013 `Hydractinia echinata` drawing record as a design-comparison source, without converting visual similarity into provenance proof.
+7. Glasgow `1909.66` / Mason purchase files.
+8. Identification of Loudon's London dealer and English public school.
+9. Return to old auction catalogues only after these routes yield new names, catalogue numbers, taxa or provenance anchors.
 
 False positives, count wording conflicts, inferred identities and spelling variants are retained in the structured backend/search logs to prevent repeated rediscovery or accidental conversion of ambiguous market evidence into settled provenance.
