@@ -2,7 +2,7 @@
   const wall = document.querySelector('.case-wall');
   if (!wall) return;
 
-  const commons = file => `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(file)}?width=520`;
+  const commons = file => `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(file)}?width=420`;
   const media = [
     { src:commons('Blaschka Natural History Museum Londres 28072013 2.jpg') },
     { src:'https://collections.museumsvictoria.com.au/specimens/616326/media/1041173/medium' },
@@ -24,7 +24,7 @@
     const thumb = document.createElement('span');
     thumb.className = 'case-thumb case-thumb--image case-thumb--illustrative';
     thumb.setAttribute('aria-hidden', 'true');
-    thumb.innerHTML = `<img src="${media[index % media.length].src}" alt="" loading="lazy" decoding="async">`;
+    thumb.innerHTML = `<img src="${media[index % media.length].src}" alt="" loading="lazy" decoding="async" fetchpriority="low">`;
     if (number) number.insertAdjacentElement('afterend', thumb);
     else front.prepend(thumb);
   });
