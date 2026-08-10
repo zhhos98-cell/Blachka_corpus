@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Dealer Sales Print Register",
+  "generated_date": "2026-08-10",
+  "scope": "Dealer-produced or dealer-distributed catalogues, pamphlets, bulletins and exhibition sales print used to reconstruct how natural-history objects and Blaschka models were converted into selectable, priced and orderable commodities.",
+  "evidence_guard": "A dealer catalogue is direct Blaschka evidence only when the source or a precise archival description identifies Blaschka models. General dealer catalogues are commercial controls. A catalogue known through a published archival citation is kept distinct from a currently verified digital item record.",
+  "records": [
+    {
+      "id": "PRINT-FRIC-NHM-1886-29-139",
+      "dealer": "Václav Frič / V. Frič natural-history business",
+      "repository": "Natural History Museum Archives, London",
+      "reference": "Zoological Department, Letters January–June 1886, 29/139",
+      "date": "n.d. [c.1886]",
+      "extent": "43-page catalogue reported in published archival research",
+      "status": "direct_blaschka_published_archival_locator",
+      "evidence": "J. P. Short cites a forty-three-page Frič naturalia catalogue at this archival locator and reports that it offered Blaschka holothurians, corals, medusae and sea anemones among a much wider range of naturalia. The catalogue marketed glass imitations of sea creatures as a way to teach inland schools about organisms difficult to preserve or observe.",
+      "research_value": "A direct dealer-side witness to category placement: Blaschka models were sold inside a broad natural-history catalogue rather than through an isolated art-glass market. This permits page-level comparison of models with reptiles, fishes, crustaceans, insects, birds, mammals and other commodities in the same sales environment.",
+      "catalogue_guard": "The exact 29/139 item has not yet been cross-walked to a modern item-level CalmView record in this pass. The archival locator is retained as a precise published citation and should be verified against the physical or scanned file before quoting catalogue wording from the original.",
+      "locator": "https://www.nhm.ac.uk/CalmView/"
+    },
+    {
+      "id": "PRINT-WARD-ANSP-1879",
+      "dealer": "Henry Augustus Ward / Ward's Museum",
+      "repository": "Academy of Natural Sciences of Drexel University Archives",
+      "reference": "ANSP-2012-060",
+      "date": "1879-06-01",
+      "status": "direct_blaschka",
+      "evidence": "The related Blaschka archival description identifies the Ward pamphlet as advertising Blaschka glass models and Ward's American agency, with customers directed toward the glass-model catalogue.",
+      "research_value": "Direct evidence that agency status and catalogue access were publicly marketed to North-American customers.",
+      "locator": "https://archivalcollections.drexel.edu/repositories/3/resources/842"
+    },
+    {
+      "id": "PRINT-WARD-BULLETIN-1881-1886",
+      "dealer": "Ward's Natural Science Establishment",
+      "repository": "Biodiversity Heritage Library / Smithsonian Libraries and Archives",
+      "source": "Ward's natural science bulletin, vols. 1–3",
+      "date_range": "1881–1886",
+      "status": "dealer_house_print",
+      "evidence": "Public-domain run of the firm's own bulletin, available for issue- and page-level searching.",
+      "research_value": "Can recover the firm's commercial rhetoric, product categories, customers and announcements during the mature Blaschka-distribution period.",
+      "blaschka_guard": "No page is promoted as Blaschka-specific until inspected and verified.",
+      "locator": "https://www.biodiversitylibrary.org/item/212981"
+    },
+    {
+      "id": "PRINT-DAMON-WOODWARD-GENERIC-1859",
+      "dealer": "Robert Damon",
+      "author": "Samuel Pickworth Woodward",
+      "title": "Generic catalogue of recent & fossil shells",
+      "publication": "Weymouth: Printed for R. Damon",
+      "date": "1859",
+      "status": "dealer_sales_print_control",
+      "evidence": "A complete public-domain copy survives through the Biodiversity Heritage Library / Internet Archive. The imprint explicitly states that it was printed for R. Damon in Weymouth.",
+      "research_value": "Shows Damon using printed systematic cataloguing as commercial infrastructure two decades before the Blaschka agency. It is a baseline for later model catalogues and dealer/customer list practices.",
+      "blaschka_guard": "Predates the Blaschka agency and concerns recent and fossil shells.",
+      "locator": "https://commons.wikimedia.org/wiki/File:Generic_catalogue_of_recent_%26_fossil_shells_%28IA_genericcatalogue00wood%29.pdf"
+    },
+    {
+      "id": "PRINT-DAMON-SHELLS-1857",
+      "dealer": "Robert Damon",
+      "title": "A catalogue of the shells of Great Britain and Ireland with their synonyms and authorities",
+      "publication": "Weymouth: R. Damon",
+      "date": "1857",
+      "status": "dealer_sales_print_control",
+      "evidence": "Biodiversity Heritage Library catalogues the volume under Robert Damon with Weymouth imprint R. Damon.",
+      "research_value": "An earlier Damon catalogue establishing his use of taxonomy, synonymy and printed lists as part of a dealer/collector knowledge economy.",
+      "blaschka_guard": "Not Blaschka evidence.",
+      "locator": "https://www.biodiversitylibrary.org/"
+    },
+    {
+      "id": "PRINT-FRIC-PARIS-1889",
+      "dealer": "Václav Frič",
+      "title": "Exposition universelle de 1889, à Paris: V. Frič, Naturaliste à Prague, 1544-II (Bohême Autriche)",
+      "publication": "Prague",
+      "date": "1889",
+      "extent": "pp. 1–4, as cited in museum research",
+      "status": "bibliographic_sales_print_witness",
+      "evidence": "Grant Museum research cites the four-page Paris exhibition guide while discussing Frič's marketed preparations and teaching material.",
+      "research_value": "Places catalogue-style sales presentation inside an international exhibition environment at the end of the marine-model period.",
+      "source_guard": "A standalone digitised primary copy has not been isolated in this pass; retain as a bibliographic retrieval target rather than a transcribed source.",
+      "locator": "https://blogs.ucl.ac.uk/museums/2016/11/11/specimen-of-the-week-265-termite-collection/"
+    }
+  ],
+  "research_observation": "Sales print was an operating technology of the dealer network. Catalogues and bulletins classified objects into selectable units, supplied names and numbers, framed educational uses and gave customers a vocabulary for ordering at distance. The Frič catalogue is especially important because it places Blaschka models inside the same commercial taxonomy as natural specimens and other teaching material.",
+  "next_retrieval": [
+    "Verify NHM 29/139 against the physical or digitised 1886 correspondence series and photograph/transcribe the Blaschka pages plus adjacent commodity categories.",
+    "Search Ward's natural science bulletin page by page for Blaschka, glass, invertebrate, model, catalogue, packing, freight, insurance, school, college and museum.",
+    "Compare Damon 1857/1859 shell catalogue structure with Ward and Frič model catalogues: numbering, synonymy, price, selection, address and ordering instructions.",
+    "Locate a primary copy of Frič's 1889 Paris exhibition guide before using its wording as evidence."
+  ]
+}
