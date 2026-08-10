@@ -6,15 +6,16 @@ This file records the public information-architecture invariant so page-specific
 
 The site name/brand is always the Home control. The header then uses one fixed sequence on every public page:
 
-1. Project — homepage project chapter (`/#project`)
-2. Cases
-3. People
-4. Bibliography
-5. Sources
-6. Auctions
-7. About
+1. Cases
+2. People
+3. Bibliography
+4. Sources
+5. Auctions
+6. About
 
-Entering a page must not reorder, add, remove or rename these destinations. The current primary page receives `aria-current="page"` but stays in exactly the same slot. The Project anchor is not treated as the current page on secondary routes.
+Every item in the global navigation is now a full page destination. `Project` remains a homepage chapter (`/#project`) reached by scrolling or the homepage Explore cue; it is deliberately not a global navigation item. This removes the previous exception where one header item behaved like an in-page anchor while its neighbours behaved like page routes.
+
+Entering a page must not reorder, add, remove or rename these destinations. The current primary page receives `aria-current="page"` but stays in exactly the same slot.
 
 The point is spatial memory: after one page, the reader should already know where every primary destination will be on the next page.
 
@@ -28,7 +29,7 @@ The footer does not repeat the primary navigation. It carries only secondary tas
 - Accessibility
 - RSS
 
-The project name and copyright notice remain in the footer as identity/ownership information, not as another navigation menu. People is no longer duplicated in the footer because it is a primary research destination.
+The project name and copyright notice remain in the footer as identity/ownership information, not as another navigation menu. People is not duplicated in the footer because it is a primary research destination.
 
 ## Page-local navigation
 
@@ -38,6 +39,7 @@ Filters, A–Z controls, bibliography selection/export tools, role indexes, case
 
 - Brand always returns Home.
 - Global items keep the same order and geometry on every route.
+- Every global navigation item is a page route; page-internal anchors remain inside their page.
 - Hover can preview or highlight; hover must never navigate.
 - Click/tap/keyboard activation performs navigation or selection.
 - Touch users must receive the same core information without hover.
