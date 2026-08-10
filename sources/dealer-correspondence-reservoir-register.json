@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Dealer Correspondence Reservoir Register",
+  "generated_date": "2026-08-10",
+  "scope": "Named letter, invoice and customer-side correspondence reservoirs for Henry Augustus Ward / Ward's Natural Science Establishment, Robert Damon / Robert Ferris Damon, and Václav Frič. The purpose is to reconstruct dealer business outside the surviving corporate centre by identifying stable archival units in customers', collectors' and museum records.",
+  "evidence_guard": "Correspondence with a documented Blaschka dealer is not automatically Blaschka correspondence. Records are promoted to direct Blaschka evidence only when the item, finding aid or archival reconstruction explicitly identifies the models, catalogue, order, agency, payment, packing, shipment or receipt. Undated or uninspected catalogue entries remain business-network evidence only.",
+  "records": [
+    {
+      "id": "CORR-DAMON-FLORENCE-PAULUCCI-BOX51",
+      "dealer": "Robert Damon",
+      "repository": "Archivio di Stato di Firenze",
+      "collection": "Panciatichi Ximenes d'Aragona family archive — Marianna Paulucci malacological correspondence",
+      "reference": "ASFI-APXA, box 51",
+      "date_range": "1865–1873",
+      "extent": "36 letters",
+      "language": "English",
+      "status": "dealer_business_correspondence",
+      "evidence": "The 2024 published inventory identifies Robert Damon of Weymouth as a natural-history dealer and records thirty-six letters in box 51. The wider Paulucci epistolary includes sellers, invoices for purchased malacological material, and dealer shell lists.",
+      "research_value": "The largest currently identified single customer-side Damon correspondence cluster in this project. It predates the documented Blaschka agency and can establish Damon's ordinary shell-trade vocabulary, ordering rhythm, pricing and customer relations before glass models entered his business.",
+      "blaschka_guard": "No Blaschka content is asserted without reading the letters. The date range ends before the documented 1880 Blaschka agency.",
+      "locator": "https://revue-colligo.fr/index.php?id=95&view=article"
+    },
+    {
+      "id": "CORR-DAMON-ANSP-CONCH-BOX4-F24",
+      "dealer": "Robert Damon",
+      "repository": "Academy of Natural Sciences of Drexel University Archives",
+      "collection": "ANSP Conchological Section papers",
+      "reference": "Box 4, Folder 24",
+      "date": "1868",
+      "document_type": "dealer invoice",
+      "status": "dealer_business_financial_record",
+      "evidence": "The finding aid explicitly lists 'Damon, R. Invoice Coll. Arthur Adams - Damon's invoice of British Shells, 1868.' The same Conchological Section series preserves cash books, ledgers, receipts, vouchers, bankbook/checkbook material and other dealer shipment records.",
+      "research_value": "A concrete pre-agency Damon invoice embedded in a receiving institution's financial archive. It provides a documentary-form control for later invoices, remittances and lists in Blaschka transactions.",
+      "blaschka_guard": "The invoice concerns British shells, not glass models.",
+      "locator": "https://findingaids.library.upenn.edu/records/ANSP_ANSP.COLL.0081"
+    },
+    {
+      "id": "CORR-WARD-MISSOURI-UW1-4-1-BOX7-FF2G",
+      "dealer": "Ward's Natural Science Establishment",
+      "repository": "University of Missouri Archives",
+      "collection": "University administrative records, (UW:1/4/1)",
+      "reference": "Box 7, FF 2G",
+      "date": "1889",
+      "document_type": "dealer correspondence, payment requests and bills of lading",
+      "status": "dealer_business_correspondence",
+      "evidence": "The official inventory identifies Ward's Natural Science Establishment correspondence and materials concerning purchase of the elephant 'Emperor' and other museum specimens, an advertisement, requests for payment and bills of lading.",
+      "research_value": "Same-period Ward receiving-side paperwork in which object purchase, advertising, payment and freight documentation survive together. It is a strong control for the document bundle expected around a dealer-mediated shipment.",
+      "blaschka_guard": "The file is not identified as a Blaschka transaction.",
+      "locator": "https://muarchives.missouri.edu/uw-rg1-s1-4.html"
+    },
+    {
+      "id": "CORR-DAMON-DARWIN-KOTS-188-190",
+      "dealer": "Robert F. Damon / Damon business",
+      "repository": "State Darwin Museum, Moscow",
+      "collection": "A. F. Kots archival correspondence, fond ОФ-12497",
+      "references": ["КП ОФ-12497/188", "КП ОФ-12497/190"],
+      "document_type": "dealer letters to A. F. Kots",
+      "status": "dealer_business_correspondence_uninspected",
+      "evidence": "The State Darwin Museum digital discovery system indexes correspondence from Robert F. Damon / the Weymouth natural-history business to Alexander F. Kots. Public discovery metadata currently does not provide enough content to connect the letters to Blaschka models.",
+      "research_value": "Extends the geographically dispersed Damon business archive into a Russian museum-formation context and should be read alongside other natural-history dealer letters preserved in the same Kots correspondence universe.",
+      "blaschka_guard": "No date or Blaschka content is imposed beyond the online catalogue metadata available in this pass.",
+      "locator": "https://www.darwinmuseum.ru/foundation/xmlui/discover?filter_0=%D0%9E%D0%A4-12497&filtertype_0=Fond"
+    },
+    {
+      "id": "CORR-FRIC-DARWIN-KOTS-319",
+      "dealer": "V. Frič natural-history business, Prague",
+      "repository": "State Darwin Museum, Moscow",
+      "collection": "A. F. Kots archival correspondence, fond ОФ-12497",
+      "reference": "КП ОФ-12497/319",
+      "document_type": "dealer correspondence",
+      "status": "dealer_business_correspondence_uninspected",
+      "evidence": "The State Darwin Museum discovery system indexes correspondence under 'V.Fric in Prag, Naturalien-Handlung' within the Kots papers.",
+      "research_value": "The same customer archive preserves Frič and Damon business correspondence, creating a potential cross-dealer comparison outside western European and North American museums.",
+      "blaschka_guard": "The public index does not establish date, item content or a Blaschka transaction.",
+      "locator": "https://new.darwinmuseum.ru/foundation/xmlui/discover?filter_0=%D0%9E%D0%A4-12497&filtertype_0=Fond"
+    }
+  ],
+  "research_observation": "The useful unit is not always a dealer fonds. Damon in particular becomes archivally substantial when customer archives are treated as correspondence reservoirs: Florence supplies a thirty-six-letter cluster and Philadelphia supplies a dated invoice inside a financial series. Ward can be read both from its intact Rochester corporate archive and from receiving-side bundles containing payment and freight documents. Moscow shows that dealer correspondence can also survive in later museum-building archives where multiple suppliers coexist.",
+  "next_retrieval": [
+    "Request or inspect the thirty-six Damon letters in ASFI-APXA box 51 and code catalogue, price, order, shipment, payment, exchange and complaint vocabulary.",
+    "Retrieve ANSP Conchological Section Box 4 Folder 24 together with the adjacent ledger, receipts and voucher files to reconstruct Damon's invoice form in 1868.",
+    "Retrieve Missouri Box 7 FF 2G as a Ward paperwork bundle and compare bills of lading with Blaschka-mediated freight records.",
+    "Open the State Darwin Museum Damon and Frič records at item level before assigning dates or transaction content."
+  ]
+}
