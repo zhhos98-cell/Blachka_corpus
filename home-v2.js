@@ -148,6 +148,12 @@
     about.textContent = 'About & method';
     contactActions.appendChild(about);
   }
+  if (contactActions && !contactActions.querySelector('a[href="people/"]')) {
+    const biographies = document.createElement('a');
+    biographies.href = 'people/';
+    biographies.textContent = 'People & roles';
+    contactActions.appendChild(biographies);
+  }
 
   const footer = document.querySelector('footer');
   if (footer && !document.querySelector('.home-subscribe')) {
@@ -158,7 +164,7 @@
   if (footer) {
     const inner = footer.querySelector('.footer-inner');
     if (inner && !inner.querySelector('.footer-copyright')) {
-      inner.innerHTML = `<div class="footer-identity"><a class="footer-title" href="#top">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="about/">About</a><a href="cases/">Cases</a><a href="bibliography/">Bibliography</a><a href="sources/">Sources</a><a href="auctions/">Auctions</a><a href="rights/">Image rights</a><a href="privacy/">Privacy</a><a href="accessibility/">Accessibility</a><a class="footer-rss" href="feed.xml" type="application/rss+xml" aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="19" r="2.2"/><path d="M3 10.5v3a7.5 7.5 0 0 1 7.5 7.5h3A10.5 10.5 0 0 0 3 10.5Zm0-6v3A13.5 13.5 0 0 1 16.5 21h3C19.5 11.9 12.1 4.5 3 4.5Z"/></svg><span>RSS</span></a></div>`;
+      inner.innerHTML = `<div class="footer-identity"><a class="footer-title" href="#top">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="about/">About</a><a href="people/">People</a><a href="cases/">Cases</a><a href="bibliography/">Bibliography</a><a href="sources/">Sources</a><a href="auctions/">Auctions</a><a href="rights/">Image rights</a><a href="privacy/">Privacy</a><a href="accessibility/">Accessibility</a><a class="footer-rss" href="feed.xml" type="application/rss+xml" aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="19" r="2.2"/><path d="M3 10.5v3a7.5 7.5 0 0 1 7.5 7.5h3A10.5 10.5 0 0 0 3 10.5Zm0-6v3A13.5 13.5 0 0 1 16.5 21h3C19.5 11.9 12.1 4.5 3 4.5Z"/></svg><span>RSS</span></a></div>`;
     }
   }
 
