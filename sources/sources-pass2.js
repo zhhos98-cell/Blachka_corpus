@@ -1,5 +1,19 @@
 (() => {
+  if (!document.querySelector('link[href*="source-hero-v2.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'source-hero-v2.css?v=20260810-1';
+    document.head.appendChild(link);
+  }
+
   const intro = document.querySelector('.source-intro');
+  if (intro && !intro.querySelector('.source-intro-credit')) {
+    const credit = document.createElement('p');
+    credit.className = 'source-intro-credit';
+    credit.innerHTML = `Visuals: <a href="https://evolution.earthathome.org/blaschka/biography/" target="_blank" rel="noopener">Ward's 1878 catalogue title page ↗</a> · <a href="https://collections.museumsvictoria.com.au/specimens/616326" target="_blank" rel="noopener">Museums Victoria, <em>Chrysaora hysoscella</em>, Rodney Start, CC BY 4.0 ↗</a>`;
+    intro.appendChild(credit);
+  }
+
   const firstSection = document.querySelector('.source-section');
   const list = firstSection?.querySelector('.source-list');
   if (!intro || !list || list.querySelector('[data-source-pass="2"]')) return;
