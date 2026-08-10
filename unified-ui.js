@@ -8,6 +8,10 @@
   const prefix = isSubpage ? (staticBrandHref || '../') : '';
   const phoneOrTablet = matchMedia('(max-width:900px)').matches;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const saveData = Boolean(connection?.saveData);
+  const slowConnection = ['slow-2g','2g'].includes(connection?.effectiveType || '');
+  const bandwidthConstrained = saveData || slowConnection;
 
   const addStyle = (href, token) => {
     const wanted = new URL(href, location.href).href;
@@ -35,13 +39,28 @@
     url.searchParams.set('v', version);
     link.href = url.href;
   };
+  const afterLoadIdle = (callback, timeout = 3200) => {
+    const queue = () => {
+      if ('requestIdleCallback' in window) requestIdleCallback(callback, {timeout});
+      else setTimeout(callback, 700);
+    };
+    if (document.readyState === 'complete') queue();
+    else addEventListener('load', queue, {once:true});
+  };
 
   addStyle(`${prefix}navigation-shell.css?v=20260811-1`, 'navigation-shell.css');
   if (!isBibliography) addStyle(`${prefix}site-core.css?v=20260810-1`, 'site-core.css');
   else addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
-  if (!phoneOrTablet) addStyle(`${prefix}nav-glide.css?v=20260811-1`, 'nav-glide.css');
 
-  if (!phoneOrTablet && !reducedMotion) addScript(`${prefix}nav-glide.js?v=20260811-1`, 'nav-glide.js');
+  /* Navigation works without the glide. Treat it as decoration and let content,
+     page CSS and search controls win the first-load bandwidth race. */
+  if (!phoneOrTablet && !reducedMotion && !bandwidthConstrained) {
+    afterLoadIdle(() => {
+      addStyle(`${prefix}nav-glide.css?v=20260811-1`, 'nav-glide.css');
+      addScript(`${prefix}nav-glide.js?v=20260811-1`, 'nav-glide.js');
+    });
+  }
+
   addScript(`${prefix}accessibility.js?v=20260810-2`, 'accessibility.js');
   refreshPageCss('sources.css', '20260810-7');
   refreshPageCss('bibliography.css', '20260810-8');
