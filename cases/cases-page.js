@@ -2,12 +2,12 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-4';
+    ui.src = '../unified-ui.js?v=20260810-5';
     ui.defer = true;
     document.head.appendChild(ui);
   }
   const matrix = document.querySelector('link[href*="case-wall-matrix.css"]');
-  if (matrix) matrix.href = 'case-wall-matrix.css?v=20260810-3';
+  if (matrix) matrix.href = 'case-wall-matrix.css?v=20260810-4';
 
   const target = document.getElementById('case-sections');
   const loading = document.getElementById('cases-loading');
