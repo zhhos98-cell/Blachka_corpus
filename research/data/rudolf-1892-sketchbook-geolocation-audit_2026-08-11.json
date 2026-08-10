@@ -1,15 +1,17 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "created": "2026-08-11",
+  "updated": "2026-08-11",
   "title": "Rudolf Blaschka 1892 sketchbook geolocation audit",
   "scope": "Backend-only spatial calibration of selected filmed sketchbook pages against correspondence, historical maps, landmark geometry and landscape form.",
   "frontend_policy": "Do not expose this image-derived layer or any sketchbook image on public Pages in this phase.",
   "method": {
     "principle": "Represent the precision actually supported by the evidence. Do not convert field areas, travel corridors or inferred sightlines into false exact points.",
-    "classes": ["exact_point", "field_area", "corridor", "probable_view_sector"],
+    "classes": ["exact_point", "field_area", "corridor", "probable_view_sector", "nonspatial_working_note"],
     "bearing_convention": "degrees clockwise from true north",
     "distance_units": "km",
-    "modern_coordinate_guard": "Modern coordinates are used only as geometric control points. They do not by themselves prove a nineteenth-century viewpoint."
+    "modern_coordinate_guard": "Modern coordinates are used only as geometric control points. They do not by themselves prove a nineteenth-century viewpoint.",
+    "image_reading_guard": "A place/date identification inferred by synchronizing an image with correspondence must not be described as an inscription unless the graphite itself supports that reading."
   },
   "cases": [
     {
@@ -19,60 +21,27 @@
       "inscription_status": "secure visual reading",
       "archive_control": "BLA-D00786 · 017:140",
       "spatial_class": "field_area",
-      "baseline": {
-        "label": "Maricopa railroad settlement/station vicinity",
-        "model_coordinate": [33.057, -112.04875],
-        "coordinate_status": "approximate modeling baseline, not a surveyed 1892 viewpoint"
-      },
+      "baseline": {"label": "Maricopa railroad settlement/station vicinity", "model_coordinate": [33.057, -112.04875], "coordinate_status": "approximate modeling baseline, not a surveyed 1892 viewpoint"},
       "terrain_candidates": [
-        {
-          "name": "Sierra Estrella / Hayes Peak sector",
-          "control_coordinate": [33.2728, -112.2801],
-          "distance_from_baseline_km": 32.24,
-          "bearing_from_baseline_deg": 318.16,
-          "assessment": "primary candidate",
-          "reason": "Long rugged range rising beyond a broad desert plain is compatible with the sketch; Sierra Estrella is a major continuous range northwest of Maricopa."
-        },
-        {
-          "name": "Table Top Mountains sector",
-          "control_coordinate": [32.75333, -112.12534],
-          "distance_from_baseline_km": 34.52,
-          "bearing_from_baseline_deg": 191.98,
-          "assessment": "alternative candidate",
-          "reason": "Comparable distance but a different viewing direction; retained until horizon profiles or a more diagnostic peak form resolves orientation."
-        }
+        {"name": "Sierra Estrella / Hayes Peak sector", "control_coordinate": [33.2728, -112.2801], "distance_from_baseline_km": 32.24, "bearing_from_baseline_deg": 318.16, "assessment": "primary candidate", "reason": "Long rugged range rising beyond a broad desert plain is compatible with the sketch. Sierra Estrella runs on a NW-SE alignment and is the dominant high range northwest of the Maricopa baseline."},
+        {"name": "Table Top Mountains sector", "control_coordinate": [32.77227, -112.12319], "distance_from_baseline_km": 32.41, "bearing_from_baseline_deg": 192.40, "assessment": "alternative candidate", "reason": "A comparable-distance southern mountain candidate; retained because the sketch alone does not yet determine viewing direction."}
       ],
       "historical_controls": [
-        {
-          "title": "Map of Maricopa County Arizona Showing Salt River Valley ...",
-          "date": "ca. 1890",
-          "institution": "Arizona State Library, Archives and Public Records / Arizona Memory Project",
-          "url": "https://azmemory.azlibrary.gov/nodes/view/102069",
-          "use": "railroads, roads, relief/hachures, desert land and county-scale spatial context"
-        },
-        {
-          "title": "Maricopa & Phoenix Railroad timetable",
-          "date": "published 20 February 1891; timetable in effect June 1890",
-          "institution": "Library of Congress, Chronicling America",
-          "url": "https://chroniclingamerica.loc.gov/lccn/sn84020558/1891-02-20/ed-1/seq-1/",
-          "use": "confirms Phoenix-Tempe-Kyrene-Sacaton-Maricopa rail sequence and Southern Pacific connection at Maricopa"
-        }
+        {"title": "Map of Maricopa County Arizona Showing Salt River Valley ...", "date": "ca. 1890", "institution": "Arizona State Library, Archives and Public Records / Arizona Memory Project", "url": "https://azmemory.azlibrary.gov/nodes/view/102069", "use": "period railroads, roads, relief/hachures, desert land and county-scale context"},
+        {"title": "Sierra Estrella Peak / Hayes Peak modern terrain control", "institution": "modern coordinate cross-check", "url": "https://www.surgent.net/highpoints/az/azp1k.html", "use": "control coordinate and range identity only; not historical evidence"}
       ],
-      "current_result": {
-        "place_date_confidence": 0.98,
-        "sierra_estrella_confidence": 0.58,
-        "exact_viewpoint_confidence": 0.15,
-        "recommended_geometry": "field-area ellipse/polygon around Maricopa desert, with candidate sightline NW to Sierra Estrella stored only as hypothesis"
-      }
+      "current_result": {"place_date_confidence": 0.98, "sierra_estrella_confidence": 0.62, "exact_viewpoint_confidence": 0.15, "recommended_geometry": "field-area ellipse/polygon around Maricopa desert, with candidate sightline NW to Sierra Estrella stored only as hypothesis"},
+      "delta_from_pass1": "Sierra Estrella confidence raised slightly because independent range geometry confirms a prominent NW-SE range at the correct distance/bearing; no exact viewpoint claim."
     },
     {
       "id": "sketch-p08-p09-maricopa-cactus-desert",
       "pages": [8, 9],
-      "inscription": "probable: Cactus-Wüste bei Maricopa (Arizona) / 24. April 1892",
-      "visible_note": "Opuntia bigelovii",
+      "inscription": "Cactus-Wüste bei Maricopa (Arizona) / 24. April 1892 [high-probability reading]",
+      "inscription_status": "high-confidence visual reading after contrast review",
+      "visible_note": "Opuntia bigelovii [high-probability reading]",
       "archive_control": "BLA-D00786 · 017:140; BLA-D00796 · 017:150",
       "spatial_class": "field_area",
-      "assessment": "Same-day Maricopa landscape group. Mountain identification remains open; Sierra Estrella is currently the leading range candidate, not a secure identification.",
+      "assessment": "Same-day Maricopa landscape group. The caption can be upgraded from medium-high to high confidence. Mountain identification remains open; Sierra Estrella is currently the leading candidate, not a secure identification.",
       "recommended_geometry": "same Maricopa field-area object as p04-p05, but preserve page-level distinction"
     },
     {
@@ -83,89 +52,42 @@
       "spatial_class": "corridor",
       "candidate": "Maricopa-Yuma-Salton-Coachella/San Jacinto transit sequence, 24-25 April 1892",
       "reasoning": [
-        "The sketch follows the securely dated Maricopa group in the filmed sequence and precedes the Hesperia group.",
+        "The sketch follows the securely dated Maricopa group in the filmed sequence.",
         "Rudolf's San Diego retrospective account explicitly describes a rocky range behind chaparral and cactus across Arizona to Yuma, then a widening near-barren California desert, the below-sea-level Salton depression, and finally a climb past snow-covered San Jacinto.",
-        "The sketch shows a large steep rocky massif rising abruptly from sparse stony desert, compatible with a San Jacinto/Colorado Desert view but not diagnostic enough for a point."
+        "The sketch shows a large steep rocky massif rising abruptly from sparse stony desert. This is compatible with a San Jacinto/Colorado Desert view but is not diagnostic enough for a point."
       ],
       "historical_controls": [
-        {
-          "title": "Matthews, Northrup & Co's official railroad map of the United States ...",
-          "date": "1890",
-          "institution": "Library of Congress",
-          "url": "https://www.loc.gov/item/gm71000843/",
-          "use": "period railroad-network control"
-        },
-        {
-          "title": "Railroad And County Map Of California",
-          "date": "1890",
-          "institution": "David Rumsey Map Collection",
-          "url": "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~216340~5502642",
-          "use": "California railroad and county context"
-        }
+        {"title": "Correct map of the railway & steamship lines operated by the Southern Pacific Company", "date": "January 1892", "institution": "David Rumsey Historical Map Collection", "url": "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~22066~760030:Railway,-steamship-lines,-Southern-", "use": "same-year Southern Pacific route control for California, Arizona and the Sunset route"},
+        {"title": "Amerine & Wilson's indexed township & county map of California", "date": "1892", "institution": "David Rumsey Historical Map Collection", "url": "https://www.davidrumsey.com/luna/servlet/view/all/what/Railroad/Pocket%2BMap/when/1892", "use": "same-year California rail/topographic context; eastern San Bernardino and San Diego counties shown separately"}
       ],
-      "current_result": {
-        "corridor_confidence": 0.65,
-        "san_jacinto_candidate_confidence": 0.55,
-        "exact_viewpoint_confidence": 0.10,
-        "recommended_geometry": "rail corridor segment only; no marker"
-      }
+      "current_result": {"corridor_confidence": 0.68, "san_jacinto_candidate_confidence": 0.55, "exact_viewpoint_confidence": 0.10, "recommended_geometry": "rail corridor segment only; no marker"},
+      "guard": "Do not assign a point or named peak until silhouette/rail-mile evidence improves."
     },
     {
       "id": "sketch-p17-hesperia",
       "pages": [17],
-      "inscription": "probable visual reading: Wüste bei Hesperia ...; probable date line 5 May 1892",
+      "inscription": null,
+      "visible_note": "Yucca brevifolia [probable visual reading; not yet a diplomatic transcription]",
+      "identification_basis": "correspondence + distinctive ecology + landscape morphology, not an inscription",
       "archive_control": "Agua Caliente letter of 7 May retrospectively describing Hesperia on 5 May",
       "spatial_class": "field_area",
       "historical_controls": [
-        {
-          "title": "Map No. 1 of Hesperia San Bernardino County, Cal.; showing town and acre properties",
-          "date": "circa 1890",
-          "institution": "The Huntington",
-          "call_number": "ephMPCALIFT0097",
-          "url": "https://www.huntington.org/collections/lib-p15150coll4-5211",
-          "use": "recover the early townsite and relation of lots/railroad"
-        },
-        {
-          "title": "Hesperia",
-          "date": "circa 1890; catalogue notes layout in 1891",
-          "institution": "The Huntington",
-          "call_number": "ephMPCALIFT0096",
-          "url": "https://www.huntington.org/collections/lib-p15150coll4-5210",
-          "use": "second townsite-map control"
-        },
-        {
-          "title": "San Bernardino County history: Hesperia",
-          "institution": "San Bernardino County",
-          "url": "https://main.sbcounty.gov/2025/10/09/san-bernardino-county-history-hesperia/",
-          "use": "independent confirmation that the California Southern Railroad reached the area and established a small depot/townsite in 1887"
-        }
+        {"title": "Map No. 1 of Hesperia San Bernardino County, Cal.; showing town and acre properties", "date": "circa 1890", "institution": "The Huntington", "call_number": "ephMPCALIFT0097", "url": "https://www.huntington.org/collections/lib-p15150coll4-5211", "use": "recover early townsite and railroad relation"},
+        {"title": "Hesperia", "date": "circa 1890; catalogue says Hesperia was laid out in 1891", "institution": "The Huntington", "call_number": "ephMPCALIFT0096", "url": "https://www.huntington.org/collections/lib-p15150coll4-5210", "use": "second townsite-map control; later than map no.1 according to Huntington"},
+        {"title": "Hesperia Train Station historical marker", "institution": "Historical Marker Database; secondary proxy", "url": "https://www.hmdb.org/m.asp?m=166550", "use": "locational proxy only: marker says the 15 x 20 ft moveable station stood directly across Hesperia Road; California Southern used Hesperia as a stopping point"},
+        {"title": "Hesperia Hotel historical marker", "institution": "Historical Marker Database; secondary proxy", "url": "https://www.hmdb.org/m.asp?m=166544", "use": "locational proxy only: records the three-story hotel at the same marker area from 1887; useful because Rudolf says he stayed at a hotel near the station"}
       ],
-      "terrain_model": {
-        "baseline": "Hesperia historic townsite/depot vicinity; exact 1892 depot coordinates still to be recovered from map",
-        "modern_hesperia_center_used_for_rough_bearing": [34.422, -117.3047],
+      "proxy_model": {
+        "station_marker_coordinate": [34.424583, -117.301883],
+        "coordinate_status": "modern historical-marker location; the marker text places the original station directly across Hesperia Road, so this is a proxy, not an exact 1892 building coordinate",
         "candidate_peaks": [
-          {
-            "name": "San Bernardino Peak",
-            "control_coordinate": [34.12233, -116.92251],
-            "distance_km": 48.41,
-            "bearing_deg": 133.39
-          },
-          {
-            "name": "San Gorgonio Mountain",
-            "control_coordinate": [34.0991, -116.8249],
-            "distance_km": 56.86,
-            "bearing_deg": 129.02
-          }
+          {"name": "San Bernardino Peak", "control_coordinate": [34.12233, -116.92251], "distance_km": 48.42, "bearing_deg": 133.85},
+          {"name": "San Gorgonio Mountain", "control_coordinate": [34.0991, -116.8249], "distance_km": 56.84, "bearing_deg": 129.41}
         ],
-        "assessment": "Both high-peak controls lie southeast from Hesperia. This agrees with a general southeast viewing sector for the mountain backdrop, but the modeled baseline is too coarse to identify a specific summit from the drawing."
+        "assessment": "Both high-peak controls cluster in a narrow southeast sector. The sketch cannot distinguish the peaks. The proper inference is a broad southeast view toward the San Bernardino high country."
       },
-      "current_result": {
-        "hesperia_confidence": 0.94,
-        "southeast_view_sector_confidence": 0.72,
-        "specific_peak_confidence": 0.35,
-        "exact_viewpoint_confidence": 0.25,
-        "recommended_geometry": "field-area around the 1891 townsite/depot plus a broad SE view sector; route-revision candidate 5 May"
-      }
+      "current_result": {"hesperia_confidence": 0.92, "southeast_view_sector_confidence": 0.78, "specific_peak_confidence": 0.25, "exact_viewpoint_confidence": 0.30, "recommended_geometry": "field area around historic hotel/depot townsite plus broad SE view sector; backend route-revision candidate for 5 May"},
+      "correction_from_pass1": "Withdraw the earlier claim that the graphite itself reads 'Wüste bei Hesperia' or carries a 5 May date. Close image inspection instead suggests the botanical phrase Yucca brevifolia."
     },
     {
       "id": "sketch-p23-port-antonio",
@@ -174,85 +96,63 @@
       "archive_control": "BLA-D00736 · 017:90 and related Jamaica retrospective correspondence: landing at Port Antonio on 28 February and onward Bowden passage",
       "spatial_class": "probable_view_sector",
       "landmark_controls": [
-        {
-          "name": "Folly Point Lighthouse",
-          "coordinate": [18.18883, -76.44313],
-          "historical_status": "built/first lit 1888; therefore present in 1892",
-          "visual_relation": "striped lighthouse at left of the sketch"
-        },
-        {
-          "name": "Navy Island",
-          "coordinate": [18.18727, -76.45335],
-          "visual_relation": "palm-covered island/land mass to the right of the sketch"
-        }
+        {"name": "Folly Point Lighthouse", "coordinate": [18.18883, -76.44313], "historical_status": "built 1888; present in 1892", "visual_relation": "broadly banded tower at left of sketch; later visual documentation describes the lighthouse as red and white striped"},
+        {"name": "Navy Island", "coordinate": [18.18727, -76.45335], "visual_relation": "palm-covered island/land mass to the right of the sketch"}
       ],
       "historical_controls": [
-        {
-          "title": "Folly Point Lighthouse, Portland",
-          "institution": "National Library of Jamaica Digital Collection",
-          "url": "https://nljdigital.nlj.gov.jm/items?page=332&sort_field=Dublin%20Core%2CTitle",
-          "use": "identifies Folly Point lighthouse and gives 1888 construction date"
-        },
-        {
-          "title": "A prospect of Port Antonio and town of Titchfield ... taken from Navy Island",
-          "institution": "National Library of Jamaica Digital Collection",
-          "identifier": "D0007574",
-          "url": "https://nljdigital.nlj.gov.jm/items/show/6762",
-          "use": "historical topographic comparison for Port Antonio, Titchfield and Navy Island"
-        },
-        {
-          "title": "Admiralty Chart No 453 Port Antonio Jamaica",
-          "survey": "John Lear and Stephen Seymour, 1790; published 1815",
-          "url": "https://commons.wikimedia.org/wiki/File:Admiralty_Chart_No_453_Port_Antonio_Jamaica,_Published_1815.jpg",
-          "use": "harbour topology and entrance geometry; predates the lighthouse but preserves headlands/island configuration"
-        }
+        {"title": "Folly Point Lighthouse in Port Antonio, Jamaica", "institution": "University of Central Florida Libraries, Bryant West Indies slides", "url": "https://stars.library.ucf.edu/bwi-slides-jamaica/180/", "use": "independent description: red-and-white striped lighthouse, built 1888 at tip of Folly Peninsula"},
+        {"title": "A prospect of Port Antonio and town of Titchfield ... taken from Navy Island", "institution": "Library of Congress / public-domain copy on Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:A_prospect_of_Port_Antonio,_and_town_of_Titchfield,_in_parish_of_Portland,_on_the_North_side_Jamaica,_taken_from_Navy_island_LCCN2004670568.jpg", "use": "historical topographic comparison for Port Antonio, Titchfield and Navy Island"},
+        {"title": "Admiralty Chart No. 453 Port Antonio Jamaica", "survey": "John Lear and Stephen Seymour, 1790; published 1815", "url": "https://commons.wikimedia.org/wiki/File:Admiralty_Chart_No_453_Port_Antonio_Jamaica,_Published_1815.jpg", "use": "harbour topology and entrance geometry; predates lighthouse but preserves headlands/island configuration"}
       ],
       "view_model": {
         "hypothesis": "shipboard point offshore north of Port Antonio, looking generally south into/along the harbour entrance",
         "example_model_point": [18.205, -76.448],
         "example_point_status": "illustrative geometry only, not a claimed historical position",
-        "from_example_point": {
-          "Folly_Point_Lighthouse": {"distance_km": 1.87, "bearing_deg": 164.03},
-          "Navy_Island": {"distance_km": 2.05, "bearing_deg": 196.00},
-          "Port_Antonio_town": {"distance_km": 2.94, "bearing_deg": 188.59},
-          "Folly_to_Navy_angular_separation_deg": 31.97
-        },
-        "sensitivity": "Moving the modeled ship position farther north decreases Folly-Navy angular separation: about 44 degrees at latitude 18.200, 32 degrees at 18.205, 25 degrees at 18.210, and 20 degrees at 18.215 along longitude -76.448.",
-        "assessment": "The left/right landmark order is robust for an offshore northern approach. Distance offshore remains unresolved because the artist's field of view and scale are unknown."
+        "from_example_point": {"Folly_Point_Lighthouse": {"distance_km": 1.87, "bearing_deg": 164.03}, "Navy_Island": {"distance_km": 2.05, "bearing_deg": 196.00}, "Port_Antonio_town": {"distance_km": 2.94, "bearing_deg": 188.59}, "Folly_to_Navy_angular_separation_deg": 31.97},
+        "assessment": "The left/right landmark order is robust for an offshore northern approach. The visibly banded lighthouse strengthens the Folly Point identification; distance offshore remains unresolved."
       },
-      "current_result": {
-        "port_antonio_confidence": 0.80,
-        "folly_point_candidate_confidence": 0.84,
-        "navy_island_candidate_confidence": 0.72,
-        "shipboard_context_confidence": 0.70,
-        "exact_viewpoint_confidence": 0.30,
-        "recommended_geometry": "broad offshore approach corridor / view sector north of the harbour, never an exact point"
-      }
+      "current_result": {"port_antonio_confidence": 0.83, "folly_point_candidate_confidence": 0.88, "navy_island_candidate_confidence": 0.74, "shipboard_context_confidence": 0.72, "exact_viewpoint_confidence": 0.30, "recommended_geometry": "broad offshore approach/departure corridor or view sector north of the harbour, never an exact point"}
     },
     {
       "id": "sketch-p21-p25-jamaica-group",
       "pages": [21, 25],
       "spatial_class": "probable_view_sector",
       "assessment": "Both are laid-in tropical water/palm drawings and visually belong to the same material group as p23. Port Antonio is plausible after the p23 landmark match, but neither page has a diagnostic landmark yet.",
-      "current_result": {
-        "same_group_as_p23_confidence": 0.78,
-        "port_antonio_confidence": 0.55,
-        "recommended_geometry": "unmapped candidate association until shoreline/building topology can be matched"
-      }
+      "current_result": {"same_group_as_p23_confidence": 0.78, "port_antonio_confidence": 0.55, "recommended_geometry": "unmapped candidate association until shoreline/building topology can be matched"}
+    },
+    {
+      "id": "sketch-p26-bremen-address-notes",
+      "pages": [26],
+      "spatial_class": "nonspatial_working_note",
+      "visual_reading": ["Chr. Baldewein & Sohn / am Wall [high-probability]", "Schüsselkorb 14 [probable]", "additional address/name fragments unresolved"],
+      "external_control": "A Bremen local-history source independently attests Chr. Baldewein & Sohn at Am Wall; Schüsselkorb is a historic central Bremen street.",
+      "assessment": "These notes make Bremen more than a terminal label: the sketchbook also functioned as a travel logistics/address notebook. Date and purpose are unresolved, so no new itinerary point is created."
+    },
+    {
+      "id": "sketch-p27-new-york-bremen-distance",
+      "pages": [27],
+      "spatial_class": "nonspatial_working_note",
+      "transcription": "Von New York bis Bremen sind 880 geographische Meilen",
+      "transcription_status": "secure visual reading",
+      "unit_control": {"historical_value_km_per_geographical_mile": 7.42044, "noted_distance_km_approx": 6530, "source_context": "late nineteenth-century German cartographic usage"},
+      "interpretation": "A travel-distance calculation for the Atlantic passage. 880 geographical miles is about 6,530 km, plausibly a rounded route-distance estimate rather than a geometric straight-line measurement.",
+      "journey_relation": "Strongly associated with the New York–Bremen return/transatlantic sequence; no independent date appears on the page."
     }
   ],
   "research_conclusions": [
-    "The filmed sketchbook begins, as presently observable, with Maricopa material dated 24 April rather than a securely visible Tempe 22 April page; preserve this as a catalogue-surrogate conflict.",
-    "The sketchbook supplies environmental and viewpoint evidence that is different from the taxon-centered botanical study drawings used in Corning 2007.",
-    "Maricopa, Hesperia and Port Antonio can already be represented at finer spatial scales than city markers, but only in the backend and with explicit geometry classes and confidence.",
-    "Page 23 is the strongest new geolocation candidate because a lighthouse-island configuration can be tested geometrically against Folly Point and Navy Island.",
-    "Page 17 is the strongest image-text fieldwork match because the Joshua-tree landscape and mountain backdrop closely track Rudolf's Hesperia description."
+    "The filmed sketchbook, as presently observable, begins with securely legible Maricopa material dated 24 April rather than a visible Tempe 22 April page; preserve the catalogue-surrogate conflict.",
+    "Page 17 remains a strong Hesperia match, but because of correspondence and ecological synchrony rather than a place/date inscription. The visible note is probably Yucca brevifolia.",
+    "Pages 26-27 demonstrate that the object functioned as a working travel notebook as well as a landscape sketchbook: addresses/logistics and a New York-Bremen distance calculation sit alongside field views.",
+    "Maricopa, Hesperia and Port Antonio can be represented at finer spatial scales than city markers, but only in the backend and with explicit geometry classes and confidence.",
+    "Page 23 remains the strongest landmark-based geolocation candidate; Folly Point is strengthened by the matching banded lighthouse morphology and its 1888 construction date.",
+    "Page 12/13 remains a corridor hypothesis; same-year Southern Pacific mapping supports the route reconstruction but does not identify the mountain."
   ],
   "next_work": [
-    "Obtain/download the full-resolution Huntington Hesperia maps and georeference the 1891 depot/townsite.",
-    "Generate terrain horizon profiles from plausible Maricopa station/desert viewpoints toward Sierra Estrella and Table Top, then compare peak order to pages 5 and 9.",
-    "Use the Port Antonio Admiralty chart plus current landmark coordinates to create a view-sector polygon for p23 and test p21/p25 against adjacent harbour orientations.",
-    "Test p12/p13 against San Jacinto silhouettes from the 1892 Southern Pacific/Yuma-Salton-Indio corridor before assigning any named mountain.",
+    "Maricopa: construct candidate horizon profiles or angular ridge envelopes toward Sierra Estrella and Table Top from plausible 1892 station/desert positions; compare ridge ordering to pages 5 and 9.",
+    "Hesperia: obtain the highest-resolution Huntington townsite map, georeference railway, hotel and road geometry, and use the HMDB marker only as a secondary control.",
+    "Port Antonio: use harbour chart topology to draw a backend-only view-sector polygon and test whether p21/p25 are compatible with adjacent ship positions.",
+    "California corridor: use the January 1892 Southern Pacific timetable map to constrain the train path through Yuma-Salton-Indio and test p12/13 against major massifs without forcing a point.",
+    "Bremen notes: check a circa-1892 Bremen address directory for Baldewein & Sohn, Schüsselkorb 14 and the unresolved Zimmermann line.",
     "Keep all resulting image references and spatial hypotheses in research/backend only."
   ]
 }
