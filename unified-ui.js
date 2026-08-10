@@ -36,11 +36,12 @@
     link.href = url.href;
   };
 
-  addStyle(`${prefix}navigation-shell.css?v=20260810-4`, 'navigation-shell.css');
+  addStyle(`${prefix}navigation-shell.css?v=20260811-1`, 'navigation-shell.css');
   if (!isBibliography) addStyle(`${prefix}site-core.css?v=20260810-1`, 'site-core.css');
   else addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
+  if (!phoneOrTablet) addStyle(`${prefix}nav-glide.css?v=20260811-1`, 'nav-glide.css');
 
-  if (!phoneOrTablet && !isBibliography) addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
+  if (!phoneOrTablet && !reducedMotion) addScript(`${prefix}nav-glide.js?v=20260811-1`, 'nav-glide.js');
   addScript(`${prefix}accessibility.js?v=20260810-2`, 'accessibility.js');
   refreshPageCss('sources.css', '20260810-7');
   refreshPageCss('bibliography.css', '20260810-8');
@@ -55,20 +56,30 @@
   }
 
   const path = location.pathname.replace(/index\.html$/, '');
-  const nav = document.querySelector('.subpage-nav');
-  if (isSubpage && nav) {
-    const current = match => path.includes(match) ? ' aria-current="page"' : '';
-    const mapCurrent = path.includes('/map/');
-    const journeyCurrent = path.includes('/map/rudolf-1892/');
-    nav.innerHTML = [
-      `<a href="${prefix}cases/"${current('/cases/')}>Cases</a>`,
-      `<details class="nav-map-menu"><summary class="nav-map-trigger${mapCurrent ? ' is-current' : ''}">Map</summary><div class="nav-map-panel"><a href="${prefix}map/"${mapCurrent && !journeyCurrent ? ' aria-current="page"' : ''}>Collections map</a><a href="${prefix}map/rudolf-1892/"${journeyCurrent ? ' aria-current="page"' : ''}>Rudolf 1892 journey</a></div></details>`,
-      `<a href="${prefix}people/"${current('/people/')}>People</a>`,
-      `<a href="${prefix}bibliography/"${current('/bibliography/')}>Bibliography</a>`,
-      `<a href="${prefix}sources/"${current('/sources/')}>Sources</a>`,
-      `<a href="${prefix}auctions/"${current('/auctions/')}>Auctions</a>`,
-      `<a href="${prefix}about/"${current('/about/')}>About</a>`
-    ].join('');
+  const current = match => path.includes(match) ? ' aria-current="page"' : '';
+  const mapCurrent = path.includes('/map/');
+  const journeyCurrent = path.includes('/map/rudolf-1892/');
+  const canonicalNav = root => [
+    `<a href="${root}cases/"${current('/cases/')}>Cases</a>`,
+    `<details class="nav-map-menu"><summary class="nav-map-trigger${mapCurrent ? ' is-current' : ''}">Map</summary><div class="nav-map-panel"><a href="${root}map/"${mapCurrent && !journeyCurrent ? ' aria-current="page"' : ''}>Collections map</a><a href="${root}map/rudolf-1892/"${journeyCurrent ? ' aria-current="page"' : ''}>Rudolf 1892 journey</a></div></details>`,
+    `<a href="${root}people/"${current('/people/')}>People</a>`,
+    `<a href="${root}bibliography/"${current('/bibliography/')}>Bibliography</a>`,
+    `<a href="${root}sources/"${current('/sources/')}>Sources</a>`,
+    `<a href="${root}auctions/"${current('/auctions/')}>Auctions</a>`,
+    `<a href="${root}about/"${current('/about/')}>About</a>`
+  ].join('');
+
+  /* Header invariant: the brand is Home; every public page uses the home-page seven-slot navigation. */
+  if (isSubpage) {
+    const header = document.querySelector('.subpage-header');
+    const brand = document.querySelector('.subpage-brand');
+    const nav = document.querySelector('.subpage-nav');
+    if (header) header.dataset.shell = 'home-navigation';
+    if (brand) {
+      brand.href = prefix;
+      brand.textContent = 'The Blaschka Object Network';
+    }
+    if (nav) nav.innerHTML = canonicalNav(prefix);
   }
 
   const closeMapMenus = except => {
