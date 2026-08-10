@@ -32,7 +32,7 @@
   if (isSubpage) addStyle(`${prefix}header-minimal.css?v=20260810-1`, 'header-minimal.css');
   addStyle(`${prefix}footer-legal.css?v=20260810-2`, 'footer-legal.css');
   addStyle(`${prefix}nav-glide.css?v=20260810-2`, 'nav-glide.css');
-  addStyle(`${prefix}mobile-v3.css?v=20260810-2`, 'mobile-v3.css');
+  addStyle(`${prefix}mobile-v3.css?v=20260810-3`, 'mobile-v3.css');
   addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
