@@ -23,9 +23,17 @@
   if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-1`, 'subpage-v2.css');
   addStyle(`${prefix}fluid-motion.css?v=20260810-4`, 'fluid-motion.css');
   addStyle(`${prefix}site-rhythm.css?v=20260810-1`, 'site-rhythm.css');
-  /* Final optical pass: typography, edge distance, line budget and responsive rhythm. */
   addStyle(`${prefix}site-polish.css?v=20260810-1`, 'site-polish.css');
   addScript(`${prefix}nav-glide.js?v=20260810-1`, 'nav-glide.js');
+
+  if (!document.querySelector('link[type="application/rss+xml"]')) {
+    const rss = document.createElement('link');
+    rss.rel = 'alternate';
+    rss.type = 'application/rss+xml';
+    rss.title = 'The Blaschka Object Network';
+    rss.href = `${prefix}feed.xml`;
+    document.head.appendChild(rss);
+  }
 
   if (!window.__blaschkaFluidMotionRequested) {
     window.__blaschkaFluidMotionRequested = true;
@@ -65,7 +73,19 @@
 
     const footer = document.querySelector('.subpage-footer');
     if (footer) {
-      footer.innerHTML = `<a href="../">The Blaschka Object Network</a><span><a href="../cases/">Cases</a> · <a href="../bibliography/">Bibliography</a> · <a href="../sources/">Sources</a> · <a href="../auctions/">Auctions</a> · <a href="../privacy/">Privacy</a></span>`;
+      footer.innerHTML = `
+        <span class="footer-identity">
+          <a class="footer-title" href="../">The Blaschka Object Network</a>
+          <span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span>
+        </span>
+        <span class="footer-links">
+          <a href="../cases/">Cases</a>
+          <a href="../bibliography/">Bibliography</a>
+          <a href="../sources/">Sources</a>
+          <a href="../auctions/">Auctions</a>
+          <a href="../privacy/">Privacy</a>
+          <a class="footer-rss" href="../feed.xml" type="application/rss+xml" aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="19" r="2.2"/><path d="M3 10.5v3a7.5 7.5 0 0 1 7.5 7.5h3A10.5 10.5 0 0 0 3 10.5Zm0-6v3A13.5 13.5 0 0 1 16.5 21h3C19.5 11.9 12.1 4.5 3 4.5Z"/></svg><span>RSS</span></a>
+        </span>`;
     }
   }
 })();
