@@ -2,14 +2,40 @@
    Final override layer for browser chrome, safe areas and dense reading lists. */
 
 @media (max-width:900px){
-  .subpage-header{
-    padding-left:max(8px, env(safe-area-inset-left))!important;
-    padding-right:max(8px, env(safe-area-inset-right))!important;
+  /* Do not fight iOS/Android/in-app browser chrome with a second sticky bar.
+     The site navigation participates in document flow on all phone/tablet widths. */
+  html{scroll-padding-top:14px!important}
+  body.subpage{padding-top:0!important}
+  body.subpage .subpage-header{
+    position:static!important;
+    top:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    left:auto!important;
+    inset:auto!important;
+    z-index:auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:52px!important;
+    margin:0!important;
+    padding-top:max(0px,env(safe-area-inset-top))!important;
+    padding-left:max(8px,env(safe-area-inset-left))!important;
+    padding-right:max(8px,env(safe-area-inset-right))!important;
+    transform:none!important;
+    contain:none!important;
   }
-  .subpage-nav{
+  body.subpage .subpage-nav{
+    position:static!important;
+    top:auto!important;
+    inset:auto!important;
+    min-height:52px!important;
+    transform:none!important;
     scroll-padding-inline:10px!important;
     overscroll-behavior-x:contain!important;
   }
+  body.subpage .sample,
+  body.subpage .source-az,
+  body.subpage .bib-section{scroll-margin-top:14px!important}
 
   /* Bibliography: checkbox, year and citation occupy explicit rows. */
   body.subpage .bib-entry,
@@ -53,34 +79,6 @@
 }
 
 @media (max-width:640px){
-  /* iOS/Android browser chrome should never compete with a second sticky bar.
-     Phone navigation is therefore ordinary document flow, with notch padding only. */
-  html{scroll-padding-top:12px!important}
-  body.subpage .subpage-header{
-    position:static!important;
-    top:auto!important;
-    right:auto!important;
-    bottom:auto!important;
-    left:auto!important;
-    inset:auto!important;
-    z-index:auto!important;
-    height:auto!important;
-    min-height:52px!important;
-    padding-top:env(safe-area-inset-top)!important;
-    transform:none!important;
-    contain:none!important;
-  }
-  body.subpage .subpage-nav{
-    position:static!important;
-    top:auto!important;
-    inset:auto!important;
-    min-height:52px!important;
-    transform:none!important;
-  }
-  body.subpage .sample,
-  body.subpage .source-az,
-  body.subpage .bib-section{scroll-margin-top:12px!important}
-
   body.subpage .bib-entry,
   html.ui-fluid-motion body.subpage .bib-entry.ui-reveal{
     grid-template-columns:16px minmax(0,1fr)!important;
