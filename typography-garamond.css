@@ -1,3 +1,7 @@
+@import url("fluid-motion.css?v=20260810-4");
+@import url("site-cleanup.css?v=20260810-2");
+@import url("nav-glide.css?v=20260810-2");
+
 @font-face{
   font-family:'EB Garamond Local';
   src:url('assets/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
@@ -40,7 +44,3 @@ button,input,select,textarea,
 footer,.subpage-footer{
   font-family:var(--font-ui)!important;
 }
-
-@import url("fluid-motion.css?v=20260810-4");
-@import url("site-cleanup.css?v=20260810-2");
-@import url("nav-glide.css?v=20260810-2");
