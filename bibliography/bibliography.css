@@ -1,4 +1,5 @@
 @import url("../typography-garamond.css?v=20260810-4");
+@import url("../mobile-v3.css?v=20260810-4");
 
 /* Bibliography · fast text-first reading page. */
 body.subpage{background:#1d1714!important;background-image:none!important;color:#f2eee9!important}.subpage-nav a[href*="blog"],.subpage-footer a[href*="blog"]{display:none!important}
