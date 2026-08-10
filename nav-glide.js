@@ -5,28 +5,32 @@
 
   const setup = nav => {
     if (!nav || nav.querySelector(':scope > .nav-glider')) return;
-    const links = [...nav.querySelectorAll(':scope > a')];
-    if (!links.length) return;
+    const items = [...nav.children].map(node => {
+      if (node.matches('a')) return node;
+      if (node.matches('.nav-map-menu')) return node.querySelector(':scope > .nav-map-trigger');
+      return null;
+    }).filter(Boolean);
+    if (!items.length) return;
 
     const glider = document.createElement('span');
     glider.className = 'nav-glider';
     glider.setAttribute('aria-hidden','true');
     nav.prepend(glider);
 
-    const active = links.find(link => link.matches('[aria-current="page"]')) || links[0];
+    const active = items.find(item => item.matches('[aria-current="page"],.is-current')) || null;
 
-    const move = link => {
+    const move = item => {
       const navRect = nav.getBoundingClientRect();
-      const rect = link.getBoundingClientRect();
+      const rect = item.getBoundingClientRect();
       nav.style.setProperty('--nav-glider-x', `${rect.left - navRect.left}px`);
       nav.style.setProperty('--nav-glider-w', `${rect.width}px`);
       nav.style.setProperty('--nav-glider-opacity', '1');
     };
 
     const settle = () => active ? move(active) : nav.style.setProperty('--nav-glider-opacity','0');
-    links.forEach(link => {
-      link.addEventListener('pointerenter', () => move(link));
-      link.addEventListener('focus', () => move(link));
+    items.forEach(item => {
+      item.addEventListener('pointerenter', () => move(item));
+      item.addEventListener('focus', () => move(item));
     });
     nav.addEventListener('pointerleave', settle);
     nav.addEventListener('focusout', event => {
