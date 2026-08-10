@@ -93,24 +93,35 @@ window.RUDOLF_1892_ROUTE_DATA = {
     {
       id: "maricopa-1892-04-24",
       title: "Maricopa, Arizona",
-      date: "1892-04-24",
+      date: "1892-04-24 · early morning",
       lat: 33.0581,
       lng: -112.0476,
-      stage: "documented",
-      category: ["route", "fieldwork"],
-      summary: "Arizona route continuation.",
-      detail: "A documented stop in the southwestern movement, valuable for reconstructing the physical order of travel before California."
+      stage: "documented place/date; railway time contextual",
+      category: ["railway", "transit observation", "sketchbook"],
+      summary: "An overnight rail junction became an observation window before the California train.",
+      detail: "Rudolf’s 22 April plan, 24 April Maricopa cards, and dated sketchbook views place him at the Southern Pacific junction on Sunday morning. The strongest present reading is station-adjacent or transit observation rather than a separate collecting excursion. A same-year timetable published on 29 May gives the westbound Southern Pacific train at about 6:35 a.m.; that time is retained as contextual control, not exact-day proof."
     },
     {
-      id: "san-diego-1892-04-30",
+      id: "los-angeles-1892-04-24",
+      title: "Los Angeles, California",
+      date: "1892-04-24 · ca. 22:00",
+      lat: 34.0522,
+      lng: -118.2437,
+      stage: "overnight secure; time high-confidence inference",
+      category: ["railway", "transit", "ecological sequence", "overnight"],
+      summary: "The end of a day-long rail passage across Yuma, the California desert, the Salton depression and the San Jacinto approach.",
+      detail: "Writing from San Diego on 25 April, Rudolf reconstructed the previous day as a moving ecological sequence from Arizona through Yuma and the California desert, across the low Salton country and toward the San Jacinto highlands. He says they reached Los Angeles ‘at 10’ and had to remain overnight because the San Diego train did not leave until 8:45 the next morning. The chronology makes about 10 p.m. overwhelmingly more plausible than 10 a.m."
+    },
+    {
+      id: "san-diego-1892-04-25",
       title: "San Diego, California",
-      date: "1892-04-30",
+      date: "1892-04-25 · 13:00",
       lat: 32.7157,
       lng: -117.1611,
-      stage: "documented",
-      category: ["fieldwork", "Orcutt", "bulbs", "cacti", "later supply"],
-      summary: "A key California production node.",
-      detail: "San Diego is one of the clearest examples of the distributed workshop. With local botanical help, Rudolf reports around 36 species completed, sends a box of cacti and flowering bulbs onward, and later continues to rely on delayed Californian supply after he has already departed."
+      stage: "documented arrival",
+      category: ["fieldwork", "Orcutt", "hotel workroom", "bulbs", "cacti", "later supply"],
+      summary: "Arrival at 1 p.m. opens a key California production node.",
+      detail: "The corrected chronology fixes Rudolf’s arrival in San Diego at 1 p.m. on 25 April, after an 8:45 departure from Los Angeles and an approximately 10 a.m. Pacific-coast sighting. By 26 April his microscope trunk had arrived and hotel-based study was underway. Local botanists, especially C. R. Orcutt, supplied material; Rudolf later reported around 36 species completed, sent cacti and flowering bulbs onward, and continued to rely on Californian supply after leaving the city."
     },
     {
       id: "san-bernardino-1892-05-04",
