@@ -1,14 +1,16 @@
 (() => {
-  if (!window.__blaschkaUnifiedUIRequested) {
+  const css = document.querySelector('link[href*="bibliography.css"]');
+  if (css) css.href = 'bibliography.css?v=20260810-8';
+
+  /* Shell enhancement is optional. The static bibliography is already complete and
+     remains visible even if this request is slow or unavailable. */
+  if (!window.__blaschkaUnifiedUI && !window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-14';
-    ui.defer = true;
+    ui.src = '../unified-ui.js?v=20260810-15';
+    ui.async = true;
     document.head.appendChild(ui);
   }
-
-  const css = document.querySelector('link[href*="bibliography.css"]');
-  if (css) css.href = 'bibliography.css?v=20260810-7';
 
   const list = document.querySelector('.bib-list');
   if (!list) return;
@@ -28,7 +30,9 @@
     const citation = clean(node.querySelector('h3')?.textContent || '');
     const doi = doiOf(node), citationKey = `${year}|${fold(citation)}`;
     if ((doi && seenDOI.has(doi)) || seenCitation.has(citationKey)) { node.remove(); return; }
-    if (doi) seenDOI.add(doi); if (citation) seenCitation.add(citationKey); if (year) node.dataset.year = year;
+    if (doi) seenDOI.add(doi);
+    if (citation) seenCitation.add(citationKey);
+    if (year) node.dataset.year = year;
   });
   document.documentElement.classList.add('bibliography-frozen-ready');
   document.dispatchEvent(new Event('BibliographyReady', { bubbles:true }));
