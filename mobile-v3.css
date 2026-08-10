@@ -214,3 +214,25 @@
 @media (prefers-reduced-motion:reduce){
   .top-nav a,.subpage-nav a,.feature-case img,.family-mobile-nav button{transition:none!important}
 }
+
+/* Final first-paint correction: subpage navigation must never compete with mobile browser chrome.
+   This lives in the statically loaded mobile layer so it is correct before unified-ui.js runs. */
+@media (max-width:900px){
+  body.subpage{padding-top:0!important}
+  body.subpage .subpage-header{
+    position:static!important;
+    top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;inset:auto!important;
+    z-index:auto!important;height:auto!important;min-height:52px!important;
+    padding-top:max(0px,env(safe-area-inset-top))!important;
+    transform:none!important;contain:none!important;
+  }
+  body.subpage .subpage-nav{position:static!important;top:auto!important;inset:auto!important;transform:none!important}
+  body.subpage .bib-entry,html.ui-fluid-motion body.subpage .bib-entry.ui-reveal{
+    grid-template-columns:16px minmax(0,1fr)!important;
+    grid-template-rows:auto auto!important;
+    column-gap:9px!important;row-gap:4px!important;align-items:start!important;
+  }
+  body.subpage .bib-entry>.bib-select{grid-column:1!important;grid-row:1 / span 2!important;position:static!important;transform:none!important}
+  body.subpage .bib-entry>.bib-year{grid-column:2!important;grid-row:1!important;position:static!important;inset:auto!important;transform:none!important;margin:0!important}
+  body.subpage .bib-entry>div{grid-column:2!important;grid-row:2!important;min-width:0!important;margin:0!important;padding:0!important}
+}
