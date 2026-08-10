@@ -11,18 +11,22 @@
     link.href = href;
     document.head.appendChild(link);
   };
+  const addScript = (src, token) => {
+    if ([...document.scripts].some(script => script.src.includes(token))) return;
+    const script = document.createElement('script');
+    script.src = src;
+    script.defer = true;
+    document.head.appendChild(script);
+  };
 
   addStyle(`${prefix}apple-unified.css?v=20260810-2`, 'apple-unified.css');
   if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-1`, 'subpage-v2.css');
-  /* Loaded last on purpose: this is the current motion contract and overrides older imported motion rules. */
   addStyle(`${prefix}fluid-motion.css?v=20260810-3`, 'fluid-motion.css?v=20260810-3');
+  addScript(`${prefix}nav-glide.js?v=20260810-1`, 'nav-glide.js');
 
   if (!window.__blaschkaFluidMotionRequested) {
     window.__blaschkaFluidMotionRequested = true;
-    const motion = document.createElement('script');
-    motion.src = `${prefix}fluid-motion.js?v=20260810-2`;
-    motion.defer = true;
-    document.head.appendChild(motion);
+    addScript(`${prefix}fluid-motion.js?v=20260810-2`, 'fluid-motion.js?v=20260810-2');
   }
 
   const main = document.querySelector('main');
