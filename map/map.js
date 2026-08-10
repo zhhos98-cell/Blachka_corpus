@@ -17,10 +17,7 @@
   const institutionHref = record => `?institution=${encodeURIComponent(record.id)}#collection-map`;
 
   const renderList = () => {
-    list.innerHTML = records.map(record => {
-      const caseLink = record.url ? `<span class="map-institution-case">Related case →</span>` : '';
-      return `<a class="map-institution" href="${institutionHref(record)}" data-map-id="${esc(record.id)}" data-search="${esc([record.institution,record.city,record.country,record.count_display,record.summary].join(' '))}"><strong>${esc(record.institution)}</strong><small>${esc(record.city)} · ${esc(record.country)}</small><em>${esc(record.count_display)}</em>${caseLink}</a>`;
-    }).join('');
+    list.innerHTML = records.map(record => `<a class="map-institution" href="${institutionHref(record)}" data-map-id="${esc(record.id)}" data-search="${esc([record.institution,record.city,record.country,record.count_display,record.summary].join(' '))}"><strong>${esc(record.institution)}</strong><small>${esc(record.city)} · ${esc(record.country)}</small><em>${esc(record.count_display)}</em><span class="map-institution-link">View on map →</span></a>`).join('');
 
     list.querySelectorAll('.map-institution').forEach(link => link.addEventListener('click', event => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
