@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-08-11",
+  "title": "Rudolf Blaschka 1892 railway-clock audit",
+  "scope": "Backend-only synchronization of Rudolf Blaschka's correspondence, postcard dates, railway timetables and the filmed Rakow sketchbook sequence for the Arizona-to-California phase of 22-26 April 1892.",
+  "frontend_policy": "Do not alter public GitHub Pages in this pass. Sketchbook image-derived chronology, railway-clock refinements and route corrections remain research/backend only until explicitly approved.",
+  "source_hierarchy": [
+    {
+      "rank": 1,
+      "class": "contemporaneous primary correspondence/postcards",
+      "rule": "Rudolf's dated letters and cards control actual presence, reported arrival/departure times and retrospective descriptions of the immediately preceding journey."
+    },
+    {
+      "rank": 2,
+      "class": "same-year railway timetable or railroad publication",
+      "rule": "Use to constrain plausible scheduled movement, but distinguish the publication/effective date from the exact day Rudolf travelled."
+    },
+    {
+      "rank": 3,
+      "class": "near-contemporary timetable",
+      "rule": "Use only as contextual control when the exact April 1892 issue is not yet recovered."
+    },
+    {
+      "rank": 4,
+      "class": "later route analogue",
+      "rule": "Use only to understand persistent route geometry or service pattern; never as proof of an 1892 train time."
+    }
+  ],
+  "time_standard_notes": {
+    "historical_clock_guard": "Do not silently normalize all historical times into a modern time-zone system. The Maricopa & Phoenix timetable explicitly labels its table 'Pacific time', while Rudolf notes that clocks had been set back several times during his transcontinental journey.",
+    "reported_times": "Rudolf's 10 o'clock Los Angeles arrival, 8:45 Los Angeles departure, approximately 10 o'clock Pacific-Ocean sighting and 1 p.m. San Diego arrival are treated as the local railway/travel clock readings he reported, without modern UTC conversion.",
+    "calendar_control": {
+      "1892-04-22": "Friday",
+      "1892-04-23": "Saturday",
+      "1892-04-24": "Sunday",
+      "1892-04-25": "Monday",
+      "1892-04-26": "Tuesday"
+    }
+  },
+  "chronology": [
+    {
+      "datetime_or_window": "1892-04-22 daytime",
+      "place": "Tempe, Arizona",
+      "evidence": "BLA-D00785 · 017:139",
+      "status": "secure",
+      "event": "Wagon excursion a few miles into the mountains and desert; cactus flowers drawn, living cactus examples collected, Delphinium drawn after return.",
+      "forward_plan": "Rudolf says they will finish in Tempe the next day, go to Maricopa to spend the night, then take the Sunday-morning train to California."
+    },
+    {
+      "datetime_or_window": "1892-04-23",
+      "place": "Tempe to Maricopa",
+      "status": "high-confidence inferred movement",
+      "basis": "22 April forward plan plus 24 April dated Maricopa cards/sketches.",
+      "event": "Transfer to the Maricopa Southern Pacific junction and overnight stay."
+    },
+    {
+      "datetime_or_window": "1892-04-24 early morning",
+      "place": "Maricopa, Arizona",
+      "evidence": "BLA-D00786 · 017:140 and BLA-D00788 · 017:142; sketchbook pages 4-5 and 8-9",
+      "status": "secure place/date; train minute contextual",
+      "event": "Rudolf is in Maricopa on Sunday 24 April. Two filmed sketchbook views are captioned Maricopa and dated 24 April. The strongest current interpretation is station-adjacent or rail-window landscape observation rather than a separate collecting excursion.",
+      "railway_clock_control": {
+        "time": "about 6:35 a.m.",
+        "status": "strong contextual control, not exact-day proof",
+        "sources": [
+          {
+            "date": "1891-02-20",
+            "publication": "Arizona Republican / Chronicling America",
+            "effective_table_note": "Maricopa & Phoenix timetable in effect June 1890; table marked Pacific time",
+            "finding": "Southern Pacific daily Pacific Express from Maricopa for California, Nevada, Oregon and Washington is OCR'd as 'OX A.M.'; contextual reading and later 1892 tables support 6:35 a.m.",
+            "url": "https://chroniclingamerica.loc.gov/lccn/sn84020558/1891-02-20/ed-1/seq-1/"
+          },
+          {
+            "date": "1892-05-29",
+            "publication": "Arizona Republican / Arizona Memory Project",
+            "finding": "Southern Pacific westbound passes Maricopa at 6:35 A.M.",
+            "url": "https://azmemory.azlibrary.gov/nodes/view/172419"
+          }
+        ],
+        "confidence": 0.86,
+        "guard": "An issue-specific Southern Pacific timetable for 24 April 1892 has not yet been recovered, so 6:35 a.m. must remain contextual."
+      }
+    },
+    {
+      "datetime_or_window": "1892-04-24 daytime-to-evening",
+      "place": "Maricopa → Yuma → California salt desert → Salton depression → San Jacinto approach",
+      "evidence": "BLA-D00796–BLA-D00797 · 017:150–151, written 25 April and explicitly describing the preceding day's desert journey",
+      "status": "secure corridor; internal segment timing unresolved",
+      "event_sequence": [
+        "Arizona to Yuma: rocky mountain range behind chaparral, jumping cactus and giant cactus.",
+        "After crossing into California: sandy plain broadens and vegetation becomes sparse.",
+        "Approximately two hours through nearly vegetationless cracked sandy and rocky ground.",
+        "Railway after Yuma to Salton described as about 260 feet below sea level.",
+        "After the depression, railway climbs quickly toward roughly 2,000 feet.",
+        "Snow-covered San Jacinto is passed; vegetation shifts to large Yucca, blooming Opuntia and Abronia."
+      ],
+      "sketchbook_relation": {
+        "pages": [12, 13],
+        "assessment": "The uncaptioned steep rocky desert massif is now best assigned to this 24 April rail-observation corridor rather than a generic 24-25 April interval.",
+        "corridor_confidence": 0.82,
+        "san_jacinto_specific_confidence": 0.58,
+        "exact_viewpoint_confidence": 0.10,
+        "guard": "Page sequence and letter chronology strengthen the date/corridor match but do not identify the mountain or precise milepoint."
+      }
+    },
+    {
+      "datetime_or_window": "1892-04-24 about 10 p.m. [high-confidence inference]",
+      "place": "Los Angeles",
+      "evidence": "BLA-D00797 · 017:151 plus Los Angeles postcard BLA-D00790 · 017:144 dated 25 April",
+      "status": "time-of-day inferred; place/overnight secure",
+      "event": "Rudolf says they arrived in Los Angeles 'at 10' and had to stay overnight because the San Diego train did not leave until 8:45. Given the Sunday morning Maricopa departure, the long Arizona-California rail journey, overnight wording, and next-day San Diego arrival, 10 p.m. is overwhelmingly more plausible than 10 a.m.",
+      "confidence_10pm": 0.94
+    },
+    {
+      "datetime_or_window": "1892-04-25 08:45",
+      "place": "Los Angeles",
+      "evidence": "BLA-D00797 · 017:151",
+      "status": "secure as Rudolf-reported train time",
+      "event": "Departure for San Diego at 8:45 after the Los Angeles overnight."
+    },
+    {
+      "datetime_or_window": "1892-04-25 about 10:00",
+      "place": "Southern California coast",
+      "evidence": "BLA-D00797 · 017:151",
+      "status": "secure approximate time; exact coastal milepoint unresolved",
+      "event": "Rudolf reports reaching/sighting the Pacific Ocean around 10 in the morning; from there the ocean remained in view toward San Diego.",
+      "route_context": "The contemporary Southern California Railway/Santa Fe coastal alignment is consistent with a coastward transition south of Los Angeles, but an April 1892 timetable with station-by-station times remains to be recovered."
+    },
+    {
+      "datetime_or_window": "1892-04-25 13:00",
+      "place": "San Diego, California",
+      "evidence": "Lossless archive header 'San Diego (California), 25 April 1892' and BLA-D00796 · 017:150: 'This afternoon at 1 o'clock I arrived'",
+      "status": "secure",
+      "event": "Arrival in San Diego at 1 p.m.",
+      "corroboration": "The 26 April letter says that 'yesterday afternoon' they were already travelling around San Diego and its surroundings, independently fitting a 25 April afternoon arrival."
+    },
+    {
+      "datetime_or_window": "1892-04-26",
+      "place": "San Diego, California",
+      "evidence": "Lossless archive header 'San Diego, California 26 April 1892'",
+      "status": "secure",
+      "event": "Rudolf begins hotel-based study; microscope trunk has arrived; local botanists and Orcutt bring/procure material."
+    },
+    {
+      "datetime_or_window": "1892-04-30",
+      "place": "San Diego, California",
+      "evidence": "BLA-D00804 · 017:158 and later 30 April material",
+      "status": "secure later San Diego letter, not arrival",
+      "event": "Later San Diego correspondence during the working stay."
+    }
+  ],
+  "major_corrections": [
+    {
+      "field": "San Diego arrival date",
+      "old_working_value": "1892-04-30",
+      "corrected_value": "1892-04-25 13:00",
+      "basis": "Lossless translated header + Rudolf's explicit 1 p.m. arrival statement + 26 April retrospective confirmation.",
+      "confidence": "high",
+      "publication_status": "public_route_correction_pending_backend_only",
+      "instruction": "Do not change public Pages in this pass."
+    },
+    {
+      "field": "p12/p13 sketchbook temporal assignment",
+      "old_working_value": "24-25 April Arizona-Yuma-Salton-San Jacinto corridor",
+      "corrected_value": "24 April rail corridor, with exact segment/mountain unresolved",
+      "basis": "The 25 April San Diego letter explicitly describes this desert sequence as the preceding day's experience; San Diego arrival is itself fixed at 25 April 1 p.m.",
+      "confidence": "high for date/corridor; medium-low for named mountain"
+    },
+    {
+      "field": "Los Angeles '10' arrival",
+      "old_working_value": "unspecified 10 o'clock",
+      "corrected_value": "probably 10 p.m. on 24 April",
+      "basis": "Overnight language, 8:45 next-morning departure, 25 April San Diego 1 p.m. arrival, and Sunday-morning Maricopa departure.",
+      "confidence": 0.94
+    }
+  ],
+  "external_controls": [
+    {
+      "title": "Arizona Republican, 20 February 1891",
+      "type": "near-contemporary primary newspaper timetable",
+      "finding": "Maricopa & Phoenix connection table marked Pacific time; Southern Pacific daily Pacific Express from Maricopa toward California and Pacific-coast states appears in the timetable.",
+      "url": "https://chroniclingamerica.loc.gov/lccn/sn84020558/1891-02-20/ed-1/seq-1/"
+    },
+    {
+      "title": "Arizona Republican, 29 May 1892",
+      "type": "same-year primary newspaper timetable",
+      "finding": "Southern Pacific westbound passes Maricopa at 6:35 A.M.",
+      "url": "https://azmemory.azlibrary.gov/nodes/view/172419"
+    },
+    {
+      "title": "Southern Pacific Co., California, Texas, Mexico And Arizona — Sunset Route",
+      "date": "January 1892",
+      "type": "same-year railroad publication",
+      "repository": "David Rumsey Historical Map Collection",
+      "identifier": "3139B",
+      "finding": "20 pages of timetables and travel information survive; schedule-panel text has not yet been extracted in this audit.",
+      "url": "https://www.davidrumsey.com/luna/servlet/view/all/what/Timetable%2BMap/Text%2BPage/?os=50&sort=Date%2CSortID%2CPub_List_No"
+    }
+  ],
+  "sketchbook_implications": [
+    "Pages 4-5 and 8-9 are best treated as Maricopa transit-observation landscapes on 24 April, not evidence of a new formal collecting expedition.",
+    "Pages 12-13 can be dated more tightly to 24 April with high confidence because Rudolf's 25 April letter explicitly calls the Arizona-to-California desert sequence 'yesterday'.",
+    "The sketchbook therefore records observation made within transport windows as well as field excursions: railway carriage, station waiting and travel time function as observational infrastructure.",
+    "The next geolocation problem is no longer 'Arizona or California?' but which 24 April daylight segment — Arizona/Yuma, lower Colorado/California desert, Salton depression, or San Jacinto approach — best fits the p12/p13 silhouette."
+  ],
+  "railway_as_epistemic_infrastructure": {
+    "working_claim": "Railway time did not merely schedule movement between field sites. The timetable created windows in which landscapes could be observed, compared, sketched and retrospectively sequenced.",
+    "evidence_chain": "dated card / timetable → moving visual sequence → sketchbook landscape → next-day letter reconstructing ecological succession",
+    "guard": "Keep this as an interpretive synthesis grounded in the synchronized sources; do not claim that a particular sketch was physically drawn aboard the moving train unless additional evidence supports that action."
+  },
+  "next_tests": [
+    "Extract the station-by-station timetable panels from Southern Pacific January 1892 Rumsey item 3139B, especially Maricopa, Yuma, Salton/Indio and Los Angeles.",
+    "Locate the March-April 1892 Official Railway Guide and compare its Southern Pacific schedule with the 6:35 a.m. May control.",
+    "Recover an 1892 Southern California Railway / Santa Fe Los Angeles-San Diego timetable to test Rudolf's 8:45 departure, ~10 a.m. Pacific sighting and 1 p.m. San Diego arrival against station times.",
+    "Only after historical clock standards and station times are secured, calculate daylight windows for 24 April and eliminate p12/p13 mountain candidates that would have been passed in darkness.",
+    "Preserve the public map's present state until an explicit frontend correction pass is authorized."
+  ]
+}
