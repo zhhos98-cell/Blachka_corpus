@@ -19,12 +19,13 @@
     document.head.appendChild(script);
   };
 
-  addStyle(`${prefix}apple-unified.css?v=20260810-3`, 'apple-unified.css');
+  addStyle(`${prefix}apple-unified.css?v=20260810-4`, 'apple-unified.css');
   if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-2`, 'subpage-v2.css');
   addStyle(`${prefix}fluid-motion.css?v=20260810-4`, 'fluid-motion.css');
   addStyle(`${prefix}site-rhythm.css?v=20260810-2`, 'site-rhythm.css');
   addStyle(`${prefix}site-polish.css?v=20260810-2`, 'site-polish.css');
   addStyle(`${prefix}footer-legal.css?v=20260810-2`, 'footer-legal.css');
+  addStyle(`${prefix}nav-glide.css?v=20260810-2`, 'nav-glide.css');
   addStyle(`${prefix}mobile-v3.css?v=20260810-1`, 'mobile-v3.css');
   addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
 
@@ -35,11 +36,6 @@
     rss.title = 'The Blaschka Object Network';
     rss.href = `${prefix}feed.xml`;
     document.head.appendChild(rss);
-  }
-
-  if (!window.__blaschkaFluidMotionRequested) {
-    window.__blaschkaFluidMotionRequested = true;
-    addScript(`${prefix}fluid-motion.js?v=20260810-2`, 'fluid-motion.js');
   }
 
   const main = document.querySelector('main');
