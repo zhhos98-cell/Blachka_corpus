@@ -104,10 +104,11 @@
   .feature-copy h3{font-size:2.35rem!important}
   .contact-copy>p,.subscribe-copy>p{font-size:.95rem!important;line-height:1.54!important}
 
-  /* Bibliography: one compact utility strip and one reading axis. */
+  /* Bibliography: on phones, the section title already explains the page. */
+  body.subpage:has(.bib-list) .page-intro{display:none!important}
   body.subpage .bib-tools{
     position:static!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;
-    width:100%!important;margin:2px 0 14px!important;padding:3px 0!important;gap:7px!important;
+    width:100%!important;margin:20px 0 12px!important;padding:0!important;gap:7px!important;
     overflow-x:auto!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
     scrollbar-width:none!important;
   }
@@ -115,7 +116,7 @@
   body.subpage .bib-tools-group{display:contents!important}
   body.subpage .bib-tools-label,.bib-export-note,.bib-selected-count,[data-select='visible']{display:none!important}
   body.subpage .bib-tool-button{flex:0 0 auto!important;min-height:34px!important;height:34px!important;padding:0 10px!important;border-radius:999px!important;font-size:.62rem!important}
-  body.subpage .bib-community{width:100%!important;margin:0 0 26px!important;padding:0!important}
+  body.subpage .bib-community{width:100%!important;margin:0 0 24px!important;padding:0!important}
   body.subpage .bib-community-copy{max-width:38ch!important;font-size:.62rem!important;line-height:1.45!important}
   body.subpage .bib-section{width:100%!important;padding:0 0 46px!important}
   body.subpage .bib-section-head{margin:0 0 12px!important}
@@ -125,6 +126,7 @@
     padding:13px 0 18px!important;margin:0!important;border:0!important;background:transparent!important;
   }
   body.subpage .bib-entry>.bib-select{margin-top:3px!important}
+  body.subpage .bib-select span{width:14px!important;height:14px!important;border-radius:4px!important}
   body.subpage .bib-entry>.bib-year{margin:0 0 4px!important;font-size:.56rem!important;line-height:1!important}
   body.subpage .bib-entry h3{max-width:none!important;font-size:1rem!important;line-height:1.46!important;text-align:left!important}
   body.subpage .bib-links{max-width:none!important;margin-top:6px!important;font-size:.59rem!important;line-height:1.45!important}
@@ -157,11 +159,12 @@
   .source-links{max-width:none!important;font-size:.59rem!important;line-height:1.45!important}
   .source-az-context{display:none!important}
 
-  /* Cases: exactly two columns on touch widths; records are prose-first. */
-  body.cases-page .cases-directory{padding:4px 0 44px!important}
-  body.cases-page .cases-directory-copy{display:block!important;margin:0 0 16px!important}
+  /* Cases: exactly two columns on touch widths; long intro copy is redundant here. */
+  body.cases-page .page-intro .page-dek{display:none!important}
+  body.cases-page .cases-directory{padding:0 0 44px!important}
+  body.cases-page .cases-directory-copy{display:block!important;margin:0 0 15px!important}
   body.cases-page .cases-directory-copy h2{font-size:2.45rem!important;line-height:1!important}
-  body.cases-page .cases-directory-copy>p{max-width:38ch!important;margin-top:11px!important;font-size:.66rem!important;line-height:1.45!important}
+  body.cases-page .cases-directory-copy>p{display:none!important}
   body.cases-page .case-wall{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important;gap:7px!important;margin:0!important}
   body.cases-page .case-wall .case-index-row{aspect-ratio:1/1!important;border-radius:12px!important}
   body.cases-page .case-wall .case-tile-face{border-radius:12px!important}
