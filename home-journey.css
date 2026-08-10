@@ -1,0 +1,31 @@
+.journey-feature{background:#ede7df;color:#2b231f}
+.journey-feature-inner{width:min(calc(100% - 40px),1340px);margin:auto;padding:clamp(86px,10vw,136px) 0 clamp(92px,11vw,148px)}
+.journey-feature-head{display:grid;grid-template-columns:minmax(250px,.7fr) minmax(0,1.3fr);gap:clamp(38px,7vw,96px);align-items:end;margin-bottom:42px}
+.journey-feature-head h2{max-width:760px;margin:0;font-size:clamp(2.7rem,5.2vw,5.2rem);font-weight:500;letter-spacing:-.04em;line-height:.95;text-wrap:balance}
+.journey-feature-head p{max-width:660px;margin:0 0 7px;color:#6f6259;font-size:1.06rem;line-height:1.58}
+.journey-feature-card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);min-height:560px;overflow:hidden;border-radius:28px;background:#1b1513;color:#f4efe8;text-decoration:none;box-shadow:0 26px 70px rgba(58,44,35,.14)}
+.journey-feature-map{position:relative;min-height:560px;overflow:hidden;background:radial-gradient(circle at 22% 30%,rgba(180,129,97,.13),transparent 24%),linear-gradient(180deg,#211916,#171210)}
+.journey-feature-map::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.72) 70%,transparent)}
+.journey-feature-map svg{position:absolute;inset:6% 5% 8% 4%;width:91%;height:86%;overflow:visible}
+.journey-feature-route{fill:none;stroke:#d29a78;stroke-width:3.3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 8px rgba(210,154,120,.2))}
+.journey-feature-route-shadow{fill:none;stroke:rgba(255,255,255,.1);stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
+.journey-feature-flow{fill:none;stroke:#8da4b5;stroke-width:2;stroke-dasharray:7 9;stroke-linecap:round;opacity:.82}
+.journey-feature-node{fill:#f1e9df;stroke:#1b1513;stroke-width:2.2}
+.journey-feature-node--major{fill:#d29a78;stroke:#f5eee7;stroke-width:2.5}
+.journey-feature-label{fill:#cabdb4;font:600 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:.01em}
+.journey-feature-label--major{fill:#f4efe8;font-weight:700}
+.journey-feature-map-caption{position:absolute;left:28px;bottom:24px;margin:0;color:rgba(255,255,255,.58);font:560 .64rem/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:.03em}
+.journey-feature-copy{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(34px,4.5vw,60px);background:linear-gradient(180deg,#241b18 0%,#191311 100%)}
+.journey-feature-kicker{margin:0 0 13px;color:#e0ac8d;font:700 .68rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.journey-feature-copy h3{max-width:520px;margin:0;font-size:clamp(2.3rem,4.1vw,4.6rem);font-weight:500;letter-spacing:-.035em;line-height:.94;text-wrap:balance}
+.journey-feature-copy>div>p{max-width:540px;margin:24px 0 0;color:#c9bdb4;font-size:1.05rem;line-height:1.58}
+.journey-chain{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:40px 0 0;padding:0;list-style:none}
+.journey-chain li{position:relative;padding-top:15px;border-top:1px solid rgba(255,255,255,.18);color:#d8cbc1;font:650 .65rem/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.journey-chain li::before{content:'';position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:#d29a78}
+.journey-feature-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:46px;padding-top:23px;border-top:1px solid rgba(255,255,255,.12);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.journey-feature-cta span:first-child{font-size:.76rem;font-weight:650;letter-spacing:.02em}
+.journey-feature-arrow{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.09);font-size:1.08rem;transition:background .25s ease,transform .3s cubic-bezier(.16,1,.3,1)}
+.journey-feature-card:hover .journey-feature-arrow,.journey-feature-card:focus-visible .journey-feature-arrow{background:rgba(255,255,255,.16);transform:translate(2px,-2px)}
+.journey-feature-card:focus-visible{outline:2px solid #a95f43;outline-offset:5px}
+@media(max-width:980px){.journey-feature-head{grid-template-columns:1fr}.journey-feature-card{grid-template-columns:1fr}.journey-feature-map{min-height:430px}.journey-feature-copy{min-height:430px}.journey-chain{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:680px){.journey-feature-inner{width:min(calc(100% - 28px),1340px)}.journey-feature-head{margin-bottom:28px}.journey-feature-card{border-radius:20px}.journey-feature-map{min-height:360px}.journey-feature-map svg{inset:4% -11% 5% -12%;width:123%;height:91%}.journey-feature-map-caption{left:18px;bottom:16px}.journey-feature-copy{min-height:0;padding:30px 24px 28px}.journey-chain{grid-template-columns:1fr;gap:0;margin-top:30px}.journey-chain li{padding:11px 0 11px 18px;border-top:0;border-left:1px solid rgba(255,255,255,.18)}.journey-chain li::before{top:17px;left:-4px}.journey-feature-cta{margin-top:28px}}
