@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-3';
+    ui.src = '../unified-ui.js?v=20260810-6';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -67,7 +67,7 @@
 
   const community = document.createElement('section');
   community.className = 'bib-community';
-  community.innerHTML = `<p class="bib-community-label">Blaschka Bibliothek</p><p class="bib-community-copy"><a href="https://www.zotero.org/groups/6634544/blaschka_bibliothek" target="_blank" rel="noopener">Open / join the shared Zotero library ↗</a>. Additions, corrections and duplicate reports are welcome.</p>`;
+  community.innerHTML = `<p class="bib-community-label">Blaschka Bibliothek</p><p class="bib-community-copy"><a href="https://www.zotero.org/groups/6634544/blaschka_bibliothek" target="_blank" rel="noopener">Shared Zotero library ↗</a> · additions and corrections welcome.</p>`;
   toolbar.insertAdjacentElement('afterend', community);
 
   const query = clean(new URLSearchParams(location.search).get('q') || '');
