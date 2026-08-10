@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "title": "The Blaschka Object Network — Dealer Epistemic Exchange Register",
+  "generated_date": "2026-08-10",
+  "scope": "Primary and archival evidence for natural-history dealers as organisers of comparison, scientific observation, exchange and collection redistribution, beyond the narrow act of sale. The register tests how dealer practices shaped what museums and scientists could know from objects.",
+  "evidence_guard": "Dealer-mediated observation or exchange is not automatically a Blaschka transaction. The records below are controls for the epistemic and commercial functions of Ward and Damon; Blaschka-specific claims remain confined to explicit model evidence.",
+  "records": [
+    {
+      "id": "EPI-WARD-LEIDY-1880-CORAL-MODELS",
+      "dealer": "Henry Augustus Ward / Ward's Natural Science Establishment",
+      "source": "Joseph Leidy, 'Ward's Natural Science Establishment', Popular Science Monthly 16 (March 1880)",
+      "date": "1880-03",
+      "status": "contemporary_dealer_showroom_witness",
+      "evidence": "Leidy describes Ward's Rochester establishment as stocked with mounted vertebrates, skeletons, invertebrates, models, minerals, rocks and fossils for educational museums. He purchased two red-coral models for one dollar each, one natural size and one magnified, and displayed them beside an actual coral fragment so viewers could understand the animal and its order.",
+      "research_value": "A firsthand account of a dealer showroom turning model and specimen into a comparative teaching ensemble. The epistemic effect depended on juxtaposition across representational scales, not on the model replacing the specimen.",
+      "blaschka_guard": "The article does not name the makers of the two red-coral models. They are not identified as Blaschka models without independent evidence.",
+      "locator": "https://en.wikisource.org/wiki/Popular_Science_Monthly/Volume_16/March_1880/Ward%27s_Natural_Science_Establishment"
+    },
+    {
+      "id": "EPI-DAMON-PENTACRINI-1871",
+      "dealer": "Robert Damon",
+      "source": "Nature, 'On the Structure of the Palaeozoic Crinoids', 19 October 1871",
+      "date": "1871-10-19",
+      "status": "contemporary_scientific_supply_witness",
+      "evidence": "Nature reports that Damon, described as a well-known Weymouth dealer in natural-history objects, procured a considerable number of West Indian Pentacrini. The supply allowed detailed observations of hard and soft parts by scientific investigators.",
+      "research_value": "The dealer did not merely transfer objects after knowledge had been made; procurement created the material conditions for observation. This is a strong control for thinking about dealer networks as epistemic infrastructure.",
+      "blaschka_guard": "Predates the documented Blaschka agency and concerns living/recent crinoid specimens.",
+      "locator": "https://www.nature.com/articles/004496a0"
+    },
+    {
+      "id": "EPI-DAMON-TEPAPA-EXCHANGE",
+      "dealer": "Robert Damon",
+      "repository": "Museum of New Zealand Te Papa Tongarewa Archives",
+      "title": "R Damon, Weymouth: request for New Zealand tertiary fossils, land shells and animal specimens in spirits in exchange for overseas shells",
+      "status": "primary_archive_exchange_witness",
+      "evidence": "Te Papa's collections record preserves a Damon exchange proposal in which New Zealand fossils, land shells and fluid-preserved animals were sought in return for overseas shells.",
+      "research_value": "Shows a dealer using reciprocal exchange rather than cash purchase alone and treating heterogeneous natural-history materials as negotiable equivalents within an international network.",
+      "date_guard": "No date is imposed here because the public search result used in this pass did not expose one securely.",
+      "blaschka_guard": "Not a Blaschka transaction.",
+      "locator": "https://collections.tepapa.govt.nz/object/289103"
+    },
+    {
+      "id": "EPI-DAMON-GODEFFROY-1889",
+      "dealer": "Robert Damon",
+      "source": "Nature obituary notice, 9 May 1889; Te Papa Damon correspondence on collection dispersion",
+      "date": "1889",
+      "status": "collection_aggregation_and_redistribution_control",
+      "evidence": "Nature reports that Damon had recently purchased the zoological collections of the Godeffroy Museum in Hamburg. A surviving Te Papa letter of 1 March 1889 concerns the arrangement and dispersal of a large collection dominated by Australian and Polynesian material.",
+      "research_value": "Dealer activity could operate at collection scale: acquiring an already assembled museum collection, reorganising it and preparing it for redistribution to new buyers.",
+      "blaschka_guard": "Not evidence that Blaschka models were part of the Godeffroy material.",
+      "locators": [
+        "https://www.nature.com/articles/040044a0",
+        "https://collections.tepapa.govt.nz/object/293561"
+      ]
+    },
+    {
+      "id": "EPI-DAMON-POWERHOUSE-14532",
+      "dealer": "Robert Damon",
+      "repository": "Powerhouse Collection, Sydney",
+      "reference": "Object no. 14532",
+      "date": "1886-12-22",
+      "status": "object_level_dealer_provenance_control",
+      "evidence": "Powerhouse records a Cumberland barite specimen acquired from R. Damon in 1886 and still accompanied by an old museum label carrying its institutional number and identification.",
+      "research_value": "A useful object-level control for how dealer provenance can survive separately from later museum numbering and labels, even when the dealer's own paperwork is elsewhere or lost.",
+      "blaschka_guard": "Mineral specimen, not a Blaschka object.",
+      "locator": "https://collection.powerhouse.com.au/object/4065"
+    }
+  ],
+  "research_observation": "Dealer networks made knowledge in several ways: they assembled specimens and models for comparison, procured otherwise inaccessible organisms for research, organised exchange between distant collectors, broke and redistributed whole collections, and left provenance traces on objects and paperwork. The Blaschka dealer network should therefore be tested as an epistemic infrastructure as well as a sales network.",
+  "comparative_questions": [
+    "When did a model supplement a specimen rather than substitute for it?",
+    "Which dealer actions created access to otherwise unavailable organisms or representations?",
+    "How were values made commensurable in exchanges involving unlike natural-history objects?",
+    "What parts of dealer identity survived after museum accession: labels, catalogue numbers, invoices, or only later provenance memory?"
+  ]
+}
