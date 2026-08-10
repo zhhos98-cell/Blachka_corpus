@@ -52,7 +52,7 @@
       await loadScript('../cases-v2.js?v=20260809-1');
       await loadScript('../maps-v3.js?v=20260809-2');
       await loadScript('../maps-v4.js?v=20260809-1');
-      await loadScript('../map-ratio-fix.js?v=20260810-1');
+      await loadScript('../map-ratio-fix.js?v=20260810-2');
       await loadScript('../visuals-v1.js?v=20260809-2');
       await loadScript('../visuals-v2.js?v=20260809-1');
 
