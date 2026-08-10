@@ -1,8 +1,15 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.2",
   "created": "2026-08-11",
+  "updated": "2026-08-11",
   "title": "Rudolf Blaschka 1892 sketchbook-to-itinerary crosswalk",
-  "status": "scaffold_pending_page_level_images",
+  "status": "page_level_review_in_progress",
+  "publication_policy": {
+    "backend_only": true,
+    "public_pages_images": false,
+    "instruction": "Keep sketchbook images and image-derived layer in research/backend only. Do not add sketchbook images, thumbnails, or a sketchbook layer to the public GitHub Pages map without a new explicit decision.",
+    "catalogue_rights_note": "The Rakow catalogue labels the digital item Creative Commons No Copyright / Public Domain Mark, but this project is currently applying a deliberately more conservative frontend publication policy."
+  },
   "corning_record": {
     "title": "R. Blaschka [sketchbook].",
     "alternate_title": "Rudolf Blaschka sketchbook, circa 1892",
@@ -10,49 +17,192 @@
     "repository": "Rakow Research Library, The Corning Museum of Glass",
     "identifier": "87384",
     "alma_mms": "99873843504126",
+    "digital_pdf_filename": "Rakow_1000043361_BlaschkaSketchbook.pdf",
+    "digital_pages": 30,
     "physical_description": "1 v. (ca. 80 p.) : ill. ; 11 x 18 cm.",
     "catalogue_notes": [
       "Beginning sketch is captioned '... Tempe, Arizona, 22. April 1892'.",
       "Sketches of desert country.",
-      "Most pages are blank and were not filmed.",
-      "A few laid-in sketches of islands with palm trees were included in filming.",
+      "Most pages are blank and are not filmed.",
+      "A few pages of laid-in sketches of islands with palm trees have been included in the filming.",
       "Digitized September 2009 by Boston Photo Imaging.",
       "Displayed at the Rakow Research Library in 2007."
     ]
   },
   "research_distinction": {
-    "travel_sketchbook": "A small landscape/travel sketchbook, beginning securely at Tempe on 22 April and described as containing desert-country views plus a few laid-in island/palm sketches.",
-    "botanical_study_drawings": "A separate, much larger drawing corpus catalogued primarily by plant taxon, including many items dated '1892 or 1895'. Corning's 2007 chapter uses these individual botanical studies, for example Jacaranda filicifolia, rather than identifying them as pages of this sketchbook.",
-    "working_hypothesis": "The underused research opportunity is not discovery of the sketchbook but systematic synchronization of its page sequence with the letter itinerary, followed by cross-linking to separately catalogued botanical studies, preserved specimens, and finished models."
+    "travel_sketchbook": "Small landscape/travel sketchbook. The filmed surrogate contains desert landscapes plus a separate group of laid-in tropical harbour/island drawings.",
+    "botanical_study_drawings": "Separate, much larger corpus catalogued primarily by plant taxon. Corning 2007 uses individual botanical studies such as Jacaranda filicifolia; these should not be conflated with pages of this travel sketchbook.",
+    "working_hypothesis": "Synchronize landscape pages with the correspondence itinerary first; only then cross-link separately catalogued botanical studies, specimens, seeds/bulbs and finished models."
   },
-  "secure_anchor_points": [
+  "catalogue_surrogate_conflict": {
+    "catalogue_claim": "Beginning sketch captioned Tempe, Arizona, 22 April 1892.",
+    "surrogate_observation": "In the supplied 30-page PDF, the earliest clearly legible landscape caption is 'Wüste bei Maricopa (Arizona) / 24. April 1892'; a second nearby caption also appears to identify a cactus-desert view at/near Maricopa on 24 April.",
+    "status": "unresolved",
+    "possible_explanations": [
+      "the catalogue note refers to a physical leaf not included in the current filmed surrogate",
+      "a filmed Tempe image is missing or omitted from the PDF assembly",
+      "the catalogue description contains a metadata error",
+      "recto/verso ordering or graphite show-through complicates digital page sequence"
+    ],
+    "guard": "Do not silently replace either statement. Treat Tempe 22 April as secure correspondence chronology, but not yet as a secure sketchbook-page identification in this digital surrogate."
+  },
+  "spatial_evidence_types": {
+    "exact_point": "A fixed place or infrastructure node directly secured by inscription/record.",
+    "field_area": "A bounded locality or excursion area secured to a place/date but lacking an exact viewpoint.",
+    "corridor": "A moving observational segment, usually rail or ship travel, for which a single point would be misleading.",
+    "probable_view_sector": "A modeled viewpoint and direction inferred from visible landmarks; never presented as exact without independent corroboration."
+  },
+  "page_matches": [
+    {
+      "digital_pages": [4, 5],
+      "caption_transcription": "Wüste bei Maricopa (Arizona) / 24. April 1892",
+      "caption_confidence": "high",
+      "subject": "broad cactus/chaparral desert plain with a continuous rugged mountain range",
+      "itinerary_match": {
+        "place": "Maricopa, Arizona",
+        "date": "1892-04-24",
+        "archive_anchor": "BLA-D00786 · 017:140",
+        "relation": "The correspondence places Rudolf in Maricopa on 24 April after the Tempe fieldwork and before the Arizona-to-California rail journey."
+      },
+      "geospatial_class": "field_area",
+      "geolocation": {
+        "secure_center_reference": "historic Maricopa railroad settlement/station vicinity",
+        "primary_mountain_candidate": "Sierra Estrella / Hayes Peak sector to the northwest",
+        "alternative_mountain_candidate": "Table Top Mountains sector to the south-southwest",
+        "place_date_confidence": 0.98,
+        "mountain_range_confidence": 0.58,
+        "exact_viewpoint_confidence": 0.15
+      },
+      "notes": "The drawing should not be collapsed to a station marker. It records an environmental field/view area. Mountain identification remains a horizon-matching problem."
+    },
+    {
+      "digital_pages": [8, 9],
+      "caption_transcription": "[probable] Cactus-Wüste bei Maricopa (Arizona) / 24. April 1892",
+      "caption_confidence": "medium-high",
+      "visible_botanical_note": "Opuntia bigelovii [reading high-probability; spelling reflects historic annotation]",
+      "subject": "cactus desert with tall columnar forms and a jagged mountain mass",
+      "itinerary_match": {
+        "place": "Maricopa, Arizona",
+        "date": "1892-04-24",
+        "archive_anchor": "BLA-D00786 · 017:140; contextual description in BLA-D00796 · 017:150",
+        "relation": "Rudolf later describes the Tempe/Maricopa landscape as chaparral and cactus desert with a rocky mountain range behind it."
+      },
+      "geospatial_class": "field_area",
+      "geolocation": {
+        "secure_center_reference": "Maricopa railroad settlement/nearby desert",
+        "primary_mountain_candidate": "Sierra Estrella sector",
+        "alternative_mountain_candidate": "Table Top Mountains or another Gila/Maricopa desert range",
+        "place_date_confidence": 0.93,
+        "mountain_range_confidence": 0.55,
+        "exact_viewpoint_confidence": 0.15
+      }
+    },
+    {
+      "digital_pages": [12, 13],
+      "caption_transcription": null,
+      "caption_confidence": "none",
+      "subject": "large steep rocky mountain rising abruptly from sparse stony desert",
+      "itinerary_match": {
+        "candidate": "Arizona-Yuma-Salton-San Jacinto rail corridor, 24-25 April 1892",
+        "archive_anchor": "BLA-D00796–00797 · 017:150–151",
+        "relation": "Rudolf describes the rail landscape from Arizona to Yuma, the nearly vegetationless California salt desert, the below-sea-level Salton depression, then a climb past snow-covered San Jacinto."
+      },
+      "geospatial_class": "corridor",
+      "geolocation": {
+        "primary_landform_candidate": "San Jacinto massif viewed from the Colorado/Coachella desert rail corridor",
+        "alternative": "another rocky range on the Maricopa-Yuma-California transit segment",
+        "corridor_confidence": 0.65,
+        "san_jacinto_confidence": 0.55,
+        "exact_viewpoint_confidence": 0.10
+      },
+      "guard": "Do not assign a point or date until an inscription, railway milepoint, or stronger silhouette match is found."
+    },
+    {
+      "digital_pages": [17],
+      "caption_transcription": "[probable] Wüste bei Hesperia ... [probable date line: 5 May 1892]",
+      "caption_confidence": "medium",
+      "subject": "tree-like yucca/Joshua-tree desert with high mountain chain behind",
+      "itinerary_match": {
+        "place": "Hesperia, California",
+        "date": "1892-05-05",
+        "archive_anchor": "retrospective account in Agua Caliente letter, 7 May 1892",
+        "relation": "The letter says they arrived at Hesperia about 3 a.m., stayed at a hotel near the station, and at daybreak saw a vast desert plain surrounded by mountains, with tree-like Yucca brevifolia rising 'like a forest' and a snow-topped San Bernardino summit behind."
+      },
+      "geospatial_class": "field_area",
+      "route_revision_candidate": true,
+      "geolocation": {
+        "secure_center_reference": "1891 Hesperia townsite / railroad depot vicinity",
+        "probable_view_direction": "southeast toward the San Bernardino high peaks",
+        "place_confidence": 0.94,
+        "view_direction_confidence": 0.72,
+        "exact_viewpoint_confidence": 0.25
+      },
+      "notes": "This is a strong image-text match and should be added to the research itinerary as a 5 May field node. The public map is intentionally unchanged in this pass."
+    },
+    {
+      "digital_pages": [21],
+      "caption_transcription": null,
+      "subject": "tropical harbour or lagoon with buildings on a palm-covered shore, small palm island and mountains behind",
+      "itinerary_match": {
+        "candidate": "Port Antonio, Jamaica harbour group",
+        "archive_anchor": "BLA-D00736 · 017:90 and related retrospective Jamaica correspondence",
+        "relation": "Rudolf landed at Port Antonio on 28 February and later wrote specifically about his impressions of Port Antonio while travelling onward aboard Bowden."
+      },
+      "geospatial_class": "probable_view_sector",
+      "geolocation": {
+        "candidate": "Port Antonio harbour / Navy Island group",
+        "confidence": 0.58
+      }
+    },
+    {
+      "digital_pages": [23],
+      "caption_transcription": null,
+      "subject": "striped lighthouse on a low point at left, palm-covered island/shore at right, harbour water and mountainous interior behind",
+      "itinerary_match": {
+        "candidate": "Port Antonio, Jamaica",
+        "date_window": "1892-02-28 to 1892-02-29",
+        "archive_anchor": "BLA-D00736 · 017:90",
+        "relation": "The Port Antonio landing and immediate onward coastal voyage create a plausible shipboard context for a harbour-approach sketch."
+      },
+      "geospatial_class": "probable_view_sector",
+      "geolocation": {
+        "candidate_landmarks": ["Folly Point Lighthouse", "Navy Island"],
+        "modeled_view": "offshore north of Port Antonio, facing generally south into the harbour; Folly Point would fall east/left and Navy Island west/right",
+        "landmark_configuration_confidence": 0.82,
+        "port_antonio_confidence": 0.80,
+        "exact_viewpoint_confidence": 0.30
+      },
+      "guard": "Landmark configuration is a geospatial inference, not an inscription. Preserve as probable until checked against a historical harbour chart/coastal profile and additional period images."
+    },
+    {
+      "digital_pages": [25],
+      "caption_transcription": null,
+      "subject": "close tropical waterway/harbour edge with dense palms",
+      "itinerary_match": {
+        "candidate": "same Jamaica / Port Antonio laid-in group as pages 21 and 23",
+        "archive_anchor": "BLA-D00736 · 017:90"
+      },
+      "geospatial_class": "probable_view_sector",
+      "geolocation": {
+        "candidate": "Port Antonio harbour or nearby north-coast Jamaican inlet",
+        "confidence": 0.52
+      }
+    }
+  ],
+  "unmatched_secure_correspondence_events": [
     {
       "date": "1892-04-22",
       "place": "Tempe, Arizona",
-      "evidence": "catalogue caption on beginning sketch",
-      "itinerary_relation": "Rudolf's letters place active desert excursions and cactus drawing in Tempe on the same date",
-      "confidence": "high"
+      "archive_anchor": "BLA-D00785 · 017:139",
+      "evidence": "Wagon excursion a few miles outside Tempe; cactus flowers drawn; live cacti collected; Delphinium drawn after return.",
+      "sketchbook_status": "No filmed page in the supplied 30-page PDF has yet been securely identified as the catalogue's Tempe 22 April beginning sketch."
     }
   ],
-  "candidate_unresolved_layers": [
-    {
-      "description": "laid-in island sketches with palm trees",
-      "possible_relation": "Jamaica / Caribbean phase",
-      "status": "unresolved",
-      "guard": "Do not identify as Jamaica without page image, inscription, or landscape-level corroboration."
-    }
-  ],
-  "next_fields_per_page": [
-    "digital_page_or_frame",
-    "visible_caption_or_date",
-    "place",
-    "landscape_or_subject",
-    "letter_date_match",
-    "letter_record_ids",
-    "botanical_drawing_candidates",
-    "material/specimen candidates",
-    "finished_model candidates",
-    "confidence",
-    "notes"
+  "next_actions": [
+    "Compare pages 5 and 9 against Sierra Estrella and Table Top horizon profiles from plausible Maricopa viewpoints.",
+    "Use the circa-1890/1891 Huntington Hesperia townsite maps to recover the depot/hotel area, then test the page-17 mountain bearing toward the San Bernardino high peaks.",
+    "Use a Port Antonio harbour chart and landmark geometry to constrain the page-23 shipboard view sector; treat pages 21 and 25 as associated only if topology remains consistent.",
+    "Inspect the 30 individual Rakow JPG delivery files if available; they may preserve more graphite detail than the assembled PDF.",
+    "Keep all sketchbook imagery and image-derived map layers backend-only during this phase."
   ]
 }
