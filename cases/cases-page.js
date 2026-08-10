@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-1';
+    ui.src = '../unified-ui.js?v=20260810-2';
     document.head.appendChild(ui);
   }
 
@@ -69,12 +69,14 @@
 
   (async () => {
     try {
-      const response = await fetch('../index.html', { cache: 'no-store' });
-      if (!response.ok) throw new Error(`Homepage source returned ${response.status}`);
+      /* The first five cases are frozen here instead of being scraped from the homepage.
+         This keeps the portal and the research reading page independent. */
+      const response = await fetch('./base-cases.html', { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Base case source returned ${response.status}`);
       const html = await response.text();
-      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const doc = new DOMParser().parseFromString(`<main>${html}</main>`, 'text/html');
       const baseSamples = [...doc.querySelectorAll('main > .sample')];
-      if (baseSamples.length < 5) throw new Error('Base case markup is incomplete.');
+      if (baseSamples.length !== 5) throw new Error(`Expected 5 base cases, found ${baseSamples.length}.`);
 
       baseSamples.forEach((sample) => target.appendChild(document.importNode(sample, true)));
       loading?.remove();
@@ -92,7 +94,7 @@
       restoreHash();
     } catch (error) {
       console.error(error);
-      if (loading) loading.remove();
+      loading?.remove();
       target.innerHTML = '<p class="case-load-error">The case page could not assemble its case markup. The source files remain available in the repository.</p>';
     }
   })();
