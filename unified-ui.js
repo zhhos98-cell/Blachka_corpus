@@ -3,8 +3,8 @@
   window.__blaschkaUnifiedUI = true;
 
   const isSubpage = document.body.classList.contains('subpage');
-  const cssHref = isSubpage ? '../apple-unified.css?v=20260810-1' : 'apple-unified.css?v=20260810-1';
-  if (!document.querySelector('link[data-apple-unified]')) {
+  const cssHref = isSubpage ? '../apple-unified.css?v=20260810-2' : 'apple-unified.css?v=20260810-2';
+  if (![...document.querySelectorAll('link[rel="stylesheet"]')].some(link => link.href.includes('apple-unified.css'))) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = cssHref;
