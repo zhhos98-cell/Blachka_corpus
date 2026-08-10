@@ -194,8 +194,15 @@
   const scope = document.getElementById('network-search-scope');
   const status = document.getElementById('network-search-status');
   if (form && input && scope) {
-    const placeholders = {cases:'e.g. Liverpool, Auckland, Tufts',bibliography:'e.g. Daston, 2008, conservation',sources:'e.g. HOLLIS, Ward, invoice, Dresden',auctions:'e.g. Christie’s, Berlin, catalogue number'};
-    const routes = {bibliography:'bibliography/',sources:'sources/',auctions:'auctions/',cases:'cases/'};
+    if (!scope.querySelector('option[value="people"]')) {
+      const peopleOption = document.createElement('option');
+      peopleOption.value = 'people';
+      peopleOption.textContent = 'People';
+      const bibliographyOption = scope.querySelector('option[value="bibliography"]');
+      scope.insertBefore(peopleOption, bibliographyOption || null);
+    }
+    const placeholders = {cases:'e.g. Liverpool, Auckland, Tufts',people:'e.g. Ward, Ganong, curator, conservator',bibliography:'e.g. Daston, 2008, conservation',sources:'e.g. HOLLIS, Ward, invoice, Dresden',auctions:'e.g. Christie’s, Berlin, catalogue number'};
+    const routes = {bibliography:'bibliography/',people:'people/',sources:'sources/',auctions:'auctions/',cases:'cases/'};
     const updatePlaceholder = () => { input.placeholder = placeholders[scope.value] || placeholders.cases; if (status) status.textContent = ''; };
     scope.addEventListener('change',updatePlaceholder);
     updatePlaceholder();
