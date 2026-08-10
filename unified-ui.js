@@ -37,7 +37,7 @@
     addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
   }
   addStyle(`${prefix}mobile-v3.css?v=20260810-3`, 'mobile-v3.css');
-  if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-1`, 'mobile-fixes.css');
+  if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-2`, 'mobile-fixes.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
@@ -65,6 +65,10 @@
     }).join('');
   }
 
+  document.querySelectorAll('img[src^="http://"],img[src^="https://"]').forEach(img => {
+    img.referrerPolicy = 'no-referrer';
+  });
+
   const main = document.querySelector('main');
   if (main && !main.id) main.id = 'main-content';
   if (main && !document.querySelector('.ui-skip-link')) {
@@ -78,6 +82,6 @@
   const footer = document.querySelector('.subpage-footer, footer');
   if (footer && !footer.querySelector('.footer-copyright')) {
     const target = footer.querySelector('.footer-inner') || footer;
-    target.innerHTML = `<div class="footer-identity"><a class="footer-title" href="${prefix}">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="${prefix}cases/">Cases</a><a href="${prefix}bibliography/">Bibliography</a><a href="${prefix}sources/">Sources</a><a href="${prefix}auctions/">Auctions</a><a href="${prefix}privacy/">Privacy</a><a class="footer-rss" href="${prefix}feed.xml" aria-label="RSS feed">RSS</a></div>`;
+    target.innerHTML = `<div class="footer-identity"><a class="footer-title" href="${prefix}">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="${prefix}cases/">Cases</a><a href="${prefix}bibliography/">Bibliography</a><a href="${prefix}sources/">Sources</a><a href="${prefix}auctions/">Auctions</a><a href="${prefix}rights/">Image rights</a><a href="${prefix}privacy/">Privacy</a><a class="footer-rss" href="${prefix}feed.xml" aria-label="RSS feed">RSS</a></div>`;
   }
 })();
