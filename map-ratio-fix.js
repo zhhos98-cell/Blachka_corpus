@@ -8,12 +8,15 @@
     document.head.appendChild(link);
   };
 
-  addStylesheet('portal-pass4.css?v=20260810-1', 'portalPass4');
+  const scriptBase = document.currentScript?.src
+    ? new URL('.', document.currentScript.src)
+    : new URL('.', location.href);
+  addStylesheet(new URL('portal-pass4.css?v=20260810-1', scriptBase).href, 'portalPass4');
 
   const refineHomepage = () => {
     if (document.body.classList.contains('subpage')) return;
 
-    /* The selector already tells visitors where they are searching; remove the duplicate links/helper line. */
+    /* The selector already tells visitors where they are searching; remove duplicate links/helper copy. */
     document.querySelector('.network-search-mode')?.remove();
     document.querySelector('.network-search-links')?.remove();
 
