@@ -14,7 +14,7 @@
     document.head.appendChild(link);
   };
   addStyle('site-polish.css?v=20260810-2', 'site-polish.css');
-  addStyle('home-curation.css?v=20260810-4', 'home-curation.css');
+  addStyle('home-curation.css?v=20260810-5', 'home-curation.css');
   addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
   addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
   addStyle('mobile-v3.css?v=20260810-3', 'mobile-v3.css');
@@ -72,8 +72,9 @@
   ];
 
   const familyFigure = document.querySelector('.origin-photo');
+  const familyStage = familyFigure?.querySelector('.origin-image-stage') || familyFigure;
   const originStory = document.querySelector('.origin-story');
-  if (familyFigure && originStory && !familyFigure.querySelector('.family-portrait-layer')) {
+  if (familyFigure && familyStage && originStory && !familyStage.querySelector('.family-portrait-layer')) {
     const layer = document.createElement('div');
     layer.className = 'family-portrait-layer';
     layer.setAttribute('aria-label', 'Blaschka family portrait biographies');
@@ -81,8 +82,7 @@
       <span class="family-person family-person--${person.key}" data-person="${person.key}">
         <button type="button" aria-label="Highlight ${person.name}" aria-expanded="false"></button>
       </span>`).join('');
-    const caption = familyFigure.querySelector('figcaption');
-    familyFigure.insertBefore(layer, caption || null);
+    familyStage.appendChild(layer);
 
     const mobileNav = document.createElement('div');
     mobileNav.className = 'family-mobile-nav';
