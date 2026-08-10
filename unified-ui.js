@@ -24,6 +24,7 @@
   addStyle(`${prefix}fluid-motion.css?v=20260810-4`, 'fluid-motion.css');
   addStyle(`${prefix}site-rhythm.css?v=20260810-1`, 'site-rhythm.css');
   addStyle(`${prefix}site-polish.css?v=20260810-1`, 'site-polish.css');
+  addStyle(`${prefix}footer-legal.css?v=20260810-1`, 'footer-legal.css');
   addScript(`${prefix}nav-glide.js?v=20260810-1`, 'nav-glide.js');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
