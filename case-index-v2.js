@@ -11,6 +11,7 @@
   addStylesheet('shuge-inspired.css?v=20260810-2', 'shugeInspired');
   addStylesheet('portal-pass2.css?v=20260810-1', 'portalPass2');
   addStylesheet('portal-pass3.css?v=20260810-1', 'portalPass3');
+  addStylesheet('search-scope-v2.css?v=20260810-1', 'searchScopeV2');
 
   if (!document.querySelector('script[data-map-ratio-fix]')) {
     const script = document.createElement('script');
@@ -35,11 +36,19 @@
   const hero = document.querySelector('.hero-title-wrap');
   if (hero && !hero.querySelector('.network-search')) {
     hero.insertAdjacentHTML('beforeend', `
-      <form class="network-search" id="network-search" role="search" aria-label="Explore the Blaschka Object Network">
+      <form class="network-search" id="network-search" role="search" aria-label="Search the Blaschka Object Network">
         <div class="network-search-shell">
-          <input id="network-search-input" type="search" autocomplete="off" placeholder="Search a place, case, archive, bibliography…" aria-label="Search cases and research sections">
-          <button type="submit">Explore</button>
+          <select class="network-search-scope" id="network-search-scope" aria-label="Choose search collection">
+            <option value="all">All</option>
+            <option value="bibliography">Bibliography</option>
+            <option value="sources">Sources</option>
+            <option value="auctions">Auctions</option>
+            <option value="cases">Cases</option>
+          </select>
+          <input id="network-search-input" type="search" autocomplete="off" placeholder="Search the network…" aria-label="Search query">
+          <button type="submit">Search</button>
         </div>
+        <p class="network-search-mode" id="network-search-mode">Choose a collection, then search. Bibliography and Sources open directly as filtered views.</p>
         <div class="network-search-links" aria-label="Quick links">
           <a href="cases/">Cases</a>
           <a href="bibliography/">Bibliography</a>
@@ -139,45 +148,93 @@
 
   const form = document.getElementById('network-search');
   const input = document.getElementById('network-search-input');
+  const scope = document.getElementById('network-search-scope');
   const status = document.getElementById('network-search-status');
+  const modeHint = document.getElementById('network-search-mode');
 
-  if (form && input && !form.dataset.bound) {
+  if (form && input && scope && !form.dataset.bound) {
     form.dataset.bound = 'true';
-    const normalise = (value) => value.toLowerCase().trim().replace(/\s+/g, ' ');
-    const destinations = [
-      { terms: ['liverpool', 'freight', 'i.b. 268', 'ib 268'], href: '#sample-liverpool', label: 'Liverpool case' },
-      { terms: ['auckland', 'cheeseman', 'adams'], href: '#sample-auckland', label: 'Auckland case' },
-      { terms: ['florence', 'firenze', 'marchi', 'tubipora'], href: 'cases/#sample-florence', label: 'Florence case' },
-      { terms: ['tufts', 'barnum', 'corning custody'], href: 'cases/#sample-tufts', label: 'Tufts case' },
-      { terms: ['michigan', 'vitreous ecology'], href: 'cases/#sample-michigan', label: 'Michigan case' },
-      { terms: ['mexico', 'mexico city', 'unam', 'chopo'], href: 'cases/#sample-mexico', label: 'Mexico City case' },
-      { terms: ['newcastle', 'hancock'], href: 'cases/#sample-newcastle', label: 'Newcastle case' },
-      { terms: ['nottingham', 'carr', 'wollaton'], href: 'cases/#sample-nottingham', label: 'Nottingham case' },
-      { terms: ['vassar', 'swift hall'], href: 'cases/#sample-vassar', label: 'Vassar case' },
-      { terms: ['milwaukee'], href: 'cases/#sample-milwaukee', label: 'Milwaukee case' },
-      { terms: ['case', 'cases', 'collection', 'collections'], href: 'cases/', label: 'case directory' },
-      { terms: ['bibliography', 'book', 'books', 'article', 'literature', 'publication'], href: 'bibliography/', label: 'bibliography' },
-      { terms: ['source', 'sources', 'archive', 'archives', 'dealer', 'packing', 'invoice', 'correspondence'], href: 'sources/', label: 'sources directory' },
-      { terms: ['auction', 'auctions', 'market', 'sale', 'sales'], href: 'auctions/', label: 'auction research' },
-      { terms: ['contact', 'email', 'correction'], href: '#contact', label: 'contact' },
-      { terms: ['method', 'project', 'about'], href: '#project', label: 'project introduction' }
+    const normalise = value => String(value || '').toLowerCase().trim().replace(/\s+/g, ' ');
+    const caseRoutes = [
+      { terms:['liverpool','freight','i.b. 268','ib 268'], href:'#sample-liverpool', label:'Liverpool case' },
+      { terms:['auckland','cheeseman','adams'], href:'#sample-auckland', label:'Auckland case' },
+      { terms:['florence','firenze','marchi','tubipora'], href:'cases/#sample-florence', label:'Florence case' },
+      { terms:['tufts','barnum','corning custody'], href:'cases/#sample-tufts', label:'Tufts case' },
+      { terms:['michigan','vitreous ecology'], href:'cases/#sample-michigan', label:'Michigan case' },
+      { terms:['mexico','mexico city','unam','chopo'], href:'cases/#sample-mexico', label:'Mexico City case' },
+      { terms:['newcastle','hancock'], href:'cases/#sample-newcastle', label:'Newcastle case' },
+      { terms:['nottingham','carr','wollaton'], href:'cases/#sample-nottingham', label:'Nottingham case' },
+      { terms:['vassar','swift hall'], href:'cases/#sample-vassar', label:'Vassar case' },
+      { terms:['milwaukee'], href:'cases/#sample-milwaukee', label:'Milwaukee case' }
     ];
+    const auctionRoutes = [
+      { terms:['christie','christies','science museum','1877-381','1877-360','1877-376','lot 46','lot 47','lot 48'], href:'auctions/?q=Science%20Museum', label:'2019 Christie’s / Science Museum auction records' },
+      { terms:['krefeld','berlin','hydractinia','stachelpolyp','lot 26','lot 27'], href:'auctions/?q=Berlin', label:'2025 Krefeld / Berlin-labelled records' },
+      { terms:['edwardsia','corallium','lot 39','lot 40','2026'], href:'auctions/?q=2026', label:'2026 Krefeld auction appearances' }
+    ];
+    const updateHint = () => {
+      const copy = {
+        all:'Search across the main public layers; known cases and auction clusters route directly.',
+        bibliography:'Search authors, titles, years and citation text in the bibliography.',
+        sources:'Search archives, catalogues, correspondence, institutions and source labels.',
+        auctions:'Search auction houses, years, lots, taxa, inventory numbers and provenance notes.',
+        cases:'Search the documentary case directory.'
+      };
+      if (modeHint) modeHint.textContent = copy[scope.value] || copy.all;
+      const placeholders = {
+        all:'e.g. Liverpool, Daston, HOLLIS, Christie’s',
+        bibliography:'e.g. Daston, 2008, conservation',
+        sources:'e.g. HOLLIS, Ward, invoice, Dresden',
+        auctions:'e.g. Christie’s, Berlin, 1877-381',
+        cases:'e.g. Liverpool, Auckland, Tufts'
+      };
+      input.placeholder = placeholders[scope.value] || placeholders.all;
+    };
+    scope.addEventListener('change', updateHint);
+    updateHint();
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', event => {
       event.preventDefault();
-      const query = normalise(input.value);
-      if (!query) {
-        if (status) status.textContent = 'Try a place such as Liverpool, a record type such as invoice, or a section such as bibliography.';
+      const query = input.value.trim();
+      const q = normalise(query);
+      if (!q) {
+        if (status) status.textContent = 'Enter a name, place, object number, archive, author, title word, or auction term.';
         input.focus();
         return;
       }
-      const match = destinations.find((item) => item.terms.some((term) => query.includes(term) || term.includes(query)));
-      if (match) {
-        if (status) status.textContent = `Opening ${match.label}…`;
-        window.location.href = match.href;
+
+      if (scope.value === 'bibliography') {
+        window.location.href = `bibliography/?q=${encodeURIComponent(query)}`;
         return;
       }
-      if (status) status.textContent = 'No direct match. Try a city, “cases”, “bibliography”, “sources”, “auctions”, or “contact”.';
+      if (scope.value === 'sources') {
+        window.location.href = `sources/?q=${encodeURIComponent(query)}`;
+        return;
+      }
+      if (scope.value === 'auctions') {
+        window.location.href = `auctions/?q=${encodeURIComponent(query)}`;
+        return;
+      }
+      if (scope.value === 'cases') {
+        const match = caseRoutes.find(item => item.terms.some(term => q.includes(term) || term.includes(q)));
+        window.location.href = match ? match.href : `cases/?q=${encodeURIComponent(query)}`;
+        return;
+      }
+
+      const caseMatch = caseRoutes.find(item => item.terms.some(term => q.includes(term) || term.includes(q)));
+      if (caseMatch) {
+        if (status) status.textContent = `Opening ${caseMatch.label}…`;
+        window.location.href = caseMatch.href;
+        return;
+      }
+      const auctionMatch = auctionRoutes.find(item => item.terms.some(term => q.includes(term) || term.includes(q)));
+      if (auctionMatch) {
+        if (status) status.textContent = `Opening ${auctionMatch.label}…`;
+        window.location.href = auctionMatch.href;
+        return;
+      }
+
+      window.location.href = `sources/?q=${encodeURIComponent(query)}`;
     });
   }
 })();
