@@ -74,20 +74,31 @@ window.RUDOLF_1892_KNOWLEDGE_DATA = {
       source: "017:133–139 · BLA-D00779 onward"
     },
     "maricopa-1892-04-24": {
-      primary: "observe",
-      encountered: "A further southwestern ecological zone on the rail route toward California.",
-      done: "Plants were sought and kept fresh during continued movement.",
-      moved: "Fresh botanical material and the accumulating drawing record.",
-      enabled: "Observation could continue while the travelling party remained in transit."
+      primary: "transit",
+      encountered: "The Southern Pacific junction at Maricopa, a desert landscape, and the constrained waiting time before the westbound train.",
+      done: "Rudolf’s dated cards and sketchbook views secure Maricopa on 24 April. Current evidence supports station-adjacent or transit observation; no separate collecting excursion is documented. A 29 May 1892 timetable gives a 6:35 a.m. westbound Southern Pacific passage as a close contextual control.",
+      moved: "Rudolf, Ganong, luggage, working notes and a sketchbook already functioning inside the travel interval.",
+      enabled: "Railway waiting and transit time could become observational time. Mobility infrastructure therefore shaped when and how landscapes entered the working record.",
+      why: "Maricopa shifts the map away from a sequence of field sites. A railway junction could itself become a knowledge-production setting without becoming a formal collecting locality.",
+      source: "Primary: 017:139–142 · BLA-D00785, BLA-D00786, BLA-D00788. Visual control: Rakow sketchbook 87384. Timetable control: Arizona Republican, 29 May 1892."
     },
-    "san-diego-1892-04-30": {
+    "los-angeles-1892-04-24": {
+      primary: "transit",
+      encountered: "A moving ecological sequence from Arizona through Yuma, the sparsely vegetated California desert, the Salton depression and the San Jacinto approach.",
+      done: "The railway carried Rudolf across these zones on 24 April. In his 25 April letter he reconstructed them retrospectively as an ordered sequence. The reported Los Angeles arrival ‘at 10’ is best read as about 10 p.m.; the party then remained overnight before the 8:45 San Diego train.",
+      moved: "The observer, sketchbook, notes, botanical material and an increasingly ordered memory of ecological transition.",
+      enabled: "The train did more than connect field sites. Its timetable and moving view created an observational sequence that could be sketched, compared and narrated the next day.",
+      why: "This is the clearest place to see railway time functioning as epistemic infrastructure: movement, daylight, landscape sequence and retrospective description are synchronized within one travel day.",
+      source: "Primary: 017:150–151 · BLA-D00796–00797, written 25 April and explicitly describing the preceding day."
+    },
+    "san-diego-1892-04-25": {
       primary: "circulate",
-      encountered: "Southern Californian flora and the local botanical expertise of C. R. Orcutt.",
-      done: "Rudolf studied and drew local species while arranging for material that could not be exhausted during the visit.",
-      moved: "Cacti, bulbs and later plant supplies sent onward after the travelling party had moved on.",
-      enabled: "Knowledge production escaped the temporal limits of the visit: local supply could continue after Rudolf left California.",
-      why: "San Diego makes the journey visibly non-linear. The body moves on, while plants and future reference material continue to travel on a different timetable.",
-      source: "017:150–165; later supply recalled in 017:282"
+      encountered: "Southern Californian flora, local botanical expertise, and plant material brought in from sites beyond Rudolf’s immediate reach.",
+      done: "Rudolf arrived at 1 p.m. on 25 April after leaving Los Angeles at 8:45 and sighting the Pacific at about 10. By 26 April the microscope trunk had arrived and hotel-based study was underway; Rudolf drew material supplied from more distant localities while maintaining contact with local botanists including C. R. Orcutt.",
+      moved: "Cacti, bulbs and later plant supplies sent onward after the travelling party had moved on; drawings condensed material gathered by a wider local network.",
+      enabled: "The drawing station and the collecting site no longer had to be the same place. Knowledge production could continue through local supply after Rudolf’s body moved elsewhere.",
+      why: "San Diego is a particularly clear distributed-workshop node: the corrected arrival chronology closes the rail sequence, while other people and places supplied specimens to a hotel room functioning as a drawing and microscopy station.",
+      source: "Primary: 017:150–165; San Diego letter header, 25 April 1892; later supply in 017:282."
     },
     "san-bernardino-1892-05-04": {
       primary: "observe",
@@ -215,7 +226,7 @@ window.RUDOLF_1892_KNOWLEDGE_DATA = {
       status: "documented"
     },
     {
-      from: "san-diego-1892-04-30",
+      from: "san-diego-1892-04-25",
       to: "cambridge-june-1892-06-10",
       type: "material",
       label: "Cacti, bulbs and later Californian plant supply",
