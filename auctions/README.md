@@ -12,6 +12,7 @@ This directory contains the public auction page and the structured market-proven
 - `auction-catalogue-recoveries.json` — later catalogue-level closures such as sale codes, exact lot numbers and single-owner sale context that improve existing records without creating duplicate auction events.
 - `auction-archive-router.json` — exact archival record identifiers, object-number search keys and order of attack for unresolved deaccession/market chains once generic web search reaches diminishing returns.
 - `berlin-krefeld-provenance-audit.json` — dedicated audit separating Humboldt University's Zoologische Lehrsammlung from the Museum für Naturkunde branch behind the `Zoolog. Institut Universität, Berlin` labels on Krefeld 2025 lots 26–27.
+- `krefeld-hydractinia-156-crosswalk.json` — pass-10 crosswalk resolving Krefeld lot 27's `Stachelpolyp` to `Hydractinia echinata`, recovering Blaschka catalogue no. 156, and checking that exact key against the complete project transcription of the published MfN OS001-02 inventory.
 - `auction-science-museum-recipient-audit.json` — bounded public-web audit of the Science Museum 1925–27 dispersal, retaining UCL and Cardiff as the two currently secure named recipients and routing the remaining five names into archive work.
 
 ## Admission rule
@@ -34,13 +35,21 @@ The 2015 Grisebach `Serpula contortuplicata / L. No. 343` appearance has been ti
 
 The Christie’s 2019 Science Museum material now has a defensible pre-sale custody/context layer. Christie’s explicitly described the auction as the collection of Peter Petrou, so the safe chain is `Science Museum 1877 -> deaccession 1925–27 -> unresolved gap -> Peter Petrou collection/sale context by Jan 2019 -> Christie’s auction -> buyer open`. No direct Science Museum-to-Petrou transfer or acquisition date is inferred.
 
-### Berlin branch: a major provenance refinement
+### Berlin branch: from generic provenance to exact model key
 
 The Krefeld 2025 lots can no longer be routed simply to a generic “Berlin” collection. Both lots carry labels transcribed as `Zoolog. Institut Universität, Berlin`. Humboldt University's current collections portal independently preserves essentially the same printed label formula, `Zoolog. Institut/ Universität Berlin`, on objects in its Zoologische Lehrsammlung. The same portal also exposes multiple surviving Blaschka teaching models with HU inventory numbers and dates of 1885 or 1887.
 
 The HU collection biography adds a high-value dispersal event: in **1970** a decision was made to reduce the teaching collection; parts were given away, many specimens were lost, and other material was transferred to the Museum für Naturkunde. This creates a plausible route by which historically labelled teaching material could have left stable HU custody. It does **not** prove that Krefeld lot 26 or 27 left in 1970.
 
-HU and Museum für Naturkunde are therefore now treated as distinct institutional branches. The HU teaching collection was founded independently in 1884; MfN has a separate historical Blaschka inventory target, `OS001-02 Blaschka Glasmodelle`; and HU records later transfers of some teaching material to MfN. Object-level matching remains open. The Krefeld `around 1870` dating also remains untouched: current HU examples found in this pass are dated 1885/1887, but collection chronology alone cannot redetermine an unidentified auction object.
+Pass 10 materially sharpens lot 27. The German auction title `Stachelpolyp` can be normalized to **Hydractinia echinata**: Universität Leipzig's Zoologische Sammlung uses the explicit caption `Stachelpolyp (Hydractinia echinata)` for a Blaschka model. Cornell's Blaschka digital collection then supplies the exact model-design key **Blaschka no. 156** for `Hydractinia echinata`.
+
+That key has now been checked against the project's complete transcription of the published Museum für Naturkunde `OS001-02 Blaschka Glasmodelle` inventory: **40 rows, minimum 59 explicitly stated physical components, 28 distinct Blaschka catalogue-number segments**. No `Hydractinia echinata`, `Stachelpolyp`, or catalogue no. `156` occurs in those 40 rows. This is a meaningful negative for the presently published OS001-02 inventory, not proof that Berlin never held such a model or that the object never passed through MfN. It does, however, make the HU historical teaching-stock and reduction/dispersal records the stronger next route.
+
+HU and Museum für Naturkunde remain distinct institutional branches. The HU teaching collection was founded independently in 1884; MfN has a separate OS001-02 inventory; and HU records later transfers of some teaching material to MfN. The earlier pass-08 runtime note that the OS001-02 PDF body was unavailable is superseded for research purposes by reuse of the project's previously captured complete 40-row transcription.
+
+Krefeld lot 26 remains taxonomically open. The MfN inventory contains possible actiniarian/zoantharian comparison records such as `Actinia equina`, `Anemonia sulcata`, and `Epizoanthus couchii`, but none is promoted to an identity match without the auction object's handwritten taxon, a catalogue number, or stronger image evidence.
+
+The Krefeld `around 1870` dating remains untouched as auction metadata. Current HU examples and the Berlin acquisition chronology make the date worth testing, but collection chronology alone cannot redetermine an unidentified physical object.
 
 ### Science Museum branch: public web exhausted before archive routing
 
@@ -62,16 +71,18 @@ George Loudon's first-person accounts remain a separate dealer-provenance proble
 - `../research/logs/2026-08-10-auction-deep-sweep-pass07-archive-router.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass08-berlin-hu-krefeld-provenance.md`
 - `../research/logs/2026-08-10-auction-deep-sweep-pass09-science-museum-recipient-web-audit.md`
+- `../research/logs/2026-08-10-auction-deep-sweep-pass10-krefeld-hydractinia-156.md`
 
 ## Next search layer
 
-Priority now shifts away from another broad auction-house sweep. The immediate order is:
+Priority remains away from another broad auction-house sweep. The immediate order is:
 
-1. HU Zoologische Lehrsammlung historical inventory plus 1968–1970 reduction/gift/transfer/loss records for the two Krefeld objects.
-2. MfN `OS001-02` inventory as a separate Berlin branch and possible HU-to-MfN transfer endpoint.
-3. Science Museum transfer/disposal index and store registers keyed by exact 1877 object numbers.
-4. Glasgow `1909.66` / Mason purchase files.
-5. Identification of Loudon's London dealer and English public school.
-6. Return to old auction catalogues only after these routes yield new names, catalogue numbers, taxa or provenance anchors.
+1. HU historical inventory plus 1968–1970 reduction/gift/transfer/loss records using exact keys `Hydractinia echinata`, `Stachelpolyp`, and **Blaschka no. 156**.
+2. Image-level audit of Krefeld lot 27 for any additional label, handwritten taxon, catalogue number or old inventory number; keep lot 26 open until equivalent evidence appears.
+3. Rakow MS 0013 `Hydractinia echinata` drawing record as a design-comparison source, without converting visual similarity into provenance proof.
+4. Science Museum transfer/disposal index and store registers keyed by exact 1877 object numbers.
+5. Glasgow `1909.66` / Mason purchase files.
+6. Identification of Loudon's London dealer and English public school.
+7. Return to old auction catalogues only after these routes yield new names, catalogue numbers, taxa or provenance anchors.
 
 False positives, count wording conflicts, inferred identities and spelling variants are retained in the structured backend/search logs to prevent repeated rediscovery or accidental conversion of ambiguous market evidence into settled provenance.
