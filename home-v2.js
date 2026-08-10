@@ -15,7 +15,7 @@
     document.head.appendChild(link);
   };
   addStyle('site-polish.css?v=20260810-2', 'site-polish.css');
-  addStyle('home-curation-v2.css?v=20260810-1', 'home-curation-v2.css');
+  addStyle('home-curation-v2.css?v=20260810-2', 'home-curation-v2.css');
   addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
   if (!compact) addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
   addStyle('mobile-v3.css?v=20260810-3', 'mobile-v3.css');
