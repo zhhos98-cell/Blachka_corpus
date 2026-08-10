@@ -10,6 +10,7 @@
 
   addStylesheet('shuge-inspired.css?v=20260810-2', 'shugeInspired');
   addStylesheet('portal-pass2.css?v=20260810-1', 'portalPass2');
+  addStylesheet('portal-pass3.css?v=20260810-1', 'portalPass3');
 
   if (!document.querySelector('script[data-map-ratio-fix]')) {
     const script = document.createElement('script');
@@ -19,7 +20,6 @@
     document.head.appendChild(script);
   }
 
-  /* Public navigation now treats Cases as its own destination and hides the internal log. */
   const topNav = document.querySelector('.top-nav');
   if (topNav) {
     topNav.innerHTML = `
@@ -51,13 +51,11 @@
     `);
   }
 
-  /* Remove the explanatory blocks that duplicated the site's argument. */
   document.querySelector('.research-chain')?.remove();
   document.querySelector('.evidence-key')?.remove();
   document.querySelector('.project-grid')?.remove();
   document.querySelector('.network-pillars')?.remove();
 
-  /* Rebuild the origin story as a left-image / right-text opening with a winding chronology. */
   const origin = document.querySelector('.origin-story');
   if (origin) {
     origin.innerHTML = `
@@ -96,7 +94,6 @@
     `;
   }
 
-  /* Keep the homepage case directory deliberately small. */
   const table = document.querySelector('.case-index-table');
   if (table) {
     [...table.querySelectorAll('.case-index-row')].slice(2).forEach((row) => row.remove());
@@ -110,7 +107,6 @@
     }
   }
 
-  /* cases-v2.js runs before this file, so all ten sections exist at this point. */
   document.querySelectorAll('.sample').forEach((sample) => {
     if (!['sample-liverpool', 'sample-auckland'].includes(sample.id)) sample.remove();
   });
