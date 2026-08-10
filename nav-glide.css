@@ -1,6 +1,4 @@
-/* Navigation glide · precision pass 2026-08-10
-   One moving focus surface. Links themselves stay still so the navigation never feels buoyant. */
-
+/* Navigation glide · canonical home/subpage navigation. */
 .top-nav,
 .subpage-nav{
   position:relative!important;
@@ -12,7 +10,8 @@
 }
 
 .top-nav a,
-.subpage-nav a{
+.subpage-nav a,
+.nav-map-trigger{
   position:relative!important;
   z-index:2!important;
   min-height:44px!important;
@@ -31,8 +30,11 @@
 .top-nav a:focus-visible,
 .subpage-nav a:hover,
 .subpage-nav a:focus-visible,
+.nav-map-trigger:hover,
+.nav-map-trigger:focus-visible,
 .top-nav a[aria-current="page"],
-.subpage-nav a[aria-current="page"]{
+.subpage-nav a[aria-current="page"],
+.nav-map-trigger.is-current{
   color:#fff!important;
   background:transparent!important;
   box-shadow:none!important;
@@ -40,7 +42,8 @@
 }
 
 .top-nav a:active,
-.subpage-nav a:active{opacity:.78!important;transform:none!important}
+.subpage-nav a:active,
+.nav-map-trigger:active{opacity:.78!important;transform:none!important}
 
 .nav-glider{
   position:absolute;
@@ -56,26 +59,23 @@
   opacity:var(--nav-glider-opacity,0);
   transform:translate3d(var(--nav-glider-x,0px),0,0);
   pointer-events:none;
-  transition:
-    transform 230ms cubic-bezier(.2,.8,.2,1),
-    width 190ms cubic-bezier(.2,.8,.2,1),
-    opacity 110ms ease;
+  transition:transform 230ms cubic-bezier(.2,.8,.2,1),width 190ms cubic-bezier(.2,.8,.2,1),opacity 110ms ease;
 }
 
 .hero-header .top-nav{margin-left:-4px!important}
 
 @media(min-width:761px){
-  .hero-header{min-height:68px!important}
+  .hero-header,.subpage-header{min-height:68px!important}
   .top-nav,.subpage-nav{font-size:.79rem!important}
 }
 
 @media(max-width:760px){
   .top-nav,.subpage-nav{gap:1px!important;padding:3px!important}
-  .top-nav a,.subpage-nav a{min-height:40px!important;padding:0 14px!important}
+  .top-nav a,.subpage-nav a,.nav-map-trigger{min-height:40px!important;padding:0 14px!important}
   .nav-glider{top:3px;left:3px;height:40px}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .top-nav a,.subpage-nav a{transition:none!important}
+  .top-nav a,.subpage-nav a,.nav-map-trigger{transition:none!important}
   .nav-glider{display:none!important}
 }
