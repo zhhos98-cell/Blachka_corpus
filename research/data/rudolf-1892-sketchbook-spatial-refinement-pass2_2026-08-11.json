@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-08-11",
+  "title": "Rudolf Blaschka 1892 sketchbook spatial refinement — pass 2",
+  "scope": "Backend-only refinement following page-level review of Rakow BIB 87384. This pass narrows Maricopa, Hesperia and Port Antonio using contemporary transport evidence, historical-site controls and harbour geometry, and records one additional nonblank working-note page.",
+  "frontend_policy": "No public Pages changes. Do not expose sketchbook images, thumbnails, derived polygons or viewpoint hypotheses on the public map without a later explicit decision.",
+  "method_guard": [
+    "A dated place inscription secures place/date but does not automatically prove a collecting excursion or exact viewpoint.",
+    "Rail timetables can constrain observation context without proving that a sketch was drawn aboard a particular train.",
+    "Later photographs and modern coordinates are controls for persistent geometry only; they are not substitutes for 1892 evidence.",
+    "When a landmark match is plausible but not unique, preserve a view sector rather than a point."
+  ],
+  "maricopa": {
+    "pages": [4, 5, 8, 9],
+    "secure_sketchbook_evidence": [
+      "Wüste bei Maricopa (Arizona) / 24. April 1892",
+      "Cactus-Wüste bei Maricopa (Arizona) / 24. April 1892 [high-probability visual reading]",
+      "Opuntia bigelovii [high-probability botanical annotation]"
+    ],
+    "correspondence_context": {
+      "anchor": "BLA-D00785 · 017:139",
+      "statement": "On 22 April Rudolf wrote from Tempe that the party would finish there the next day, go to Maricopa to spend the night, and take the Sunday-morning train toward California.",
+      "chronology_inference": "22 April 1892 was Friday; the stated plan implies Tempe→Maricopa on Saturday 23 April, overnight at Maricopa, and westward departure Sunday 24 April. The dated Maricopa cards independently confirm presence there on 24 April."
+    },
+    "historical_site_control": {
+      "result": "The 1892 stop is compatible with the present Maricopa railroad-town location rather than the older Maricopa Wells/Maricopaville sites.",
+      "basis": [
+        {
+          "source": "City of Maricopa local history / General Plan",
+          "finding": "Maricopa became the junction of Southern Pacific and Maricopa & Phoenix railroads in July 1887 at the final/current town site.",
+          "url": "https://www.maricopa-az.gov/Departments/Development-Services/Planning-Maricopa-General-Plan/I-Introduction"
+        },
+        {
+          "source": "Maricopa Historical Society timeline",
+          "finding": "Current site established by railroad in 1887.",
+          "url": "https://maricopahistory.org/timeline/"
+        },
+        {
+          "source": "Arizona Memory Project",
+          "title": "Maricopa Railroad Map, 1915",
+          "finding": "Large-scale 1:1,200 station map of railroad lands, tracks and structures; useful later georeferencing control for the junction footprint.",
+          "url": "https://azmemory.azlibrary.gov/nodes/view/328297"
+        },
+        {
+          "source": "Library of Congress",
+          "title": "Arizona, Maricopa. Southern Pacific Railroad station",
+          "date": "1900–1920",
+          "finding": "Photographic control of the Maricopa depot and baggage/passenger environment; no known restrictions on publication, though retained only as backend reference here.",
+          "url": "https://www.loc.gov/pictures/item/2006679484/"
+        }
+      ]
+    },
+    "transport_context": {
+      "contemporary_timetable_control": {
+        "source": "Arizona Republican, 29 May 1892",
+        "finding": "Published railroad table states Southern Pacific westbound passes Maricopa at approximately 6:35 a.m.; the same time appears in later 1892 issues.",
+        "url": "https://azmemory.azlibrary.gov/nodes/view/172419"
+      },
+      "guard": "The May timetable is very close in date and repeated later in 1892, but an April 24 issue-specific timetable has not yet been recovered. Treat 6:35 a.m. as strong contextual control, not exact proof of Rudolf's train time."
+    },
+    "interpretive_revision": {
+      "old_label": "field_area / possible Maricopa field excursion",
+      "new_label": "station-adjacent / early-morning transit observation area",
+      "reason": "The correspondence explicitly frames Maricopa as an overnight rail transfer before the California train. No source currently documents a separate collecting excursion at Maricopa on 24 April.",
+      "recommended_spatial_class": "transit_observation_area",
+      "place_date_confidence": 0.99,
+      "formal_collecting_excursion_confidence": 0.20,
+      "rail_departure_context_confidence": 0.86
+    },
+    "terrain_hypothesis": {
+      "leading_candidate": "Sierra Estrella / Hayes Peak sector",
+      "status": "still unresolved",
+      "reason": "The continuous rugged range and broad desert foreground remain morphologically compatible with Sierra Estrella northwest of the junction; Table Top remains an alternative. Transport-context refinement does not itself identify the mountain.",
+      "recommended_next_test": "Generate DEM horizon profiles from a set of points along the 1887/1915 junction and first westbound rail miles; compare peak order, relative angular widths and skyline notches against pages 5 and 9."
+    }
+  },
+  "hesperia": {
+    "page": 17,
+    "identification": "Hesperia, 5 May 1892 — strong correspondence/ecology match; no secure place/date inscription on the sketch",
+    "correspondence_anchor": "Agua Caliente letter, 7 May 1892, retrospectively describing Hesperia on 5 May",
+    "correspondence_details": [
+      "arrived about 3 a.m.",
+      "found rooms at a hotel near the station",
+      "at daybreak saw a vast desert plain surrounded by mountains with a snow-topped San Bernardino summit",
+      "tree-like Yucca brevifolia rose from the desert 'like a forest'",
+      "the party then took a pretty far morning excursion into the desert before leaving by afternoon train"
+    ],
+    "historic_station_hotel_proxy": {
+      "marker_coordinate": [34.424583, -117.301883],
+      "status": "precise modern marker proxy, not the exact building centroid",
+      "station_evidence": "Hesperia Train Station marker states the 1887–1952 15 × 20 ft wooden station stood directly across Hesperia Road from the marker; marker is on Spruce Street just west of Hesperia Road.",
+      "hotel_relation": "The Hesperia Hotel marker is on the same monument/area, independently matching Rudolf's statement that his hotel was near the station.",
+      "source": "https://www.hmdb.org/m.asp?m=166550"
+    },
+    "historical_maps": [
+      {
+        "title": "Map No. 1 of Hesperia San Bernardino County, Cal.; showing town and acre properties",
+        "date": "circa 1890",
+        "institution": "The Huntington",
+        "call_number": "ephMPCALIFT0097",
+        "url": "https://www.huntington.org/collections/lib-p15150coll4-5211"
+      },
+      {
+        "title": "Hesperia",
+        "date": "circa 1890; catalogue notes Hesperia laid out in 1891",
+        "institution": "The Huntington",
+        "call_number": "ephMPCALIFT0096",
+        "url": "https://www.huntington.org/collections/lib-p15150coll4-5210"
+      }
+    ],
+    "terrain_controls_from_station_proxy": [
+      {
+        "name": "San Bernardino Peak",
+        "coordinate": [34.12233, -116.92251],
+        "distance_km": 48.42,
+        "bearing_deg": 133.85
+      },
+      {
+        "name": "San Gorgonio Mountain",
+        "coordinate": [34.0991, -116.8249],
+        "distance_km": 56.84,
+        "bearing_deg": 129.41
+      }
+    ],
+    "result": {
+      "secure_infrastructure_area": "Spruce Street / Hesperia Road historic depot-hotel cluster",
+      "mountain_view_sector": "roughly 129°–134° from the station proxy toward the San Bernardino high country",
+      "place_confidence": 0.94,
+      "station_hotel_cluster_confidence": 0.91,
+      "southeast_view_sector_confidence": 0.82,
+      "exact_sketch_viewpoint_confidence": 0.24,
+      "reason_exact_viewpoint_stays_low": "Rudolf explicitly distinguishes the daybreak view at the hotel/station from a later 'pretty far excursion into the desert'. The drawing contains no railway/hotel architecture and may derive from that excursion."
+    },
+    "recommended_geometry": "Historic depot-hotel point as itinerary/infrastructure anchor plus a separate broader morning-excursion field area; do not collapse page 17 to the station coordinate."
+  },
+  "port_antonio": {
+    "page": 23,
+    "identification": "Probable Port Antonio harbour view, late February 1892",
+    "archive_anchor": "BLA-D00736 · 017:90: Rudolf records landing at Port Antonio on 28 February and later mentions his impressions of Port Antonio during the Bowden passage.",
+    "visible_configuration": "Banded lighthouse on a low foreground point at left; a channel opens behind it; a palm-covered island/shore lies at right; mountains form the rear horizon.",
+    "folly_point_control": {
+      "coordinate": [18.18883, -76.44313],
+      "built": 1888,
+      "morphology": "round masonry/brick tower with red/orange-red and white horizontal bands",
+      "sources": [
+        "https://www.jnht.com/site_folly_point_lighthouse.php",
+        "https://stars.library.ucf.edu/bwi-slides-jamaica/180/",
+        "https://www.ibiblio.org/lighthouse/jam.htm"
+      ],
+      "assessment": "The date and conspicuous horizontal banding make Folly Point a strong lighthouse candidate."
+    },
+    "navy_island_control": {
+      "coordinate": [18.18727, -76.45335],
+      "assessment": "Navy Island is a plausible palm-covered right-hand landmass, but the sketch is too schematic for a unique island identification."
+    },
+    "harbour_geometry_control": {
+      "source": "Admiralty Chart No. 453, Port Antonio, surveyed 1790 / published 1815",
+      "use": "Persistent harbour topology: Navy Island, East/West harbour basins, headlands and approach channel; lighthouse postdates chart.",
+      "reference_image": "https://cdn2.picryl.com/photo/1815/11/14/admiralty-chart-no-453-port-antonio-jamaica-published-1815-6a4832-1024.jpg"
+    },
+    "later_shipboard_control": {
+      "source": "Royal Museums Greenwich, PCT15959, February 1971",
+      "finding": "A photograph from the refrigerated fruit carrier Jamaica Planter was taken at sea looking west by south toward Folly Point Lighthouse, with Navy Island in the background.",
+      "url": "https://www.rmg.co.uk/collections/objects/rmgc-object-1185698",
+      "use_guard": "This is not evidence for Rudolf's 1892 ship position. It demonstrates that a shipboard view can naturally align Folly Point and Navy Island in the same visual field."
+    },
+    "view_sector_revision": {
+      "previous_model": "offshore north of Port Antonio facing generally south",
+      "refined_model": "broad offshore northern-to-northeastern approach/departure sector; exact azimuth unresolved",
+      "reason": "The lighthouse/island topology works from northern offshore approaches, while the later RMG shipboard control shows that positions east/northeast of Folly also produce lighthouse + Navy Island alignments. The sketch's left/right placement alone cannot uniquely recover vessel position because perspective, cropping and the identity of the right-hand landmass remain uncertain.",
+      "port_antonio_confidence": 0.88,
+      "folly_point_candidate_confidence": 0.93,
+      "navy_island_candidate_confidence": 0.78,
+      "shipboard_context_confidence": 0.80,
+      "exact_viewpoint_confidence": 0.25
+    },
+    "recommended_geometry": "A broad offshore harbour-approach/departure sector, not a point. Keep the Folly Point identification stronger than the Navy Island identification."
+  },
+  "additional_page_review": {
+    "blank_page_policy": "Visually blank filmed leaves were ignored.",
+    "page_28": {
+      "status": "nonblank working note",
+      "observation": "Three short handwritten lines, apparently numerical/geographical working notes, are visible after rotation/contrast enhancement.",
+      "transcription_status": "unresolved",
+      "guard": "Do not OCR-force a reading. Preserve page 28 as an unresolved calculation/note until palaeographic reading is secure.",
+      "relation_to_page_27": "Possibly related to the adjacent New York–Bremen distance calculation, but this is only a sequencing hypothesis."
+    }
+  },
+  "key_revisions_from_previous_pass": [
+    "Maricopa pages should be interpreted primarily as transit/overnight landscape observations rather than evidence for a separate Maricopa collecting excursion.",
+    "The current Maricopa railroad-town location is historically valid for 1892 because the final junction site was established in 1887.",
+    "Hesperia infrastructure can now be localized to the Spruce Street / Hesperia Road depot-hotel cluster, while the sketch viewpoint remains a broader excursion-area problem.",
+    "Folly Point is now a very strong p23 lighthouse candidate; Port Antonio overall rises to high-probability, but exact vessel position and Navy Island identification remain below secure level.",
+    "Page 28 is nonblank and should remain as an unresolved working-note record."
+  ],
+  "next_tests": [
+    "Maricopa: georeference the 1915 station map and compute DEM skylines along the junction and first westbound Southern Pacific miles; compare against pages 5 and 9.",
+    "Hesperia: recover the downloadable Huntington townsite-map image, register it against the station marker/rail alignment, then model plausible morning excursion radii constrained by train times.",
+    "Port Antonio: digitize Folly Point/Navy Island/headland outlines from the Admiralty chart and test p23 against candidate viewing bearings; keep the result as a sector unless a unique topology emerges.",
+    "Page 28: attempt human palaeographic comparison with page 27 numerals/letterforms before any OCR."
+  ]
+}
