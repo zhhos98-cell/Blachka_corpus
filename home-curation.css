@@ -28,6 +28,7 @@
 .origin-story{padding-top:60px!important}
 
 /* Family portrait: subdued stage, warm face cues, information only on intent. */
+.origin-photo{position:relative!important}
 .origin-photo>a{position:relative!important;isolation:isolate!important;background:#17120f!important}
 .origin-photo img{
   position:relative;
@@ -44,7 +45,7 @@
   background:linear-gradient(180deg,rgba(12,9,7,.10),rgba(12,9,7,.18) 52%,rgba(12,9,7,.58) 100%),radial-gradient(ellipse at center,transparent 28%,rgba(10,7,6,.42) 100%);
 }
 .origin-photo:hover img{filter:grayscale(.30) sepia(.15) saturate(.72) brightness(.53) contrast(1.02)!important}
-.family-portrait-layer{position:absolute;z-index:3;inset:0;pointer-events:none}
+.family-portrait-layer{position:absolute;z-index:3;left:0;right:0;top:0;bottom:auto;aspect-ratio:4/5;pointer-events:none}
 .family-person{
   --x:50%;--y:24%;--tip-x:-105px;
   position:absolute;
