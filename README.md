@@ -58,6 +58,7 @@ The census layer and the deeper provenance layer remain distinct. A secure survi
 ├── docs/
 │   ├── architecture.md        # repository and public/research separation
 │   ├── record-architecture-v1.md # stable IDs, versions, citation/evidence/data contract
+│   ├── site-performance.md    # loading order, performance guardrails and cleanup sequence
 │   ├── development/           # implementation, privacy and rights audits
 │   └── design-history/        # superseded design experiments and notes
 ├── archive/
@@ -71,7 +72,9 @@ The census layer and the deeper provenance layer remain distinct. A secure survi
 
 The site remains framework-free: static HTML, CSS, JavaScript, JSON/CSV, and GitHub Pages. EB Garamond is served locally for the reading layer; interface controls remain sans-serif.
 
-The August 10 cleanup removed retired compact/editorial/portal/search/motion prototypes, the obsolete live-Zotero merge runtime, and duplicate style dependencies. Mobile subpages skip decorative glide/motion code, case maps and secondary case visuals. Phone navigation is deliberately non-sticky so mobile-browser chrome cannot cover it. The remaining major runtime debt is the historical Sources pass chain (`sources-pass13.js` through `sources-pass37.js`), now deferred until browser idle; it should eventually be flattened into one canonical source dataset plus one rendering/filter script.
+The August 10–11 cleanup removed retired compact/editorial/portal/search/motion prototypes, the obsolete live-Zotero merge runtime, and duplicate style dependencies. Long research indexes now defer offscreen layout/paint where browsers support it; Cases defers secondary visual bundles; Home and secondary pages defer decorative navigation effects and speculative carousel media, with reduced-motion and constrained-data guards. Sources records are already static in `sources/index.html`; `sources-pass14.js` through `sources-pass37.js` are temporary no-op compatibility paths until their legacy script tags can be removed in the next Sources shell rebuild.
+
+The current performance contract and structural cleanup order are recorded in [`docs/site-performance.md`](docs/site-performance.md). The next high-value work is CSS bundle separation by page family, followed by a careful review of long static HTML and the local font asset; research searchability and character coverage are explicit guardrails.
 
 ## Record architecture
 
