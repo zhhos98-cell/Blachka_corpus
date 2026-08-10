@@ -48,6 +48,7 @@
   if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-3`, 'mobile-fixes.css');
   addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
   addStyle(`${prefix}scale-balance.css?v=20260810-3`, 'scale-balance.css');
+  addStyle(`${prefix}navigation-shell.css?v=20260810-1`, 'navigation-shell.css');
   addScript(`${prefix}accessibility.js?v=20260810-2`, 'accessibility.js');
   refreshPageCss('sources.css', '20260810-6');
   refreshPageCss('bibliography.css', '20260810-6');
@@ -64,10 +65,11 @@
   const path = location.pathname.replace(/index\.html$/, '');
   const nav = document.querySelector('.subpage-nav');
   if (isSubpage && nav) {
-    /* The brand is always Home. The six primary destinations never change order. */
+    /* Invariant: brand = Home; the same seven primary destinations stay in the same slots. */
     const links = [
       ['Project', `${prefix}#project`, ''],
       ['Cases', `${prefix}cases/`, '/cases/'],
+      ['People', `${prefix}people/`, '/people/'],
       ['Bibliography', `${prefix}bibliography/`, '/bibliography/'],
       ['Sources', `${prefix}sources/`, '/sources/'],
       ['Auctions', `${prefix}auctions/`, '/auctions/'],
@@ -96,7 +98,6 @@
   if (footer) {
     const target = footer.querySelector('.footer-inner') || footer;
     const utilityLinks = [
-      ['People', `${prefix}people/`, '/people/'],
       ['Contact', 'mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network', ''],
       ['Image rights', `${prefix}rights/`, '/rights/'],
       ['Privacy', `${prefix}privacy/`, '/privacy/'],
