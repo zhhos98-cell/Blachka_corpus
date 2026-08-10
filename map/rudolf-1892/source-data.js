@@ -20,9 +20,17 @@ window.RUDOLF_1892_SOURCE_DATA = {
       id: "rakow-sketchbook-87384",
       type: "primary visual source",
       citation: "Rudolf Blaschka, R. Blaschka [sketchbook], circa 1892. Rakow Research Library, The Corning Museum of Glass. Identifier 87384; Alma MMS 99873843504126.",
-      note: "Catalogue metadata states that the beginning sketch is captioned ‘Tempe, Arizona, 22. April 1892’; the book contains desert-country sketches and several laid-in island/palm sketches. Page-level itinerary matching remains in progress.",
+      note: "Catalogue metadata says the beginning sketch is captioned ‘Tempe, Arizona, 22. April 1892’. In the current 30-page PDF, the earliest clearly legible dated landscape is Maricopa, 24 April; the digital surrogate also contains a duplicated frame. The catalogue/PDF discrepancy therefore remains open rather than being silently resolved.",
       url: "https://info.cmog.org/library",
       label: "Rakow Research Library"
+    },
+    {
+      id: "arizona-republican-1892-05-29",
+      type: "same-year timetable control",
+      citation: "Arizona Republican, 29 May 1892, Southern Pacific railway timetable.",
+      note: "The westbound Southern Pacific service is shown passing Maricopa at about 6:35 a.m. Because the issue postdates Rudolf’s 24 April journey by five weeks, the time is used only as close contextual control pending recovery of an issue-specific April timetable.",
+      url: "https://azmemory.azlibrary.gov/nodes/view/172419",
+      label: "Arizona Memory Project"
     }
   ],
   nodeOverrides: {
@@ -40,18 +48,34 @@ window.RUDOLF_1892_SOURCE_DATA = {
     },
     "tempe-1892-04-20": {
       done: "Rudolf and Ganong used wagons and group excursions to reach desert vegetation, while Rudolf repeatedly stayed with the material long enough to draw. By 22 April he reported 25 useful studies from the Tempe area.",
-      moved: "Colour and morphological observations in drawings, selected cacti intended for onward shipment, and a landscape record now represented by Rudolf’s 1892 Rakow sketchbook.",
-      enabled: "The short spring flowering window was converted into a portable visual and material reference packet. The Rakow sketchbook provides an independent visual anchor: its opening sketch is dated Tempe, Arizona, 22 April 1892.",
-      why: "Tempe is where itinerary, phenology, drawing practice and a surviving travel sketchbook can be synchronized at day-level resolution.",
+      moved: "Colour and morphological observations in drawings, selected cacti intended for onward shipment, and a landscape record represented by Rudolf’s 1892 Rakow sketchbook.",
+      enabled: "The short spring flowering window was converted into a portable visual and material reference packet. Rakow catalogue metadata identifies a Tempe, 22 April beginning sketch, while the present PDF surrogate creates a page-sequence problem that remains under audit.",
+      why: "Tempe is where itinerary, phenology and drawing practice can be synchronized at day-level resolution, while the surviving digital sketchbook also demonstrates why catalogue metadata and delivered page sequence must be kept distinct.",
       source: "Primary: 017:133–139, including the 22 April Tempe letter. Visual source: Rakow sketchbook 87384. Secondary control: Rossi-Wilcox 2007, pp. 27–28."
     },
-    "san-diego-1892-04-30": {
+    "maricopa-1892-04-24": {
+      encountered: "The Southern Pacific junction, desert vegetation and mountain horizons during an overnight rail transfer rather than a securely documented collecting excursion.",
+      done: "Dated Maricopa cards and sketchbook views secure place and date. The present interpretation treats the landscape work as station-adjacent or transit observation. A same-year timetable published 29 May gives a 6:35 a.m. westbound passage, retained only as contextual control for the likely early-morning departure window.",
+      moved: "Rudolf, Ganong, baggage, working notes and a sketchbook that could register landscape during the travel interval.",
+      enabled: "Waiting and railway movement became part of the observation system itself, linking transport time to the production of a sequenced visual record.",
+      why: "Maricopa makes a methodological distinction visible on the public map: a dated place hit can prove presence without proving a separate field excursion, while transport infrastructure can still be epistemically productive.",
+      source: "Primary: 017:139–142 · BLA-D00785, BLA-D00786, BLA-D00788. Visual: Rakow sketchbook 87384. Timetable control: Arizona Republican, 29 May 1892."
+    },
+    "los-angeles-1892-04-24": {
+      encountered: "The full 24 April rail corridor as Rudolf reconstructed it the next day: Yuma, the increasingly sparse California desert, the Salton depression, a rapid climb, the San Jacinto high country and renewed vegetation.",
+      done: "The day was converted into an ordered ecological narrative while still inside the railway itinerary. The reported Los Angeles arrival ‘at 10’ is shown as about 10 p.m. because the party stayed overnight and took the 8:45 San Diego train the following morning.",
+      moved: "A moving observer, notes, sketches and the accumulated botanical reference packet across several ecological zones in a single day.",
+      enabled: "Timetable, daylight and moving landscape could organize comparison before any later workshop reassembly.",
+      why: "The Maricopa–Los Angeles line is therefore more than a connector between two dots: it is a documented observation corridor whose sequence was reconstructed in Rudolf’s 25 April letter.",
+      source: "Primary: 017:150–151 · BLA-D00796–00797. Chronology synchronized in the 2026-08-11 railway-clock audit."
+    },
+    "san-diego-1892-04-25": {
       encountered: "Southern Californian flora, local botanical expertise, and plant material brought in from sites beyond Rudolf’s immediate reach.",
-      done: "Rudolf collected less frequently here and spent more time working from the hotel, sketching material supplied from more distant localities while maintaining contact with local botanists including C. R. Orcutt.",
+      done: "Rudolf arrived at 1 p.m. on 25 April after an 8:45 Los Angeles departure and an approximately 10 a.m. Pacific sighting. From 26 April he worked substantially from the hotel, using his microscope and sketching material supplied from more distant localities while maintaining contact with local botanists including C. R. Orcutt.",
       moved: "Cacti, bulbs and later plant supplies sent onward after the travelling party had moved on; drawings condensed material gathered by a wider local network.",
       enabled: "The drawing station and the collecting site no longer had to be the same place. Knowledge production could continue through local supply after Rudolf’s body moved elsewhere.",
-      why: "San Diego is a particularly clear distributed-workshop node: other people and places supplied the specimens while Rudolf’s hotel room functioned as the drawing station.",
-      source: "Primary: 017:150–165; later supply in 017:282. Secondary control: Rossi-Wilcox 2007, p. 28."
+      why: "San Diego is a particularly clear distributed-workshop node: the corrected 25 April arrival closes the synchronized rail chronology, while other people and places supplied specimens to a hotel room functioning as drawing and microscopy station.",
+      source: "Primary: San Diego letter header, 25 April 1892; 017:150–165; later supply in 017:282. Secondary control: Rossi-Wilcox 2007, p. 28."
     },
     "st-louis-1892-05-31": {
       encountered: "Missouri Botanical Garden material, identified plants already concentrated in one institution, local wild flora and a dedicated work room.",
@@ -81,7 +105,16 @@ window.RUDOLF_1892_SOURCE_DATA = {
       { "label": "Rakow sketchbook 87384 · catalogue access", "url": "https://info.cmog.org/library", "kind": "primary visual source" },
       { "label": "Corning 2007 · 1892 travelogue", "url": "https://info.cmog.org/publication/drawing-upon-nature-studies-blaschkas-glass-models", "kind": "secondary" }
     ],
-    "san-diego-1892-04-30": [
+    "maricopa-1892-04-24": [
+      { "label": "Arizona Republican · 29 May 1892 railway timetable", "url": "https://azmemory.azlibrary.gov/nodes/view/172419", "kind": "same-year timetable control" },
+      { "label": "Rakow sketchbook 87384 · catalogue access", "url": "https://info.cmog.org/library", "kind": "primary visual source" },
+      { "label": "Harvard Blaschka archive", "url": "https://hollisarchives.lib.harvard.edu/catalog/ecb00006", "kind": "primary archive" }
+    ],
+    "los-angeles-1892-04-24": [
+      { "label": "Harvard Blaschka archive", "url": "https://hollisarchives.lib.harvard.edu/catalog/ecb00006", "kind": "primary archive" }
+    ],
+    "san-diego-1892-04-25": [
+      { "label": "Harvard Blaschka archive", "url": "https://hollisarchives.lib.harvard.edu/catalog/ecb00006", "kind": "primary archive" },
       { "label": "Corning 2007 · San Diego discussion and fig. 10", "url": "https://info.cmog.org/publication/drawing-upon-nature-studies-blaschkas-glass-models", "kind": "secondary / image source" }
     ],
     "st-louis-1892-05-31": [
