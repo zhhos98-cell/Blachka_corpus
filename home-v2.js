@@ -2,14 +2,19 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const addStyle = (href, token) => {
-    if (document.querySelector(`link[href*="${token}"]`)) return;
+    const wanted = new URL(href, location.href).href;
+    const existing = [...document.querySelectorAll('link[rel="stylesheet"]')].find(link => link.href.includes(token));
+    if (existing) {
+      if (existing.href !== wanted) existing.href = wanted;
+      return;
+    }
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = href;
+    link.href = wanted;
     document.head.appendChild(link);
   };
   addStyle('site-polish.css?v=20260810-2', 'site-polish.css');
-  addStyle('home-curation.css?v=20260810-2', 'home-curation.css');
+  addStyle('home-curation.css?v=20260810-3', 'home-curation.css');
   addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
   addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
   addStyle('mobile-v3.css?v=20260810-1', 'mobile-v3.css');
@@ -60,27 +65,10 @@
     });
   }
 
-  /* Family portrait: identities come from the source-backed caption/archive context;
-     the visual hotspots are merely interaction regions, not face recognition. */
   const people = [
-    {
-      key:'karolina',
-      name:'Karolina (Caroline) Riegel Blaschka',
-      short:'Karolina',
-      bio:'Born 1834. Leopold’s second wife, married in 1854, and Rudolf’s mother. Family records preserve her alongside the workshop household and later property history.'
-    },
-    {
-      key:'leopold',
-      name:'Leopold Blaschka',
-      short:'Leopold',
-      bio:'1822–1895. Glassworker and modeller whose zoological glass models developed into an international scientific trade.'
-    },
-    {
-      key:'rudolf',
-      name:'Rudolf Blaschka',
-      short:'Rudolf',
-      bio:'1857–1939. Son of Leopold and Karolina. He joined the workshop in 1876 and later continued the Harvard botanical commission.'
-    }
+    {key:'karolina',name:'Karolina (Caroline) Riegel Blaschka',short:'Karolina',bio:'Born 1834. Leopold’s second wife, married in 1854, and Rudolf’s mother. Family records preserve her alongside the workshop household and later property history.'},
+    {key:'leopold',name:'Leopold Blaschka',short:'Leopold',bio:'1822–1895. Glassworker and modeller whose zoological glass models developed into an international scientific trade.'},
+    {key:'rudolf',name:'Rudolf Blaschka',short:'Rudolf',bio:'1857–1939. Son of Leopold and Karolina. He joined the workshop in 1876 and later continued the Harvard botanical commission.'}
   ];
 
   const familyFigure = document.querySelector('.origin-photo');
@@ -95,13 +83,6 @@
       </span>`).join('');
     const caption = familyFigure.querySelector('figcaption');
     familyFigure.insertBefore(layer, caption || null);
-
-    if (caption && !familyFigure.querySelector('.family-photo-hint')) {
-      const hint = document.createElement('p');
-      hint.className = 'family-photo-hint';
-      hint.textContent = 'Hover or select a person for a short biography.';
-      caption.insertAdjacentElement('afterend', hint);
-    }
 
     const mobileNav = document.createElement('div');
     mobileNav.className = 'family-mobile-nav';
@@ -119,28 +100,20 @@
         person.querySelector('button')?.setAttribute('aria-expanded', keep ? 'true' : 'false');
       });
     };
-
     layer.querySelectorAll('.family-person button').forEach(button => {
       button.addEventListener('click', event => {
         event.preventDefault();
         event.stopPropagation();
         const person = button.closest('.family-person');
-        const active = person.classList.contains('is-active');
-        closeDesktop(active ? null : person);
+        closeDesktop(person.classList.contains('is-active') ? null : person);
       });
     });
-
-    document.addEventListener('click', event => {
-      if (!familyFigure.contains(event.target)) closeDesktop(null);
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') closeDesktop(null);
-    });
+    document.addEventListener('click', event => { if (!familyFigure.contains(event.target)) closeDesktop(null); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeDesktop(null); });
 
     mobileNav.querySelectorAll('button').forEach(button => {
       button.addEventListener('click', () => {
-        const key = button.dataset.mobilePerson;
-        const person = people.find(item => item.key === key);
+        const person = people.find(item => item.key === button.dataset.mobilePerson);
         const wasActive = button.getAttribute('aria-pressed') === 'true';
         mobileNav.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', 'false'));
         if (wasActive || !person) {
@@ -161,51 +134,23 @@
     originFirst.insertAdjacentText('beforeend', ' After returning, Leopold married Karolina Riegel in 1854; their son Rudolf was born in 1857.');
   }
 
-  /* Quiet subscription close. RSS is the machine-readable channel. */
   const footer = document.querySelector('footer');
   if (footer && !document.querySelector('.home-subscribe')) {
     footer.insertAdjacentHTML('beforebegin', `
-      <section class="home-subscribe" id="subscribe" aria-labelledby="subscribe-title">
-        <div class="subscribe-inner">
-          <div class="subscribe-grid">
-            <p class="eyebrow">Updates</p>
-            <div class="subscribe-copy">
-              <h2 id="subscribe-title">Follow additions to the public project.</h2>
-              <p>New documentary cases, corrected links and substantial bibliography or source updates can be followed without turning the site into a running research log.</p>
-              <div class="subscribe-actions">
-                <a href="mailto:zhhos98@gmail.com?subject=Subscribe%20to%20Blaschka%20Object%20Network%20updates">Request email updates</a>
-              </div>
-              <p class="subscribe-note">RSS is available in the footer for feed readers.</p>
-            </div>
-          </div>
-        </div>
-      </section>`);
+      <section class="home-subscribe" id="subscribe" aria-labelledby="subscribe-title"><div class="subscribe-inner"><div class="subscribe-grid"><p class="eyebrow">Updates</p><div class="subscribe-copy"><h2 id="subscribe-title">Follow additions to the public project.</h2><p>New documentary cases, corrected links and substantial bibliography or source updates can be followed without turning the site into a running research log.</p><div class="subscribe-actions"><a href="mailto:zhhos98@gmail.com?subject=Subscribe%20to%20Blaschka%20Object%20Network%20updates">Request email updates</a></div><p class="subscribe-note">RSS is available in the footer for feed readers.</p></div></div></div></section>`);
   }
 
   if (footer) {
     const inner = footer.querySelector('.footer-inner');
     if (inner && !inner.querySelector('.footer-copyright')) {
-      inner.innerHTML = `
-        <div class="footer-identity">
-          <a class="footer-title" href="#top">The Blaschka Object Network</a>
-          <span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span>
-        </div>
-        <div class="footer-links">
-          <a href="cases/">Cases</a>
-          <a href="bibliography/">Bibliography</a>
-          <a href="sources/">Sources</a>
-          <a href="auctions/">Auctions</a>
-          <a href="privacy/">Privacy</a>
-          <a class="footer-rss" href="feed.xml" type="application/rss+xml" aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="19" r="2.2"/><path d="M3 10.5v3a7.5 7.5 0 0 1 7.5 7.5h3A10.5 10.5 0 0 0 3 10.5Zm0-6v3A13.5 13.5 0 0 1 16.5 21h3C19.5 11.9 12.1 4.5 3 4.5Z"/></svg><span>RSS</span></a>
-        </div>`;
+      inner.innerHTML = `<div class="footer-identity"><a class="footer-title" href="#top">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="cases/">Cases</a><a href="bibliography/">Bibliography</a><a href="sources/">Sources</a><a href="auctions/">Auctions</a><a href="privacy/">Privacy</a><a class="footer-rss" href="feed.xml" type="application/rss+xml" aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="19" r="2.2"/><path d="M3 10.5v3a7.5 7.5 0 0 1 7.5 7.5h3A10.5 10.5 0 0 0 3 10.5Zm0-6v3A13.5 13.5 0 0 1 16.5 21h3C19.5 11.9 12.1 4.5 3 4.5Z"/></svg><span>RSS</span></a></div>`;
     }
   }
 
-  if (reduced) {
+  if (reduced || !('IntersectionObserver' in window)) {
     document.querySelectorAll('.reveal').forEach(node => node.classList.add('is-visible'));
     return;
   }
-
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
@@ -213,6 +158,5 @@
       observer.unobserve(entry.target);
     }
   }, { threshold:.08, rootMargin:'0px 0px -6% 0px' });
-
   document.querySelectorAll('.reveal').forEach(node => observer.observe(node));
 })();
