@@ -34,30 +34,17 @@
     link.href = url.href;
   };
 
-  /* Bibliography is already a complete static document. Do not make 266 references
-     wait for the general motion/polish stack. It gets only the canonical shell and
-     accessibility layer; bibliography.css owns its reading layout. */
-  if (!isBibliography) {
-    addStyle(`${prefix}apple-unified.css?v=20260810-4`, 'apple-unified.css');
-    if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-2`, 'subpage-v2.css');
-    if (!phoneOrTablet) addStyle(`${prefix}fluid-motion.css?v=20260810-5`, 'fluid-motion.css');
-    addStyle(`${prefix}site-rhythm.css?v=20260810-2`, 'site-rhythm.css');
-    addStyle(`${prefix}site-polish.css?v=20260810-2`, 'site-polish.css');
-    if (isSubpage) addStyle(`${prefix}header-minimal.css?v=20260810-1`, 'header-minimal.css');
-    addStyle(`${prefix}footer-legal.css?v=20260810-4`, 'footer-legal.css');
-    if (!phoneOrTablet) {
-      addStyle(`${prefix}nav-glide.css?v=20260810-2`, 'nav-glide.css');
-      addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
-    }
-    addStyle(`${prefix}mobile-v3.css?v=20260810-3`, 'mobile-v3.css');
-    if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-3`, 'mobile-fixes.css');
-    addStyle(`${prefix}scale-balance.css?v=20260810-3`, 'scale-balance.css');
+  /* One cached override bundle replaces the old chain of 10+ injected stylesheets.
+     Bibliography remains deliberately independent and fail-open. */
+  if (!isBibliography) addStyle(`${prefix}site-core.css?v=20260810-1`, 'site-core.css');
+  else {
+    addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
+    addStyle(`${prefix}navigation-shell.css?v=20260810-2`, 'navigation-shell.css');
   }
 
-  addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
-  addStyle(`${prefix}navigation-shell.css?v=20260810-2`, 'navigation-shell.css');
+  if (!phoneOrTablet && !isBibliography) addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
   addScript(`${prefix}accessibility.js?v=20260810-2`, 'accessibility.js');
-  refreshPageCss('sources.css', '20260810-6');
+  refreshPageCss('sources.css', '20260810-7');
   refreshPageCss('bibliography.css', '20260810-8');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
@@ -114,7 +101,6 @@
     target.innerHTML = `<div class="footer-identity"><a class="footer-title" href="${prefix}">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links">${utility}<a class="footer-rss" href="${prefix}feed.xml" aria-label="RSS feed">RSS</a></div>`;
   }
 
-  /* Bibliography is fail-open: its text is never hidden by a reveal observer. */
   if (isSubpage && !isBibliography && !phoneOrTablet && !reducedMotion && 'IntersectionObserver' in window) {
     const candidates = [
       ...document.querySelectorAll('.subpage-main > section:not(.page-intro), #case-sections > .sample')
