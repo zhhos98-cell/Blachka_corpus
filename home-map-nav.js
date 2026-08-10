@@ -1,16 +1,18 @@
 (() => {
+  const shellCss = [...document.querySelectorAll('link[rel="stylesheet"]')].find(link => link.href.includes('navigation-shell.css'));
+  if (shellCss) shellCss.href = 'navigation-shell.css?v=20260811-1';
+
   const nav = document.querySelector('.top-nav');
-  if (nav && !nav.querySelector('.nav-map-menu')) {
-    const oldMap = nav.querySelector('a[href="map/"]');
-    const menu = document.createElement('details');
-    menu.className = 'nav-map-menu';
-    menu.innerHTML = '<summary class="nav-map-trigger">Map</summary><div class="nav-map-panel"><a href="map/">Collections map</a><a href="map/rudolf-1892/">Rudolf 1892 journey</a></div>';
-    if (oldMap) oldMap.replaceWith(menu);
-    else {
-      const cases = nav.querySelector('a[href="cases/"]');
-      if (cases) cases.insertAdjacentElement('afterend', menu);
-      else nav.prepend(menu);
-    }
+  if (nav) {
+    nav.innerHTML = [
+      '<a href="cases/">Cases</a>',
+      '<details class="nav-map-menu"><summary class="nav-map-trigger">Map</summary><div class="nav-map-panel"><a href="map/">Collections map</a><a href="map/rudolf-1892/">Rudolf 1892 journey</a></div></details>',
+      '<a href="people/">People</a>',
+      '<a href="bibliography/">Bibliography</a>',
+      '<a href="sources/">Sources</a>',
+      '<a href="auctions/">Auctions</a>',
+      '<a href="about/">About</a>'
+    ].join('');
   }
 
   document.querySelectorAll('.journey-feature .reveal').forEach(node => node.classList.add('is-visible'));
