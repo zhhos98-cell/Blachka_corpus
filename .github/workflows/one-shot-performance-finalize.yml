@@ -1,0 +1,36 @@
+name: One-shot performance finalize
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-performance-finalize.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply structural performance fixes
+        run: python tools/performance_finalize.py
+      - name: Compress the reading font for the web
+        run: |
+          python -m pip install --quiet fonttools brotli
+          python -m fontTools.ttLib.woff2 compress assets/fonts/EBGaramond-VariableFont_wght.ttf -o assets/fonts/EBGaramond-VariableFont_wght.woff2
+          python - <<'PY'
+          from pathlib import Path
+          for name in ['typography-garamond.css','site-polish.css','site-core.css','home-core.css']:
+              p=Path(name)
+              text=p.read_text(encoding='utf-8')
+              text=text.replace("assets/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype')", "assets/fonts/EBGaramond-VariableFont_wght.woff2') format('woff2')")
+              p.write_text(text,encoding='utf-8')
+          PY
+      - name: Commit final performance pass
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Flatten cases and trim first-load requests"
+          git push
