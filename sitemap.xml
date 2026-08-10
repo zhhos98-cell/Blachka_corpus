@@ -2,18 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zhhos98-cell.github.io/Blachka_corpus/</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://zhhos98-cell.github.io/Blachka_corpus/cases/</loc>
+    <lastmod>2026-08-10</lastmod>
   </url>
   <url>
     <loc>https://zhhos98-cell.github.io/Blachka_corpus/bibliography/</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-10</lastmod>
   </url>
   <url>
     <loc>https://zhhos98-cell.github.io/Blachka_corpus/sources/</loc>
+    <lastmod>2026-08-10</lastmod>
   </url>
   <url>
     <loc>https://zhhos98-cell.github.io/Blachka_corpus/auctions/</loc>
+    <lastmod>2026-08-10</lastmod>
   </url>
   <url>
-    <loc>https://zhhos98-cell.github.io/Blachka_corpus/blog/</loc>
+    <loc>https://zhhos98-cell.github.io/Blachka_corpus/privacy/</loc>
+    <lastmod>2026-08-10</lastmod>
   </url>
 </urlset>
