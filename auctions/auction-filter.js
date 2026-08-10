@@ -1,4 +1,11 @@
 (() => {
+  if (!window.__blaschkaUnifiedUIRequested) {
+    window.__blaschkaUnifiedUIRequested = true;
+    const ui = document.createElement('script');
+    ui.src = '../unified-ui.js?v=20260810-1';
+    document.head.appendChild(ui);
+  }
+
   const params = new URLSearchParams(location.search);
   const raw = (params.get('q') || '').trim();
   if (!raw) return;
