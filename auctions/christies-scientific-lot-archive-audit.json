@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Christie's historical scientific and natural-history lot archive audit",
+  "purpose": "Record a bounded lot-level web-index audit of the high-priority Christie’s South Kensington scientific/model/natural-history catalogue family before full catalogue scans are obtained.",
+  "canonical_auction_count_effect": 0,
+  "coverage_guard": "This file records search-engine and currently indexed Christie’s lot-page coverage only. It is not a complete catalogue screen. A sale may be called lot-text negative only after its full catalogue or complete lot browse has been inspected.",
+  "target_sale_family": [
+    {
+      "date": "1997-05-29",
+      "title": "Scientific and Engineering Works of Art, Instruments and Models",
+      "catalogue_lots": 255,
+      "source_basis": "The Catalog Star metadata"
+    },
+    {
+      "date": "1998-04-08",
+      "title": "Exceptional Scientific and Engineering Works of Art, Instruments and Models",
+      "source_basis": "Christie's historical lot literature citations"
+    },
+    {
+      "date": "1999-04-15",
+      "title": "Exceptional Scientific and Engineering Works of Art, Instruments and Models",
+      "sale_code": "MSI-8351",
+      "source_basis": "UCLA Clark auction catalogue holding"
+    },
+    {
+      "date": "2005-04-07",
+      "title": "Exceptional Scientific and Engineering Works of Art, including Natural History and the William L. Camp Jr Spectacle Collection",
+      "source_basis": "Museo Galileo holding + surviving Christie’s lot-page end-of-sale notice"
+    },
+    {
+      "date": "2005-06-29",
+      "title": "Scientific and Medical Works of Art and Natural History",
+      "catalogue_lots": 306,
+      "source_basis": "The Catalog Star metadata"
+    },
+    {
+      "date": "2005-10-19",
+      "title": "Scientific, Medical and Engineering Works of Art, Instruments and Natural History",
+      "sale_code": "5650",
+      "source_basis": "Christie's later lot literature citation + The Catalog Star metadata"
+    }
+  ],
+  "query_matrix": {
+    "maker_variants": ["Blaschka", "Blashka", "Blauschka", "Blaschke"],
+    "workshop_and_label_terms": ["Dresden", "Blaschka's Modelle", "Blaschka’s Modelle", "L. No.", "Nr."],
+    "object_class_terms": ["glass model", "zoological model", "anatomical model", "natural history model", "teaching model"],
+    "taxonomic_common_terms": ["jellyfish", "jelly fish", "sea anemone", "coral", "hydroid", "mollusc", "slug", "worm"],
+    "search_scope": "site:christies.com/en/lot/lot- combined with exact or near-exact sale-title phrases"
+  },
+  "indexed_archive_findings": [
+    {
+      "finding_type": "historical_sale_pages_survive",
+      "statement": "Christie's search index still exposes historical sale landing pages and individual lot pages from the target scientific/model family.",
+      "examples": [
+        "Scientific and Engineering Works of Art sale landing pages",
+        "Exceptional Scientific and Engineering Works of Art sale landing pages",
+        "Scientific, Medical and Engineering Works of Art and Natural History sale landing page"
+      ]
+    },
+    {
+      "finding_type": "1998_catalogue_identity_crosscheck",
+      "statement": "A surviving Christie’s lot page for a Philippe Danfrie astrolabe cites the 8 April 1998 South Kensington catalogue 'Exceptional Scientific and Engineering Works of Art, Instruments and Models' and lot 50.",
+      "url": "https://www.christies.com/lot/lot-1397494"
+    },
+    {
+      "finding_type": "2005_april_sale_crosscheck",
+      "statement": "A surviving Christie’s model-locomotive lot page carries an end-of-sale notice for the 7 April 2005 'Exceptional Scientific and Engineering Works of Art, including Natural History and the William L. Camp Jr Spectacle Collection' sale; independent academic literature cites a scientific instrument sold there as lot 586.",
+      "lot_page_url": "https://www.christies.com/en/lot/lot-4471290",
+      "lot_number_evidence_note": "Lot 586 comes from later scholarly provenance for a Coignet nocturnal, not from a complete sale browse."
+    },
+    {
+      "finding_type": "2005_october_sale_code_crosscheck",
+      "statement": "A surviving Christie’s pocket-globe lot page cites 'Scientific, Medical and Engineering Works of Art and Natural History', sale catalogue 5650, 19 October 2005, lot 140.",
+      "url": "https://www.christies.com/en/lot/lot-4685200"
+    },
+    {
+      "finding_type": "indexed_object_class_contamination",
+      "statement": "Searches for model/glass/natural-history terms inside the historical scientific-sale family recover locomotives, globes, microscopes, bottles, instruments and other models. This confirms that object-class search has broad recall but requires lot-level maker/material review."
+    }
+  ],
+  "blaschka_result": {
+    "qualifying_new_physical_blaschka_lot_found": false,
+    "result_wording": "No additional qualifying pre-2019 physical Blaschka glass-model lot was recovered from the currently indexed Christie’s historical lot pages in this pass.",
+    "important_guard": "This is a bounded public-index result. It does not close any of the target catalogues because search-engine indexing may omit lots and Christie’s browse-lot pages are not fully exposed in the text runtime."
+  },
+  "sale_specific_status": [
+    {
+      "date": "1997-05-29",
+      "status": "metadata_identified_index_search_run_full_catalogue_unscreened"
+    },
+    {
+      "date": "1998-04-08",
+      "status": "historical_lot_pages_verified_index_search_run_full_catalogue_unscreened"
+    },
+    {
+      "date": "1999-04-15",
+      "status": "institutional_copy_identified_index_search_run_full_catalogue_unscreened"
+    },
+    {
+      "date": "2005-04-07",
+      "status": "institutional_copy_and_historical_lot_context_verified_index_search_run_full_catalogue_unscreened"
+    },
+    {
+      "date": "2005-06-29",
+      "status": "306_lot_catalogue_metadata_verified_index_search_run_full_catalogue_unscreened"
+    },
+    {
+      "date": "2005-10-19",
+      "status": "sale_5650_verified_index_search_run_full_catalogue_unscreened"
+    }
+  ],
+  "next_actions": [
+    "Obtain issue-level access to the 1997-2001 and 2002-2006 Christie’s scientific/model runs held by Museo Galileo before buying commercial scans.",
+    "If remote catalogue images are available, OCR and screen the whole 1997, 1998, 1999, April 2005, June 2005 and October 2005 catalogues with the full query vocabulary.",
+    "Where Christie’s sale landing pages expose a numeric Browse lots count, do not treat that count as the printed catalogue lot count unless the sale identity/date is independently matched.",
+    "Retain unrelated anatomical/scientific models as category controls only when they illuminate search contamination; do not add them to the Blaschka false-positive corpus unless the maker name appears or attribution is Blaschka-adjacent."
+  ]
+}
