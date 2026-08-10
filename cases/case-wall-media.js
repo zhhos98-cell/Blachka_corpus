@@ -24,7 +24,7 @@
     const thumb = document.createElement('span');
     thumb.className = 'case-thumb case-thumb--image case-thumb--illustrative';
     thumb.setAttribute('aria-hidden', 'true');
-    thumb.innerHTML = `<img src="${media[index % media.length].src}" alt="" loading="lazy" decoding="async" fetchpriority="low">`;
+    thumb.innerHTML = `<img src="${media[index % media.length].src}" alt="" loading="lazy" decoding="async" fetchpriority="low" referrerpolicy="no-referrer">`;
     if (number) number.insertAdjacentElement('afterend', thumb);
     else front.prepend(thumb);
   });
@@ -32,7 +32,7 @@
   if (!wall.nextElementSibling?.classList.contains('case-wall-note')) {
     const note = document.createElement('p');
     note.className = 'case-wall-note';
-    note.innerHTML = 'Illustrative visual index, not case-specific identification. Images are drawn from open museum records and Wikimedia Commons; Museums Victoria photographs by Rodney Start are CC BY 4.0.';
+    note.innerHTML = 'Illustrative visual index, not case-specific identification. Open-media images are credited on the <a href="../rights/">image-rights page</a>; Museums Victoria photographs by Rodney Start are CC BY 4.0.';
     wall.insertAdjacentElement('afterend', note);
   }
 })();
