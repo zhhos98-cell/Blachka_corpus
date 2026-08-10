@@ -5,6 +5,12 @@
     ui.src = '../unified-ui.js?v=20260810-2';
     document.head.appendChild(ui);
   }
+  if (!document.querySelector('link[href*="case-wall-matrix.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'case-wall-matrix.css?v=20260810-1';
+    document.head.appendChild(link);
+  }
 
   const target = document.getElementById('case-sections');
   const loading = document.getElementById('cases-loading');
@@ -69,8 +75,6 @@
 
   (async () => {
     try {
-      /* The first five cases are frozen here instead of being scraped from the homepage.
-         This keeps the portal and the research reading page independent. */
       const response = await fetch('./base-cases.html', { cache: 'no-store' });
       if (!response.ok) throw new Error(`Base case source returned ${response.status}`);
       const html = await response.text();
@@ -87,6 +91,7 @@
       await loadScript('../map-ratio-fix.js?v=20260810-2');
       await loadScript('../visuals-v1.js?v=20260809-2');
       await loadScript('../visuals-v2.js?v=20260809-1');
+      await loadScript('./case-wall-media.js?v=20260810-1');
 
       document.body.classList.add('cases-ready');
       applyIncomingSearch();
