@@ -1,14 +1,12 @@
 # Auction provenance layer
 
-This directory records public auction appearances and market-adjacent provenance evidence for Blaschka models. The layer is designed to close custody gaps, not to operate as a price guide.
+This directory records public auction appearances and market-adjacent provenance evidence for Blaschka models. The layer exists to close custody gaps, not to operate as a price guide.
 
 ## Admission rule
 
 Include a public auction appearance when the checked sources do not explicitly identify the buyer as a museum, university or comparable institutional collection. If an institutional buyer is explicitly documented, that acquisition belongs in the collection/provenance layer instead.
 
-Earlier institutional custody does not exclude a later market appearance: deaccessioned objects can remain here when they subsequently enter an open market record. Auction appearance does not prove private ownership. Unknown buyers remain `post_sale_custody: open`.
-
-Qualified attributions stay qualified. Estimates, hammer prices, buyer-premium-inclusive prices, passed lots, withdrawn lots and conflicting platform statuses are never silently normalised.
+Earlier institutional custody does not exclude a later market appearance. Auction appearance does not prove private ownership. Unknown buyers remain `post_sale_custody: open`. Qualified attributions stay qualified. Estimates, hammer prices, buyer-premium-inclusive prices, passed lots, withdrawn lots and conflicting platform statuses are never silently normalised.
 
 ## Canonical state · 10 August 2026
 
@@ -17,13 +15,15 @@ Qualified attributions stay qualified. Estimates, hammer prices, buyer-premium-i
 - **11** included lot records
 - **7** auction-event groups
 - **13** physical-object appearances reported by those lots
-- earliest canonical public-auction record recovered: **2005**
+- earliest canonical public-auction record: **2005**
 - latest canonical record: **2026**
 - **1** high-confidence inferred reoffer link
 - **2** records with explicit result/status conflicts
-- **6** rejected false positives retained for control
+- **6** original rejected false-positive records retained in the canonical file
 
-The historical market search reaches earlier than the canonical auction table. A December **1904** *Museums Journal* notice offered **300 Blaschka invertebrate models** from the Philip Brookes Mason estate, but the documented Blaschka-specific endpoint is Mrs Mason's **1909 institutional sale to Glasgow Museums for £275**. That institutional purchase remains outside the auction count.
+A supplementary 2023 Wimbledon cluster now adds **5 further rejected lots**, so the researched rejected-lot corpus is at least **11** across canonical and supplementary layers. The included-lot count remains 11.
+
+The historical market search reaches earlier than the canonical table. A December **1904** *Museums Journal* notice offered **300 Blaschka invertebrate models** from the Philip Brookes Mason estate, but the documented endpoint is Mrs Mason's **1909 institutional sale to Glasgow Museums for £275**. That institutional purchase remains outside the auction count.
 
 ## Structured files
 
@@ -33,20 +33,22 @@ The historical market search reaches earlier than the canonical auction table. A
 - `auction-newspaper-audit.json` — bounded reuse of the project's BNA query matrix.
 - `auction-catalogue-recoveries.json` — sale codes, exact lot numbers and single-owner sale context recovered after initial ingest.
 - `auction-archive-router.json` — archive series, exact identifiers and order of attack after generic web search reached diminishing returns.
-- `berlin-krefeld-provenance-audit.json` — separation of HU teaching-collection evidence from Museum für Naturkunde evidence for Krefeld 2025 lots 26–27.
-- `krefeld-hydractinia-156-crosswalk.json` — resolves Krefeld lot 27 `Stachelpolyp` to *Hydractinia echinata* and Blaschka model-design no. **156**.
+- `berlin-krefeld-provenance-audit.json` — HU versus Museum für Naturkunde provenance audit for Krefeld 2025 lots 26–27.
+- `krefeld-hydractinia-156-crosswalk.json` — resolves lot 27 `Stachelpolyp` to *Hydractinia echinata* and Blaschka model-design no. **156**.
 - `auction-science-museum-recipient-audit.json` — public-web audit of the Science Museum 1925–27 recipient problem.
 - `science-museum-register-neighborhoods.json` — exact old-number split between Cardiff institutional transfer and later Christie’s market circulation.
 - `ucl-science-museum-transfer-candidate-audit.json` — partitions eight public UCL Blaschka accessions by provenance evidence.
-- `ucl-catalogue-card-index-router.json` — routes the unresolved UCL transfer through the 1890/1891 catalogue, early-1900s–1970s card index and later MDA cards.
+- `ucl-catalogue-card-index-router.json` — routes the unresolved UCL transfer through the Lankester catalogue, early card index and MDA cards.
+- `auction-false-positive-wimbledon-2023.json` — five shell-and-wax lots explicitly catalogued `in the manner of` the Blaschkas; retained as a negative-control cluster.
+- `auction-historical-catalogue-family-worklist.json` — old Christie’s, Sotheby’s, Phillips and Bonhams catalogue families to screen at full-catalogue level when scans/OCR become available.
 
 ## Current high-value findings
 
-### 1. Grisebach 2015 is now sale- and lot-level identifiable
+### Grisebach 2015
 
-The `Serpula contortuplicata / L. No. 343` appearance is **ORANGERIE. Selected Objects**, sale **249**, lot **483**, Berlin, 26 November 2015. The exact primary Grisebach object page and realized result remain open, so the recovery is stored without pretending primary-page closure.
+The `Serpula contortuplicata / L. No. 343` appearance is **ORANGERIE. Selected Objects**, sale **249**, lot **483**, Berlin, 26 November 2015. The primary Grisebach object page and realized result remain open.
 
-### 2. Christie’s 2019 now has a defensible pre-sale collection layer
+### Christie’s 2019 / Peter Petrou / Science Museum
 
 Lots 46–48 were sold in a Christie’s sale explicitly presented as the collection of **Peter Petrou**. The safe chain is:
 
@@ -54,104 +56,91 @@ Lots 46–48 were sold in a Christie’s sale explicitly presented as the collec
 
 No direct Science Museum-to-Petrou transfer or acquisition date is inferred.
 
-### 3. Krefeld 2025 lot 27 has an exact model-design key
+### Krefeld 2025 / Berlin
 
-The auction title `Stachelpolyp` can be normalized to ***Hydractinia echinata***. Cornell's Blaschka catalogue identifies that design as **no. 156**.
+Lot 27 `Stachelpolyp` can be normalized to ***Hydractinia echinata***; Cornell identifies the model design as Blaschka no. **156**.
 
-The project's complete transcription of the published MfN `OS001-02 Blaschka Glasmodelle` inventory contains **40 rows**, minimum **59** explicitly stated physical components and **28** distinct Blaschka catalogue-number segments. It contains no *Hydractinia echinata*, `Stachelpolyp` or no. **156**.
+The project's complete transcription of the published MfN `OS001-02 Blaschka Glasmodelle` inventory has **40 rows**, minimum **59** explicitly stated physical components and **28** distinct catalogue-number segments. It contains no *Hydractinia echinata*, `Stachelpolyp` or no. 156. This is a strong negative for the present published OS001-02 inventory only.
 
-That is a strong negative for the **present published OS001-02 inventory only**. It does not prove that Berlin never held the design or that the object never passed through MfN.
+HU remains the stronger next route because both Krefeld lots carry `Zoolog. Institut Universität, Berlin` labels and HU documents a **1970 reduction** involving gifts, losses and transfers to MfN. The 1970 event is a provenance window, not an object-level disposal date.
 
-HU remains the stronger next provenance route because both Krefeld lots carry `Zoolog. Institut Universität, Berlin` labels and HU documents a **1970 collection reduction** involving gifts, losses and transfers to MfN. The 1970 event is a provenance window, not an object-level disposal date.
+The Berlin archive route is explicit: HU historical inventories and reduction files; MfN `S001`, `S003`, `S004-04` and `S005-02`. MfN physical archive access is currently suspended, so remote file-level enquiry is the immediate route.
 
-The Berlin archive route is now explicit: HU historical inventories and reduction files, plus MfN record groups `S001`, `S003`, `S004-04` and `S005-02`. MfN physical archive access is currently suspended during Museum Evolution work, so the immediate route is remote file-level enquiry plus HU documentation.
+### Science Museum register neighbourhoods
 
-### 4. Science Museum dispersal is mixed at consecutive-register-number scale
-
-Cardiff's transferred collection and Christie’s 2019 lots produce two unusually strong old-number controls:
+Cardiff transfer records and Christie’s 2019 lots expose mixed dispersal at consecutive-number scale:
 
 - `1877-360` → Christie’s/private-market survival
 - `1877-361` → Cardiff institutional transfer
-
-and
-
 - `1877-380` → Cardiff institutional transfer
 - `1877-381` → Christie’s/private-market survival
 
-Adjacency does **not** prove shared shipment, transfer schedule, ownership or workshop set. It makes the register neighbourhood a high-value archival search unit. Priority bundles are now `360/361` and `376/380/381/385/397`.
+Adjacency does **not** prove shared shipment, ownership or workshop set. It makes the register neighbourhood a high-value archival search unit. Priority bundles are `360/361` and `376/380/381/385/397`.
 
-The same crosswalk exposes a model-number conflict around **330**: Cardiff and Cornell associate no. 330 with `Pontobdella (Hirudo) vittata`, while the 2005 James D. Julia auction record transcribes its card as `Pontobdella Muricata, L. No 330`. Preserve the source conflict. Shared catalogue number means repeated model design, not shared physical object.
+The same crosswalk exposes a model-number conflict around **330**: Cardiff and Cornell associate no. 330 with `Pontobdella (Hirudo) vittata`; James D. Julia's 2005 auction record transcribes its card as `Pontobdella Muricata, L. No 330`. Preserve the conflict. Shared catalogue number means repeated model design, not shared physical object.
 
-### 5. UCL transfer candidate pool has narrowed without inference
+### UCL provenance partition
 
-Current public UCL evidence gives eight named Blaschka accessions.
+Eight public UCL Blaschka accession anchors now partition as:
 
-Three are explicitly in the `Lankester 1890 Grant Museum Catalogue` layer:
+- **3 explicit Lankester layer**: `LDUCZ-P130`, `P161`, `P191`
+- **1 independently pre-transfer UCL object**: `LDUCZ-C182`, documented in a 1911 Practical Zoology notebook
+- **4 unresolved early-UCL versus Science-Museum candidates**: `P202`, `P196`, `C373`, `S73`
+- **0 publicly indexed object-level Science Museum assignments** so far
 
-- `LDUCZ-P130` — *Clione limacina*
-- `LDUCZ-P161` — *Ercolania funerea*
-- `LDUCZ-P191` — *Arion ater*
+Current UCL sources use `1890` for the Lankester catalogue/collection field, while a UCL documentation-history article says the first catalogue was published in `1891` and describes it as part catalogue, part wishlist. Both source-native date claims remain visible.
 
-`LDUCZ-C182` — *Haliclystus auricula* — is independently documented in a **1911 Practical Zoology student notebook**, so that physical accession was already at UCL before the Science Museum 1925–27 transfer. It is therefore excluded from the Science Museum transfer candidate pool, although its exact relationship to the twenty Lankester catalogue appearances remains open.
+More important, UCL says its **second catalogue system was a card index begun in the early 1900s and continued into the 1970s**. That system spans the 1925–27 Science Museum transfer and is now the highest-value UCL source. Later MDA cards may preserve acquisition and conservation fields but can conflict with one another.
 
-Four public accessions remain unresolved between an early UCL layer and the later Science Museum transfer:
+### Wimbledon 2023 false-positive cluster
 
-- `LDUCZ-P202` — *Limax arborum*
-- `LDUCZ-P196` — *Arianta arbustorum*
-- `LDUCZ-C373` — *Actinia equina*
-- `LDUCZ-S73` — female sea cucumber, taxon still open
+Wimbledon Auctions, 13 February 2023, lots **33–37**, forms a concentrated search-engine false positive. All five headings say `IN THE MANNER OF LEOPOLD AND RUDOLF BLASCHKA`; the objects are explicitly shell-and-wax / shell-and-waxwork anatomical sea-snail models.
 
-No publicly indexed current UCL accession has yet been explicitly assigned object-by-object to the Science Museum transfer.
+Displayed hammers were £500, £340, £480, £550 and £200. These prices are **not Blaschka market evidence**. The five lots are rejected because attribution is expressly qualified and the material tradition is different. Their Blaschka-heavy literature citations explain why maker-name search engines retrieve them so aggressively.
 
-### 6. UCL documentation history changes the next move
+High-precision review triggers now include `in the manner of`, `shell and wax`, `waxwork` and `papier-mâché`. They trigger inspection, not automatic rejection, because contextual provenance can legitimately mention comparative wax models.
 
-Current UCL sources call the relevant Lankester document the **1890** printed catalogue / `Lankester 1890 Grant Museum Catalogue`. A UCL documentation-history article says the first catalogue was **published in 1891** and describes it as **part catalogue, part wishlist**. Both date labels are retained until bibliographically resolved.
+### Historical catalogue families now mapped
 
-More important, UCL states that the **second cataloguing system was a card index begun in the early 1900s and continued into the 1970s**. That series spans the 1925–27 Science Museum transfer and is now the highest-value UCL provenance target. Later MDA cards, mainly from the 1980s, can preserve acquisition and conservation data but may contain conflicting entries.
+Pass 16 moves beyond maker-name web indexes into catalogue-family discovery. No listed catalogue is treated as containing Blaschka material until its lot text is screened.
 
-The documentation query is therefore no longer “search the public UCL catalogue for Blaschka.” It is: recover early card-index / MDA entries for the eight named control accessions and look specifically for acquisition source, previous institution, old `1877-xxx` / `1888-xx` numbers, E.-numbers, historical labels and Blaschka/Ward model numbers.
+Highest-priority families:
 
-A second UCL target remains Sarah E. Parker's legacy document **`Blaschka Glass Models at the Grant Museum`** (`GMZ_Blaschkas`), cited by UCL in 2015 but not recovered in the current public-web pass.
+1. **Christie’s scientific / medical / engineering models**, especially 4 Jul 1991 `Scientific and Medical Instruments, Models, Tools and Other Apparatus` and 29 May 1997 `Scientific and Engineering Works of Art, Instruments and Models`.
+2. **Christie’s Natural History**, especially 19 May and 11 Nov 1998, then 19 Oct 1999 and 4 Jun 2001.
+3. **Bonhams science / technology / marine**, especially 20 May 1989 `Science & Technology for the Collector` and 25 Feb 2004 `Science and Marine`.
+4. **Phillips Scientific Instruments**, mapped at 1980, 1986, 1988 and 1995.
+5. **Sotheby’s English/Continental/European glass**, a dense family mapped from the 1960s into the 2000s; initial full-catalogue priority is the 1978–1986 run.
+
+The Catalog Star exposes metadata and paid scan availability for many of these catalogues. Exact-title open-web / Internet Archive searches did not recover free scans for several sampled A-priority catalogues in this pass. That is a bounded discovery result, not a catalogue-level negative.
+
+Once any scan is acquired, screen the **entire catalogue**, not the first hit, using maker variants plus object-class terms such as `glass model`, `zoological model`, `natural history model`, `teaching model`, `jellyfish`, `sea anemone`, `coral`, `hydroid`, `mollusc`, `slug`, `worm`, `Dresden`, `L. No.` and `Nr.`.
 
 ## Research logs
 
-Detailed provenance and search decisions are preserved in `../research/logs/`:
+Detailed decisions are preserved in `../research/logs/` through:
 
-- `2026-08-10-auction-deep-sweep-pass01.md`
-- `2026-08-10-auction-deep-sweep-pass03-provenance-crosslinks.md`
-- `2026-08-10-auction-deep-sweep-pass04-early-market-and-archive-seeds.md`
-- `2026-08-10-auction-deep-sweep-pass05-newspaper-matrix-reuse.md`
-- `2026-08-10-auction-deep-sweep-pass06-catalogue-identifiers.md`
-- `2026-08-10-auction-deep-sweep-pass07-archive-router.md`
-- `2026-08-10-auction-deep-sweep-pass08-berlin-hu-krefeld-provenance.md`
-- `2026-08-10-auction-deep-sweep-pass09-science-museum-recipient-web-audit.md`
-- `2026-08-10-auction-deep-sweep-pass10-krefeld-hydractinia-156.md`
-- `2026-08-10-auction-deep-sweep-pass11-berlin-archive-series-router.md`
-- `2026-08-10-auction-deep-sweep-pass12-science-museum-register-neighborhoods.md`
-- `2026-08-10-auction-deep-sweep-pass13-ucl-transfer-candidate-audit.md`
 - `2026-08-10-auction-deep-sweep-pass14-ucl-card-index-router.md`
+- `2026-08-10-auction-deep-sweep-pass15-wimbledon-wax-false-positive-cluster.md`
+- `2026-08-10-auction-deep-sweep-pass16-historical-catalogue-families.md`
+
+Earlier pass01 and pass03–pass13 logs remain in the same directory.
 
 ## Public page state
 
-`index.html` is intentionally selective rather than a dump of the backend. It currently surfaces:
+`index.html` is selective rather than a backend dump. It currently surfaces the Christie’s 2019 ex-Science Museum cases, the `360/361` and `380/381` split-afterlife finding, Krefeld 2025 lots 26–27, lot 27's *Hydractinia echinata* / no. 156 resolution, and the unresolved Krefeld 2026 platform-status conflict.
 
-- the Christie’s 2019 ex-Science Museum lots;
-- the `1877-360/361` and `1877-380/381` split-afterlife finding;
-- Krefeld 2025 lots 26–27;
-- lot 27's *Hydractinia echinata* / no. 156 resolution and the HU/MfN provenance caveat;
-- the unresolved 2026 Krefeld platform-status conflict.
-
-Pages should be refreshed when a new object-level provenance bridge, genuinely new auction appearance or materially clearer public explanation appears. Archive-routing-only passes do not need cosmetic page churn.
+Pages should be refreshed for a new object-level provenance bridge, genuinely new auction appearance or a materially useful public scope clarification. Archive-routing-only passes do not require cosmetic page churn.
 
 ## Next search order
 
-1. UCL early-1900s–1970s card index and later MDA cards for P130/P161/P191/C182 controls and P202/P196/C373/S73 unresolved objects.
-2. Recover the twenty Blaschka entries in the Lankester 1890/1891 catalogue and Sarah Parker's `GMZ_Blaschkas` document.
+1. Screen exact-title web/library traces for the A-priority Christie’s, Bonhams and Phillips catalogue families in `auction-historical-catalogue-family-worklist.json`.
+2. UCL early card index / MDA cards for the eight named accessions; recover the twenty Lankester Blaschka entries and Sarah Parker's `GMZ_Blaschkas` document.
 3. Recover any UCL old Science Museum numbers and cross them against `science-museum-register-neighborhoods.json`.
 4. Science Museum `CORP/SCM/02/02/7/421` → relevant 1925–27 nominal files → `CORP/SCM/Z/048`, keyed by paired number neighbourhoods.
 5. HU historical inventory and 1886 / 1968–70 transfer-reduction records for *Hydractinia echinata*, `Stachelpolyp`, no. 156, `ZI` and `IfZ`.
-6. MfN remote routing into `S001`, `S003`, `S004-04` and `S005-02` while physical archive access is suspended.
+6. MfN remote routing into `S001`, `S003`, `S004-04` and `S005-02` while physical access is suspended.
 7. Krefeld lot-photo/label audit; keep lot 26 taxonomically open.
-8. Glasgow Mason `1909.66` purchase files and the 1904 sale notice context.
+8. Glasgow Mason `1909.66` files and the 1904 sale-notice context.
 9. Identify George Loudon's unnamed London dealer and English public-school source.
-10. Return to broad old-auction catalogue families only after these routes generate new names, taxa, model numbers or provenance anchors.
+10. Expand catalogue families only after the current A-priority runs are screened or blocked by access.
