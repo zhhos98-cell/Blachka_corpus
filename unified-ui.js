@@ -39,7 +39,7 @@
   if (!isBibliography) addStyle(`${prefix}site-core.css?v=20260810-1`, 'site-core.css');
   else {
     addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
-    addStyle(`${prefix}navigation-shell.css?v=20260810-2`, 'navigation-shell.css');
+    addStyle(`${prefix}navigation-shell.css?v=20260810-3`, 'navigation-shell.css');
   }
 
   if (!phoneOrTablet && !isBibliography) addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
@@ -61,6 +61,7 @@
   if (isSubpage && nav) {
     const links = [
       ['Cases', `${prefix}cases/`, '/cases/'],
+      ['Map', `${prefix}map/`, '/map/'],
       ['People', `${prefix}people/`, '/people/'],
       ['Bibliography', `${prefix}bibliography/`, '/bibliography/'],
       ['Sources', `${prefix}sources/`, '/sources/'],
