@@ -12,10 +12,11 @@
   addStylesheet('portal-pass2.css?v=20260810-1', 'portalPass2');
   addStylesheet('portal-pass3.css?v=20260810-1', 'portalPass3');
   addStylesheet('search-scope-v2.css?v=20260810-1', 'searchScopeV2');
+  addStylesheet('portal-pass4.css?v=20260810-1', 'portalPass4');
 
   if (!document.querySelector('script[data-map-ratio-fix]')) {
     const script = document.createElement('script');
-    script.src = 'map-ratio-fix.js?v=20260810-1';
+    script.src = 'map-ratio-fix.js?v=20260810-2';
     script.defer = true;
     script.dataset.mapRatioFix = 'true';
     document.head.appendChild(script);
@@ -48,13 +49,6 @@
           <input id="network-search-input" type="search" autocomplete="off" placeholder="Search the network…" aria-label="Search query">
           <button type="submit">Search</button>
         </div>
-        <p class="network-search-mode" id="network-search-mode">Choose a collection, then search. Bibliography and Sources open directly as filtered views.</p>
-        <div class="network-search-links" aria-label="Quick links">
-          <a href="cases/">Cases</a>
-          <a href="bibliography/">Bibliography</a>
-          <a href="sources/">Sources</a>
-          <a href="auctions/">Auctions</a>
-        </div>
         <p class="network-search-status" id="network-search-status" aria-live="polite"></p>
       </form>
     `);
@@ -75,17 +69,16 @@
             <a href="https://commons.wikimedia.org/wiki/File:Rudolf,_Leopold_and_Caroline_Blaschka_in_garden_cropped.jpg" target="_blank" rel="noopener">
               <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rudolf%2C%20Leopold%20and%20Caroline%20Blaschka%20in%20garden%20cropped.jpg?width=1200" alt="Rudolf, Leopold and Caroline Blaschka standing together in a garden" loading="lazy">
             </a>
-            <figcaption><span>Workshop family</span><p>Rudolf, Leopold and Caroline Blaschka in the garden. Unknown photographer; public domain. <a href="https://commons.wikimedia.org/wiki/File:Rudolf,_Leopold_and_Caroline_Blaschka_in_garden_cropped.jpg" target="_blank" rel="noopener">Wikimedia Commons ↗</a></p></figcaption>
+            <figcaption><span>Workshop family</span><p>Rudolf, Leopold and Caroline Blaschka in the garden. Public domain. <a href="https://commons.wikimedia.org/wiki/File:Rudolf,_Leopold_and_Caroline_Blaschka_in_garden_cropped.jpg" target="_blank" rel="noopener">Wikimedia Commons ↗</a></p></figcaption>
           </figure>
         </div>
         <div class="origin-copy">
           <h3 id="origin-story-title">From a Bohemian glassworking family to a worldwide scientific trade</h3>
           <div class="origin-columns">
-            <p><strong>Leopold Blaschka (1822–1895)</strong> came from a long glassworking family in Bohemia. His first wife, Carolina Zimmerman, and their son Josef Augustine died of cholera in 1850. His father Josef died in 1852. The sequence of losses sits immediately before the episode that later became the best-known origin story of the Blaschka marine models.</p>
-            <p>In 1853 Leopold sailed to the United States. During the voyage his ship was becalmed for two weeks, and he studied and drew jellyfish and other marine invertebrates around the vessel. Their translucent bodies presented a material problem that answered unusually well to the substance his family knew best: glass. A decade later, after making botanical models and attracting scientific attention, he began producing marine invertebrates for museum display in Dresden.</p>
-            <p><strong>Rudolf Blaschka (1857–1939)</strong> learned glassworking from his father and officially joined the business in 1876. Together they supplied museums and universities with hundreds of catalogue models. From 1890 the workshop turned exclusively to Harvard’s botanical commission, the Glass Flowers. What happened to the earlier zoological models after they left Dresden—their purchase, shipment, use, damage, dispersal, rediscovery, and present custody—is the subject of this project.</p>
+            <p><strong>Leopold Blaschka (1822–1895)</strong> came from a Bohemian glassworking family. After the deaths of his wife and son in 1850 and his father in 1852, he sailed to the United States in 1853. Becalmed for two weeks, he drew jellyfish and other marine invertebrates whose translucent forms suggested glass as a material for scientific modelling.</p>
+            <p>By the 1860s Leopold was producing marine models in Dresden. <strong>Rudolf Blaschka (1857–1939)</strong> joined the workshop in 1876, and together they supplied museums and universities internationally. From 1890 the workshop worked exclusively on Harvard’s Glass Flowers. This project follows the earlier zoological models through sale, shipment, use, damage, dispersal, rediscovery and present custody.</p>
           </div>
-          <p class="origin-source">Biographical chronology checked against <a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener">Harvard’s Blaschka archive finding aid ↗</a> and <a href="https://press.cmog.org/2016/blaschka-glass-marine-creatures-exhibition-opens-may-2016" target="_blank" rel="noopener">The Corning Museum of Glass ↗</a>. See the project’s <a href="bibliography/">secondary literature bibliography ↗</a>.</p>
+          <p class="origin-source">Chronology: <a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener">Harvard Blaschka archive ↗</a> · <a href="https://press.cmog.org/2016/blaschka-glass-marine-creatures-exhibition-opens-may-2016" target="_blank" rel="noopener">Corning Museum of Glass ↗</a> · <a href="bibliography/">bibliography ↗</a></p>
         </div>
         <div class="origin-roadmap" aria-label="Selected Blaschka chronology">
           <svg viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true">
@@ -150,7 +143,6 @@
   const input = document.getElementById('network-search-input');
   const scope = document.getElementById('network-search-scope');
   const status = document.getElementById('network-search-status');
-  const modeHint = document.getElementById('network-search-mode');
 
   if (form && input && scope && !form.dataset.bound) {
     form.dataset.bound = 'true';
@@ -172,15 +164,8 @@
       { terms:['krefeld','berlin','hydractinia','stachelpolyp','lot 26','lot 27'], href:'auctions/?q=Berlin', label:'2025 Krefeld / Berlin-labelled records' },
       { terms:['edwardsia','corallium','lot 39','lot 40','2026'], href:'auctions/?q=2026', label:'2026 Krefeld auction appearances' }
     ];
-    const updateHint = () => {
-      const copy = {
-        all:'Search across the main public layers; known cases and auction clusters route directly.',
-        bibliography:'Search authors, titles, years and citation text in the bibliography.',
-        sources:'Search archives, catalogues, correspondence, institutions and source labels.',
-        auctions:'Search auction houses, years, lots, taxa, inventory numbers and provenance notes.',
-        cases:'Search the documentary case directory.'
-      };
-      if (modeHint) modeHint.textContent = copy[scope.value] || copy.all;
+
+    const updatePlaceholder = () => {
       const placeholders = {
         all:'e.g. Liverpool, Daston, HOLLIS, Christie’s',
         bibliography:'e.g. Daston, 2008, conservation',
@@ -189,9 +174,10 @@
         cases:'e.g. Liverpool, Auckland, Tufts'
       };
       input.placeholder = placeholders[scope.value] || placeholders.all;
+      if (status) status.textContent = '';
     };
-    scope.addEventListener('change', updateHint);
-    updateHint();
+    scope.addEventListener('change', updatePlaceholder);
+    updatePlaceholder();
 
     form.addEventListener('submit', event => {
       event.preventDefault();
