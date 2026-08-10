@@ -17,7 +17,7 @@
   addStyle('home-curation.css?v=20260810-3', 'home-curation.css');
   addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
   addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
-  addStyle('mobile-v3.css?v=20260810-1', 'mobile-v3.css');
+  addStyle('mobile-v3.css?v=20260810-2', 'mobile-v3.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
@@ -66,9 +66,9 @@
   }
 
   const people = [
-    {key:'karolina',name:'Karolina (Caroline) Riegel Blaschka',short:'Karolina',bio:'Born 1834. Leopold’s second wife, married in 1854, and Rudolf’s mother. Family records preserve her alongside the workshop household and later property history.'},
+    {key:'karolina',name:'Carolina (Caroline) Riegel Blaschka',short:'Carolina',bio:'Leopold’s second wife, married in 1854, and Rudolf’s mother. Harvard’s Blaschka archive preserves her in family correspondence and biographical photographs.'},
     {key:'leopold',name:'Leopold Blaschka',short:'Leopold',bio:'1822–1895. Glassworker and modeller whose zoological glass models developed into an international scientific trade.'},
-    {key:'rudolf',name:'Rudolf Blaschka',short:'Rudolf',bio:'1857–1939. Son of Leopold and Karolina. He joined the workshop in 1876 and later continued the Harvard botanical commission.'}
+    {key:'rudolf',name:'Rudolf Blaschka',short:'Rudolf',bio:'1857–1939. Son of Leopold and Carolina. He joined the workshop in 1876 and later continued the Harvard botanical commission.'}
   ];
 
   const familyFigure = document.querySelector('.origin-photo');
@@ -126,12 +126,6 @@
         mobileBio.classList.add('is-visible');
       });
     });
-  }
-
-  const originFirst = document.querySelector('.origin-columns p:first-child');
-  if (originFirst && !originFirst.dataset.karolinaBridge) {
-    originFirst.dataset.karolinaBridge = 'true';
-    originFirst.insertAdjacentText('beforeend', ' After returning, Leopold married Karolina Riegel in 1854; their son Rudolf was born in 1857.');
   }
 
   const footer = document.querySelector('footer');
