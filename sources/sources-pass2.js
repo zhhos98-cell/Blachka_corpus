@@ -1,11 +1,11 @@
 (() => {
   const css = document.querySelector('link[href*="sources.css"]');
-  if (css) css.href = 'sources.css?v=20260810-4';
+  if (css) css.href = 'sources.css?v=20260810-5';
 
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-4';
+    ui.src = '../unified-ui.js?v=20260810-5';
     ui.defer = true;
     document.head.appendChild(ui);
   }
