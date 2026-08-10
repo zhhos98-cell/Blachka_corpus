@@ -71,13 +71,23 @@
     applySearch();
   };
 
-  fetch('map-data.json')
-    .then(response => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.json();
-    })
-    .then(data => {
-      records = (data.institutions || []).slice().sort((a,b) => a.institution.localeCompare(b.institution,'en',{sensitivity:'base'}));
+  const fetchJSON = path => fetch(path).then(response => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  });
+
+  Promise.all([
+    fetchJSON('map-data.json?v=20260810-2'),
+    fetchJSON('map-data-census.json?v=20260810-2')
+  ])
+    .then(([baseData, censusData]) => {
+      const merged = new Map();
+      (baseData.institutions || []).forEach(record => merged.set(record.id, record));
+      (censusData.institutions || []).forEach(record => {
+        const prior = merged.get(record.id) || {};
+        merged.set(record.id, {...prior, ...record});
+      });
+      records = [...merged.values()].filter(record => Number.isFinite(record.lat) && Number.isFinite(record.lon)).sort((a,b) => a.institution.localeCompare(b.institution,'en',{sensitivity:'base'}));
       renderList();
       const params = new URLSearchParams(location.search);
       if (search && params.get('q')) search.value = params.get('q');
