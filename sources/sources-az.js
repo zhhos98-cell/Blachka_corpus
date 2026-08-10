@@ -1,4 +1,11 @@
 (() => {
+  if (!window.__blaschkaUnifiedUIRequested) {
+    window.__blaschkaUnifiedUIRequested = true;
+    const ui = document.createElement('script');
+    ui.src = '../unified-ui.js?v=20260810-1';
+    document.head.appendChild(ui);
+  }
+
   const main = document.querySelector('.subpage-main');
   const intro = document.querySelector('.source-intro');
   if (!main || !intro || document.querySelector('.source-az')) return;
@@ -251,5 +258,5 @@
     clearTimeout(timer);
     timer = setTimeout(rebuild, 80);
   });
-  observer.observe(main, {childList:true, subtree:true});
+  observer.observe(main, {childList:true,subtree:true});
 })();
