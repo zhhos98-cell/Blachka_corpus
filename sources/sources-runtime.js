@@ -3,12 +3,12 @@
 /* ---- sources/sources-pass2.js ---- */
 (() => {
   const css = document.querySelector('link[href*="sources.css"]');
-  if (css) css.href = 'sources.css?v=20260810-5';
+  if (css) css.href = 'sources.css?v=20260810-7';
 
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-9';
+    ui.src = '../unified-ui.js?v=20260810-15';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -651,7 +651,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-13';
+    ui.src = '../unified-ui.js?v=20260810-15';
     ui.defer = true;
     document.head.appendChild(ui);
   }

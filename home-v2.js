@@ -22,14 +22,6 @@
     document.head.appendChild(script);
   };
 
-  addStyle('site-polish.css?v=20260810-2', 'site-polish.css');
-  addStyle('home-curation-v2.css?v=20260810-5', 'home-curation-v2.css');
-  addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
-  if (!compact) addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
-  addStyle('mobile-v3.css?v=20260810-4', 'mobile-v3.css');
-  addStyle('accessibility.css?v=20260810-2', 'accessibility.css');
-  addStyle('scale-balance.css?v=20260810-3', 'scale-balance.css');
-  addStyle('navigation-shell.css?v=20260810-1', 'navigation-shell.css');
   addScript('accessibility.js?v=20260810-2', 'accessibility.js');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
@@ -51,7 +43,7 @@
   const topNav = document.querySelector('.top-nav');
   if (topNav) {
     topNav.innerHTML = [
-      ['Project','#project'],['Cases','cases/'],['People','people/'],['Bibliography','bibliography/'],
+      ['Cases','cases/'],['People','people/'],['Bibliography','bibliography/'],
       ['Sources','sources/'],['Auctions','auctions/'],['About','about/']
     ].map(([label,href]) => `<a href="${href}">${label}</a>`).join('');
   }
@@ -61,7 +53,7 @@
   const hero = document.querySelector('.hero');
   const heroImage = hero?.querySelector('.hero-image');
   const heroCredit = hero?.querySelector('.hero-credit');
-  const imageWidth = compact ? 1280 : 2200;
+  const imageWidth = compact ? 1200 : 1800;
   const slides = [
     {
       src:`https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea%20cucumber%2C%20model%20by%20Leopold%20and%20Rudolph%20Blaschka%2C%20glass%20-%20Harvard%20Museum%20of%20Comparative%20Zoology%20-%20DSC06169.jpg?width=${imageWidth}`,

@@ -50,21 +50,14 @@
     history.replaceState(null, '', next.pathname + next.search + next.hash);
   };
 
-  fetch('people-records.json')
+  fetch('people-data.json', { cache:'force-cache' })
     .then(response => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     })
-    .then(manifest => {
-      groups = manifest.groups || {};
-      const parts = manifest.parts || [];
-      return Promise.all(parts.map(path => fetch(path).then(response => {
-        if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
-        return response.json();
-      })));
-    })
-    .then(parts => {
-      records = parts.flatMap(part => part.records || []).sort((a,b) => (a.sort || a.name).localeCompare(b.sort || b.name, 'en', {sensitivity:'base'}));
+    .then(payload => {
+      groups = payload.groups || {};
+      records = (payload.records || []).sort((a,b) => (a.sort || a.name).localeCompare(b.sort || b.name, 'en', {sensitivity:'base'}));
       render();
       const params = new URLSearchParams(location.search);
       if (params.get('q')) input.value = params.get('q');

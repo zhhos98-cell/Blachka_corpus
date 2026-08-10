@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-13';
+    ui.src = '../unified-ui.js?v=20260810-15';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -73,13 +73,8 @@
 
   const loadSecondaryVisuals = async () => {
     if (compactViewport) return;
-    try {
-      await loadScript('../maps-v3.js?v=20260809-2');
-      await loadScript('../maps-v4.js?v=20260809-1');
-      await loadScript('../map-ratio-fix.js?v=20260810-3');
-      await loadScript('../visuals-v1.js?v=20260809-2');
-      await loadScript('../visuals-v2.js?v=20260809-1');
-    } catch (error) { console.error(error); }
+    try { await loadScript('../cases-visuals-bundle.js?v=20260810-1'); }
+    catch (error) { console.error(error); }
   };
 
   (async () => {
