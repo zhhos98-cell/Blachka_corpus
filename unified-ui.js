@@ -4,6 +4,7 @@
 
   const isSubpage = document.body.classList.contains('subpage');
   const prefix = isSubpage ? '../' : '';
+  const phoneOrTablet = matchMedia('(max-width:900px)').matches;
   const addStyle = (href, token) => {
     const wanted = new URL(href, location.href).href;
     const existing = [...document.querySelectorAll('link[rel="stylesheet"]')].find(link => link.href.includes(token));
@@ -26,14 +27,17 @@
 
   addStyle(`${prefix}apple-unified.css?v=20260810-4`, 'apple-unified.css');
   if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-2`, 'subpage-v2.css');
-  addStyle(`${prefix}fluid-motion.css?v=20260810-4`, 'fluid-motion.css');
+  if (!phoneOrTablet) addStyle(`${prefix}fluid-motion.css?v=20260810-4`, 'fluid-motion.css');
   addStyle(`${prefix}site-rhythm.css?v=20260810-2`, 'site-rhythm.css');
   addStyle(`${prefix}site-polish.css?v=20260810-2`, 'site-polish.css');
   if (isSubpage) addStyle(`${prefix}header-minimal.css?v=20260810-1`, 'header-minimal.css');
   addStyle(`${prefix}footer-legal.css?v=20260810-2`, 'footer-legal.css');
-  addStyle(`${prefix}nav-glide.css?v=20260810-2`, 'nav-glide.css');
+  if (!phoneOrTablet) {
+    addStyle(`${prefix}nav-glide.css?v=20260810-2`, 'nav-glide.css');
+    addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
+  }
   addStyle(`${prefix}mobile-v3.css?v=20260810-3`, 'mobile-v3.css');
-  addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
+  if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-1`, 'mobile-fixes.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
