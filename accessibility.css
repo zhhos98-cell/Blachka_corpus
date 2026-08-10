@@ -1,0 +1,114 @@
+/* Accessibility layer · 2026-08-10
+   Keyboard, focus, reduced motion, high contrast and assistive-technology support.
+   This layer is deliberately small and loads after the visual system. */
+
+:root{
+  --a11y-focus:#f0b57d;
+  --a11y-focus-dark:#211712;
+}
+
+/* Reusable screen-reader-only text. */
+.sr-only,.a11y-sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+
+/* Make the existing skip link reliable above all site layers and safe-area insets. */
+.ui-skip-link{
+  position:fixed!important;
+  z-index:2147483647!important;
+  left:max(12px,env(safe-area-inset-left))!important;
+  top:max(10px,env(safe-area-inset-top))!important;
+}
+
+/* Strong keyboard focus without changing mouse/touch presentation. */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{
+  outline:3px solid var(--a11y-focus)!important;
+  outline-offset:3px!important;
+  box-shadow:0 0 0 2px rgba(20,14,11,.86)!important;
+}
+main[tabindex="-1"]:focus{outline:none!important;box-shadow:none!important}
+
+/* Avoid sticky chrome covering keyboard/hash targets. */
+:where(main,section,article,h1,h2,h3,h4,[id]){scroll-margin-top:92px}
+@media(max-width:900px){:where(main,section,article,h1,h2,h3,h4,[id]){scroll-margin-top:18px}}
+
+/* Interactive controls: keep WCAG-friendly target geometry without inflating inline links. */
+:where(.top-nav,.subpage-nav,.contact-actions,.subscribe-actions,.footer-links) a,
+:where(button,.bib-tool-button,.source-az-alpha button,.source-az-filters button,.source-az-reset button){
+  min-height:44px;
+}
+:where(input,select,textarea){min-height:44px}
+
+/* Case wall: keyboard focus must expose the same affordance as hover. */
+.case-index-row:focus-visible{border-radius:14px}
+.case-index-row:focus-visible .case-tile-inner,
+.case-index-row:focus-within .case-tile-inner{will-change:transform}
+
+/* Family portrait hotspots remain large enough for pointer and switch access. */
+.family-person button{
+  min-width:44px!important;
+  min-height:44px!important;
+}
+
+/* Links cannot rely only on colour when embedded in prose. */
+:where(.privacy-body,.rights-body,.source-meta,.source-links,.bib-links,.origin-source,.case-sources,.source-note) a{
+  text-decoration-thickness:.08em;
+  text-underline-offset:.16em;
+}
+
+/* Respect OS motion preferences comprehensively, including cross-document effects. */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    transition-delay:0ms!important;
+    scroll-behavior:auto!important;
+  }
+  ::view-transition-old(root),::view-transition-new(root){animation:none!important}
+  .case-tile-inner{transform:none!important}
+  .case-tile-back{display:none!important}
+  .origin-roadmap{animation:none!important}
+}
+
+/* Increased-contrast preference: raise text, borders and focus contrast without redesigning the page. */
+@media(prefers-contrast:more){
+  body{--muted:rgba(250,246,241,.82)}
+  .page-dek,.source-meta,.bib-links,.source-links,.source-note,.origin-source,.footer-copyright{color:rgba(255,250,245,.82)!important}
+  :where(.top-nav,.subpage-nav) a{color:rgba(255,255,255,.88)!important}
+  :where(button,input,select,textarea,.bib-tool-button){border-color:rgba(255,255,255,.38)!important}
+  :where(a,button,input,select,textarea,[tabindex]):focus-visible{outline-width:4px!important}
+}
+
+/* Windows High Contrast / forced-colours support. */
+@media(forced-colors:active){
+  *{box-shadow:none!important;text-shadow:none!important}
+  :where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid Highlight!important}
+  :where(button,input,select,textarea,.bib-tool-button,.family-mobile-nav button){forced-color-adjust:auto;border:1px solid ButtonText!important}
+  .hero-overlay,.origin-roadmap,.nav-glider{display:none!important}
+  .case-tile-front,.case-tile-back,.feature-case{border:1px solid CanvasText!important}
+}
+
+/* Zoom/reflow guardrails. Long IDs, URLs and citations must wrap rather than overflow. */
+:where(p,li,h1,h2,h3,h4,.bib-entry,.source-entry,.auction-lot,.source-row){overflow-wrap:anywhere}
+code,pre{max-width:100%;overflow:auto}
+
+/* Accessibility statement page. */
+.accessibility-copy{
+  width:min(100%,980px);
+  margin:0 auto 88px;
+}
+.accessibility-body{max-width:760px}
+.accessibility-body section{margin:0 0 42px}
+.accessibility-body h2{margin:0 0 12px;font-size:clamp(1.35rem,2.8vw,2rem);font-weight:520}
+.accessibility-body p,.accessibility-body li{line-height:1.65}
+.accessibility-body ul{padding-left:1.2em}
