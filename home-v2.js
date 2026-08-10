@@ -29,6 +29,7 @@
   addStyle('mobile-v3.css?v=20260810-4', 'mobile-v3.css');
   addStyle('accessibility.css?v=20260810-2', 'accessibility.css');
   addStyle('scale-balance.css?v=20260810-3', 'scale-balance.css');
+  addStyle('navigation-shell.css?v=20260810-1', 'navigation-shell.css');
   addScript('accessibility.js?v=20260810-2', 'accessibility.js');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
@@ -46,11 +47,11 @@
     document.head.appendChild(script);
   }
 
-  /* One stable information architecture. Brand = Home; header = primary destinations. */
+  /* Invariant: brand = Home; the same seven primary destinations stay in the same slots. */
   const topNav = document.querySelector('.top-nav');
   if (topNav) {
     topNav.innerHTML = [
-      ['Project','#project'],['Cases','cases/'],['Bibliography','bibliography/'],
+      ['Project','#project'],['Cases','cases/'],['People','people/'],['Bibliography','bibliography/'],
       ['Sources','sources/'],['Auctions','auctions/'],['About','about/']
     ].map(([label,href]) => `<a href="${href}">${label}</a>`).join('');
   }
@@ -270,7 +271,7 @@
   }
   if (footer) {
     const inner = footer.querySelector('.footer-inner');
-    if (inner) inner.innerHTML = `<div class="footer-identity"><a class="footer-title" href="#top">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="people/">People</a><a href="mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network">Contact</a><a href="rights/">Image rights</a><a href="privacy/">Privacy</a><a href="accessibility/">Accessibility</a><a class="footer-rss" href="feed.xml" type="application/rss+xml" aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="19" r="2.2"/><path d="M3 10.5v3a7.5 7.5 0 0 1 7.5 7.5h3A10.5 10.5 0 0 0 3 10.5Zm0-6v3A13.5 13.5 0 0 1 16.5 21h3C19.5 11.9 12.1 4.5 3 4.5Z"/></svg><span>RSS</span></a></div>`;
+    if (inner) inner.innerHTML = `<div class="footer-identity"><a class="footer-title" href="#top">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network">Contact</a><a href="rights/">Image rights</a><a href="privacy/">Privacy</a><a href="accessibility/">Accessibility</a><a class="footer-rss" href="feed.xml" type="application/rss+xml" aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="19" r="2.2"/><path d="M3 10.5v3a7.5 7.5 0 0 1 7.5 7.5h3A10.5 10.5 0 0 0 3 10.5Zm0-6v3A13.5 13.5 0 0 1 16.5 21h3C19.5 11.9 12.1 4.5 3 4.5Z"/></svg><span>RSS</span></a></div>`;
   }
 
   const revealNodes = document.querySelectorAll('.project-proposition,.origin-layout,.featured-head,.feature-grid,.feature-footer,.contact-grid,.subscribe-grid');
