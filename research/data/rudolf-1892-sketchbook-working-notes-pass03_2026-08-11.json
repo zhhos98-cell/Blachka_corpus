@@ -1,6 +1,7 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "created": "2026-08-11",
+  "updated": "2026-08-11",
   "title": "Rudolf Blaschka 1892 sketchbook working-note and surrogate-delivery audit — pass 03",
   "scope": "Backend-only refinement of sketchbook pages 26-28 and digital-surrogate integrity. This file supersedes the provisional p26-p28 readings in the earlier crosswalk where they differ.",
   "frontend_policy": "Do not expose sketchbook images, thumbnails, page-derived geometries, or these working-note inferences on public GitHub Pages in this phase.",
@@ -49,7 +50,7 @@
         "entity": "Bremer Adressbuch 1892",
         "source": "Staats- und Universitätsbibliothek Bremen",
         "url": "https://brema.suub.uni-bremen.de/bremensien/periodical/structure/997904",
-        "evidential_role": "period directory control; contains resident, street, commercial and trade sections. Exact Schüsselkorb 14 occupant still to be extracted."
+        "evidential_role": "period directory control. The digitized volume exposes separate resident, street, commercial and trade directories. Exact Schüsselkorb 14 occupant still to be extracted."
       }
     ],
     "spatial_sequence": {
@@ -95,8 +96,18 @@
     "guard": "The measured cylinder/object is unidentified. Do not connect it to a microscope, specimen jar, shipping cylinder, model component, or other apparatus without a separate source."
   },
   "digital_surrogate_integrity": {
+    "pdf_derivative_metadata": {
+      "catalogue_digitization_note": "digitized 200909 Boston Photo Imaging",
+      "pdf_creator": "Adobe Acrobat 9.4.2",
+      "pdf_producer": "Adobe Acrobat 9.4.2 Image Conversion Plug-in",
+      "pdf_creation_date_utc": "2011-02-16T19:24:20Z",
+      "pdf_pages": 30,
+      "embedded_jpeg_count": 30,
+      "assessment": "The downloadable PDF is a later image-conversion derivative assembled after the 2009 digitization event, not the primary camera capture itself. This makes derivative-level ordering/duplication an evidential issue worth auditing."
+    },
     "pdf_duplicate": {
       "pages": [12, 13],
+      "pdf_image_object_character": "separate PDF object references",
       "finding": "The two PDF pages embed byte-identical JPEG images despite separate PDF object references.",
       "jpeg_dimensions": [2741, 1668],
       "jpeg_byte_length": 241256,
@@ -105,7 +116,7 @@
     },
     "older_backend_control": {
       "source": "05B_Blaschka_Digital_Archive_Literature_Technical_MASTER(1).json -> Corning_Rakow_notebook_1-700.pdf_by_PaddleOCR-VL-1.6.json",
-      "finding": "The final 30 records of the older 700-frame Rakow OCR batch align with the current 30-page sketchbook PDF. Old records 682 and 683 contain the same extracted image filename (img_in_image_box_0_1_1315_801.jpg), matching the current p12/p13 duplication.",
+      "finding": "The final 30 records of the older 700-frame Rakow OCR batch align with the current 30-page sketchbook PDF. Old records 682 and 683 contain the same extracted image filename (img_in_image_box_0_1_1315_801.jpg), matching the current p12/p13 duplication. Records 696-698 also independently preserve low-quality OCR of the same p26-p28 notes.",
       "interpretation": "The duplicate predates the user's current PDF download and belongs to an earlier Corning/Rakow digital-delivery or processing chain. It is not a corruption introduced by the current local file."
     },
     "catalogue_tempe_implication": "Because the surrogate demonstrably contains a duplicated frame and the catalogue says the beginning sketch is Tempe, 22 April 1892 while the current PDF exposes Maricopa, 24 April as its first legible landscape caption, omission/reassembly in digital delivery remains a live explanation. Do not downgrade the catalogue to error without checking the individual JPG representation."
