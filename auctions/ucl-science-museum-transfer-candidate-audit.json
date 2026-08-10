@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "UCL Grant Museum Blaschka provenance partition: Lankester, pre-transfer custody, and unresolved Science Museum candidates",
+  "purpose": "Refine the UCL branch of the Science Museum 1925-1927 dispersal by classifying the eight publicly accessioned Blaschka anchors according to what the current public evidence actually establishes, rather than assigning unproven objects to the Science Museum transfer by elimination.",
+  "collection_level_facts": {
+    "current_ucl_statement": "Twenty Blaschka models appear in an 1890 printed museum catalogue compiled by E. Ray Lankester. UCL states that the remaining models entered from the Science Museum during its 1925-1927 deaccession and that UCL was one of seven institutional recipients.",
+    "science_museum_transfer_quantity": null,
+    "current_total_blaschka_models": null,
+    "online_catalogue_completeness": "UCL states that Collections Online is ongoing and not 100% comprehensive.",
+    "sources": [
+      "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/highlights/blaschka-glass-models-invertebrates",
+      "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/collections-and-research",
+      "https://collections.ucl.ac.uk/home"
+    ]
+  },
+  "public_accession_partition": {
+    "public_accession_anchors": 8,
+    "explicit_lankester_layer": 3,
+    "confirmed_ucl_custody_before_science_museum_transfer_but_exact_lankester_catalogue_status_open": 1,
+    "still_unresolved_between_early_ucl_and_science_museum_layers": 4,
+    "explicit_science_museum_object_level_assignments": 0
+  },
+  "records": [
+    {
+      "accession": "LDUCZ-P130",
+      "taxon": "Clione limacina",
+      "status": "explicit_Lankester_1890_catalogue_layer",
+      "evidence": "Current UCL Collections Online record has collection field 'Blaschka Glass Model Collection, Lankester 1890 Grant Museum Catalogue' and associates E. Ray Lankester.",
+      "candidate_blaschka_number": "352",
+      "guard": "Model-design number only; no Science Museum transfer claim."
+    },
+    {
+      "accession": "LDUCZ-P161",
+      "taxon": "Ercolania funerea / later UCL page says Ercolania panceri",
+      "status": "explicit_Lankester_1890_catalogue_layer",
+      "evidence": "Current UCL Collections Online record has the Lankester 1890 collection field.",
+      "alternative_numbers": ["15219", "D502", "438"],
+      "guard": "Alternative number 438 is not interpreted as a Blaschka/Ward model number without a scheme source."
+    },
+    {
+      "accession": "LDUCZ-P191",
+      "taxon": "Arion ater",
+      "status": "explicit_Lankester_1890_catalogue_layer",
+      "evidence": "Current UCL Collections Online record has the Lankester 1890 collection field.",
+      "candidate_blaschka_number": "510",
+      "comparative_note": "Cardiff has a different physical Science-Museum-transfer object of the same candidate commercial model type; this is a control against confusing model-type identity with object provenance."
+    },
+    {
+      "accession": "LDUCZ-C182",
+      "taxon": "Haliclystus auricula",
+      "status": "confirmed_UCL_custody_before_1925_1927_transfer",
+      "production_date_as_reported_by_ucl": "around 1875",
+      "evidence": "UCL identifies this exact accession in a Practical Zoology student notebook dated 1911. The surviving model was therefore already at UCL at least fourteen years before the Science Museum deaccession window opened.",
+      "candidate_blaschka_number": "126",
+      "provenance_effect": "Exclude C182 from the pool of possible Science Museum 1925-1927 transfer objects.",
+      "lankester_layer_status": "plausible_but_not_explicitly_proven_by_current_public_catalogue",
+      "guard": "Pre-1925 UCL custody does not by itself prove that C182 was one of the twenty Blaschka entries in the 1890 Lankester catalogue."
+    },
+    {
+      "accession": "LDUCZ-P202",
+      "taxon": "Limax arborum",
+      "status": "unresolved_between_early_UCL_and_Science_Museum_transfer",
+      "candidate_blaschka_number": "529",
+      "public_evidence": "Official 2018 UCL article supplies accession, taxon and object description but no acquisition layer or old Science Museum number.",
+      "guard": "The 2018 article's general statement that Grant Museum models may have been ordered by Lankester does not assign this accession to the Lankester layer."
+    },
+    {
+      "accession": "LDUCZ-P196",
+      "taxon": "Arianta arbustorum",
+      "status": "unresolved_between_early_UCL_and_Science_Museum_transfer",
+      "public_evidence": "Official 2018 UCL article supplies accession and taxon but no acquisition layer or old Science Museum number."
+    },
+    {
+      "accession": "LDUCZ-C373",
+      "taxon": "Actinia equina",
+      "status": "unresolved_between_early_UCL_and_Science_Museum_transfer",
+      "candidate_blaschka_number": "22",
+      "public_evidence": "Official UCL feature supplies accession, taxon and bell-jar mounting but no object-level acquisition layer.",
+      "legacy_document_relation": "The 2015 UCL feature cites Sarah E. Parker, 'Blaschka Glass Models at the Grant Museum', at the now-dead legacy URL /museums/zoology/documents/GMZ_Blaschkas.",
+      "guard": "Current mounting is not used to infer provenance."
+    },
+    {
+      "accession": "LDUCZ-S73",
+      "taxon": null,
+      "common_name": "female sea cucumber",
+      "status": "unresolved_between_early_UCL_and_Science_Museum_transfer",
+      "public_evidence": "Official 2018 UCL article supplies accession and common-name caption but no acquisition layer or old Science Museum number.",
+      "taxon_guard": "No binomial or model number is inferred from the common-name caption."
+    }
+  ],
+  "new_constraint_on_transfer_candidate_pool": {
+    "previous_public_unassigned_anchors": 5,
+    "new_pre_transfer_exclusion": "LDUCZ-C182",
+    "remaining_publicly_unresolved_anchors": ["LDUCZ-P202", "LDUCZ-P196", "LDUCZ-C373", "LDUCZ-S73"],
+    "interpretation": "Among the eight currently named public accession anchors, no object is yet explicitly identified as a Science Museum transfer; however, C182 can now be excluded from that transfer population because UCL documents the same accession in teaching use in 1911."
+  },
+  "lankester_catalogue_status": {
+    "date": 1890,
+    "ucl_blog_description": "UCL elsewhere refers to the 1890 Lankester Grant Museum Catalogue as the museum's earliest accession register.",
+    "known_problem": "UCL also warns that Lankester's catalogue could include labels for specimens he wanted to acquire as well as specimens that actually existed.",
+    "research_value": "Recovering the twenty Blaschka entries and comparing their historical names/model numbers with the four unresolved accessions is the shortest route to shrinking the Science Museum candidate pool further.",
+    "guard": "Catalogue appearance alone is not converted into physical acquisition unless corroborated by object, label, notebook or later catalogue evidence."
+  },
+  "legacy_inventory_target": {
+    "author": "Sarah E. Parker",
+    "title": "Blaschka Glass Models at the Grant Museum",
+    "legacy_url": "http://www.ucl.ac.uk/museums/zoology/documents/GMZ_Blaschkas",
+    "document_status": "cited by UCL in 2015; live payload not recovered in this pass",
+    "why_high_value": "Potential earlier collection-level/object-level inventory that may preserve model lists, provenance distinctions, labels or old numbers absent from currently indexed object pages.",
+    "next_recovery_routes": ["UCL internal archive or museum documentation files", "web archive snapshot", "direct request to Grant Museum documentation staff"]
+  },
+  "bounded_public_web_result": {
+    "queries": ["LDUCZ-P202", "LDUCZ-P196", "LDUCZ-S73", "LDUCZ-C373", "Blaschka Science Museum UCL accession", "Sarah E. Parker GMZ_Blaschkas"],
+    "result": "No public indexed object record was recovered that assigns P202, P196, C373 or S73 to either the Lankester or Science Museum layer, and no old Science Museum registration number was recovered for a current UCL Blaschka accession.",
+    "guard": "UCL explicitly states that its online catalogue is incomplete; the negative is therefore bounded to public indexed records."
+  },
+  "next_actions": [
+    "Recover the 1890 Lankester accession register/catalogue entries for all twenty Blaschka appearances and search P202/P196/C373/S73 historical taxa and model numbers.",
+    "Recover Sarah E. Parker's legacy 'Blaschka Glass Models at the Grant Museum' document.",
+    "Ask UCL documentation staff for the current Blaschka export including provenance/collection field, alternative numbers, historical labels, and any previous-institution numbers.",
+    "Specifically ask whether any current UCL Blaschka record preserves a Science Museum number in the 1877-xxx or 1888-xx format.",
+    "Cross-check any recovered UCL Science Museum numbers against the Cardiff/Christie's register neighborhoods without assuming adjacency means shared disposition."
+  ]
+}
