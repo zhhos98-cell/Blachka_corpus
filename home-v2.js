@@ -14,10 +14,10 @@
     document.head.appendChild(link);
   };
   addStyle('site-polish.css?v=20260810-2', 'site-polish.css');
-  addStyle('home-curation.css?v=20260810-3', 'home-curation.css');
+  addStyle('home-curation.css?v=20260810-4', 'home-curation.css');
   addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
   addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
-  addStyle('mobile-v3.css?v=20260810-2', 'mobile-v3.css');
+  addStyle('mobile-v3.css?v=20260810-3', 'mobile-v3.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
@@ -66,20 +66,20 @@
   }
 
   const people = [
-    {key:'karolina',name:'Carolina (Caroline) Riegel Blaschka',short:'Carolina',bio:'Leopold’s second wife, married in 1854, and Rudolf’s mother. Harvard’s Blaschka archive preserves her in family correspondence and biographical photographs.'},
-    {key:'leopold',name:'Leopold Blaschka',short:'Leopold',bio:'1822–1895. Glassworker and modeller whose zoological glass models developed into an international scientific trade.'},
-    {key:'rudolf',name:'Rudolf Blaschka',short:'Rudolf',bio:'1857–1939. Son of Leopold and Carolina. He joined the workshop in 1876 and later continued the Harvard botanical commission.'}
+    {key:'karolina',name:'Carolina (Karolina) Riegel Blaschka',short:'Carolina'},
+    {key:'leopold',name:'Leopold Blaschka',short:'Leopold'},
+    {key:'rudolf',name:'Rudolf Blaschka',short:'Rudolf'}
   ];
 
   const familyFigure = document.querySelector('.origin-photo');
-  if (familyFigure && !familyFigure.querySelector('.family-portrait-layer')) {
+  const originStory = document.querySelector('.origin-story');
+  if (familyFigure && originStory && !familyFigure.querySelector('.family-portrait-layer')) {
     const layer = document.createElement('div');
     layer.className = 'family-portrait-layer';
     layer.setAttribute('aria-label', 'Blaschka family portrait biographies');
     layer.innerHTML = people.map(person => `
       <span class="family-person family-person--${person.key}" data-person="${person.key}">
-        <button type="button" aria-label="About ${person.name}" aria-expanded="false"></button>
-        <span class="family-person-tooltip" role="tooltip"><strong>${person.name}</strong><span>${person.bio}</span></span>
+        <button type="button" aria-label="Highlight ${person.name}" aria-expanded="false"></button>
       </span>`).join('');
     const caption = familyFigure.querySelector('figcaption');
     familyFigure.insertBefore(layer, caption || null);
@@ -88,43 +88,52 @@
     mobileNav.className = 'family-mobile-nav';
     mobileNav.setAttribute('aria-label', 'Meet the Blaschka family');
     mobileNav.innerHTML = people.map(person => `<button type="button" data-mobile-person="${person.key}" aria-pressed="false">${person.short}</button>`).join('');
-    const mobileBio = document.createElement('div');
-    mobileBio.className = 'family-mobile-bio';
-    mobileBio.setAttribute('aria-live', 'polite');
-    familyFigure.append(mobileNav, mobileBio);
+    familyFigure.append(mobileNav);
 
-    const closeDesktop = except => {
+    let locked = '';
+    const setActive = key => {
+      if (key) originStory.dataset.familyActive = key;
+      else delete originStory.dataset.familyActive;
       layer.querySelectorAll('.family-person').forEach(person => {
-        const keep = except && person === except;
-        person.classList.toggle('is-active', !!keep);
-        person.querySelector('button')?.setAttribute('aria-expanded', keep ? 'true' : 'false');
+        const active = person.dataset.person === key;
+        person.classList.toggle('is-active', active);
+        person.querySelector('button')?.setAttribute('aria-expanded', active ? 'true' : 'false');
       });
+      mobileNav.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', button.dataset.mobilePerson === key ? 'true' : 'false'));
     };
-    layer.querySelectorAll('.family-person button').forEach(button => {
+
+    layer.querySelectorAll('.family-person').forEach(person => {
+      const key = person.dataset.person;
+      const button = person.querySelector('button');
+      person.addEventListener('pointerenter', () => setActive(key));
+      person.addEventListener('pointerleave', () => setActive(locked));
+      button.addEventListener('focus', () => setActive(key));
+      button.addEventListener('blur', () => setActive(locked));
       button.addEventListener('click', event => {
         event.preventDefault();
         event.stopPropagation();
-        const person = button.closest('.family-person');
-        closeDesktop(person.classList.contains('is-active') ? null : person);
+        locked = locked === key ? '' : key;
+        setActive(locked || key);
       });
     });
-    document.addEventListener('click', event => { if (!familyFigure.contains(event.target)) closeDesktop(null); });
-    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeDesktop(null); });
 
     mobileNav.querySelectorAll('button').forEach(button => {
       button.addEventListener('click', () => {
-        const person = people.find(item => item.key === button.dataset.mobilePerson);
-        const wasActive = button.getAttribute('aria-pressed') === 'true';
-        mobileNav.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', 'false'));
-        if (wasActive || !person) {
-          mobileBio.classList.remove('is-visible');
-          mobileBio.innerHTML = '';
-          return;
-        }
-        button.setAttribute('aria-pressed', 'true');
-        mobileBio.innerHTML = `<strong>${person.name}</strong>${person.bio}`;
-        mobileBio.classList.add('is-visible');
+        const key = button.dataset.mobilePerson;
+        locked = locked === key ? '' : key;
+        setActive(locked);
       });
+    });
+
+    document.addEventListener('click', event => {
+      if (familyFigure.contains(event.target) || originStory.querySelector('.origin-biographies')?.contains(event.target)) return;
+      locked = '';
+      setActive('');
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      locked = '';
+      setActive('');
     });
   }
 
