@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260811-1';
+    ui.src = '../unified-ui.js?v=20260811-2';
     ui.defer = true;
     document.head.appendChild(ui);
   }
