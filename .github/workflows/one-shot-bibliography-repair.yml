@@ -13,34 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Refresh bibliography shell and cache keys
-        shell: python
+      - name: Refresh bibliography cache keys
         run: |
+          python - <<'PY'
           from pathlib import Path
-          import re
-
           path = Path('bibliography/index.html')
           text = path.read_text(encoding='utf-8')
           text = text.replace('bibliography.css?v=20260809-3', 'bibliography.css?v=20260810-8')
           text = text.replace('bibliography-form.js?v=20260809-5', 'bibliography-form.js?v=20260810-8')
           text = text.replace('bibliography-tools.js?v=20260809-4', 'bibliography-tools.js?v=20260810-8')
-
-          nav = '''<nav class="subpage-nav" aria-label="Site navigation">
-      <a href="../cases/">Cases</a>
-      <a href="../people/">People</a>
-      <a href="./" aria-current="page">Bibliography</a>
-      <a href="../sources/">Sources</a>
-      <a href="../auctions/">Auctions</a>
-      <a href="../about/">About</a>
-    </nav>'''
-          text = re.sub(r'<nav class="subpage-nav" aria-label="Site navigation">.*?</nav>', nav, text, count=1, flags=re.S)
-
-          footer = '''<footer class="subpage-footer">
-    <div class="footer-identity"><a class="footer-title" href="../">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div>
-    <div class="footer-links"><a href="mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network">Contact</a><a href="../rights/">Image rights</a><a href="../privacy/">Privacy</a><a href="../accessibility/">Accessibility</a><a class="footer-rss" href="../feed.xml">RSS</a></div>
-  </footer>'''
-          text = re.sub(r'<footer class="subpage-footer">.*?</footer>', footer, text, count=1, flags=re.S)
           path.write_text(text, encoding='utf-8')
+          PY
       - name: Commit repaired bibliography shell
         run: |
           if git diff --quiet -- bibliography/index.html; then
@@ -50,5 +33,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add bibliography/index.html
-          git commit -m "Repair bibliography first-load shell"
+          git commit -m "Refresh bibliography asset versions"
           git push
