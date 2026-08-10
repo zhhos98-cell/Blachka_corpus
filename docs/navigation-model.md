@@ -14,7 +14,7 @@ The site name/brand is always the Home control. The header uses one fixed sequen
 6. Auctions
 7. About
 
-`Map` is now a grouped research destination rather than a single page label. Opening it exposes two explicit child routes:
+`Map` is a grouped research destination rather than a single page label. Opening it exposes two explicit child routes:
 
 - `Collections map` → `/map/`
 - `Rudolf 1892 journey` → `/map/rudolf-1892/`
@@ -22,6 +22,20 @@ The site name/brand is always the Home control. The header uses one fixed sequen
 The Map trigger remains in the same header slot on every page. A child map route marks the Map group as current while also marking the relevant child route inside the menu. This avoids the previous ambiguity in which the 1892 journey looked like the collections map itself.
 
 `Project` remains a homepage chapter (`/#project`) reached by scrolling or the homepage Explore cue; it is deliberately not a global navigation item.
+
+## Visual shell invariant
+
+The homepage header is the canonical visual model for every public route. Secondary pages do not maintain a separate navigation design.
+
+- Header geometry uses the same 1440 px maximum shell and the same side gutters as Home.
+- Brand typography, navigation font, pill geometry, hit targets, spacing and Map dropdown styling are shared.
+- Secondary-page content may keep its narrower reading width; the header does not inherit that narrower width.
+- Secondary headers are part of the normal document flow, matching the non-sticky Home header rather than introducing a separate sticky bar.
+- Legacy uppercase labels, underline animations, missing Map links and page-specific header spacing are overridden by the canonical shell.
+- Desktop navigation may use the same restrained glide/focus surface; the Map trigger participates in that interaction exactly like the direct links.
+- On mobile the item order remains identical and the row may scroll horizontally. The Map dropdown remains fully reachable.
+
+`navigation-shell.css`, `unified-ui.js`, and the small Home navigation normalizer are the shared implementation layer. Pages with their own filtering scripts must request the same unified shell rather than maintaining a parallel header.
 
 ## Footer: utility destinations only
 
