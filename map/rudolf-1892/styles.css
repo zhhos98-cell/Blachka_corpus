@@ -69,6 +69,12 @@
 .detail-why p:last-child{margin:0;color:#e1d6ce;font-size:.96rem;line-height:1.5}
 .detail-source{display:grid;gap:5px;margin:18px 0 0;color:rgba(255,255,255,.48);font:500 .62rem/1.45 var(--journey-ui)}
 .detail-source span{margin:0}.detail-source b{font-weight:550;color:rgba(255,255,255,.62)}
+.detail-links{display:grid;gap:7px;margin-top:13px}.detail-links[hidden]{display:none}
+.detail-links a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px;align-items:center;padding:10px 11px;border:1px solid var(--journey-line);border-radius:12px;background:rgba(255,255,255,.025);color:inherit;text-decoration:none;font-family:var(--journey-ui)}
+.detail-links a:hover,.detail-links a:focus-visible{background:rgba(255,255,255,.06);border-color:rgba(245,239,232,.22)}
+.detail-links a span{grid-column:1;color:#d39a79;font-size:.55rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.detail-links a b{grid-column:1;font-size:.65rem;font-weight:600;line-height:1.35;color:rgba(255,255,255,.72)}
+.detail-links a i{grid-column:2;grid-row:1/3;align-self:center;color:rgba(255,255,255,.43);font-style:normal}
 .journey-controls{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
 .journey-controls button{min-height:40px;padding:0 12px;border:1px solid var(--journey-line);border-radius:999px;background:rgba(255,255,255,.035);color:#eee5de;font:620 .64rem/1 var(--journey-ui);cursor:pointer}
 .journey-controls button:hover,.journey-controls button:focus-visible{background:rgba(255,255,255,.08)}
@@ -85,18 +91,30 @@
 .journey-method{display:grid;grid-template-columns:minmax(170px,.42fr) minmax(0,1.58fr);gap:70px;padding:76px 0 96px;border-top:1px solid var(--journey-line)}
 .journey-method>div{max-width:850px}.journey-method p:last-child{max-width:760px;margin:25px 0 0;color:var(--journey-muted);font-size:1.04rem;line-height:1.58}
 
+.journey-references{padding:78px 0 104px;border-top:1px solid var(--journey-line)}
+.journey-references-head{display:grid;grid-template-columns:minmax(170px,.42fr) minmax(0,1.58fr);gap:70px;margin-bottom:42px}
+.journey-references-head>div{max-width:900px}
+.journey-references-head h2{margin:0;font-size:clamp(2.25rem,4.2vw,4.4rem);font-weight:500;letter-spacing:-.04em;line-height:.96}
+.journey-references-head>div>p{max-width:760px;margin:24px 0 0;color:var(--journey-muted);font-size:1rem;line-height:1.58}
+.journey-reference-list{border-top:1px solid var(--journey-line)}
+.journey-reference{display:grid;grid-template-columns:150px minmax(0,1.45fr) minmax(240px,.8fr) auto;gap:20px;align-items:start;padding:22px 0;border-bottom:1px solid var(--journey-line)}
+.journey-reference p{margin:0}.journey-reference-type{color:#d39a79;font:700 .58rem/1.35 var(--journey-ui);letter-spacing:.07em;text-transform:uppercase}.journey-reference-citation{color:#e1d7d0;font-size:.92rem;line-height:1.5}.journey-reference-note{color:rgba(255,255,255,.52);font:500 .65rem/1.5 var(--journey-ui)}
+.journey-reference>a{color:#e6c1a8;text-decoration:none;font:650 .64rem/1.4 var(--journey-ui);white-space:nowrap}.journey-reference>a:hover,.journey-reference>a:focus-visible{text-decoration:underline}
+
 @media(max-width:1180px){
   .journey-layout{grid-template-columns:1fr}
   .journey-detail{position:static;max-height:none;padding:25px 0 0;border-left:0;border-top:1px solid var(--journey-line)}
   #journey-map{min-height:600px}
   .route-index{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .journey-reference{grid-template-columns:130px minmax(0,1fr)}
+  .journey-reference-note,.journey-reference>a{grid-column:2}
 }
 @media(max-width:900px){
   .rudolf-1892-page .subpage-main{width:calc(100% - 28px)!important}
-  .journey-workspace-head,.mode-explainer,.route-directory-head,.journey-method{grid-template-columns:1fr}
+  .journey-workspace-head,.mode-explainer,.route-directory-head,.journey-method,.journey-references-head{grid-template-columns:1fr}
   .journey-workspace-head{align-items:start}.map-mode-switch{justify-self:start}
   .mode-legend{justify-content:flex-start}
-  .route-directory-head,.journey-method{gap:24px}
+  .route-directory-head,.journey-method,.journey-references-head{gap:24px}
   .route-index{grid-template-columns:repeat(2,minmax(0,1fr))}
   #journey-map{height:68vh;min-height:520px}
 }
@@ -109,5 +127,6 @@
   .knowledge-fields>div{grid-template-columns:1fr;gap:5px}
   .route-index{grid-template-columns:1fr}
   .route-index-item{min-height:62px}
+  .journey-reference{grid-template-columns:1fr;gap:9px}.journey-reference-note,.journey-reference>a{grid-column:1}.journey-reference>a{white-space:normal}
 }
 @media(prefers-reduced-motion:reduce){.journey-marker,.map-mode-switch button{transition:none!important}}
