@@ -1,32 +1,26 @@
 /* Homepage curation v2 · 2026-08-10
-   Two long chromatic chapters, not alternating section stripes:
-   hero/project/origin = dark; cases/contact/updates = light; footer = dark baseline. */
+   Large-scale rhythm: hero dark → project light → origin dark → cases light → contact dark → updates light → footer dark. */
 
-/* ---------- Dark research chapter ---------- */
-.project{
-  background:#14100e!important;
-  color:#eee6dc!important;
-}
-.project-proposition{
-  border-bottom:1px solid rgba(244,235,225,.10)!important;
-}
-.project-proposition .eyebrow,
-.origin-kicker{color:#cf8e67!important}
-.project-proposition h2{color:#f4ede5!important}
-.project-proposition p{color:rgba(238,230,220,.60)!important}
+/* ---------- Light project statement ---------- */
+.project{background:#eee9e1!important;color:#2b231f!important}
+.project-proposition{border-bottom:1px solid rgba(61,48,41,.12)!important}
+.project-proposition .eyebrow{color:#a95f43!important}
+.project-proposition h2{color:#2b231f!important}
+.project-proposition p{color:#655950!important}
 
-/* Origin image and narrative continue the same dark chapter. */
+/* ---------- Dark family / workshop chapter ---------- */
 .origin-story{
   position:relative!important;
   margin-top:0!important;
   padding:clamp(68px,7vw,92px) 0 clamp(82px,9vw,118px)!important;
   color:#eee6dc!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  clip-path:none!important;
+  background:#14100e!important;
+  box-shadow:0 0 0 100vmax #14100e!important;
+  clip-path:inset(0 -100vmax)!important;
 }
 .origin-story .origin-layout,.origin-story .origin-copy{background:transparent!important;color:#eee6dc!important}
 .origin-layout{align-items:center!important}
+.origin-kicker{color:#cf8e67!important}
 .origin-copy h3{color:#f4ede5!important}
 .origin-source{color:rgba(238,230,220,.38)!important;border:0!important}
 .origin-source a{color:rgba(255,239,224,.66)!important;text-decoration-color:rgba(205,143,103,.30)!important}
@@ -67,32 +61,34 @@
 .family-person--karolina{--x:17%;--y:44%}.family-person--leopold{--x:39%;--y:18%}.family-person--rudolf{--x:76%;--y:44%}
 .family-photo-hint{display:none!important}.family-mobile-nav,.family-mobile-bio{display:none}
 
-/* ---------- Light public-use chapter ---------- */
-.featured,
-.home-contact,
-.home-subscribe{
-  background:#eee9e1!important;
-  color:#2b231f!important;
-}
-.featured{border-top:1px solid rgba(61,48,41,.10)!important}
-.featured-head .eyebrow,.home-contact .eyebrow,.home-subscribe .eyebrow{color:#a95f43!important}
-.featured-head h2,.contact-copy h2,.subscribe-copy h2{color:#2b231f!important}
-.featured-head p,.contact-copy>p,.subscribe-copy>p{color:#655950!important}
+/* ---------- Light cases gallery ---------- */
+.featured{background:#eee9e1!important;color:#2b231f!important;border:0!important}
+.featured-head .eyebrow{color:#a95f43!important}
+.featured-head h2{color:#2b231f!important}
+.featured-head p{color:#655950!important}
 .feature-case{box-shadow:0 18px 46px rgba(45,34,29,.13)!important}
 .feature-footer{border:0!important}
 .view-all{color:#2e241f!important;background:rgba(255,255,255,.50)!important;border-color:rgba(55,43,36,.13)!important}
 .view-all:hover{background:#fff!important}
-.home-contact,.home-subscribe{border-top:1px solid rgba(61,48,41,.10)!important}
-.contact-actions a{color:#2e241f!important;background:rgba(255,255,255,.48)!important;border-color:rgba(55,43,36,.13)!important}
-.contact-actions a:hover{background:#fff!important}
 
+/* ---------- Dark contact chapter ---------- */
+.home-contact{background:#15110f!important;color:#eee6dc!important;border:0!important}
+.home-contact .eyebrow{color:#cf8e67!important}
+.contact-copy h2{color:#f4ede5!important}
+.contact-copy>p{color:rgba(238,230,220,.68)!important}
+.contact-actions a{color:#eee6dc!important;background:rgba(255,255,255,.055)!important;border-color:rgba(255,255,255,.12)!important}
+.contact-actions a:hover{background:rgba(255,255,255,.11)!important}
+
+/* ---------- Light updates chapter ---------- */
+.home-subscribe{background:#eee9e1!important;color:#2b231f!important;border:0!important}
+.home-subscribe .eyebrow{color:#a95f43!important}
 .subscribe-inner{width:min(calc(100% - 40px),1240px);margin:auto;padding:clamp(62px,8vw,94px) 0}
 .subscribe-grid{display:grid;grid-template-columns:minmax(140px,.36fr) minmax(0,1.64fr);gap:clamp(34px,6vw,82px);align-items:start}
-.subscribe-copy h2{max-width:760px;margin:0;font-size:clamp(2.45rem,4.4vw,4.35rem);font-weight:490;letter-spacing:-.035em;line-height:.98}
-.subscribe-copy>p{max-width:640px;margin:19px 0 24px;font-size:1.02rem;line-height:1.55}
+.subscribe-copy h2{max-width:760px;margin:0;color:#2b231f!important;font-size:clamp(2.45rem,4.4vw,4.35rem);font-weight:490;letter-spacing:-.035em;line-height:.98}
+.subscribe-copy>p{max-width:640px;margin:19px 0 24px;color:#655950!important;font-size:1.02rem;line-height:1.55}
 .subscribe-actions{display:flex;flex-wrap:wrap;gap:8px}.subscribe-actions a{display:inline-flex;align-items:center;min-height:43px;padding:0 15px;border:1px solid rgba(55,43,36,.10);border-radius:999px;background:rgba(255,255,255,.58);color:#2e241f;font:620 .69rem/1 var(--font-ui);text-decoration:none;transition:background 180ms ease}.subscribe-actions a:hover{background:#fff}.subscribe-note{margin-top:11px;color:#85766c;font:520 .61rem/1.45 var(--font-ui)}
 
-/* Footer closes the page; it is not another content block. */
+/* Footer is the final dark baseline. */
 footer{background:#15110f!important;color:#c6b9af!important}
 footer .footer-inner{min-height:104px!important;align-items:flex-end!important;padding-block:24px!important}.footer-identity{display:grid;gap:6px}.footer-title{font:540 .78rem/1.2 var(--font-reading);text-decoration:none}.footer-copyright{max-width:620px;color:rgba(220,208,198,.52);font:500 .58rem/1.45 var(--font-ui)}.footer-links{align-items:center!important}.footer-rss{display:inline-flex;align-items:center;gap:6px}.footer-rss svg{width:13px;height:13px;fill:currentColor;opacity:.78}
 
