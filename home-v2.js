@@ -10,6 +10,7 @@
   };
   addStyle('site-polish.css?v=20260810-1', 'site-polish.css');
   addStyle('home-curation.css?v=20260810-1', 'home-curation.css');
+  addStyle('origin-divider.css?v=20260810-1', 'origin-divider.css');
   addStyle('home-nav-glide.css?v=20260810-1', 'home-nav-glide.css');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
@@ -58,7 +59,6 @@
     });
   }
 
-  /* Family image: source-backed identities; no face-recognition inference is used here. */
   const familyFigure = document.querySelector('.origin-photo');
   if (familyFigure && !familyFigure.querySelector('.family-portrait-layer')) {
     const layer = document.createElement('div');
@@ -90,7 +90,6 @@
     originFirst.insertAdjacentText('beforeend', ' After returning, Leopold married Karolina Riegel in 1854; their son Rudolf was born in 1857.');
   }
 
-  /* A light subscription close: email requests now, RSS for machine-readable updates. */
   const footer = document.querySelector('footer');
   if (footer && !document.querySelector('.home-subscribe')) {
     footer.insertAdjacentHTML('beforebegin', `
