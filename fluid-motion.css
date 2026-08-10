@@ -1,0 +1,175 @@
+/* Fluid interaction pass · 2026-08-10
+   Progressive enhancement for softer page-to-page transitions, GPU-friendly reveals,
+   and a balanced homepage case index. */
+
+:root{
+  --fluid-ease:cubic-bezier(.22,.72,.18,1);
+  --fluid-ease-soft:cubic-bezier(.16,1,.3,1);
+}
+
+/* Modern same-origin page transitions. Browsers without support simply ignore this. */
+@view-transition{
+  navigation:auto;
+}
+
+::view-transition-group(root){
+  animation-duration:520ms;
+  animation-timing-function:var(--fluid-ease-soft);
+}
+::view-transition-old(root){
+  animation:ui-page-old 240ms ease-in both;
+}
+::view-transition-new(root){
+  animation:ui-page-new 520ms var(--fluid-ease-soft) both;
+}
+@keyframes ui-page-old{
+  to{opacity:.72;transform:scale(.996);filter:blur(1.5px)}
+}
+@keyframes ui-page-new{
+  from{opacity:0;transform:translate3d(0,10px,0) scale(.998);filter:blur(3px)}
+  55%{opacity:1;filter:blur(0)}
+  to{opacity:1;transform:none;filter:none}
+}
+
+/* Homepage: make the two-image side fill the same vertical field as the copy.
+   The previous align-content:start left a conspicuous dead band below the cards. */
+@media(min-width:901px){
+  body:not(.subpage) .case-index{
+    align-items:stretch!important;
+  }
+  body:not(.subpage) .case-index-head{
+    height:100%!important;
+  }
+  body:not(.subpage) .case-index-table{
+    align-self:stretch!important;
+    height:100%!important;
+    min-height:100%!important;
+    align-content:stretch!important;
+    grid-auto-rows:minmax(0,1fr)!important;
+  }
+  body:not(.subpage) .case-index-row{
+    height:100%!important;
+    min-height:0!important;
+  }
+}
+
+/* Existing homepage reveals: less travel, longer ease-out, slight focus resolve.
+   This reads as continuous movement rather than elements snapping into place. */
+.motion-ready .reveal{
+  opacity:0!important;
+  transform:translate3d(0,30px,0)!important;
+  filter:blur(4px);
+  will-change:opacity,transform,filter;
+  transition:
+    opacity 760ms var(--fluid-ease-soft),
+    transform 920ms var(--fluid-ease-soft),
+    filter 820ms var(--fluid-ease-soft)!important;
+  transition-delay:var(--reveal-delay,0ms)!important;
+}
+.motion-ready .reveal.is-visible{
+  opacity:1!important;
+  transform:translate3d(0,0,0)!important;
+  filter:blur(0);
+}
+
+.motion-ready .hero-header,
+.motion-ready .hero-title-wrap > *,
+.motion-ready .scroll-cue,
+.motion-ready .hero-credit{
+  transform:translate3d(0,16px,0)!important;
+  filter:blur(3px);
+  transition:
+    opacity 820ms var(--fluid-ease-soft),
+    transform 980ms var(--fluid-ease-soft),
+    filter 900ms var(--fluid-ease-soft),
+    background 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease!important;
+}
+.motion-ready.hero-in .hero-header,
+.motion-ready.hero-in .hero-title-wrap > *,
+.motion-ready.hero-in .scroll-cue,
+.motion-ready.hero-in .hero-credit{
+  transform:translate3d(0,0,0)!important;
+  filter:blur(0);
+}
+
+/* New reveal system for subpages and dynamically inserted records. */
+html.ui-fluid-motion .ui-reveal{
+  opacity:0;
+  transform:translate3d(0,24px,0);
+  filter:blur(3px);
+  will-change:opacity,transform,filter;
+  transition:
+    opacity 680ms var(--fluid-ease-soft),
+    transform 840ms var(--fluid-ease-soft),
+    filter 760ms var(--fluid-ease-soft);
+  transition-delay:var(--ui-reveal-delay,0ms);
+}
+html.ui-fluid-motion .ui-reveal.ui-visible{
+  opacity:1;
+  transform:translate3d(0,0,0);
+  filter:blur(0);
+}
+
+/* Dense lists should glide in by short groups, not cascade for seconds. */
+html.ui-fluid-motion .bib-entry.ui-reveal,
+html.ui-fluid-motion .source-az-entry.ui-reveal,
+html.ui-fluid-motion .auction-lot.ui-reveal,
+html.ui-fluid-motion .event.ui-reveal{
+  transform:translate3d(0,14px,0);
+  transition-duration:560ms,700ms,620ms;
+}
+
+/* Images and interactive surfaces use the same motion curve. */
+.case-thumb img,
+.case-figure img,
+.origin-photo img,
+.page-intro::before,
+.page-intro::after{
+  backface-visibility:hidden;
+  transform:translateZ(0);
+}
+.case-thumb img{
+  transition:transform 1050ms var(--fluid-ease-soft),filter 720ms var(--fluid-ease-soft)!important;
+}
+@media(hover:hover){
+  body:not(.subpage) .case-index-row:hover .case-thumb img{
+    transform:scale(1.028)!important;
+  }
+}
+
+.top-nav a,.subpage-nav a,.bib-tool-button,.source-az-alpha button,
+.source-az-filters button,.all-cases-link,.contact-actions a,
+.case-index-row,.auction-lot,.event{
+  transition-timing-function:var(--fluid-ease-soft)!important;
+}
+
+/* Avoid accidental animation of layout dimensions, which is a common source of jank. */
+.case-index-table,.case-index-head,.subpage-main,.sample,.page-intro{
+  backface-visibility:hidden;
+}
+
+@media(max-width:900px){
+  body:not(.subpage) .case-index-table{
+    height:auto!important;
+    min-height:0!important;
+    grid-auto-rows:auto!important;
+  }
+  body:not(.subpage) .case-index-row{
+    height:auto!important;
+    min-height:330px!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none!important}
+  html.ui-fluid-motion .ui-reveal,
+  .motion-ready .reveal{
+    opacity:1!important;
+    transform:none!important;
+    filter:none!important;
+    transition:none!important;
+  }
+}
