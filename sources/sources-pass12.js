@@ -57,8 +57,13 @@
 
   workshopSection.insertAdjacentElement('afterend', section);
 
-  const next = document.createElement('script');
-  next.src = 'sources-pass13.js?v=20260810-1';
-  next.defer = true;
-  document.body.appendChild(next);
+  const loadDeepSourcePasses = () => {
+    if (document.querySelector('script[src*="sources-pass13.js"]')) return;
+    const next = document.createElement('script');
+    next.src = 'sources-pass13.js?v=20260810-1';
+    next.defer = true;
+    document.body.appendChild(next);
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(loadDeepSourcePasses, {timeout:900});
+  else setTimeout(loadDeepSourcePasses, 260);
 })();
