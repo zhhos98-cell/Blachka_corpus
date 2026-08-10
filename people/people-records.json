@@ -1,193 +1,22 @@
 {
-  "schema_version": "1.0",
-  "dataset": "Blaschka Object Network people index",
+  "schema_version": "2.0",
   "generated": "2026-08-10",
-  "record_version": "1.0",
-  "rights_note": "Project-authored descriptions are research metadata. Third-party facts, quotations, images and archival materials retain their own rights and source conditions.",
-  "records": [
-    {
-      "record_id": "PERS-BLASCHKA-LEOPOLD",
-      "name": "Leopold Blaschka",
-      "role_group": "workshop_household",
-      "roles": ["maker", "modeller", "workshop proprietor"],
-      "research_status": "documented",
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-leopold-blaschka",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-BLASCHKA-KAROLINA",
-      "name": "Karolina (Carolina) Riegel Blaschka",
-      "role_group": "workshop_household",
-      "roles": ["workshop household", "knowledge mediation"],
-      "research_status": "partially_documented",
-      "open_questions": ["Extent of her recurrent role in handling, presenting or circulating workshop materials beyond the documented visitor/correspondence evidence."],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-karolina-riegel-blaschka",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-BLASCHKA-RUDOLF",
-      "name": "Rudolf Blaschka",
-      "role_group": "workshop_household",
-      "roles": ["maker", "field observer", "workshop successor"],
-      "research_status": "documented",
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-rudolf-blaschka",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-ROHAN-CAMILLE",
-      "name": "Prince Camille de Rohan",
-      "role_group": "patronage_commissioning",
-      "roles": ["early patron"],
-      "research_status": "documented",
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-camille-de-rohan",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-REICHENBACH-LUDWIG",
-      "name": "Ludwig Reichenbach",
-      "role_group": "patronage_commissioning",
-      "roles": ["naturalist", "museum director", "early scientific intermediary"],
-      "research_status": "documented",
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-ludwig-reichenbach",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-GOODALE-GEORGE",
-      "name": "George Lincoln Goodale",
-      "role_group": "patronage_commissioning",
-      "roles": ["botanist", "museum director", "commissioner", "scientific mediator"],
-      "research_status": "documented",
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-george-lincoln-goodale",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-WARE-MARY-LEE",
-      "name": "Mary Lee Ware",
-      "role_group": "patronage_commissioning",
-      "roles": ["principal sponsor", "correspondent"],
-      "research_status": "documented",
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-mary-lee-ware",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-WARD-HENRY-A",
-      "name": "Henry Augustus Ward",
-      "role_group": "trade_logistics",
-      "roles": ["natural-history dealer", "supplier", "intermediary"],
-      "research_status": "documented",
-      "related_cases": ["sample-auckland"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-henry-augustus-ward",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-DAMON-ROBERT",
-      "name": "Robert Damon",
-      "role_group": "trade_logistics",
-      "roles": ["British dealer", "commercial agent"],
-      "research_status": "documented",
-      "related_cases": ["sample-liverpool", "sample-nottingham"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-robert-damon",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-ADAMS-CHARLES-F",
-      "name": "Charles Francis Adams",
-      "role_group": "trade_logistics",
-      "roles": ["preparator", "physical delivery actor"],
-      "research_status": "documented",
-      "related_cases": ["sample-auckland"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-charles-francis-adams",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-CHEESEMAN-THOMAS-F",
-      "name": "Thomas Frederick Cheeseman",
-      "role_group": "museums_collecting",
-      "roles": ["curator", "buyer", "correspondent"],
-      "research_status": "documented",
-      "related_cases": ["sample-auckland"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-thomas-frederick-cheeseman",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-MARCHI-PIETRO",
-      "name": "Pietro Marchi",
-      "role_group": "museums_collecting",
-      "roles": ["museum-side selector", "collection architect"],
-      "research_status": "documented",
-      "related_cases": ["sample-florence"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-pietro-marchi",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-HIGGINS-HENRY-H",
-      "name": "Rev. Henry H. Higgins",
-      "role_group": "museums_collecting",
-      "roles": ["invertebrate organiser", "likely receiving actor"],
-      "research_status": "partially_documented",
-      "open_questions": ["Whether the OCR-corrupted recipient in the 1887 Liverpool dispatch can be closed diplomatically as Henry H. Higgins."],
-      "related_cases": ["sample-liverpool"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-henry-higgins",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-CARR-JOHN-W",
-      "name": "John Wesley Carr",
-      "role_group": "museums_collecting",
-      "roles": ["museum director", "teacher", "correspondent"],
-      "research_status": "documented",
-      "related_cases": ["sample-nottingham"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-john-wesley-carr",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-BARNUM-PT",
-      "name": "P. T. Barnum",
-      "role_group": "museums_collecting",
-      "roles": ["purchaser", "museum benefactor"],
-      "research_status": "partially_documented",
-      "open_questions": ["Exact model count, price and dealer route for the 1885 Tufts purchase."],
-      "related_cases": ["sample-tufts"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-pt-barnum",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-KOOB-STEPHEN",
-      "name": "Stephen Koob",
-      "role_group": "conservation_rediscovery",
-      "roles": ["glass conservator"],
-      "research_status": "documented",
-      "open_questions": ["Complete object-level treatment register for Tufts and Vassar subsets."],
-      "related_cases": ["sample-tufts", "sample-vassar"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-stephen-koob",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    },
-    {
-      "record_id": "PERS-MCCLELLAN-ANDREW",
-      "name": "Andrew McClellan",
-      "role_group": "conservation_rediscovery",
-      "roles": ["documentary rediscovery"],
-      "research_status": "documented",
-      "related_cases": ["sample-tufts"],
-      "canonical_url": "https://zhhos98-cell.github.io/Blachka_corpus/people/#person-andrew-mcclellan",
-      "version": "1.0",
-      "last_updated": "2026-08-10"
-    }
+  "record_count": 53,
+  "scope": "Working authority records for people connected to documented Blaschka object chains. External links verify identity or broader biography; project-specific claims remain bounded by project evidence.",
+  "groups": {
+    "workshop_household": "Workshop & household",
+    "patronage_commissioning": "Patronage & commissioning",
+    "trade_logistics": "Trade & logistics",
+    "scientific_collaboration": "Science & fieldwork",
+    "museums_collecting": "Museums & collecting",
+    "conservation_research": "Conservation, rediscovery & research"
+  },
+  "parts": [
+    "people-part-01.json",
+    "people-part-02.json",
+    "people-part-03.json",
+    "people-part-04.json",
+    "people-part-05.json",
+    "people-part-06.json"
   ]
 }
