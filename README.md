@@ -10,9 +10,10 @@ The GitHub Pages layer is intentionally small and stable:
 
 - [`index.html`](index.html) — project landing page and cross-site search
 - [`cases/`](cases/) — documentary case studies
-- [`bibliography/`](bibliography/) — chronological bibliography, Zotero integration, selection and export
+- [`bibliography/`](bibliography/) — chronological bibliography, selection and export
 - [`sources/`](sources/) — primary-source and repository index
 - [`auctions/`](auctions/) — selected auction appearances used as provenance evidence
+- [`rights/`](rights/) — copyright, image credits and reuse information
 - [`privacy/`](privacy/) — privacy and data-handling notice
 
 Public URLs are treated as stable. Research files and development notes are kept outside the public navigation.
@@ -36,9 +37,10 @@ The census layer and the deeper provenance layer remain distinct. A secure survi
 .
 ├── index.html                 # GitHub Pages landing page
 ├── cases/                     # public case-study route
-├── bibliography/              # public bibliography route + bibliography data/tools
+├── bibliography/              # public bibliography route + frozen data/tools
 ├── sources/                   # public source index + source registers
 ├── auctions/                  # public auction route + auction research records
+├── rights/                    # public copyright and image-credit route
 ├── privacy/                   # public privacy route
 ├── assets/
 │   └── fonts/                 # local web fonts and retained type experiments
@@ -49,7 +51,7 @@ The census layer and the deeper provenance layer remain distinct. A secure survi
 │   └── bibliography/          # working research bibliographies
 ├── docs/
 │   ├── architecture.md        # repository and public/research separation
-│   ├── development/           # implementation notes
+│   ├── development/           # implementation, privacy and rights audits
 │   └── design-history/        # superseded design experiments and notes
 ├── archive/
 │   └── workflows/             # retired workflows retained for provenance
@@ -60,9 +62,15 @@ The census layer and the deeper provenance layer remain distinct. A secure survi
 
 ## Design and implementation
 
-The site remains framework-free: static HTML, CSS, JavaScript, JSON/CSV, and GitHub Pages. The presentation layer favors readable typography, large touch targets, soft geometry, progressive disclosure, and restrained motion. EB Garamond is served locally from the repository for the reading layer; interface controls remain sans-serif.
+The site remains framework-free: static HTML, CSS, JavaScript, JSON/CSV, and GitHub Pages. EB Garamond is served locally for the reading layer; interface controls remain sans-serif.
 
-The current frontend still contains several iterative CSS/JS layers from rapid prototyping. They remain in place until they can be flattened without changing public behavior. The next code-maintenance pass should consolidate those runtime layers, rather than merely moving them into folders.
+The August 10 cleanup removed retired compact/editorial/portal/search/motion prototypes, the obsolete live-Zotero merge runtime, and duplicate style dependencies. Mobile subpages skip decorative glide/motion code, case maps and secondary case visuals. Phone navigation is deliberately non-sticky so mobile-browser chrome cannot cover it. The remaining major runtime debt is the historical Sources pass chain (`sources-pass13.js` through `sources-pass37.js`), now deferred until browser idle; it should eventually be flattened into one canonical source dataset plus one rendering/filter script.
+
+## Privacy and rights
+
+The current site runs no project analytics, advertising tracker, marketing cookie or email subscriber database. Updates are RSS-only. Voluntary correspondence, GitHub Pages hosting and externally served open images are described in [`privacy/`](privacy/).
+
+Image reuse and attribution are consolidated in [`rights/`](rights/). The internal audit at [`docs/development/legal-rights-audit-2026-08-10.md`](docs/development/legal-rights-audit-2026-08-10.md) also records the high-risk UK rule that some pre-1989 unpublished archival literary works can remain protected until 31 December 2039.
 
 ## Evidence rules
 
