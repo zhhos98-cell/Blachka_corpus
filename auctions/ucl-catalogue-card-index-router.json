@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "UCL Grant Museum catalogue chronology and card-index provenance router",
+  "purpose": "Route the unresolved Science Museum-to-UCL Blaschka transfer problem through the Grant Museum's successive documentation systems, preserving the 1890/1891 catalogue-date discrepancy and treating historical card indices as the highest-value bridge across the 1925-1927 transfer window.",
+  "relationship_to_auction_layer": "This is provenance infrastructure only. Institutional transfers recovered through UCL documentation remain outside the canonical auction count.",
+  "documentation_chronology": [
+    {
+      "layer_id": "UCL-LANKESTER-FIRST-CATALOGUE",
+      "date_labels": {
+        "current_ucl_blaschka_highlight": "1890 printed museum catalogue compiled by E. Ray Lankester",
+        "current_ucl_collections_field": "Lankester 1890 Grant Museum Catalogue",
+        "ucl_2013_documentation_history": "first catalogue published by E. Ray Lankester in 1891"
+      },
+      "date_status": "source-level_1890_1891_discrepancy_preserved",
+      "document_character": "UCL's documentation-history blog describes it as part catalogue, part wishlist; another UCL collections-history discussion likewise warns that some listed objects may never have entered the collection.",
+      "research_use": "Recover the twenty Blaschka appearances and compare their historical names/model numbers against current accessions, but require corroboration before treating a catalogue appearance as physical acquisition.",
+      "sources": [
+        "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/highlights/blaschka-glass-models-invertebrates",
+        "https://blogs.ucl.ac.uk/museums/2013/10/31/from-the-vollies-loose-ends-and-key-information/"
+      ]
+    },
+    {
+      "layer_id": "UCL-EARLY-CARD-INDEX",
+      "date_range": "early 1900s-1970s",
+      "description": "UCL's 2013 documentation-history account states that the second cataloguing attempt was a card-index series begun in the early 1900s and continued until the 1970s.",
+      "provenance_value": "This documentation layer spans the Science Museum 1925-1927 Blaschka transfer window and therefore has a higher probability than the 1890/1891 catalogue of recording later acquisitions, source institutions, renumbering or labels for transfer-derived models.",
+      "priority": 1,
+      "source": "https://blogs.ucl.ac.uk/museums/2013/10/31/from-the-vollies-loose-ends-and-key-information/"
+    },
+    {
+      "layer_id": "UCL-MDA-CARDS",
+      "date_range": "mainly 1980s",
+      "description": "UCL identifies Museum Documentation Association cards as the third major cataloguing attempt. A 2013 project processed about 1,500 handwritten MDA cards and cross-referenced them with the current catalogue.",
+      "fields_reported_by_ucl": ["accession number", "specimen nature", "scientific name", "sex and age", "collection date and place", "acquisition method", "conservation method"],
+      "data_quality_note": "UCL states that some specimens have multiple cards with different or conflicting information.",
+      "provenance_value": "MDA cards may preserve acquisition/source data inherited from earlier card systems or object labels even when those fields are absent from the public Axiell record.",
+      "priority": 2,
+      "source": "https://blogs.ucl.ac.uk/museums/2013/10/31/from-the-vollies-loose-ends-and-key-information/"
+    },
+    {
+      "layer_id": "UCL-ELECTRONIC-CATALOGUES",
+      "date_range": "late 20th century-present",
+      "description": "Electronic systems followed the card-index layers. Current Collections Online is explicitly an ongoing catalogue and UCL does not present it as complete.",
+      "provenance_value": "Useful public access point but not an exhaustion test for old provenance or transferred-object identifiers.",
+      "priority": 3
+    }
+  ],
+  "historical_information_loss_problem": {
+    "ucl_statement": "UCL staff describe collection information as distributed across archives, paper notes, object surfaces, labels, inventories, photographs, article reprints and successive catalogue systems that do not perfectly overlap.",
+    "methodological_effect": "A missing field in Collections Online is not evidence that the museum never recorded it. Provenance work must query multiple documentation generations.",
+    "source": "https://blogs.ucl.ac.uk/museums/2013/08/01/grant-museum-objects-on-tour-lost-labels/"
+  },
+  "control_accessions": [
+    {
+      "accession": "LDUCZ-P130",
+      "taxon": "Clione limacina",
+      "role": "explicit_Lankester_control",
+      "current_collection_field": "Blaschka Glass Model Collection, Lankester 1890 Grant Museum Catalogue",
+      "alternative_numbers": ["10846", "D524"]
+    },
+    {
+      "accession": "LDUCZ-P161",
+      "taxon": "Ercolania funerea",
+      "role": "explicit_Lankester_control",
+      "current_collection_field": "Blaschka Glass Model Collection, Lankester 1890 Grant Museum Catalogue",
+      "alternative_numbers": ["15219", "D502", "438"]
+    },
+    {
+      "accession": "LDUCZ-P191",
+      "taxon": "Arion ater",
+      "role": "explicit_Lankester_control",
+      "current_collection_field": "Blaschka Glass Model Collection, Lankester 1890 Grant Museum Catalogue",
+      "alternative_numbers": []
+    },
+    {
+      "accession": "LDUCZ-C182",
+      "taxon": "Haliclystus auricula",
+      "role": "pre_1925_UCL_control",
+      "evidence": "Exact accession represented in a 1911 Practical Zoology student notebook",
+      "candidate_blaschka_number": "126"
+    }
+  ],
+  "unresolved_accessions": [
+    {
+      "accession": "LDUCZ-P202",
+      "taxon": "Limax arborum",
+      "candidate_blaschka_number": "529"
+    },
+    {
+      "accession": "LDUCZ-P196",
+      "taxon": "Arianta arbustorum",
+      "candidate_blaschka_number": null
+    },
+    {
+      "accession": "LDUCZ-C373",
+      "taxon": "Actinia equina",
+      "candidate_blaschka_number": "22"
+    },
+    {
+      "accession": "LDUCZ-S73",
+      "taxon": null,
+      "common_name": "female sea cucumber"
+    }
+  ],
+  "fields_to_request_or_transcribe": [
+    "current accession number",
+    "all historical/alternative numbers with scheme labels",
+    "date of accession or first card entry",
+    "source / vendor / donor / transferring institution",
+    "Science Museum / South Kensington previous number",
+    "1877-xxx or 1888-xx identifier",
+    "E.-number or other historical register cross-reference",
+    "original label transcription",
+    "Blaschka / Ward catalogue or model number",
+    "historical and current taxon names",
+    "mount/card/case description",
+    "condition and conservation notes",
+    "cross-reference between early card index and later MDA card"
+  ],
+  "science_museum_identifier_packet": {
+    "formats": ["1877-xxx", "1888-xx", "E.xxxx-'77", "E.xxx-1888"],
+    "known_neighborhoods_for_crosscheck": ["1877-360/361", "1877-376/380/381/385/397"],
+    "known_cardiff_controls": ["1877-202 / Blaschka 330", "1877-209 / Blaschka 348", "1888-25 / Blaschka 312", "1888-33 / Blaschka 661", "1888-45 / Blaschka 320"],
+    "guard": "These known numbers are search controls, not candidates for a UCL object unless the UCL documentation itself supplies the match."
+  },
+  "public_catalogue_search_result": {
+    "query": "site:collections.ucl.ac.uk Science Museum Grant Museum LDUCZ / Blaschka Science Museum",
+    "result": "No indexed UCL Collections Online result was recovered that exposes 'Science Museum' as an object-level provenance field for a Blaschka accession.",
+    "negative_scope": "Search-engine indexing and current public catalogue incompleteness prevent this from functioning as an exhaustion claim."
+  },
+  "research_request_packet": {
+    "institution": "UCL Grant Museum of Zoology",
+    "target_material": ["early-1900s-to-1970s card index", "MDA cards", "1890/1891 Lankester catalogue", "Sarah E. Parker GMZ_Blaschkas document", "object files/labels for eight named accessions"],
+    "specific_question": "Which current Blaschka accessions entered from the Science Museum in 1925-1927, and what old Science Museum or South Kensington numbers survive in the documentation?",
+    "minimum_accession_set": ["LDUCZ-P130", "LDUCZ-P161", "LDUCZ-P191", "LDUCZ-C182", "LDUCZ-P202", "LDUCZ-P196", "LDUCZ-C373", "LDUCZ-S73"],
+    "contact_route": "UCL Museums and Collections / Grant Museum research enquiry; current UCL collections pages direct researchers to museum staff when online catalogue information is insufficient."
+  },
+  "next_actions": [
+    "Recover or request the early card-index entries for the four unresolved accessions before assigning any of them to the Science Museum transfer.",
+    "Use P130/P161/P191 as documentation controls to determine how known Lankester provenance is encoded across early cards, MDA cards and current catalogue fields.",
+    "Use C182 as a pre-transfer control: any card-index history must be consistent with UCL custody by 1911.",
+    "Resolve the 1890-versus-1891 catalogue date bibliographically without rewriting source-native collection-field wording.",
+    "Recover Sarah E. Parker's GMZ_Blaschkas document and compare it against current accessions and card-index provenance fields.",
+    "Crosswalk any recovered Science Museum number against science-museum-register-neighborhoods.json."
+  ]
+}
