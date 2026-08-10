@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "generated_date": "2026-08-10",
   "title": "Archive router for unresolved Blaschka market and deaccession chains",
   "purpose": "Route auction/provenance gaps to specific archival series and record identifiers instead of repeating low-yield generic web searches.",
@@ -14,25 +14,8 @@
       "date_range": "1913-1960",
       "status": "identifier recovered in project provenance backend; public web indexing does not expose the index contents",
       "why_first": "The project backend has already identified the 1920-1927 transfer/disposal composite. The long-run index is the shortest route to the relevant nominal-file numbers, subject headings and recipient institutions before ordering a large composite file.",
-      "search_keys": [
-        "Blaschka",
-        "glass models",
-        "zoological models",
-        "invertebrate models",
-        "1877-360",
-        "1877-376",
-        "1877-381",
-        "1877-361",
-        "1877-380",
-        "1877-385",
-        "1877-397"
-      ],
-      "expected_yield": [
-        "recipient institution names",
-        "nominal-file numbers",
-        "transfer/disposal subject headings",
-        "possible distinction between transfer and sale/private disposal"
-      ],
+      "search_keys": ["Blaschka", "glass models", "zoological models", "invertebrate models", "1877-360", "1877-376", "1877-381", "1877-361", "1877-380", "1877-385", "1877-397"],
+      "expected_yield": ["recipient institution names", "nominal-file numbers", "transfer/disposal subject headings", "possible distinction between transfer and sale/private disposal"],
       "source_basis": "Project module 23 recipient-identification audit"
     },
     {
@@ -46,14 +29,7 @@
       "identifier_title_conflict": "The public identifier in the project archive audit terminates at 101/2 while the displayed title describes parts through 101/3. Preserve both raw strings until the archive confirms the hierarchy.",
       "status": "exact target identified; contents not publicly indexed",
       "use_rule": "Inspect only the portions identified from CORP/SCM/02/02/7/421 rather than scanning the entire composite blindly.",
-      "expected_yield": [
-        "recipient names",
-        "object lists",
-        "old Science Museum numbers",
-        "transfer authorisations",
-        "sale/disposal wording",
-        "dates and correspondence"
-      ]
+      "expected_yield": ["recipient names", "object lists", "old Science Museum numbers", "transfer authorisations", "sale/disposal wording", "dates and correspondence"]
     },
     {
       "router_id": "AR-SMG-STORE-REGISTERS",
@@ -67,24 +43,9 @@
         "date_range": "1913-1924",
         "official_url": "https://collection.sciencemuseumgroup.org.uk/documents/aa110149903"
       },
-      "other_public_children_visible_in_archive_navigation": [
-        "CORP/SCM/Z/048/02 Museum Store Register nos. 3688-7600",
-        "CORP/SCM/Z/048/04 Museum Store Register nos. 10819-14288"
-      ],
+      "other_public_children_visible_in_archive_navigation": ["CORP/SCM/Z/048/02 Museum Store Register nos. 3688-7600", "CORP/SCM/Z/048/04 Museum Store Register nos. 10819-14288"],
       "why_high_value": "The official catalogue explicitly says the registers contain notes on store location and ultimate disposal. Exact historical Science Museum identifiers from Cardiff and Christie's can therefore act as anchors even if transfer correspondence omits the maker name.",
-      "search_keys": [
-        "1877-360",
-        "1877-361",
-        "1877-376",
-        "1877-380",
-        "1877-381",
-        "1877-385",
-        "1877-397",
-        "1888-25",
-        "1888-33",
-        "1888-40",
-        "1888-45"
-      ],
+      "search_keys": ["1877-360", "1877-361", "1877-376", "1877-380", "1877-381", "1877-385", "1877-397", "1888-25", "1888-33", "1888-40", "1888-45"],
       "access_note": "Official catalogue states material is available to researchers through the relevant Science Museum Group archive centre."
     },
     {
@@ -102,69 +63,63 @@
       "guard": "The catalogue title establishes chronological and administrative relevance, not that Blaschka entries are present."
     },
     {
+      "router_id": "AR-BERLIN-HU-LEHRSAMMLUNG",
+      "priority": 1,
+      "institution": "Humboldt-Universität zu Berlin, Zoologische Lehrsammlung / historical Zoologisches Institut",
+      "research_problem": "Test whether Krefeld 2025 lots 26-27, both labelled Zoolog. Institut Universität, Berlin, can be identified in the HU teaching-collection inventory or in its documented dispersal history.",
+      "current_public_proof": "HU's collections portal exposes multiple surviving Blaschka teaching models dated 1885 and 1887 and also preserves the exact institutional label formula Zoolog. Institut/ Universität Berlin on other teaching objects.",
+      "high_value_event": {
+        "date": "1970",
+        "description": "HU records a decision to reduce the teaching collection; parts were given away, many specimens were lost, and other parts were transferred to the Museum für Naturkunde.",
+        "status": "documented collection-level dispersal window; no Krefeld object bridge yet"
+      },
+      "search_targets": [
+        "historical Zoologisches Institut / Lehrsammlung inventory books",
+        "Blaschka purchase/acquisition entries circa 1884-1889",
+        "1968-1970 collection-reduction files",
+        "gift / Abgabe / Verlust / Aussonderung lists",
+        "old inventory numbers and taxon names for anemone/polyp models"
+      ],
+      "search_fields": ["taxon", "old inventory number", "Blaschka catalogue/model number", "dimensions", "label wording", "purchase price", "gift/transfer/loss annotation"],
+      "official_collection_url": "https://www.sammlungen.hu-berlin.de/sammlungen/zoologische-lehrsammlung/",
+      "structured_audit": "berlin-krefeld-provenance-audit.json",
+      "guard": "Do not infer that either lot left in 1970. The event is a provenance hypothesis window until an object-level record is recovered."
+    },
+    {
+      "router_id": "AR-BERLIN-MFN-OS001-02",
+      "priority": 2,
+      "institution": "Museum für Naturkunde Berlin, Historical Division",
+      "research_problem": "Crosswalk Krefeld 2025 lots 26-27 and any HU transfer candidates against the separate MfN historical Blaschka inventory.",
+      "record_target": "Inventarliste OS001-02 Blaschka Glasmodelle",
+      "resolved_pdf_url": "https://website-archiv.museumfuernaturkunde.berlin/sites/default/files/221010_Inventarliste_OS001-02_Blaschka.pdf",
+      "runtime_status": "link resolved from archived institutional page; PDF body not fetched in current research runtime",
+      "search_fields_when_obtained": ["old inventory number", "taxon", "model/catalogue number", "dimensions", "label wording", "movement/deaccession/loss notes"],
+      "relationship_to_hu": "Keep MfN separate from HU. HU records that some teaching-collection material was transferred to MfN during the 1970 reduction, but this does not prove either Krefeld lot followed that route.",
+      "dating_conflict": "Krefeld catalogues both objects around 1870; current HU Blaschka examples recovered publicly are dated 1885 or 1887. Preserve the auction dates until an object-level crosswalk resolves the chronology."
+    },
+    {
       "router_id": "AR-GLASGOW-MASON-1909",
       "priority": 2,
       "institution": "Glasgow Museums / relevant municipal archive",
       "research_problem": "Close the 1904 Mason sale notice -> 1909 Glasgow institutional purchase chain while preserving the auction-layer exclusion.",
-      "target_records": [
-        "Glasgow Museums accession register entry 1909.66",
-        "1909 municipal purchase committee minutes",
-        "invoice/voucher for GBP 275",
-        "Mason estate correspondence and collection list"
-      ],
-      "known_facts": [
-        "December 1904 Museums Journal notice advertised 300 Blaschka invertebrate models from the Mason estate.",
-        "Corning Museum of Glass states Mrs Mason sold Mason's Blaschka models to Glasgow Museums in 1909 for GBP 275.",
-        "Exact 1909 quantity remains unresolved; 300 must remain the advertised 1904 quantity."
-      ],
+      "target_records": ["Glasgow Museums accession register entry 1909.66", "1909 municipal purchase committee minutes", "invoice/voucher for GBP 275", "Mason estate correspondence and collection list"],
+      "known_facts": ["December 1904 Museums Journal notice advertised 300 Blaschka invertebrate models from the Mason estate.", "Corning Museum of Glass states Mrs Mason sold Mason's Blaschka models to Glasgow Museums in 1909 for GBP 275.", "Exact 1909 quantity remains unresolved; 300 must remain the advertised 1904 quantity."],
       "policy_effect": "The 1909 event remains outside the canonical auction lot count because the buyer is an explicitly identified municipal museum.",
       "web_source": "https://blog.cmog.org/2016/4747-models-174-collections-25-countries-and-counting"
-    },
-    {
-      "router_id": "AR-BERLIN-OS001-02",
-      "priority": 2,
-      "institution": "Museum für Naturkunde Berlin / Humboldt University historical zoological collection",
-      "research_problem": "Crosswalk Krefeld 2025 lots 26-27, both labelled Zoolog. Institut Universität, Berlin, against the historical Berlin Blaschka register.",
-      "record_target": "Inventarliste OS001-02 Blaschka Glasmodelle",
-      "resolved_pdf_url": "https://website-archiv.museumfuernaturkunde.berlin/sites/default/files/221010_Inventarliste_OS001-02_Blaschka.pdf",
-      "runtime_status": "link resolved from archived institutional page; PDF body not fetched in current research runtime",
-      "search_fields_when_obtained": [
-        "old inventory number",
-        "taxon",
-        "model/catalogue number",
-        "dimensions",
-        "label wording",
-        "movement/deaccession/loss notes"
-      ],
-      "dating_conflict": "Krefeld catalogues both objects around 1870; MfN institutional context states Berlin's historical Blaschka models were made 1884-1889. Keep both layers until object-level identification resolves or explains the conflict."
     },
     {
       "router_id": "AR-LOUDON-DEALER-SCHOOL",
       "priority": 3,
       "institution": "unknown English public school / unnamed London dealer",
       "research_problem": "Identify the dispersed educational Blaschka collection that supplied part of George Loudon's holdings.",
-      "known_evidence": "George Loudon says he found Blaschkas with a London dealer and was told they came from a public school quietly disposing of them; his Corning account describes several dealer purchases.",
-      "source_urls": [
-        "https://www.masterpiecefair.com/blog-details/89/masterpiece-collecting-stories-george-loudon",
-        "https://blog.cmog.org/2016/modern-day-cabinet-curiosity"
-      ],
-      "search_targets": [
-        "Loudon exhibition catalogues and acknowledgements",
-        "dealer credits and invoices",
-        "English public-school museum closures/disposal notices",
-        "local auction catalogues after school closure",
-        "old labels on Loudon specimens"
-      ],
+      "known_evidence": "George Loudon says he found Blaschkas with a London dealer and was told they came from a public school quietly disposing of them; his Corning account describes several dealer purchases and says the school had closed its natural-history department for financial reasons.",
+      "source_urls": ["https://www.masterpiecefair.com/blog-details/89/masterpiece-collecting-stories-george-loudon", "https://blog.cmog.org/2016/modern-day-cabinet-curiosity"],
+      "search_targets": ["Loudon exhibition catalogues and acknowledgements", "dealer credits and invoices", "English public-school natural-history department closures/disposal notices", "local auction catalogues after school disposal", "old labels on Loudon specimens"],
       "guard": "Dealer testimony establishes a market route, not a public auction and not the school identity."
     }
   ],
   "strategy": {
-    "order": [
-      "index before composite file",
-      "exact historical number before generic maker name",
-      "known prior institution before broad auction-house search",
-      "institutional acquisition stays outside canonical auction count"
-    ],
-    "rationale": "Generic Blaschka and glass-model auction searches have reached sharply diminishing returns. The remaining high-value gaps are archival routing and object-number crosswalk problems."
+    "order": ["Science Museum transfer/disposal index before generic recipient search", "HU teaching-collection/dispersal records before treating Berlin as a single collection", "exact historical number before generic maker name", "known prior institution before broad auction-house search", "institutional acquisition stays outside canonical auction count"],
+    "rationale": "Generic Blaschka and glass-model auction searches have reached sharply diminishing returns. The remaining high-value gaps are archival routing, institutional branch separation and object-number crosswalk problems."
   }
 }
