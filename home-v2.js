@@ -15,7 +15,7 @@
     document.head.appendChild(link);
   };
   addStyle('site-polish.css?v=20260810-2', 'site-polish.css');
-  addStyle('home-curation.css?v=20260810-5', 'home-curation.css');
+  addStyle('home-curation.css?v=20260810-6', 'home-curation.css');
   addStyle('origin-divider.css?v=20260810-2', 'origin-divider.css');
   if (!compact) addStyle('home-nav-glide.css?v=20260810-2', 'home-nav-glide.css');
   addStyle('mobile-v3.css?v=20260810-3', 'mobile-v3.css');
@@ -34,6 +34,8 @@
     script.defer = true;
     document.head.appendChild(script);
   }
+
+  document.querySelectorAll('img[src^="http://"],img[src^="https://"]').forEach(img => { img.referrerPolicy = 'no-referrer'; });
 
   const form = document.getElementById('network-search');
   const input = document.getElementById('network-search-input');
@@ -138,6 +140,14 @@
     });
   }
 
+  const contactActions = document.querySelector('.contact-actions');
+  if (contactActions && !contactActions.querySelector('a[href="about/"]')) {
+    const about = document.createElement('a');
+    about.href = 'about/';
+    about.textContent = 'About & method';
+    contactActions.appendChild(about);
+  }
+
   const footer = document.querySelector('footer');
   if (footer && !document.querySelector('.home-subscribe')) {
     footer.insertAdjacentHTML('beforebegin', `
@@ -147,7 +157,7 @@
   if (footer) {
     const inner = footer.querySelector('.footer-inner');
     if (inner && !inner.querySelector('.footer-copyright')) {
-      inner.innerHTML = `<div class="footer-identity"><a class="footer-title" href="#top">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="cases/">Cases</a><a href="bibliography/">Bibliography</a><a href="sources/">Sources</a><a href="auctions/">Auctions</a><a href="rights/">Image rights</a><a href="privacy/">Privacy</a><a class="footer-rss" href="feed.xml" type="application/rss+xml" aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="19" r="2.2"/><path d="M3 10.5v3a7.5 7.5 0 0 1 7.5 7.5h3A10.5 10.5 0 0 0 3 10.5Zm0-6v3A13.5 13.5 0 0 1 16.5 21h3C19.5 11.9 12.1 4.5 3 4.5Z"/></svg><span>RSS</span></a></div>`;
+      inner.innerHTML = `<div class="footer-identity"><a class="footer-title" href="#top">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="about/">About</a><a href="cases/">Cases</a><a href="bibliography/">Bibliography</a><a href="sources/">Sources</a><a href="auctions/">Auctions</a><a href="rights/">Image rights</a><a href="privacy/">Privacy</a><a href="accessibility/">Accessibility</a><a class="footer-rss" href="feed.xml" type="application/rss+xml" aria-label="RSS feed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="19" r="2.2"/><path d="M3 10.5v3a7.5 7.5 0 0 1 7.5 7.5h3A10.5 10.5 0 0 0 3 10.5Zm0-6v3A13.5 13.5 0 0 1 16.5 21h3C19.5 11.9 12.1 4.5 3 4.5Z"/></svg><span>RSS</span></a></div>`;
     }
   }
 
