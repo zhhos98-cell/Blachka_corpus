@@ -13,7 +13,7 @@
   addStylesheet('portal-pass3.css?v=20260810-1', 'portalPass3');
   addStylesheet('search-scope-v2.css?v=20260810-1', 'searchScopeV2');
   addStylesheet('portal-pass4.css?v=20260810-1', 'portalPass4');
-  addStylesheet('apple-unified.css?v=20260810-1', 'appleUnified');
+  addStylesheet('apple-unified.css?v=20260810-2', 'appleUnified');
 
   const main = document.querySelector('main');
   if (main && !main.id) main.id = 'main-content';
@@ -47,13 +47,12 @@
       <form class="network-search" id="network-search" role="search" aria-label="Search the Blaschka Object Network">
         <div class="network-search-shell">
           <select class="network-search-scope" id="network-search-scope" aria-label="Choose search collection">
-            <option value="all">All</option>
+            <option value="cases">Cases</option>
             <option value="bibliography">Bibliography</option>
             <option value="sources">Sources</option>
             <option value="auctions">Auctions</option>
-            <option value="cases">Cases</option>
           </select>
-          <input id="network-search-input" type="search" autocomplete="off" placeholder="Search the network…" aria-label="Search query">
+          <input id="network-search-input" type="search" autocomplete="off" placeholder="e.g. Liverpool, Auckland, Tufts" aria-label="Search query">
           <button type="submit">Search</button>
         </div>
         <p class="network-search-status" id="network-search-status" aria-live="polite"></p>
@@ -155,32 +154,26 @@
     form.dataset.bound = 'true';
     const normalise = value => String(value || '').toLowerCase().trim().replace(/\s+/g, ' ');
     const caseRoutes = [
-      { terms:['liverpool','freight','i.b. 268','ib 268'], href:'#sample-liverpool', label:'Liverpool case' },
-      { terms:['auckland','cheeseman','adams'], href:'#sample-auckland', label:'Auckland case' },
-      { terms:['florence','firenze','marchi','tubipora'], href:'cases/#sample-florence', label:'Florence case' },
-      { terms:['tufts','barnum','corning custody'], href:'cases/#sample-tufts', label:'Tufts case' },
-      { terms:['michigan','vitreous ecology'], href:'cases/#sample-michigan', label:'Michigan case' },
-      { terms:['mexico','mexico city','unam','chopo'], href:'cases/#sample-mexico', label:'Mexico City case' },
-      { terms:['newcastle','hancock'], href:'cases/#sample-newcastle', label:'Newcastle case' },
-      { terms:['nottingham','carr','wollaton'], href:'cases/#sample-nottingham', label:'Nottingham case' },
-      { terms:['vassar','swift hall'], href:'cases/#sample-vassar', label:'Vassar case' },
-      { terms:['milwaukee'], href:'cases/#sample-milwaukee', label:'Milwaukee case' }
-    ];
-    const auctionRoutes = [
-      { terms:['christie','christies','science museum','1877-381','1877-360','1877-376','lot 46','lot 47','lot 48'], href:'auctions/?q=Science%20Museum', label:'2019 Christie’s / Science Museum auction records' },
-      { terms:['krefeld','berlin','hydractinia','stachelpolyp','lot 26','lot 27'], href:'auctions/?q=Berlin', label:'2025 Krefeld / Berlin-labelled records' },
-      { terms:['edwardsia','corallium','lot 39','lot 40','2026'], href:'auctions/?q=2026', label:'2026 Krefeld auction appearances' }
+      { terms:['liverpool','freight','i.b. 268','ib 268'], href:'#sample-liverpool' },
+      { terms:['auckland','cheeseman','adams'], href:'#sample-auckland' },
+      { terms:['florence','firenze','marchi','tubipora'], href:'cases/#sample-florence' },
+      { terms:['tufts','barnum','corning custody'], href:'cases/#sample-tufts' },
+      { terms:['michigan','vitreous ecology'], href:'cases/#sample-michigan' },
+      { terms:['mexico','mexico city','unam','chopo'], href:'cases/#sample-mexico' },
+      { terms:['newcastle','hancock'], href:'cases/#sample-newcastle' },
+      { terms:['nottingham','carr','wollaton'], href:'cases/#sample-nottingham' },
+      { terms:['vassar','swift hall'], href:'cases/#sample-vassar' },
+      { terms:['milwaukee'], href:'cases/#sample-milwaukee' }
     ];
 
     const updatePlaceholder = () => {
       const placeholders = {
-        all:'e.g. Liverpool, Daston, HOLLIS, Christie’s',
+        cases:'e.g. Liverpool, Auckland, Tufts',
         bibliography:'e.g. Daston, 2008, conservation',
         sources:'e.g. HOLLIS, Ward, invoice, Dresden',
-        auctions:'e.g. Christie’s, Berlin, 1877-381',
-        cases:'e.g. Liverpool, Auckland, Tufts'
+        auctions:'e.g. Christie’s, Berlin, 1877-381'
       };
-      input.placeholder = placeholders[scope.value] || placeholders.all;
+      input.placeholder = placeholders[scope.value] || placeholders.cases;
       if (status) status.textContent = '';
     };
     scope.addEventListener('change', updatePlaceholder);
@@ -189,9 +182,8 @@
     form.addEventListener('submit', event => {
       event.preventDefault();
       const query = input.value.trim();
-      const q = normalise(query);
-      if (!q) {
-        if (status) status.textContent = 'Enter a name, place, object number, archive, author, title word, or auction term.';
+      if (!query) {
+        if (status) status.textContent = 'Enter a search term.';
         input.focus();
         return;
       }
@@ -208,26 +200,10 @@
         window.location.href = `auctions/?q=${encodeURIComponent(query)}`;
         return;
       }
-      if (scope.value === 'cases') {
-        const match = caseRoutes.find(item => item.terms.some(term => q.includes(term) || term.includes(q)));
-        window.location.href = match ? match.href : `cases/?q=${encodeURIComponent(query)}`;
-        return;
-      }
 
-      const caseMatch = caseRoutes.find(item => item.terms.some(term => q.includes(term) || term.includes(q)));
-      if (caseMatch) {
-        if (status) status.textContent = `Opening ${caseMatch.label}…`;
-        window.location.href = caseMatch.href;
-        return;
-      }
-      const auctionMatch = auctionRoutes.find(item => item.terms.some(term => q.includes(term) || term.includes(q)));
-      if (auctionMatch) {
-        if (status) status.textContent = `Opening ${auctionMatch.label}…`;
-        window.location.href = auctionMatch.href;
-        return;
-      }
-
-      window.location.href = `sources/?q=${encodeURIComponent(query)}`;
+      const q = normalise(query);
+      const match = caseRoutes.find(item => item.terms.some(term => q.includes(term) || term.includes(q)));
+      window.location.href = match ? match.href : `cases/?q=${encodeURIComponent(query)}`;
     });
   }
 })();
