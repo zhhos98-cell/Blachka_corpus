@@ -13,6 +13,7 @@
   };
 
   addStyle(`${prefix}apple-unified.css?v=20260810-2`, 'apple-unified.css');
+  if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-1`, 'subpage-v2.css');
   /* Loaded last on purpose: this is the current motion contract and overrides older imported motion rules. */
   addStyle(`${prefix}fluid-motion.css?v=20260810-3`, 'fluid-motion.css?v=20260810-3');
 
