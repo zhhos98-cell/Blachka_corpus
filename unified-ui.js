@@ -3,6 +3,7 @@
   window.__blaschkaUnifiedUI = true;
 
   const isSubpage = document.body.classList.contains('subpage');
+  const isBibliography = isSubpage && Boolean(document.querySelector('.bib-list'));
   const prefix = isSubpage ? '../' : '';
   const phoneOrTablet = matchMedia('(max-width:900px)').matches;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -33,25 +34,31 @@
     link.href = url.href;
   };
 
-  addStyle(`${prefix}apple-unified.css?v=20260810-4`, 'apple-unified.css');
-  if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-2`, 'subpage-v2.css');
-  if (!phoneOrTablet) addStyle(`${prefix}fluid-motion.css?v=20260810-5`, 'fluid-motion.css');
-  addStyle(`${prefix}site-rhythm.css?v=20260810-2`, 'site-rhythm.css');
-  addStyle(`${prefix}site-polish.css?v=20260810-2`, 'site-polish.css');
-  if (isSubpage) addStyle(`${prefix}header-minimal.css?v=20260810-1`, 'header-minimal.css');
-  addStyle(`${prefix}footer-legal.css?v=20260810-4`, 'footer-legal.css');
-  if (!phoneOrTablet) {
-    addStyle(`${prefix}nav-glide.css?v=20260810-2`, 'nav-glide.css');
-    addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
+  /* Bibliography is already a complete static document. Do not make 266 references
+     wait for the general motion/polish stack. It gets only the canonical shell and
+     accessibility layer; bibliography.css owns its reading layout. */
+  if (!isBibliography) {
+    addStyle(`${prefix}apple-unified.css?v=20260810-4`, 'apple-unified.css');
+    if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-2`, 'subpage-v2.css');
+    if (!phoneOrTablet) addStyle(`${prefix}fluid-motion.css?v=20260810-5`, 'fluid-motion.css');
+    addStyle(`${prefix}site-rhythm.css?v=20260810-2`, 'site-rhythm.css');
+    addStyle(`${prefix}site-polish.css?v=20260810-2`, 'site-polish.css');
+    if (isSubpage) addStyle(`${prefix}header-minimal.css?v=20260810-1`, 'header-minimal.css');
+    addStyle(`${prefix}footer-legal.css?v=20260810-4`, 'footer-legal.css');
+    if (!phoneOrTablet) {
+      addStyle(`${prefix}nav-glide.css?v=20260810-2`, 'nav-glide.css');
+      addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
+    }
+    addStyle(`${prefix}mobile-v3.css?v=20260810-3`, 'mobile-v3.css');
+    if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-3`, 'mobile-fixes.css');
+    addStyle(`${prefix}scale-balance.css?v=20260810-3`, 'scale-balance.css');
   }
-  addStyle(`${prefix}mobile-v3.css?v=20260810-3`, 'mobile-v3.css');
-  if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-3`, 'mobile-fixes.css');
+
   addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
-  addStyle(`${prefix}scale-balance.css?v=20260810-3`, 'scale-balance.css');
   addStyle(`${prefix}navigation-shell.css?v=20260810-2`, 'navigation-shell.css');
   addScript(`${prefix}accessibility.js?v=20260810-2`, 'accessibility.js');
   refreshPageCss('sources.css', '20260810-6');
-  refreshPageCss('bibliography.css', '20260810-6');
+  refreshPageCss('bibliography.css', '20260810-8');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
@@ -65,7 +72,6 @@
   const path = location.pathname.replace(/index\.html$/, '');
   const nav = document.querySelector('.subpage-nav');
   if (isSubpage && nav) {
-    /* Global navigation contains only full page destinations. The brand is Home. */
     const links = [
       ['Cases', `${prefix}cases/`, '/cases/'],
       ['People', `${prefix}people/`, '/people/'],
@@ -108,8 +114,8 @@
     target.innerHTML = `<div class="footer-identity"><a class="footer-title" href="${prefix}">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links">${utility}<a class="footer-rss" href="${prefix}feed.xml" aria-label="RSS feed">RSS</a></div>`;
   }
 
-  /* Major-section reveal only. Lists and citations never wait for animation. */
-  if (isSubpage && !phoneOrTablet && !reducedMotion && 'IntersectionObserver' in window) {
+  /* Bibliography is fail-open: its text is never hidden by a reveal observer. */
+  if (isSubpage && !isBibliography && !phoneOrTablet && !reducedMotion && 'IntersectionObserver' in window) {
     const candidates = [
       ...document.querySelectorAll('.subpage-main > section:not(.page-intro), #case-sections > .sample')
     ].filter(node => !node.closest('[hidden]'));
