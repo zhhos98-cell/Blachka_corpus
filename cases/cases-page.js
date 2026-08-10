@@ -3,49 +3,42 @@
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
     ui.src = '../unified-ui.js?v=20260810-4';
+    ui.defer = true;
     document.head.appendChild(ui);
   }
-  if (!document.querySelector('link[href*="case-wall-matrix.css"]')) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'case-wall-matrix.css?v=20260810-2';
-    document.head.appendChild(link);
-  }
-  if (!document.querySelector('link[href*="mobile-v3.css"]')) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = '../mobile-v3.css?v=20260810-1';
-    document.head.appendChild(link);
-  }
+  const matrix = document.querySelector('link[href*="case-wall-matrix.css"]');
+  if (matrix) matrix.href = 'case-wall-matrix.css?v=20260810-3';
 
   const target = document.getElementById('case-sections');
   const loading = document.getElementById('cases-loading');
   if (!target) return;
 
-  const loadScript = (src) => new Promise((resolve, reject) => {
+  const loadScript = src => new Promise((resolve, reject) => {
     const script = document.createElement('script');
     script.src = src;
+    script.defer = true;
     script.onload = resolve;
     script.onerror = reject;
     document.body.appendChild(script);
   });
 
+  loadScript('./case-wall-media.js?v=20260810-3').catch(console.error);
+
   const revealCases = () => {
     const samples = [...document.querySelectorAll('#case-sections .sample')];
-    samples.forEach((sample) => sample.classList.add('case-enter'));
-    if (!('IntersectionObserver' in window)) {
-      samples.forEach((sample) => sample.classList.add('case-visible'));
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      samples.forEach(sample => sample.classList.add('case-visible'));
       return;
     }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    samples.forEach(sample => sample.classList.add('case-enter'));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('case-visible');
-        entry.target.querySelectorAll('.event').forEach((event) => event.classList.add('is-visible'));
         observer.unobserve(entry.target);
       });
-    }, { threshold: .06, rootMargin: '0px 0px -5% 0px' });
-    samples.forEach((sample) => observer.observe(sample));
+    }, { threshold:.05, rootMargin:'0px 0px -4% 0px' });
+    samples.forEach(sample => observer.observe(sample));
   };
 
   const applyIncomingSearch = () => {
@@ -54,7 +47,7 @@
     const q = raw.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
     const samples = [...target.querySelectorAll('.sample')];
     let visible = 0;
-    samples.forEach((sample) => {
+    samples.forEach(sample => {
       const haystack = (sample.textContent || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
       const show = haystack.includes(q);
       sample.hidden = !show;
@@ -74,35 +67,40 @@
   const restoreHash = () => {
     if (!location.hash) return;
     const id = decodeURIComponent(location.hash.slice(1));
-    requestAnimationFrame(() => {
-      document.getElementById(id)?.scrollIntoView({ block: 'start' });
-    });
+    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block:'start' }));
+  };
+
+  const loadSecondaryVisuals = async () => {
+    try {
+      if (!matchMedia('(max-width:900px)').matches) {
+        await loadScript('../maps-v3.js?v=20260809-2');
+        await loadScript('../maps-v4.js?v=20260809-1');
+        await loadScript('../map-ratio-fix.js?v=20260810-2');
+      }
+      await loadScript('../visuals-v1.js?v=20260809-2');
+      await loadScript('../visuals-v2.js?v=20260809-1');
+    } catch (error) { console.error(error); }
   };
 
   (async () => {
     try {
-      const response = await fetch('./base-cases.html', { cache: 'no-store' });
+      const response = await fetch('./base-cases.html', { cache:'force-cache' });
       if (!response.ok) throw new Error(`Base case source returned ${response.status}`);
       const html = await response.text();
       const doc = new DOMParser().parseFromString(`<main>${html}</main>`, 'text/html');
       const baseSamples = [...doc.querySelectorAll('main > .sample')];
       if (baseSamples.length !== 5) throw new Error(`Expected 5 base cases, found ${baseSamples.length}.`);
-
-      baseSamples.forEach((sample) => target.appendChild(document.importNode(sample, true)));
-      loading?.remove();
+      baseSamples.forEach(sample => target.appendChild(document.importNode(sample, true)));
 
       await loadScript('../cases-v2.js?v=20260809-1');
-      await loadScript('../maps-v3.js?v=20260809-2');
-      await loadScript('../maps-v4.js?v=20260809-1');
-      await loadScript('../map-ratio-fix.js?v=20260810-2');
-      await loadScript('../visuals-v1.js?v=20260809-2');
-      await loadScript('../visuals-v2.js?v=20260809-1');
-      await loadScript('./case-wall-media.js?v=20260810-2');
-
+      loading?.remove();
       document.body.classList.add('cases-ready');
       applyIncomingSearch();
       revealCases();
       restoreHash();
+
+      if ('requestIdleCallback' in window) requestIdleCallback(loadSecondaryVisuals, { timeout:800 });
+      else setTimeout(loadSecondaryVisuals, 120);
     } catch (error) {
       console.error(error);
       loading?.remove();
