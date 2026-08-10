@@ -2,8 +2,14 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-1';
+    ui.src = '../unified-ui.js?v=20260810-4';
     document.head.appendChild(ui);
+  }
+  if (!document.querySelector('link[href*="mobile-v3.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '../mobile-v3.css?v=20260810-1';
+    document.head.appendChild(link);
   }
 
   const params = new URLSearchParams(location.search);
