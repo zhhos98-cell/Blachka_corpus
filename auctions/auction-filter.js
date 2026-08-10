@@ -1,15 +1,13 @@
 (() => {
+  const css = document.querySelector('link[href*="auctions.css"]');
+  if (css) css.href = 'auctions.css?v=20260810-3';
+
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
     ui.src = '../unified-ui.js?v=20260810-4';
+    ui.defer = true;
     document.head.appendChild(ui);
-  }
-  if (!document.querySelector('link[href*="mobile-v3.css"]')) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = '../mobile-v3.css?v=20260810-1';
-    document.head.appendChild(link);
   }
 
   const params = new URLSearchParams(location.search);
@@ -36,10 +34,7 @@
     const lots = [...article.querySelectorAll('.auction-lot')];
     const headMatch = fold(head?.textContent).includes(q);
     const caseMatch = fold(article.textContent).includes(q);
-    if (!caseMatch) {
-      article.hidden = true;
-      return;
-    }
+    if (!caseMatch) { article.hidden = true; return; }
     visibleCases++;
     if (lots.length) {
       let lotMatches = 0;
