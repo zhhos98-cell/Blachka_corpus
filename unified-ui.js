@@ -5,6 +5,7 @@
   const isSubpage = document.body.classList.contains('subpage');
   const prefix = isSubpage ? '../' : '';
   const phoneOrTablet = matchMedia('(max-width:900px)').matches;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const addStyle = (href, token) => {
     const wanted = new URL(href, location.href).href;
     const existing = [...document.querySelectorAll('link[rel="stylesheet"]')].find(link => link.href.includes(token));
@@ -24,23 +25,32 @@
     script.defer = true;
     document.head.appendChild(script);
   };
+  const refreshPageCss = (token, version) => {
+    const link = [...document.querySelectorAll('link[rel="stylesheet"]')].find(node => node.href.includes(token));
+    if (!link) return;
+    const url = new URL(link.href);
+    url.searchParams.set('v', version);
+    link.href = url.href;
+  };
 
   addStyle(`${prefix}apple-unified.css?v=20260810-4`, 'apple-unified.css');
   if (isSubpage) addStyle(`${prefix}subpage-v2.css?v=20260810-2`, 'subpage-v2.css');
-  if (!phoneOrTablet) addStyle(`${prefix}fluid-motion.css?v=20260810-4`, 'fluid-motion.css');
+  if (!phoneOrTablet) addStyle(`${prefix}fluid-motion.css?v=20260810-5`, 'fluid-motion.css');
   addStyle(`${prefix}site-rhythm.css?v=20260810-2`, 'site-rhythm.css');
   addStyle(`${prefix}site-polish.css?v=20260810-2`, 'site-polish.css');
   if (isSubpage) addStyle(`${prefix}header-minimal.css?v=20260810-1`, 'header-minimal.css');
-  addStyle(`${prefix}footer-legal.css?v=20260810-3`, 'footer-legal.css');
+  addStyle(`${prefix}footer-legal.css?v=20260810-4`, 'footer-legal.css');
   if (!phoneOrTablet) {
     addStyle(`${prefix}nav-glide.css?v=20260810-2`, 'nav-glide.css');
     addScript(`${prefix}nav-glide.js?v=20260810-2`, 'nav-glide.js');
   }
   addStyle(`${prefix}mobile-v3.css?v=20260810-3`, 'mobile-v3.css');
   if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-3`, 'mobile-fixes.css');
-  addStyle(`${prefix}accessibility.css?v=20260810-1`, 'accessibility.css');
+  addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
   addStyle(`${prefix}scale-balance.css?v=20260810-3`, 'scale-balance.css');
-  addScript(`${prefix}accessibility.js?v=20260810-1`, 'accessibility.js');
+  addScript(`${prefix}accessibility.js?v=20260810-2`, 'accessibility.js');
+  refreshPageCss('sources.css', '20260810-6');
+  refreshPageCss('bibliography.css', '20260810-6');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
@@ -54,9 +64,9 @@
   const path = location.pathname.replace(/index\.html$/, '');
   const nav = document.querySelector('.subpage-nav');
   if (isSubpage && nav) {
-    /* The brand is the Home control on every page. Keep the primary sequence fixed
-       so entering a section never forces the reader to relearn the header. */
+    /* The brand is always Home. The six primary destinations never change order. */
     const links = [
+      ['Project', `${prefix}#project`, ''],
       ['Cases', `${prefix}cases/`, '/cases/'],
       ['Bibliography', `${prefix}bibliography/`, '/bibliography/'],
       ['Sources', `${prefix}sources/`, '/sources/'],
@@ -64,7 +74,7 @@
       ['About', `${prefix}about/`, '/about/']
     ];
     nav.innerHTML = links.map(([label, href, match]) =>
-      `<a href="${href}"${path.includes(match) ? ' aria-current="page"' : ''}>${label}</a>`
+      `<a href="${href}"${match && path.includes(match) ? ' aria-current="page"' : ''}>${label}</a>`
     ).join('');
   }
 
@@ -96,5 +106,23 @@
       `<a href="${href}"${match && path.includes(match) ? ' aria-current="page"' : ''}>${label}</a>`
     ).join('');
     target.innerHTML = `<div class="footer-identity"><a class="footer-title" href="${prefix}">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links">${utility}<a class="footer-rss" href="${prefix}feed.xml" aria-label="RSS feed">RSS</a></div>`;
+  }
+
+  /* Major-section reveal only. Lists and citations never wait for animation. */
+  if (isSubpage && !phoneOrTablet && !reducedMotion && 'IntersectionObserver' in window) {
+    const candidates = [
+      ...document.querySelectorAll('.subpage-main > section:not(.page-intro), #case-sections > .sample')
+    ].filter(node => !node.closest('[hidden]'));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('ui-section-visible');
+        observer.unobserve(entry.target);
+      });
+    }, {threshold:.06, rootMargin:'0px 0px -7% 0px'});
+    candidates.forEach(node => {
+      node.classList.add('ui-section-reveal');
+      observer.observe(node);
+    });
   }
 })();
