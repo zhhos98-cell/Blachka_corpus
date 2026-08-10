@@ -39,6 +39,7 @@
   addStyle(`${prefix}mobile-v3.css?v=20260810-3`, 'mobile-v3.css');
   if (phoneOrTablet) addStyle(`${prefix}mobile-fixes.css?v=20260810-3`, 'mobile-fixes.css');
   addStyle(`${prefix}accessibility.css?v=20260810-1`, 'accessibility.css');
+  addStyle(`${prefix}scale-balance.css?v=20260810-1`, 'scale-balance.css');
   addScript(`${prefix}accessibility.js?v=20260810-1`, 'accessibility.js');
 
   if (!document.querySelector('link[type="application/rss+xml"]')) {
