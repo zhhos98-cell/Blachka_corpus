@@ -1,0 +1,89 @@
+/* Navigation glide · 2026-08-10 */
+
+.top-nav,
+.subpage-nav{
+  position:relative!important;
+  isolation:isolate;
+  display:flex!important;
+  align-items:center!important;
+  gap:2px!important;
+  padding:4px!important;
+}
+
+.top-nav a,
+.subpage-nav a{
+  position:relative!important;
+  z-index:2!important;
+  min-height:44px!important;
+  padding:0 18px!important;
+  border:0!important;
+  border-radius:999px!important;
+  background:transparent!important;
+  color:rgba(255,255,255,.76)!important;
+  font-weight:560!important;
+  transition:color 180ms ease,transform 180ms cubic-bezier(.2,.8,.2,1)!important;
+}
+
+.top-nav a:hover,
+.top-nav a:focus-visible,
+.subpage-nav a:hover,
+.subpage-nav a:focus-visible{
+  color:#fff!important;
+  background:transparent!important;
+}
+
+.top-nav a:active,
+.subpage-nav a:active{transform:scale(.975)!important}
+
+.top-nav a[aria-current="page"],
+.subpage-nav a[aria-current="page"],
+.top-nav a.nav-home-active{
+  color:#fff!important;
+}
+
+.nav-glider{
+  position:absolute;
+  z-index:1;
+  top:4px;
+  left:4px;
+  height:44px;
+  width:var(--nav-glider-w,0px);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:999px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.065));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 7px 22px rgba(0,0,0,.10);
+  opacity:var(--nav-glider-opacity,0);
+  transform:translate3d(var(--nav-glider-x,0px),0,0);
+  pointer-events:none;
+  will-change:transform,width,opacity;
+  transition:
+    transform 360ms cubic-bezier(.16,1,.3,1),
+    width 340ms cubic-bezier(.16,1,.3,1),
+    opacity 150ms ease,
+    background 180ms ease;
+}
+
+.hero-header .top-nav{
+  margin-left:-4px!important;
+}
+
+@media(min-width:761px){
+  .hero-header{min-height:68px!important}
+  .top-nav,.subpage-nav{font-size:.78rem!important}
+}
+
+@media(max-width:760px){
+  .top-nav,.subpage-nav{
+    gap:1px!important;
+    padding:3px!important;
+  }
+  .top-nav a,.subpage-nav a{
+    min-height:40px!important;
+    padding:0 14px!important;
+  }
+  .nav-glider{top:3px;left:3px;height:40px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .nav-glider{transition:opacity 100ms linear!important}
+}
