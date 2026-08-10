@@ -1,5 +1,0 @@
-/* Sources uses the same text-first header as Bibliography. Decorative hero images were removed for speed and visual parity. */
-html body.subpage .source-intro{min-height:0!important;padding:clamp(66px,7vw,90px) 0 clamp(40px,5vw,58px)!important;border:0!important;background:none!important}
-html body.subpage .source-intro::before,html body.subpage .source-intro::after,html body.subpage .source-intro h1::before,html body.subpage .source-intro .page-dek::before{content:none!important;display:none!important;background-image:none!important;animation:none!important;box-shadow:none!important}
-.source-intro-credit{display:none!important}
-@media(max-width:760px){html body.subpage .source-intro{padding:46px 0 32px!important}}
