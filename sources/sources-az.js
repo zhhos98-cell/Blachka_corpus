@@ -1,8 +1,8 @@
-(() => {
+(async () => {
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260810-4';
+    ui.src = '../unified-ui.js?v=20260810-5';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -56,8 +56,20 @@
     return /[A-Z]/.test(first) ? first : '#';
   };
 
-  /* All source pass scripts execute before this defer script. Read once, then remove the
-     hidden source-stack from the live DOM instead of keeping a duplicate copy forever. */
+  /* Passes 13–37 are progressively chained by the existing research corpus. Keep the
+     useful source prose visible while that chain completes, then build the A–Z once.
+     A timeout prevents one unavailable legacy pass from blocking the page indefinitely. */
+  if (!document.querySelector('#dealer-transaction-anatomy-title')) {
+    await new Promise(resolve => {
+      const deadline = Date.now() + 12000;
+      const tick = () => {
+        if (document.querySelector('#dealer-transaction-anatomy-title') || Date.now() >= deadline) resolve();
+        else setTimeout(tick, 90);
+      };
+      tick();
+    });
+  }
+
   const sourceSections = [...main.querySelectorAll('.source-section')];
   const records = [...main.querySelectorAll('.source-section .source-entry')].map((node,index) => {
     const title = clean(node.querySelector('h3')?.textContent);
