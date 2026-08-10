@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Science Museum Blaschka register neighborhoods: institutional-transfer and market-disposal splits",
+  "purpose": "Use exact historical Science Museum register numbers to reconstruct the mixed 1925-1927 dispersal and to distinguish adjacent objects that later entered institutional collections from adjacent objects that resurfaced in the private market.",
+  "scope_guard": "Register adjacency is an archival search strategy, not evidence that adjacent objects were transferred together, made together, or shared a later owner. Each pathway is retained only where an independent downstream provenance record exists.",
+  "source_layers": [
+    {
+      "source": "Project Cardiff curatorial inventory / module 20",
+      "supports": "Science Museum register numbers, current NMW accessions, model names, Ward catalogue numbers, and 1927 Cardiff transfer pathway"
+    },
+    {
+      "source": "Christie's 2019 Peter Petrou sale",
+      "supports": "painted ex-Science Museum inventory numbers 1877-360, 1877-376 and 1877-381; Science Museum acquisition in 1877; deaccession 1925-27"
+    }
+  ],
+  "high_value_split_pairs": [
+    {
+      "pair_id": "SM-1877-360-361-SPLIT",
+      "register_numbers": ["1877-360", "1877-361"],
+      "distance": 1,
+      "records": [
+        {
+          "science_museum_register": "1877-360",
+          "model": "Polyclonia frondosa",
+          "later_pathway": "private_market",
+          "later_event": "Christie's London, Peter Petrou: Tales of the Unexpected, lot 47, 30 January 2019",
+          "condition_or_intervention": "reassembled",
+          "source_url": "https://www.christies.com/en/lot/lot-6188457"
+        },
+        {
+          "science_museum_register": "1877-361",
+          "model": "Charybdea periphyllum",
+          "later_pathway": "institutional_transfer_to_cardiff_1927",
+          "current_institution": "Amgueddfa Cymru - Museum Wales",
+          "current_accession": "27.407.09",
+          "source_basis": "Cardiff curatorial inventory captured in project backend"
+        }
+      ],
+      "finding": "Two consecutive Science Museum register numbers now survive in different provenance regimes: one reappeared in the 2019 private market and the next is documented in the 1927 Cardiff institutional transfer.",
+      "archive_implication": "Search the transfer/disposal register and any 1925-27 schedules across the full local number neighborhood rather than querying 'Blaschka' alone."
+    },
+    {
+      "pair_id": "SM-1877-380-381-SPLIT",
+      "register_numbers": ["1877-380", "1877-381"],
+      "distance": 1,
+      "records": [
+        {
+          "science_museum_register": "1877-380",
+          "model": "Physalia arethusa",
+          "later_pathway": "institutional_transfer_to_cardiff_1927",
+          "current_institution": "Amgueddfa Cymru - Museum Wales",
+          "current_accession": "27.407.07",
+          "source_basis": "Cardiff curatorial inventory captured in project backend"
+        },
+        {
+          "science_museum_register": "1877-381",
+          "model": "Physalia physalis",
+          "later_pathway": "private_market",
+          "later_event": "Christie's London, Peter Petrou: Tales of the Unexpected, lot 46, 30 January 2019",
+          "condition_or_intervention": "top bulb later replacement",
+          "source_url": "https://www.christies.com/en/lot/lot-6188456"
+        }
+      ],
+      "finding": "Another consecutive register pair split between Cardiff institutional custody and later private-market circulation. Both are Physalia-labelled models in the downstream sources, which makes the archival split particularly high-value for reconstructing how one registered cohort was partitioned.",
+      "taxonomic_guard": "Do not infer synonymy or identical model design from the shared genus alone; retain the downstream names literally until the original Science Museum register or workshop catalogue is checked."
+    }
+  ],
+  "same_neighborhood_cardiff_anchors": [
+    {
+      "science_museum_register": "1877-385",
+      "current_accession": "27.407.06",
+      "model": "Physophora myzonema",
+      "later_pathway": "institutional_transfer_to_cardiff_1927"
+    },
+    {
+      "science_museum_register": "1877-397",
+      "current_accession": "27.407.08",
+      "model": "Velella sinistra",
+      "later_pathway": "institutional_transfer_to_cardiff_1927"
+    }
+  ],
+  "same_neighborhood_market_anchor": {
+    "science_museum_register": "1877-376",
+    "model": "jellyfish, taxon unresolved in auction title",
+    "later_pathway": "private_market",
+    "later_event": "Christie's London, Peter Petrou: Tales of the Unexpected, lot 48, 30 January 2019",
+    "source_url": "https://www.christies.com/lot/lot-6188458"
+  },
+  "other_cardiff_exact_register_crosswalks": [
+    {"science_museum_register":"1877-149","current_accession":"27.403.04","model":"Polycera lessonii","ward_catalogue_number":"471"},
+    {"science_museum_register":"1877-151","current_accession":"27.403.05","model":"Clio borealis","ward_catalogue_number":"352"},
+    {"science_museum_register":"1877-152","current_accession":"27.403.10","model":"Argonauta argo, female","ward_catalogue_number":"549"},
+    {"science_museum_register":"1877-171","current_accession":"27.403.13","model":"Loligopsis veranii","ward_catalogue_number":"564"},
+    {"science_museum_register":"1877-201","current_accession":"27.406.09","model":"Sabella pavonina / Sabella penicillus","ward_catalogue_number":"342"},
+    {"science_museum_register":"1877-202","current_accession":"27.406.10","model":"Pontobdella (Hirudo) vittata","ward_catalogue_number":"330"},
+    {"science_museum_register":"1877-209","current_accession":"27.406.08","model":"Terebella conchilega / Lanice conchilega","ward_catalogue_number":"348"},
+    {"science_museum_register":"1877-57","current_accession":"27.410.06","model":"Holothuria peruviana / Sporadipus peruvianus / Thyone peruana","ward_catalogue_number":"292"},
+    {"science_museum_register":"1877-61","current_accession":"27.410.08","model":"Holothuria oceanea / Synapta oceanica","ward_catalogue_number":"289"}
+  ],
+  "separate_1888_cardiff_layer": [
+    {"science_museum_register":"1888-25","current_accession":"27.406.05","model":"Proceros clavicornis","ward_catalogue_number":"312"},
+    {"science_museum_register":"1888-33","current_accession":"27.406.01","model":"Mesostomum rostratum","ward_catalogue_number":"661"},
+    {"science_museum_register":"1888-45","current_accession":"27.406.04","model":"Thysanozoon discoideum","ward_catalogue_number":"320"}
+  ],
+  "model_330_market_crosslink": {
+    "cardiff_record": {
+      "science_museum_register": "1877-202",
+      "current_accession": "27.406.10",
+      "model": "Pontobdella (Hirudo) vittata",
+      "ward_catalogue_number": "330",
+      "pathway": "Science Museum -> Cardiff, 1927"
+    },
+    "cornell_model_design": {
+      "blaschka_number": "330",
+      "old_genus": "Pontobdella (Hirudo)",
+      "old_species": "vittata",
+      "current_name_on_cornell_record": "Trachelobdella lubrica",
+      "cornell_number": "187",
+      "source_url": "https://digital.library.cornell.edu/catalog/ss%3A20108063"
+    },
+    "james_d_julia_2005_market_record": {
+      "canonical_auction_records": ["AUC-2005-JDJ-WINTER-480A", "AUC-2005-JDJ-SAMOSET-561"],
+      "auction_label_transcription": "Pontobdella Muricata, L. No 330",
+      "source_url": "https://jamesdjulia.com/item/lot-480a-rare-and-important-blown-glass-marine-leach-by-leopold-and-rudolph-blashka-25713/"
+    },
+    "catalogue_conflict": "Independent catalogue/cross-collection records associate Blaschka no. 330 with Pontobdella vittata, whereas the 2005 James D. Julia auction page transcribes its original cardboard label as 'Pontobdella Muricata, L. No 330'. Preserve this as a source-level taxon/label conflict rather than silently correcting the auction record.",
+    "identity_guard": "Shared catalogue no. 330 demonstrates the circulation of the same model design across collections and market records. It does not imply that the Cardiff, Cornell, Glasgow or Julia objects are the same physical specimen."
+  },
+  "interpretive_result": "The Science Museum 1925-27 deaccession is demonstrably a mixed dispersal at object-number scale, not merely a collection-level redistribution. Consecutive register numbers split between institutional transfer and later market circulation, making exact number neighborhoods the highest-value archival search unit.",
+  "archive_targets": [
+    "CORP/SCM/02/02/7/421 transfer/disposal index: search 1877-360/361 and 1877-380/381 as paired keys.",
+    "Relevant 1925-27 transfer/disposal nominal files: recover whether adjacent numbers appear on one schedule with different disposition annotations.",
+    "CORP/SCM/Z/048 store registers: transcribe ultimate-disposal notes for 1877-360, 361, 376, 380, 381, 385 and 397.",
+    "CORP/SCM/Z/039/02 or the relevant 1877 accession register: recover original sequence descriptions and any E.-number crosswalks.",
+    "Test whether the 1877 sequence was arranged by shipment, taxonomic order, gallery placement or another administrative logic before interpreting adjacency historically."
+  ]
+}
