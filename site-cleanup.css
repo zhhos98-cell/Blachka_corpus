@@ -1,0 +1,215 @@
+/* Public visual cleanup · 2026-08-10
+   Keep the archive/museum character while reducing decorative noise, framed blocks,
+   pseudo-statistics and competing backgrounds. Semantic dates, years and search/export
+   feedback remain visible. */
+
+:root{
+  --clean-dark:#1d1714;
+  --clean-dark-2:#211a17;
+  --clean-paper:#eee9e0;
+  --clean-ink:#f3eee7;
+  --clean-muted:rgba(243,238,231,.66);
+  --clean-rule:rgba(243,238,231,.14);
+  --clean-rule-strong:rgba(243,238,231,.22);
+  --clean-accent:#d0a078;
+}
+
+/* One calm canvas on secondary pages. */
+body.subpage{
+  background-color:var(--clean-dark)!important;
+  background-image:none!important;
+}
+body.subpage .subpage-main,
+body.subpage .bib-section,
+body.subpage .source-section,
+body.subpage .source-az,
+body.subpage .market-scope,
+body.subpage .auction-cases,
+body.subpage .privacy-copy{
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* Keep the two model images at the top of Bib / Sources / Auctions, but remove the
+   faux paper cards and typographic watermarks that compete with the actual content. */
+body.subpage .page-intro h1::before,
+body.subpage .page-intro .page-dek::before,
+body.cases-page .page-intro::before,
+body.cases-page .sample::before{
+  content:none!important;
+  display:none!important;
+}
+body.subpage .page-intro::before,
+body.subpage .page-intro::after{
+  border:0!important;
+  border-radius:18px!important;
+  box-shadow:none!important;
+  animation:none!important;
+  opacity:.84!important;
+}
+body.subpage .page-intro{
+  border-bottom:1px solid var(--clean-rule-strong)!important;
+}
+
+/* Open lists instead of card walls. */
+body.subpage .bib-entry,
+body.subpage .source-entry,
+body.subpage .source-az-entry,
+body.subpage .auction-case,
+body.subpage .auction-lot,
+body.subpage .open-case,
+body.subpage .market-caution{
+  background:transparent!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+body.subpage .bib-list::before,
+body.subpage .bib-entry::before{
+  content:none!important;
+  display:none!important;
+}
+body.subpage .bib-entry:hover,
+body.subpage .source-entry:hover,
+body.subpage .source-row:hover,
+body.subpage .auction-lot:hover{
+  transform:translateX(3px)!important;
+}
+
+/* Remove decorative chronology/count labels while preserving useful publication years. */
+body.subpage .bib-section-head h2::after,
+.case-no,
+.item-no,
+.case-meter,
+.case-meter-label,
+.sample-side>.eyebrow{
+  display:none!important;
+}
+
+/* Status is evidence prose, not a pair of cards. */
+.status{
+  background:transparent!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  border-top:1px solid var(--clean-rule-strong)!important;
+  border-bottom:1px solid var(--clean-rule)!important;
+  gap:clamp(26px,5vw,56px)!important;
+}
+.status>div{
+  padding-top:0!important;
+  border-top:0!important;
+  background:transparent!important;
+}
+
+/* Cases directory: use an editorial index rather than ten boxed image tiles. */
+body.cases-page .cases-directory{
+  align-items:start!important;
+  border-bottom:1px solid var(--clean-rule-strong)!important;
+}
+body.cases-page .case-index-table{
+  display:block!important;
+  border-top:1px solid var(--clean-rule-strong)!important;
+  background:transparent!important;
+}
+body.cases-page .case-index-row{
+  min-height:0!important;
+  display:grid!important;
+  grid-template-columns:minmax(150px,.7fr) minmax(0,1.3fr) auto!important;
+  grid-template-areas:
+    "name tags arrow"
+    "years tags arrow"!important;
+  align-items:center!important;
+  gap:4px 24px!important;
+  padding:18px 2px 20px!important;
+  border:0!important;
+  border-bottom:1px solid var(--clean-rule)!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+body.cases-page .case-index-row::after,
+body.cases-page .case-thumb{
+  display:none!important;
+}
+body.cases-page .case-index-row strong{
+  grid-area:name!important;
+  font-family:var(--font-reading,Georgia,serif)!important;
+  font-size:clamp(1.35rem,2vw,1.85rem)!important;
+}
+body.cases-page .case-years{grid-area:years!important}
+body.cases-page .case-tags{grid-area:tags!important;align-self:center!important}
+body.cases-page .case-index-row>i{
+  grid-area:arrow!important;
+  position:static!important;
+  justify-self:end!important;
+  align-self:center!important;
+}
+body.cases-page .sample,
+body.cases-page .sample:nth-of-type(even){
+  background:transparent!important;
+  box-shadow:none!important;
+  border-top:1px solid var(--clean-rule-strong)!important;
+}
+
+/* Keep the home page's three deliberate surfaces, remove extra texture/watermark layers. */
+body:not(.subpage) .project::before,
+body:not(.subpage) .origin-story::before,
+body:not(.subpage) .home-contact::before{
+  content:none!important;
+  display:none!important;
+}
+body:not(.subpage) .project{
+  background:var(--clean-paper)!important;
+}
+body:not(.subpage) .case-index,
+body:not(.subpage) .case-index-head,
+body:not(.subpage) .case-index-table{
+  background-color:var(--clean-dark-2)!important;
+}
+body:not(.subpage) .home-contact{
+  background:var(--clean-paper)!important;
+}
+
+/* Utilities should read as controls, not dashboard panels. */
+.bib-tools,
+.bib-community,
+.bib-community-live,
+.source-az-filters,
+.source-az-alpha,
+.source-az-reset,
+.auction-query-bar,
+.cases-query-bar{
+  background:transparent!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+.bib-community::before{
+  content:"Working bibliography + live Blaschka Bibliothek"!important;
+}
+.bib-community::after{
+  content:"Additions and corrections are welcome."!important;
+}
+
+@media(max-width:760px){
+  body.cases-page .case-index-row{
+    grid-template-columns:minmax(0,1fr) auto!important;
+    grid-template-areas:
+      "name arrow"
+      "years arrow"
+      "tags tags"!important;
+    gap:4px 14px!important;
+    padding:16px 0 18px!important;
+  }
+  body.subpage .page-intro::before,
+  body.subpage .page-intro::after{
+    opacity:.76!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  body.subpage .bib-entry:hover,
+  body.subpage .source-entry:hover,
+  body.subpage .source-row:hover,
+  body.subpage .auction-lot:hover{
+    transform:none!important;
+  }
+}
