@@ -1,5 +1,6 @@
-@import url("fluid-motion.css?v=20260810-1");
+@import url("fluid-motion.css?v=20260810-2");
 @import url("site-cleanup.css?v=20260810-1");
+@import url("nav-glide.css?v=20260810-2");
 
 /* Reading typography · local EB Garamond */
 
@@ -31,7 +32,6 @@ body{
   text-rendering:optimizeLegibility;
 }
 
-/* Keep the interface unmistakably separate from the reading layer. */
 button,
 input,
 select,
@@ -80,7 +80,6 @@ footer,
   font-family:var(--font-ui)!important;
 }
 
-/* Reading copy gets slightly more air; EB Garamond is visually smaller than Georgia. */
 .project-lede,
 .origin-columns,
 .standfirst,
@@ -120,7 +119,6 @@ footer,
   line-height:1.66;
 }
 
-/* Editorial headings also use the same family, while retaining their existing scale. */
 h1,
 h2,
 h3,
