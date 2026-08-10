@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Wimbledon Auctions 2023 Blaschka-style shell and wax model false-positive cluster",
+  "purpose": "Preserve a tightly clustered set of auction lots that are repeatedly retrieved by Blaschka searches but must be excluded from the canonical Blaschka auction table because the auction attribution is explicitly 'in the manner of' and the objects are shell-and-wax anatomical models rather than Blaschka glass models.",
+  "canonical_auction_count_effect": 0,
+  "sale": {
+    "auction_house": "Wimbledon Auctions",
+    "sale_title": "Antiques and Collectables",
+    "date": "2023-02-13",
+    "platform_sale_page": "https://www.easyliveauction.com/catalogue/04f16fb842974e50a8d3d49bfb88be6e/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables/",
+    "sale_lot_count_displayed": 163
+  },
+  "cluster_summary": {
+    "lots": ["33", "34", "35", "36", "37"],
+    "rejected_lot_count": 5,
+    "title_level_model_units": 10,
+    "count_guard": "Lot 34 is catalogued as two models even though its second numbered description contains (a) and (b) components/species. The title-level model count is retained rather than inventing a separate physical-object ontology from the text alone.",
+    "hammer_total_gbp": 2070,
+    "hammer_total_rule": "Arithmetic sum of the five platform-displayed hammer amounts; retained only as sale metadata for the rejected cluster, not as Blaschka market evidence."
+  },
+  "rejection_rule": {
+    "attribution": "Every lot is explicitly headed 'IN THE MANNER OF LEOPOLD AND RUDOLF BLASCHKA'.",
+    "material": "The lots are described as shell and wax / waxwork anatomical models, not Blaschka glass models.",
+    "literature_use": "The catalogue cites UCL and Australian Museum Blaschka literature to contextualise nineteenth-century anatomical modelling and the coexistence of glass, papier-mache and wax models. Citation of Blaschka literature is not maker attribution.",
+    "canonical_decision": "exclude_from_blaschka_auction_lot_table",
+    "research_value": "high_negative_control_for_search_contamination"
+  },
+  "lots": [
+    {
+      "lot": "33",
+      "catalogue_attribution": "IN THE MANNER OF LEOPOLD AND RUDOLF BLASCHKA",
+      "catalogued_model_count": 1,
+      "description": "Shell and wax anatomical model of Oliva Maura / Oliva Vidua sea snail with labelled and sectioned mantle, siphon, propodium, parapodium and foot.",
+      "material": ["shell", "wax"],
+      "hammer": {"amount": 500, "currency": "GBP"},
+      "status": "rejected_false_positive",
+      "source": "Easy Live Auctioneers sale page / The Saleroom indexed description"
+    },
+    {
+      "lot": "34",
+      "catalogue_attribution": "IN THE MANNER OF LEOPOLD AND RUDOLF BLASCHKA",
+      "catalogued_model_count": 2,
+      "description": "Two shell and waxwork anatomical sea-snail models: Harpa Ventricosa; and an Oliva model described with Oliva Ispidula / Oliva Elegans components.",
+      "material": ["shell", "waxwork"],
+      "hammer": {"amount": 340, "currency": "GBP"},
+      "platform_lot_url": "https://www.easyliveauction.com/catalogue/lot/1233755ba934442143fd175ea976ba4b/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables-lot-34/",
+      "condition_note": "Platform states both are mounted in old glass-fronted museum boxes.",
+      "status": "rejected_false_positive"
+    },
+    {
+      "lot": "35",
+      "catalogue_attribution": "IN THE MANNER OF LEOPOLD AND RUDOLF BLASCHKA",
+      "catalogued_model_count": 3,
+      "description": "Three shell and waxwork anatomical sea-snail models: Bulla Ampulla, Conus Textile and Strombus Luhuanus.",
+      "material": ["shell", "waxwork"],
+      "hammer": {"amount": 480, "currency": "GBP"},
+      "platform_lot_url": "https://www.easyliveauction.com/catalogue/lot/f540c1d0326543b62faaa40e62fce66d/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables-lot-35/",
+      "condition_note": "Platform states all three are mounted in old glass-fronted museum boxes.",
+      "status": "rejected_false_positive"
+    },
+    {
+      "lot": "36",
+      "catalogue_attribution": "IN THE MANNER OF LEOPOLD AND RUDOLF BLASCHKA",
+      "catalogued_model_count": 2,
+      "description": "Two shell and wax models: Voluta Undulata and Cypraea tigris.",
+      "material": ["shell", "wax"],
+      "hammer": {"amount": 550, "currency": "GBP"},
+      "status": "rejected_false_positive",
+      "source": "Easy Live Auctioneers sale page / The Saleroom indexed description"
+    },
+    {
+      "lot": "37",
+      "catalogue_attribution": "IN THE MANNER OF LEOPOLD AND RUDOLF BLASCHKA",
+      "catalogued_model_count": 2,
+      "description": "Two shell and wax models: Eburna Spiratus and Struthiolaria Crenulata.",
+      "material": ["shell", "wax"],
+      "hammer": {"amount": 200, "currency": "GBP"},
+      "platform_lot_url": "https://www.easyliveauction.com/catalogue/lot/f4f0d2e888de675e24630aa765e138bc/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables-lot-37/",
+      "status": "rejected_false_positive"
+    }
+  ],
+  "search_contamination_pattern": {
+    "mechanism": "The words 'Leopold and Rudolf Blaschka' appear prominently in the attribution heading and again in cited literature, so maker-name search engines rank these lots highly despite the catalogue itself withholding direct attribution.",
+    "high_precision_exclusion_terms": ["in the manner of", "shell and wax", "shell and waxwork", "papier-mache or wax models"],
+    "future_rule": "When a search result combines Blaschka with wax, shell, papier-mache or 'in the manner of', inspect the lot but do not promote it without independent maker/material evidence."
+  },
+  "sources": [
+    {
+      "type": "platform_sale_page",
+      "url": "https://www.easyliveauction.com/catalogue/04f16fb842974e50a8d3d49bfb88be6e/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables/",
+      "supports": "sale date, lots 33-37, five hammer amounts"
+    },
+    {
+      "type": "platform_lot_page",
+      "url": "https://www.easyliveauction.com/catalogue/lot/1233755ba934442143fd175ea976ba4b/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables-lot-34/",
+      "supports": "lot 34 attribution, medium, description, condition and hammer"
+    },
+    {
+      "type": "platform_lot_page",
+      "url": "https://www.easyliveauction.com/catalogue/lot/f540c1d0326543b62faaa40e62fce66d/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables-lot-35/",
+      "supports": "lot 35 attribution, medium, description, condition and hammer"
+    },
+    {
+      "type": "platform_lot_page",
+      "url": "https://www.easyliveauction.com/catalogue/lot/f4f0d2e888de675e24630aa765e138bc/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables-lot-37/",
+      "supports": "lot 37 attribution, medium, description and hammer"
+    },
+    {
+      "type": "aggregator_price_guide_page",
+      "url": "https://www.the-saleroom.com/fr-fr/price-guide/model?page=3921",
+      "supports": "indexed full descriptions for the lot 33-37 cluster"
+    }
+  ],
+  "count_note": "The original canonical auction-data.json retained six false-positive records from the first pass. This supplementary cluster adds five researched rejected lots without changing the canonical included-lot count; the combined researched rejected-lot corpus is therefore at least eleven records across the canonical and supplementary layers."
+}
