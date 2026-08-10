@@ -59,6 +59,18 @@ button{touch-action:manipulation}
   min-height:40px;
   border-radius:var(--ui-pill);
 }
+body.subpage .page-intro{
+  padding-top:84px!important;
+  padding-bottom:66px!important;
+}
+body.subpage .page-intro h1{
+  max-width:920px!important;
+  text-wrap:balance;
+}
+body.subpage .page-intro .page-dek{
+  max-width:720px!important;
+  line-height:1.55!important;
+}
 
 /* Homepage search: one obvious action, soft integrated control, no secondary navigation below it. */
 body:not(.subpage) .network-search{max-width:760px!important}
@@ -122,9 +134,11 @@ body:not(.subpage) .network-search-status:not(:empty){
 }
 .page-intro::before,.page-intro::after{box-shadow:var(--ui-shadow)!important}
 
-/* Home case directory: open rows, rounded only on interaction. */
-body:not(.subpage) .case-index-table{border-top:0!important}
-body:not(.subpage) .case-index-row{
+/* Case directories: open rows, rounded only where interaction benefits from it. */
+body:not(.subpage) .case-index-table,
+.cases-page .case-index-table{border-top:0!important}
+body:not(.subpage) .case-index-row,
+.cases-page .case-index-row{
   margin:7px 0!important;
   padding:20px 18px!important;
   border:0!important;
@@ -133,7 +147,8 @@ body:not(.subpage) .case-index-row{
   transition:background .22s ease,transform .22s var(--ui-ease),box-shadow .22s ease!important;
 }
 @media(hover:hover){
-  body:not(.subpage) .case-index-row:hover{
+  body:not(.subpage) .case-index-row:hover,
+  .cases-page .case-index-row:hover{
     padding-left:18px!important;
     padding-right:18px!important;
     background:rgba(255,255,255,.055)!important;
@@ -155,6 +170,29 @@ body:not(.subpage) .case-index-row{
 .all-cases-link:hover,.contact-actions a:hover{background:rgba(255,255,255,.075)!important;border-color:rgba(245,239,232,.28)!important}
 .all-cases-link:active,.contact-actions a:active{transform:scale(.97)}
 
+.cases-query-bar,.auction-query-bar,.bib-query-banner{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 13px;
+  margin:18px 0 30px!important;
+  padding:10px 14px!important;
+  border:1px solid var(--ui-line)!important;
+  border-radius:var(--ui-radius-sm)!important;
+  background:rgba(255,255,255,.035)!important;
+  font-family:Arial,Helvetica,sans-serif;
+}
+.cases-query-bar span,.auction-query-bar span,.bib-query-banner span{
+  color:rgba(245,239,232,.48);
+  font-size:.61rem;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.cases-query-bar strong,.auction-query-bar strong,.bib-query-banner strong{font-size:.8rem}
+.cases-query-bar em,.auction-query-bar em,.bib-query-banner em{color:rgba(245,239,232,.52);font-size:.63rem;font-style:normal}
+.cases-query-bar a,.auction-query-bar a,.bib-query-banner a{margin-left:auto}
+
 /* Long case pages: preserve editorial openness, make dense evidence easier to scan. */
 .sample{scroll-margin-top:82px}
 .event{
@@ -168,14 +206,17 @@ body:not(.subpage) .case-index-row{
 
 /* Bibliography: the selection/export tool is a calm, discoverable utility rather than a control strip. */
 .bib-tools{
+  position:sticky!important;
+  top:76px!important;
+  z-index:14!important;
   gap:10px 18px!important;
   padding:12px 14px!important;
   border:1px solid var(--ui-line)!important;
   border-radius:var(--ui-radius-md)!important;
-  background:rgba(255,255,255,.035)!important;
+  background:rgba(29,23,20,.90)!important;
   box-shadow:var(--ui-shadow-small)!important;
-  backdrop-filter:blur(16px)!important;
-  -webkit-backdrop-filter:blur(16px)!important;
+  backdrop-filter:saturate(120%) blur(18px)!important;
+  -webkit-backdrop-filter:saturate(120%) blur(18px)!important;
 }
 .bib-tool-button{
   min-height:38px!important;
@@ -230,11 +271,6 @@ body:not(.subpage) .case-index-row{
 }
 @media(hover:hover){.auction-lot:hover{background:rgba(255,255,255,.03)!important;transform:translateX(3px)!important}}
 .market-caution{border-radius:var(--ui-radius-sm)!important}
-.auction-query-bar{
-  border-radius:var(--ui-radius-sm)!important;
-  padding:11px 14px!important;
-  background:rgba(255,255,255,.035)!important;
-}
 
 /* Footer and inline actions. */
 .subpage-footer{align-items:center}
@@ -302,8 +338,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
   .page-intro::before,.page-intro::after{border-radius:18px!important}
   .origin-photo>a,.case-figure{border-radius:18px!important}
 
-  body:not(.subpage) .case-index-row{margin:8px 0!important;padding:17px 15px!important;border-radius:17px!important}
+  body:not(.subpage) .case-index-row,.cases-page .case-index-row{margin:8px 0!important;padding:17px 15px!important;border-radius:17px!important}
   .all-cases-link,.contact-actions a{min-height:42px;padding-inline:14px!important}
+  .cases-query-bar,.auction-query-bar,.bib-query-banner{display:block!important;padding:11px 12px!important}
+  .cases-query-bar>*+*,.auction-query-bar>*+*,.bib-query-banner>*+*{margin-left:8px!important}
+  .cases-query-bar a,.auction-query-bar a,.bib-query-banner a{display:inline-block;margin-top:8px!important;margin-left:0!important}
 
   .bib-tools{
     position:static!important;
