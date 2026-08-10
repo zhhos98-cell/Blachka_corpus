@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-10",
+  "title": "Institutional holdings router for high-priority historical auction catalogues",
+  "purpose": "Reduce dependence on commercial catalogue scans by locating institutional holdings and persistent catalogue series for scientific/model/natural-history sales that remain incompletely lot-indexed on the public web.",
+  "canonical_auction_count_effect": 0,
+  "repositories": [
+    {
+      "repository_id": "REPO-UCLA-CLARK-AUCTION-CATALOGS",
+      "institution": "William Andrews Clark Memorial Library, UCLA",
+      "holding": "Collection of auction catalogs, Z999.A89",
+      "scope": "Auction catalogues from 1922 to 2024 from a wide range of auction houses",
+      "extent": "144 linear feet / 144 boxes",
+      "access": "open to researchers",
+      "high_priority_confirmed_items": [
+        {
+          "auction_house": "Christie's South Kensington",
+          "sale_code": "MSI-8351",
+          "date": "1999-04-15",
+          "title": "Exceptional Scientific and Engineering Works of Art, Instruments and Models",
+          "box": "65",
+          "persistent_record": "https://public.uclaclark.aspace.cdlib.org/repositories/3/archival_objects/94030"
+        },
+        {
+          "auction_house": "Christie's South Kensington",
+          "sale_code": "MSI-9355",
+          "date": "2002-04-11",
+          "title": "Exceptional Scientific and Engineering Works of Art Including The Alfred Schett Collection",
+          "box": "71",
+          "persistent_context": "UCLA Clark top-container listing"
+        }
+      ],
+      "research_value": "Confirms institutional survival of exactly the scientific/model catalogue family prioritized in pass 16 and supplies stable sale codes/box locations without purchasing scans.",
+      "access_limit": "No digitized catalogue body was exposed by the finding aid in this pass."
+    },
+    {
+      "repository_id": "REPO-MUSEO-GALILEO-SCIENTIFIC-AUCTIONS",
+      "institution": "Museo Galileo Library, Florence",
+      "catalogue": "OseeGenius / IMSS OPAC",
+      "high_priority_series": [
+        {
+          "title": "Scientific and engineering works of art, instruments and models",
+          "auction_house": "Christie's South Kensington",
+          "holding_date_range": "1997-2001",
+          "record_type": "serial/continuing auction catalogue holding"
+        },
+        {
+          "title": "Scientific, medical and engineering works of art",
+          "auction_house": "Christie's South Kensington",
+          "holding_date_range": "2002-2006",
+          "record_type": "serial/continuing auction catalogue holding"
+        },
+        {
+          "date": "2005-04-07",
+          "title": "Exceptional scientific and engineering works of art: including natural history and the William L. Camp Jr spectacle collection",
+          "auction_house": "Christie's South Kensington",
+          "record_type": "monograph/catalogue held"
+        },
+        {
+          "date": "1986-04-17",
+          "title": "Scientific instruments, including the Josef Pieter Zallinger collection of scientific instruments and associated books by Georg Friedrich Brander and other eminent makers",
+          "auction_house": "Christie's South Kensington",
+          "record_type": "catalogue held"
+        }
+      ],
+      "opac_url": "https://opac.museogalileo.it/",
+      "research_value": "The library holds a continuous Christie’s scientific-model catalogue sequence, including 1997-2001 and 2002-2006, rather than isolated sales. This is the strongest institutional route yet found for systematic full-catalogue screening of the South Kensington family.",
+      "access_limit": "OPAC holdings are not equivalent to digitized full text; no remote scan entitlement is inferred."
+    }
+  ],
+  "christies_series_expansion": {
+    "finding": "The high-priority Christie’s scientific/model family extends beyond the sampled 1991/1997 records mapped in pass 16 and becomes increasingly explicit about natural history in the 2000s.",
+    "new_or_strengthened_targets": [
+      {
+        "date": "1998-04-08",
+        "title": "Exceptional Scientific and Engineering Works of Art, Instruments and Models",
+        "evidence": "Christie's surviving lot pages cite the catalogue by date and lot number; catalogue-trade metadata also preserves a copy."
+      },
+      {
+        "date": "1998-05-28",
+        "title": "Scientific and Engineering Works of Art, Instruments and Models",
+        "lots": 223,
+        "evidence": "The Catalog Star metadata"
+      },
+      {
+        "date": "1999-04-15",
+        "title": "Exceptional Scientific and Engineering Works of Art, Instruments and Models",
+        "sale_code": "MSI-8351",
+        "evidence": "UCLA Clark institutional holding + The Catalog Star digital scan listing"
+      },
+      {
+        "date": "2002-04-11",
+        "title": "Exceptional Scientific and Engineering Works of Art Including The Alfred Schett Collection",
+        "sale_code": "MSI-9355",
+        "evidence": "UCLA Clark institutional holding"
+      },
+      {
+        "date": "2003-04-10",
+        "title": "Exceptional Scientific & Engineering Works of Art",
+        "lots": 59,
+        "evidence": "The Catalog Star metadata"
+      },
+      {
+        "date": "2004-04-08",
+        "title": "Exceptional Scientific and Engineering Works of Art",
+        "lots": 62,
+        "pages": 49,
+        "evidence": "The Catalog Star metadata"
+      },
+      {
+        "date": "2005-04-07",
+        "title": "Exceptional Scientific and Engineering Works of Art, including Natural History and the William L. Camp Jr Spectacle Collection",
+        "evidence": "Museo Galileo institutional holding; Christie's surviving lot-page sale notice"
+      },
+      {
+        "date": "2005-06-29",
+        "title": "Scientific and Medical Works of Art and Natural History",
+        "lots": 306,
+        "evidence": "The Catalog Star metadata"
+      },
+      {
+        "date": "2005-10-19",
+        "title": "Scientific, Medical and Engineering Works of Art, Instruments and Natural History",
+        "evidence": "The Catalog Star metadata"
+      },
+      {
+        "date": "2009-04-08",
+        "title": "Travel, Science & Natural History",
+        "lots": 239,
+        "pages": 74,
+        "evidence": "The Catalog Star metadata"
+      }
+    ],
+    "priority_effect": "The 2005 sales move to A+ because the catalogue titles explicitly combine scientific works/models and natural history, the exact overlap where provenance-lost Blaschka models are most likely to be catalogued outside maker indexes."
+  },
+  "public_lot_archive_finding": {
+    "christies": "Christie's still exposes individual lot pages from historical Scientific and Engineering Works of Art sales, and some pages retain a 'More from' relation to the source sale.",
+    "example": "A 1998 astrolabe lot page explicitly cites the 8 April 1998 Exceptional Scientific and Engineering Works of Art, Instruments and Models catalogue and lot 50.",
+    "search_implication": "Before obtaining scans, search the surviving Christie's lot archive using object-class terms plus sale-title phrases. Maker-name searches alone returned no old physical Blaschka lot in the sampled scientific-model series.",
+    "negative_guard": "Search-engine absence from historical Christie's lot pages is not equivalent to browsing every lot in the sale."
+  },
+  "access_strategy": [
+    "Treat Museo Galileo 1997-2006 serial holdings as a potential batch-screening route rather than ordering isolated commercial scans.",
+    "Use UCLA Clark stable sale-code records to identify exact catalogues and box locations, especially MSI-8351 and MSI-9355.",
+    "Search institution OPACs for the exact Christie’s series titles before paying for scans.",
+    "Use surviving Christie's historical lot pages to reconstruct sale-level keywords and lot-number neighborhoods when indexed.",
+    "If remote scans are unavailable, record the institutional holding as a future archive/library target rather than converting metadata into a negative result."
+  ],
+  "next_targets": [
+    "Museo Galileo: establish which individual issues exist within the 1997-2001 and 2002-2006 Christie’s runs and whether reproduction/remote consultation is possible.",
+    "Search UK institutional library catalogues for the same continuing-series titles, prioritizing London holdings.",
+    "Search Christie's lot archive for 2005 scientific/natural-history sale object classes: glass model, zoological model, anatomical model, jellyfish, sea anemone, coral, mollusc, worm, teaching model.",
+    "Retain 29 May 1997, 8 Apr 1998, 15 Apr 1999, 7 Apr 2005 and 29 Jun 2005 as the first full-catalogue screening sequence once scans can be accessed."
+  ]
+}
