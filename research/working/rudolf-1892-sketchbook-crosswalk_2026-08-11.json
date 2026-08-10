@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "created": "2026-08-11",
   "updated": "2026-08-11",
   "title": "Rudolf Blaschka 1892 sketchbook-to-itinerary crosswalk",
@@ -30,13 +30,13 @@
     ]
   },
   "research_distinction": {
-    "travel_sketchbook": "Small landscape/travel sketchbook. The filmed surrogate contains desert landscapes plus a separate group of laid-in tropical harbour/island drawings.",
+    "travel_sketchbook": "Small travel/working sketchbook. The filmed surrogate contains desert landscapes, laid-in tropical harbour/island drawings, address/business notes and a transatlantic distance calculation.",
     "botanical_study_drawings": "Separate, much larger corpus catalogued primarily by plant taxon. Corning 2007 uses individual botanical studies such as Jacaranda filicifolia; these should not be conflated with pages of this travel sketchbook.",
-    "working_hypothesis": "Synchronize landscape pages with the correspondence itinerary first; only then cross-link separately catalogued botanical studies, specimens, seeds/bulbs and finished models."
+    "working_hypothesis": "Synchronize landscape pages and working notes with the correspondence itinerary first; only then cross-link separately catalogued botanical studies, specimens, seeds/bulbs and finished models."
   },
   "catalogue_surrogate_conflict": {
     "catalogue_claim": "Beginning sketch captioned Tempe, Arizona, 22 April 1892.",
-    "surrogate_observation": "In the supplied 30-page PDF, the earliest clearly legible landscape caption is 'Wüste bei Maricopa (Arizona) / 24. April 1892'; a second nearby caption also appears to identify a cactus-desert view at/near Maricopa on 24 April.",
+    "surrogate_observation": "In the supplied 30-page PDF, the earliest clearly legible landscape caption is 'Wüste bei Maricopa (Arizona) / 24. April 1892'; a second filmed caption reads, with high probability, 'Cactus-Wüste bei Maricopa (Arizona) / 24. April 1892'.",
     "status": "unresolved",
     "possible_explanations": [
       "the catalogue note refers to a physical leaf not included in the current filmed surrogate",
@@ -50,7 +50,8 @@
     "exact_point": "A fixed place or infrastructure node directly secured by inscription/record.",
     "field_area": "A bounded locality or excursion area secured to a place/date but lacking an exact viewpoint.",
     "corridor": "A moving observational segment, usually rail or ship travel, for which a single point would be misleading.",
-    "probable_view_sector": "A modeled viewpoint and direction inferred from visible landmarks; never presented as exact without independent corroboration."
+    "probable_view_sector": "A modeled viewpoint and direction inferred from visible landmarks; never presented as exact without independent corroboration.",
+    "nonspatial_working_note": "A travel calculation, address note, measurement or other working entry that belongs to the journey but should not be converted into a map point."
   },
   "page_matches": [
     {
@@ -70,16 +71,16 @@
         "primary_mountain_candidate": "Sierra Estrella / Hayes Peak sector to the northwest",
         "alternative_mountain_candidate": "Table Top Mountains sector to the south-southwest",
         "place_date_confidence": 0.98,
-        "mountain_range_confidence": 0.58,
+        "mountain_range_confidence": 0.62,
         "exact_viewpoint_confidence": 0.15
       },
-      "notes": "The drawing should not be collapsed to a station marker. It records an environmental field/view area. Mountain identification remains a horizon-matching problem."
+      "notes": "The drawing should not be collapsed to a station marker. It records an environmental field/view area. Sierra Estrella is morphologically plausible and geographically strong, but a horizon-profile match is still required."
     },
     {
       "digital_pages": [8, 9],
-      "caption_transcription": "[probable] Cactus-Wüste bei Maricopa (Arizona) / 24. April 1892",
-      "caption_confidence": "medium-high",
-      "visible_botanical_note": "Opuntia bigelovii [reading high-probability; spelling reflects historic annotation]",
+      "caption_transcription": "Cactus-Wüste bei Maricopa (Arizona) / 24. April 1892 [high-probability reading]",
+      "caption_confidence": "high",
+      "visible_botanical_note": "Opuntia bigelovii [high-probability reading; historic spelling retained]",
       "subject": "cactus desert with tall columnar forms and a jagged mountain mass",
       "itinerary_match": {
         "place": "Maricopa, Arizona",
@@ -92,8 +93,8 @@
         "secure_center_reference": "Maricopa railroad settlement/nearby desert",
         "primary_mountain_candidate": "Sierra Estrella sector",
         "alternative_mountain_candidate": "Table Top Mountains or another Gila/Maricopa desert range",
-        "place_date_confidence": 0.93,
-        "mountain_range_confidence": 0.55,
+        "place_date_confidence": 0.97,
+        "mountain_range_confidence": 0.60,
         "exact_viewpoint_confidence": 0.15
       }
     },
@@ -111,33 +112,35 @@
       "geolocation": {
         "primary_landform_candidate": "San Jacinto massif viewed from the Colorado/Coachella desert rail corridor",
         "alternative": "another rocky range on the Maricopa-Yuma-California transit segment",
-        "corridor_confidence": 0.65,
+        "corridor_confidence": 0.68,
         "san_jacinto_confidence": 0.55,
         "exact_viewpoint_confidence": 0.10
       },
-      "guard": "Do not assign a point or date until an inscription, railway milepoint, or stronger silhouette match is found."
+      "guard": "Do not assign a point or exact date until an inscription, railway milepoint, or stronger silhouette match is found."
     },
     {
       "digital_pages": [17],
-      "caption_transcription": "[probable] Wüste bei Hesperia ... [probable date line: 5 May 1892]",
-      "caption_confidence": "medium",
-      "subject": "tree-like yucca/Joshua-tree desert with high mountain chain behind",
+      "caption_transcription": null,
+      "caption_confidence": "none",
+      "visible_botanical_note": "Yucca brevifolia [probable visual reading; requires palaeographic confirmation]",
+      "subject": "tree-like yucca/Joshua-tree desert with a high mountain chain behind",
       "itinerary_match": {
         "place": "Hesperia, California",
         "date": "1892-05-05",
-        "archive_anchor": "retrospective account in Agua Caliente letter, 7 May 1892",
-        "relation": "The letter says they arrived at Hesperia about 3 a.m., stayed at a hotel near the station, and at daybreak saw a vast desert plain surrounded by mountains, with tree-like Yucca brevifolia rising 'like a forest' and a snow-topped San Bernardino summit behind."
+        "archive_anchor": "Agua Caliente letter of 7 May 1892 retrospectively describing Hesperia on 5 May",
+        "relation": "The letter says they arrived at Hesperia about 3 a.m., stayed at a hotel near the station, and at daybreak saw a vast desert plain surrounded by mountains, with tree-like Yucca brevifolia rising 'like a forest' and snow-topped San Bernardino high country behind."
       },
+      "identification_basis": "ecological and textual synchronization, not a place/date inscription on the sketch",
       "geospatial_class": "field_area",
       "route_revision_candidate": true,
       "geolocation": {
-        "secure_center_reference": "1891 Hesperia townsite / railroad depot vicinity",
-        "probable_view_direction": "southeast toward the San Bernardino high peaks",
-        "place_confidence": 0.94,
-        "view_direction_confidence": 0.72,
-        "exact_viewpoint_confidence": 0.25
+        "secure_center_reference": "1891 Hesperia townsite / railroad depot-hotel vicinity",
+        "probable_view_direction": "broad southeast sector toward the San Bernardino high country",
+        "place_confidence": 0.92,
+        "view_direction_confidence": 0.78,
+        "exact_viewpoint_confidence": 0.30
       },
-      "notes": "This is a strong image-text match and should be added to the research itinerary as a 5 May field node. The public map is intentionally unchanged in this pass."
+      "notes": "The earlier reading of the graphite as 'Wüste bei Hesperia' / a date line is withdrawn. Close inspection indicates a botanical note, probably Yucca brevifolia. Hesperia remains a strong match because the correspondence independently describes the same distinctive landscape on 5 May."
     },
     {
       "digital_pages": [21],
@@ -149,27 +152,24 @@
         "relation": "Rudolf landed at Port Antonio on 28 February and later wrote specifically about his impressions of Port Antonio while travelling onward aboard Bowden."
       },
       "geospatial_class": "probable_view_sector",
-      "geolocation": {
-        "candidate": "Port Antonio harbour / Navy Island group",
-        "confidence": 0.58
-      }
+      "geolocation": {"candidate": "Port Antonio harbour / Navy Island group", "confidence": 0.58}
     },
     {
       "digital_pages": [23],
       "caption_transcription": null,
-      "subject": "striped lighthouse on a low point at left, palm-covered island/shore at right, harbour water and mountainous interior behind",
+      "subject": "broadly banded lighthouse on a low point at left, palm-covered island/shore at right, harbour water and mountainous interior behind",
       "itinerary_match": {
         "candidate": "Port Antonio, Jamaica",
         "date_window": "1892-02-28 to 1892-02-29",
         "archive_anchor": "BLA-D00736 · 017:90",
-        "relation": "The Port Antonio landing and immediate onward coastal voyage create a plausible shipboard context for a harbour-approach sketch."
+        "relation": "The Port Antonio landing and immediate onward coastal voyage create a plausible shipboard context for a harbour-approach/departure sketch."
       },
       "geospatial_class": "probable_view_sector",
       "geolocation": {
         "candidate_landmarks": ["Folly Point Lighthouse", "Navy Island"],
         "modeled_view": "offshore north of Port Antonio, facing generally south into the harbour; Folly Point would fall east/left and Navy Island west/right",
-        "landmark_configuration_confidence": 0.82,
-        "port_antonio_confidence": 0.80,
+        "landmark_configuration_confidence": 0.85,
+        "port_antonio_confidence": 0.83,
         "exact_viewpoint_confidence": 0.30
       },
       "guard": "Landmark configuration is a geospatial inference, not an inscription. Preserve as probable until checked against a historical harbour chart/coastal profile and additional period images."
@@ -178,15 +178,36 @@
       "digital_pages": [25],
       "caption_transcription": null,
       "subject": "close tropical waterway/harbour edge with dense palms",
-      "itinerary_match": {
-        "candidate": "same Jamaica / Port Antonio laid-in group as pages 21 and 23",
-        "archive_anchor": "BLA-D00736 · 017:90"
-      },
+      "itinerary_match": {"candidate": "same Jamaica / Port Antonio laid-in group as pages 21 and 23", "archive_anchor": "BLA-D00736 · 017:90"},
       "geospatial_class": "probable_view_sector",
-      "geolocation": {
-        "candidate": "Port Antonio harbour or nearby north-coast Jamaican inlet",
-        "confidence": 0.52
-      }
+      "geolocation": {"candidate": "Port Antonio harbour or nearby north-coast Jamaican inlet", "confidence": 0.55}
+    },
+    {
+      "digital_pages": [26],
+      "entry_type": "nonspatial_working_note",
+      "transcription_fragments": [
+        "Chr. Baldewein & Sohn / am Wall [high-probability]",
+        "Schüsselkorb 14 [probable]",
+        "Zimmermann ... Obere Straße / Ecke Vogelgasse [uncertain]",
+        "am Markt"
+      ],
+      "interpretation": "Address/business notes, very likely including Bremen addresses. Chr. Baldewein & Sohn is independently attested at Am Wall; Schüsselkorb is a historic Bremen street.",
+      "journey_relation": "Potential Bremen travel/logistics note; exact date and purpose unresolved.",
+      "confidence": "medium",
+      "guard": "Do not turn these address fragments into itinerary stops without dated contextual evidence."
+    },
+    {
+      "digital_pages": [27],
+      "entry_type": "travel_calculation",
+      "transcription": "Von New York bis Bremen sind 880 geographische Meilen",
+      "transcription_confidence": "high",
+      "calculation_context": {
+        "historical_unit": "1 geographische Meile ≈ 7.42044 km",
+        "noted_distance_km_approx": 6530,
+        "interpretation": "A working estimate of the New York–Bremen Atlantic distance; the figure is longer than the modern great-circle distance and is compatible with a route-distance or rounded contemporary calculation."
+      },
+      "journey_relation": "Return Atlantic leg, New York to Bremen/Europe; complements the S.S. Aller departure sequence.",
+      "geospatial_class": "nonspatial_working_note"
     }
   ],
   "unmatched_secure_correspondence_events": [
@@ -199,9 +220,11 @@
     }
   ],
   "next_actions": [
-    "Compare pages 5 and 9 against Sierra Estrella and Table Top horizon profiles from plausible Maricopa viewpoints.",
-    "Use the circa-1890/1891 Huntington Hesperia townsite maps to recover the depot/hotel area, then test the page-17 mountain bearing toward the San Bernardino high peaks.",
-    "Use a Port Antonio harbour chart and landmark geometry to constrain the page-23 shipboard view sector; treat pages 21 and 25 as associated only if topology remains consistent.",
+    "Compare pages 5 and 9 against Sierra Estrella and Table Top horizon profiles from plausible Maricopa viewpoints; preserve Sierra Estrella as a candidate until the peak order is matched.",
+    "Georeference the Huntington circa-1890/1891 Hesperia townsite maps and use the historical station/hotel proxy to constrain the page-17 field area and broad southeast view sector.",
+    "Use a Port Antonio harbour chart and landmark geometry to constrain the page-23 shipboard view sector; test pages 21 and 25 only after shoreline topology remains consistent.",
+    "Test pages 12/13 against San Jacinto silhouettes from the 1892 Southern Pacific Yuma–Salton–Indio corridor before assigning any named mountain.",
+    "Transcribe page 26 against a period Bremen address directory; retain as logistics evidence unless a dated itinerary function emerges.",
     "Inspect the 30 individual Rakow JPG delivery files if available; they may preserve more graphite detail than the assembled PDF.",
     "Keep all sketchbook imagery and image-derived map layers backend-only during this phase."
   ]
