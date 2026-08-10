@@ -81,7 +81,6 @@
   if (hero && heroImage && heroCredit) {
     hero.classList.add('hero-carousel-ready');
     heroImage.classList.add('hero-image-layer','is-active');
-    heroImage.src = slides[0].src;
     heroImage.alt = slides[0].alt;
     heroImage.dataset.a11yDescription = slides[0].description;
 
@@ -167,8 +166,21 @@
     });
 
     document.addEventListener('visibilitychange', startTimer);
-    const preload = () => slides.slice(1).forEach(slide => { const img = new Image(); img.src = slide.src; });
-    if ('requestIdleCallback' in window) requestIdleCallback(preload,{timeout:2500}); else setTimeout(preload,1200);
+    const preloaded = new Set();
+    const preloadSlide = index => {
+      if (index === current || preloaded.has(index)) return;
+      preloaded.add(index);
+      const img = new Image();
+      img.decoding = 'async';
+      img.src = slides[index].src;
+    };
+    const queueNext = () => {
+      const next = (current + 1) % slides.length;
+      if ('requestIdleCallback' in window) requestIdleCallback(() => preloadSlide(next), {timeout:2200});
+      else setTimeout(() => preloadSlide(next), 1000);
+    };
+    hero.addEventListener('transitionend', queueNext, {passive:true});
+    queueNext();
     updateMeta(0);
     startTimer();
   }

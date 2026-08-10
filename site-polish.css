@@ -3,7 +3,7 @@
 
 @font-face{
   font-family:'EB Garamond Local';
-  src:url('assets/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  src:url('assets/fonts/EBGaramond-VariableFont_wght.woff2') format('woff2');
   font-style:normal;
   font-weight:400 800;
   font-display:swap;

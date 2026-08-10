@@ -6,13 +6,11 @@
     ui.defer = true;
     document.head.appendChild(ui);
   }
-  const matrix = document.querySelector('link[href*="case-wall-matrix.css"]');
-  if (matrix) matrix.href = 'case-wall-matrix.css?v=20260810-4';
 
   const target = document.getElementById('case-sections');
-  const loading = document.getElementById('cases-loading');
   if (!target) return;
   const compactViewport = matchMedia('(max-width:900px)').matches;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const loadScript = src => new Promise((resolve, reject) => {
     const script = document.createElement('script');
@@ -23,11 +21,9 @@
     document.body.appendChild(script);
   });
 
-  loadScript('./case-wall-media.js?v=20260810-4').catch(console.error);
-
   const revealCases = () => {
-    const samples = [...document.querySelectorAll('#case-sections .sample')];
-    if (compactViewport || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const samples = [...target.querySelectorAll('.sample')];
+    if (compactViewport || reducedMotion || !('IntersectionObserver' in window)) {
       samples.forEach(sample => sample.classList.add('case-visible'));
       return;
     }
@@ -68,40 +64,25 @@
   const restoreHash = () => {
     if (!location.hash) return;
     const id = decodeURIComponent(location.hash.slice(1));
-    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block:'start' }));
+    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({block:'start'}));
   };
 
-  const loadSecondaryVisuals = async () => {
+  const loadWall = () => loadScript('./case-wall-media.js?v=20260810-4').catch(console.error);
+  const loadSecondaryVisuals = () => {
     if (compactViewport) return;
-    try { await loadScript('../cases-visuals-bundle.js?v=20260810-1'); }
-    catch (error) { console.error(error); }
+    loadScript('../cases-visuals-bundle.js?v=20260810-1').catch(console.error);
   };
 
-  (async () => {
-    try {
-      const response = await fetch('./base-cases.html', { cache:'force-cache' });
-      if (!response.ok) throw new Error(`Base case source returned ${response.status}`);
-      const html = await response.text();
-      const doc = new DOMParser().parseFromString(`<main>${html}</main>`, 'text/html');
-      doc.querySelectorAll('img[src^="http://"],img[src^="https://"]').forEach(img => img.setAttribute('referrerpolicy','no-referrer'));
-      doc.querySelectorAll('a[href^="http://"],a[href^="https://"]').forEach(a => a.setAttribute('rel','noopener noreferrer'));
-      const baseSamples = [...doc.querySelectorAll('main > .sample')];
-      if (baseSamples.length !== 5) throw new Error(`Expected 5 base cases, found ${baseSamples.length}.`);
-      baseSamples.forEach(sample => target.appendChild(document.importNode(sample, true)));
+  document.body.classList.add('cases-ready');
+  applyIncomingSearch();
+  revealCases();
+  restoreHash();
 
-      await loadScript('../cases-v2.js?v=20260809-1');
-      loading?.remove();
-      document.body.classList.add('cases-ready');
-      applyIncomingSearch();
-      revealCases();
-      restoreHash();
-
-      if ('requestIdleCallback' in window) requestIdleCallback(loadSecondaryVisuals, { timeout:900 });
-      else setTimeout(loadSecondaryVisuals, 180);
-    } catch (error) {
-      console.error(error);
-      loading?.remove();
-      target.innerHTML = '<p class="case-load-error">The case page could not assemble its case markup. The source files remain available in the repository.</p>';
-    }
-  })();
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadWall, {timeout:450});
+    requestIdleCallback(loadSecondaryVisuals, {timeout:1200});
+  } else {
+    setTimeout(loadWall, 80);
+    setTimeout(loadSecondaryVisuals, 360);
+  }
 })();
