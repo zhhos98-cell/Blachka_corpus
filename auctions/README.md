@@ -19,9 +19,9 @@ Earlier institutional custody does not exclude a later market appearance. Auctio
 - latest canonical record: **2026**
 - **1** high-confidence inferred reoffer link
 - **2** records with explicit result/status conflicts
-- **6** original rejected false-positive records retained in the canonical file
+- **6** original rejected false positives retained in the canonical file
 
-A supplementary 2023 Wimbledon cluster now adds **5 further rejected lots**, so the researched rejected-lot corpus is at least **11** across canonical and supplementary layers. The included-lot count remains 11.
+A supplementary 2023 Wimbledon cluster adds **5 further rejected lots**, so the researched rejected-lot corpus is at least **11** across canonical and supplementary layers. The included-lot count remains 11.
 
 The historical market search reaches earlier than the canonical table. A December **1904** *Museums Journal* notice offered **300 Blaschka invertebrate models** from the Philip Brookes Mason estate, but the documented endpoint is Mrs Mason's **1909 institutional sale to Glasgow Museums for £275**. That institutional purchase remains outside the auction count.
 
@@ -41,6 +41,7 @@ The historical market search reaches earlier than the canonical table. A Decembe
 - `ucl-catalogue-card-index-router.json` — routes the unresolved UCL transfer through the Lankester catalogue, early card index and MDA cards.
 - `auction-false-positive-wimbledon-2023.json` — five shell-and-wax lots explicitly catalogued `in the manner of` the Blaschkas; retained as a negative-control cluster.
 - `auction-historical-catalogue-family-worklist.json` — old Christie’s, Sotheby’s, Phillips and Bonhams catalogue families to screen at full-catalogue level when scans/OCR become available.
+- `auction-catalogue-library-holdings-router.json` — institutional holdings for the high-priority scientific/model catalogue family, especially UCLA Clark and Museo Galileo.
 
 ## Current high-value findings
 
@@ -90,31 +91,40 @@ Eight public UCL Blaschka accession anchors now partition as:
 
 Current UCL sources use `1890` for the Lankester catalogue/collection field, while a UCL documentation-history article says the first catalogue was published in `1891` and describes it as part catalogue, part wishlist. Both source-native date claims remain visible.
 
-More important, UCL says its **second catalogue system was a card index begun in the early 1900s and continued into the 1970s**. That system spans the 1925–27 Science Museum transfer and is now the highest-value UCL source. Later MDA cards may preserve acquisition and conservation fields but can conflict with one another.
+UCL's **early-1900s–1970s card index** spans the 1925–27 Science Museum transfer and is now the highest-value UCL source. Later MDA cards may preserve acquisition and conservation fields but can conflict with one another.
 
 ### Wimbledon 2023 false-positive cluster
 
 Wimbledon Auctions, 13 February 2023, lots **33–37**, forms a concentrated search-engine false positive. All five headings say `IN THE MANNER OF LEOPOLD AND RUDOLF BLASCHKA`; the objects are explicitly shell-and-wax / shell-and-waxwork anatomical sea-snail models.
 
-Displayed hammers were £500, £340, £480, £550 and £200. These prices are **not Blaschka market evidence**. The five lots are rejected because attribution is expressly qualified and the material tradition is different. Their Blaschka-heavy literature citations explain why maker-name search engines retrieve them so aggressively.
+Displayed hammers were £500, £340, £480, £550 and £200. These prices are **not Blaschka market evidence**. The five lots are rejected because attribution is expressly qualified and the material tradition is different.
 
-High-precision review triggers now include `in the manner of`, `shell and wax`, `waxwork` and `papier-mâché`. They trigger inspection, not automatic rejection, because contextual provenance can legitimately mention comparative wax models.
+High-precision review triggers now include `in the manner of`, `shell and wax`, `waxwork` and `papier-mâché`. They trigger inspection, not automatic rejection.
 
-### Historical catalogue families now mapped
+### Historical catalogue families and holdings
 
-Pass 16 moves beyond maker-name web indexes into catalogue-family discovery. No listed catalogue is treated as containing Blaschka material until its lot text is screened.
+Passes 16–17 move beyond maker-name indexing into catalogue-family and institutional-holdings discovery. No listed catalogue is treated as containing Blaschka material until its lot text is screened.
 
-Highest-priority families:
+Highest-priority families remain:
 
-1. **Christie’s scientific / medical / engineering models**, especially 4 Jul 1991 `Scientific and Medical Instruments, Models, Tools and Other Apparatus` and 29 May 1997 `Scientific and Engineering Works of Art, Instruments and Models`.
-2. **Christie’s Natural History**, especially 19 May and 11 Nov 1998, then 19 Oct 1999 and 4 Jun 2001.
-3. **Bonhams science / technology / marine**, especially 20 May 1989 `Science & Technology for the Collector` and 25 Feb 2004 `Science and Marine`.
-4. **Phillips Scientific Instruments**, mapped at 1980, 1986, 1988 and 1995.
-5. **Sotheby’s English/Continental/European glass**, a dense family mapped from the 1960s into the 2000s; initial full-catalogue priority is the 1978–1986 run.
+1. Christie’s scientific / medical / engineering models.
+2. Christie’s Natural History.
+3. Bonhams science / technology / marine.
+4. Phillips Scientific Instruments.
+5. Sotheby’s English/Continental/European glass.
 
-The Catalog Star exposes metadata and paid scan availability for many of these catalogues. Exact-title open-web / Internet Archive searches did not recover free scans for several sampled A-priority catalogues in this pass. That is a bounded discovery result, not a catalogue-level negative.
+The Christie’s scientific/model family is now materially stronger than initially mapped. It includes 29 May 1997, 8 Apr and 28 May 1998, 15 Apr 1999, 11 Apr 2002, 10 Apr 2003, 8 Apr 2004, and then explicit scientific/natural-history crossover sales in **2005**: 7 Apr `Exceptional Scientific and Engineering Works of Art, including Natural History`, 29 Jun `Scientific and Medical Works of Art and Natural History`, and 19 Oct `Scientific, Medical and Engineering Works of Art, Instruments and Natural History`.
 
-Once any scan is acquired, screen the **entire catalogue**, not the first hit, using maker variants plus object-class terms such as `glass model`, `zoological model`, `natural history model`, `teaching model`, `jellyfish`, `sea anemone`, `coral`, `hydroid`, `mollusc`, `slug`, `worm`, `Dresden`, `L. No.` and `Nr.`.
+Institutional holdings reduce the need to buy isolated scans:
+
+- **William Andrews Clark Memorial Library, UCLA** has a 144-linear-foot auction-catalogue collection open to researchers. It specifically catalogs Christie’s South Kensington `MSI-8351`, 15 Apr 1999, `Exceptional Scientific and Engineering Works of Art, Instruments and Models`, Box 65; and `MSI-9355`, 11 Apr 2002, Box 71.
+- **Museo Galileo Library** records a continuing Christie’s South Kensington holding `Scientific and engineering works of art, instruments and models`, **1997–2001**, followed by `Scientific, medical and engineering works of art`, **2002–2006**. It also separately holds the 7 Apr 2005 catalogue explicitly including Natural History.
+
+These are holdings, not digitized negatives. The next step is to determine issue-level coverage and remote reproduction/consultation before paying for commercial scans.
+
+Christie’s also retains individual historical lot pages from these sale families. Targeted maker-name searching of those pages has not produced an older physical Blaschka model so far, but search-engine absence is not equivalent to a complete browse of every lot.
+
+Once any catalogue scan is obtained, screen the **entire catalogue**, not the first hit, using maker variants plus object-class terms such as `glass model`, `zoological model`, `natural history model`, `teaching model`, `jellyfish`, `sea anemone`, `coral`, `hydroid`, `mollusc`, `slug`, `worm`, `Dresden`, `L. No.` and `Nr.`.
 
 ## Research logs
 
@@ -123,24 +133,25 @@ Detailed decisions are preserved in `../research/logs/` through:
 - `2026-08-10-auction-deep-sweep-pass14-ucl-card-index-router.md`
 - `2026-08-10-auction-deep-sweep-pass15-wimbledon-wax-false-positive-cluster.md`
 - `2026-08-10-auction-deep-sweep-pass16-historical-catalogue-families.md`
+- `2026-08-10-auction-deep-sweep-pass17-institutional-catalogue-holdings.md`
 
 Earlier pass01 and pass03–pass13 logs remain in the same directory.
 
 ## Public page state
 
-`index.html` is selective rather than a backend dump. It currently surfaces the Christie’s 2019 ex-Science Museum cases, the `360/361` and `380/381` split-afterlife finding, Krefeld 2025 lots 26–27, lot 27's *Hydractinia echinata* / no. 156 resolution, and the unresolved Krefeld 2026 platform-status conflict.
+`index.html` is selective rather than a backend dump. It surfaces the Christie’s 2019 ex-Science Museum cases, the `360/361` and `380/381` split-afterlife finding, Krefeld 2025 lots 26–27, lot 27's *Hydractinia echinata* / no. 156 resolution, the unresolved Krefeld 2026 status conflict, and a short Wimbledon 2023 exclusion note explaining why `in the manner of` shell-and-wax models are not counted.
 
 Pages should be refreshed for a new object-level provenance bridge, genuinely new auction appearance or a materially useful public scope clarification. Archive-routing-only passes do not require cosmetic page churn.
 
 ## Next search order
 
-1. Screen exact-title web/library traces for the A-priority Christie’s, Bonhams and Phillips catalogue families in `auction-historical-catalogue-family-worklist.json`.
-2. UCL early card index / MDA cards for the eight named accessions; recover the twenty Lankester Blaschka entries and Sarah Parker's `GMZ_Blaschkas` document.
-3. Recover any UCL old Science Museum numbers and cross them against `science-museum-register-neighborhoods.json`.
-4. Science Museum `CORP/SCM/02/02/7/421` → relevant 1925–27 nominal files → `CORP/SCM/Z/048`, keyed by paired number neighbourhoods.
-5. HU historical inventory and 1886 / 1968–70 transfer-reduction records for *Hydractinia echinata*, `Stachelpolyp`, no. 156, `ZI` and `IfZ`.
-6. MfN remote routing into `S001`, `S003`, `S004-04` and `S005-02` while physical access is suspended.
-7. Krefeld lot-photo/label audit; keep lot 26 taxonomically open.
-8. Glasgow Mason `1909.66` files and the 1904 sale-notice context.
-9. Identify George Loudon's unnamed London dealer and English public-school source.
-10. Expand catalogue families only after the current A-priority runs are screened or blocked by access.
+1. Determine issue-level coverage and remote consultation/reproduction options for Museo Galileo's 1997–2006 Christie’s scientific/model series; use UCLA Clark sale codes as stable controls.
+2. Search surviving Christie’s lot archives for the 1997–2005 sequence with object-class/taxon terms before obtaining scans.
+3. UCL early card index / MDA cards; recover the twenty Lankester Blaschka entries and Sarah Parker's `GMZ_Blaschkas` document.
+4. Recover any UCL old Science Museum numbers and cross them against `science-museum-register-neighborhoods.json`.
+5. Science Museum `CORP/SCM/02/02/7/421` → relevant 1925–27 nominal files → `CORP/SCM/Z/048`, keyed by paired number neighbourhoods.
+6. HU historical inventory and 1886 / 1968–70 transfer-reduction records for *Hydractinia echinata*, `Stachelpolyp`, no. 156, `ZI` and `IfZ`.
+7. MfN remote routing into `S001`, `S003`, `S004-04` and `S005-02` while physical access is suspended.
+8. Krefeld lot-photo/label audit; keep lot 26 taxonomically open.
+9. Glasgow Mason `1909.66` files and the 1904 sale-notice context.
+10. Identify George Loudon's unnamed London dealer and English public-school source.
