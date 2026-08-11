@@ -1,0 +1,6574 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-11",
+  "purpose": "Exact source/locator authority crosswalk for current Source registers and Auction JSON layers.",
+  "guard": "A shared locator establishes a shared access/source node only. It does not prove that the surrounding evidence records are duplicates, semantically equivalent, or safe to merge.",
+  "matching_rule": "Exact URL after terminal prose punctuation removal only; no hostname, path, query, fragment, redirect, or trailing-slash canonicalization.",
+  "input_file_count": 50,
+  "locator_node_count": 196,
+  "shared_locator_node_count": 58,
+  "cross_layer_locator_node_count": 1,
+  "host_count": 103,
+  "role_node_counts": {
+    "access_locator": 9,
+    "archive_locator": 26,
+    "archive_target": 17,
+    "embedded_url": 7,
+    "evidence_source": 66,
+    "future_retrieval": 8,
+    "locator": 94,
+    "official_locator": 3,
+    "secondary_locator": 1,
+    "stable_locator": 1
+  },
+  "nodes": [
+    {
+      "node_id": "SRCNODE-6efb8ddc71569de3",
+      "locator": "http://www.ucl.ac.uk/museums/zoology/documents/GMZ_Blaschkas",
+      "host": "www.ucl.ac.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/ucl-science-museum-transfer-candidate-audit.json",
+          "layer": "auctions",
+          "path": "legacy_inventory_target.legacy_url",
+          "role": "locator",
+          "host": "www.ucl.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7ed13c5075d5c302",
+      "locator": "https://academic.oup.com/jhc/article/17/1/23/624357",
+      "host": "academic.oup.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "layer": "sources",
+          "path": "dealers[0].source_locator",
+          "role": "evidence_source",
+          "host": "academic.oup.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-4ef3f292cdc032ba",
+      "locator": "https://adressbuecher.sub.uni-hamburg.de/",
+      "host": "adressbuecher.sub.uni-hamburg.de",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/commercial-intermediary-register.json",
+          "layer": "sources",
+          "path": "routes[1].actors[0].discovery_leads[0].locator",
+          "role": "locator",
+          "host": "adressbuecher.sub.uni-hamburg.de"
+        },
+        {
+          "file": "sources/moller-hamburg-forwarding-register.json",
+          "layer": "sources",
+          "path": "archive_targets[0].locator",
+          "role": "archive_target",
+          "host": "adressbuecher.sub.uni-hamburg.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-d70ce9b60f3a865d",
+      "locator": "https://archivalcollections.drexel.edu/agents/corporate_entities/72",
+      "host": "archivalcollections.drexel.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].direct_blaschka_transaction_witnesses[0].locator",
+          "role": "locator",
+          "host": "archivalcollections.drexel.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-9c3641994bcb7fb1",
+      "locator": "https://archivalcollections.drexel.edu/repositories/3/resources/842",
+      "host": "archivalcollections.drexel.edu",
+      "occurrence_count": 5,
+      "file_count": 5,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "layer": "sources",
+          "path": "transaction_process_comparators[2].locator",
+          "role": "locator",
+          "host": "archivalcollections.drexel.edu"
+        },
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "layer": "sources",
+          "path": "dealers[2].source_locators[2]",
+          "role": "evidence_source",
+          "host": "archivalcollections.drexel.edu"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[0].locator",
+          "role": "locator",
+          "host": "archivalcollections.drexel.edu"
+        },
+        {
+          "file": "sources/dealer-sales-print-register.json",
+          "layer": "sources",
+          "path": "records[1].locator",
+          "role": "locator",
+          "host": "archivalcollections.drexel.edu"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[9].locator",
+          "role": "locator",
+          "host": "archivalcollections.drexel.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e5c53f5ad7e01b57",
+      "locator": "https://archivalcollections.library.mcgill.ca/index.php/damon-robert",
+      "host": "archivalcollections.library.mcgill.ca",
+      "occurrence_count": 5,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[0].locator",
+          "role": "locator",
+          "host": "archivalcollections.library.mcgill.ca"
+        },
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "layer": "sources",
+          "path": "dealers[1].source_locators[1]",
+          "role": "evidence_source",
+          "host": "archivalcollections.library.mcgill.ca"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[7].locator",
+          "role": "locator",
+          "host": "archivalcollections.library.mcgill.ca"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[8].locator",
+          "role": "locator",
+          "host": "archivalcollections.library.mcgill.ca"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[9].locator",
+          "role": "locator",
+          "host": "archivalcollections.library.mcgill.ca"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-f209edf83a34b7ab",
+      "locator": "https://archivalcollections.library.mcgill.ca/index.php/informationobject/browse?collection=139989&levels=224&repos=440&showAdvanced=1&sort=identifier&sortDir=desc&topLod=0&view=table",
+      "host": "archivalcollections.library.mcgill.ca",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[14].locator",
+          "role": "locator",
+          "host": "archivalcollections.library.mcgill.ca"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-dc8c9662da984f10",
+      "locator": "https://archivesearch.library.universityofgalway.ie/index.php/informationobject/browse?collection=11742&showAdvanced=1&sort=identifier&sortDir=asc&topLod=0",
+      "host": "archivesearch.library.universityofgalway.ie",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/moller-hamburg-forwarding-register.json",
+          "layer": "sources",
+          "path": "receiving_side_archive_targets[0].locator",
+          "role": "archive_target",
+          "host": "archivesearch.library.universityofgalway.ie"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-29d4505d994e1dbb",
+      "locator": "https://archon.library.illinois.edu/ihlc/index.php?p=collections/controlcard&id=778",
+      "host": "archon.library.illinois.edu",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[20].locator",
+          "role": "locator",
+          "host": "archon.library.illinois.edu"
+        },
+        {
+          "file": "sources/mobile-intermediary-register.json",
+          "layer": "sources",
+          "path": "actors[0].personal_archive.locator",
+          "role": "archive_locator",
+          "host": "archon.library.illinois.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-f2257a720e2eab69",
+      "locator": "https://artsandculture.google.com/story/works-of-art-for-science-museum-fuer-naturkunde-berlin/MwVBFWmlRzwzPQ?hl=en",
+      "host": "artsandculture.google.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[3].sources[1]",
+          "role": "evidence_source",
+          "host": "artsandculture.google.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-aea3ba805b4fde33",
+      "locator": "https://atom.aim25.com/index.php/grindlays-and-company-accounting-and-financial",
+      "host": "atom.aim25.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/commercial-intermediary-register.json",
+          "layer": "sources",
+          "path": "routes[0].actors[1].archive.locator",
+          "role": "archive_locator",
+          "host": "atom.aim25.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-51faae3fa664c876",
+      "locator": "https://auctiondaily.com/news/george-loudon-exhibits-his-cabinet-of-curiosities-in-venice/",
+      "host": "auctiondaily.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[1].count_wording_guard.sources[1]",
+          "role": "evidence_source",
+          "host": "auctiondaily.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-b038ab93ae44c67c",
+      "locator": "https://australian.museum/about/history/stories/identifying-the-museums-blaschka-glass-models/",
+      "host": "australian.museum",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/reference-material-ecology-register.json",
+          "layer": "sources",
+          "path": "reference_modes[0].direct_or_institutional_evidence[1].locator",
+          "role": "evidence_source",
+          "host": "australian.museum"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a84d72cb37126b8b",
+      "locator": "https://australian.museum/about/history/stories/researching-the-blaschka-glass-models/",
+      "host": "australian.museum",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[6].locator",
+          "role": "locator",
+          "host": "australian.museum"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-fad49b4907c1ef38",
+      "locator": "https://bibliothek.univie.ac.at/sammlungen/objekt_des_monats/003866.html",
+      "host": "bibliothek.univie.ac.at",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/reference-material-ecology-register.json",
+          "layer": "sources",
+          "path": "reference_modes[3].direct_or_institutional_evidence[1].locator",
+          "role": "evidence_source",
+          "host": "bibliothek.univie.ac.at"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-d429ff4ec88ead24",
+      "locator": "https://bibliothek.univie.ac.at/sammlungen/objekt_des_monats/003878.html",
+      "host": "bibliothek.univie.ac.at",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source",
+        "official_locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/reference-material-ecology-register.json",
+          "layer": "sources",
+          "path": "reference_modes[2].direct_or_institutional_evidence[1].locator",
+          "role": "evidence_source",
+          "host": "bibliothek.univie.ac.at"
+        },
+        {
+          "file": "sources/trieste-reciprocal-exchange-register.json",
+          "layer": "sources",
+          "path": "primary_or_institutional_basis.official_locator",
+          "role": "official_locator",
+          "host": "bibliothek.univie.ac.at"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-19fdb0138b62103a",
+      "locator": "https://blog.cmog.org/2016/4747-models-174-collections-25-countries-and-counting",
+      "host": "blog.cmog.org",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source",
+        "future_retrieval"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "layer": "auctions",
+          "path": "priority_targets[7].web_source",
+          "role": "future_retrieval",
+          "host": "blog.cmog.org"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[0].sources[0].url",
+          "role": "evidence_source",
+          "host": "blog.cmog.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-6090a401a7170514",
+      "locator": "https://blog.cmog.org/2016/exploring-archives-sketchbooks-artists-mind-externalized",
+      "host": "blog.cmog.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/reference-material-ecology-register.json",
+          "layer": "sources",
+          "path": "reference_modes[0].direct_or_institutional_evidence[0].locator",
+          "role": "evidence_source",
+          "host": "blog.cmog.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a833aafad987ce29",
+      "locator": "https://blog.cmog.org/2016/modern-day-cabinet-curiosity",
+      "host": "blog.cmog.org",
+      "occurrence_count": 4,
+      "file_count": 3,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source",
+        "future_retrieval"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "layer": "auctions",
+          "path": "priority_targets[8].source_urls[1]",
+          "role": "future_retrieval",
+          "host": "blog.cmog.org"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[1].sources[1].url",
+          "role": "evidence_source",
+          "host": "blog.cmog.org"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[0].sources[3].url",
+          "role": "evidence_source",
+          "host": "blog.cmog.org"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "market_adjacent_leads[0].sources[0].url",
+          "role": "evidence_source",
+          "host": "blog.cmog.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-cb21c0dae0c1e7b9",
+      "locator": "https://blog.cmog.org/2017/secret-glass-sea-cucumbers",
+      "host": "blog.cmog.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/workshop-production-crosswalk-register.json",
+          "layer": "sources",
+          "path": "cases[0].locator",
+          "role": "locator",
+          "host": "blog.cmog.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-f3b8d5feec3d2479",
+      "locator": "https://blogs.ucl.ac.uk/museums/2013/08/01/grant-museum-objects-on-tour-lost-labels/",
+      "host": "blogs.ucl.ac.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/ucl-catalogue-card-index-router.json",
+          "layer": "auctions",
+          "path": "historical_information_loss_problem.source",
+          "role": "evidence_source",
+          "host": "blogs.ucl.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-984b398decc0a6a8",
+      "locator": "https://blogs.ucl.ac.uk/museums/2013/10/31/from-the-vollies-loose-ends-and-key-information/",
+      "host": "blogs.ucl.ac.uk",
+      "occurrence_count": 3,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/ucl-catalogue-card-index-router.json",
+          "layer": "auctions",
+          "path": "documentation_chronology[0].sources[1]",
+          "role": "evidence_source",
+          "host": "blogs.ucl.ac.uk"
+        },
+        {
+          "file": "auctions/ucl-catalogue-card-index-router.json",
+          "layer": "auctions",
+          "path": "documentation_chronology[1].source",
+          "role": "evidence_source",
+          "host": "blogs.ucl.ac.uk"
+        },
+        {
+          "file": "auctions/ucl-catalogue-card-index-router.json",
+          "layer": "auctions",
+          "path": "documentation_chronology[2].source",
+          "role": "evidence_source",
+          "host": "blogs.ucl.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-38fa36984ae0d071",
+      "locator": "https://blogs.ucl.ac.uk/museums/2016/11/11/specimen-of-the-week-265-termite-collection/",
+      "host": "blogs.ucl.ac.uk",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-sales-print-register.json",
+          "layer": "sources",
+          "path": "records[5].locator",
+          "role": "locator",
+          "host": "blogs.ucl.ac.uk"
+        },
+        {
+          "file": "sources/dealer-upstream-supply-register.json",
+          "layer": "sources",
+          "path": "records[3].locator",
+          "role": "locator",
+          "host": "blogs.ucl.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-3da18cdb7170e2df",
+      "locator": "https://cmog.primo.exlibrisgroup.com/permalink/01CORNING_INST/1m7c70c/alma991107413504126",
+      "host": "cmog.primo.exlibrisgroup.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/rakow-open-business-books-register.json",
+          "layer": "sources",
+          "path": "archive_root",
+          "role": "archive_locator",
+          "host": "cmog.primo.exlibrisgroup.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-fc80d97d2b72042f",
+      "locator": "https://cmog.primo.exlibrisgroup.com/permalink/01CORNING_INST/1m7c70c/alma99618813504126",
+      "host": "cmog.primo.exlibrisgroup.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "embedded_url"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/rakow-open-business-books-register.json",
+          "layer": "sources",
+          "path": "records[1].permalink",
+          "role": "embedded_url",
+          "host": "cmog.primo.exlibrisgroup.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-d01fc03af231993d",
+      "locator": "https://cmog.primo.exlibrisgroup.com/permalink/01CORNING_INST/1m7c70c/alma99873833504126",
+      "host": "cmog.primo.exlibrisgroup.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "embedded_url"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/rakow-open-business-books-register.json",
+          "layer": "sources",
+          "path": "records[0].permalink",
+          "role": "embedded_url",
+          "host": "cmog.primo.exlibrisgroup.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-ba0cdd5354bbb0ba",
+      "locator": "https://coleoptera.org.uk/node/23291",
+      "host": "coleoptera.org.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[0].sources[1].url",
+          "role": "evidence_source",
+          "host": "coleoptera.org.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-55d8b8f940a5c07f",
+      "locator": "https://collection.powerhouse.com.au/object/4065",
+      "host": "collection.powerhouse.com.au",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-epistemic-exchange-register.json",
+          "layer": "sources",
+          "path": "records[4].locator",
+          "role": "locator",
+          "host": "collection.powerhouse.com.au"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-53f650aa4472c36b",
+      "locator": "https://collection.sciencemuseumgroup.org.uk/documents/aa110135491",
+      "host": "collection.sciencemuseumgroup.org.uk",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "future_retrieval",
+        "official_locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "layer": "auctions",
+          "path": "priority_targets[3].official_url",
+          "role": "future_retrieval",
+          "host": "collection.sciencemuseumgroup.org.uk"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "layer": "auctions",
+          "path": "archive_route[3].official_url",
+          "role": "official_locator",
+          "host": "collection.sciencemuseumgroup.org.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-b0d3929976544d85",
+      "locator": "https://collection.sciencemuseumgroup.org.uk/documents/aa110149903",
+      "host": "collection.sciencemuseumgroup.org.uk",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "future_retrieval",
+        "official_locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "layer": "auctions",
+          "path": "priority_targets[2].publicly_verified_child.official_url",
+          "role": "future_retrieval",
+          "host": "collection.sciencemuseumgroup.org.uk"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "layer": "auctions",
+          "path": "archive_route[2].official_url",
+          "role": "official_locator",
+          "host": "collection.sciencemuseumgroup.org.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-3729304ca95c42c3",
+      "locator": "https://collections.st-andrews.ac.uk/item/correspondence-from-a-c-haddon-to-darcy-wentworth-thompson/2059287",
+      "host": "collections.st-andrews.ac.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dublin-shipping-failure-register.json",
+          "layer": "sources",
+          "path": "parallel_haddon_archive.locator",
+          "role": "archive_locator",
+          "host": "collections.st-andrews.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-1f68a17ea0f857d5",
+      "locator": "https://collections.tepapa.govt.nz/object/289103",
+      "host": "collections.tepapa.govt.nz",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-epistemic-exchange-register.json",
+          "layer": "sources",
+          "path": "records[2].locator",
+          "role": "locator",
+          "host": "collections.tepapa.govt.nz"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-0dfa7ecb34deee7e",
+      "locator": "https://collections.tepapa.govt.nz/object/293561",
+      "host": "collections.tepapa.govt.nz",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[4].locator",
+          "role": "locator",
+          "host": "collections.tepapa.govt.nz"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[17].locator",
+          "role": "locator",
+          "host": "collections.tepapa.govt.nz"
+        },
+        {
+          "file": "sources/dealer-epistemic-exchange-register.json",
+          "layer": "sources",
+          "path": "records[3].locators[1]",
+          "role": "locator",
+          "host": "collections.tepapa.govt.nz"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-797fd2cb57d64723",
+      "locator": "https://collections.ucl.ac.uk/home",
+      "host": "collections.ucl.ac.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/ucl-science-museum-transfer-candidate-audit.json",
+          "layer": "auctions",
+          "path": "collection_level_facts.sources[2]",
+          "role": "evidence_source",
+          "host": "collections.ucl.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-c951961209b40d51",
+      "locator": "https://commons.wikimedia.org/wiki/File:Generic_catalogue_of_recent_%26_fossil_shells_%28IA_genericcatalogue00wood%29.pdf",
+      "host": "commons.wikimedia.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-sales-print-register.json",
+          "layer": "sources",
+          "path": "records[3].locator",
+          "role": "locator",
+          "host": "commons.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-056c5cbec0457f5f",
+      "locator": "https://data.library.amnh.org/archives/",
+      "host": "data.library.amnh.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "layer": "sources",
+          "path": "records[5].locator",
+          "role": "locator",
+          "host": "data.library.amnh.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-299c64a5866de299",
+      "locator": "https://data.library.amnh.org/archives/agents/corporate_entities/3097",
+      "host": "data.library.amnh.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].later_business_context[0].locator",
+          "role": "locator",
+          "host": "data.library.amnh.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7a5e55f235d1d897",
+      "locator": "https://data.library.amnh.org/archives/repositories/3/archival_objects/6932",
+      "host": "data.library.amnh.org",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].later_business_context[1].locators[1]",
+          "role": "locator",
+          "host": "data.library.amnh.org"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[6].locator",
+          "role": "locator",
+          "host": "data.library.amnh.org"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "layer": "sources",
+          "path": "records[4].locator",
+          "role": "locator",
+          "host": "data.library.amnh.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-d3f013fe3eb24ec9",
+      "locator": "https://data.library.amnh.org/archives/repositories/3/archival_objects/6934",
+      "host": "data.library.amnh.org",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].later_business_context[1].locators[0]",
+          "role": "locator",
+          "host": "data.library.amnh.org"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[5].locator",
+          "role": "locator",
+          "host": "data.library.amnh.org"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "layer": "sources",
+          "path": "records[3].locator",
+          "role": "locator",
+          "host": "data.library.amnh.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-9a51271167327eb7",
+      "locator": "https://digital.library.cornell.edu/catalog/ss%3A20107896",
+      "host": "digital.library.cornell.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/krefeld-hydractinia-156-crosswalk.json",
+          "layer": "auctions",
+          "path": "blaschka_catalogue_resolution.source.url",
+          "role": "evidence_source",
+          "host": "digital.library.cornell.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-8d1c1fb0add140e9",
+      "locator": "https://digital.library.cornell.edu/catalog/ss%3A20108063",
+      "host": "digital.library.cornell.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "access_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/science-museum-register-neighborhoods.json",
+          "layer": "auctions",
+          "path": "model_330_market_crosslink.cornell_model_design.source_url",
+          "role": "access_locator",
+          "host": "digital.library.cornell.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-92d808e3d1c269ce",
+      "locator": "https://digitallibrary.vassar.edu/sites/default/files/2025-01/Guide%20to%20the%20Vassar%20College%20Natural%20History%20Museum%20Records%2C%201866-1969%20%28bulk%201906-1944%29.pdf",
+      "host": "digitallibrary.vassar.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[3].locator",
+          "role": "locator",
+          "host": "digitallibrary.vassar.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-18afab95672f09da",
+      "locator": "https://doi.org/10.32912/ram.2019.54.2",
+      "host": "doi.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[5].locator",
+          "role": "locator",
+          "host": "doi.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a548aacfb9f49a4d",
+      "locator": "https://emmareynard.com/blog/2019/2/11/blaschka-model-sells-at-christies",
+      "host": "emmareynard.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[4].sources[1].url",
+          "role": "evidence_source",
+          "host": "emmareynard.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-d0bf1d12dc565f31",
+      "locator": "https://en.wikisource.org/wiki/Popular_Science_Monthly/Volume_16/March_1880/Ward%27s_Natural_Science_Establishment",
+      "host": "en.wikisource.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-epistemic-exchange-register.json",
+          "layer": "sources",
+          "path": "records[0].locator",
+          "role": "locator",
+          "host": "en.wikisource.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-28a3a8a7ed5f9187",
+      "locator": "https://findingaids.library.upenn.edu/records/ANSP_ANSP.COLL.0081",
+      "host": "findingaids.library.upenn.edu",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-correspondence-reservoir-register.json",
+          "layer": "sources",
+          "path": "records[1].locator",
+          "role": "locator",
+          "host": "findingaids.library.upenn.edu"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "layer": "sources",
+          "path": "records[0].locator",
+          "role": "locator",
+          "host": "findingaids.library.upenn.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-17c45267ed7f4cb8",
+      "locator": "https://findingaids.loc.gov/repositories/19/resources/5431",
+      "host": "findingaids.loc.gov",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-upstream-supply-register.json",
+          "layer": "sources",
+          "path": "records[0].locators[0]",
+          "role": "locator",
+          "host": "findingaids.loc.gov"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-af91b2c7c1e021f5",
+      "locator": "https://fineart.cheffins.co.uk/auction/lot/lot-621---three-19th-century-glass-models-of-jelly-fish-possibly-by-rudolf-blaschka-1857-1939/?lot=135088&sd=1",
+      "host": "fineart.cheffins.co.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[3].sources[0].url",
+          "role": "evidence_source",
+          "host": "fineart.cheffins.co.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-85999308ac6ced9f",
+      "locator": "https://glasscollection.cmog.org/objects/25057/component",
+      "host": "glasscollection.cmog.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/workshop-production-modularity-register.json",
+          "layer": "sources",
+          "path": "direct_object_evidence[0].locator",
+          "role": "evidence_source",
+          "host": "glasscollection.cmog.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-afc3ac0d8d91dea4",
+      "locator": "https://glasscollection.cmog.org/objects/25058/component",
+      "host": "glasscollection.cmog.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/workshop-production-modularity-register.json",
+          "layer": "sources",
+          "path": "direct_object_evidence[1].locator",
+          "role": "evidence_source",
+          "host": "glasscollection.cmog.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-b8a61622e0df63ac",
+      "locator": "https://glasscollection.cmog.org/objects/42007/model",
+      "host": "glasscollection.cmog.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/workshop-production-modularity-register.json",
+          "layer": "sources",
+          "path": "direct_object_evidence[2].locator",
+          "role": "evidence_source",
+          "host": "glasscollection.cmog.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e7ab9ad490723f11",
+      "locator": "https://history.aip.org/history/catalog/icos/2336.html",
+      "host": "history.aip.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/transaction-gap-register.json",
+          "layer": "sources",
+          "path": "records[0].catalogue_crosscheck.locator",
+          "role": "locator",
+          "host": "history.aip.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-af878d548611643c",
+      "locator": "https://hollisarchives.lib.harvard.edu/catalog/ecb00006",
+      "host": "hollisarchives.lib.harvard.edu",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[0].locator",
+          "role": "locator",
+          "host": "hollisarchives.lib.harvard.edu"
+        },
+        {
+          "file": "sources/harvard-digital-archive-register.json",
+          "layer": "sources",
+          "path": "current_catalogue_snapshot.catalogue_locator",
+          "role": "locator",
+          "host": "hollisarchives.lib.harvard.edu"
+        },
+        {
+          "file": "sources/harvard-receiving-skill-register.json",
+          "layer": "sources",
+          "path": "harvard_archive.locator",
+          "role": "archive_locator",
+          "host": "hollisarchives.lib.harvard.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-81b0b7026471708c",
+      "locator": "https://hollisarchives.lib.harvard.edu/catalog/ecb00011",
+      "host": "hollisarchives.lib.harvard.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/harvard-receiving-skill-register.json",
+          "layer": "sources",
+          "path": "related_institutional_archive.locator",
+          "role": "archive_locator",
+          "host": "hollisarchives.lib.harvard.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-597541b0a7f01544",
+      "locator": "https://isleofwightglassmuseum.wikidot.com/auction",
+      "host": "isleofwightglassmuseum.wikidot.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "embedded_url"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-catalogue-family-worklist.json",
+          "layer": "auctions",
+          "path": "sources[1]",
+          "role": "embedded_url",
+          "host": "isleofwightglassmuseum.wikidot.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-c92ca273ebfbb785",
+      "locator": "https://jamesdjulia.com/item/lot-480a-rare-and-important-blown-glass-marine-leach-by-leopold-and-rudolph-blashka-25713/",
+      "host": "jamesdjulia.com",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "access_locator",
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[0].sources[0].url",
+          "role": "evidence_source",
+          "host": "jamesdjulia.com"
+        },
+        {
+          "file": "auctions/science-museum-register-neighborhoods.json",
+          "layer": "auctions",
+          "path": "model_330_market_crosslink.james_d_julia_2005_market_record.source_url",
+          "role": "access_locator",
+          "host": "jamesdjulia.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-6947e4f9e11447e0",
+      "locator": "https://jamesdjulia.com/item/lot-561-rare-and-important-blown-glass-marine-leach-by-leopold-and-rudolph-blashka-27163/",
+      "host": "jamesdjulia.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[1].sources[0].url",
+          "role": "evidence_source",
+          "host": "jamesdjulia.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e5d9aab3d811be4f",
+      "locator": "https://muarchives.missouri.edu/uw-rg1-s1-4.html",
+      "host": "muarchives.missouri.edu",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-correspondence-reservoir-register.json",
+          "layer": "sources",
+          "path": "records[2].locator",
+          "role": "locator",
+          "host": "muarchives.missouri.edu"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "layer": "sources",
+          "path": "records[1].locator",
+          "role": "locator",
+          "host": "muarchives.missouri.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-40ff7141904c5638",
+      "locator": "https://museum.wales/blog/1308/Spectacular-glass-sea-creatures-of-the-deep/",
+      "host": "museum.wales",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "institutional_context_only[0].sources[1]",
+          "role": "evidence_source",
+          "host": "museum.wales"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "layer": "auctions",
+          "path": "publicly_identified_recipients_in_this_audit[1].urls[0]",
+          "role": "locator",
+          "host": "museum.wales"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-bfb2e1e97ada9ac9",
+      "locator": "https://natlib.govt.nz/records/22356344",
+      "host": "natlib.govt.nz",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].receiving_side_and_distributed_witnesses[2].locator",
+          "role": "locator",
+          "host": "natlib.govt.nz"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-cdf8b67173be8e45",
+      "locator": "https://natlib.govt.nz/records/23093415",
+      "host": "natlib.govt.nz",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[11].locator",
+          "role": "locator",
+          "host": "natlib.govt.nz"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a024131608dc91cf",
+      "locator": "https://natsca.blog/2025/03/27/packing-the-blaschka-glass-models/",
+      "host": "natsca.blog",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "layer": "auctions",
+          "path": "publicly_identified_recipients_in_this_audit[1].urls[1]",
+          "role": "locator",
+          "host": "natsca.blog"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-fdd0c6eea2cfdb91",
+      "locator": "https://new.darwinmuseum.ru/foundation/xmlui/discover?filter_0=%D0%9E%D0%A4-12497&filtertype_0=Fond",
+      "host": "new.darwinmuseum.ru",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-correspondence-reservoir-register.json",
+          "layer": "sources",
+          "path": "records[4].locator",
+          "role": "locator",
+          "host": "new.darwinmuseum.ru"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-c009b522e325de5c",
+      "locator": "https://nrs.harvard.edu/urn-3:FMUS.WARE:22853820?n=59",
+      "host": "nrs.harvard.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "stable_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/harvard-digital-archive-register.json",
+          "layer": "sources",
+          "path": "direct_digital_examples[0].stable_locator",
+          "role": "stable_locator",
+          "host": "nrs.harvard.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7b6dbd65ab0e758b",
+      "locator": "https://olteniastudiisicomunicaristiintelenaturii.ro/v34_2.html",
+      "host": "olteniastudiisicomunicaristiintelenaturii.ro",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-longtail-document-register.json",
+          "layer": "sources",
+          "path": "records[3].locator",
+          "role": "locator",
+          "host": "olteniastudiisicomunicaristiintelenaturii.ro"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-f113d0afa1f7093d",
+      "locator": "https://opac.museogalileo.it/",
+      "host": "opac.museogalileo.it",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-library-holdings-router.json",
+          "layer": "auctions",
+          "path": "repositories[1].opac_url",
+          "role": "locator",
+          "host": "opac.museogalileo.it"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e84a7a2a7eed2ded",
+      "locator": "https://openlibrary.org/works/OL43709635W/Third_floor",
+      "host": "openlibrary.org",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[0].evidence[2].url",
+          "role": "evidence_source",
+          "host": "openlibrary.org"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[0].sources[2].url",
+          "role": "evidence_source",
+          "host": "openlibrary.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-cdbe7531d37b0d3e",
+      "locator": "https://press.christies.com/press-release-peter-petrou-tales-of-the-unexpected-nbsplondon-30-january/",
+      "host": "press.christies.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[1].evidence[0].url",
+          "role": "evidence_source",
+          "host": "press.christies.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-037390d30e3c0a27",
+      "locator": "https://press.cmog.org/2016/blaschka-glass-marine-creatures-exhibition-opens-may-2016",
+      "host": "press.cmog.org",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/reference-material-ecology-register.json",
+          "layer": "sources",
+          "path": "reference_modes[1].direct_or_institutional_evidence[1].locator",
+          "role": "evidence_source",
+          "host": "press.cmog.org"
+        },
+        {
+          "file": "sources/reference-material-ecology-register.json",
+          "layer": "sources",
+          "path": "reference_modes[3].direct_or_institutional_evidence[0].locator",
+          "role": "evidence_source",
+          "host": "press.cmog.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-8b7968c385230def",
+      "locator": "https://public.uclaclark.aspace.cdlib.org/repositories/3/archival_objects/94030",
+      "host": "public.uclaclark.aspace.cdlib.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "embedded_url"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-library-holdings-router.json",
+          "layer": "auctions",
+          "path": "repositories[0].high_priority_confirmed_items[0].persistent_record",
+          "role": "embedded_url",
+          "host": "public.uclaclark.aspace.cdlib.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e146f5a253ead5a8",
+      "locator": "https://publikace.nm.cz/periodicke-publikace/anrhmah/182-1-2/archiv-narodniho-muzea-predstavuje-osobni-fondy-antonina-frice-a-bohuslava-jiruse1",
+      "host": "publikace.nm.cz",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[13].locator",
+          "role": "locator",
+          "host": "publikace.nm.cz"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-44f9754d6bf517f7",
+      "locator": "https://publikace.nm.cz/periodicke-publikace/journal-of-the-national-museum-prague-natural-history-series/191-1/obchod-s-prirodninami-v-fric-a-jeho-prinos-mineralogicke-sbirce-narodniho-muzea-praha",
+      "host": "publikace.nm.cz",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-upstream-supply-register.json",
+          "layer": "sources",
+          "path": "records[4].locator",
+          "role": "locator",
+          "host": "publikace.nm.cz"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e64ebe3842d8fb5d",
+      "locator": "https://revue-colligo.fr/index.php?id=95&view=article",
+      "host": "revue-colligo.fr",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-correspondence-reservoir-register.json",
+          "layer": "sources",
+          "path": "records[0].locator",
+          "role": "locator",
+          "host": "revue-colligo.fr"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7dbf392470adf87d",
+      "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA00025.html",
+      "host": "rmc.library.cornell.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/cornell-ward-retrieval-register.json",
+          "layer": "sources",
+          "path": "records[0].locators[0]",
+          "role": "locator",
+          "host": "rmc.library.cornell.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7a95327d88a22f1a",
+      "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA02587.html",
+      "host": "rmc.library.cornell.edu",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/cornell-ward-retrieval-register.json",
+          "layer": "sources",
+          "path": "records[2].locator",
+          "role": "locator",
+          "host": "rmc.library.cornell.edu"
+        },
+        {
+          "file": "sources/cornell-ward-retrieval-register.json",
+          "layer": "sources",
+          "path": "records[3].locator",
+          "role": "locator",
+          "host": "rmc.library.cornell.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-791d1e6008197de6",
+      "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA03601.html",
+      "host": "rmc.library.cornell.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/cornell-ward-retrieval-register.json",
+          "layer": "sources",
+          "path": "records[4].locator",
+          "role": "locator",
+          "host": "rmc.library.cornell.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-5485128ff497e9e6",
+      "locator": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA04088.html",
+      "host": "rmc.library.cornell.edu",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/cornell-ward-retrieval-register.json",
+          "layer": "sources",
+          "path": "records[1].locator",
+          "role": "locator",
+          "host": "rmc.library.cornell.edu"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[10].locator",
+          "role": "locator",
+          "host": "rmc.library.cornell.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e017b88f0ec37caa",
+      "locator": "https://searcharchives.bl.uk/catalog/040-002003171",
+      "host": "searcharchives.bl.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-longtail-document-register.json",
+          "layer": "sources",
+          "path": "records[2].locator",
+          "role": "locator",
+          "host": "searcharchives.bl.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-ffe92394115bc310",
+      "locator": "https://siarchives.si.edu/collections/siris_arc_216677",
+      "host": "siarchives.si.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[4].locator",
+          "role": "locator",
+          "host": "siarchives.si.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-915a8706e832a882",
+      "locator": "https://siarchives.si.edu/collections/siris_arc_216680",
+      "host": "siarchives.si.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[3].locator",
+          "role": "locator",
+          "host": "siarchives.si.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-25886fc2d92e665c",
+      "locator": "https://siarchives.si.edu/collections/siris_arc_216765",
+      "host": "siarchives.si.edu",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].receiving_side_and_distributed_witnesses[0].locator",
+          "role": "locator",
+          "host": "siarchives.si.edu"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[2].locator",
+          "role": "locator",
+          "host": "siarchives.si.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a12ca42691980fa1",
+      "locator": "https://siarchives.si.edu/collections/siris_arc_216776",
+      "host": "siarchives.si.edu",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].receiving_side_and_distributed_witnesses[1].locator",
+          "role": "locator",
+          "host": "siarchives.si.edu"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "layer": "sources",
+          "path": "records[2].locator",
+          "role": "locator",
+          "host": "siarchives.si.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-588aba8968ca4443",
+      "locator": "https://siarchives.si.edu/collections/siris_arc_217253",
+      "host": "siarchives.si.edu",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-longtail-document-register.json",
+          "layer": "sources",
+          "path": "records[0].locator",
+          "role": "locator",
+          "host": "siarchives.si.edu"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[21].locator",
+          "role": "locator",
+          "host": "siarchives.si.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-294c105aa707d6a0",
+      "locator": "https://simurg.csic.es/browse/collection/1176699",
+      "host": "simurg.csic.es",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-longtail-document-register.json",
+          "layer": "sources",
+          "path": "records[1].locator",
+          "role": "locator",
+          "host": "simurg.csic.es"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[22].locator",
+          "role": "locator",
+          "host": "simurg.csic.es"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-d6609fe264db6386",
+      "locator": "https://simurg.csic.es/view/CSICAR000061499/carta-de-vaclav-fric-a-ignacio-bolivar-sobre-oferta-de-compra-de-insectos",
+      "host": "simurg.csic.es",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[3].locator",
+          "role": "locator",
+          "host": "simurg.csic.es"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[20].locator",
+          "role": "locator",
+          "host": "simurg.csic.es"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-8e632202023ea0e4",
+      "locator": "https://sova.si.edu/record/nmah.ac.0060.s01.01.steamboats/ref835",
+      "host": "sova.si.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/ware-transatlantic-logistics-register.json",
+          "layer": "sources",
+          "path": "external_archive_targets[2].locator",
+          "role": "archive_target",
+          "host": "sova.si.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-8ee2a8efe1fd1f6b",
+      "locator": "https://szn.it/en/research/marine-animal-conservation-and-public-engagement/functional-areas-cape/darwin-dohrn-museum-dadom-historical-archives/historical-archives",
+      "host": "szn.it",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[16].locator",
+          "role": "locator",
+          "host": "szn.it"
+        },
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[0].archive.locators[0]",
+          "role": "archive_locator",
+          "host": "szn.it"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-5ac3597127f96060",
+      "locator": "https://szn.it/en/who-we-are/our-history",
+      "host": "szn.it",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[0].institutional_supply_capacity.locators[0]",
+          "role": "locator",
+          "host": "szn.it"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-45b3b658965dd538",
+      "locator": "https://tarc.tufts.edu/about/news/blaschka-beach-vacation",
+      "host": "tarc.tufts.edu",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[4].locator",
+          "role": "locator",
+          "host": "tarc.tufts.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-4aa1de105a87ca0d",
+      "locator": "https://wardproject.org/",
+      "host": "wardproject.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].core_archive.locators[2]",
+          "role": "archive_locator",
+          "host": "wardproject.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-076e9fa6e9644313",
+      "locator": "https://website-archiv.museumfuernaturkunde.berlin/sites/default/files/221010_Inventarliste_OS001-02_Blaschka.pdf",
+      "host": "website-archiv.museumfuernaturkunde.berlin",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "access_locator",
+        "embedded_url"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[3].inventory_url",
+          "role": "access_locator",
+          "host": "website-archiv.museumfuernaturkunde.berlin"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "museum_fuer_naturkunde_branch.inventory_pdf",
+          "role": "embedded_url",
+          "host": "website-archiv.museumfuernaturkunde.berlin"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-2df0703acd700b4a",
+      "locator": "https://whatson.cmog.org/exhibitions-galleries/blaschka-sea-creatures-inspiration-and-creation",
+      "host": "whatson.cmog.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[1].locator",
+          "role": "locator",
+          "host": "whatson.cmog.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-ef7d55c7ccff1d93",
+      "locator": "https://www.archiv.sachsen.de/archiv/bestand.jsp?bestandid=11168&oid=02.03.07.01&syg_id=142800",
+      "host": "www.archiv.sachsen.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/customs-regulation-register.json",
+          "layer": "sources",
+          "path": "cases[0].archive_targets[2].locator",
+          "role": "archive_target",
+          "host": "www.archiv.sachsen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-9939ceda245e12ab",
+      "locator": "https://www.archiv.sachsen.de/archiv/bestand.jsp?bestandid=11177&oid=02.04.01.01&syg_id=139233",
+      "host": "www.archiv.sachsen.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/customs-regulation-register.json",
+          "layer": "sources",
+          "path": "cases[0].archive_targets[0].locator",
+          "role": "archive_target",
+          "host": "www.archiv.sachsen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-8ff42ad304598012",
+      "locator": "https://www.archiv.sachsen.de/archiv/bestand.jsp?oid=02.04.01.03",
+      "host": "www.archiv.sachsen.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/customs-regulation-register.json",
+          "layer": "sources",
+          "path": "cases[0].archive_targets[1].locator",
+          "role": "archive_target",
+          "host": "www.archiv.sachsen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-9b5aee8e50899223",
+      "locator": "https://www.archives.gov/boston/finding-aids/maritime.html",
+      "host": "www.archives.gov",
+      "occurrence_count": 3,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/customs-regulation-register.json",
+          "layer": "sources",
+          "path": "cases[1].archive_target.locator",
+          "role": "archive_target",
+          "host": "www.archives.gov"
+        },
+        {
+          "file": "sources/customs-regulation-register.json",
+          "layer": "sources",
+          "path": "cases[3].archive_targets[1].locator",
+          "role": "archive_target",
+          "host": "www.archives.gov"
+        },
+        {
+          "file": "sources/ware-transatlantic-logistics-register.json",
+          "layer": "sources",
+          "path": "external_archive_targets[1].locator",
+          "role": "archive_target",
+          "host": "www.archives.gov"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-17fd92868100299c",
+      "locator": "https://www.archives.gov/research/foreign-policy/state-dept/rg-84",
+      "host": "www.archives.gov",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/consular-documentation-register.json",
+          "layer": "sources",
+          "path": "government_archive_target.locators[0]",
+          "role": "archive_target",
+          "host": "www.archives.gov"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-843a5f28b9d48199",
+      "locator": "https://www.archives.gov/research/foreign-policy/state-dept/rg-84/finding-aids",
+      "host": "www.archives.gov",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/consular-documentation-register.json",
+          "layer": "sources",
+          "path": "government_archive_target.locators[2]",
+          "role": "archive_target",
+          "host": "www.archives.gov"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-8e081a9fde583d77",
+      "locator": "https://www.archives.gov/research/foreign-policy/state-dept/rg-84/records.html",
+      "host": "www.archives.gov",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/consular-documentation-register.json",
+          "layer": "sources",
+          "path": "government_archive_target.locators[1]",
+          "role": "archive_target",
+          "host": "www.archives.gov"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e8397224aee4374d",
+      "locator": "https://www.archives.gov/research/guide-fed-records/groups/007.html",
+      "host": "www.archives.gov",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/customs-regulation-register.json",
+          "layer": "sources",
+          "path": "cases[3].archive_targets[0].locator",
+          "role": "archive_target",
+          "host": "www.archives.gov"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-21514f26ce2bb94d",
+      "locator": "https://www.archives.gov/research/guide-fed-records/groups/036.html",
+      "host": "www.archives.gov",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/customs-regulation-register.json",
+          "layer": "sources",
+          "path": "cases[2].archive_target.locator",
+          "role": "archive_target",
+          "host": "www.archives.gov"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-26ebb0fb8aac4deb",
+      "locator": "https://www.archividellascienza.org/en/archivio/IT-MUST-GUI001-001511",
+      "host": "www.archividellascienza.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[0].archive.locators[2]",
+          "role": "archive_locator",
+          "host": "www.archividellascienza.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-915600c3f5c65e4d",
+      "locator": "https://www.archividellascienza.org/en/archivio/IT-MUST-GUI001-002072",
+      "host": "www.archividellascienza.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/commercial-intermediary-register.json",
+          "layer": "sources",
+          "path": "routes[0].actors[0].archive.locator",
+          "role": "archive_locator",
+          "host": "www.archividellascienza.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-6b630df426e44e97",
+      "locator": "https://www.archividellascienza.org/en/archivio/IT-MUST-GUI001-002183",
+      "host": "www.archividellascienza.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[0].archive.locators[1]",
+          "role": "archive_locator",
+          "host": "www.archividellascienza.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-0aeec86569c7af12",
+      "locator": "https://www.archividellascienza.org/en/storia/item/turillo-e-altri.html",
+      "host": "www.archividellascienza.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[0].direct_blaschka_evidence[2].locator",
+          "role": "evidence_source",
+          "host": "www.archividellascienza.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-23fbf31e28642c54",
+      "locator": "https://www.archivinformationssystem.at/archivplansuche.aspx?ID=1324310",
+      "host": "www.archivinformationssystem.at",
+      "occurrence_count": 4,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[17].locator",
+          "role": "locator",
+          "host": "www.archivinformationssystem.at"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[18].locator",
+          "role": "locator",
+          "host": "www.archivinformationssystem.at"
+        },
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[1].administrative_archive.locator",
+          "role": "archive_locator",
+          "host": "www.archivinformationssystem.at"
+        },
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[2].locator",
+          "role": "locator",
+          "host": "www.archivinformationssystem.at"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-c3cbaa8d4528962c",
+      "locator": "https://www.archivinformationssystem.at/archivplansuche.aspx?ID=4421337",
+      "host": "www.archivinformationssystem.at",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[1].independent_supply_comparator.locator",
+          "role": "locator",
+          "host": "www.archivinformationssystem.at"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7a80ba22de692060",
+      "locator": "https://www.arcinsys.niedersachsen.de/arcinsys/detailAction.action?detailid=b17014",
+      "host": "www.arcinsys.niedersachsen.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/ware-transatlantic-logistics-register.json",
+          "layer": "sources",
+          "path": "external_archive_targets[0].locator",
+          "role": "archive_target",
+          "host": "www.arcinsys.niedersachsen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-4488951d20d153f9",
+      "locator": "https://www.arcinsys.niedersachsen.de/arcinsys/list.action?nodeid=g312285&page=1",
+      "host": "www.arcinsys.niedersachsen.de",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[1].locator",
+          "role": "locator",
+          "host": "www.arcinsys.niedersachsen.de"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "layer": "sources",
+          "path": "archive_clusters[1].locator",
+          "role": "archive_locator",
+          "host": "www.arcinsys.niedersachsen.de"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[18].locator",
+          "role": "locator",
+          "host": "www.arcinsys.niedersachsen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-6510ae322ddb6f6e",
+      "locator": "https://www.biodiversitylibrary.org/",
+      "host": "www.biodiversitylibrary.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-sales-print-register.json",
+          "layer": "sources",
+          "path": "records[4].locator",
+          "role": "locator",
+          "host": "www.biodiversitylibrary.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-06336c0390e03c51",
+      "locator": "https://www.biodiversitylibrary.org/bibliography/83900",
+      "host": "www.biodiversitylibrary.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/digitized-correspondence-register.json",
+          "layer": "sources",
+          "path": "corpora[0].locators[2]",
+          "role": "locator",
+          "host": "www.biodiversitylibrary.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-9e6c22cb7d904c84",
+      "locator": "https://www.biodiversitylibrary.org/creator/128193",
+      "host": "www.biodiversitylibrary.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/digitized-correspondence-register.json",
+          "layer": "sources",
+          "path": "corpora[0].locators[1]",
+          "role": "locator",
+          "host": "www.biodiversitylibrary.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-c47365d8a4ffb6fe",
+      "locator": "https://www.biodiversitylibrary.org/item/158899",
+      "host": "www.biodiversitylibrary.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/digitized-correspondence-register.json",
+          "layer": "sources",
+          "path": "corpora[0].locators[0]",
+          "role": "locator",
+          "host": "www.biodiversitylibrary.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-49c34762c122e58c",
+      "locator": "https://www.biodiversitylibrary.org/item/212981",
+      "host": "www.biodiversitylibrary.org",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "layer": "sources",
+          "path": "transaction_process_comparators[1].locator",
+          "role": "locator",
+          "host": "www.biodiversitylibrary.org"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[1].locator",
+          "role": "locator",
+          "host": "www.biodiversitylibrary.org"
+        },
+        {
+          "file": "sources/dealer-sales-print-register.json",
+          "layer": "sources",
+          "path": "records[2].locator",
+          "role": "locator",
+          "host": "www.biodiversitylibrary.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e230927193488697",
+      "locator": "https://www.britishnewspaperarchive.co.uk/viewer/bl/0002446/18710318/072/0013",
+      "host": "www.britishnewspaperarchive.co.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-newspaper-audit.json",
+          "layer": "auctions",
+          "path": "institutional_exclusions_recovered_by_BNA[1].viewer_url",
+          "role": "locator",
+          "host": "www.britishnewspaperarchive.co.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7e5793b6575b0552",
+      "locator": "https://www.bundesarchiv.de/",
+      "host": "www.bundesarchiv.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/payment-regulation-register.json",
+          "layer": "sources",
+          "path": "institutional_archive_context[1].locator",
+          "role": "archive_locator",
+          "host": "www.bundesarchiv.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-0bc7e7570dba602e",
+      "locator": "https://www.bundesarchiv.de/im-archiv-recherchieren/archivgut-recherchieren/nach-themen/arisierung-und-sonstige-formen-des-entzugs-juedischen-vermoegens-im-nationalsozialismus/",
+      "host": "www.bundesarchiv.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/payment-regulation-register.json",
+          "layer": "sources",
+          "path": "cases[3].archive_targets[0].locator",
+          "role": "archive_target",
+          "host": "www.bundesarchiv.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-4c643567ddcb9840",
+      "locator": "https://www.christies.com/en/lot/lot-4471290",
+      "host": "www.christies.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/christies-scientific-lot-archive-audit.json",
+          "layer": "auctions",
+          "path": "indexed_archive_findings[2].lot_page_url",
+          "role": "archive_locator",
+          "host": "www.christies.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-10a2b64d04350e75",
+      "locator": "https://www.christies.com/en/lot/lot-4685200",
+      "host": "www.christies.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/christies-scientific-lot-archive-audit.json",
+          "layer": "auctions",
+          "path": "indexed_archive_findings[3].url",
+          "role": "archive_locator",
+          "host": "www.christies.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-75858467f9db46eb",
+      "locator": "https://www.christies.com/en/lot/lot-6188456",
+      "host": "www.christies.com",
+      "occurrence_count": 6,
+      "file_count": 6,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "access_locator",
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[1].evidence[1].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[4].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[2].sources[3].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[3].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "layer": "auctions",
+          "path": "private_market_counterexamples_from_same_deaccession[2].source",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/science-museum-register-neighborhoods.json",
+          "layer": "auctions",
+          "path": "high_value_split_pairs[1].records[1].source_url",
+          "role": "access_locator",
+          "host": "www.christies.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-b418c3cc3479522e",
+      "locator": "https://www.christies.com/en/lot/lot-6188457",
+      "host": "www.christies.com",
+      "occurrence_count": 5,
+      "file_count": 5,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "access_locator",
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[1].evidence[2].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[5].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[2].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "layer": "auctions",
+          "path": "private_market_counterexamples_from_same_deaccession[0].source",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/science-museum-register-neighborhoods.json",
+          "layer": "auctions",
+          "path": "high_value_split_pairs[0].records[0].source_url",
+          "role": "access_locator",
+          "host": "www.christies.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-f338e60a4092659b",
+      "locator": "https://www.christies.com/lot/lot-1397494",
+      "host": "www.christies.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/christies-scientific-lot-archive-audit.json",
+          "layer": "auctions",
+          "path": "indexed_archive_findings[1].url",
+          "role": "archive_locator",
+          "host": "www.christies.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e5b455f0d031618e",
+      "locator": "https://www.christies.com/lot/lot-6188458",
+      "host": "www.christies.com",
+      "occurrence_count": 5,
+      "file_count": 5,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "access_locator",
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[1].evidence[3].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[6].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[2].sources[2].url",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "layer": "auctions",
+          "path": "private_market_counterexamples_from_same_deaccession[1].source",
+          "role": "evidence_source",
+          "host": "www.christies.com"
+        },
+        {
+          "file": "auctions/science-museum-register-neighborhoods.json",
+          "layer": "auctions",
+          "path": "same_neighborhood_market_anchor.source_url",
+          "role": "access_locator",
+          "host": "www.christies.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a28cfc294f8042b5",
+      "locator": "https://www.commerzbank.de/group/who-we-are/history/overview-archive-assets.html",
+      "host": "www.commerzbank.de",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/payment-regulation-register.json",
+          "layer": "sources",
+          "path": "cases[2].candidate_archive.locator",
+          "role": "archive_locator",
+          "host": "www.commerzbank.de"
+        },
+        {
+          "file": "sources/payment-regulation-register.json",
+          "layer": "sources",
+          "path": "institutional_archive_context[0].locator",
+          "role": "archive_locator",
+          "host": "www.commerzbank.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-ee39488af2bddeaa",
+      "locator": "https://www.commerzbank.de/konzern/wer-wir-sind/geschichte/uebersicht-archivbestaende.html",
+      "host": "www.commerzbank.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/commercial-intermediary-register.json",
+          "layer": "sources",
+          "path": "routes[0].actors[2].archive_lead.locator",
+          "role": "archive_locator",
+          "host": "www.commerzbank.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-ae8acee16c5ba9e9",
+      "locator": "https://www.darwinmuseum.ru/foundation/xmlui/discover?filter_0=%D0%9E%D0%A4-12497&filtertype_0=Fond",
+      "host": "www.darwinmuseum.ru",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-correspondence-reservoir-register.json",
+          "layer": "sources",
+          "path": "records[3].locator",
+          "role": "locator",
+          "host": "www.darwinmuseum.ru"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a737f7f22a52b04e",
+      "locator": "https://www.dundee.ac.uk/archives/university-collection",
+      "host": "www.dundee.ac.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[7].locator",
+          "role": "locator",
+          "host": "www.dundee.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-fa43d329bccd7720",
+      "locator": "https://www.easyliveauction.com/catalogue/04f16fb842974e50a8d3d49bfb88be6e/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables/",
+      "host": "www.easyliveauction.com",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "embedded_url",
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-false-positive-wimbledon-2023.json",
+          "layer": "auctions",
+          "path": "sale.platform_sale_page",
+          "role": "embedded_url",
+          "host": "www.easyliveauction.com"
+        },
+        {
+          "file": "auctions/auction-false-positive-wimbledon-2023.json",
+          "layer": "auctions",
+          "path": "sources[0].url",
+          "role": "locator",
+          "host": "www.easyliveauction.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-28c5dcf706251cd3",
+      "locator": "https://www.easyliveauction.com/catalogue/lot/1233755ba934442143fd175ea976ba4b/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables-lot-34/",
+      "host": "www.easyliveauction.com",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-false-positive-wimbledon-2023.json",
+          "layer": "auctions",
+          "path": "lots[1].platform_lot_url",
+          "role": "locator",
+          "host": "www.easyliveauction.com"
+        },
+        {
+          "file": "auctions/auction-false-positive-wimbledon-2023.json",
+          "layer": "auctions",
+          "path": "sources[1].url",
+          "role": "locator",
+          "host": "www.easyliveauction.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-52c1ee37fa85d0c0",
+      "locator": "https://www.easyliveauction.com/catalogue/lot/f4f0d2e888de675e24630aa765e138bc/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables-lot-37/",
+      "host": "www.easyliveauction.com",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-false-positive-wimbledon-2023.json",
+          "layer": "auctions",
+          "path": "lots[4].platform_lot_url",
+          "role": "locator",
+          "host": "www.easyliveauction.com"
+        },
+        {
+          "file": "auctions/auction-false-positive-wimbledon-2023.json",
+          "layer": "auctions",
+          "path": "sources[3].url",
+          "role": "locator",
+          "host": "www.easyliveauction.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-1bed1dbc5a8ff93f",
+      "locator": "https://www.easyliveauction.com/catalogue/lot/f540c1d0326543b62faaa40e62fce66d/0af8d24542e81eb9357e7ef448a6646f/antiques-and-collectables-lot-35/",
+      "host": "www.easyliveauction.com",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-false-positive-wimbledon-2023.json",
+          "layer": "auctions",
+          "path": "lots[2].platform_lot_url",
+          "role": "locator",
+          "host": "www.easyliveauction.com"
+        },
+        {
+          "file": "auctions/auction-false-positive-wimbledon-2023.json",
+          "layer": "auctions",
+          "path": "sources[2].url",
+          "role": "locator",
+          "host": "www.easyliveauction.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-f4838028bb5371a9",
+      "locator": "https://www.emmareynard.com/small-glass-houses/2021/8/31/leopold-and-rudolf-blaschka-1857-1939",
+      "host": "www.emmareynard.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[3].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.emmareynard.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a646278c5e6714c7",
+      "locator": "https://www.gazette-drouot.com/en/auctions/164705--may-2025-art-fine-art--26amp-design-auction",
+      "host": "www.gazette-drouot.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[8].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.gazette-drouot.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-009c0be572c930f5",
+      "locator": "https://www.gazette-drouot.com/en/auctions/178995-may-2026-art--26amp-design-auction",
+      "host": "www.gazette-drouot.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[9].sources[2].url",
+          "role": "evidence_source",
+          "host": "www.gazette-drouot.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-b6c7514d90b0b71e",
+      "locator": "https://www.gazette-drouot.com/lots/28984163-leopold-and-rudolf-blaschka----",
+      "host": "www.gazette-drouot.com",
+      "occurrence_count": 4,
+      "file_count": 4,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[7].sources[2].url",
+          "role": "evidence_source",
+          "host": "www.gazette-drouot.com"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[3].sources[3]",
+          "role": "evidence_source",
+          "host": "www.gazette-drouot.com"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[1].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.gazette-drouot.com"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "auction_evidence[0].sources[0]",
+          "role": "evidence_source",
+          "host": "www.gazette-drouot.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-01dc473c80b81eda",
+      "locator": "https://www.gda.bayern.de/service/findmitteldatenbank/Kapitel/a1f20232-b9e9-410d-9ba2-131684437bc8",
+      "host": "www.gda.bayern.de",
+      "occurrence_count": 6,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "cross_dealer_comparators[0].locator",
+          "role": "locator",
+          "host": "www.gda.bayern.de"
+        },
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].receiving_side_and_distributed_witnesses[4].locator",
+          "role": "locator",
+          "host": "www.gda.bayern.de"
+        },
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[2].locator",
+          "role": "locator",
+          "host": "www.gda.bayern.de"
+        },
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[2].locator",
+          "role": "locator",
+          "host": "www.gda.bayern.de"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "layer": "sources",
+          "path": "archive_clusters[0].locator",
+          "role": "archive_locator",
+          "host": "www.gda.bayern.de"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[19].locator",
+          "role": "locator",
+          "host": "www.gda.bayern.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-d1657ebf3467f4f6",
+      "locator": "https://www.grisebach.com/en/auction-house/press/the-orangerie-selected-objects-auction-tells-the-story-of-the-world-in-100-objects-from-andrea-pisano-to-gunter-sachs",
+      "host": "www.grisebach.com",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[0].evidence[3].url",
+          "role": "evidence_source",
+          "host": "www.grisebach.com"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[0].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.grisebach.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-12eb9cd9085adefd",
+      "locator": "https://www.historicnewengland.org/explore/collections-access/gusn/289065",
+      "host": "www.historicnewengland.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/ware-transatlantic-logistics-register.json",
+          "layer": "sources",
+          "path": "external_archive_targets[3].locator",
+          "role": "archive_target",
+          "host": "www.historicnewengland.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-96a055bb151cf37c",
+      "locator": "https://www.intermediatheque.jp/en/press/view/id/PR053/year/2019/module/default",
+      "host": "www.intermediatheque.jp",
+      "occurrence_count": 3,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[1].count_wording_guard.sources[0]",
+          "role": "evidence_source",
+          "host": "www.intermediatheque.jp"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "market_adjacent_leads[0].later_public_presence[0].url",
+          "role": "locator",
+          "host": "www.intermediatheque.jp"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "market_adjacent_leads[0].sources[2].url",
+          "role": "evidence_source",
+          "host": "www.intermediatheque.jp"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-c8f0ecea0dc2c764",
+      "locator": "https://www.invaluable.com/artist/blaschka-leopold-49ejcqcd3j/sold-at-auction-prices/",
+      "host": "www.invaluable.com",
+      "occurrence_count": 4,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[0].evidence[0].url",
+          "role": "evidence_source",
+          "host": "www.invaluable.com"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[2].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.invaluable.com"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[5].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.invaluable.com"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[6].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.invaluable.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e479976ab764a7d5",
+      "locator": "https://www.invaluable.com/auction-lot/leopold-and-rudolph-blaschka-model-of-a-serpulida-483-c-a084c25853",
+      "host": "www.invaluable.com",
+      "occurrence_count": 4,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "access_locator",
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[0].exact_aggregator_lot_url",
+          "role": "access_locator",
+          "host": "www.invaluable.com"
+        },
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[0].evidence[1].url",
+          "role": "evidence_source",
+          "host": "www.invaluable.com"
+        },
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "layer": "auctions",
+          "path": "recoveries[0].canonical_fields_to_update.primary_lot_page",
+          "role": "access_locator",
+          "host": "www.invaluable.com"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[0].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.invaluable.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-f84ec8c9538e8027",
+      "locator": "https://www.kunstunddesign-auktionen.de/de/auktionen/K-15/ergebnisliste/",
+      "host": "www.kunstunddesign-auktionen.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[2].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-97c6a99c59500330",
+      "locator": "https://www.kunstunddesign-auktionen.de/de/auktionen/K-15/glasmodell-stachelpolyp-um-1870-137452/",
+      "host": "www.kunstunddesign-auktionen.de",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[3].sources[2]",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[2].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "auction_evidence[1].sources[0]",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-4e5a2fb15b4692cc",
+      "locator": "https://www.kunstunddesign-auktionen.de/de/auktionen/K-15/highlights/glasmodell-stachelpolyp-um-1870-137452/",
+      "host": "www.kunstunddesign-auktionen.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "access_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/krefeld-hydractinia-156-crosswalk.json",
+          "layer": "auctions",
+          "path": "auction_record.source_urls[0]",
+          "role": "access_locator",
+          "host": "www.kunstunddesign-auktionen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7de3ec626b93a1cb",
+      "locator": "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/",
+      "host": "www.kunstunddesign-auktionen.de",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[7].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[8].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-bfeab4d92c1542de",
+      "locator": "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/glass-model-sea-anemone-around-1870-137451/",
+      "host": "www.kunstunddesign-auktionen.de",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[7].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[1].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-58543e6a90ddd029",
+      "locator": "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/list-of-results/",
+      "host": "www.kunstunddesign-auktionen.de",
+      "occurrence_count": 3,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "access_locator",
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "auction_evidence[0].sources[1]",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "auction_evidence[1].sources[1]",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        },
+        {
+          "file": "auctions/krefeld-hydractinia-156-crosswalk.json",
+          "layer": "auctions",
+          "path": "auction_record.source_urls[1]",
+          "role": "access_locator",
+          "host": "www.kunstunddesign-auktionen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-c02a3c37942ddcfb",
+      "locator": "https://www.kunstunddesign-auktionen.de/en/auctions/K-17/highlights/blaschka-glass-model-of-red-precious-coral-1880s-144164/",
+      "host": "www.kunstunddesign-auktionen.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[10].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-38b957321a68c790",
+      "locator": "https://www.kunstunddesign-auktionen.de/en/auctions/K-17/list-of-results/",
+      "host": "www.kunstunddesign-auktionen.de",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[9].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[10].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.kunstunddesign-auktionen.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-eba1b0eedc768c9b",
+      "locator": "https://www.library.rochester.edu/rbscp/blog/searching-ward",
+      "host": "www.library.rochester.edu",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].core_archive.locators[1]",
+          "role": "archive_locator",
+          "host": "www.library.rochester.edu"
+        },
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "layer": "sources",
+          "path": "dealers[2].source_locators[0]",
+          "role": "evidence_source",
+          "host": "www.library.rochester.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-245c88e7fb5ab3a7",
+      "locator": "https://www.library.rochester.edu/rbscp/special-collections-development-and-management",
+      "host": "www.library.rochester.edu",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "evidence_source",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[0].core_archive.locators[0]",
+          "role": "archive_locator",
+          "host": "www.library.rochester.edu"
+        },
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "layer": "sources",
+          "path": "dealers[2].source_locators[1]",
+          "role": "evidence_source",
+          "host": "www.library.rochester.edu"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[2].locator",
+          "role": "locator",
+          "host": "www.library.rochester.edu"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7f9f359adc723173",
+      "locator": "https://www.liveauctioneers.com/catalog/413018_may-2026-art-and-design-auction/?page=2",
+      "host": "www.liveauctioneers.com",
+      "occurrence_count": 2,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[9].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.liveauctioneers.com"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "records[10].sources[2].url",
+          "role": "evidence_source",
+          "host": "www.liveauctioneers.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-be285401227aa7da",
+      "locator": "https://www.lw.uni-leipzig.de/institut-fuer-biologie/abteilungen/molekulare-evolution-und-systematik-der-tiere/zoologische-sammlung",
+      "host": "www.lw.uni-leipzig.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/krefeld-hydractinia-156-crosswalk.json",
+          "layer": "auctions",
+          "path": "taxonomic_resolution.evidence[0].url",
+          "role": "evidence_source",
+          "host": "www.lw.uni-leipzig.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-1c612d9e626ab938",
+      "locator": "https://www.masterpiecefair.com/blog-details/89/masterpiece-collecting-stories-george-loudon",
+      "host": "www.masterpiecefair.com",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source",
+        "future_retrieval"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "layer": "auctions",
+          "path": "priority_targets[8].source_urls[0]",
+          "role": "future_retrieval",
+          "host": "www.masterpiecefair.com"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[1].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.masterpiecefair.com"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "market_adjacent_leads[0].sources[1].url",
+          "role": "evidence_source",
+          "host": "www.masterpiecefair.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-785b6a51972cf346",
+      "locator": "https://www.museum.ie/en-IE/Collections-Research/Research-Services/Archives-and-Records-Service",
+      "host": "www.museum.ie",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[12].locator",
+          "role": "locator",
+          "host": "www.museum.ie"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-b48f84b7064a3a0f",
+      "locator": "https://www.museumfuernaturkunde.berlin/en/research/collection/archive/document-collection/",
+      "host": "www.museumfuernaturkunde.berlin",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[0].locators[0]",
+          "role": "locator",
+          "host": "www.museumfuernaturkunde.berlin"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "layer": "sources",
+          "path": "archive_clusters[2].locators[2]",
+          "role": "archive_locator",
+          "host": "www.museumfuernaturkunde.berlin"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a619d23fa875b0b5",
+      "locator": "https://www.museumfuernaturkunde.berlin/en/research/object-collection-historical-divison",
+      "host": "www.museumfuernaturkunde.berlin",
+      "occurrence_count": 3,
+      "file_count": 2,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[3].sources[0]",
+          "role": "evidence_source",
+          "host": "www.museumfuernaturkunde.berlin"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[1].sources[2].url",
+          "role": "evidence_source",
+          "host": "www.museumfuernaturkunde.berlin"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "crosslinks[2].sources[2].url",
+          "role": "evidence_source",
+          "host": "www.museumfuernaturkunde.berlin"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-ee71f07c53ed0998",
+      "locator": "https://www.museumfuernaturkunde.berlin/en/research/records-collection",
+      "host": "www.museumfuernaturkunde.berlin",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[0].locators[1]",
+          "role": "locator",
+          "host": "www.museumfuernaturkunde.berlin"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "layer": "sources",
+          "path": "archive_clusters[2].locators[0]",
+          "role": "archive_locator",
+          "host": "www.museumfuernaturkunde.berlin"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[21].locator",
+          "role": "locator",
+          "host": "www.museumfuernaturkunde.berlin"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-1cc264e03cd02a1f",
+      "locator": "https://www.museumfuernaturkunde.berlin/en/research/records-collection-chronological-overview",
+      "host": "www.museumfuernaturkunde.berlin",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "auctions",
+        "sources"
+      ],
+      "roles": [
+        "archive_locator",
+        "future_retrieval"
+      ],
+      "shared_across_files": true,
+      "cross_layer": true,
+      "occurrences": [
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "layer": "sources",
+          "path": "archive_clusters[2].locators[1]",
+          "role": "archive_locator",
+          "host": "www.museumfuernaturkunde.berlin"
+        },
+        {
+          "file": "auctions/auction-archive-router.json",
+          "layer": "auctions",
+          "path": "priority_targets[6].official_overview_url",
+          "role": "future_retrieval",
+          "host": "www.museumfuernaturkunde.berlin"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7baee66a517b69e6",
+      "locator": "https://www.museumfuernaturkunde.berlin/sites/default/files/221010_Inventarliste_OS001-02_Blaschka.pdf",
+      "host": "www.museumfuernaturkunde.berlin",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "future_retrieval"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "layer": "auctions",
+          "path": "priority_targets[5].inventory_url",
+          "role": "future_retrieval",
+          "host": "www.museumfuernaturkunde.berlin"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-bf84725c4f662983",
+      "locator": "https://www.nature.com/articles/004496a0",
+      "host": "www.nature.com",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "layer": "sources",
+          "path": "dealers[1].source_locators[0]",
+          "role": "evidence_source",
+          "host": "www.nature.com"
+        },
+        {
+          "file": "sources/dealer-epistemic-exchange-register.json",
+          "layer": "sources",
+          "path": "records[1].locator",
+          "role": "locator",
+          "host": "www.nature.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-b44ffbfc9494585d",
+      "locator": "https://www.nature.com/articles/033173a0",
+      "host": "www.nature.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-upstream-supply-register.json",
+          "layer": "sources",
+          "path": "records[0].locators[1]",
+          "role": "locator",
+          "host": "www.nature.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-56933113a6f96d20",
+      "locator": "https://www.nature.com/articles/040044a0",
+      "host": "www.nature.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-epistemic-exchange-register.json",
+          "layer": "sources",
+          "path": "records[3].locators[0]",
+          "role": "locator",
+          "host": "www.nature.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-575186c3dc3be233",
+      "locator": "https://www.natwestgroup.com/heritage/companies/grindlays-bank-ltd.html",
+      "host": "www.natwestgroup.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/commercial-intermediary-register.json",
+          "layer": "sources",
+          "path": "routes[0].actors[1].additional_archive_context.locator",
+          "role": "archive_locator",
+          "host": "www.natwestgroup.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-d6856a1ea136c2c0",
+      "locator": "https://www.nhm.ac.uk/CalmView/",
+      "host": "www.nhm.ac.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-sales-print-register.json",
+          "layer": "sources",
+          "path": "records[0].locator",
+          "role": "locator",
+          "host": "www.nhm.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-ebff8858d572340d",
+      "locator": "https://www.nhm.ac.uk/CalmView/Record.aspx?id=PX32&src=CalmView.Persons",
+      "host": "www.nhm.ac.uk",
+      "occurrence_count": 6,
+      "file_count": 3,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[1].locator",
+          "role": "locator",
+          "host": "www.nhm.ac.uk"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[10].locator",
+          "role": "locator",
+          "host": "www.nhm.ac.uk"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[11].locator",
+          "role": "locator",
+          "host": "www.nhm.ac.uk"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[12].locator",
+          "role": "locator",
+          "host": "www.nhm.ac.uk"
+        },
+        {
+          "file": "sources/dealer-upstream-supply-register.json",
+          "layer": "sources",
+          "path": "records[1].locator",
+          "role": "locator",
+          "host": "www.nhm.ac.uk"
+        },
+        {
+          "file": "sources/dealer-upstream-supply-register.json",
+          "layer": "sources",
+          "path": "records[2].locator",
+          "role": "locator",
+          "host": "www.nhm.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-521ea1d928a60601",
+      "locator": "https://www.nhm.ac.uk/CalmView/record/catalog/DF/ZOO/200/1/169-170",
+      "host": "www.nhm.ac.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[8].locator",
+          "role": "locator",
+          "host": "www.nhm.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-9129d9094f2de105",
+      "locator": "https://www.otago.ac.nz/library/hocken",
+      "host": "www.otago.ac.nz",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[15].locator",
+          "role": "locator",
+          "host": "www.otago.ac.nz"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-74e4bf7d23e6f3e2",
+      "locator": "https://www.phillips.com/detail/guido-mocafico/101810",
+      "host": "www.phillips.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "rejected_candidates[1].url",
+          "role": "locator",
+          "host": "www.phillips.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a20731550c70e440",
+      "locator": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/15872/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_label_style_corroboration[1].source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-b68afa07d86d2987",
+      "locator": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/15970/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_label_style_corroboration[0].source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-95428aa4bf2c6946",
+      "locator": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8308/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_current_blaschka_examples[0].source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-c20d9ee274026979",
+      "locator": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8310/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_current_blaschka_examples[1].source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-94640102986ade0e",
+      "locator": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8311/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_current_blaschka_examples[2].source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-a7bf29e4b43d2a2f",
+      "locator": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8312/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_current_blaschka_examples[3].source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-1ad3ff7dc69bba31",
+      "locator": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8314/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_current_blaschka_examples[4].source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-078af58dbe9945bb",
+      "locator": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8317/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_current_blaschka_examples[5].source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-9781feb80672ea22",
+      "locator": "https://www.sammlungen.hu-berlin.de/objekte/zoologische-lehrsammlung/8320/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_current_blaschka_examples[6].source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-7f3898d6555b874f",
+      "locator": "https://www.sammlungen.hu-berlin.de/sammlungen/zoologische-lehrsammlung/",
+      "host": "www.sammlungen.hu-berlin.de",
+      "occurrence_count": 3,
+      "file_count": 3,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source",
+        "future_retrieval"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "layer": "auctions",
+          "path": "priority_targets[4].official_collection_url",
+          "role": "future_retrieval",
+          "host": "www.sammlungen.hu-berlin.de"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "layer": "auctions",
+          "path": "hu_zoologische_lehrsammlung.source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        },
+        {
+          "file": "auctions/krefeld-hydractinia-156-crosswalk.json",
+          "layer": "auctions",
+          "path": "hu_branch.documented_dispersal_window.source",
+          "role": "evidence_source",
+          "host": "www.sammlungen.hu-berlin.de"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e2f1863543bf3649",
+      "locator": "https://www.sej.org/publications/between-lines/scientist-finds-natures-art-beneath-seas",
+      "host": "www.sej.org",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "evidence_source",
+        "secondary_locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/reference-material-ecology-register.json",
+          "layer": "sources",
+          "path": "reference_modes[1].direct_or_institutional_evidence[0].locator",
+          "role": "evidence_source",
+          "host": "www.sej.org"
+        },
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[0].direct_blaschka_evidence[0].secondary_locator",
+          "role": "secondary_locator",
+          "host": "www.sej.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-32242eb02abc159f",
+      "locator": "https://www.skinnerinc.com/auctions/3100B/lots/129",
+      "host": "www.skinnerinc.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "rejected_candidates[2].url",
+          "role": "locator",
+          "host": "www.skinnerinc.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-cf91bdc8e2a0f9d9",
+      "locator": "https://www.szn.it/index.php/en/news/news/11-english/pages/1457-museum",
+      "host": "www.szn.it",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "layer": "sources",
+          "path": "institutions[0].institutional_supply_capacity.locators[1]",
+          "role": "locator",
+          "host": "www.szn.it"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e4d22097fa32cd0b",
+      "locator": "https://www.tcd.ie/library/research-collections/subject-strengths/archives.php",
+      "host": "www.tcd.ie",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dublin-shipping-failure-register.json",
+          "layer": "sources",
+          "path": "receiving_side_archives[1].locator",
+          "role": "archive_target",
+          "host": "www.tcd.ie"
+        },
+        {
+          "file": "sources/moller-hamburg-forwarding-register.json",
+          "layer": "sources",
+          "path": "receiving_side_archive_targets[2].locator",
+          "role": "archive_target",
+          "host": "www.tcd.ie"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-ae0b52f5f47b730c",
+      "locator": "https://www.the-saleroom.com/en-gb/auction-catalogues/wimbledon-auctions/catalogue-id-wimb10002",
+      "host": "www.the-saleroom.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-data.json",
+          "layer": "auctions",
+          "path": "rejected_candidates[0].url",
+          "role": "locator",
+          "host": "www.the-saleroom.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-73f60e0e2b5f34e5",
+      "locator": "https://www.the-saleroom.com/fr-fr/price-guide/model?page=3921",
+      "host": "www.the-saleroom.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-false-positive-wimbledon-2023.json",
+          "layer": "auctions",
+          "path": "sources[4].url",
+          "role": "locator",
+          "host": "www.the-saleroom.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-95448c60a52fdcdb",
+      "locator": "https://www.thecatalogstar.com/",
+      "host": "www.thecatalogstar.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "embedded_url"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-catalogue-family-worklist.json",
+          "layer": "auctions",
+          "path": "sources[0]",
+          "role": "embedded_url",
+          "host": "www.thecatalogstar.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-6c4ea09836d7907a",
+      "locator": "https://www.themorgan.org/literary-historical/191319",
+      "host": "www.themorgan.org",
+      "occurrence_count": 2,
+      "file_count": 2,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "layer": "sources",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[3].locator",
+          "role": "locator",
+          "host": "www.themorgan.org"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "layer": "sources",
+          "path": "transaction_process_comparators[0].locator",
+          "role": "locator",
+          "host": "www.themorgan.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-efa87a6a82b4d3f3",
+      "locator": "https://www.themorgan.org/literary-historical/308686",
+      "host": "www.themorgan.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[13].locator",
+          "role": "locator",
+          "host": "www.themorgan.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-5fd85fddfea97fa5",
+      "locator": "https://www.themorgan.org/literary-historical/308693",
+      "host": "www.themorgan.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[14].locator",
+          "role": "locator",
+          "host": "www.themorgan.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-58abfa781415b024",
+      "locator": "https://www.themorgan.org/literary-historical/308750",
+      "host": "www.themorgan.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[15].locator",
+          "role": "locator",
+          "host": "www.themorgan.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-d5d5a9c0dba609ee",
+      "locator": "https://www.themorgan.org/literary-historical/308773",
+      "host": "www.themorgan.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dealer-document-register.json",
+          "layer": "sources",
+          "path": "records[16].locator",
+          "role": "locator",
+          "host": "www.themorgan.org"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-f76b76c92b919dcd",
+      "locator": "https://www.ucd.ie/archives/collections/universityarchives/items/collectionname235376en.html",
+      "host": "www.ucd.ie",
+      "occurrence_count": 4,
+      "file_count": 4,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "archive_target",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/dublin-shipping-failure-register.json",
+          "layer": "sources",
+          "path": "receiving_side_archives[0].locator",
+          "role": "archive_target",
+          "host": "www.ucd.ie"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "layer": "sources",
+          "path": "entries[19].locator",
+          "role": "locator",
+          "host": "www.ucd.ie"
+        },
+        {
+          "file": "sources/moller-hamburg-forwarding-register.json",
+          "layer": "sources",
+          "path": "receiving_side_archive_targets[1].locator",
+          "role": "archive_target",
+          "host": "www.ucd.ie"
+        },
+        {
+          "file": "sources/transaction-gap-register.json",
+          "layer": "sources",
+          "path": "records[0].receiving_archive_target.locator",
+          "role": "archive_target",
+          "host": "www.ucd.ie"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-e8f390243b659448",
+      "locator": "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/collections-and-research",
+      "host": "www.ucl.ac.uk",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/ucl-science-museum-transfer-candidate-audit.json",
+          "layer": "auctions",
+          "path": "collection_level_facts.sources[1]",
+          "role": "evidence_source",
+          "host": "www.ucl.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-c8e41ee5d4fc0f90",
+      "locator": "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/highlights/blaschka-glass-models-invertebrates",
+      "host": "www.ucl.ac.uk",
+      "occurrence_count": 6,
+      "file_count": 5,
+      "layers": [
+        "auctions"
+      ],
+      "roles": [
+        "evidence_source",
+        "locator"
+      ],
+      "shared_across_files": true,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "layer": "auctions",
+          "path": "seeds[2].sources[0].url",
+          "role": "evidence_source",
+          "host": "www.ucl.ac.uk"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "layer": "auctions",
+          "path": "institutional_context_only[0].sources[0]",
+          "role": "evidence_source",
+          "host": "www.ucl.ac.uk"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "layer": "auctions",
+          "path": "dispersal_statement.url",
+          "role": "locator",
+          "host": "www.ucl.ac.uk"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "layer": "auctions",
+          "path": "publicly_identified_recipients_in_this_audit[0].url",
+          "role": "locator",
+          "host": "www.ucl.ac.uk"
+        },
+        {
+          "file": "auctions/ucl-catalogue-card-index-router.json",
+          "layer": "auctions",
+          "path": "documentation_chronology[0].sources[0]",
+          "role": "evidence_source",
+          "host": "www.ucl.ac.uk"
+        },
+        {
+          "file": "auctions/ucl-science-museum-transfer-candidate-audit.json",
+          "layer": "auctions",
+          "path": "collection_level_facts.sources[0]",
+          "role": "evidence_source",
+          "host": "www.ucl.ac.uk"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-39e42a71287c268e",
+      "locator": "https://www.warmus.com/Blaschka%20Sea%20Creatures%20Cornell%20Warmus.htm",
+      "host": "www.warmus.com",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/cornell-ward-retrieval-register.json",
+          "layer": "sources",
+          "path": "records[0].locators[1]",
+          "role": "locator",
+          "host": "www.warmus.com"
+        }
+      ]
+    },
+    {
+      "node_id": "SRCNODE-aad0ea3e9af3aab3",
+      "locator": "https://zenodo.org/search?q=%22Rudolf%20Blaschka%20letters%20to%20Walter%20Deane%22",
+      "host": "zenodo.org",
+      "occurrence_count": 1,
+      "file_count": 1,
+      "layers": [
+        "sources"
+      ],
+      "roles": [
+        "locator"
+      ],
+      "shared_across_files": false,
+      "cross_layer": false,
+      "occurrences": [
+        {
+          "file": "sources/digitized-correspondence-register.json",
+          "layer": "sources",
+          "path": "corpora[0].locators[3]",
+          "role": "locator",
+          "host": "zenodo.org"
+        }
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "host": "academic.oup.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "adressbuecher.sub.uni-hamburg.de",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "archivalcollections.drexel.edu",
+      "unique_locator_count": 2,
+      "file_count": 6,
+      "occurrence_count": 6,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "archivalcollections.library.mcgill.ca",
+      "unique_locator_count": 2,
+      "file_count": 4,
+      "occurrence_count": 6,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "archivesearch.library.universityofgalway.ie",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "archon.library.illinois.edu",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "artsandculture.google.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "atom.aim25.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "auctiondaily.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "australian.museum",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "bibliothek.univie.ac.at",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 3,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "blog.cmog.org",
+      "unique_locator_count": 4,
+      "file_count": 5,
+      "occurrence_count": 8,
+      "layers": [
+        "auctions",
+        "sources"
+      ]
+    },
+    {
+      "host": "blogs.ucl.ac.uk",
+      "unique_locator_count": 3,
+      "file_count": 3,
+      "occurrence_count": 6,
+      "layers": [
+        "auctions",
+        "sources"
+      ]
+    },
+    {
+      "host": "cmog.primo.exlibrisgroup.com",
+      "unique_locator_count": 3,
+      "file_count": 1,
+      "occurrence_count": 3,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "coleoptera.org.uk",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "collection.powerhouse.com.au",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "collection.sciencemuseumgroup.org.uk",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 4,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "collections.st-andrews.ac.uk",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "collections.tepapa.govt.nz",
+      "unique_locator_count": 2,
+      "file_count": 3,
+      "occurrence_count": 4,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "collections.ucl.ac.uk",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "commons.wikimedia.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "data.library.amnh.org",
+      "unique_locator_count": 4,
+      "file_count": 3,
+      "occurrence_count": 8,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "digital.library.cornell.edu",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "digitallibrary.vassar.edu",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "doi.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "emmareynard.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "en.wikisource.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "findingaids.library.upenn.edu",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "findingaids.loc.gov",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "fineart.cheffins.co.uk",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "glasscollection.cmog.org",
+      "unique_locator_count": 3,
+      "file_count": 1,
+      "occurrence_count": 3,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "history.aip.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "hollisarchives.lib.harvard.edu",
+      "unique_locator_count": 2,
+      "file_count": 3,
+      "occurrence_count": 4,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "isleofwightglassmuseum.wikidot.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "jamesdjulia.com",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 3,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "muarchives.missouri.edu",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "museum.wales",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "natlib.govt.nz",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "natsca.blog",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "new.darwinmuseum.ru",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "nrs.harvard.edu",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "olteniastudiisicomunicaristiintelenaturii.ro",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "opac.museogalileo.it",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "openlibrary.org",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "press.christies.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "press.cmog.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "public.uclaclark.aspace.cdlib.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "publikace.nm.cz",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "revue-colligo.fr",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "rmc.library.cornell.edu",
+      "unique_locator_count": 4,
+      "file_count": 2,
+      "occurrence_count": 6,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "searcharchives.bl.uk",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "siarchives.si.edu",
+      "unique_locator_count": 5,
+      "file_count": 5,
+      "occurrence_count": 8,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "simurg.csic.es",
+      "unique_locator_count": 2,
+      "file_count": 4,
+      "occurrence_count": 4,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "sova.si.edu",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "szn.it",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 3,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "tarc.tufts.edu",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "wardproject.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "website-archiv.museumfuernaturkunde.berlin",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "whatson.cmog.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.archiv.sachsen.de",
+      "unique_locator_count": 3,
+      "file_count": 1,
+      "occurrence_count": 3,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.archives.gov",
+      "unique_locator_count": 6,
+      "file_count": 3,
+      "occurrence_count": 8,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.archividellascienza.org",
+      "unique_locator_count": 4,
+      "file_count": 2,
+      "occurrence_count": 4,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.archivinformationssystem.at",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 5,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.arcinsys.niedersachsen.de",
+      "unique_locator_count": 2,
+      "file_count": 4,
+      "occurrence_count": 4,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.biodiversitylibrary.org",
+      "unique_locator_count": 5,
+      "file_count": 4,
+      "occurrence_count": 7,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.britishnewspaperarchive.co.uk",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.bundesarchiv.de",
+      "unique_locator_count": 2,
+      "file_count": 1,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.christies.com",
+      "unique_locator_count": 6,
+      "file_count": 7,
+      "occurrence_count": 19,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.commerzbank.de",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 3,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.darwinmuseum.ru",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.dundee.ac.uk",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.easyliveauction.com",
+      "unique_locator_count": 4,
+      "file_count": 1,
+      "occurrence_count": 8,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.emmareynard.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.gazette-drouot.com",
+      "unique_locator_count": 3,
+      "file_count": 4,
+      "occurrence_count": 6,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.gda.bayern.de",
+      "unique_locator_count": 1,
+      "file_count": 3,
+      "occurrence_count": 6,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.grisebach.com",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.historicnewengland.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.intermediatheque.jp",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 3,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.invaluable.com",
+      "unique_locator_count": 2,
+      "file_count": 3,
+      "occurrence_count": 8,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.kunstunddesign-auktionen.de",
+      "unique_locator_count": 8,
+      "file_count": 5,
+      "occurrence_count": 15,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.library.rochester.edu",
+      "unique_locator_count": 2,
+      "file_count": 3,
+      "occurrence_count": 5,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.liveauctioneers.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 2,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.lw.uni-leipzig.de",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.masterpiecefair.com",
+      "unique_locator_count": 1,
+      "file_count": 3,
+      "occurrence_count": 3,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.museum.ie",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.museumfuernaturkunde.berlin",
+      "unique_locator_count": 5,
+      "file_count": 6,
+      "occurrence_count": 11,
+      "layers": [
+        "auctions",
+        "sources"
+      ]
+    },
+    {
+      "host": "www.nature.com",
+      "unique_locator_count": 3,
+      "file_count": 3,
+      "occurrence_count": 4,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.natwestgroup.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.nhm.ac.uk",
+      "unique_locator_count": 3,
+      "file_count": 5,
+      "occurrence_count": 8,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.otago.ac.nz",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.phillips.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.sammlungen.hu-berlin.de",
+      "unique_locator_count": 10,
+      "file_count": 3,
+      "occurrence_count": 12,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.sej.org",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.skinnerinc.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.szn.it",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.tcd.ie",
+      "unique_locator_count": 1,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.the-saleroom.com",
+      "unique_locator_count": 2,
+      "file_count": 2,
+      "occurrence_count": 2,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.thecatalogstar.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.themorgan.org",
+      "unique_locator_count": 5,
+      "file_count": 3,
+      "occurrence_count": 6,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.ucd.ie",
+      "unique_locator_count": 1,
+      "file_count": 4,
+      "occurrence_count": 4,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "www.ucl.ac.uk",
+      "unique_locator_count": 3,
+      "file_count": 5,
+      "occurrence_count": 8,
+      "layers": [
+        "auctions"
+      ]
+    },
+    {
+      "host": "www.warmus.com",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    },
+    {
+      "host": "zenodo.org",
+      "unique_locator_count": 1,
+      "file_count": 1,
+      "occurrence_count": 1,
+      "layers": [
+        "sources"
+      ]
+    }
+  ]
+}
