@@ -12,6 +12,9 @@ Generated inventories live under `generated/`:
 - `status-vocabulary-inventory.json` compares explicit local status vocabularies;
 - `field-semantic-role-map.json` inventories current naming drift by functional role;
 - `cross-register-duplication-index.json` records exact cross-file IDs, URLs, long strings, and structured-object duplication;
-- `auction-canonical-sync-audit.json` checks Auction support-layer references and declared canonical updates against the current canonical lot table.
+- `auction-canonical-sync-audit.json` checks Auction support-layer references and declared canonical updates against the current canonical lot table;
+- `source-authority-crosswalk.json` turns exact public locators into derived authority nodes and records every Source/Auction register/path that points to them.
+
+The source-authority crosswalk is a navigation/maintenance graph, not a citation authority file. Its `SRCNODE-*` identifiers are deterministic derived IDs tied to exact locators; they must not replace archival references, source citations, or canonical research identifiers. See `../docs/source-authority-model.md`.
 
 Structural similarity is only a candidate for shared tooling; it does not establish semantic equivalence. Vocabulary files may be added here only after definitions have been compared. Repeated labels are not to be collapsed merely because their spelling matches. Research mutation rules remain governed by `../docs/data-layers.md`, with prospective field practice documented in `../docs/json-field-conventions.md`.
