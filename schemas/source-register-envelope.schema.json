@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source-register-envelope.schema.json",
+  "title": "Blaschka Source register metadata envelope",
+  "description": "Minimal non-evidentiary envelope shared by current public Source registers. Topic-specific evidence fields remain unconstrained and are not normalized by this schema.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_date",
+    "title",
+    "scope"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_date": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}
