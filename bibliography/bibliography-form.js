@@ -5,7 +5,7 @@
   if (!window.__blaschkaUnifiedUI && !window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260811-4';
+    ui.src = '../unified-ui.js?v=20260811-5';
     ui.async = true;
     document.head.appendChild(ui);
   }
