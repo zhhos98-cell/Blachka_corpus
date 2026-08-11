@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "updated_date": "2026-08-11",
+  "purpose": "Prospective naming conventions for new Source/Auction JSON fields. Existing canonical fields are not migration targets and must not be rewritten automatically.",
+  "guard": "Preferred names describe future authoring practice only. Legacy/contextual names remain valid historical data and may encode distinctions that cannot be inferred from spelling alone.",
+  "roles": {
+    "metadata": {
+      "preferred": [
+        "schema_version",
+        "generated_date",
+        "title",
+        "scope",
+        "purpose"
+      ],
+      "automatic_rewrite": false
+    },
+    "identity_status": {
+      "preferred": [
+        "id",
+        "status",
+        "status_vocabulary"
+      ],
+      "contextual_exceptions": [
+        "record_id"
+      ],
+      "note": "record_id remains canonical in the Auction lot table and other established files.",
+      "automatic_rewrite": false
+    },
+    "evidence_interpretation_limits": {
+      "preferred": [
+        "evidence",
+        "research_value",
+        "research_observation",
+        "guard",
+        "evidence_guard",
+        "methodological_guard"
+      ],
+      "scoped_names_allowed_when_analytically_necessary": [
+        "date_guard",
+        "blaschka_guard",
+        "taxonomic_guard",
+        "source_guard"
+      ],
+      "legacy_or_contextual_names_not_for_auto_migration": [
+        "method_guard",
+        "important_guard",
+        "network_observation",
+        "comparative_observation",
+        "material_observation"
+      ],
+      "automatic_rewrite": false
+    },
+    "future_work": {
+      "preferred": [
+        "next_actions",
+        "research_questions",
+        "archive_targets",
+        "comparative_questions"
+      ],
+      "legacy_or_contextual_names_not_for_new_generic_use": [
+        "next_search",
+        "next_searches",
+        "next_step",
+        "next_targets",
+        "next_recovery_routes",
+        "next_retrieval",
+        "next_retrieval_targets",
+        "priority_targets",
+        "route_archive_priorities"
+      ],
+      "automatic_rewrite": false
+    },
+    "locator_source": {
+      "preferred": [
+        "repository",
+        "collection",
+        "reference",
+        "locator",
+        "locators",
+        "source",
+        "sources"
+      ],
+      "contextual_names_allowed": [
+        "collection_number",
+        "receiving_repository",
+        "source_locator",
+        "source_locators",
+        "official_locator",
+        "secondary_locator",
+        "stable_locator",
+        "catalogue_locator"
+      ],
+      "automatic_rewrite": false
+    }
+  }
+}
