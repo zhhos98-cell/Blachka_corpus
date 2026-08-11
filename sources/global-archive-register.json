@@ -1,14 +1,22 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "title": "The Blaschka Object Network — Global Archive Register",
-  "generated_date": "2026-08-10",
+  "generated_date": "2026-08-11",
+  "entry_count": 23,
   "scope": "Named archival collections, record groups, manuscript series, accession registers and institutional archives with demonstrated or high-priority relevance to Blaschka objects, orders, distribution, custody or afterlives. Object repositories without a specific archival trail are excluded until a usable source series can be named.",
+  "flattening_note": "The seven entries formerly held in global-archive-register-supplement-2026-08-10.json were appended without changing their record values. The historical supplement is preserved under archive/data/.",
   "status_vocabulary": {
     "direct_blaschka_archive": "The archival unit explicitly names Blaschka or is a dedicated Blaschka archive.",
     "dealer_business_archive": "Business archive of a documented Blaschka dealer or distributor.",
     "direct_receiving_side_archive": "Museum or institutional records explicitly document a Blaschka transaction, custody event or collection.",
     "receiving_side_archive": "Archive is directly tied to a Blaschka-holding institution and contains the relevant class of acquisition, accession, correspondence or museum records, but the decisive Blaschka item remains to be isolated.",
-    "candidate_archival_bridge": "A named personal or institutional fonds is historically well positioned to close a known provenance gap, but a Blaschka-specific item has not yet been verified."
+    "candidate_archival_bridge": "A named personal or institutional fonds is historically well positioned to close a known provenance gap, but a Blaschka-specific item has not yet been verified.",
+    "direct_blaschka_archive_target": "A named archive is tied to reported direct Blaschka evidence, but the decisive archival item still requires retrieval or shelfmark confirmation.",
+    "candidate_direct_institutional_bridge": "A named institutional series is directly positioned to test a documented Blaschka relationship, but the decisive item has not yet been isolated.",
+    "comparative_institutional_archive": "A named institutional archive is retained as a controlled comparison and is not itself treated as direct Blaschka evidence.",
+    "direct_receiving_side_archive_target": "A receiving-side archive is strongly tied to a documented Blaschka transaction, but the decisive local record still requires retrieval.",
+    "candidate_personal_archival_bridge": "A named personal fonds is well positioned to close a documented provenance or chronology gap, but a Blaschka-specific mention has not yet been verified.",
+    "dealer_business_comparator": "Dealer business records are retained as controls for commercial practice but are not themselves direct Blaschka evidence."
   },
   "entries": [
     {
@@ -186,6 +194,85 @@
       "coverage": "1860s–1890s",
       "research_use": ["57-model accession chronology", "original museum numbering", "receipt and vendor fields", "Hutton collection-building context", "Hector correspondence network"],
       "locator": "https://www.otago.ac.nz/library/hocken"
+    },
+    {
+      "id": "IT-SZN-ASZN-BLASCHKA-1877",
+      "country": "Italy",
+      "repository": "Archivio Storico della Stazione Zoologica Anton Dohrn, Naples",
+      "collection": "Institutional archives of the Stazione Zoologica Anton Dohrn; Anton Dohrn personal archive",
+      "reference": "exact 4 February 1877 Blaschka item shelfmark pending retrieval",
+      "status": "direct_blaschka_archive_target",
+      "direct_evidence": "A Leopold Blaschka letter dated 4 February 1877 reportedly lists 41 preserved marine animals requested for glass-model construction; scholarship also cites March and November 1877 Dohrn archive documents.",
+      "research_use": ["preserved reference specimens", "species list", "purchase/fulfilment", "preparation and preservation", "shipment", "marine-station supply infrastructure"],
+      "locator": "https://szn.it/en/research/marine-animal-conservation-and-public-engagement/functional-areas-cape/darwin-dohrn-museum-dadom-historical-archives/historical-archives"
+    },
+    {
+      "id": "AT-OESTA-AVA-ZOO-STATION-TRIEST",
+      "country": "Austria",
+      "repository": "Österreichisches Staatsarchiv, Allgemeines Verwaltungsarchiv",
+      "collection": "Unterrichtsministerium, Allgemeine Reihe, Akten — Zoologische Station Triest",
+      "reference": "Signatur 2A; 1873–1903 and later blocks",
+      "status": "candidate_direct_institutional_bridge",
+      "direct_evidence": "Rudolf Blaschka independently identifies the Trieste station as a supplier of living animals to the Dresden workshop; this ministry series is the exact administrative archive for the station during the relevant years.",
+      "research_use": ["station administration", "animal dispatch", "Vienna/Graz institutional relations", "expenses", "routing", "possible Blaschka/Claus/Schulze correspondence"],
+      "locator": "https://www.archivinformationssystem.at/archivplansuche.aspx?ID=1324310"
+    },
+    {
+      "id": "AT-OESTA-AVA-ZOO-STATION-NAPLES",
+      "country": "Austria",
+      "repository": "Österreichisches Staatsarchiv, Allgemeines Verwaltungsarchiv",
+      "collection": "Unterrichtsministerium, Allgemeine Reihe, Akten — Zoologische Station Neapel",
+      "reference": "Signatur 2A; 1874–1906 and later block",
+      "status": "comparative_institutional_archive",
+      "research_use": ["Austrian state relation to Naples station", "controlled comparison with Trieste under same ministry series", "funding and study-table administration"],
+      "guard": "The presence of a Naples ministry file does not show that the 1877 Blaschka specimen purchase passed through the Austrian ministry.",
+      "locator": "https://www.archivinformationssystem.at/archivplansuche.aspx?ID=1324310"
+    },
+    {
+      "id": "IE-UCD-RCSI-ACCOUNTS-ORDERS",
+      "country": "Ireland",
+      "repository": "UCD Archives",
+      "collection": "Records of the Royal College of Science for Ireland",
+      "reference": "IE UCDA RCSI",
+      "status": "direct_receiving_side_archive_target",
+      "coverage": "1867–1929",
+      "research_use": ["consolidated accounts 1883–1885", "equipment/supply order books 1867–1916", "1885 Haddon purchase", "unidentified 124-Mark commission", "payment route"],
+      "locator": "https://www.ucd.ie/archives/collections/universityarchives/items/collectionname235376en.html"
+    },
+    {
+      "id": "US-ILLINOIS-ADAMS-DIARY-782",
+      "country": "United States",
+      "repository": "Illinois History and Lincoln Collections, University of Illinois Library",
+      "collection": "Charles Francis Adams Diary, 1884–1887",
+      "reference": "Collection 782",
+      "status": "candidate_personal_archival_bridge",
+      "research_use": ["Auckland 1885 daily chronology", "travelling preparator", "possible package handoff", "wharf/ship movement", "carrier role", "payment intermediary context"],
+      "guard": "Auckland correspondence independently identifies Adams as the Blaschka carrier; the diary finding aid does not itself state that the models are mentioned.",
+      "locator": "https://archon.library.illinois.edu/ihlc/index.php?p=collections/controlcard&id=778"
+    },
+    {
+      "id": "US-SIA-RU007095-DAMON-CONTROL",
+      "country": "United States",
+      "repository": "Smithsonian Institution Archives",
+      "collection": "Joseph Ashmead Clay and John Randolph Clay Papers",
+      "reference": "SIA RU007095, Box 1",
+      "status": "dealer_business_comparator",
+      "coverage": "1861–1865",
+      "research_use": ["26 specimen lists", "financial information", "purchase/sale/exchange", "Robert Damon", "comparison with Talling and Vaux"],
+      "guard": "Pre-dates the documented Blaschka agency and concerns mineralogical material; retained as Damon business-practice control only.",
+      "locator": "https://siarchives.si.edu/collections/siris_arc_217253"
+    },
+    {
+      "id": "ES-MNCN-DAMON-CATALOGUES",
+      "country": "Spain",
+      "repository": "Archivo del Museo Nacional de Ciencias Naturales, CSIC / Simurg",
+      "collection": "Robert F. Damon fossil/rock catalogues and species dispatch note",
+      "reference": "collection 1176699",
+      "status": "dealer_business_comparator",
+      "coverage": "1885–1906",
+      "research_use": ["same-period Damon catalogue form", "species lists", "international dispatch note", "commercial vocabulary"],
+      "guard": "Catalogued material concerns fossils and rocks, not Blaschka glass models.",
+      "locator": "https://simurg.csic.es/browse/collection/1176699"
     }
   ]
 }
