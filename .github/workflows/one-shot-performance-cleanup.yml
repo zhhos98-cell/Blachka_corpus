@@ -1,0 +1,223 @@
+name: One-shot public performance cleanup
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-performance-cleanup.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Patch public pages and build compact People payload
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          ROOT = Path('.')
+
+          # 1. Sources: remove the historical mega-bundle and 24 dead compatibility requests.
+          p = ROOT / 'sources/index.html'
+          s = p.read_text(encoding='utf-8')
+          s = re.sub(
+              r'\s*<link rel="stylesheet" href="\.\./site-core\.css[^\"]*">\s*',
+              '\n  <link rel="stylesheet" href="../navigation-shell.css?v=20260811-2">\n  <link rel="stylesheet" href="../accessibility.css?v=20260810-2">\n',
+              s,
+              count=1,
+          )
+          s = re.sub(
+              r'<script src="sources-pass(?:1[4-9]|2[0-9]|3[0-7])\.js[^\"]*"[^>]*></script>',
+              '',
+              s,
+          )
+          s = s.replace('sources.css?v=20260810-7', 'sources.css?v=20260811-1')
+          s = s.replace('sources-filter.js?v=20260810-1', 'sources-filter.js?v=20260811-1')
+          p.write_text(s, encoding='utf-8')
+
+          # Sources page family owns its typography/mobile rules explicitly.
+          p = ROOT / 'sources/sources.css'
+          s = p.read_text(encoding='utf-8')
+          imports = '@import url("../typography-garamond.css?v=20260811-1");\n@import url("../mobile-v3.css?v=20260810-4");\n\n'
+          if not s.startswith('@import url("../typography-garamond.css'):
+              s = imports + s
+          p.write_text(s, encoding='utf-8')
+
+          # 2. Cases: remove obsolete matrix CSS + mega-bundle and keep only explicit shared layers.
+          p = ROOT / 'cases/index.html'
+          s = p.read_text(encoding='utf-8')
+          s = re.sub(r'\s*<link rel="stylesheet" href="case-wall-matrix\.css[^\"]*">\s*', '\n', s, count=1)
+          s = re.sub(
+              r'\s*<link rel="stylesheet" href="\.\./site-core\.css[^\"]*">\s*',
+              '\n  <link rel="stylesheet" href="../navigation-shell.css?v=20260811-2">\n  <link rel="stylesheet" href="../accessibility.css?v=20260810-2">\n',
+              s,
+              count=1,
+          )
+          s = s.replace('cases.css?v=20260810-5', 'cases.css?v=20260811-1')
+          p.write_text(s, encoding='utf-8')
+
+          p = ROOT / 'cases/cases.css'
+          s = p.read_text(encoding='utf-8')
+          imports = '@import url("../typography-garamond.css?v=20260811-1");\n@import url("../mobile-v3.css?v=20260810-4");\n\n'
+          if not s.startswith('@import url("../typography-garamond.css'):
+              s = imports + s
+          intro = '''\n/* Page-family intro retained after removing historical matrix/site-core layers. */\nhtml body.cases-page .page-intro{min-height:0!important;padding:clamp(58px,6vw,78px) 0 clamp(38px,4vw,54px)!important;border:0!important;background:none!important}\nhtml body.cases-page .page-intro::before,html body.cases-page .page-intro::after,html body.cases-page .page-intro h1::before,html body.cases-page .page-intro .page-dek::before{content:none!important;display:none!important;background-image:none!important;animation:none!important;box-shadow:none!important}\n'''
+          if 'Page-family intro retained' not in s:
+              insert_at = s.find('\n', s.find('body.cases-page{')) + 1
+              s = s[:insert_at] + intro + s[insert_at:]
+          p.write_text(s, encoding='utf-8')
+
+          # Delete files that are no longer referenced by the public HTML.
+          for n in range(14, 38):
+              (ROOT / f'sources/sources-pass{n}.js').unlink(missing_ok=True)
+          (ROOT / 'cases/case-wall-matrix.css').unlink(missing_ok=True)
+
+          # 3. People: keep the full machine-readable authority file, but serve a compact UI payload.
+          full = json.loads((ROOT / 'people/people-data.json').read_text(encoding='utf-8'))
+          keep = ('slug','name','sort','aka','dates','group','roles','bio','open','project','external')
+          records = []
+          for rec in full.get('records', []):
+              slim = {k: rec.get(k) for k in keep if rec.get(k) not in (None, '', [], {})}
+              records.append(slim)
+          ui = {'groups': full.get('groups', {}), 'records': records}
+          (ROOT / 'people/people-ui.json').write_text(
+              json.dumps(ui, ensure_ascii=False, separators=(',', ':')) + '\n',
+              encoding='utf-8',
+          )
+
+          p = ROOT / 'people/people.js'
+          s = p.read_text(encoding='utf-8')
+          s = s.replace("fetch('people-data.json', { cache:'force-cache' })", "fetch('people-ui.json?v=20260811-1', { cache:'force-cache' })")
+          p.write_text(s, encoding='utf-8')
+
+          p = ROOT / 'people/index.html'
+          s = p.read_text(encoding='utf-8').replace('people.js?v=20260811-1', 'people.js?v=20260811-2')
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Build corpus-safe EB Garamond subset
+        shell: bash
+        run: |
+          python -m pip install --quiet fonttools brotli
+          python - <<'PY'
+          from pathlib import Path
+
+          roots = [
+              Path('index.html'), Path('feed.xml'), Path('about'), Path('accessibility'),
+              Path('auctions'), Path('bibliography'), Path('blog'), Path('cases'), Path('map'),
+              Path('people'), Path('privacy'), Path('rights'), Path('sources')
+          ]
+          suffixes = {'.html','.json','.js','.xml'}
+          chars = set()
+          for root in roots:
+              files = [root] if root.is_file() else [p for p in root.rglob('*') if p.is_file() and p.suffix.lower() in suffixes]
+              for p in files:
+                  try:
+                      chars.update(p.read_text(encoding='utf-8'))
+                  except UnicodeDecodeError:
+                      pass
+          Path('/tmp/blaschka-public-glyphs.txt').write_text(''.join(sorted(chars)), encoding='utf-8')
+          print(f'Collected {len(chars)} distinct public characters')
+          PY
+          pyftsubset assets/fonts/EBGaramond-VariableFont_wght.woff2 \
+            --text-file=/tmp/blaschka-public-glyphs.txt \
+            --output-file=assets/fonts/EBGaramond-PublicSubset.woff2 \
+            --flavor=woff2 \
+            --layout-features='*' \
+            --name-IDs='*' \
+            --name-legacy \
+            --name-languages='*' \
+            --notdef-glyph \
+            --notdef-outline \
+            --recommended-glyphs \
+            --ignore-missing-glyphs \
+            --ignore-missing-unicodes
+
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          subset = Path('assets/fonts/EBGaramond-PublicSubset.woff2')
+          full = Path('assets/fonts/EBGaramond-VariableFont_wght.woff2')
+          if not subset.exists() or subset.stat().st_size >= full.stat().st_size:
+              raise SystemExit('Font subset was not smaller than the full font')
+
+          # Current-corpus subset first; original full font remains a missing-glyph fallback.
+          p = Path('typography-garamond.css')
+          s = p.read_text(encoding='utf-8')
+          s = re.sub(
+              r"@font-face\{\s*font-family:'EB Garamond Local';\s*src:url\('assets/fonts/EBGaramond-VariableFont_wght\.woff2'\) format\('woff2'\);\s*font-style:normal;\s*font-weight:400 800;\s*font-display:swap;\s*\}",
+              "@font-face{\n  font-family:'EB Garamond Local';\n  src:url('assets/fonts/EBGaramond-PublicSubset.woff2') format('woff2');\n  font-style:normal;\n  font-weight:400 800;\n  font-display:swap;\n}\n@font-face{\n  font-family:'EB Garamond Full';\n  src:url('assets/fonts/EBGaramond-VariableFont_wght.woff2') format('woff2');\n  font-style:normal;\n  font-weight:400 800;\n  font-display:swap;\n}",
+              s,
+              count=1,
+          )
+          s = s.replace("'EB Garamond Local','EB Garamond',Garamond", "'EB Garamond Local','EB Garamond Full','EB Garamond',Garamond")
+          p.write_text(s, encoding='utf-8')
+
+          p = Path('home-v2.css')
+          s = p.read_text(encoding='utf-8')
+          old = "@font-face{font-family:'EB Garamond Local';src:url('assets/fonts/EBGaramond-VariableFont_wght.woff2') format('woff2');font-style:normal;font-weight:400 800;font-display:swap}"
+          new = "@font-face{font-family:'EB Garamond Local';src:url('assets/fonts/EBGaramond-PublicSubset.woff2') format('woff2');font-style:normal;font-weight:400 800;font-display:swap}@font-face{font-family:'EB Garamond Full';src:url('assets/fonts/EBGaramond-VariableFont_wght.woff2') format('woff2');font-style:normal;font-weight:400 800;font-display:swap}"
+          if old not in s:
+              raise SystemExit('Expected home-v2 font-face declaration not found')
+          s = s.replace(old, new, 1)
+          s = s.replace("--serif:'EB Garamond Local',Garamond", "--serif:'EB Garamond Local','EB Garamond Full',Garamond", 1)
+          p.write_text(s, encoding='utf-8')
+
+          print(f'Font: {full.stat().st_size} -> {subset.stat().st_size} bytes for current public corpus')
+          PY
+
+      - name: Verify cleanup invariants
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          sources = Path('sources/index.html').read_text(encoding='utf-8')
+          cases = Path('cases/index.html').read_text(encoding='utf-8')
+          people_js = Path('people/people.js').read_text(encoding='utf-8')
+          full = json.loads(Path('people/people-data.json').read_text(encoding='utf-8'))
+          ui = json.loads(Path('people/people-ui.json').read_text(encoding='utf-8'))
+
+          assert '../site-core.css' not in sources
+          assert '../site-core.css' not in cases
+          assert 'case-wall-matrix.css' not in cases
+          assert not re.search(r'sources-pass(?:1[4-9]|2[0-9]|3[0-7])\.js', sources)
+          assert 'people-ui.json' in people_js
+          assert len(full.get('records', [])) == len(ui.get('records', []))
+          assert Path('assets/fonts/EBGaramond-PublicSubset.woff2').stat().st_size < Path('assets/fonts/EBGaramond-VariableFont_wght.woff2').stat().st_size
+
+          print('sources scripts: clean')
+          print('cases/source site-core references: clean')
+          print('people records:', len(ui['records']))
+          print('people full bytes:', Path('people/people-data.json').stat().st_size)
+          print('people UI bytes:', Path('people/people-ui.json').stat().st_size)
+          print('font full bytes:', Path('assets/fonts/EBGaramond-VariableFont_wght.woff2').stat().st_size)
+          print('font subset bytes:', Path('assets/fonts/EBGaramond-PublicSubset.woff2').stat().st_size)
+          PY
+
+      - name: Commit generated cleanup
+        shell: bash
+        run: |
+          git config user.name 'Haohao Zhang'
+          git config user.email 'zhhos98@gmail.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Reduce Sources, Cases, People and font payloads'
+          git push
