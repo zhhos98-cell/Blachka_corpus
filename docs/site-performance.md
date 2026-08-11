@@ -19,24 +19,39 @@ On `Save-Data`, `slow-2g`, or `2g`, optional animation and speculative media loa
 - `navigation-shell.css` uses `content-visibility:auto` for source, bibliography, and people records so long static indexes remain in the DOM and searchable while offscreen layout/paint can be deferred.
 - The homepage is intentionally static-first: one hero image, no carousel, no speculative hero preload, no family hotspot layer, and no navigation-glide dependency.
 - Cases use a static documentary directory. The old illustrative image matrix, flip-card interaction, and deferred visual bundle have been removed.
-- `unified-ui.js` supplies the canonical navigation and accessibility layer without injecting the historical 108 KB `site-core.css` bundle into ordinary secondary pages.
-- People no longer depends on `site-core.css`; its page-specific stylesheet carries the reading layout and long-list containment directly.
+- `unified-ui.js` supplies the canonical navigation and accessibility layer without injecting the historical `site-core.css` bundle into ordinary secondary pages.
+- People, Cases and Sources no longer depend on `site-core.css` for their public critical path; their required typography, mobile, navigation and accessibility layers are explicit.
 - Collections Map keeps the institution index usable even when Leaflet or tiles fail; scroll-wheel zoom is disabled to avoid trapping ordinary page scrolling.
 
-## Structural targets still in progress
+## Completed structural cleanup · 11 August 2026
 
-The remaining high-value work is structural rather than cosmetic:
+### Sources
 
-- remove the obsolete `sources-pass14.js`–`sources-pass37.js` requests from the generated Sources HTML, then delete the no-op compatibility files;
-- detach Cases and Sources from the historical `site-core.css` bundle after their required shared selectors are explicitly moved into their page-family styles;
-- inspect the People data-loading path before deciding whether the current JSON should be partitioned or retained as one cacheable payload;
-- audit the 284,548-byte EB Garamond variable font against the actual multilingual glyph set before any subsetting.
+The generated Sources HTML no longer requests `sources-pass14.js` through `sources-pass37.js`. The 24 no-op compatibility files were deleted after the static source index was confirmed to contain the actual public records. Sources also no longer loads the historical 108 KB `site-core.css` bundle; it loads its page-family CSS plus the small shared navigation and accessibility layers directly.
+
+The Sources document remains static HTML by design. That preserves immediate text, browser Find, indexing, resilient links and no-JavaScript access. Its document size should not be reduced by converting the research corpus into client-side hydration merely for a smaller initial HTML figure.
+
+### Cases
+
+Cases no longer loads `site-core.css` or the retired `case-wall-matrix.css`. The page-family stylesheet now owns the documentary directory and intro rules directly, while shared navigation and accessibility CSS are explicit. This removes historical cross-family CSS from the Cases critical path without changing the ten case narratives or evidence links.
+
+### People
+
+The full authority dataset remains `people-data.json` at 103,740 bytes and continues to serve as the machine-readable research record. The public interface now fetches `people-ui.json`, a 90,331-byte projection containing only fields actually used by the A–Z list, search, role filtering, biographies, open questions and links. All 153 records are retained.
+
+The existing `people-part-01.json`–`people-part-17.json` shards are not used by the public page. Loading them would turn one cacheable request into many requests while the interface still needs the complete authority set for full-text search and sorting.
+
+### EB Garamond
+
+The original variable font remains in the repository at 284,548 bytes. A public-corpus subset generated from current site HTML, JSON, JavaScript and XML is 101,632 bytes and is now the first font face requested by active page families. The full original font remains in the CSS stack as a missing-glyph fallback, so a future or unusual character can still render without silently sacrificing coverage.
+
+Font cache keys were refreshed across Home, People, Bibliography, Collections Map and the remaining small pages that still pass through the historical secondary bundle. The OFL notice and `font-display:swap` are retained.
 
 ## CSS strategy
 
-`site-core.css` and `home-core.css` are historical concatenations, not architectural units. Several constituent layers mix selectors for Home, Cases, Bibliography, Sources, Auctions, People, and generic subpages. Future cleanup should therefore be selector-aware rather than filename-aware.
+`site-core.css` and `home-core.css` are historical concatenations, not architectural units. Their presence in the repository is no longer equivalent to their presence on the critical path. Future cleanup should remove or regenerate historical bundles only when their remaining consumers are known; deleting selectors based solely on old filenames risks visual regressions for little transfer benefit.
 
-The target architecture is:
+The target architecture remains:
 
 - shared shell / typography / footer / accessibility;
 - Cases;
@@ -54,13 +69,11 @@ Sources and Bibliography remain static HTML because this preserves immediate tex
 
 If either index grows substantially, prefer build-time generation with the same static output semantics, or progressive rendering with a complete no-JS fallback. Product-style pagination is not an appropriate optimization for the research corpus.
 
-## People data
+## Next measurement work
 
-A single JSON payload is not automatically a defect. Partition it only if measurement shows that readers routinely need a small subset and the split reduces transferred bytes without increasing request overhead, duplicate metadata, or implementation complexity. If the payload remains roughly 100 KB and is strongly cacheable, keeping it consolidated may be the better design.
+The remaining performance task is measurement rather than another speculative rewrite: compare real browser request waterfalls, transferred compressed bytes, first contentful paint and interaction on representative desktop/mobile connections. Source byte counts are useful architecture signals, but they are not a browser performance score.
 
-## Font optimization
-
-The local EB Garamond variable font is the largest local single asset. Subsetting is acceptable only after a reproducible glyph audit over the public HTML, bibliography, people names, source records, and any non-English text. Preserve diacritics and required scripts, retain `font-display:swap`, and keep the OFL notice. Do not trade missing glyphs for a smaller transfer.
+After measurement, the next candidates are any historical CSS bundles still requested by small reading pages and any public data fields demonstrably unused by the interface. Do not split People further or remove the full font fallback unless measured transfer behavior justifies it.
 
 ## Guardrails
 
