@@ -1,11 +1,8 @@
 (() => {
-  const css = document.querySelector('link[href*="auctions.css"]');
-  if (css) css.href = 'auctions.css?v=20260810-3';
-
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260811-2';
+    ui.src = '../unified-ui.js?v=20260811-3';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -17,13 +14,12 @@
   const fold = value => String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
   const q = fold(raw);
   const cases = [...document.querySelectorAll('.auction-case')];
-  const scope = document.querySelector('.market-scope');
   const host = document.querySelector('.auction-cases');
   if (!host || !cases.length) return;
 
   const bar = document.createElement('div');
   bar.className = 'auction-query-bar';
-  bar.innerHTML = `<span>Search</span><strong></strong><em></em><a href="./">Clear</a>`;
+  bar.innerHTML = '<span>Search</span><strong></strong><em></em><a href="./">Clear</a>';
   bar.querySelector('strong').textContent = `“${raw}”`;
   host.insertAdjacentElement('beforebegin', bar);
 
@@ -34,30 +30,33 @@
     const lots = [...article.querySelectorAll('.auction-lot')];
     const headMatch = fold(head?.textContent).includes(q);
     const caseMatch = fold(article.textContent).includes(q);
-    if (!caseMatch) { article.hidden = true; return; }
+    if (!caseMatch) {
+      article.hidden = true;
+      return;
+    }
     visibleCases++;
-    if (lots.length) {
-      let lotMatches = 0;
-      lots.forEach(lot => {
-        const match = fold(lot.textContent).includes(q);
-        lot.hidden = !headMatch && !match;
-        if (!lot.hidden) lotMatches++;
-      });
-      if (!headMatch && lotMatches) visibleLots += lotMatches;
-      else {
-        lots.forEach(lot => { lot.hidden = false; });
-        visibleLots += lots.length;
-      }
+    let lotMatches = 0;
+    lots.forEach(lot => {
+      const match = fold(lot.textContent).includes(q);
+      lot.hidden = !headMatch && !match;
+      if (!lot.hidden) lotMatches++;
+    });
+    if (headMatch) {
+      lots.forEach(lot => { lot.hidden = false; });
+      visibleLots += lots.length;
+    } else {
+      visibleLots += lotMatches;
     }
   });
 
-  if (scope) scope.hidden = true;
-  const note = bar.querySelector('em');
-  note.textContent = visibleCases ? `${visibleCases} case${visibleCases === 1 ? '' : 's'} · ${visibleLots} lot${visibleLots === 1 ? '' : 's'}` : 'No matching public auction records';
+  bar.querySelector('em').textContent = visibleCases
+    ? `${visibleCases} case${visibleCases === 1 ? '' : 's'} · ${visibleLots} lot${visibleLots === 1 ? '' : 's'}`
+    : 'No matching auction records';
+
   if (!visibleCases) {
     const empty = document.createElement('p');
     empty.className = 'auction-query-empty';
-    empty.textContent = 'No public auction records match this search. The research backend may contain additional leads that are not yet promoted to the public page.';
+    empty.textContent = 'No public auction records match this search.';
     host.prepend(empty);
   }
 })();
