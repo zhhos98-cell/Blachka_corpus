@@ -9,17 +9,6 @@
 
   const target = document.getElementById('case-sections');
   if (!target) return;
-  const compactViewport = matchMedia('(max-width:900px)').matches;
-  const saveData = Boolean(navigator.connection?.saveData);
-
-  const loadScript = src => new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.defer = true;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.body.appendChild(script);
-  });
 
   const applyIncomingSearch = () => {
     const raw = (new URLSearchParams(location.search).get('q') || '').trim();
@@ -37,27 +26,19 @@
     if (intro && !document.querySelector('.cases-query-bar')) {
       const bar = document.createElement('div');
       bar.className = 'cases-query-bar';
-      bar.innerHTML = `<span>Search</span><strong></strong><em></em><a href="./">Clear</a>`;
+      bar.innerHTML = '<span>Search</span><strong></strong><em></em><a href="./">Clear</a>';
       bar.querySelector('strong').textContent = `“${raw}”`;
       bar.querySelector('em').textContent = `${visible} matching case${visible === 1 ? '' : 's'}`;
       intro.insertAdjacentElement('afterend', bar);
     }
   };
 
-  const restoreHash = () => {
-    if (!location.hash) return;
-    const id = decodeURIComponent(location.hash.slice(1));
-    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({block:'start'}));
-  };
-
   document.body.classList.add('cases-ready');
   target.querySelectorAll('.sample').forEach(sample => sample.classList.add('case-visible'));
   applyIncomingSearch();
-  restoreHash();
 
-  if (!compactViewport && !saveData) {
-    const loadWall = () => loadScript('./case-wall-media.js?v=20260810-4').catch(() => {});
-    if ('requestIdleCallback' in window) requestIdleCallback(loadWall, {timeout:1200});
-    else setTimeout(loadWall, 350);
+  if (location.hash) {
+    const id = decodeURIComponent(location.hash.slice(1));
+    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({block:'start'}));
   }
 })();
