@@ -9,6 +9,7 @@ public/archived file placement.
 from __future__ import annotations
 
 import hashlib
+import html
 import json
 from pathlib import Path
 
@@ -95,6 +96,44 @@ def validate_envelope(directory: Path, glob_pattern: str, schema_path: Path, exc
     return checked
 
 
+def validate_source_reuse_projection() -> int:
+    crosswalk = load(ROOT / "schemas" / "generated" / "source-authority-crosswalk.json")
+    projection = load(ROOT / "sources" / "source-reuse-ui.json")
+    page = html.unescape((ROOT / "sources" / "index.html").read_text(encoding="utf-8"))
+
+    shared = {
+        node.get("locator"): node
+        for node in crosswalk.get("nodes", [])
+        if node.get("shared_across_files") and node.get("locator")
+    }
+    entries = projection.get("entries", [])
+    if projection.get("entry_count") != len(entries):
+        raise SystemExit("Sources reuse projection entry_count does not match entries length")
+
+    seen = set()
+    for entry in entries:
+        locator = entry.get("locator")
+        if not locator or locator in seen:
+            raise SystemExit("Sources reuse projection has missing or duplicate locator")
+        seen.add(locator)
+        node = shared.get(locator)
+        if not node:
+            raise SystemExit(f"Sources reuse projection locator is not a shared crosswalk node: {locator}")
+        if locator not in page:
+            raise SystemExit(f"Sources reuse projection locator is no longer linked from Sources page: {locator}")
+
+        contexts = entry.get("contexts", [])
+        context_files = [context.get("file") for context in contexts]
+        if len(context_files) != len(set(context_files)):
+            raise SystemExit(f"Sources reuse projection repeats a context file: {locator}")
+        if entry.get("project_part_count") != len(contexts):
+            raise SystemExit(f"Sources reuse projection count is stale: {locator}")
+        crosswalk_files = sorted({occ.get("file") for occ in node.get("occurrences", []) if occ.get("file")})
+        if sorted(context_files) != crosswalk_files:
+            raise SystemExit(f"Sources reuse projection contexts are stale: {locator}")
+    return len(entries)
+
+
 def main() -> None:
     canonical_path = ROOT / "people" / "people-data.json"
     ui_path = ROOT / "people" / "people-ui.json"
@@ -133,6 +172,7 @@ def main() -> None:
         "*-register.json",
         ROOT / "schemas" / "source-register-envelope.schema.json",
     )
+    source_reuse_count = validate_source_reuse_projection()
 
     auctions_dir = ROOT / "auctions"
     auction_data = load(auctions_dir / "auction-data.json")
@@ -159,6 +199,7 @@ def main() -> None:
     print(f"Global archive register entries: {len(ids)}")
     print(f"Source register manifest entries: {source_count}")
     print(f"Source register envelopes: {source_envelopes}")
+    print(f"Sources reuse projection entries: {source_reuse_count}")
     print(f"Auction JSON manifest entries: {auction_count}")
     print(f"Auction JSON envelopes: {auction_envelopes}")
     print("Public JSON structural checks: OK")
