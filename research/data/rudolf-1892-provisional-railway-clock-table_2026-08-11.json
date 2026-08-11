@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-08-11",
+  "title": "Rudolf Blaschka 1892 provisional railway-clock table",
+  "scope": "Backend-only structured clock controls for the Arizona-to-San-Diego sequence, 22-26 April 1892. The table separates contemporaneous correspondence from exact-year and near-contemporary timetable controls and from constrained inference.",
+  "frontend_policy": "Backend only. Do not publish this table, sketchbook image associations, daylight eliminations or inferred railway minutes on public Pages without a separate explicit sync decision.",
+  "evidence_grades": {
+    "A": "Contemporaneous primary correspondence/postcard explicitly reporting place/date/time or immediate travel sequence.",
+    "A-": "Same-year timetable very close to target date, or high-confidence inference tightly bounded by multiple A-grade facts.",
+    "B": "Near-contemporary timetable/service table demonstrating a stable clock pattern but not exact for the target date.",
+    "C": "Later structural/route analogue; useful only for persistent geometry or service pattern."
+  },
+  "clock_guard": "Historical railroad times are retained as printed/reported clock readings. Do not silently convert them to modern UTC offsets. Where a timetable labels a time standard, preserve that label. Daylight analysis should first compare local solar conditions with the historical clock sequence and state all assumptions.",
+  "rows": [
+    {
+      "target_date": "1892-04-22",
+      "station_or_segment": "Tempe",
+      "direction": "field excursion / westward preparation",
+      "time": null,
+      "time_precision": "day",
+      "source_date": "1892-04-22",
+      "effective_date": "1892-04-22",
+      "source_class": "Rudolf correspondence",
+      "source_anchor": "BLA-D00785 · 017:139",
+      "evidence_grade": "A",
+      "exactness": "exact day and place",
+      "finding": "Wagon excursion a few miles into mountains/desert; plan to finish Tempe next day, spend the night at Maricopa, then take the Sunday-morning California train.",
+      "guard": "No departure minute stated."
+    },
+    {
+      "target_date": "1892-04-23",
+      "station_or_segment": "Tempe → Maricopa",
+      "direction": "westbound transfer",
+      "time": null,
+      "time_precision": "day/window",
+      "source_date": "1892-04-22 and 1892-04-24",
+      "effective_date": "1892-04-23",
+      "source_class": "cross-date primary inference",
+      "source_anchor": "BLA-D00785 · 017:139 + Maricopa dated records 017:140/142",
+      "evidence_grade": "A-",
+      "exactness": "high-confidence day-level movement",
+      "finding": "Transfer to the Southern Pacific junction and overnight at Maricopa is required by Rudolf's forward plan and next-day presence.",
+      "guard": "No exact train/departure time recovered."
+    },
+    {
+      "target_date": "1892-04-24",
+      "station_or_segment": "Maricopa",
+      "direction": "Southern Pacific westbound",
+      "time": "06:35",
+      "time_precision": "minute, contextual control",
+      "source_date": "1892-05-29",
+      "effective_date": "close same-year service",
+      "source_class": "Arizona Republican timetable",
+      "source_url": "https://azmemory.azlibrary.gov/nodes/view/172419",
+      "evidence_grade": "A-",
+      "exactness": "same-year close control; not issue-specific proof for 24 April",
+      "finding": "Southern Pacific westbound passes Maricopa at about 6:35 A.M.; later 1892 issues repeat the same time.",
+      "interpretation": "Strong contextual fit with Rudolf's Sunday-morning California departure and 24 April Maricopa sketches/cards.",
+      "guard": "Do not write 'Rudolf's train departed 6:35' until an April 24/April issue table is recovered."
+    },
+    {
+      "target_date": "1892-04-24",
+      "station_or_segment": "Maricopa landscape observation",
+      "direction": "westbound transit context",
+      "time": "early morning",
+      "time_precision": "qualitative",
+      "source_date": "1892-04-24",
+      "effective_date": "1892-04-24",
+      "source_class": "dated sketchbook",
+      "source_anchor": "Rakow 87384, digital pp. 4-5 and 8-9",
+      "evidence_grade": "A",
+      "exactness": "exact date/place, no clock minute",
+      "finding": "Two filmed landscapes are captioned Maricopa, 24 April 1892; current interpretation is station-adjacent / transit observation rather than a separate collecting excursion.",
+      "guard": "The drawings do not prove they were executed aboard the moving train."
+    },
+    {
+      "target_date": "1892-04-24",
+      "station_or_segment": "Yuma",
+      "direction": "Southern Pacific westbound",
+      "time": "12:40",
+      "time_precision": "minute, near-contemporary proxy",
+      "source_date": "1891-06-06",
+      "effective_date": "table stated in effect from 1890-06-15",
+      "source_class": "Arizona Sentinel reproduction of Southern Pacific Pacific System timetable",
+      "source_url": "https://chroniclingamerica.loc.gov/lccn/sn84021912/1891-06-06/ed-1/seq-2/",
+      "evidence_grade": "B",
+      "exactness": "near-contemporary stable-service control, not exact 1892 proof",
+      "finding": "Westbound row gives Yuma departure about 12:40 P.M. toward Banning, Colton, Los Angeles and onward points.",
+      "interpretation": "Together with the Maricopa 6:35 close control and Rudolf's Los Angeles overnight, this produces a coherent provisional clock skeleton.",
+      "guard": "The printed table predates Rudolf's trip and must be replaced by an 1892 issue if recovered."
+    },
+    {
+      "target_date": "1892-04-24",
+      "station_or_segment": "Maricopa → Yuma → California desert → Salton depression → San Jacinto approach",
+      "direction": "Southern Pacific westbound",
+      "time": "daytime-to-evening",
+      "time_precision": "sequence only",
+      "source_date": "1892-04-25",
+      "effective_date": "1892-04-24",
+      "source_class": "Rudolf next-day correspondence",
+      "source_anchor": "BLA-D00796–BLA-D00797 · 017:150–151",
+      "evidence_grade": "A",
+      "exactness": "exact preceding day and ordered ecological/landscape sequence; internal minutes unresolved",
+      "finding": "Rudolf explicitly narrates the preceding day's progression through Arizona/Yuma cactus landscape, California near-barren desert, the Salton depression, then a climb past snow-covered San Jacinto with changing Yucca/Opuntia/Abronia vegetation.",
+      "sketchbook_relation": "Rakow pp. 12-13 now belong to this 24 April corridor with high confidence, while exact massif/milepoint remains unresolved."
+    },
+    {
+      "target_date": "1892-04-24",
+      "station_or_segment": "Los Angeles",
+      "direction": "arrival / overnight",
+      "time": "22:00",
+      "time_precision": "high-confidence inferred hour",
+      "source_date": "1892-04-25",
+      "effective_date": "1892-04-24",
+      "source_class": "constrained inference from Rudolf correspondence",
+      "source_anchor": "BLA-D00797 · 017:151 + Los Angeles postcard BLA-D00790 · 017:144",
+      "evidence_grade": "A-",
+      "exactness": "place/overnight secure; PM interpretation inferred",
+      "finding": "Rudolf says they reached Los Angeles 'at 10', had to stay overnight, and the San Diego train left next morning at 8:45. Combined with 25 April 13:00 San Diego arrival, 10 p.m. is overwhelmingly more plausible than 10 a.m.",
+      "confidence": 0.94,
+      "guard": "Display as ca. 22:00 / high-confidence inference, not a verbatim PM notation."
+    },
+    {
+      "target_date": "1892-04-25",
+      "station_or_segment": "Los Angeles",
+      "direction": "toward San Diego",
+      "time": "08:45",
+      "time_precision": "minute",
+      "source_date": "1892-04-25",
+      "effective_date": "1892-04-25",
+      "source_class": "Rudolf correspondence",
+      "source_anchor": "BLA-D00797 · 017:151",
+      "evidence_grade": "A",
+      "exactness": "Rudolf-reported departure time",
+      "finding": "Morning departure toward San Diego at 8:45."
+    },
+    {
+      "target_date": "1892-04-25",
+      "station_or_segment": "Southern California coast",
+      "direction": "Los Angeles → San Diego",
+      "time": "~10:00",
+      "time_precision": "approximate hour",
+      "source_date": "1892-04-25",
+      "effective_date": "1892-04-25",
+      "source_class": "Rudolf correspondence",
+      "source_anchor": "BLA-D00797 · 017:151",
+      "evidence_grade": "A",
+      "exactness": "time approximate; coastal milepoint unresolved",
+      "finding": "Rudolf reports first reaching/seeing the Pacific around 10 in the morning, after which the ocean remained in view toward San Diego.",
+      "guard": "Needs an April/May 1892 Southern California Railway/Santa Fe station table to locate the first-ocean-view window."
+    },
+    {
+      "target_date": "1892-04-25",
+      "station_or_segment": "San Diego",
+      "direction": "arrival",
+      "time": "13:00",
+      "time_precision": "minute/hour",
+      "source_date": "1892-04-25",
+      "effective_date": "1892-04-25",
+      "source_class": "Rudolf correspondence",
+      "source_anchor": "BLA-D00796 · 017:150 and translated header",
+      "evidence_grade": "A",
+      "exactness": "secure",
+      "finding": "Rudolf explicitly says he arrived at 1 p.m.; the 26 April letter independently confirms the party had already been in San Diego the previous afternoon."
+    }
+  ],
+  "provisional_clock_skeleton": {
+    "1892-04-24": [
+      "Maricopa ~06:35 [A- same-year close control]",
+      "Yuma ~12:40 [B near-contemporary proxy]",
+      "Los Angeles ~22:00 [A- constrained inference]"
+    ],
+    "1892-04-25": [
+      "Los Angeles 08:45 [A]",
+      "Pacific coast ~10:00 [A approximate]",
+      "San Diego 13:00 [A]"
+    ]
+  },
+  "source_targets": [
+    {
+      "title": "Official Railway Guide, March-April 1892",
+      "source": "Google Books via NAOTC index",
+      "google_volume_id": "qrwsAQAAMAAJ",
+      "status": "identified; Southern Pacific schedule pages not yet extracted"
+    },
+    {
+      "title": "Official Railway Guide, January 1892",
+      "source": "Google Play/Books",
+      "google_volume_id": "VrssAQAAMAAJ",
+      "status": "free full volume identified; relevant schedule pages not yet extracted"
+    },
+    {
+      "title": "Southern Pacific Company, California, Texas, Mexico And Arizona — Sunset Route",
+      "date": "1892-01",
+      "source": "David Rumsey Historical Map Collection",
+      "rumsey_list_number": "3139B",
+      "luna_media_id": "RUMSEY~8~1~22065~760032",
+      "status": "20-page timetable/travel-information object identified; binary/image extraction pending"
+    },
+    {
+      "title": "Southern Pacific public timetable No. 45",
+      "date": "1892-09",
+      "source": "UC Berkeley",
+      "status": "open-access three-page same-year structural control; not a substitute for April issue"
+    },
+    {
+      "title": "Southern Pacific timetables",
+      "date_range": "1887-1976",
+      "source": "Yuma County Library District historical ephemera",
+      "status": "institutional fallback target for exact April 1892 Yuma/Maricopa schedule"
+    }
+  ],
+  "next_operation": "Compute 24 April local-solar daylight windows against the provisional historical clock skeleton, explicitly separating solar geometry from railroad clock standards. Then test whether the p.12-13 massif could plausibly belong to early Arizona/Yuma, lower Colorado/Salton or late San Jacinto portions. Replace proxy timetable rows whenever exact 1892 issue pages are recovered."
+}
