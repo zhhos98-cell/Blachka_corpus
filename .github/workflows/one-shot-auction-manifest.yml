@@ -1,0 +1,37 @@
+name: One-shot Auction manifest generation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-auction-manifest.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build Auction structural manifest
+        run: python scripts/build-auction-manifest.py
+      - name: Stage manifest
+        run: git add auctions/data-manifest.json
+      - name: Validate current derived data
+        run: python scripts/validate-derived-data.py
+      - name: Commit manifest
+        shell: bash
+        run: |
+          if git diff --cached --quiet; then
+            echo "Manifest already current"
+            exit 0
+          fi
+          git config user.name "Haohao Zhang"
+          git config user.email "zhhos98@gmail.com"
+          git commit -m "Generate Auction data structural manifest"
+          git push origin HEAD:main
