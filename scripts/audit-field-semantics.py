@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_JSON = ROOT / "schemas" / "generated" / "field-semantic-role-map.json"
-OUT_MD = ROOT / "docs" / "field-semantic-audit-2026-08-11.md"
+OUT_MD = ROOT / "docs" / "audits" / "2026-08-11" / "field-semantic-audit-2026-08-11.md"
 
 GROUPS = {
     "guard_or_limit": {
@@ -205,7 +205,7 @@ def main():
         "4. **Do not globalize status:** status labels remain local unless a later reviewed crosswalk proves equivalence. The separate status-vocabulary audit found no repeated explicit label across the four current local vocabularies.",
         "5. **Naming drift is now observable without destructive cleanup:** future new registers can prefer documented field roles while historical registers remain intact.",
         "",
-        "Machine-readable detail: `../schemas/generated/field-semantic-role-map.json`.",
+        "Machine-readable detail: `../../../schemas/generated/field-semantic-role-map.json`.",
     ])
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Semantic-role audit: {len(files)} files, {len(fields)} distinct field names")

@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 AUCTIONS = ROOT / "auctions"
 OUT_JSON = ROOT / "schemas" / "generated" / "auction-canonical-sync-audit.json"
-OUT_MD = ROOT / "docs" / "auction-canonical-sync-audit-2026-08-11.md"
+OUT_MD = ROOT / "docs" / "audits" / "2026-08-11" / "auction-canonical-sync-audit-2026-08-11.md"
 
 REFERENCE_KEYS = {
     "canonical_record_id",
@@ -182,7 +182,7 @@ def main():
         "",
         "A `pending` result means the supporting layer contains a proposed value while the canonical field is currently null/missing. A `conflict_or_review` result means both layers contain non-null values that differ; neither is automatically preferred.",
         "",
-        "Machine-readable detail: `../schemas/generated/auction-canonical-sync-audit.json`.",
+        "Machine-readable detail: `../../../schemas/generated/auction-canonical-sync-audit.json`.",
     ])
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

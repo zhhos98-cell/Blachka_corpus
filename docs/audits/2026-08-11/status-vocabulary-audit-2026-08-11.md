@@ -23,4 +23,4 @@ No status label occurs in more than one explicit vocabulary. A global vocabulary
 
 A shared vocabulary file should contain only terms whose definitions are identical across current uses, or terms later linked by an explicit reviewed mapping. Conflicting or file-specific statuses remain local. The inventory is evidence about schema reuse, not authority to edit the underlying registers.
 
-Machine-readable detail: `../schemas/generated/status-vocabulary-inventory.json`.
+Machine-readable detail: `../../../schemas/generated/status-vocabulary-inventory.json`.

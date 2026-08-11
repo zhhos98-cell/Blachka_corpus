@@ -13,7 +13,7 @@ SOURCES = ROOT / "sources"
 SCHEMAS = ROOT / "schemas"
 DOCS = ROOT / "docs"
 JSON_OUT = SCHEMAS / "generated" / "status-vocabulary-inventory.json"
-MD_OUT = DOCS / "status-vocabulary-audit-2026-08-11.md"
+MD_OUT = DOCS / "audits" / "2026-08-11" / "status-vocabulary-audit-2026-08-11.md"
 
 
 def canonical(value) -> str:
@@ -115,7 +115,7 @@ def main() -> None:
         "",
         "A shared vocabulary file should contain only terms whose definitions are identical across current uses, or terms later linked by an explicit reviewed mapping. Conflicting or file-specific statuses remain local. The inventory is evidence about schema reuse, not authority to edit the underlying registers.",
         "",
-        "Machine-readable detail: `../schemas/generated/status-vocabulary-inventory.json`.",
+        "Machine-readable detail: `../../../schemas/generated/status-vocabulary-inventory.json`.",
         "",
     ])
     MD_OUT.write_text("\n".join(lines), encoding="utf-8")

@@ -92,6 +92,6 @@ python scripts/audit-cross-register-duplication.py
 python scripts/audit-auction-canonical-sync.py
 ```
 
-The audit outputs belong under `schemas/generated/` and dated notes under `docs/`; they do not feed changes back into canonical research data.
+The audit outputs belong under `schemas/generated/` and dated notes under `docs/audits/YYYY-MM-DD/`; they do not feed changes back into canonical research data.
 
 A clean run confirms structural relationships; it does not validate historical truth. Evidence review remains a separate research operation.

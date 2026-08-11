@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
 DOCS = ROOT / "docs"
 PROFILE_OUT = SCHEMAS / "generated" / "schema-family-profile.json"
-REPORT_OUT = DOCS / "schema-family-audit-2026-08-11.md"
+REPORT_OUT = DOCS / "audits" / "2026-08-11" / "schema-family-audit-2026-08-11.md"
 
 
 def jtype(value):
@@ -225,7 +225,7 @@ def main():
         "4. Status vocabularies should be extracted only where definitions are identical or explicitly mapped. Similar labels are not to be normalized by spelling alone.",
         "5. The next safe step is to define a minimal non-evidentiary envelope schema plus optional vocabulary registries, while leaving every current data file untouched.",
         "",
-        "Machine-readable detail: `../schemas/generated/schema-family-profile.json`.",
+        "Machine-readable detail: `../../../schemas/generated/schema-family-profile.json`.",
         "",
     ])
     REPORT_OUT.write_text("\n".join(lines), encoding="utf-8")

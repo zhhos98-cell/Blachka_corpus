@@ -20,4 +20,4 @@ This is a read-only comparison between Auction supporting JSON layers and canoni
 
 A `pending` result means the supporting layer contains a proposed value while the canonical field is currently null/missing. A `conflict_or_review` result means both layers contain non-null values that differ; neither is automatically preferred.
 
-Machine-readable detail: `../schemas/generated/auction-canonical-sync-audit.json`.
+Machine-readable detail: `../../../schemas/generated/auction-canonical-sync-audit.json`.

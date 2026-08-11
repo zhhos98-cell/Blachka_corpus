@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_JSON = ROOT / "schemas" / "generated" / "cross-register-duplication-index.json"
-OUT_MD = ROOT / "docs" / "cross-register-duplication-audit-2026-08-11.md"
+OUT_MD = ROOT / "docs" / "audits" / "2026-08-11" / "cross-register-duplication-audit-2026-08-11.md"
 URL_RE = re.compile(r"https?://[^\s\]\[\)\(<>\"']+")
 
 
@@ -147,7 +147,7 @@ def main():
             where = ", ".join(sorted({x["file"] for x in item["locations"]}))
             lines.append(f"- `{item['id']}` — {where}")
         lines.append("")
-    lines.append("Machine-readable detail: `../schemas/generated/cross-register-duplication-index.json`.")
+    lines.append("Machine-readable detail: `../../../schemas/generated/cross-register-duplication-index.json`.")
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     print(

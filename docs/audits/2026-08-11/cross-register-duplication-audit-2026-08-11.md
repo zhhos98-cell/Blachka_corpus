@@ -15,4 +15,4 @@ This audit compares exact values only across current Source registers and Auctio
 - Repeated **long prose** may be deliberate guard text, shared source description, or copy-forward drift. Exact repetition is a candidate for documentation-level factoring only when the wording has no record-specific evidentiary function.
 - Repeated **objects** are stronger evidence of duplicated structured data, but even byte-equivalent objects can legitimately appear in different analytical registers. Prefer a cross-reference layer over destructive deduplication unless one file is explicitly derived from another.
 
-Machine-readable detail: `../schemas/generated/cross-register-duplication-index.json`.
+Machine-readable detail: `../../../schemas/generated/cross-register-duplication-index.json`.

@@ -57,4 +57,4 @@ Detected fields (23): `auction_evidence`, `auction_record`, `catalogue_crosschec
 4. **Do not globalize status:** status labels remain local unless a later reviewed crosswalk proves equivalence. The separate status-vocabulary audit found no repeated explicit label across the four current local vocabularies.
 5. **Naming drift is now observable without destructive cleanup:** future new registers can prefer documented field roles while historical registers remain intact.
 
-Machine-readable detail: `../schemas/generated/field-semantic-role-map.json`.
+Machine-readable detail: `../../../schemas/generated/field-semantic-role-map.json`.
