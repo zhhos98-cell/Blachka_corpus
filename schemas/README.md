@@ -11,6 +11,7 @@ Generated inventories live under `generated/`:
 - `schema-family-profile.json` describes exact top-level key/type signatures and repeated list-item shapes;
 - `status-vocabulary-inventory.json` compares explicit local status vocabularies;
 - `field-semantic-role-map.json` inventories current naming drift by functional role;
-- `cross-register-duplication-index.json` records exact cross-file IDs, URLs, long strings, and structured-object duplication.
+- `cross-register-duplication-index.json` records exact cross-file IDs, URLs, long strings, and structured-object duplication;
+- `auction-canonical-sync-audit.json` checks Auction support-layer references and declared canonical updates against the current canonical lot table.
 
 Structural similarity is only a candidate for shared tooling; it does not establish semantic equivalence. Vocabulary files may be added here only after definitions have been compared. Repeated labels are not to be collapsed merely because their spelling matches. Research mutation rules remain governed by `../docs/data-layers.md`, with prospective field practice documented in `../docs/json-field-conventions.md`.
