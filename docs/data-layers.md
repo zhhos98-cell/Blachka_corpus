@@ -56,7 +56,8 @@ Housekeeping may:
 - generate smaller public payloads from canonical files;
 - normalize filenames for new non-public tooling when stable URLs are unaffected;
 - remove obsolete runtime references after verifying that the replacement is active;
-- audit naming drift, duplicate locators, repeated prose or exact structured duplication without treating the audit itself as authority to merge records.
+- audit naming drift, duplicate locators, repeated prose or exact structured duplication without treating the audit itself as authority to merge records;
+- compare support-layer references or declared canonical updates against canonical files without applying the proposed changes.
 
 Housekeeping must not:
 
@@ -66,7 +67,8 @@ Housekeeping must not:
 - replace a source URL, archival shelfmark or identifier merely for stylistic consistency;
 - turn candidate/comparator material into direct evidence;
 - mutate `research/data/` as a side effect of frontend work;
-- retroactively rename evidence-bearing fields merely to satisfy later naming conventions.
+- retroactively rename evidence-bearing fields merely to satisfy later naming conventions;
+- write a support-layer `canonical_fields_to_update` proposal back into canonical data without separate source/evidence review.
 
 Prospective field naming for new or substantially rebuilt JSON is documented in `json-field-conventions.md` and machine-readable in `../schemas/field-role-conventions.json`. Existing fields remain authoritative in their original registers unless a separate reviewed research migration is explicitly undertaken.
 
@@ -87,6 +89,7 @@ python scripts/audit-json-schema-families.py
 python scripts/audit-status-vocabularies.py
 python scripts/audit-field-semantics.py
 python scripts/audit-cross-register-duplication.py
+python scripts/audit-auction-canonical-sync.py
 ```
 
 The audit outputs belong under `schemas/generated/` and dated notes under `docs/`; they do not feed changes back into canonical research data.
