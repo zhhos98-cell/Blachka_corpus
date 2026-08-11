@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260811-2';
+    ui.src = '../unified-ui.js?v=20260811-3';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -10,7 +10,6 @@
   const target = document.getElementById('case-sections');
   if (!target) return;
   const compactViewport = matchMedia('(max-width:900px)').matches;
-  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const saveData = Boolean(navigator.connection?.saveData);
 
   const loadScript = src => new Promise((resolve, reject) => {
@@ -21,23 +20,6 @@
     script.onerror = reject;
     document.body.appendChild(script);
   });
-
-  const revealCases = () => {
-    const samples = [...target.querySelectorAll('.sample')];
-    if (compactViewport || reducedMotion || !('IntersectionObserver' in window)) {
-      samples.forEach(sample => sample.classList.add('case-visible'));
-      return;
-    }
-    samples.forEach(sample => sample.classList.add('case-enter'));
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('case-visible');
-        observer.unobserve(entry.target);
-      });
-    }, { threshold:.05, rootMargin:'0px 0px -4% 0px' });
-    samples.forEach(sample => observer.observe(sample));
-  };
 
   const applyIncomingSearch = () => {
     const raw = (new URLSearchParams(location.search).get('q') || '').trim();
@@ -68,32 +50,16 @@
     requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({block:'start'}));
   };
 
-  const loadWall = () => loadScript('./case-wall-media.js?v=20260810-4').catch(console.error);
-  const loadSecondaryVisuals = () => {
-    if (compactViewport || saveData) return;
-    loadScript('../cases-visuals-bundle.js?v=20260810-1').catch(console.error);
-  };
-
   document.body.classList.add('cases-ready');
+  target.querySelectorAll('.sample').forEach(sample => sample.classList.add('case-visible'));
   applyIncomingSearch();
-  revealCases();
   restoreHash();
 
-  /* The directory interaction is tiny and can arrive quickly. The 43 KB secondary
-     visual bundle waits until the reader scrolls or the page has been quiet for a few seconds. */
-  if ('requestIdleCallback' in window) requestIdleCallback(loadWall, {timeout:900});
-  else setTimeout(loadWall, 180);
-
+  /* Directory thumbnails are optional and small. Long-case background maps and
+     other decorative visual overlays are deliberately not loaded. */
   if (!compactViewport && !saveData) {
-    let secondaryQueued = false;
-    const queueSecondary = () => {
-      if (secondaryQueued) return;
-      secondaryQueued = true;
-      if ('requestIdleCallback' in window) requestIdleCallback(loadSecondaryVisuals, {timeout:3000});
-      else setTimeout(loadSecondaryVisuals, 0);
-    };
-    if (scrollY > 320) queueSecondary();
-    else addEventListener('scroll', queueSecondary, {once:true, passive:true});
-    setTimeout(queueSecondary, 3500);
+    const loadWall = () => loadScript('./case-wall-media.js?v=20260810-4').catch(() => {});
+    if ('requestIdleCallback' in window) requestIdleCallback(loadWall, {timeout:1200});
+    else setTimeout(loadWall, 350);
   }
 })();
