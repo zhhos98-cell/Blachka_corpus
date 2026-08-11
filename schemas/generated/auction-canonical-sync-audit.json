@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-11",
+  "purpose": "Read-only integrity audit of Auction support-layer references and declared canonical updates against auction-data.json.",
+  "guard": "Pending or conflicting fields are review targets only. This audit does not authorize automatic mutation of canonical auction records.",
+  "canonical_record_count": 11,
+  "reference_count": 10,
+  "unresolved_reference_count": 0,
+  "references": [
+    {
+      "file": "auction-catalogue-recoveries.json",
+      "path": "recoveries[0].canonical_record_id",
+      "key": "canonical_record_id",
+      "target": "AUC-2015-GRISEBACH-SERPULA-343",
+      "resolved": true
+    },
+    {
+      "file": "auction-catalogue-recoveries.json",
+      "path": "recoveries[1].canonical_record_ids",
+      "key": "canonical_record_ids",
+      "target": "AUC-2019-CHRISTIES-46-1877-381",
+      "resolved": true
+    },
+    {
+      "file": "auction-catalogue-recoveries.json",
+      "path": "recoveries[1].canonical_record_ids",
+      "key": "canonical_record_ids",
+      "target": "AUC-2019-CHRISTIES-47-1877-360",
+      "resolved": true
+    },
+    {
+      "file": "auction-catalogue-recoveries.json",
+      "path": "recoveries[1].canonical_record_ids",
+      "key": "canonical_record_ids",
+      "target": "AUC-2019-CHRISTIES-48-1877-376",
+      "resolved": true
+    },
+    {
+      "file": "auction-provenance-crosslinks.json",
+      "path": "crosslinks[0].canonical_record_id",
+      "key": "canonical_record_id",
+      "target": "AUC-2015-GRISEBACH-SERPULA-343",
+      "resolved": true
+    },
+    {
+      "file": "auction-provenance-crosslinks.json",
+      "path": "crosslinks[1].canonical_record_id",
+      "key": "canonical_record_id",
+      "target": "AUC-2025-KREFELD-26",
+      "resolved": true
+    },
+    {
+      "file": "auction-provenance-crosslinks.json",
+      "path": "crosslinks[2].canonical_record_id",
+      "key": "canonical_record_id",
+      "target": "AUC-2025-KREFELD-27",
+      "resolved": true
+    },
+    {
+      "file": "auction-provenance-crosslinks.json",
+      "path": "crosslinks[3].canonical_record_id",
+      "key": "canonical_record_id",
+      "target": "AUC-2019-CHRISTIES-46-1877-381",
+      "resolved": true
+    },
+    {
+      "file": "auction-data.json",
+      "path": "records[0].probable_same_object_as",
+      "key": "probable_same_object_as",
+      "target": "AUC-2005-JDJ-SAMOSET-561",
+      "resolved": true
+    },
+    {
+      "file": "auction-data.json",
+      "path": "records[1].probable_reoffer_of",
+      "key": "probable_reoffer_of",
+      "target": "AUC-2005-JDJ-WINTER-480A",
+      "resolved": true
+    }
+  ],
+  "update_block_count": 1,
+  "field_status_counts": {
+    "already_applied": 1,
+    "pending": 3,
+    "conflict_or_review": 0,
+    "unresolved_target": 0
+  },
+  "update_blocks": [
+    {
+      "file": "auction-catalogue-recoveries.json",
+      "path": "recoveries[0]",
+      "targets": [
+        "AUC-2015-GRISEBACH-SERPULA-343"
+      ],
+      "declared_update_needed": true,
+      "fields": {
+        "auction_title": "ORANGERIE. Selected Objects",
+        "lot": "483",
+        "primary_lot_page": "https://www.invaluable.com/auction-lot/leopold-and-rudolph-blaschka-model-of-a-serpulida-483-c-a084c25853",
+        "needs_primary_lot_page": true
+      },
+      "status": "pending",
+      "comparisons": [
+        {
+          "target": "AUC-2015-GRISEBACH-SERPULA-343",
+          "field": "auction_title",
+          "current": null,
+          "declared_value": "ORANGERIE. Selected Objects",
+          "status": "pending"
+        },
+        {
+          "target": "AUC-2015-GRISEBACH-SERPULA-343",
+          "field": "lot",
+          "current": null,
+          "declared_value": "483",
+          "status": "pending"
+        },
+        {
+          "target": "AUC-2015-GRISEBACH-SERPULA-343",
+          "field": "primary_lot_page",
+          "current": null,
+          "declared_value": "https://www.invaluable.com/auction-lot/leopold-and-rudolph-blaschka-model-of-a-serpulida-483-c-a084c25853",
+          "status": "pending"
+        },
+        {
+          "target": "AUC-2015-GRISEBACH-SERPULA-343",
+          "field": "needs_primary_lot_page",
+          "current": true,
+          "declared_value": true,
+          "status": "already_applied"
+        }
+      ]
+    }
+  ]
+}
