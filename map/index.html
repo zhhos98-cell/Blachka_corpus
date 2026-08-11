@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A map of current and near-current institutions connected to documented Blaschka glass model collections.">
+  <meta name="description" content="Map of institutions with documented Blaschka glass model collections.">
   <title>Map · The Blaschka Object Network</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../secondary.css">
-  <link rel="stylesheet" href="../navigation-shell.css?v=20260810-4">
+  <link rel="stylesheet" href="../navigation-shell.css?v=20260811-1">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="map.css?v=20260810-2">
 </head>
@@ -23,32 +23,32 @@
 
   <main class="subpage-main" id="main-content">
     <section class="page-intro" aria-labelledby="map-title">
-      <p class="eyebrow">Spatial index</p>
+      <p class="eyebrow">Collections</p>
       <h1 id="map-title">Collections map</h1>
-      <p class="page-dek">Current and near-current institutional endpoints documented in the project. The map is an index of collections and custody questions, not a claim that every surviving Blaschka object has been located.</p>
-      <p class="page-dek"><a href="./rudolf-1892/">Open the research map of Rudolf Blaschka’s 1892 American journey →</a></p>
+      <p class="page-dek">Institutions with documented Blaschka holdings or collection histories. Unknown survival and incomplete counts remain marked as such.</p>
+      <p class="page-dek"><a href="./rudolf-1892/">Rudolf Blaschka’s 1892 journey →</a></p>
     </section>
 
     <section class="map-section" aria-labelledby="map-section-title">
       <div class="map-section-head">
-        <div><p class="eyebrow">Modern institutions</p><h2 id="map-section-title">Where the collections are now</h2></div>
-        <label class="map-search" for="map-search"><span>Search institutions</span><input id="map-search" type="search" autocomplete="off" placeholder="Museum, city or country"></label>
+        <div><p class="eyebrow">Institutions</p><h2 id="map-section-title">Where the collections are now</h2></div>
+        <label class="map-search" for="map-search"><span>Search</span><input id="map-search" type="search" autocomplete="off" placeholder="Museum, city or country"></label>
       </div>
 
       <div class="map-frame"><div id="collection-map" role="region" aria-label="Interactive map of Blaschka collection institutions"></div><p class="map-load-note" id="map-load-note">Loading map…</p></div>
 
       <div class="map-legend" aria-label="Map status legend">
-        <span><i class="map-key map-key--confirmed"></i><b>Documented current/recent holding</b></span>
-        <span><i class="map-key map-key--partial"></i><b>Collection documented; current total or custody incomplete</b></span>
-        <span><i class="map-key map-key--open"></i><b>Modern endpoint identified; survival unresolved</b></span>
+        <span><i class="map-key map-key--confirmed"></i><b>Documented holding</b></span>
+        <span><i class="map-key map-key--partial"></i><b>Holding known; count or custody incomplete</b></span>
+        <span><i class="map-key map-key--open"></i><b>Endpoint known; survival unresolved</b></span>
       </div>
-      <p class="map-method">Points use approximate public institutional locations for orientation. They do not identify storage rooms or object-level coordinates. Counts retain their source date and precision; an old exact count is not silently converted into a current total. Temporary exhibition venues do not become collection nodes unless the host institution holds Blaschka material in its own right.</p>
+      <p class="map-method">Markers show approximate public institutional locations. Counts keep the date and precision of their sources.</p>
     </section>
 
     <section class="map-index" aria-labelledby="map-index-title">
-      <div class="map-index-head"><p class="eyebrow">Institution index</p><div><h2 id="map-index-title">Mapped institutions</h2><p id="map-result-count" aria-live="polite">Loading records…</p></div></div>
+      <div class="map-index-head"><p class="eyebrow">Index</p><div><h2 id="map-index-title">Mapped institutions</h2><p id="map-result-count" aria-live="polite">Loading records…</p></div></div>
       <div class="map-institution-list" id="map-institution-list"></div>
-      <noscript><p class="map-method">The interactive map requires JavaScript. The underlying institutional data remain available in <a href="map-data.json">map-data.json</a> and the current-holder census supplement <a href="map-data-census.json">map-data-census.json</a>.</p></noscript>
+      <noscript><p class="map-method">The interactive map requires JavaScript. The data are also available in <a href="map-data.json">map-data.json</a> and <a href="map-data-census.json">map-data-census.json</a>.</p></noscript>
     </section>
   </main>
 
@@ -56,6 +56,6 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   <script src="map.js?v=20260810-3" defer></script>
-  <script src="../unified-ui.js?v=20260811-2" defer></script>
+  <script src="../unified-ui.js?v=20260811-3" defer></script>
 </body>
 </html>
