@@ -9,4 +9,14 @@ This directory contains the public source index and machine-readable registers u
 - IDs, status values, archival references, guards, locators, and evidence language should not be silently normalised. A schema cleanup may add metadata or vocabulary definitions, but changes to evidential claims require research review.
 - Historical supplements and superseded generated layers are preserved under `archive/data/` rather than kept beside current public inputs.
 
-Run `python scripts/validate-derived-data.py` for read-only structural checks across the current public JSON layer.
+## Structural manifest
+
+`register-manifest.json` is a generated inventory of the current `*-register.json` files. It records filenames, byte sizes, SHA-256 checksums, schema versions when declared, top-level keys, and counts of top-level array fields. It is deliberately structural: it does not classify or rewrite historical evidence.
+
+Regenerate it with:
+
+```bash
+python scripts/build-source-register-manifest.py
+```
+
+Run `python scripts/validate-derived-data.py` for read-only checks across People, the global archive register, the Source manifest, and the current public JSON layer.
