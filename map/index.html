@@ -7,9 +7,9 @@
   <title>Map · The Blaschka Object Network</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../secondary.css">
-  <link rel="stylesheet" href="../navigation-shell.css?v=20260811-1">
+  <link rel="stylesheet" href="../navigation-shell.css?v=20260811-2">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="map.css?v=20260810-2">
+  <link rel="stylesheet" href="map.css?v=20260811-1">
 </head>
 <body class="subpage map-page">
   <header class="subpage-header">
@@ -26,7 +26,7 @@
       <p class="eyebrow">Collections</p>
       <h1 id="map-title">Collections map</h1>
       <p class="page-dek">Institutions with documented Blaschka holdings or collection histories. Unknown survival and incomplete counts remain marked as such.</p>
-      <p class="page-dek"><a href="./rudolf-1892/">Rudolf Blaschka’s 1892 journey →</a></p>
+      <p class="map-journey-link"><a href="./rudolf-1892/">Rudolf Blaschka’s 1892 journey ↗</a></p>
     </section>
 
     <section class="map-section" aria-labelledby="map-section-title">
@@ -34,14 +34,8 @@
         <div><p class="eyebrow">Institutions</p><h2 id="map-section-title">Where the collections are now</h2></div>
         <label class="map-search" for="map-search"><span>Search</span><input id="map-search" type="search" autocomplete="off" placeholder="Museum, city or country"></label>
       </div>
-
       <div class="map-frame"><div id="collection-map" role="region" aria-label="Interactive map of Blaschka collection institutions"></div><p class="map-load-note" id="map-load-note">Loading map…</p></div>
-
-      <div class="map-legend" aria-label="Map status legend">
-        <span><i class="map-key map-key--confirmed"></i><b>Documented holding</b></span>
-        <span><i class="map-key map-key--partial"></i><b>Holding known; count or custody incomplete</b></span>
-        <span><i class="map-key map-key--open"></i><b>Endpoint known; survival unresolved</b></span>
-      </div>
+      <div class="map-legend" aria-label="Map status legend"><span><i class="map-key map-key--confirmed"></i><b>Documented holding</b></span><span><i class="map-key map-key--partial"></i><b>Count or custody incomplete</b></span><span><i class="map-key map-key--open"></i><b>Survival unresolved</b></span></div>
       <p class="map-method">Markers show approximate public institutional locations. Counts keep the date and precision of their sources.</p>
     </section>
 
@@ -55,7 +49,7 @@
   <footer class="subpage-footer"><div class="footer-identity"><a class="footer-title" href="../">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network">Contact</a><a href="../rights/">Image rights</a><a href="../privacy/">Privacy</a><a href="../accessibility/">Accessibility</a><a href="../feed.xml">RSS</a></div></footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
-  <script src="map.js?v=20260810-3" defer></script>
-  <script src="../unified-ui.js?v=20260811-3" defer></script>
+  <script src="map.js?v=20260811-1" defer></script>
+  <script src="../unified-ui.js?v=20260811-4" defer></script>
 </body>
 </html>
