@@ -1,0 +1,814 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Structural inventory of current public Source registers. Checksums and shapes are descriptive; evidence values remain in the registers themselves.",
+  "register_count": 34,
+  "registers": [
+    {
+      "path": "commercial-intermediary-register.json",
+      "role": "topic_register",
+      "bytes": 10361,
+      "sha256": "8b58498a23461e157b03c9ee20274f471b3e5cad24b6d979c95212ee86680c36",
+      "top_level_keys": [
+        "generated_date",
+        "methodological_guard",
+        "network_observation",
+        "route_archive_priorities",
+        "routes",
+        "schema_version",
+        "scope",
+        "status_vocabulary",
+        "title"
+      ],
+      "list_fields": {
+        "routes": 3,
+        "route_archive_priorities": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Commercial Intermediary and Transport Archive Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "consular-documentation-register.json",
+      "role": "topic_register",
+      "bytes": 5418,
+      "sha256": "4cd5cae1cefb38f283bfbba01ad8d28074854603b284d0f6f477913433d87c85",
+      "top_level_keys": [
+        "events",
+        "generated_date",
+        "government_archive_target",
+        "methodological_guard",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "events": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Consular Certification and Route Documentation Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "cornell-ward-retrieval-register.json",
+      "role": "topic_register",
+      "bytes": 5664,
+      "sha256": "c21b7b7f1406f612de0379aefbd523c4206683f5cfa596591de5cf800f071a88",
+      "top_level_keys": [
+        "generated_date",
+        "records",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 5
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Cornell Ward Procurement and Custody Retrieval Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "customs-regulation-register.json",
+      "role": "topic_register",
+      "bytes": 8853,
+      "sha256": "1a1a10f20292262a0e44b878a0998dd4ea7ee3f548195ce85afbc48ce15e8da0",
+      "top_level_keys": [
+        "cases",
+        "comparative_observation",
+        "generated_date",
+        "methodological_guard",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "cases": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Customs and Border Regulation Archive Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-archive-register.json",
+      "role": "topic_register",
+      "bytes": 31235,
+      "sha256": "7a98d2441c7cee7d287b57900da6d0820e238f8dc5075668e89a094ebb9539b7",
+      "top_level_keys": [
+        "closure_statement",
+        "cross_dealer_comparators",
+        "dealer_count",
+        "dealers",
+        "generated_date",
+        "methodological_guard",
+        "negative_search_audit",
+        "network_observation",
+        "phase_status",
+        "schema_version",
+        "scope",
+        "status_vocabulary",
+        "title"
+      ],
+      "list_fields": {
+        "cross_dealer_comparators": 1,
+        "dealers": 3
+      },
+      "schema_version": "2.0.0",
+      "title": "The Blaschka Object Network — Dealer Archive Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-comparator-register.json",
+      "role": "topic_register",
+      "bytes": 12587,
+      "sha256": "4e9a36f129ea117c2ed6b6782e4d9cf04b2f4dff3e4c3bd47a7111e46edbc826",
+      "top_level_keys": [
+        "archive_clusters",
+        "comparison_axes",
+        "generated_date",
+        "methodological_guard",
+        "next_retrieval_targets",
+        "schema_version",
+        "scope",
+        "title",
+        "transaction_process_comparators"
+      ],
+      "list_fields": {
+        "comparison_axes": 8,
+        "archive_clusters": 3,
+        "transaction_process_comparators": 3,
+        "next_retrieval_targets": 5
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dealer Ecology and Commercial Paperwork Comparator Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-correspondence-reservoir-register.json",
+      "role": "topic_register",
+      "bytes": 7726,
+      "sha256": "e880e7db46d75e78a13df675cfc8b2e25a18a5fce4496581b39ca3c9c8827cd3",
+      "top_level_keys": [
+        "evidence_guard",
+        "generated_date",
+        "next_retrieval",
+        "records",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 5,
+        "next_retrieval": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dealer Correspondence Reservoir Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-cross-category-material-register.json",
+      "role": "topic_register",
+      "bytes": 6691,
+      "sha256": "7ed703b0fbb26008cff8f60094d8f85e51d52e22c28416c94807736264c74d08",
+      "top_level_keys": [
+        "comparative_questions",
+        "dealers",
+        "generated_date",
+        "methodological_guard",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "dealers": 3,
+        "comparative_questions": 5
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dealer Cross-Category Material Trade Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-document-register.json",
+      "role": "topic_register",
+      "bytes": 14930,
+      "sha256": "af08462d46015f2bd4dc9da84b29518234aa38266293d035d25e5deab44eb025",
+      "top_level_keys": [
+        "coding_fields_for_retrieval",
+        "evidence_rule",
+        "generated_date",
+        "records",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 22,
+        "coding_fields_for_retrieval": 17
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dealer Document Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-epistemic-exchange-register.json",
+      "role": "topic_register",
+      "bytes": 6681,
+      "sha256": "fb38518795f2a00b393fcb93eaf3aa91a61d2e0640d2ad7e46d8975cfab66317",
+      "top_level_keys": [
+        "comparative_questions",
+        "evidence_guard",
+        "generated_date",
+        "records",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 5,
+        "comparative_questions": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dealer Epistemic Exchange Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-longtail-document-register.json",
+      "role": "topic_register",
+      "bytes": 6568,
+      "sha256": "fb82600c39d75b30a8edd76513f8698f5530538ce40de739f64adca9fefe45d9",
+      "top_level_keys": [
+        "comparison_axes",
+        "evidence_guard",
+        "generated_date",
+        "next_retrieval",
+        "records",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 4,
+        "comparison_axes": 7,
+        "next_retrieval": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dealer Long-Tail Document Corpus Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-sales-print-register.json",
+      "role": "topic_register",
+      "bytes": 7471,
+      "sha256": "6e7f075b21d76216f493b3683933f6a1fbdd9662ac826252527d8a4c6f7e5ba7",
+      "top_level_keys": [
+        "evidence_guard",
+        "generated_date",
+        "next_retrieval",
+        "records",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 6,
+        "next_retrieval": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dealer Sales Print Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-transaction-anatomy-register.json",
+      "role": "topic_register",
+      "bytes": 7528,
+      "sha256": "bedb04629db13b79da6deadd63106fc15a74fd495a55ac88611c1e0c618cb403",
+      "top_level_keys": [
+        "document_type_vocabulary",
+        "evidence_guard",
+        "generated_date",
+        "next_retrieval",
+        "records",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 6,
+        "document_type_vocabulary": 11,
+        "next_retrieval": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dealer Transaction Anatomy Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dealer-upstream-supply-register.json",
+      "role": "topic_register",
+      "bytes": 7551,
+      "sha256": "5f943fda7ff5eefef0be6a3423b64fb021bcc083699a1349256647e0013fcccf",
+      "top_level_keys": [
+        "comparative_questions",
+        "evidence_guard",
+        "generated_date",
+        "records",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 5,
+        "comparative_questions": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dealer Upstream Supply Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "digitized-correspondence-register.json",
+      "role": "topic_register",
+      "bytes": 7160,
+      "sha256": "62c5b4e9a06928be1c079222c6757b81b23e4e6ef2592291c4df59d896a818e6",
+      "top_level_keys": [
+        "corpora",
+        "generated_date",
+        "ingest_recommendation",
+        "schema_version",
+        "scope",
+        "status_vocabulary",
+        "title"
+      ],
+      "list_fields": {
+        "corpora": 1
+      },
+      "schema_version": "1.1.0",
+      "title": "The Blaschka Object Network — Digitized Correspondence Corpus Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "dublin-shipping-failure-register.json",
+      "role": "topic_register",
+      "bytes": 5111,
+      "sha256": "91957c997ca658a28c0b54bd707eb0d04ac3a8d3219ae0197847ebdaca653c85",
+      "top_level_keys": [
+        "events",
+        "generated_date",
+        "methodological_guard",
+        "parallel_haddon_archive",
+        "receiving_side_archives",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "events": 2,
+        "receiving_side_archives": 2
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Dublin Shipping Failure and Replacement Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "forwarder-longitudinal-register.json",
+      "role": "topic_register",
+      "bytes": 7259,
+      "sha256": "486b88e2f9c4c075ff4201efa21e7f3281aeef4d516a922c18bf237e4953f3a9",
+      "top_level_keys": [
+        "actor",
+        "archive_survival",
+        "archive_targets",
+        "base",
+        "events",
+        "generated_date",
+        "negative_discovery_result",
+        "normalization_guard",
+        "research_observation",
+        "role",
+        "role_model",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "events": 6,
+        "role_model": 8,
+        "archive_targets": 3
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Ehrhorn, Emden & Mayer Longitudinal Forwarding Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "global-archive-register.json",
+      "role": "cross_institution_canonical",
+      "bytes": 19369,
+      "sha256": "9570463ea903d4536ac2661f857d5621e8663833f33c7f6a6981011afc9cd362",
+      "top_level_keys": [
+        "entries",
+        "entry_count",
+        "flattening_note",
+        "generated_date",
+        "schema_version",
+        "scope",
+        "status_vocabulary",
+        "title"
+      ],
+      "list_fields": {
+        "entries": 23
+      },
+      "schema_version": "1.1.0",
+      "title": "The Blaschka Object Network — Global Archive Register",
+      "generated": "2026-08-11"
+    },
+    {
+      "path": "harvard-digital-archive-register.json",
+      "role": "topic_register",
+      "bytes": 5791,
+      "sha256": "d508941130a7f254d3636bcfe4a618df9628d222651cc720ed74f852fe14dae3",
+      "top_level_keys": [
+        "call_number",
+        "collection",
+        "current_catalogue_snapshot",
+        "digital_layers",
+        "direct_digital_examples",
+        "extent",
+        "generated_date",
+        "ingest_strategy",
+        "physical_layers",
+        "related_source_systems",
+        "repository",
+        "schema_version",
+        "scope",
+        "source_quality_note",
+        "title"
+      ],
+      "list_fields": {
+        "digital_layers": 4,
+        "physical_layers": 1,
+        "direct_digital_examples": 1,
+        "related_source_systems": 2
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Harvard Digital Archive Corpus Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "harvard-receiving-skill-register.json",
+      "role": "topic_register",
+      "bytes": 5089,
+      "sha256": "9906551a04f18f4a2ba1973a3efad6d6b8b0734535a43c096ee2c8b832605e5f",
+      "top_level_keys": [
+        "actor",
+        "generated_date",
+        "harvard_archive",
+        "methodological_guard",
+        "related_institutional_archive",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {},
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Harvard Receiving Skill and Museum Practice Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "mobile-intermediary-register.json",
+      "role": "topic_register",
+      "bytes": 3090,
+      "sha256": "170f377372042a9c929c0e8b7ba626deecdae3d42fe30900a81fb73ab1234285",
+      "top_level_keys": [
+        "actors",
+        "generated_date",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "actors": 1
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Mobile Human Intermediary Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "moller-hamburg-forwarding-register.json",
+      "role": "topic_register",
+      "bytes": 12540,
+      "sha256": "04ab85f6cf57739430e658c39da01e340394c595dcd694581663dfc12e6de337",
+      "top_level_keys": [
+        "actor",
+        "archive_survival",
+        "archive_targets",
+        "chronology_guard",
+        "events",
+        "generated_date",
+        "name_guard",
+        "network_observation",
+        "receiving_side_archive_targets",
+        "role",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "events": 6,
+        "receiving_side_archive_targets": 4,
+        "archive_targets": 2
+      },
+      "schema_version": "2.1.0",
+      "title": "The Blaschka Object Network — M. Otto W. Möller Hamburg Forwarding Corridor",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "packing-feedback-unpacking-register.json",
+      "role": "topic_register",
+      "bytes": 6856,
+      "sha256": "950aeec74e5b3613cd3159503acd4e0d15eb60c9954aa6d6557d2aa29b08fb53",
+      "top_level_keys": [
+        "actors_and_distributed_knowledge",
+        "events",
+        "generated_date",
+        "methodological_guard",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "events": 5,
+        "actors_and_distributed_knowledge": 5
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Packing Feedback and Skilled Unpacking Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "payment-regulation-register.json",
+      "role": "topic_register",
+      "bytes": 7927,
+      "sha256": "94d6ee9d6c0b63d8576062cb66054e376e547506451a1874e0b85908b6f6c833",
+      "top_level_keys": [
+        "cases",
+        "generated_date",
+        "institutional_archive_context",
+        "methodological_guard",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "cases": 4,
+        "institutional_archive_context": 2
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Payment, Banking and Currency Regulation Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "rakow-open-business-books-register.json",
+      "role": "topic_register",
+      "bytes": 3742,
+      "sha256": "d37caed6d2658aa654266e812fdc8a756d6245cbe54e460568d0d4a2c7202d30",
+      "top_level_keys": [
+        "archive_root",
+        "corpus_strategy",
+        "generated_date",
+        "method_guard",
+        "records",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 2
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Open Rakow Business-Book Corpus Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "reference-material-ecology-register.json",
+      "role": "topic_register",
+      "bytes": 8439,
+      "sha256": "3437a4ef551b67e9fd032759b953cfdb395e70aac21f8f3a9cc00f52d61ef49d",
+      "top_level_keys": [
+        "coding_axes",
+        "explicit_cross_media_examples",
+        "generated_date",
+        "methodological_guard",
+        "reference_modes",
+        "research_implication",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "reference_modes": 4,
+        "explicit_cross_media_examples": 3,
+        "coding_axes": 10
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Reference-Material Ecology Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "transaction-gap-register.json",
+      "role": "topic_register",
+      "bytes": 3247,
+      "sha256": "a52ff183f92692b137ddc013bcc388f5b5e1d9bd65015121c7d43a7061e47aeb",
+      "top_level_keys": [
+        "generated_date",
+        "records",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "records": 1
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Transaction Gap Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "trieste-reciprocal-exchange-register.json",
+      "role": "topic_register",
+      "bytes": 6518,
+      "sha256": "84999d042c8309337f3040767277c48d8aa3bc35dc29172e49c1b737d4f8823a",
+      "top_level_keys": [
+        "archive_targets",
+        "chronology",
+        "evidence_guard",
+        "generated_date",
+        "logistical_affordances",
+        "primary_or_institutional_basis",
+        "research_implication",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "chronology": 7,
+        "logistical_affordances": 6,
+        "archive_targets": 3
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Trieste Reciprocal Live-Animal / Glass-Model Exchange Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "upstream-institutional-specimen-supply-register.json",
+      "role": "topic_register",
+      "bytes": 11664,
+      "sha256": "ae92452fc3b0a247f972619f7662af3b988fa27a16a82fb3b44b7f1363158b9e",
+      "top_level_keys": [
+        "analytic_distinctions",
+        "concept",
+        "generated_date",
+        "institutions",
+        "research_observation",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "institutions": 3,
+        "analytic_distinctions": 6
+      },
+      "schema_version": "1.1.1",
+      "title": "The Blaschka Object Network — Upstream Institutional Specimen Supply Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "upstream-living-specimen-supply-register.json",
+      "role": "topic_register",
+      "bytes": 9024,
+      "sha256": "169d966ecf05d095e50587e3889497a2b4e80f325e724bc4e9a2f6c09aea80cf",
+      "top_level_keys": [
+        "actors",
+        "analytic_chain",
+        "generated_date",
+        "network_observation",
+        "parallel_supply_routes",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "actors": 1,
+        "parallel_supply_routes": 1,
+        "analytic_chain": 11
+      },
+      "schema_version": "1.1.0",
+      "title": "The Blaschka Object Network — Upstream Living-Specimen Supply Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "ware-transatlantic-logistics-register.json",
+      "role": "topic_register",
+      "bytes": 13334,
+      "sha256": "2b472ca7407b8d2ad7844856b16e104e9556019db2be38d9e7449956c87e6153",
+      "top_level_keys": [
+        "external_archive_targets",
+        "generated_date",
+        "methodological_guard",
+        "research_observation",
+        "routes",
+        "schema_version",
+        "scope",
+        "source_base",
+        "title"
+      ],
+      "list_fields": {
+        "routes": 3,
+        "external_archive_targets": 7
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Ware Collection Transatlantic Logistics and Customs Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "workshop-logistics-document-register.json",
+      "role": "topic_register",
+      "bytes": 6403,
+      "sha256": "de89f2dece461d8242db38466c93f4a617a5afb46c5108f3702ce7bd7c5e4d46",
+      "top_level_keys": [
+        "documents",
+        "generated_date",
+        "research_observation",
+        "retrieval_batches",
+        "schema_version",
+        "scope",
+        "source",
+        "title"
+      ],
+      "list_fields": {
+        "documents": 11,
+        "retrieval_batches": 3
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Workshop Logistics Document Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "workshop-production-crosswalk-register.json",
+      "role": "topic_register",
+      "bytes": 3905,
+      "sha256": "b21f6335db5292f32e3bfaf12f234216b9569c916ff503f3a6aa01df5300d3f9",
+      "top_level_keys": [
+        "cases",
+        "generated_date",
+        "next_actions",
+        "research_value",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "cases": 1,
+        "research_value": 5,
+        "next_actions": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Workshop Drawing / Object Production Crosswalk Register",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "workshop-production-modularity-register.json",
+      "role": "topic_register",
+      "bytes": 3893,
+      "sha256": "887c7664fb363de468cf62acd4a5adba5e5b45bb07d60843cfe8d29b08c05124",
+      "top_level_keys": [
+        "crosswalk_targets",
+        "direct_object_evidence",
+        "evidence_guard",
+        "generated_date",
+        "production_chain",
+        "research_implications",
+        "schema_version",
+        "scope",
+        "title"
+      ],
+      "list_fields": {
+        "direct_object_evidence": 3,
+        "production_chain": 8,
+        "research_implications": 5,
+        "crosswalk_targets": 7
+      },
+      "schema_version": "1.0.0",
+      "title": "The Blaschka Object Network — Workshop Production Modularity Register",
+      "generated": "2026-08-10"
+    }
+  ]
+}
