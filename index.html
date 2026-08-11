@@ -3,13 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The Blaschka Object Network traces glass models through workshop records, transactions, movement, collections and surviving objects.">
+  <meta name="description" content="The Blaschka Object Network traces glass models through workshop records, transactions, collections and surviving objects.">
   <title>The Blaschka Object Network</title>
+  <link rel="alternate" type="application/rss+xml" title="The Blaschka Object Network" href="feed.xml">
   <link rel="stylesheet" href="home-v2.css?v=20260810-4">
-  <link rel="stylesheet" href="hero-carousel.css?v=20260810-1">
-  <link rel="stylesheet" href="navigation-shell.css?v=20260810-4">
+  <link rel="stylesheet" href="navigation-shell.css?v=20260811-1">
   <link rel="stylesheet" href="home-core.css?v=20260810-1">
   <link rel="stylesheet" href="home-journey.css?v=20260810-2">
+  <style>
+    .reveal{opacity:1!important;transform:none!important;transition:none!important}
+    .origin-roadmap,.family-portrait-layer,.family-mobile-nav,.origin-interaction-cue,.hero-carousel-controls,.hero-image-description,.hero-explore{display:none!important}
+    .origin-bio,.origin-story[data-family-active] .origin-bio{opacity:1!important;color:rgba(238,230,220,.72)!important;transform:none!important}
+    .origin-bio h4,.origin-story[data-family-active] .origin-bio h4{color:#f3e9df!important}
+    .origin-bio::before{background:rgba(208,151,99,.28)!important;box-shadow:none!important}
+    .origin-photo img{filter:grayscale(.48) sepia(.08) saturate(.58) brightness(.56) contrast(1.06)!important}
+    .origin-image-stage>a::after{background:linear-gradient(180deg,rgba(7,5,4,.04),rgba(7,5,4,.08) 48%,rgba(7,5,4,.34))!important}
+  </style>
 </head>
 <body>
   <section class="hero" id="top" aria-labelledby="hero-title">
@@ -29,9 +38,9 @@
     </header>
 
     <div class="hero-copy">
-      <p class="hero-kicker">A public research project</p>
+      <p class="hero-kicker">Public research</p>
       <h1 id="hero-title">The Blaschka<br>Object Network</h1>
-      <p class="hero-subtitle">Tracing glass models through workshop records, transactions, transport, collections, conservation and surviving objects.</p>
+      <p class="hero-subtitle">Tracing Blaschka glass models from workshop records to collections, conservation and surviving objects.</p>
       <form class="network-search" id="network-search" role="search">
         <label class="sr-only" for="network-search-scope">Search area</label>
         <label class="sr-only" for="network-search-input">Search the project</label>
@@ -50,66 +59,52 @@
       </form>
     </div>
 
-    <a class="hero-credit" href="https://commons.wikimedia.org/wiki/File:Sea_cucumber,_model_by_Leopold_and_Rudolph_Blaschka,_glass_-_Harvard_Museum_of_Comparative_Zoology_-_DSC06169.jpg" target="_blank" rel="noopener noreferrer">Hero image: Daderot, CC0</a>
+    <a class="hero-credit" href="https://commons.wikimedia.org/wiki/File:Sea_cucumber,_model_by_Leopold_and_Rudolph_Blaschka,_glass_-_Harvard_Museum_of_Comparative_Zoology_-_DSC06169.jpg" target="_blank" rel="noopener noreferrer">Daderot · CC0</a>
   </section>
 
   <main id="main-content">
     <section class="project" id="project">
       <div class="project-inner">
-        <div class="project-proposition reveal">
-          <p class="eyebrow">About the project</p>
+        <div class="project-proposition">
+          <p class="eyebrow">The project</p>
           <div>
-            <h2>Following objects through the records made around them.</h2>
-            <p>The project connects workshop evidence with later transactions, movement, collection records and surviving objects. Secure links, useful comparisons and unresolved gaps remain distinct.</p>
+            <h2>Following objects through the records around them.</h2>
+            <p>Orders, letters, invoices, museum registers and surviving objects are connected where the evidence allows. Uncertain links stay uncertain.</p>
           </div>
         </div>
 
         <section class="origin-story" aria-labelledby="origin-story-title">
-          <div class="origin-layout reveal">
+          <div class="origin-layout">
             <div class="origin-visual">
               <figure class="origin-photo">
                 <div class="origin-image-stage">
                   <a href="https://commons.wikimedia.org/wiki/File:Rudolf,_Leopold_and_Caroline_Blaschka_in_garden_cropped.jpg" target="_blank" rel="noopener noreferrer">
-                    <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rudolf%2C%20Leopold%20and%20Caroline%20Blaschka%20in%20garden%20cropped.jpg?width=760" alt="Rudolf, Leopold and Carolina Blaschka standing together in a garden" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                    <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rudolf%2C%20Leopold%20and%20Caroline%20Blaschka%20in%20garden%20cropped.jpg?width=760" alt="Rudolf, Leopold and Carolina Blaschka in a garden" loading="lazy" decoding="async" referrerpolicy="no-referrer">
                   </a>
                 </div>
-                <p class="family-photo-hint">Explore the portrait <span aria-hidden="true">↗</span></p>
-                <figcaption>Rudolf, Leopold and Caroline Blaschka in the garden. Public domain. <a href="https://commons.wikimedia.org/wiki/File:Rudolf,_Leopold_and_Caroline_Blaschka_in_garden_cropped.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons ↗</a></figcaption>
+                <figcaption>Rudolf, Leopold and Caroline Blaschka in the garden. Public domain. <a href="https://commons.wikimedia.org/wiki/File:Rudolf,_Leopold_and_Caroline_Blaschka_in_garden_cropped.jpg" target="_blank" rel="noopener noreferrer">Source ↗</a></figcaption>
               </figure>
             </div>
 
             <div class="origin-copy">
-              <p class="origin-kicker">Where the story begins</p>
-              <h3 id="origin-story-title">From a Bohemian glassworking family to a worldwide scientific trade</h3>
+              <p class="origin-kicker">The workshop</p>
+              <h3 id="origin-story-title">A family workshop in an international scientific trade</h3>
               <div class="origin-biographies" aria-label="Blaschka family biographies">
                 <section class="origin-bio" data-bio-person="karolina">
                   <h4>Carolina (Karolina) Riegel Blaschka</h4>
-                  <p>Karolina appears in the surviving archive as part of the workshop household and, more cautiously, its knowledge infrastructure. Family papers preserve her legal and property presence, while correspondence repeatedly places her inside Rudolf’s working and visitor world. Harvard/Goodale papers preserve a damaged 1897 note concerning a female geologist’s visit to Rudolf, but the OCR does not support assigning Karolina a precise action during that visit. Her role in knowledge mediation therefore remains a qualified research claim, not an attribution of model-making or scientific authorship.</p>
+                  <p>Family papers and correspondence place Karolina within the workshop household and Rudolf’s working world. The surviving evidence does not support attributing model-making or scientific authorship to her.</p>
                 </section>
                 <section class="origin-bio" data-bio-person="leopold">
                   <h4>Leopold Blaschka (1822–1895)</h4>
-                  <p>A Bohemian glassworker whose early losses preceded an Atlantic voyage in 1853. Becalmed at sea, he drew jellyfish and other marine invertebrates. By the 1860s he was making zoological glass models in Dresden and supplying an expanding scientific market.</p>
+                  <p>By the 1860s Leopold was producing glass models of marine invertebrates in Dresden for teaching and museum collections, building an international trade around forms difficult to preserve.</p>
                 </section>
                 <section class="origin-bio" data-bio-person="rudolf">
                   <h4>Rudolf Blaschka (1857–1939)</h4>
-                  <p>Son of Leopold and Carolina. He joined the workshop in 1876. Father and son supplied museums and universities internationally; from 1890 the workshop worked exclusively on Harvard’s botanical commission while Rudolf increasingly carried the work forward.</p>
+                  <p>Rudolf joined the workshop in 1876. From 1890 the workshop worked exclusively on Harvard’s botanical commission, which Rudolf later carried forward alone.</p>
                 </section>
               </div>
-              <p class="origin-source">Chronology: <a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener noreferrer">Harvard Blaschka archive ↗</a> · <a href="https://press.cmog.org/2016/blaschka-glass-marine-creatures-exhibition-opens-may-2016" target="_blank" rel="noopener noreferrer">Corning Museum of Glass ↗</a> · <a href="bibliography/">bibliography ↗</a> · <a href="people/">people &amp; roles ↗</a></p>
+              <p class="origin-source"><a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener noreferrer">Harvard archive ↗</a> · <a href="https://press.cmog.org/2016/blaschka-glass-marine-creatures-exhibition-opens-may-2016" target="_blank" rel="noopener noreferrer">Corning Museum of Glass ↗</a> · <a href="people/">People ↗</a></p>
             </div>
-          </div>
-
-          <div class="origin-roadmap" aria-hidden="true">
-            <svg viewBox="0 0 1000 260" preserveAspectRatio="none">
-              <path class="road-base" d="M20 188 C160 234 185 65 335 91 S510 222 652 145 S810 30 982 64"/>
-              <path class="road-line" d="M20 188 C160 234 185 65 335 91 S510 222 652 145 S810 30 982 64"/>
-            </svg>
-            <div class="road-stop" style="--x:7%;--y:73%"><b>1850</b><span>wife &amp; son die</span></div>
-            <div class="road-stop" style="--x:22%;--y:51%"><b>1852</b><span>father dies</span></div>
-            <div class="road-stop" style="--x:35%;--y:34%"><b>1853</b><span>Atlantic voyage</span></div>
-            <div class="road-stop" style="--x:52%;--y:73%"><b>1863</b><span>marine models</span></div>
-            <div class="road-stop" style="--x:69%;--y:50%"><b>1876</b><span>Rudolf joins</span></div>
-            <div class="road-stop" style="--x:90%;--y:25%"><b>1890</b><span>Harvard exclusive</span></div>
           </div>
         </section>
       </div>
@@ -117,72 +112,52 @@
 
     <section class="featured" id="cases" aria-labelledby="featured-title">
       <div class="featured-inner">
-        <div class="featured-head reveal">
-          <div>
-            <p class="eyebrow">Case index</p>
-            <h2 id="featured-title">Two documentary lives</h2>
-          </div>
-          <p>Liverpool and Auckland show two different ways workshop records, intermediaries, shipments and surviving collections can be brought back into the same documentary frame.</p>
+        <div class="featured-head">
+          <div><p class="eyebrow">Cases</p><h2 id="featured-title">Two object histories</h2></div>
+          <p>Liverpool and Auckland show how workshop records can be reconnected with shipments, museum records and surviving collections.</p>
         </div>
 
-        <div class="feature-grid reveal">
+        <div class="feature-grid">
           <a class="feature-case" href="cases/#sample-liverpool" aria-label="Open Liverpool case">
-            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Blaschka%20Natural%20History%20Museum%20Londres%2028072013%202.jpg?width=1200" alt="Blaschka glass octopus model, used here as a comparative visual" loading="lazy" decoding="async" fetchpriority="low" referrerpolicy="no-referrer">
-            <div class="feature-copy"><div><small>Liverpool · 1887–2019</small><h3>Liverpool</h3><p>order · accounting · freight · later survival</p></div><span class="feature-arrow" aria-hidden="true">↗</span></div>
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Blaschka%20Natural%20History%20Museum%20Londres%2028072013%202.jpg?width=1200" alt="Blaschka glass octopus model, used as a comparative visual" loading="lazy" decoding="async" fetchpriority="low" referrerpolicy="no-referrer">
+            <div class="feature-copy"><div><small>Liverpool · 1887–2019</small><h3>Liverpool</h3><p>order · accounting · freight · survival</p></div><span class="feature-arrow" aria-hidden="true">↗</span></div>
           </a>
-
           <a class="feature-case" href="cases/#sample-auckland" aria-label="Open Auckland case">
             <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Allsortz%20%28AM%206079%29.jpg?width=1200" alt="Auckland Museum Allsortz exhibition poster featuring a Blaschka glass octopus" loading="lazy" decoding="async" fetchpriority="low" referrerpolicy="no-referrer">
-            <div class="feature-copy"><div><small>Auckland · 1882–2019</small><h3>Auckland</h3><p>exchange · samples · Ward · seven-model register</p></div><span class="feature-arrow" aria-hidden="true">↗</span></div>
+            <div class="feature-copy"><div><small>Auckland · 1882–2019</small><h3>Auckland</h3><p>exchange · samples · Ward · museum register</p></div><span class="feature-arrow" aria-hidden="true">↗</span></div>
           </a>
         </div>
-
-        <div class="feature-footer reveal"><a class="view-all" href="cases/">View all ten cases ↗</a></div>
+        <div class="feature-footer"><a class="view-all" href="cases/">View all ten cases ↗</a></div>
       </div>
     </section>
 
     <section class="journey-feature" id="journey-1892" aria-labelledby="journey-feature-title">
       <div class="journey-feature-inner">
         <div class="journey-feature-head">
-          <div>
-            <p class="eyebrow">Knowledge in motion</p>
-            <h2 id="journey-feature-title">A workshop on the move</h2>
-          </div>
-          <p>Rudolf Blaschka’s 1892 journey makes it possible to follow more than a traveller. Field observation, drawing, microscopy, preservation, seeds, bulbs, correspondence and later workshop production moved through the same itinerary in different ways.</p>
+          <div><p class="eyebrow">1892 journey</p><h2 id="journey-feature-title">A workshop on the move</h2></div>
+          <p>Follow where Rudolf travelled, what he observed and drew, and how plants, specimens and instructions continued moving through the journey.</p>
         </div>
 
-        <a class="journey-feature-card" href="map/rudolf-1892/" aria-label="Open the interactive map of Rudolf Blaschka’s 1892 journey">
+        <a class="journey-feature-card" href="map/rudolf-1892/" aria-label="Open Rudolf Blaschka’s 1892 journey map">
           <div class="journey-feature-map" aria-hidden="true">
             <svg viewBox="0 0 760 430" preserveAspectRatio="xMidYMid meet">
               <path class="journey-feature-route-shadow" d="M64 132 C124 96 167 92 213 124 C255 153 272 225 330 253 C389 282 438 245 476 198 C512 153 560 129 613 148 C659 164 691 220 715 272"/>
               <path class="journey-feature-route" d="M64 132 C124 96 167 92 213 124 C255 153 272 225 330 253 C389 282 438 245 476 198 C512 153 560 129 613 148 C659 164 691 220 715 272"/>
               <path class="journey-feature-flow" d="M213 124 C315 57 480 49 613 148"/>
               <path class="journey-feature-flow" d="M476 198 C540 291 635 330 715 272"/>
-              <circle class="journey-feature-node" cx="64" cy="132" r="7"/>
-              <circle class="journey-feature-node--major" cx="213" cy="124" r="9"/>
-              <circle class="journey-feature-node--major" cx="330" cy="253" r="9"/>
-              <circle class="journey-feature-node--major" cx="476" cy="198" r="9"/>
-              <circle class="journey-feature-node--major" cx="613" cy="148" r="9"/>
-              <circle class="journey-feature-node--major" cx="715" cy="272" r="9"/>
-              <text class="journey-feature-label" x="44" y="108">Cambridge</text>
-              <text class="journey-feature-label journey-feature-label--major" x="185" y="99">Jamaica</text>
-              <text class="journey-feature-label journey-feature-label--major" x="302" y="286">Arizona</text>
-              <text class="journey-feature-label journey-feature-label--major" x="445" y="176">San Diego</text>
-              <text class="journey-feature-label journey-feature-label--major" x="586" y="124">St. Louis</text>
-              <text class="journey-feature-label journey-feature-label--major" x="655" y="305">Hosterwitz</text>
+              <circle class="journey-feature-node" cx="64" cy="132" r="7"/><circle class="journey-feature-node--major" cx="213" cy="124" r="9"/><circle class="journey-feature-node--major" cx="330" cy="253" r="9"/><circle class="journey-feature-node--major" cx="476" cy="198" r="9"/><circle class="journey-feature-node--major" cx="613" cy="148" r="9"/><circle class="journey-feature-node--major" cx="715" cy="272" r="9"/>
+              <text class="journey-feature-label" x="44" y="108">Cambridge</text><text class="journey-feature-label journey-feature-label--major" x="185" y="99">Jamaica</text><text class="journey-feature-label journey-feature-label--major" x="302" y="286">Arizona</text><text class="journey-feature-label journey-feature-label--major" x="445" y="176">San Diego</text><text class="journey-feature-label journey-feature-label--major" x="586" y="124">St. Louis</text><text class="journey-feature-label journey-feature-label--major" x="655" y="305">Hosterwitz</text>
             </svg>
-            <p class="journey-feature-map-caption">Solid route: movement · dashed routes: material and information flows</p>
+            <p class="journey-feature-map-caption">Route · material · information</p>
           </div>
           <div class="journey-feature-copy">
             <div>
               <p class="journey-feature-kicker">Rudolf Blaschka · 1892</p>
-              <h3>Following how plants became knowledge for glass.</h3>
-              <p>The interactive map separates bodily travel from the movement of specimens, drawings, seeds, instructions and later supply. Its nodes are working stations rather than stops on a sightseeing itinerary.</p>
-              <ol class="journey-chain" aria-label="Knowledge-production chain">
-                <li>Observe</li><li>Draw</li><li>Preserve</li><li>Send</li><li>Reassemble</li>
-              </ol>
+              <h3>Travel, drawings, plants and later model-making.</h3>
+              <p>The map keeps Rudolf’s route separate from the things and instructions that moved around it.</p>
+              <ol class="journey-chain" aria-label="Working sequence"><li>Observe</li><li>Draw</li><li>Preserve</li><li>Send</li><li>Make</li></ol>
             </div>
-            <div class="journey-feature-cta"><span>Explore the 1892 research map</span><span class="journey-feature-arrow" aria-hidden="true">↗</span></div>
+            <div class="journey-feature-cta"><span>Open the 1892 map</span><span class="journey-feature-arrow" aria-hidden="true">↗</span></div>
           </div>
         </a>
       </div>
@@ -190,12 +165,12 @@
 
     <section class="home-contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-inner">
-        <div class="contact-grid reveal">
+        <div class="contact-grid">
           <p class="eyebrow">Contact</p>
           <div class="contact-copy">
-            <h2 id="contact-title">Corrections, source leads and collection records are welcome.</h2>
-            <p>If you hold documentation that helps close a chain, identify an object or correct a record, please get in touch.</p>
-            <div class="contact-actions"><a href="mailto:zhhos98@gmail.com">Email the project</a></div>
+            <h2 id="contact-title">Corrections and source leads are welcome.</h2>
+            <p>Especially useful are accession numbers, labels, archival references and stable source links.</p>
+            <div class="contact-actions"><a href="mailto:zhhos98@gmail.com">Email the project</a><a href="about/">About the research</a></div>
           </div>
         </div>
       </div>
@@ -208,7 +183,6 @@
       <div class="footer-links"><a href="mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network">Contact</a><a href="rights/">Image rights</a><a href="privacy/">Privacy</a><a href="accessibility/">Accessibility</a><a href="feed.xml">RSS</a></div>
     </div>
   </footer>
-  <script src="home-v2.js?v=20260810-11" defer></script>
-  <script src="home-map-nav.js?v=20260810-3" defer></script>
+  <script src="home-v2.js?v=20260811-1" defer></script>
 </body>
 </html>
