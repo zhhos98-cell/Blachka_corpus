@@ -8,6 +8,7 @@ These scripts operate on derived/public structure. They do not have authority to
 - `audit-status-vocabularies.py` — inventories explicit local `status_vocabulary` definitions and detects repeated labels or definition conflicts without normalizing them.
 - `audit-field-semantics.py` — recursively maps recurring field names into functional roles so naming drift is visible without renaming canonical fields.
 - `audit-cross-register-duplication.py` — finds exact cross-file ID reuse, shared URLs, repeated long strings, and byte-equivalent structured objects; it is diagnostic and never deduplicates records automatically.
+- `audit-auction-canonical-sync.py` — checks Auction support-layer references and declared `canonical_fields_to_update` against canonical `auction-data.json` without applying changes.
 - `standardize-public-shell.py` — keeps the static Cases, Sources and Bibliography navigation shell aligned with the canonical site navigation and current shared asset keys.
 - `validate-derived-data.py` — read-only integrity checks for People projection counts, Source/Auction manifests, minimal metadata envelopes, global archive-register IDs, Auction canonical record IDs, JSON parseability, and active/archive placement assumptions.
 
