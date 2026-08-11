@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-11",
+  "purpose": "Inventory of explicit top-level status_vocabulary objects in Source registers. No status terms or definitions are rewritten.",
+  "guard": "Same spelling is not treated as same meaning unless definitions match exactly or a later research review maps them explicitly.",
+  "files_with_status_vocabulary": 4,
+  "unique_status_terms": 25,
+  "repeated_status_terms": 0,
+  "repeated_terms_with_identical_definition": 0,
+  "repeated_terms_with_definition_conflict": 0,
+  "vocabularies": [
+    {
+      "path": "commercial-intermediary-register.json",
+      "term_count": 4,
+      "vocabulary_hash": "1547e4136927",
+      "terms": [
+        {
+          "term": "direct_transaction_actor",
+          "definition": "Named in Blaschka workshop or receiving-side evidence as participating in a specific transaction.",
+          "definition_hash": "0b8eb8a383d8"
+        },
+        {
+          "term": "corporate_archive_identified",
+          "definition": "A surviving archive of the intermediary has been located, but the Blaschka transaction has not yet been isolated inside it.",
+          "definition_hash": "2e467a4e63b3"
+        },
+        {
+          "term": "distributed_or_unresolved_archive",
+          "definition": "The actor is securely named in the transaction but no dedicated archival fonds has yet been located.",
+          "definition_hash": "d50deb0a943a"
+        },
+        {
+          "term": "candidate_successor_archive",
+          "definition": "A later or successor-company archive is historically connected but requires proof that earlier records were inherited.",
+          "definition_hash": "9d037e401536"
+        }
+      ]
+    },
+    {
+      "path": "dealer-archive-register.json",
+      "term_count": 6,
+      "vocabulary_hash": "5102387a1580",
+      "terms": [
+        {
+          "term": "intact_business_archive",
+          "definition": "A named personal and/or corporate archive survives as a collection of record.",
+          "definition_hash": "ebfe28a8f873"
+        },
+        {
+          "term": "distributed_business_correspondence",
+          "definition": "No dedicated corporate fonds has been identified; the business must be reconstructed across workshop, customer, museum, and manuscript repositories.",
+          "definition_hash": "a2fa8210ae50"
+        },
+        {
+          "term": "direct_blaschka_dealer_evidence",
+          "definition": "The source explicitly concerns Blaschka models, catalogue, order, payment, agency, packing, shipment, receipt, breakage, or resale.",
+          "definition_hash": "9d2ca8e0ea7d"
+        },
+        {
+          "term": "receiving_side_dealer_file",
+          "definition": "A customer or museum record explicitly documents transactions with the dealer but Blaschka content must be checked item by item.",
+          "definition_hash": "ce58c5f96b53"
+        },
+        {
+          "term": "general_dealer_business_context",
+          "definition": "Same-period business correspondence documenting the dealer's commercial practice without establishing a Blaschka transaction.",
+          "definition_hash": "778325925215"
+        },
+        {
+          "term": "post_production_business_context",
+          "definition": "Dealer-business material after the marine-model production period; useful for institutional continuity and commercial practice only.",
+          "definition_hash": "571fb1c5d5aa"
+        }
+      ]
+    },
+    {
+      "path": "digitized-correspondence-register.json",
+      "term_count": 4,
+      "vocabulary_hash": "27acf9d08b3c",
+      "terms": [
+        {
+          "term": "direct_digitized_primary_corpus",
+          "definition": "A substantial primary-source corpus is openly digitized with page images and/or downloadable OCR/text.",
+          "definition_hash": "e4e8ea6a615c"
+        },
+        {
+          "term": "metadata_only_until_read",
+          "definition": "Collection identity and dates are verified, but letter content must be read before topic claims are assigned.",
+          "definition_hash": "6cf95717bb9e"
+        },
+        {
+          "term": "metadata_date_conflict",
+          "definition": "The displayed archival label and structured metadata date disagree; the manuscript/page label remains the authority until image review.",
+          "definition_hash": "328792e59eaf"
+        },
+        {
+          "term": "part_level_pdf_mirror",
+          "definition": "An individual BHL correspondence part has a separately downloadable PDF and persistent record on Zenodo, deposited by Plazi from BHL.",
+          "definition_hash": "35e1e35d6856"
+        }
+      ]
+    },
+    {
+      "path": "global-archive-register.json",
+      "term_count": 11,
+      "vocabulary_hash": "35aa4029b342",
+      "terms": [
+        {
+          "term": "direct_blaschka_archive",
+          "definition": "The archival unit explicitly names Blaschka or is a dedicated Blaschka archive.",
+          "definition_hash": "50ff8e05d436"
+        },
+        {
+          "term": "dealer_business_archive",
+          "definition": "Business archive of a documented Blaschka dealer or distributor.",
+          "definition_hash": "40b8c594a8b2"
+        },
+        {
+          "term": "direct_receiving_side_archive",
+          "definition": "Museum or institutional records explicitly document a Blaschka transaction, custody event or collection.",
+          "definition_hash": "8ddf14db74aa"
+        },
+        {
+          "term": "receiving_side_archive",
+          "definition": "Archive is directly tied to a Blaschka-holding institution and contains the relevant class of acquisition, accession, correspondence or museum records, but the decisive Blaschka item remains to be isolated.",
+          "definition_hash": "681d685dcaec"
+        },
+        {
+          "term": "candidate_archival_bridge",
+          "definition": "A named personal or institutional fonds is historically well positioned to close a known provenance gap, but a Blaschka-specific item has not yet been verified.",
+          "definition_hash": "06463aa4b065"
+        },
+        {
+          "term": "direct_blaschka_archive_target",
+          "definition": "A named archive is tied to reported direct Blaschka evidence, but the decisive archival item still requires retrieval or shelfmark confirmation.",
+          "definition_hash": "7bcc4589be90"
+        },
+        {
+          "term": "candidate_direct_institutional_bridge",
+          "definition": "A named institutional series is directly positioned to test a documented Blaschka relationship, but the decisive item has not yet been isolated.",
+          "definition_hash": "0a491124a1c6"
+        },
+        {
+          "term": "comparative_institutional_archive",
+          "definition": "A named institutional archive is retained as a controlled comparison and is not itself treated as direct Blaschka evidence.",
+          "definition_hash": "9296c6a6eb7b"
+        },
+        {
+          "term": "direct_receiving_side_archive_target",
+          "definition": "A receiving-side archive is strongly tied to a documented Blaschka transaction, but the decisive local record still requires retrieval.",
+          "definition_hash": "5e1847cb9b73"
+        },
+        {
+          "term": "candidate_personal_archival_bridge",
+          "definition": "A named personal fonds is well positioned to close a documented provenance or chronology gap, but a Blaschka-specific mention has not yet been verified.",
+          "definition_hash": "51a490a17b1d"
+        },
+        {
+          "term": "dealer_business_comparator",
+          "definition": "Dealer business records are retained as controls for commercial practice but are not themselves direct Blaschka evidence.",
+          "definition_hash": "6a6987eab472"
+        }
+      ]
+    }
+  ],
+  "repeated_terms": {}
+}
