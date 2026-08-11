@@ -36,10 +36,11 @@
     link.href = url.href;
   };
 
-  if (!isBibliography) {
-    addStyle(`${prefix}site-core.css?v=20260810-1`, 'site-core.css');
-  } else {
-    addStyle(`${prefix}navigation-shell.css?v=20260811-1`, 'navigation-shell.css');
+  /* Pages that still need the historical site-core bundle load it explicitly in
+     their HTML. Map, journey and notes pages already have their own shell/styles,
+     so do not make them pay for the 100KB all-page bundle. */
+  const hasSiteCore = [...document.querySelectorAll('link[rel="stylesheet"]')].some(link => link.href.includes('site-core.css'));
+  if (isSubpage && !isBibliography && !hasSiteCore) {
     addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
   }
 
