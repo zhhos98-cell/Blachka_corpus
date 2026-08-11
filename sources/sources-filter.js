@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUI && !window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260811-2';
+    ui.src = '../unified-ui.js?v=20260811-3';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -100,7 +100,7 @@
   kindSelect?.addEventListener('change', apply);
   regionSelect?.addEventListener('change', apply);
   let timer;
-  searchInput?.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(apply, 70); });
+  searchInput?.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(apply, 90); });
   browser.querySelector('.source-az-alpha')?.addEventListener('click', event => {
     const button = event.target.closest('[data-letter]');
     if (!button || button.disabled) return;
