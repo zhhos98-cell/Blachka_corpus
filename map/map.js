@@ -7,6 +7,7 @@
   const count = document.getElementById('map-result-count');
   if (!mapEl || !list) return;
 
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const norm = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
   const statusLabel = {confirmed:'Documented holding',partial:'Current detail incomplete',open:'Survival unresolved'};
@@ -28,9 +29,9 @@
       next.searchParams.set('institution', link.dataset.mapId);
       next.hash = 'collection-map';
       history.pushState({institution:link.dataset.mapId},'',next.pathname + next.search + next.hash);
-      leafletMap.setView(marker.getLatLng(), Math.max(leafletMap.getZoom(), 7), {animate:true});
+      leafletMap.setView(marker.getLatLng(), Math.max(leafletMap.getZoom(), 7), {animate:!reduced});
       marker.openPopup();
-      mapEl.scrollIntoView({behavior:'smooth',block:'center'});
+      mapEl.scrollIntoView({behavior:reduced ? 'auto' : 'smooth',block:'center'});
     }));
   };
 
@@ -58,7 +59,7 @@
     if (!marker) return false;
     leafletMap.setView(marker.getLatLng(), Math.max(leafletMap.getZoom(), 7), {animate:false});
     marker.openPopup();
-    if (scroll) mapEl.scrollIntoView({behavior:'smooth',block:'center'});
+    if (scroll) mapEl.scrollIntoView({behavior:reduced ? 'auto' : 'smooth',block:'center'});
     return true;
   };
 
@@ -67,7 +68,14 @@
       if (note) note.textContent = 'Map tiles unavailable; use the institution index below.';
       return;
     }
-    leafletMap = L.map(mapEl, {zoomControl:true,worldCopyJump:true,minZoom:2,maxZoom:12,attributionControl:true});
+    leafletMap = L.map(mapEl, {
+      zoomControl:true,
+      worldCopyJump:true,
+      minZoom:2,
+      maxZoom:12,
+      attributionControl:true,
+      scrollWheelZoom:false
+    });
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom:19,
       attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>'
