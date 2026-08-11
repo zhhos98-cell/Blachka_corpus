@@ -27,11 +27,14 @@ Requirements:
 - record loss must be detectable;
 - a derived file may never feed corrections back into its canonical source automatically.
 
-Current example:
+Current examples:
 
 - canonical: `people/people-data.json`
 - derived: `people/people-ui.json`
 - generator: `scripts/build-people-ui.py`
+- structural manifests: `sources/register-manifest.json` and `auctions/data-manifest.json`
+- manifest generator: `scripts/build-structural-manifests.py`
+- generated schema/vocabulary audits: `schemas/generated/`
 
 ## 3. Historical / retired data
 
@@ -65,11 +68,21 @@ Housekeeping must not:
 
 ## 5. Validation
 
-Run:
+For the normal derived-data maintenance cycle, run:
 
 ```bash
 python scripts/build-people-ui.py
+python scripts/build-structural-manifests.py
 python scripts/validate-derived-data.py
 ```
+
+For structural review rather than routine regeneration, the read-only audit tools are:
+
+```bash
+python scripts/audit-json-schema-families.py
+python scripts/audit-status-vocabularies.py
+```
+
+The audit outputs belong under `schemas/generated/` and dated notes under `docs/`; they do not feed changes back into canonical research data.
 
 A clean run confirms structural relationships; it does not validate historical truth. Evidence review remains a separate research operation.
