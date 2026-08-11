@@ -161,6 +161,8 @@ A later OCR control from 1894 cleanly gives a `San Diego Coast Line` morning ser
 
 The 1892 Southern California Railway promotional map confirms the Los Angeles–Orange County–Oceanside–San Diego network. Exact April/May station times remain the target.
 
+**Acquisition fallback now secured:** the National City Public Library's Kile Morgan Local History Room explicitly lists `National City Record 1882–1902` in its microfilm holdings and accepts research requests by email at `localhistory@nationalcityca.gov`. The same page points researchers to the California Digital Newspaper Collection for National City newspapers, although current search indexing did not surface the 1892 Record issue directly. Therefore a narrowly specified request for the railway advertisement/schedule in the issue of **29 September 1892** is now a concrete fallback if online image recovery fails. This is preferable to an open-ended newspaper request.
+
 ### 6. Southern Pacific archival control at Yuma
 
 Yuma County Library District holdings list Southern Pacific timetable material covering 1887–1976 and related 1877–1899 ephemera. This is the best identified institutional fallback for exact-date timetable acquisition.
@@ -172,7 +174,7 @@ Yuma County Library District holdings list Southern Pacific timetable material c
 
 ## Next research action
 
-1. Recover the actual 29 September 1892 National City Record schedule image/OCR from the Historic Broadway embedding or an independent scan source.
+1. Recover the actual 29 September 1892 National City Record schedule image/OCR from the Historic Broadway embedding or an independent scan source; if online recovery remains blocked, use the now-identified National City Library microfilm request.
 2. Recover actual schedule panels from Rumsey 3139B or an 1892 `Official Railway Guide`.
 3. Recover an issue-level April/May 1892 Yuma/Maricopa Southern Pacific table; if unavailable online, prepare a narrow Yuma Library request.
 4. Recover the Wx4 1 May 1892 Los Angeles public timetable or an equivalent newspaper reproduction.
