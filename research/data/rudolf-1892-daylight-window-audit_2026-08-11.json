@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-08-11",
+  "title": "Rudolf Blaschka 1892 daylight-window audit — 24 April Arizona-to-Los-Angeles rail corridor",
+  "scope": "Backend-only astronomical daylight calibration against the provisional historical railway-clock sequence for 24 April 1892. Intended to constrain, not force, the geolocation of Rakow sketchbook pp. 12-13.",
+  "frontend_policy": "Backend only. Do not publish daylight polygons, sketchbook-image associations or inferred viewpoints on public Pages without a separate explicit decision.",
+  "historical_clock_model": {
+    "working_standard": "Pacific railroad time / fixed UTC-8 comparison clock",
+    "justification": [
+      "A Maricopa & Phoenix timetable close to the period explicitly labels its table Pacific time.",
+      "The official itinerary for President Benjamin Harrison's April 1891 Southern Pacific journey converts Central time to Pacific time at El Paso and then labels Tucson, Yuma and Los Angeles in Pacific time, demonstrating the railroad's contemporary clock convention across this western segment.",
+      "Rudolf independently notes repeated clock-setting during the transcontinental journey, so historical railroad time must be treated as an active travel variable rather than silently normalized to modern civil zones."
+    ],
+    "guard": "The model compares solar geometry with a fixed Pacific standard clock. It does not claim that every local civil clock or every railroad employee used exactly the same convention at every point. Exact timetable pages remain preferable whenever recovered."
+  },
+  "astronomical_method": {
+    "algorithm": "NOAA-style approximate solar-position / sunrise-sunset equations using Gregorian date, latitude and longitude; standard sunrise/sunset zenith 90.833 degrees and civil twilight zenith 96 degrees.",
+    "date": "1892-04-24",
+    "time_conversion": "Solar event UT converted to a fixed UTC-8 comparison clock.",
+    "precision_guard": "Values are rounded to the nearest minute and are suitable for daylight-window exclusion, not second-level historical timekeeping."
+  },
+  "solar_windows": [
+    {"place":"Maricopa","model_coordinate":[33.057,-112.049],"civil_dawn_PST":"04:21","sunrise_PST":"04:47","sunset_PST":"18:06","civil_dusk_PST":"18:32"},
+    {"place":"Yuma","model_coordinate":[32.725,-114.624],"civil_dawn_PST":"04:32","sunrise_PST":"04:58","sunset_PST":"18:16","civil_dusk_PST":"18:42"},
+    {"place":"Salton Station area (approximate modeling control)","model_coordinate":[33.30,-115.95],"civil_dawn_PST":"04:36","sunrise_PST":"05:02","sunset_PST":"18:22","civil_dusk_PST":"18:48"},
+    {"place":"Mecca","model_coordinate":[33.572,-116.078],"civil_dawn_PST":"04:36","sunrise_PST":"05:02","sunset_PST":"18:23","civil_dusk_PST":"18:49"},
+    {"place":"Indio","model_coordinate":[33.7206,-116.2156],"civil_dawn_PST":"04:37","sunrise_PST":"05:03","sunset_PST":"18:23","civil_dusk_PST":"18:50"},
+    {"place":"Banning","model_coordinate":[33.9256,-116.8764],"civil_dawn_PST":"04:39","sunrise_PST":"05:05","sunset_PST":"18:26","civil_dusk_PST":"18:53"},
+    {"place":"Colton","model_coordinate":[34.0739,-117.3137],"civil_dawn_PST":"04:40","sunrise_PST":"05:07","sunset_PST":"18:28","civil_dusk_PST":"18:55"},
+    {"place":"Los Angeles","model_coordinate":[34.0522,-118.2437],"civil_dawn_PST":"04:44","sunrise_PST":"05:10","sunset_PST":"18:32","civil_dusk_PST":"18:58"}
+  ],
+  "known_clock_checks": [
+    {
+      "place":"Maricopa",
+      "clock":"~06:35",
+      "evidence":"same-year close timetable control, Arizona Republican 29 May 1892",
+      "solar_state":"full daylight; approximately 1 hour 48 minutes after modeled sunrise",
+      "modeled_solar_altitude_deg":21.3,
+      "interpretation":"The dated Maricopa sketchbook landscapes are entirely compatible with an early-morning station/transit observation window."
+    },
+    {
+      "place":"Yuma",
+      "clock":"~12:40",
+      "evidence":"near-contemporary timetable proxy printed 6 June 1891, table stated in effect 15 June 1890",
+      "solar_state":"strong midday daylight",
+      "modeled_solar_altitude_deg":65.5,
+      "interpretation":"Any Yuma/lower-Colorado landscape observation around this proxy time would have occurred under high daylight, not dawn/dusk conditions."
+    },
+    {
+      "place":"Los Angeles",
+      "clock":"~22:00",
+      "evidence":"high-confidence inference from Rudolf's primary correspondence",
+      "solar_state":"well after civil dusk",
+      "interpretation":"The final approach into Los Angeles belongs to darkness under the working clock model."
+    }
+  ],
+  "time_standard_control": {
+    "source":"Official itinerary for President Benjamin Harrison's 1891 journey, Stanford/Leland Stanford Papers transcription",
+    "finding":"The itinerary explicitly gives El Paso as Central time 10:00 and Pacific time 8:00, then lists Tucson, Yuma and Los Angeles on Pacific time. It gives Yuma 5:20/5:30 A.M. and Los Angeles 3:00 P.M. for the special presidential movement.",
+    "use":"Clock-standard evidence only. The presidential special's station minutes are not substituted for Rudolf's ordinary train schedule."
+  },
+  "p12_p13_implications": {
+    "secure_temporal_assignment":"24 April 1892 rail corridor",
+    "strong_exclusions":[
+      "Do not assign the sketch to the final Colton-to-Los-Angeles approach if the drawing is assumed to record a directly visible landscape at the moment of observation; that final portion was substantially after twilight under the working chronology.",
+      "Do not broaden the page back to a generic 24-25 April interval; Rudolf's 25 April letter explicitly identifies the desert sequence as the previous day."
+    ],
+    "remaining_viable_windows":[
+      "morning Arizona / approach to Yuma",
+      "early-to-mid afternoon lower Colorado and California desert",
+      "afternoon Salton depression / Coachella-side desert",
+      "late-afternoon to twilight San Jacinto / Banning approach"
+    ],
+    "important_guard":"A sketch can be completed from memory, after a train has passed a view, or during a stop. Daylight analysis constrains possible direct observation, not necessarily the physical instant when pencil touched paper."
+  },
+  "provisional_elapsed_time_model": {
+    "inputs":[
+      "Yuma proxy departure ~12:40",
+      "Los Angeles primary-inferred arrival ~22:00",
+      "Yuma-to-Los-Angeles distance 249 miles in the April 1891 Harrison itinerary",
+      "Banning described in a near-contemporary regional history as 88 miles from Los Angeles"
+    ],
+    "simple_constant_speed_check":"A purely linear 249-mile / 9h20m interpolation would place the Banning mileage near 18:40-18:45, approximately sunset-to-civil-twilight. This is only a plausibility check because actual running time, stops and Beaumont grade were nonuniform.",
+    "interpretive_value":"The rough check makes Rudolf's visual observation of the snow-covered San Jacinto high country temporally plausible as a late-day / twilight event and explains why exact station timetable rows are now especially valuable.",
+    "guard":"Do not use the interpolation as a timetable or as an exact Banning passage time."
+  },
+  "next_tests":[
+    "Recover exact April 1892 Southern Pacific station times for Yuma, Salton/Mecca/Indio, Banning, Colton and Los Angeles.",
+    "Replace the linear elapsed-time check with real station intervals.",
+    "Use the recovered times to compute sun altitude/azimuth at each segment and compare illumination direction with the p.12-13 shaded massif.",
+    "Only after timing is improved, run DEM skyline profiles for candidate lower-Colorado/Salton/San-Jacinto viewpoints."
+  ]
+}
