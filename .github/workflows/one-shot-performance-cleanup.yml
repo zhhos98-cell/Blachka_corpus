@@ -39,7 +39,9 @@ jobs:
           # The legacy secondary bundle is still used by a few small reading pages.
           replace('site-core.css', 'typography-garamond.css?v=20260810-1', 'typography-garamond.css?v=20260811-1')
 
-          # Make browsers request the changed parent CSS immediately.
+          # Make browsers request changed parent CSS immediately. Some page keys may
+          # already have been refreshed by earlier whole-site cleanup, so this block
+          # is deliberately idempotent.
           replacements = {
               'people/index.html': [('people.css?v=20260810-3','people.css?v=20260811-1')],
               'map/index.html': [('map.css?v=20260810-3','map.css?v=20260811-1')],
@@ -48,7 +50,7 @@ jobs:
           }
           for path, pairs in replacements.items():
               for old, new in pairs:
-                  replace(path, old, new)
+                  replace(path, old, new, required=False)
 
           for p in Path('.').rglob('*.html'):
               if '.git' in p.parts:
