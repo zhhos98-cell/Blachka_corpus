@@ -16,13 +16,22 @@
   const byId = new Map(documented.map((item, index) => [item.id, { ...item, index }]));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const operationLabels = {
+    transit: 'Travel',
+    observe: 'Fieldwork',
+    draw: 'Drawing / microscopy',
+    preserve: 'Preservation',
+    circulate: 'Moving material',
+    coordinate: 'Coordination',
+    repair: 'Repair',
+    reassemble: 'Workshop'
+  };
+
   const displayItem = item => ({ ...item, ...(overrides[item.id] || {}) });
   const displayKnowledge = item => ({ ...(knowledge[item.id] || fallbackKnowledge(item)), ...(enhancements[item.id] || {}) });
 
   const map = L.map('journey-map', { scrollWheelZoom: true, worldCopyJump: false, zoomControl: true });
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
 
   const routeLayer = L.layerGroup().addTo(map);
   const plannedLayer = L.layerGroup().addTo(map);
@@ -48,7 +57,6 @@
   const markerMap = new Map();
   const flowNodeIds = new Set(flows.flatMap(flow => [flow.from, flow.to]));
   let currentIndex = 0;
-
   const pad = value => String(value).padStart(2, '0');
   const numberFor = index => pad(index + 1);
 
@@ -57,8 +65,8 @@
       primary: 'transit',
       encountered: item.summary,
       done: item.detail,
-      moved: 'The travelling party, working notes and accumulated reference material.',
-      enabled: 'The journey’s distributed working record could continue into the next stop.'
+      moved: 'Rudolf, his working material and the record accumulated so far.',
+      enabled: 'Work could continue at the next stop.'
     };
   }
 
@@ -70,9 +78,7 @@
     return L.divIcon({
       className: 'journey-numbered-icon',
       html: `<span class="journey-marker${faded ? ' is-muted' : ''}" style="--marker-color:${color}">${numberFor(index)}</span>`,
-      iconSize: [34, 34],
-      iconAnchor: [17, 17],
-      popupAnchor: [0, -16]
+      iconSize: [34, 34], iconAnchor: [17, 17]
     });
   }
 
@@ -80,9 +86,7 @@
     return L.divIcon({
       className: 'journey-visual-match-icon',
       html: '<span class="journey-match-marker"><span>S</span></span>',
-      iconSize: [28, 28],
-      iconAnchor: [14, 14],
-      popupAnchor: [0, -13]
+      iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -13]
     });
   }
 
@@ -97,7 +101,7 @@
         <p class="journey-match-status">${match.status}</p>
         <h3 class="journey-match-title">${match.title}</h3>
         <p class="journey-match-summary">${match.summary}</p>
-        <p class="journey-match-source"><strong>${match.sourceLabel}</strong>${match.rights}<br><a href="${match.sourceUrl}" target="_blank" rel="noopener noreferrer">View source &amp; rights ↗</a></p>
+        <p class="journey-match-source"><strong>${match.sourceLabel}</strong>${match.rights}<br><a href="${match.sourceUrl}" target="_blank" rel="noopener noreferrer">Source &amp; rights ↗</a></p>
       </div>
     </article>`;
   }
@@ -105,37 +109,27 @@
   function renderVisualMatches() {
     visualMatches.forEach(match => {
       const marker = L.marker([match.lat, match.lng], {
-        icon: visualMatchIcon(),
-        keyboard: true,
-        riseOnHover: true,
+        icon: visualMatchIcon(), keyboard: true, riseOnHover: true,
         title: `Sketchbook match: ${match.title}`
       }).addTo(visualMatchLayer);
 
       marker.bindPopup(visualMatchPopup(match), {
-        className: 'visual-match-popup',
-        maxWidth: 340,
-        minWidth: 280,
-        autoPan: false,
-        closeButton: true
+        className: 'visual-match-popup', maxWidth: 340, minWidth: 280, autoPan: false, closeButton: true
       });
 
       let closeTimer = 0;
       const cancelClose = () => {
-        if (closeTimer) window.clearTimeout(closeTimer);
+        if (closeTimer) clearTimeout(closeTimer);
         closeTimer = 0;
       };
       const scheduleClose = () => {
         cancelClose();
-        closeTimer = window.setTimeout(() => {
+        closeTimer = setTimeout(() => {
           const popupEl = marker.getPopup()?.getElement();
           if (!popupEl || !popupEl.matches(':hover')) marker.closePopup();
         }, 180);
       };
-
-      marker.on('mouseover', () => {
-        cancelClose();
-        marker.openPopup();
-      });
+      marker.on('mouseover', () => { cancelClose(); marker.openPopup(); });
       marker.on('mouseout', scheduleClose);
       marker.on('popupopen', () => {
         const popupEl = marker.getPopup()?.getElement();
@@ -149,8 +143,12 @@
 
   documented.forEach((rawItem, index) => {
     const item = displayItem(rawItem);
-    const marker = L.marker([rawItem.lat, rawItem.lng], { icon: markerIcon(rawItem, index, 'journey') }).addTo(markerLayer);
-    marker.bindPopup(`<strong>${numberFor(index)} · ${item.title}</strong><br>${item.date}<br><span>${rawItem.summary}</span>`);
+    const marker = L.marker([rawItem.lat, rawItem.lng], {
+      icon: markerIcon(rawItem, index, 'journey'),
+      title: `${numberFor(index)} · ${item.title} · ${item.date}`,
+      riseOnHover: true
+    }).addTo(markerLayer);
+    marker.bindTooltip(`<strong>${numberFor(index)} · ${item.title}</strong><br>${item.date}`, { direction:'top', offset:[0,-12] });
     marker.on('click', () => setDetail(index, true));
     markerMap.set(rawItem.id, marker);
   });
@@ -207,7 +205,7 @@
     detailMoved.textContent = k.moved;
     detailEnabled.textContent = k.enabled;
     detailTags.innerHTML = '';
-    (rawItem.category || []).slice(0, 6).forEach(tag => {
+    (rawItem.category || []).slice(0, 3).forEach(tag => {
       const span = document.createElement('span');
       span.className = 'journey-tag';
       span.textContent = tag;
@@ -220,7 +218,7 @@
       detailWhyBlock.hidden = true;
       detailWhy.textContent = '';
     }
-    detailSource.textContent = k.source || 'Correspondence sequence in the 1892 archive layer';
+    detailSource.textContent = k.source || 'Correspondence sequence in the 1892 archive';
     renderNodeLinks(rawItem);
 
     routeIndex.querySelectorAll('[data-route-index]').forEach(button => {
@@ -228,7 +226,6 @@
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-current', active ? 'step' : 'false');
     });
-
     markerMap.forEach((marker, id) => {
       const node = byId.get(id);
       marker.setZIndexOffset(node.index === index ? 500 : 0);
@@ -237,11 +234,9 @@
     });
 
     if (focusMap) {
-      const marker = markerMap.get(rawItem.id);
       const targetZoom = Math.max(map.getZoom(), 5);
       if (reduced) map.setView([rawItem.lat, rawItem.lng], targetZoom);
-      else map.flyTo([rawItem.lat, rawItem.lng], targetZoom, { duration: .7 });
-      marker?.openPopup();
+      else map.flyTo([rawItem.lat, rawItem.lng], targetZoom, { duration:.55 });
     }
   }
 
@@ -264,36 +259,33 @@
       if (!from || !to) return;
       const color = flow.type === 'material' ? '#6f91a4' : flow.type === 'information' ? '#8a718c' : '#9b8866';
       const line = L.polyline([[from.lat, from.lng], [to.lat, to.lng]], {
-        color,
-        weight: flow.status === 'prospective' ? 2.2 : 3,
-        opacity: .9,
-        dashArray: flow.status === 'prospective' ? '4 8' : '9 7',
-        lineCap: 'round'
+        color, weight: flow.status === 'prospective' ? 2.2 : 3, opacity:.9,
+        dashArray: flow.status === 'prospective' ? '4 8' : '9 7', lineCap:'round'
       }).addTo(flowLayer);
-      line.bindTooltip(`<strong>${flow.label}</strong><br>${flow.status}`, { sticky: true });
+      line.bindTooltip(`<strong>${flow.label}</strong>`, { sticky:true });
     });
   }
 
   const modeCopyText = {
-    journey: '<strong>Journey</strong> follows Rudolf’s documented movement. The dashed route preserves the itinerary that circulated publicly even when the traveller had already moved on.',
-    operations: '<strong>Operations</strong> recolours each numbered stop by its dominant working operation: encounter, drawing, preservation, circulation, coordination, repair, reassembly or transit.',
-    flows: '<strong>Flows</strong> separates Rudolf’s bodily route from the movement of plants, specimens, drawings, instructions and later supply. Greyed nodes are outside the selected flow network.'
+    journey: '<strong>Journey</strong> follows documented movement. The dashed line shows the route reported publicly at the time.',
+    operations: '<strong>Work</strong> colours each stop by the main activity recorded there.',
+    flows: '<strong>Flows</strong> shows plants, specimens, drawings and instructions moving separately from Rudolf’s route.'
   };
 
   function matchLegend() {
-    return visualMatches.length ? '<span><i class="is-match"></i>sketchbook landscape match</span>' : '';
+    return visualMatches.length ? '<span><i class="is-match"></i>sketchbook match</span>' : '';
   }
 
   function renderLegend(mode) {
     if (mode === 'operations') {
-      modeLegend.innerHTML = Object.entries(operations).map(([key, op]) => `<span><i style="--legend-color:${op.color}"></i>${op.label}</span>`).join('') + matchLegend();
+      modeLegend.innerHTML = Object.entries(operations).map(([key, op]) => `<span><i style="--legend-color:${op.color}"></i>${operationLabels[key] || op.label}</span>`).join('') + matchLegend();
       return;
     }
     if (mode === 'flows') {
-      modeLegend.innerHTML = '<span><i style="--legend-color:#6f91a4"></i>material</span><span><i style="--legend-color:#8a718c"></i>information / instruction</span><span><i style="--legend-color:#9b8866"></i>prospective supply</span>' + matchLegend();
+      modeLegend.innerHTML = '<span><i style="--legend-color:#6f91a4"></i>material</span><span><i style="--legend-color:#8a718c"></i>information</span><span><i style="--legend-color:#9b8866"></i>future supply</span>' + matchLegend();
       return;
     }
-    modeLegend.innerHTML = '<span><i style="--legend-color:#b67a51"></i>documented movement</span><span><i class="is-dashed" style="--legend-color:#71889a"></i>planned / public itinerary</span>' + matchLegend();
+    modeLegend.innerHTML = '<span><i style="--legend-color:#b67a51"></i>documented route</span><span><i class="is-dashed" style="--legend-color:#71889a"></i>reported route</span>' + matchLegend();
   }
 
   function setMode(mode) {
@@ -318,17 +310,11 @@
       renderFlows();
       map.addLayer(flowLayer);
     }
-
-    documented.forEach((item, index) => {
-      markerMap.get(item.id)?.setIcon(markerIcon(item, index, mode));
-    });
+    documented.forEach((item, index) => markerMap.get(item.id)?.setIcon(markerIcon(item, index, mode)));
     setDetail(currentIndex, false);
   }
 
-  document.querySelectorAll('[data-map-mode]').forEach(button => {
-    button.addEventListener('click', () => setMode(button.dataset.mapMode));
-  });
-
+  document.querySelectorAll('[data-map-mode]').forEach(button => button.addEventListener('click', () => setMode(button.dataset.mapMode)));
   document.getElementById('prev-stop').addEventListener('click', () => setDetail((currentIndex - 1 + documented.length) % documented.length, true));
   document.getElementById('next-stop').addEventListener('click', () => setDetail((currentIndex + 1) % documented.length, true));
   document.getElementById('reset-view').addEventListener('click', () => map.fitBounds(allBounds));
