@@ -1,0 +1,44 @@
+name: One-shot static shell standardization
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-static-shell.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  standardize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Standardize static public shell
+        run: python scripts/standardize-public-shell.py
+      - name: Verify research data untouched
+        shell: bash
+        run: |
+          if ! git diff --quiet -- research/data; then
+            echo "research/data changed unexpectedly"
+            git diff -- research/data
+            exit 1
+          fi
+      - name: Validate structured data
+        run: python scripts/validate-derived-data.py
+      - name: Commit standardized shell
+        shell: bash
+        run: |
+          git add cases/index.html sources/index.html bibliography/index.html blog/index.html about/index.html auctions/index.html
+          if git diff --cached --quiet; then
+            echo "Static shell already current"
+            exit 0
+          fi
+          git config user.name "Haohao Zhang"
+          git config user.email "zhhos98@gmail.com"
+          git commit -m "Standardize static public navigation shell"
+          git push origin HEAD:main
