@@ -1,4 +1,7 @@
 (() => {
+  const shellCss = [...document.querySelectorAll('link[rel="stylesheet"]')].find(link => link.href.includes('navigation-shell.css'));
+  if (shellCss) shellCss.href = 'navigation-shell.css?v=20260811-2';
+
   const addScript = (src, token) => {
     if ([...document.scripts].some(script => script.src.includes(token))) return;
     const script = document.createElement('script');
@@ -6,7 +9,6 @@
     script.defer = true;
     document.head.appendChild(script);
   };
-
   addScript('accessibility.js?v=20260810-2', 'accessibility.js');
 
   const main = document.getElementById('main-content');
@@ -48,13 +50,7 @@
     sources:'archive, invoice, Dresden…',
     auctions:'house, lot, catalogue number…'
   };
-  const routes = {
-    cases:'cases/',
-    people:'people/',
-    bibliography:'bibliography/',
-    sources:'sources/',
-    auctions:'auctions/'
-  };
+  const routes = { cases:'cases/', people:'people/', bibliography:'bibliography/', sources:'sources/', auctions:'auctions/' };
 
   const updatePlaceholder = () => {
     input.placeholder = placeholders[scope.value] || placeholders.cases;
