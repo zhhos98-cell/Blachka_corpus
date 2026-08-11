@@ -51,8 +51,17 @@ html body.subpage .source-intro{min-height:0!important;padding:clamp(56px,6vw,76
 .source-az-entry::before,.source-az-entry::after{content:none!important;display:none!important}.source-az-entry>*{position:static!important;inset:auto!important;float:none!important;transform:none!important;max-width:76ch!important}.source-az-entry:hover{background:rgba(255,255,255,.012)!important}.source-az-entry h3{margin:0!important;color:#f2eee9;font-family:var(--font-reading,Georgia,serif)!important;font-size:clamp(1.04rem,1.25vw,1.15rem)!important;line-height:1.43;font-weight:450}
 .source-az-context{margin:4px 0 0!important;color:rgba(242,238,233,.36)!important;font:500 .62rem/1.4 var(--font-ui,Arial,sans-serif)!important}.source-az-empty{margin:20px 0;color:rgba(242,238,233,.60);font-size:.78rem}
 
+/* Optional reverse index: visible only when one linked source recurs elsewhere. */
+.source-reuse{margin:5px 0 0!important;color:rgba(242,238,233,.43);font:500 .62rem/1.42 var(--font-ui,Arial,sans-serif)!important}
+.source-reuse summary{width:max-content;max-width:100%;cursor:pointer;color:rgba(242,238,233,.52);list-style-position:outside}
+.source-reuse summary:hover,.source-reuse summary:focus-visible,.source-reuse[open] summary{color:rgba(242,238,233,.78)}
+.source-reuse summary::marker{color:rgba(208,160,120,.48)}
+.source-reuse ul{margin:5px 0 0 18px;padding:0;color:rgba(242,238,233,.47)}
+.source-reuse li{margin:2px 0;padding:0}
+.source-reuse-layer{color:rgba(208,160,120,.70)}
+
 @media(max-width:760px){
   html body.subpage .source-intro{padding:42px 0 25px!important}.source-intro h1{font-size:clamp(2.8rem,13vw,4rem)!important}.source-intro .page-dek{font-size:.94rem!important}.source-az{padding-bottom:40px!important}
   .source-az-filters{position:static;display:flex;gap:6px;width:100%;margin:0 0 8px;padding:5px 0;overflow-x:auto;background:transparent!important;scrollbar-width:none}.source-az-filters::-webkit-scrollbar{display:none}.source-az-filters label{flex:0 0 auto;width:auto}.source-az-filters label>span{display:none}.source-az-filters select{width:auto;max-width:165px}.source-az-search>div{width:220px}
-  .source-az-alpha{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-bottom:10px}.source-az-alpha::-webkit-scrollbar{display:none}.source-az-alpha button{flex:0 0 auto}.source-az-context{display:none!important}.source-az-entry,.source-entry{padding:10px 0 13px!important;contain-intrinsic-size:auto 105px!important}.source-az-entry h3,.source-entry h3{font-size:1rem!important;line-height:1.43!important}.source-meta{font-size:.64rem!important}
+  .source-az-alpha{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-bottom:10px}.source-az-alpha::-webkit-scrollbar{display:none}.source-az-alpha button{flex:0 0 auto}.source-az-context{display:none!important}.source-az-entry,.source-entry{padding:10px 0 13px!important;contain-intrinsic-size:auto 105px!important}.source-az-entry h3,.source-entry h3{font-size:1rem!important;line-height:1.43!important}.source-meta{font-size:.64rem!important}.source-reuse{font-size:.61rem!important}
 }
