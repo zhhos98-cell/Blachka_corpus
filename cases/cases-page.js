@@ -2,7 +2,7 @@
   if (!window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260811-3';
+    ui.src = '../unified-ui.js?v=20260811-4';
     ui.defer = true;
     document.head.appendChild(ui);
   }
@@ -55,8 +55,6 @@
   applyIncomingSearch();
   restoreHash();
 
-  /* Directory thumbnails are optional and small. Long-case background maps and
-     other decorative visual overlays are deliberately not loaded. */
   if (!compactViewport && !saveData) {
     const loadWall = () => loadScript('./case-wall-media.js?v=20260810-4').catch(() => {});
     if ('requestIdleCallback' in window) requestIdleCallback(loadWall, {timeout:1200});
