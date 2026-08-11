@@ -36,9 +36,10 @@
     link.href = url.href;
   };
 
-  /* Pages that still need the historical site-core bundle load it explicitly in
-     their HTML. Map, journey and notes pages already have their own shell/styles,
-     so do not make them pay for the 100KB all-page bundle. */
+  /* The historical site-core bundle is now opt-in from page HTML. The shared
+     runtime adds only the small shell required for consistent navigation. */
+  if (isSubpage) addStyle(`${prefix}navigation-shell.css?v=20260811-2`, 'navigation-shell.css');
+
   const hasSiteCore = [...document.querySelectorAll('link[rel="stylesheet"]')].some(link => link.href.includes('site-core.css'));
   if (isSubpage && !isBibliography && !hasSiteCore) {
     addStyle(`${prefix}accessibility.css?v=20260810-2`, 'accessibility.css');
