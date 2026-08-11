@@ -68,6 +68,6 @@
     })
     .catch(() => {
       count.textContent = 'People index unavailable';
-      list.innerHTML = '<p class="people-no-results">The people data could not be loaded. The machine-readable records remain available in <a href="people-records.json">people-records.json</a>.</p>';
+      list.innerHTML = '<p class="people-no-results">The people data could not be loaded. The canonical machine-readable records remain available in <a href="people-data.json">people-data.json</a>.</p>';
     });
 })();
