@@ -1,0 +1,443 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Structural inventory of the Auction provenance JSON layer. Only auction-data.json is canonical lot data; other JSON files retain their separate research/audit roles.",
+  "file_count": 16,
+  "files": [
+    {
+      "path": "auction-archive-router.json",
+      "role": "supporting_research_layer",
+      "bytes": 16432,
+      "sha256": "a0dc37c47b7a410ee800c0bfc43d1e211b046d0fa76a6addd84d6e6e04282c73",
+      "top_level_keys": [
+        "generated_date",
+        "priority_targets",
+        "purpose",
+        "schema_version",
+        "strategy",
+        "title"
+      ],
+      "list_fields": {
+        "priority_targets": 9
+      },
+      "schema_version": "1.2.0",
+      "title": "Archive router for unresolved Blaschka market and deaccession chains",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "auction-catalogue-library-holdings-router.json",
+      "role": "supporting_research_layer",
+      "bytes": 8771,
+      "sha256": "0fbeca617cff2bea3be563f247f135295fb560e86b69bd1479f720728bb5d541",
+      "top_level_keys": [
+        "access_strategy",
+        "canonical_auction_count_effect",
+        "christies_series_expansion",
+        "generated_date",
+        "next_targets",
+        "public_lot_archive_finding",
+        "purpose",
+        "repositories",
+        "schema_version",
+        "title"
+      ],
+      "list_fields": {
+        "repositories": 2,
+        "access_strategy": 5,
+        "next_targets": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "Institutional holdings router for high-priority historical auction catalogues",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "auction-catalogue-recoveries.json",
+      "role": "supporting_research_layer",
+      "bytes": 6353,
+      "sha256": "fdba73d9ce7ce22474e65baf4d3b16c8efe4b5dbf5ba6a4d42b505806f7fdc59",
+      "top_level_keys": [
+        "bounded_negative_checks",
+        "generated_date",
+        "purpose",
+        "recoveries",
+        "schema_version",
+        "title"
+      ],
+      "list_fields": {
+        "recoveries": 2,
+        "bounded_negative_checks": 2
+      },
+      "schema_version": "1.0.0",
+      "title": "Auction catalogue identifier recoveries",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "auction-data.json",
+      "role": "canonical_auction_table",
+      "bytes": 22096,
+      "sha256": "ab9eaf0831db36c8474b541aa5f03c8daca6db5c38dbb41f5aa7333175612a48",
+      "top_level_keys": [
+        "generated_date",
+        "open_tasks",
+        "query_aliases",
+        "records",
+        "rejected_candidates",
+        "schema_version",
+        "scope",
+        "search_coverage",
+        "summary",
+        "title"
+      ],
+      "list_fields": {
+        "records": 11,
+        "rejected_candidates": 6,
+        "search_coverage": 2,
+        "query_aliases": 15,
+        "open_tasks": 6
+      },
+      "schema_version": "1.0.0",
+      "title": "Blaschka public auction provenance records",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "auction-false-positive-wimbledon-2023.json",
+      "role": "supporting_research_layer",
+      "bytes": 7393,
+      "sha256": "093f4ddd818a68ea88ddc5ce194eeec3aa8e4e524ef72787934bd33b3ec12015",
+      "top_level_keys": [
+        "canonical_auction_count_effect",
+        "cluster_summary",
+        "count_note",
+        "generated_date",
+        "lots",
+        "purpose",
+        "rejection_rule",
+        "sale",
+        "schema_version",
+        "search_contamination_pattern",
+        "sources",
+        "title"
+      ],
+      "list_fields": {
+        "lots": 5,
+        "sources": 5
+      },
+      "schema_version": "1.0.0",
+      "title": "Wimbledon Auctions 2023 Blaschka-style shell and wax model false-positive cluster",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "auction-historical-catalogue-family-worklist.json",
+      "role": "supporting_research_layer",
+      "bytes": 13302,
+      "sha256": "d8d48417dc0f434327386d1d2b6dbf23373c0c196c3eacd8ade75b861243b66d",
+      "top_level_keys": [
+        "access_and_cost_strategy",
+        "canonical_auction_count_effect",
+        "families",
+        "generated_date",
+        "method",
+        "next_actions",
+        "priority_order_for_manual_or_OCR_screening",
+        "purpose",
+        "schema_version",
+        "sources",
+        "title"
+      ],
+      "list_fields": {
+        "families": 5,
+        "priority_order_for_manual_or_OCR_screening": 9,
+        "next_actions": 5,
+        "sources": 2
+      },
+      "schema_version": "1.0.0",
+      "title": "Historical auction catalogue family worklist for unindexed Blaschka discovery",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "auction-historical-market-seeds.json",
+      "role": "supporting_research_layer",
+      "bytes": 12449,
+      "sha256": "1af54dcb27f2616c3da5826be1b6dd6e198d5cd3f68cd30f644841c906a44348",
+      "top_level_keys": [
+        "bounded_catalogue_sweep_2026_08_10",
+        "canonical_auction_boundary",
+        "generated_date",
+        "purpose",
+        "schema_version",
+        "seeds",
+        "title"
+      ],
+      "list_fields": {
+        "seeds": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "Historical and market-adjacent Blaschka sale seeds",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "auction-newspaper-audit.json",
+      "role": "supporting_research_layer",
+      "bytes": 6164,
+      "sha256": "0f14e98bca28a22b9543d7fb793a73205ef66a472ed975ad93f7cab79b773941",
+      "top_level_keys": [
+        "coverage_guard",
+        "generated_date",
+        "historical_auction_search_implications",
+        "institutional_exclusions_recovered_by_BNA",
+        "purpose",
+        "query_runs",
+        "schema_version",
+        "source_backend",
+        "title"
+      ],
+      "list_fields": {
+        "query_runs": 4,
+        "institutional_exclusions_recovered_by_BNA": 2,
+        "historical_auction_search_implications": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "Historical newspaper audit for Blaschka auction and transfer discovery",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "auction-provenance-crosslinks.json",
+      "role": "supporting_research_layer",
+      "bytes": 14723,
+      "sha256": "de5692aa33a34c39cdcd16904d3f7eb5422dd3d2ff37fb4d9282535a30ef0fc7",
+      "top_level_keys": [
+        "bounded_negative_search",
+        "crosslinks",
+        "generated_date",
+        "institutional_context_only",
+        "market_adjacent_leads",
+        "next_actions",
+        "purpose",
+        "relationship_to_canonical",
+        "schema_version",
+        "title"
+      ],
+      "list_fields": {
+        "crosslinks": 4,
+        "market_adjacent_leads": 1,
+        "institutional_context_only": 1,
+        "next_actions": 6
+      },
+      "schema_version": "1.1.0",
+      "title": "Blaschka auction provenance cross-links and market-adjacent leads",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "auction-science-museum-recipient-audit.json",
+      "role": "supporting_research_layer",
+      "bytes": 5053,
+      "sha256": "02442a95cae54ad54db541d936c5aed6efece5fb2ca5c4feb3a5d52349065392",
+      "top_level_keys": [
+        "archive_route",
+        "bounded_web_search_result",
+        "dispersal_statement",
+        "generated_date",
+        "interpretive_value",
+        "number_neighbourhood_search_keys",
+        "policy_guard",
+        "private_market_counterexamples_from_same_deaccession",
+        "publicly_identified_recipients_in_this_audit",
+        "purpose",
+        "schema_version",
+        "title",
+        "unresolved_recipient_count"
+      ],
+      "list_fields": {
+        "publicly_identified_recipients_in_this_audit": 2,
+        "private_market_counterexamples_from_same_deaccession": 3,
+        "archive_route": 4,
+        "number_neighbourhood_search_keys": 7
+      },
+      "schema_version": "1.0.0",
+      "title": "Science Museum 1925-1927 Blaschka dispersal recipient web audit",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "berlin-krefeld-provenance-audit.json",
+      "role": "supporting_research_layer",
+      "bytes": 9573,
+      "sha256": "ebd130c18b7f175ee57846efdfb44ab90012cce6a8ad7413dcff51ea7a37cdb3",
+      "top_level_keys": [
+        "auction_evidence",
+        "canonical_auction_records",
+        "dating_conflict",
+        "generated_date",
+        "hu_current_blaschka_examples",
+        "hu_label_style_corroboration",
+        "hu_zoologische_lehrsammlung",
+        "label_assessment",
+        "museum_fuer_naturkunde_branch",
+        "next_actions",
+        "object_level_status",
+        "purpose",
+        "ranked_provenance_hypotheses",
+        "schema_version",
+        "title"
+      ],
+      "list_fields": {
+        "canonical_auction_records": 2,
+        "auction_evidence": 2,
+        "hu_current_blaschka_examples": 7,
+        "hu_label_style_corroboration": 2,
+        "ranked_provenance_hypotheses": 4,
+        "next_actions": 5
+      },
+      "schema_version": "1.0.0",
+      "title": "Berlin university provenance audit for Krefeld 2025 Blaschka lots 26-27",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "christies-scientific-lot-archive-audit.json",
+      "role": "supporting_research_layer",
+      "bytes": 6953,
+      "sha256": "1d4866d30c05e2c9ff105583f9a80ea23cc93c8b80997aa1a3fcd8914f0f8d11",
+      "top_level_keys": [
+        "blaschka_result",
+        "canonical_auction_count_effect",
+        "coverage_guard",
+        "generated_date",
+        "indexed_archive_findings",
+        "next_actions",
+        "purpose",
+        "query_matrix",
+        "sale_specific_status",
+        "schema_version",
+        "target_sale_family",
+        "title"
+      ],
+      "list_fields": {
+        "target_sale_family": 6,
+        "indexed_archive_findings": 5,
+        "sale_specific_status": 6,
+        "next_actions": 4
+      },
+      "schema_version": "1.0.0",
+      "title": "Christie's historical scientific and natural-history lot archive audit",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "krefeld-hydractinia-156-crosswalk.json",
+      "role": "supporting_research_layer",
+      "bytes": 7777,
+      "sha256": "6f5e29206db912be8831de4beecb6d466487af809d122973ef7974956fbb8382",
+      "top_level_keys": [
+        "auction_record",
+        "blaschka_catalogue_resolution",
+        "canonical_auction_record",
+        "generated_date",
+        "hu_branch",
+        "lot_26_control",
+        "mfn_os001_02_crosscheck",
+        "next_actions",
+        "provenance_hypothesis_update",
+        "purpose",
+        "rakow_design_archive_seed",
+        "schema_version",
+        "taxonomic_resolution",
+        "title"
+      ],
+      "list_fields": {
+        "next_actions": 5
+      },
+      "schema_version": "1.0.0",
+      "title": "Krefeld 2025 lot 27: Hydractinia echinata / Blaschka no. 156 crosswalk",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "science-museum-register-neighborhoods.json",
+      "role": "supporting_research_layer",
+      "bytes": 9244,
+      "sha256": "ef3ad55f8d061b633f6adf0e9887302015b37308dbadfa38658b52d52abb3b65",
+      "top_level_keys": [
+        "archive_targets",
+        "generated_date",
+        "high_value_split_pairs",
+        "interpretive_result",
+        "model_330_market_crosslink",
+        "other_cardiff_exact_register_crosswalks",
+        "purpose",
+        "same_neighborhood_cardiff_anchors",
+        "same_neighborhood_market_anchor",
+        "schema_version",
+        "scope_guard",
+        "separate_1888_cardiff_layer",
+        "source_layers",
+        "title"
+      ],
+      "list_fields": {
+        "source_layers": 2,
+        "high_value_split_pairs": 2,
+        "same_neighborhood_cardiff_anchors": 2,
+        "other_cardiff_exact_register_crosswalks": 9,
+        "separate_1888_cardiff_layer": 3,
+        "archive_targets": 5
+      },
+      "schema_version": "1.0.0",
+      "title": "Science Museum Blaschka register neighborhoods: institutional-transfer and market-disposal splits",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "ucl-catalogue-card-index-router.json",
+      "role": "supporting_research_layer",
+      "bytes": 9383,
+      "sha256": "89ba86fcac89887e3b7816afbaab74fef3d4dc59531e9d8c9fa0301f957cf9d2",
+      "top_level_keys": [
+        "control_accessions",
+        "documentation_chronology",
+        "fields_to_request_or_transcribe",
+        "generated_date",
+        "historical_information_loss_problem",
+        "next_actions",
+        "public_catalogue_search_result",
+        "purpose",
+        "relationship_to_auction_layer",
+        "research_request_packet",
+        "schema_version",
+        "science_museum_identifier_packet",
+        "title",
+        "unresolved_accessions"
+      ],
+      "list_fields": {
+        "documentation_chronology": 4,
+        "control_accessions": 4,
+        "unresolved_accessions": 4,
+        "fields_to_request_or_transcribe": 13,
+        "next_actions": 6
+      },
+      "schema_version": "1.0.0",
+      "title": "UCL Grant Museum catalogue chronology and card-index provenance router",
+      "generated": "2026-08-10"
+    },
+    {
+      "path": "ucl-science-museum-transfer-candidate-audit.json",
+      "role": "supporting_research_layer",
+      "bytes": 9035,
+      "sha256": "ac7fe6eef5b8558dd2d5f7e23b627288e1fa8100c4221cc18422eb25f689ab39",
+      "top_level_keys": [
+        "bounded_public_web_result",
+        "collection_level_facts",
+        "generated_date",
+        "lankester_catalogue_status",
+        "legacy_inventory_target",
+        "new_constraint_on_transfer_candidate_pool",
+        "next_actions",
+        "public_accession_partition",
+        "purpose",
+        "records",
+        "schema_version",
+        "title"
+      ],
+      "list_fields": {
+        "records": 8,
+        "next_actions": 5
+      },
+      "schema_version": "1.0.0",
+      "title": "UCL Grant Museum Blaschka provenance partition: Lankester, pre-transfer custody, and unresolved Science Museum candidates",
+      "generated": "2026-08-10"
+    }
+  ]
+}
