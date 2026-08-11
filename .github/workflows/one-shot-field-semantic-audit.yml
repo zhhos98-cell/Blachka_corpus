@@ -49,4 +49,5 @@ jobs:
           git config user.name "Haohao Zhang"
           git config user.email "zhhos98@gmail.com"
           git commit -m "Record field semantic-role audit"
+          git pull --rebase origin main
           git push origin HEAD:main
