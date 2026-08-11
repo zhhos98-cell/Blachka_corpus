@@ -16,10 +16,11 @@ On `Save-Data`, `slow-2g`, or `2g`, optional animation and speculative media loa
 
 ## Current implementation
 
+- Public subpage HTML now carries the canonical seven-slot navigation shell directly. JavaScript no longer rewrites the navigation tree after load.
 - `navigation-shell.css` uses `content-visibility:auto` for source, bibliography, and people records so long static indexes remain in the DOM and searchable while offscreen layout/paint can be deferred.
+- `unified-ui.js` is a small fail-safe runtime: it adds shell/accessibility assets only when absent, loads accessibility behavior, manages Map-menu dismissal, adds RSS metadata when needed, normalises external-image referrer policy, and supplies a skip link when the static page lacks one. It no longer contains `site-core` detection, page-CSS cache rewrites, or navigation `innerHTML` replacement.
 - The homepage is intentionally static-first: one hero image, no carousel, no speculative hero preload, no family hotspot layer, and no navigation-glide dependency.
 - Cases use a static documentary directory. The old illustrative image matrix, flip-card interaction, and deferred visual bundle have been removed.
-- `unified-ui.js` supplies the canonical navigation and accessibility layer without injecting the historical `site-core.css` bundle into ordinary secondary pages.
 - People, Cases and Sources no longer depend on `site-core.css` for their public critical path; their required typography, mobile, navigation and accessibility layers are explicit.
 - Collections Map keeps the institution index usable even when Leaflet or tiles fail; scroll-wheel zoom is disabled to avoid trapping ordinary page scrolling.
 
@@ -31,25 +32,31 @@ The generated Sources HTML no longer requests `sources-pass14.js` through `sourc
 
 The Sources document remains static HTML by design. That preserves immediate text, browser Find, indexing, resilient links and no-JavaScript access. Its document size should not be reduced by converting the research corpus into client-side hydration merely for a smaller initial HTML figure.
 
+The current `*-register.json` layer is inventoried by `sources/register-manifest.json`. The manifest records structural shape and checksums without rewriting evidence-bearing register values.
+
 ### Cases
 
 Cases no longer loads `site-core.css` or the retired `case-wall-matrix.css`. The page-family stylesheet now owns the documentary directory and intro rules directly, while shared navigation and accessibility CSS are explicit. This removes historical cross-family CSS from the Cases critical path without changing the ten case narratives or evidence links.
 
 ### People
 
-The full authority dataset remains `people-data.json` at 103,740 bytes and continues to serve as the machine-readable research record. The public interface now fetches `people-ui.json`, a 90,331-byte projection containing only fields actually used by the A–Z list, search, role filtering, biographies, open questions and links. All 153 records are retained.
+The full authority dataset remains `people-data.json` at 103,740 bytes and continues to serve as the canonical machine-readable authority record. The public interface fetches `people-ui.json`, a 90,331-byte projection containing only fields actually used by the A–Z list, search, role filtering, biographies, open questions and links. All 153 records are retained, and the projection has been rebuilt from canonical data with zero diff.
 
-The existing `people-part-01.json`–`people-part-17.json` shards are not used by the public page. Loading them would turn one cacheable request into many requests while the interface still needs the complete authority set for full-text search and sorting.
+The retired `people-part-01.json`–`people-part-17.json` shards and their stale manifest are no longer public inputs. They are preserved unchanged under `archive/data/people-shards-2026-08-10/` for provenance.
+
+### Auctions
+
+`auction-data.json` remains the single canonical public-auction lot table. Supporting routers, crosslinks, bounded audits and negative-control JSON files remain separate rather than being flattened into lot facts. `auctions/data-manifest.json` inventories the sixteen current Auction JSON layers structurally and verifies canonical `record_id` uniqueness without reconciling evidence conflicts.
 
 ### EB Garamond
 
 The original variable font remains in the repository at 284,548 bytes. A public-corpus subset generated from current site HTML, JSON, JavaScript and XML is 101,632 bytes and is now the first font face requested by active page families. The full original font remains in the CSS stack as a missing-glyph fallback, so a future or unusual character can still render without silently sacrificing coverage.
 
-Font cache keys were refreshed across Home, People, Bibliography, Collections Map and the remaining small pages that still pass through the historical secondary bundle. The OFL notice and `font-display:swap` are retained.
+Font cache keys were refreshed across active page families. The OFL notice and `font-display:swap` are retained.
 
 ## CSS strategy
 
-`site-core.css` and `home-core.css` are historical concatenations, not architectural units. Their presence in the repository is no longer equivalent to their presence on the critical path. Future cleanup should remove or regenerate historical bundles only when their remaining consumers are known; deleting selectors based solely on old filenames risks visual regressions for little transfer benefit.
+`site-core.css`, `home-core.css`, and related historical UI layers were moved unchanged to `archive/ui/2026-08-11/` after an active-reference audit found no public runtime consumers. They remain available as rollback/provenance material for one release cycle, but they are not active architectural units.
 
 The target architecture remains:
 
@@ -73,7 +80,7 @@ If either index grows substantially, prefer build-time generation with the same 
 
 The remaining performance task is measurement rather than another speculative rewrite: compare real browser request waterfalls, transferred compressed bytes, first contentful paint and interaction on representative desktop/mobile connections. Source byte counts are useful architecture signals, but they are not a browser performance score.
 
-After measurement, the next candidates are any historical CSS bundles still requested by small reading pages and any public data fields demonstrably unused by the interface. Do not split People further or remove the full font fallback unless measured transfer behavior justifies it.
+After measurement, the next candidates should come from observed transfer/render costs. Do not split People further, remove the full font fallback, or restructure the long static indexes without evidence that the change improves real browsing behavior.
 
 ## Guardrails
 
