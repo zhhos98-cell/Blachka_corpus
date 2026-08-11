@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A searchable working index of people in the Blaschka object network: makers, scientists, patrons, dealers, museum staff, collectors, conservators and researchers.">
+  <meta name="description" content="Search people connected to Blaschka objects, from the workshop and scientific collaborators to dealers, museums, conservators and researchers.">
   <title>People · The Blaschka Object Network</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../secondary.css">
@@ -13,14 +13,22 @@
 <body class="subpage">
   <header class="subpage-header">
     <a class="subpage-brand" href="../">The Blaschka Object Network</a>
-    <nav class="subpage-nav" aria-label="Site navigation"><a href="../#project">Project</a><a href="../cases/">Cases</a><a href="./" aria-current="page">People</a><a href="../bibliography/">Bibliography</a><a href="../sources/">Sources</a><a href="../auctions/">Auctions</a><a href="../about/">About</a></nav>
+    <nav class="subpage-nav" aria-label="Site navigation">
+      <a href="../cases/">Cases</a>
+      <details class="nav-map-menu"><summary class="nav-map-trigger">Map</summary><div class="nav-map-panel"><a href="../map/">Collections map</a><a href="../map/rudolf-1892/">Rudolf 1892 journey</a></div></details>
+      <a href="./" aria-current="page">People</a>
+      <a href="../bibliography/">Bibliography</a>
+      <a href="../sources/">Sources</a>
+      <a href="../auctions/">Auctions</a>
+      <a href="../about/">About</a>
+    </nav>
   </header>
 
   <main class="subpage-main" id="main-content">
     <section class="page-intro" aria-labelledby="people-title">
-      <p class="eyebrow">Research biographies</p>
+      <p class="eyebrow">People</p>
       <h1 id="people-title">People in the network</h1>
-      <p class="page-dek">A searchable working index of makers, scientists, patrons, dealers, museum staff, collectors, conservators and researchers connected to documented Blaschka object chains.</p>
+      <p class="page-dek">Makers, collaborators, patrons, dealers, museum staff and researchers connected to documented Blaschka object histories.</p>
     </section>
 
     <section class="people-tools" aria-label="Search and filter people">
@@ -42,24 +50,16 @@
     <section class="people-section" aria-labelledby="people-list-title">
       <div class="people-section-head">
         <p class="eyebrow">A–Z by surname</p>
-        <div>
-          <h2 id="people-list-title">People</h2>
-          <p>Project-specific roles are kept as narrow as the surviving evidence allows. Authority and biographical links open the external record used to verify identity or context.</p>
-        </div>
+        <div><h2 id="people-list-title">People</h2></div>
       </div>
       <div class="people-list" id="people-list"></div>
       <p class="people-no-results" id="people-no-results" hidden>No matching people.</p>
-      <noscript><p class="people-no-results">This index uses a small script for search and filtering. The underlying records remain available in <a href="people-records.json">people-records.json</a>.</p></noscript>
-    </section>
-
-    <section class="people-method-note">
-      <p class="people-method-label">Editorial rule</p>
-      <p>These are working authority records, not a hall of fame. External databases establish identity, names, dates and broader biography; claims about a person’s place in the Blaschka network remain tied to project evidence. Qualified and unresolved relationships stay visible as such.</p>
+      <noscript><p class="people-no-results">Search and filtering require JavaScript. The records are also available in <a href="people-records.json">people-records.json</a>.</p></noscript>
     </section>
   </main>
 
   <footer class="subpage-footer"><div class="footer-identity"><a class="footer-title" href="../">The Blaschka Object Network</a><span class="footer-copyright">© 2026 Haohao Zhang. Site text and design unless otherwise credited. Source images and third-party materials retain their stated licences.</span></div><div class="footer-links"><a href="mailto:zhhos98@gmail.com?subject=Blaschka%20Object%20Network">Contact</a><a href="../rights/">Image rights</a><a href="../privacy/">Privacy</a><a href="../accessibility/">Accessibility</a><a href="../feed.xml">RSS</a></div></footer>
-  <script src="people.js?v=20260810-4" defer></script>
-  <script src="../unified-ui.js?v=20260811-2" defer></script>
+  <script src="people.js?v=20260811-1" defer></script>
+  <script src="../unified-ui.js?v=20260811-3" defer></script>
 </body>
 </html>
