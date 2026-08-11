@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive research map of Rudolf Blaschka’s 1892 journey, showing travel, field operations, material circulation and workshop reassembly.">
+  <meta name="description" content="Interactive map of Rudolf Blaschka’s 1892 journey, linking travel with drawing, plant material, correspondence and later workshop work.">
   <title>A workshop on the move · Rudolf Blaschka 1892 · The Blaschka Object Network</title>
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../secondary.css">
@@ -17,136 +17,75 @@
     <a class="subpage-brand" href="../../">The Blaschka Object Network</a>
     <nav class="subpage-nav" aria-label="Site navigation">
       <a href="../../cases/">Cases</a>
-      <details class="nav-map-menu" open>
-        <summary class="nav-map-trigger is-current">Map</summary>
-        <div class="nav-map-panel">
-          <a href="../">Collections map</a>
-          <a href="./" aria-current="page">Rudolf 1892 journey</a>
-        </div>
-      </details>
+      <details class="nav-map-menu" open><summary class="nav-map-trigger is-current">Map</summary><div class="nav-map-panel"><a href="../">Collections map</a><a href="./" aria-current="page">Rudolf 1892 journey</a></div></details>
       <a href="../../people/">People</a><a href="../../bibliography/">Bibliography</a><a href="../../sources/">Sources</a><a href="../../auctions/">Auctions</a><a href="../../about/">About</a>
     </nav>
   </header>
 
   <main class="subpage-main" id="main-content">
     <section class="page-intro journey-intro" aria-labelledby="journey-title">
-      <p class="eyebrow">Journey dossier · 1892</p>
+      <p class="eyebrow">Rudolf Blaschka · 1892</p>
       <h1 id="journey-title">A workshop on the move</h1>
-      <p class="page-dek">Rudolf Blaschka’s journey is mapped here as a knowledge-production system. The numbered route establishes chronology, including timed transport windows where the evidence permits; the other views show where observation, drawing, preservation, circulation, coordination, repair and workshop reassembly occurred.</p>
-      <p class="journey-thesis">Fieldwork did not simply precede the workshop. In 1892, workshop practice was distributed across bodies, gardens, drawings, specimens, railways, steamships, post and telegraph. The April 24–25 Arizona–California sequence also shows railway time becoming part of the observational infrastructure.</p>
+      <p class="page-dek">Follow Rudolf’s route alongside the work done on the journey: observing, drawing, preserving plants, sending material and returning that work to the Hosterwitz workshop.</p>
+      <p class="journey-thesis">Drawings, specimens, seeds and instructions often kept moving after Rudolf left a place.</p>
     </section>
 
     <section class="journey-workspace" aria-labelledby="workspace-title">
       <div class="journey-workspace-head">
-        <div>
-          <p class="eyebrow">Interactive map</p>
-          <h2 id="workspace-title">Three ways to read the same journey</h2>
-        </div>
-        <div class="map-mode-switch" role="group" aria-label="Map reading mode">
+        <div><p class="eyebrow">Interactive map</p><h2 id="workspace-title">Read the journey three ways</h2></div>
+        <div class="map-mode-switch" role="group" aria-label="Map view">
           <button type="button" data-map-mode="journey" class="is-active" aria-pressed="true"><span>01</span> Journey</button>
-          <button type="button" data-map-mode="operations" aria-pressed="false"><span>02</span> Operations</button>
+          <button type="button" data-map-mode="operations" aria-pressed="false"><span>02</span> Work</button>
           <button type="button" data-map-mode="flows" aria-pressed="false"><span>03</span> Flows</button>
         </div>
       </div>
 
       <div class="mode-explainer">
-        <p id="mode-copy"><strong>Journey</strong> follows Rudolf’s documented movement. The dashed route preserves the itinerary that circulated publicly even when the traveller had already moved on.</p>
+        <p id="mode-copy"><strong>Journey</strong> follows documented movement. The dashed line shows the route reported publicly at the time.</p>
         <div class="mode-legend" id="mode-legend" aria-label="Current map legend"></div>
       </div>
 
       <div class="journey-layout">
         <div class="journey-map-column">
-          <div class="map-frame journey-map-frame">
-            <div id="journey-map" role="region" aria-label="Interactive map of Rudolf Blaschka’s 1892 journey"></div>
-          </div>
-          <p class="map-method journey-map-note">Numbers are chronological sequence markers, not confidence rankings. Exact times come from dated correspondence where available; close but non-contemporaneous timetable values are labelled as contextual controls. The dashed public itinerary is retained only in Journey mode. Flow lines identify documented or explicitly prospective transfers and remote coordination rather than a second travel route. Gold <strong>S</strong> diamonds are separate visual-evidence markers: they show public-domain historical views that closely match landscapes recorded in Rudolf’s sketchbook without turning those views into numbered itinerary stops. Hover on desktop or tap on touch screens to open the comparison note and source.</p>
+          <div class="map-frame journey-map-frame"><div id="journey-map" role="region" aria-label="Interactive map of Rudolf Blaschka’s 1892 journey"></div></div>
+          <p class="map-method journey-map-note">Numbers show sequence. Gold <strong>S</strong> markers open historical views that closely match landscapes in Rudolf’s sketchbook; they support the identification without claiming an exact drawing position.</p>
         </div>
 
         <aside class="journey-detail" id="detail-panel" aria-live="polite">
-          <div class="detail-heading">
-            <span class="detail-number" id="detail-no">01</span>
-            <div><p id="detail-date">1892-02-01</p><h2 id="detail-title">Bremen</h2></div>
-          </div>
+          <div class="detail-heading"><span class="detail-number" id="detail-no">01</span><div><p id="detail-date">1892-02-01</p><h2 id="detail-title">Bremen</h2></div></div>
           <p class="detail-summary" id="detail-summary">Departure phase before Atlantic crossing.</p>
           <div class="detail-tags" id="detail-tags"></div>
-
           <dl class="knowledge-fields">
-            <div><dt>Encountered</dt><dd id="detail-encountered"></dd></div>
-            <div><dt>Done</dt><dd id="detail-done"></dd></div>
-            <div><dt>Moved onward</dt><dd id="detail-moved"></dd></div>
-            <div><dt>Enabled later</dt><dd id="detail-enabled"></dd></div>
+            <div><dt>Seen</dt><dd id="detail-encountered"></dd></div>
+            <div><dt>Work</dt><dd id="detail-done"></dd></div>
+            <div><dt>Carried on</dt><dd id="detail-moved"></dd></div>
+            <div><dt>Later</dt><dd id="detail-enabled"></dd></div>
           </dl>
-
-          <div class="detail-why" id="detail-why-block" hidden>
-            <p class="detail-label">Why this node matters</p>
-            <p id="detail-why"></p>
-          </div>
-
-          <p class="detail-source"><span>Evidence anchor</span><b id="detail-source">Correspondence sequence in the 1892 archive layer</b></p>
+          <div class="detail-why" id="detail-why-block" hidden><p class="detail-label">Why it matters</p><p id="detail-why"></p></div>
+          <p class="detail-source"><span>Evidence</span><b id="detail-source">Correspondence sequence in the 1892 archive</b></p>
           <div class="detail-links" id="detail-links" hidden aria-label="External source links"></div>
-
-          <div class="journey-controls">
-            <button type="button" id="prev-stop">Previous</button>
-            <button type="button" id="next-stop">Next</button>
-            <button type="button" id="reset-view">Reset map</button>
-          </div>
+          <div class="journey-controls"><button type="button" id="prev-stop">Previous</button><button type="button" id="next-stop">Next</button><button type="button" id="reset-view">Reset map</button></div>
         </aside>
       </div>
     </section>
 
     <section class="route-directory" aria-labelledby="route-index-title">
-      <div class="route-directory-head">
-        <div><p class="eyebrow">Route index</p><h2 id="route-index-title">Follow the sequence</h2></div>
-        <p>Each number is shared by the map marker, the evidence panel and this index. Select any stop to return to it on the map.</p>
-      </div>
+      <div class="route-directory-head"><div><p class="eyebrow">Route</p><h2 id="route-index-title">The sequence</h2></div><p>Select a stop to return to it on the map.</p></div>
       <div class="route-index" id="route-index" role="list" aria-label="Numbered route stops"></div>
     </section>
 
     <section class="journey-method" aria-labelledby="journey-method-title">
-      <p class="eyebrow">Method</p>
-      <div>
-        <h2 id="journey-method-title">The route and the knowledge chain are kept separate.</h2>
-        <p>The documented journey, the publicly circulated itinerary, the movement of plant material, and the movement of instructions are different evidential objects. They are shown together only when their difference remains visible. A dated place can prove presence without proving a separate collecting excursion; a timetable can constrain an observation window without proving an exact train unless the issue and date match. The sketchbook-match diamonds are likewise evidential controls rather than route nodes: a historical view can strongly support landscape identification while leaving the exact drawing point unresolved. Unresolved locations remain outside the secure route. Dates and identifications are corrected in the public view only when the archival layer or a cited control source supports the correction; the preserved OCR remains unchanged in the research backend.</p>
-      </div>
+      <p class="eyebrow">How to read it</p>
+      <div><h2 id="journey-method-title">Route, material and evidence stay separate.</h2><p>A dated place can establish presence without proving a collecting trip. A timetable can narrow a travel window without proving the exact train. Historical landscape matches can identify a view while leaving Rudolf’s precise position open.</p></div>
     </section>
 
     <section class="journey-references" aria-labelledby="journey-references-title">
-      <div class="journey-references-head">
-        <p class="eyebrow">References &amp; source routes</p>
-        <div>
-          <h2 id="journey-references-title">Follow the evidence; reproduce only rights-safe controls.</h2>
-          <p>Rights-restricted archival images and published figures remain linked to their holding institutions or publication pages. The map reproduces only public-domain historical control images where they make a close sketchbook landscape match visible. Rudolf’s sketchbook itself remains linked rather than reproduced here. The Corning study is used as a secondary control layer; the correspondence remains the primary chronological backbone.</p>
-        </div>
-      </div>
-
+      <div class="journey-references-head"><p class="eyebrow">Sources</p><div><h2 id="journey-references-title">The evidence behind the map</h2><p>Archival images stay with their holding institutions unless the reproduced comparison image is rights-safe.</p></div></div>
       <div class="journey-reference-list">
-        <article class="journey-reference">
-          <p class="journey-reference-type">Secondary study</p>
-          <p class="journey-reference-citation">Rossi-Wilcox, Susan M. “The Botanical Models (1886–1936).” In <em>Drawing upon Nature: Studies for the Blaschkas’ Glass Models</em>, selected and introduced by Susan M. Rossi-Wilcox and David Whitehouse, 20–33. Corning, NY: The Corning Museum of Glass, 2007. ISBN 9780872901667.</p>
-          <p class="journey-reference-note">Used for chronology checks, selected identifications, and the published pairing of Castleton Gardens, Rudolf’s 1892 <em>Jacaranda filicifolia</em> drawing, and the later glass model.</p>
-          <a href="https://info.cmog.org/publication/drawing-upon-nature-studies-blaschkas-glass-models" target="_blank" rel="noopener noreferrer">Corning publication page ↗</a>
-        </article>
-
-        <article class="journey-reference">
-          <p class="journey-reference-type">Primary archive</p>
-          <p class="journey-reference-citation"><em>Archives of Rudolf and Leopold Blaschka and the Ware Collection of Blaschka Glass Models of Plants</em>, Botanical Museum–Harvard University Herbaria.</p>
-          <p class="journey-reference-note">Primary correspondence backbone for dates, route reconstruction, working practices, repairs, material circulation and workshop return.</p>
-          <a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener noreferrer">Harvard HOLLIS archive record ↗</a>
-        </article>
-
-        <article class="journey-reference">
-          <p class="journey-reference-type">Primary visual source</p>
-          <p class="journey-reference-citation">Rudolf Blaschka, <em>R. Blaschka [sketchbook]</em>, circa 1892. Rakow Research Library, The Corning Museum of Glass. Identifier 87384; Alma MMS 99873843504126.</p>
-          <p class="journey-reference-note">Rakow catalogue metadata identifies the beginning sketch as “Tempe, Arizona, 22. April 1892.” The current 30-page PDF instead has Maricopa, 24 April as its earliest clearly legible dated landscape and contains a duplicated image frame, so the catalogue/digital-surrogate discrepancy remains open.</p>
-          <a href="https://info.cmog.org/library" target="_blank" rel="noopener noreferrer">Rakow Research Library ↗</a>
-        </article>
-
-        <article class="journey-reference">
-          <p class="journey-reference-type">Same-year timetable control</p>
-          <p class="journey-reference-citation"><em>Arizona Republican</em>, 29 May 1892, Southern Pacific railway timetable.</p>
-          <p class="journey-reference-note">Shows the westbound Southern Pacific service passing Maricopa at about 6:35 a.m. Because the table is five weeks later than Rudolf’s 24 April journey, the time is used as close contextual control rather than exact-day proof.</p>
-          <a href="https://azmemory.azlibrary.gov/nodes/view/172419" target="_blank" rel="noopener noreferrer">Arizona Memory Project ↗</a>
-        </article>
+        <article class="journey-reference"><p class="journey-reference-type">Secondary study</p><p class="journey-reference-citation">Susan M. Rossi-Wilcox, “The Botanical Models (1886–1936),” in <em>Drawing upon Nature: Studies for the Blaschkas’ Glass Models</em> (Corning Museum of Glass, 2007), 20–33.</p><p class="journey-reference-note">Chronology checks, selected identifications and published drawing/model comparisons.</p><a href="https://info.cmog.org/publication/drawing-upon-nature-studies-blaschkas-glass-models" target="_blank" rel="noopener noreferrer">Corning ↗</a></article>
+        <article class="journey-reference"><p class="journey-reference-type">Primary archive</p><p class="journey-reference-citation"><em>Archives of Rudolf and Leopold Blaschka and the Ware Collection of Blaschka Glass Models of Plants</em>, Botanical Museum–Harvard University Herbaria.</p><p class="journey-reference-note">Main source for dates, route, work, repairs and material movement.</p><a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener noreferrer">HOLLIS ↗</a></article>
+        <article class="journey-reference"><p class="journey-reference-type">Sketchbook</p><p class="journey-reference-citation">Rudolf Blaschka, <em>R. Blaschka [sketchbook]</em>, c. 1892. Rakow Research Library, Corning Museum of Glass. Identifier 87384; Alma MMS 99873843504126.</p><p class="journey-reference-note">The current digital surrogate and catalogue description do not fully agree on the opening sequence; that discrepancy remains open.</p><a href="https://info.cmog.org/library" target="_blank" rel="noopener noreferrer">Rakow Library ↗</a></article>
+        <article class="journey-reference"><p class="journey-reference-type">Timetable</p><p class="journey-reference-citation"><em>Arizona Republican</em>, 29 May 1892, Southern Pacific timetable.</p><p class="journey-reference-note">A close same-year control for the Maricopa departure window, not exact-day proof.</p><a href="https://azmemory.azlibrary.gov/nodes/view/172419" target="_blank" rel="noopener noreferrer">Arizona Memory Project ↗</a></article>
       </div>
     </section>
   </main>
@@ -157,8 +96,8 @@
   <script src="./route-data.js?v=20260811-2"></script>
   <script src="./knowledge-data.js?v=20260811-2"></script>
   <script src="./source-data.js?v=20260811-2"></script>
-  <script src="./visual-match-data.js?v=20260811-1"></script>
-  <script src="./map.js?v=20260811-2"></script>
-  <script src="../../unified-ui.js?v=20260811-2" defer></script>
+  <script src="./visual-match-data.js?v=20260811-2"></script>
+  <script src="./map.js?v=20260811-3"></script>
+  <script src="../../unified-ui.js?v=20260811-3" defer></script>
 </body>
 </html>
