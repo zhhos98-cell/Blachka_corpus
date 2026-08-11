@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "auction-layer-envelope.schema.json",
+  "title": "Blaschka Auction JSON metadata envelope",
+  "description": "Minimal non-evidentiary envelope shared by current Auction JSON layers. Only auction-data.json is canonical lot data; supporting research fields remain unconstrained.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_date",
+    "title"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_date": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}
