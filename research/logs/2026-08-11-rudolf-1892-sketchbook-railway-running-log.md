@@ -155,6 +155,10 @@ The 1 May Los Angeles public timetable is only six days after Rudolf's 24–25 A
 
 A same-year reproduction has been located: Historic Broadway San Diego reproduces a **Southern California Railway / Santa Fe Route schedule from the National City Record, 29 September 1892**. Five months later than Rudolf's passage, so it cannot control April times by itself, but it is a useful same-year corporate/local schedule and may expose station order and service pattern.
 
+Fresh source recovery: the Historic Broadway page explicitly embeds two separate National City Record images labelled `So. California Railway Santa Fe Route Excursions` and `So. California Railway Santa Fe Route schedule`, both attributed to 29 September 1892. This confirms that a period schedule image survives and makes recovery of the actual image/OCR a concrete rather than speculative target.
+
+A later OCR control from 1894 cleanly gives a `San Diego Coast Line` morning service in a Southern California Railway/Santa Fe table, with an OCR-visible 8:15 a.m. morning departure and 1:15 p.m. opposite endpoint time. This is **two years later** and therefore retained only as a later structural comparison; it must not be used to overwrite Rudolf's A-grade 25 April 1892 sequence of 08:45 departure, first Pacific sight about 10:00, and 13:00 San Diego arrival.
+
 The 1892 Southern California Railway promotional map confirms the Los Angeles–Orange County–Oceanside–San Diego network. Exact April/May station times remain the target.
 
 ### 6. Southern Pacific archival control at Yuma
@@ -168,8 +172,9 @@ Yuma County Library District holdings list Southern Pacific timetable material c
 
 ## Next research action
 
-1. Recover actual schedule panels from Rumsey 3139B or an 1892 `Official Railway Guide`.
-2. Recover an issue-level April/May 1892 Yuma/Maricopa Southern Pacific table; if unavailable online, prepare a narrow Yuma Library request.
-3. Recover the Wx4 1 May 1892 Los Angeles public timetable or an equivalent newspaper reproduction.
-4. Recover an April/May 1892 Southern California Railway / Santa Fe Los Angeles–San Diego table.
-5. Replace the crude elapsed-time check with actual Salton/Indio/Banning/Colton rows, then calculate sun altitude/azimuth at those exact passage times before attempting DEM skyline elimination.
+1. Recover the actual 29 September 1892 National City Record schedule image/OCR from the Historic Broadway embedding or an independent scan source.
+2. Recover actual schedule panels from Rumsey 3139B or an 1892 `Official Railway Guide`.
+3. Recover an issue-level April/May 1892 Yuma/Maricopa Southern Pacific table; if unavailable online, prepare a narrow Yuma Library request.
+4. Recover the Wx4 1 May 1892 Los Angeles public timetable or an equivalent newspaper reproduction.
+5. Recover an April/May 1892 Southern California Railway / Santa Fe Los Angeles–San Diego table.
+6. Replace the crude elapsed-time check with actual Salton/Indio/Banning/Colton rows, then calculate sun altitude/azimuth at those exact passage times before attempting DEM skyline elimination.
