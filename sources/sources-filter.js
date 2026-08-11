@@ -96,6 +96,54 @@
     letter = /^[A-Z#]$/.test(requested) ? requested : '';
   };
 
+  const attachReuseIndex = async () => {
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (connection?.saveData || /(^|-)2g$/i.test(connection?.effectiveType || '')) return;
+
+    try {
+      const response = await fetch('source-reuse-ui.json?v=20260811-1', { cache: 'force-cache' });
+      if (!response.ok) return;
+      const data = await response.json();
+      const byLocator = new Map((data.entries || []).map(item => [item.locator, item]));
+
+      records.forEach(record => {
+        const contexts = new Map();
+        record.node.querySelectorAll('.source-links a[href^="http"]').forEach(link => {
+          const item = byLocator.get(link.getAttribute('href'));
+          if (!item) return;
+          (item.contexts || []).forEach(context => {
+            if (context?.file && context?.label) contexts.set(context.file, context);
+          });
+        });
+        if (contexts.size < 2) return;
+
+        const details = document.createElement('details');
+        details.className = 'source-reuse';
+        const summary = document.createElement('summary');
+        summary.textContent = `Used in ${contexts.size} parts of the project`;
+        const list = document.createElement('ul');
+
+        [...contexts.values()].forEach(context => {
+          const item = document.createElement('li');
+          if (context.layer === 'auctions') {
+            const layer = document.createElement('span');
+            layer.className = 'source-reuse-layer';
+            layer.textContent = 'Auction research';
+            item.append(layer, document.createTextNode(' · '));
+          }
+          item.append(document.createTextNode(context.label));
+          list.appendChild(item);
+        });
+
+        details.append(summary, list);
+        const links = record.node.querySelector('.source-links');
+        if (links) links.insertAdjacentElement('afterend', details);
+      });
+    } catch (_) {
+      // Reverse-index enrichment is optional; the source index remains complete without it.
+    }
+  };
+
   browser.querySelector('form')?.addEventListener('submit', event => { event.preventDefault(); apply(); });
   kindSelect?.addEventListener('change', apply);
   regionSelect?.addEventListener('change', apply);
@@ -118,4 +166,6 @@
 
   loadURL();
   apply();
+  if ('requestIdleCallback' in window) requestIdleCallback(attachReuseIndex, { timeout: 1800 });
+  else setTimeout(attachReuseIndex, 650);
 })();
