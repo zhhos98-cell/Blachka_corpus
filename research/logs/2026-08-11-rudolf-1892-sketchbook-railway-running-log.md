@@ -86,6 +86,12 @@ That sequence independently fits Rudolf's own Sunday-morning departure, same-day
 
 A complementary archive target has now been identified: Yuma County Library District's Arizona Historical Digital/ephemera holdings list **Southern Pacific – Timetables, 1887–1976** together with additional Southern Pacific material from 1877–1899. If online extraction fails, this is a focused institutional target for the exact April 1892 schedule.
 
+### Important within-1892 schedule-shift warning
+
+A newly recovered `Arizona Sentinel` issue for **10 December 1892** gives the Yuma post-office rule `West Bound mail closes at 12:00 m.` The newspaper's later OCR also preserves a Southern Pacific notice headed `Commencing Sunday Dec. 19, 1892`, listing a daily westbound express from Yuma for Colton, Los Angeles, Santa Barbara, San Francisco, Sacramento, Portland and points north/east. The timetable minute itself is lost in current OCR, but the noon westbound mail close is incompatible with treating the close-May Maricopa 06:35 pattern as a stable year-round clock.
+
+Methodological consequence: **same-year is not the same thing as same-schedule period.** The April reconstruction must continue to privilege April/May controls and issue-level evidence. The December notice is useful chiefly as negative control showing that Southern Pacific service times changed within 1892. It should not be interpolated backward to Rudolf's April trip.
+
 ### Independent long-run structural analogue: Los Angeles→San Diego 08:45
 
 A manuscript travel diary dated 23 September 1901–8 March 1902 records an unidentified woman leaving Los Angeles for San Diego on 5 October 1901 at **8:45**. The diarist then describes orange/lemon orchards, Santa Fe Springs and actively watching from the train for her first sight of the Pacific. This is nine years later than Rudolf and is therefore only C-grade structural evidence; it does **not** prove the April 1892 timetable. Its value is narrower: the exact same 08:45 southbound departure slot and the same inland→coast observational sequence persisted on the route at least into 1901. Source: James E. Arsenault & Co., item 8594, manuscript diary, 1901–1902.
@@ -176,7 +182,7 @@ Yuma County Library District holdings list Southern Pacific timetable material c
 
 1. Recover the actual 29 September 1892 National City Record schedule image/OCR from the Historic Broadway embedding or an independent scan source; if online recovery remains blocked, use the now-identified National City Library microfilm request.
 2. Recover actual schedule panels from Rumsey 3139B or an 1892 `Official Railway Guide`.
-3. Recover an issue-level April/May 1892 Yuma/Maricopa Southern Pacific table; if unavailable online, prepare a narrow Yuma Library request.
+3. Recover an issue-level April/May 1892 Yuma/Maricopa Southern Pacific table; December 1892 is now explicitly unsuitable as a backward proxy because the service clock had shifted.
 4. Recover the Wx4 1 May 1892 Los Angeles public timetable or an equivalent newspaper reproduction.
 5. Recover an April/May 1892 Southern California Railway / Santa Fe Los Angeles–San Diego table.
 6. Replace the crude elapsed-time check with actual Salton/Indio/Banning/Colton rows, then calculate sun altitude/azimuth at those exact passage times before attempting DEM skyline elimination.
