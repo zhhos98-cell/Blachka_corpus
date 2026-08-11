@@ -1,0 +1,120 @@
+name: One-shot organize audit docs
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-organize-audit-docs.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  organize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Snapshot protected data
+        shell: bash
+        run: |
+          sha256sum people/people-data.json > /tmp/protected.sha
+          find research/data -type f -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected.sha
+          find sources -maxdepth 1 -type f -name '*-register.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected.sha
+          find auctions -maxdepth 1 -type f -name '*.json' ! -name 'data-manifest.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected.sha
+      - name: Move dated audits and update generators
+        shell: bash
+        run: |
+          mkdir -p docs/audits/2026-08-11
+          for name in \
+            schema-family-audit-2026-08-11.md \
+            status-vocabulary-audit-2026-08-11.md \
+            field-semantic-audit-2026-08-11.md \
+            cross-register-duplication-audit-2026-08-11.md \
+            auction-canonical-sync-audit-2026-08-11.md
+          do
+            git mv "docs/$name" "docs/audits/2026-08-11/$name"
+          done
+          cat > docs/audits/README.md <<'EOF'
+          # Dated repository audits
+
+          Dated diagnostic reports live here rather than in the stable-policy root of `docs/`.
+
+          - `2026-08-11/` — repository/data-structure cleanup audits: schema families, local status vocabularies, field semantic roles, exact cross-register duplication, and Auction canonical-sync integrity.
+
+          These reports are generated or review-oriented diagnostics. They do not define historical truth and do not authorize automatic mutation of canonical research data.
+          EOF
+          python - <<'PY'
+          from pathlib import Path
+          replacements = {
+              'scripts/audit-json-schema-families.py': (
+                  'OUT_MD = DOCS / "schema-family-audit-2026-08-11.md"',
+                  'OUT_MD = DOCS / "audits" / "2026-08-11" / "schema-family-audit-2026-08-11.md"',
+              ),
+              'scripts/audit-status-vocabularies.py': (
+                  'MD_OUT = DOCS / "status-vocabulary-audit-2026-08-11.md"',
+                  'MD_OUT = DOCS / "audits" / "2026-08-11" / "status-vocabulary-audit-2026-08-11.md"',
+              ),
+              'scripts/audit-field-semantics.py': (
+                  'OUT_MD = ROOT / "docs" / "field-semantic-audit-2026-08-11.md"',
+                  'OUT_MD = ROOT / "docs" / "audits" / "2026-08-11" / "field-semantic-audit-2026-08-11.md"',
+              ),
+              'scripts/audit-cross-register-duplication.py': (
+                  'OUT_MD = ROOT / "docs" / "cross-register-duplication-audit-2026-08-11.md"',
+                  'OUT_MD = ROOT / "docs" / "audits" / "2026-08-11" / "cross-register-duplication-audit-2026-08-11.md"',
+              ),
+              'scripts/audit-auction-canonical-sync.py': (
+                  'OUT_MD = ROOT / "docs" / "auction-canonical-sync-audit-2026-08-11.md"',
+                  'OUT_MD = ROOT / "docs" / "audits" / "2026-08-11" / "auction-canonical-sync-audit-2026-08-11.md"',
+              ),
+          }
+          for name, (old, new) in replacements.items():
+              path = Path(name)
+              text = path.read_text(encoding='utf-8')
+              if old not in text:
+                  raise SystemExit(f'missing output-path token in {name}: {old}')
+              path.write_text(text.replace(old, new), encoding='utf-8')
+
+          path = Path('docs/data-layers.md')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              'The audit outputs belong under `schemas/generated/` and dated notes under `docs/`; they do not feed changes back into canonical research data.',
+              'The audit outputs belong under `schemas/generated/` and dated notes under `docs/audits/YYYY-MM-DD/`; they do not feed changes back into canonical research data.'
+          )
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Re-run all audit generators
+        shell: bash
+        run: |
+          python scripts/audit-json-schema-families.py
+          python scripts/audit-status-vocabularies.py
+          python scripts/audit-field-semantics.py
+          python scripts/audit-cross-register-duplication.py
+          python scripts/audit-auction-canonical-sync.py
+      - name: Verify moved audit content remains current
+        shell: bash
+        run: |
+          git diff --exit-code -- schemas/generated
+      - name: Verify protected data unchanged
+        shell: bash
+        run: |
+          sha256sum people/people-data.json > /tmp/protected-after.sha
+          find research/data -type f -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected-after.sha
+          find sources -maxdepth 1 -type f -name '*-register.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected-after.sha
+          find auctions -maxdepth 1 -type f -name '*.json' ! -name 'data-manifest.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected-after.sha
+          diff -u /tmp/protected.sha /tmp/protected-after.sha
+      - name: Validate current structure
+        run: python scripts/validate-derived-data.py
+      - name: Commit organization
+        shell: bash
+        run: |
+          git add docs scripts
+          git config user.name "Haohao Zhang"
+          git config user.email "zhhos98@gmail.com"
+          git commit -m "Organize dated repository audits"
+          git pull --rebase origin main
+          git push origin HEAD:main
