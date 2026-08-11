@@ -86,6 +86,12 @@ That sequence independently fits Rudolf's own Sunday-morning departure, same-day
 
 A complementary archive target has now been identified: Yuma County Library District's Arizona Historical Digital/ephemera holdings list **Southern Pacific – Timetables, 1887–1976** together with additional Southern Pacific material from 1877–1899. If online extraction fails, this is a focused institutional target for the exact April 1892 schedule.
 
+### Independent long-run structural analogue: Los Angeles→San Diego 08:45
+
+A manuscript travel diary dated 23 September 1901–8 March 1902 records an unidentified woman leaving Los Angeles for San Diego on 5 October 1901 at **8:45**. The diarist then describes orange/lemon orchards, Santa Fe Springs and actively watching from the train for her first sight of the Pacific. This is nine years later than Rudolf and is therefore only C-grade structural evidence; it does **not** prove the April 1892 timetable. Its value is narrower: the exact same 08:45 southbound departure slot and the same inland→coast observational sequence persisted on the route at least into 1901. Source: James E. Arsenault & Co., item 8594, manuscript diary, 1901–1902.
+
+This strengthens the interpretation that Rudolf's 08:45 report is a plausible ordinary-service railway time rather than an odd or transcriptional clock value, while leaving the 1892 station table as the required proof.
+
 ## Daylight-window audit — 24 April 1892
 
 A structured backend calculation is now stored at `research/data/rudolf-1892-daylight-window-audit_2026-08-11.json`. It uses NOAA-style solar equations and converts the astronomical events to a fixed UTC-8/Pacific comparison clock. This is an exclusion model, not a claim about every local clock.
