@@ -68,13 +68,48 @@ Primary correspondence currently gives the strongest chronological skeleton:
 
 Sketchbook pp. 12–13 can therefore be dated to 24 April with high confidence at corridor level.
 
-## Current external-source targets
+## External timetable recovery — live status
 
-1. `Official Railway Guide`, 1892 Mar–Apr. NAOTC identifies Google Books volume ID `qrwsAQAAMAAJ`. Need station-by-station Southern Pacific pages.
-2. Southern Pacific `Sunset Route`, January 1892 (David Rumsey item 3139B) — 20 pages of schedules/travel information; timetable panels still need extraction.
-3. Wx4 `1892-05-01 SP Los Angeles` public timetable — six days after Rudolf's Los Angeles passage; direct PDF endpoint still needs recovery.
-4. 1892 Southern California Railway / Santa Fe Los Angeles–San Diego public timetable — needed to test 08:45 LA departure, ca. 10 Pacific sighting and 13:00 San Diego arrival.
+### 1. Official Railway Guide, Mar–Apr 1892
+
+NAOTC identifies a Google Books volume for the March–April 1892 `Official Railway Guide`, volume ID `qrwsAQAAMAAJ`. This is currently the best route to an issue-level nationwide timetable. Station-by-station Southern Pacific pages have not yet been extracted.
+
+### 2. Southern Pacific `Sunset Route`, January 1892 — David Rumsey
+
+The exact LUNA record for the timetable/text volume has now been recovered:
+
+- list number: `3139B`
+- LUNA media ID: `RUMSEY~8~1~22065~760032`
+- title: Southern Pacific Company, `California, Texas, Mexico And Arizona ... Sunset route`, January 1892
+- object description: 20 pages of timetables and travel information
+- related map: list no. `3139.001`, LUNA media ID `RUMSEY~8~1~22066~760030`, image no. `3139001`; its metadata explicitly notes that the verso has timetables.
+
+Rumsey's official LUNA API documentation confirms that media records can expose downloadable image URLs through `fetchMediaSearch` and can return IIIF manifests. Direct retrieval of this specific timetable is presently obstructed by the site's verification layer / tool-safe URL restrictions; source identification is secure, binary extraction remains pending.
+
+### 3. Streamliner Memories copy of the 1892 SP timetable
+
+A separate Streamliner Memories post confirms an 18.3 MB Southern Pacific 1892 timetable derived from the Rumsey material. The description says the table contains roughly 300 intermediate stops between New Orleans and San Francisco and identifies the train as the `Sunset` Pacific Express. The linked preview image filename resolves to `SP92TT.jpg`; the corresponding downloadable PDF endpoint has not yet been recovered and should not be guessed into the evidence layer without verification.
+
+### 4. Wx4 1892 Los Angeles timetable
+
+Wx4's timetable index explicitly lists:
+
+- `1892-01-00 SP Sunset Route - David Rumsey`
+- `1892-05-01 SP Los Angeles`
+
+The 1 May Los Angeles public timetable is only six days after Rudolf's 24–25 April passage and is potentially an unusually strong local control for the Los Angeles side of the itinerary. Wx4 currently presents a browser-verification layer, so the direct PDF has not yet been recovered.
+
+### 5. Southern California Railway / Santa Fe, Los Angeles–San Diego
+
+Still needed to test Rudolf's independently reported sequence: Los Angeles departure 08:45 → Pacific Ocean about 10:00 → San Diego arrival 13:00. A station-by-station April/May 1892 table remains the priority because it can locate the approximate first-ocean-view window.
+
+## Why actual timetable extraction matters
+
+Once one issue-level or same-week table is recovered, the next operation is not merely route confirmation. It will produce `railway clock → daylight window → visible terrain`. That can eliminate p.12/13 mountain candidates that the train would have passed before sunrise or after sunset and can distinguish lower-Colorado/Salton views from the San Jacinto approach.
 
 ## Next research action
 
-Recover the actual timetable tables rather than relying on search snippets. Then build daylight windows for 24 April and use them to eliminate impossible p.12/13 mountain candidates. Progress should be written back to this log as soon as a source is recovered or a major interpretation changes.
+1. Recover actual schedule panels from Rumsey 3139B or the March–April 1892 `Official Railway Guide`.
+2. Recover the Wx4 1 May 1892 Los Angeles public timetable or an equivalent newspaper reproduction.
+3. Recover an April/May 1892 Southern California Railway / Santa Fe Los Angeles–San Diego table.
+4. As soon as a timetable is recovered, append exact station/time rows to this log and create a structured clock table in `research/data/` before beginning daylight/terrain elimination.
