@@ -1,0 +1,36 @@
+name: One-shot Source manifest generation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-source-manifest.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build structural Source manifest
+        run: python scripts/build-source-register-manifest.py
+      - name: Validate current derived data
+        run: python scripts/validate-derived-data.py
+      - name: Commit manifest
+        shell: bash
+        run: |
+          if git diff --quiet -- sources/register-manifest.json; then
+            echo "Manifest already current"
+            exit 0
+          fi
+          git config user.name "Haohao Zhang"
+          git config user.email "zhhos98@gmail.com"
+          git add sources/register-manifest.json
+          git commit -m "Generate Source register structural manifest"
+          git push origin HEAD:main
