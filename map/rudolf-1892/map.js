@@ -9,7 +9,8 @@
   const planned = routeData.plannedPublicRoute;
   const knowledge = knowledgeData.nodes;
   const operations = knowledgeData.operationTypes;
-  const flows = knowledgeData.flows;
+  const flows = [...(knowledgeData.flows || []), ...(sourceData.flowAdditions || [])];
+  const observationSegments = sourceData.observationSegments || [];
   const overrides = sourceData.nodeOverrides || {};
   const enhancements = sourceData.nodeEnhancements || {};
   const linksByNode = sourceData.nodeLinks || {};
@@ -27,6 +28,15 @@
     reassemble: 'Workshop'
   };
 
+  const flowColors = {
+    material: '#6f91a4',
+    information: '#8a718c',
+    prospective: '#9b8866',
+    decision: '#a56558',
+    reference: '#71836a',
+    queue: '#b08b59'
+  };
+
   const displayItem = item => ({ ...item, ...(overrides[item.id] || {}) });
   const displayKnowledge = item => ({ ...(knowledge[item.id] || fallbackKnowledge(item)), ...(enhancements[item.id] || {}) });
 
@@ -37,6 +47,7 @@
   const plannedLayer = L.layerGroup().addTo(map);
   const markerLayer = L.layerGroup().addTo(map);
   const flowLayer = L.layerGroup().addTo(map);
+  const corridorLayer = L.layerGroup();
   const plannedPointLayer = L.layerGroup().addTo(map);
   const visualMatchLayer = L.layerGroup().addTo(map);
 
@@ -53,6 +64,26 @@
       radius: 3.5, color: '#71889a', fillColor: '#71889a', fillOpacity: .72, weight: 1
     }).addTo(plannedPointLayer).bindTooltip(`<strong>${item.title}</strong><br>${item.note}`, { direction: 'top' });
   });
+
+  function renderObservationSegments() {
+    corridorLayer.clearLayers();
+    observationSegments.forEach(segment => {
+      const isExclusion = segment.kind === 'exclusion';
+      const line = L.polyline([segment.from, segment.to], {
+        color: isExclusion ? '#655d58' : '#d39a79',
+        weight: isExclusion ? 4.2 : 6,
+        opacity: isExclusion ? .55 : .34,
+        dashArray: isExclusion ? '2 8' : '12 7',
+        lineCap: 'round'
+      }).addTo(corridorLayer);
+      line.bindTooltip(
+        `<strong>${segment.title}</strong><br>${segment.time}<br>${segment.summary}<br><span>${segment.note}</span>`,
+        { sticky: true, className: 'journey-corridor-tooltip' }
+      );
+    });
+  }
+
+  renderObservationSegments();
 
   const markerMap = new Map();
   const flowNodeIds = new Set(flows.flatMap(flow => [flow.from, flow.to]));
@@ -199,13 +230,13 @@
     detailNo.textContent = numberFor(index);
     detailDate.textContent = item.date;
     detailTitle.textContent = item.title;
-    detailSummary.textContent = rawItem.summary;
+    detailSummary.textContent = item.summary || rawItem.summary;
     detailEncountered.textContent = k.encountered;
     detailDone.textContent = k.done;
     detailMoved.textContent = k.moved;
     detailEnabled.textContent = k.enabled;
     detailTags.innerHTML = '';
-    (rawItem.category || []).slice(0, 3).forEach(tag => {
+    (item.category || rawItem.category || []).slice(0, 4).forEach(tag => {
       const span = document.createElement('span');
       span.className = 'journey-tag';
       span.textContent = tag;
@@ -257,19 +288,29 @@
       const from = byId.get(flow.from);
       const to = byId.get(flow.to);
       if (!from || !to) return;
-      const color = flow.type === 'material' ? '#6f91a4' : flow.type === 'information' ? '#8a718c' : '#9b8866';
-      const line = L.polyline([[from.lat, from.lng], [to.lat, to.lng]], {
-        color, weight: flow.status === 'prospective' ? 2.2 : 3, opacity:.9,
-        dashArray: flow.status === 'prospective' ? '4 8' : '9 7', lineCap:'round'
+      const color = flowColors[flow.type] || flowColors.prospective;
+      const via = Array.isArray(flow.via) ? flow.via : [];
+      const points = [[from.lat, from.lng], ...via, [to.lat, to.lng]];
+      const delayed = flow.status === 'delayed';
+      const prospective = flow.status === 'prospective';
+      const later = flow.status === 'documented_later';
+      const dashArray = prospective ? '4 8' : delayed ? '2 8' : later ? '13 6' : '9 7';
+      const line = L.polyline(points, {
+        color,
+        weight: prospective ? 2.2 : delayed ? 2.8 : 3,
+        opacity: delayed ? .86 : .9,
+        dashArray,
+        lineCap:'round'
       }).addTo(flowLayer);
-      line.bindTooltip(`<strong>${flow.label}</strong>`, { sticky:true });
+      const detail = flow.detail ? `<br><span>${flow.detail}</span>` : '';
+      line.bindTooltip(`<strong>${flow.label}</strong>${detail}`, { sticky:true, className:'journey-flow-tooltip' });
     });
   }
 
   const modeCopyText = {
-    journey: '<strong>Journey</strong> follows documented movement. The dashed line shows the route reported publicly at the time.',
+    journey: '<strong>Journey</strong> follows documented movement. The dashed public line remains separate; translucent rail segments show corridor-level observation windows without inventing extra stops.',
     operations: '<strong>Work</strong> colours each stop by the main activity recorded there.',
-    flows: '<strong>Flows</strong> shows plants, specimens, drawings and instructions moving separately from Rudolf’s route.'
+    flows: '<strong>Flows</strong> separates material, instructions, delayed decisions, reference chains and post-return reassembly from Rudolf’s bodily route.'
   };
 
   function matchLegend() {
@@ -282,10 +323,10 @@
       return;
     }
     if (mode === 'flows') {
-      modeLegend.innerHTML = '<span><i style="--legend-color:#6f91a4"></i>material</span><span><i style="--legend-color:#8a718c"></i>information</span><span><i style="--legend-color:#9b8866"></i>future supply</span>' + matchLegend();
+      modeLegend.innerHTML = '<span><i style="--legend-color:#6f91a4"></i>material</span><span><i style="--legend-color:#8a718c"></i>information</span><span><i style="--legend-color:#a56558"></i>decision lag</span><span><i style="--legend-color:#71836a"></i>reference chain</span><span><i style="--legend-color:#b08b59"></i>return / queue</span><span><i style="--legend-color:#9b8866"></i>future supply</span>' + matchLegend();
       return;
     }
-    modeLegend.innerHTML = '<span><i style="--legend-color:#b67a51"></i>documented route</span><span><i class="is-dashed" style="--legend-color:#71889a"></i>reported route</span>' + matchLegend();
+    modeLegend.innerHTML = '<span><i style="--legend-color:#b67a51"></i>documented route</span><span><i class="is-dashed" style="--legend-color:#71889a"></i>reported route</span><span><i class="is-dashed" style="--legend-color:#d39a79"></i>observation corridor</span><span><i class="is-dashed" style="--legend-color:#655d58"></i>night / exclusion control</span>' + matchLegend();
   }
 
   function setMode(mode) {
@@ -300,11 +341,13 @@
     if (map.hasLayer(plannedLayer)) map.removeLayer(plannedLayer);
     if (map.hasLayer(plannedPointLayer)) map.removeLayer(plannedPointLayer);
     if (map.hasLayer(flowLayer)) map.removeLayer(flowLayer);
+    if (map.hasLayer(corridorLayer)) map.removeLayer(corridorLayer);
 
     documentedLine.setStyle({ opacity: mode === 'journey' ? .92 : mode === 'operations' ? .28 : .15, weight: mode === 'journey' ? 4 : 2 });
     if (mode === 'journey') {
       map.addLayer(plannedLayer);
       map.addLayer(plannedPointLayer);
+      map.addLayer(corridorLayer);
     }
     if (mode === 'flows') {
       renderFlows();
