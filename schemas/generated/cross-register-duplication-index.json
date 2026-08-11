@@ -1,0 +1,1118 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-11",
+  "purpose": "Exact cross-register duplication audit for current Source registers and Auction JSON layers.",
+  "guard": "Repeated locators or prose do not prove duplicate evidence units. This index is diagnostic only and must not drive automatic merges or deletions.",
+  "input_file_count": 50,
+  "duplicate_id_count": 0,
+  "duplicate_url_count": 58,
+  "duplicate_long_string_count": 3,
+  "duplicate_object_count": 1,
+  "duplicate_ids": [],
+  "duplicate_urls": [
+    {
+      "url": "https://adressbuecher.sub.uni-hamburg.de/",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/commercial-intermediary-register.json",
+          "path": "routes[1].actors[0].discovery_leads[0].locator"
+        },
+        {
+          "file": "sources/moller-hamburg-forwarding-register.json",
+          "path": "archive_targets[0].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://archivalcollections.drexel.edu/repositories/3/resources/842",
+      "file_count": 5,
+      "locations": [
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "path": "transaction_process_comparators[2].locator"
+        },
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "path": "dealers[2].source_locators[2]"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[0].locator"
+        },
+        {
+          "file": "sources/dealer-sales-print-register.json",
+          "path": "records[1].locator"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[9].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://archivalcollections.library.mcgill.ca/index.php/damon-robert",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[0].locator"
+        },
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "path": "dealers[1].source_locators[1]"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[7].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[8].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[9].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://archon.library.illinois.edu/ihlc/index.php?p=collections/controlcard&id=778",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[20].locator"
+        },
+        {
+          "file": "sources/mobile-intermediary-register.json",
+          "path": "actors[0].personal_archive.locator"
+        }
+      ]
+    },
+    {
+      "url": "https://bibliothek.univie.ac.at/sammlungen/objekt_des_monats/003878.html",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/reference-material-ecology-register.json",
+          "path": "reference_modes[2].direct_or_institutional_evidence[1].locator"
+        },
+        {
+          "file": "sources/trieste-reciprocal-exchange-register.json",
+          "path": "primary_or_institutional_basis.official_locator"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.cmog.org/2016/4747-models-174-collections-25-countries-and-counting",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "path": "priority_targets[7].web_source"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[0].sources[0].url"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.cmog.org/2016/modern-day-cabinet-curiosity",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "path": "priority_targets[8].source_urls[1]"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[1].sources[1].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[0].sources[3].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "market_adjacent_leads[0].sources[0].url"
+        }
+      ]
+    },
+    {
+      "url": "https://blogs.ucl.ac.uk/museums/2016/11/11/specimen-of-the-week-265-termite-collection/",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-sales-print-register.json",
+          "path": "records[5].locator"
+        },
+        {
+          "file": "sources/dealer-upstream-supply-register.json",
+          "path": "records[3].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://collection.sciencemuseumgroup.org.uk/documents/aa110135491",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "path": "priority_targets[3].official_url"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "path": "archive_route[3].official_url"
+        }
+      ]
+    },
+    {
+      "url": "https://collection.sciencemuseumgroup.org.uk/documents/aa110149903",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "path": "priority_targets[2].publicly_verified_child.official_url"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "path": "archive_route[2].official_url"
+        }
+      ]
+    },
+    {
+      "url": "https://collections.tepapa.govt.nz/object/293561",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[4].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[17].locator"
+        },
+        {
+          "file": "sources/dealer-epistemic-exchange-register.json",
+          "path": "records[3].locators[1]"
+        }
+      ]
+    },
+    {
+      "url": "https://data.library.amnh.org/archives/repositories/3/archival_objects/6932",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[0].later_business_context[1].locators[1]"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[6].locator"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "path": "records[4].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://data.library.amnh.org/archives/repositories/3/archival_objects/6934",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[0].later_business_context[1].locators[0]"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[5].locator"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "path": "records[3].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://findingaids.library.upenn.edu/records/ANSP_ANSP.COLL.0081",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-correspondence-reservoir-register.json",
+          "path": "records[1].locator"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "path": "records[0].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://hollisarchives.lib.harvard.edu/catalog/ecb00006",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[0].locator"
+        },
+        {
+          "file": "sources/harvard-digital-archive-register.json",
+          "path": "current_catalogue_snapshot.catalogue_locator"
+        },
+        {
+          "file": "sources/harvard-receiving-skill-register.json",
+          "path": "harvard_archive.locator"
+        }
+      ]
+    },
+    {
+      "url": "https://jamesdjulia.com/item/lot-480a-rare-and-important-blown-glass-marine-leach-by-leopold-and-rudolph-blashka-25713/",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[0].sources[0].url"
+        },
+        {
+          "file": "auctions/science-museum-register-neighborhoods.json",
+          "path": "model_330_market_crosslink.james_d_julia_2005_market_record.source_url"
+        }
+      ]
+    },
+    {
+      "url": "https://muarchives.missouri.edu/uw-rg1-s1-4.html",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-correspondence-reservoir-register.json",
+          "path": "records[2].locator"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "path": "records[1].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://museum.wales/blog/1308/Spectacular-glass-sea-creatures-of-the-deep/",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "institutional_context_only[0].sources[1]"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "path": "publicly_identified_recipients_in_this_audit[1].urls[0]"
+        }
+      ]
+    },
+    {
+      "url": "https://openlibrary.org/works/OL43709635W/Third_floor",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[0].evidence[2].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[0].sources[2].url"
+        }
+      ]
+    },
+    {
+      "url": "https://rmc.library.cornell.edu/EAD/htmldocs/RMA04088.html",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/cornell-ward-retrieval-register.json",
+          "path": "records[1].locator"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[10].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://siarchives.si.edu/collections/siris_arc_216765",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[0].receiving_side_and_distributed_witnesses[0].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[2].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://siarchives.si.edu/collections/siris_arc_216776",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[0].receiving_side_and_distributed_witnesses[1].locator"
+        },
+        {
+          "file": "sources/dealer-transaction-anatomy-register.json",
+          "path": "records[2].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://siarchives.si.edu/collections/siris_arc_217253",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-longtail-document-register.json",
+          "path": "records[0].locator"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[21].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://simurg.csic.es/browse/collection/1176699",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-longtail-document-register.json",
+          "path": "records[1].locator"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[22].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://simurg.csic.es/view/CSICAR000061499/carta-de-vaclav-fric-a-ignacio-bolivar-sobre-oferta-de-compra-de-insectos",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[3].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[20].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://szn.it/en/research/marine-animal-conservation-and-public-engagement/functional-areas-cape/darwin-dohrn-museum-dadom-historical-archives/historical-archives",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[16].locator"
+        },
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "path": "institutions[0].archive.locators[0]"
+        }
+      ]
+    },
+    {
+      "url": "https://website-archiv.museumfuernaturkunde.berlin/sites/default/files/221010_Inventarliste_OS001-02_Blaschka.pdf",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[3].inventory_url"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "path": "museum_fuer_naturkunde_branch.inventory_pdf"
+        }
+      ]
+    },
+    {
+      "url": "https://www.archives.gov/boston/finding-aids/maritime.html",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/customs-regulation-register.json",
+          "path": "cases[1].archive_target.locator"
+        },
+        {
+          "file": "sources/customs-regulation-register.json",
+          "path": "cases[3].archive_targets[1].locator"
+        },
+        {
+          "file": "sources/ware-transatlantic-logistics-register.json",
+          "path": "external_archive_targets[1].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.archivinformationssystem.at/archivplansuche.aspx?ID=1324310",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[17].locator"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[18].locator"
+        },
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "path": "institutions[1].administrative_archive.locator"
+        },
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "path": "institutions[2].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.arcinsys.niedersachsen.de/arcinsys/list.action?nodeid=g312285&page=1",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[1].locator"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "path": "archive_clusters[1].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[18].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.biodiversitylibrary.org/item/212981",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "path": "transaction_process_comparators[1].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[1].locator"
+        },
+        {
+          "file": "sources/dealer-sales-print-register.json",
+          "path": "records[2].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.christies.com/en/lot/lot-6188456",
+      "file_count": 6,
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[1].evidence[1].url"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[4].sources[0].url"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[2].sources[3].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[3].sources[0].url"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "path": "private_market_counterexamples_from_same_deaccession[2].source"
+        },
+        {
+          "file": "auctions/science-museum-register-neighborhoods.json",
+          "path": "high_value_split_pairs[1].records[1].source_url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.christies.com/en/lot/lot-6188457",
+      "file_count": 5,
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[1].evidence[2].url"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[5].sources[0].url"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[2].sources[1].url"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "path": "private_market_counterexamples_from_same_deaccession[0].source"
+        },
+        {
+          "file": "auctions/science-museum-register-neighborhoods.json",
+          "path": "high_value_split_pairs[0].records[0].source_url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.christies.com/lot/lot-6188458",
+      "file_count": 5,
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[1].evidence[3].url"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[6].sources[0].url"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[2].sources[2].url"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "path": "private_market_counterexamples_from_same_deaccession[1].source"
+        },
+        {
+          "file": "auctions/science-museum-register-neighborhoods.json",
+          "path": "same_neighborhood_market_anchor.source_url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.gazette-drouot.com/lots/28984163-leopold-and-rudolf-blaschka----",
+      "file_count": 4,
+      "locations": [
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[7].sources[2].url"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[3].sources[3]"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[1].sources[1].url"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "path": "auction_evidence[0].sources[0]"
+        }
+      ]
+    },
+    {
+      "url": "https://www.gda.bayern.de/service/findmitteldatenbank/Kapitel/a1f20232-b9e9-410d-9ba2-131684437bc8",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "cross_dealer_comparators[0].locator"
+        },
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[0].receiving_side_and_distributed_witnesses[4].locator"
+        },
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[2].locator"
+        },
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[2].locator"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "path": "archive_clusters[0].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[19].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.grisebach.com/en/auction-house/press/the-orangerie-selected-objects-auction-tells-the-story-of-the-world-in-100-objects-from-andrea-pisano-to-gunter-sachs",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[0].evidence[3].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[0].sources[1].url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.intermediatheque.jp/en/press/view/id/PR053/year/2019/module/default",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[1].count_wording_guard.sources[0]"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "market_adjacent_leads[0].later_public_presence[0].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "market_adjacent_leads[0].sources[2].url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.invaluable.com/artist/blaschka-leopold-49ejcqcd3j/sold-at-auction-prices/",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[0].evidence[0].url"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[2].sources[0].url"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[5].sources[1].url"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[6].sources[1].url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.invaluable.com/auction-lot/leopold-and-rudolph-blaschka-model-of-a-serpulida-483-c-a084c25853",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[0].exact_aggregator_lot_url"
+        },
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[0].evidence[1].url"
+        },
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[0].canonical_fields_to_update.primary_lot_page"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[0].sources[0].url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.kunstunddesign-auktionen.de/de/auktionen/K-15/glasmodell-stachelpolyp-um-1870-137452/",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[3].sources[2]"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[2].sources[0].url"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "path": "auction_evidence[1].sources[0]"
+        }
+      ]
+    },
+    {
+      "url": "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/glass-model-sea-anemone-around-1870-137451/",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[7].sources[0].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[1].sources[0].url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.kunstunddesign-auktionen.de/en/auctions/K-15/list-of-results/",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "path": "auction_evidence[0].sources[1]"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "path": "auction_evidence[1].sources[1]"
+        },
+        {
+          "file": "auctions/krefeld-hydractinia-156-crosswalk.json",
+          "path": "auction_record.source_urls[1]"
+        }
+      ]
+    },
+    {
+      "url": "https://www.library.rochester.edu/rbscp/blog/searching-ward",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[0].core_archive.locators[1]"
+        },
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "path": "dealers[2].source_locators[0]"
+        }
+      ]
+    },
+    {
+      "url": "https://www.library.rochester.edu/rbscp/special-collections-development-and-management",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[0].core_archive.locators[0]"
+        },
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "path": "dealers[2].source_locators[1]"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[2].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.masterpiecefair.com/blog-details/89/masterpiece-collecting-stories-george-loudon",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "path": "priority_targets[8].source_urls[0]"
+        },
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[1].sources[0].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "market_adjacent_leads[0].sources[1].url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.museumfuernaturkunde.berlin/en/research/collection/archive/document-collection/",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[0].locators[0]"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "path": "archive_clusters[2].locators[2]"
+        }
+      ]
+    },
+    {
+      "url": "https://www.museumfuernaturkunde.berlin/en/research/object-collection-historical-divison",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[3].sources[0]"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[1].sources[2].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[2].sources[2].url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.museumfuernaturkunde.berlin/en/research/records-collection",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[2].receiving_side_and_distributed_witnesses[0].locators[1]"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "path": "archive_clusters[2].locators[0]"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[21].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.museumfuernaturkunde.berlin/en/research/records-collection-chronological-overview",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "path": "archive_clusters[2].locators[1]"
+        },
+        {
+          "file": "auctions/auction-archive-router.json",
+          "path": "priority_targets[6].official_overview_url"
+        }
+      ]
+    },
+    {
+      "url": "https://www.nature.com/articles/004496a0",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-cross-category-material-register.json",
+          "path": "dealers[1].source_locators[0]"
+        },
+        {
+          "file": "sources/dealer-epistemic-exchange-register.json",
+          "path": "records[1].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.nhm.ac.uk/CalmView/Record.aspx?id=PX32&src=CalmView.Persons",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[1].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[10].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[11].locator"
+        },
+        {
+          "file": "sources/dealer-document-register.json",
+          "path": "records[12].locator"
+        },
+        {
+          "file": "sources/dealer-upstream-supply-register.json",
+          "path": "records[1].locator"
+        },
+        {
+          "file": "sources/dealer-upstream-supply-register.json",
+          "path": "records[2].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.sammlungen.hu-berlin.de/sammlungen/zoologische-lehrsammlung/",
+      "file_count": 3,
+      "locations": [
+        {
+          "file": "auctions/auction-archive-router.json",
+          "path": "priority_targets[4].official_collection_url"
+        },
+        {
+          "file": "auctions/berlin-krefeld-provenance-audit.json",
+          "path": "hu_zoologische_lehrsammlung.source"
+        },
+        {
+          "file": "auctions/krefeld-hydractinia-156-crosswalk.json",
+          "path": "hu_branch.documented_dispersal_window.source"
+        }
+      ]
+    },
+    {
+      "url": "https://www.sej.org/publications/between-lines/scientist-finds-natures-art-beneath-seas",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/reference-material-ecology-register.json",
+          "path": "reference_modes[1].direct_or_institutional_evidence[0].locator"
+        },
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "path": "institutions[0].direct_blaschka_evidence[0].secondary_locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.tcd.ie/library/research-collections/subject-strengths/archives.php",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dublin-shipping-failure-register.json",
+          "path": "receiving_side_archives[1].locator"
+        },
+        {
+          "file": "sources/moller-hamburg-forwarding-register.json",
+          "path": "receiving_side_archive_targets[2].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.themorgan.org/literary-historical/191319",
+      "file_count": 2,
+      "locations": [
+        {
+          "file": "sources/dealer-archive-register.json",
+          "path": "dealers[1].receiving_side_and_distributed_witnesses[3].locator"
+        },
+        {
+          "file": "sources/dealer-comparator-register.json",
+          "path": "transaction_process_comparators[0].locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.ucd.ie/archives/collections/universityarchives/items/collectionname235376en.html",
+      "file_count": 4,
+      "locations": [
+        {
+          "file": "sources/dublin-shipping-failure-register.json",
+          "path": "receiving_side_archives[0].locator"
+        },
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[19].locator"
+        },
+        {
+          "file": "sources/moller-hamburg-forwarding-register.json",
+          "path": "receiving_side_archive_targets[1].locator"
+        },
+        {
+          "file": "sources/transaction-gap-register.json",
+          "path": "records[0].receiving_archive_target.locator"
+        }
+      ]
+    },
+    {
+      "url": "https://www.ucl.ac.uk/museums-collections/grant-museum-zoology/highlights/blaschka-glass-models-invertebrates",
+      "file_count": 5,
+      "locations": [
+        {
+          "file": "auctions/auction-historical-market-seeds.json",
+          "path": "seeds[2].sources[0].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "institutional_context_only[0].sources[0]"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "path": "dispersal_statement.url"
+        },
+        {
+          "file": "auctions/auction-science-museum-recipient-audit.json",
+          "path": "publicly_identified_recipients_in_this_audit[0].url"
+        },
+        {
+          "file": "auctions/ucl-catalogue-card-index-router.json",
+          "path": "documentation_chronology[0].sources[0]"
+        },
+        {
+          "file": "auctions/ucl-science-museum-transfer-candidate-audit.json",
+          "path": "collection_level_facts.sources[0]"
+        }
+      ]
+    }
+  ],
+  "duplicate_long_strings": [
+    {
+      "sha256": "36a56a68fc61d4dd5ef3cbe64b737e0ee7d62880a4ad88b2302007058842b538",
+      "length": 126,
+      "file_count": 2,
+      "text": "Exceptional Scientific and Engineering Works of Art, including Natural History and the William L. Camp Jr Spectacle Collection",
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-library-holdings-router.json",
+          "path": "christies_series_expansion.new_or_strengthened_targets[6].title"
+        },
+        {
+          "file": "auctions/christies-scientific-lot-archive-audit.json",
+          "path": "target_sale_family[3].title"
+        }
+      ]
+    },
+    {
+      "sha256": "8ee2a8efe1fd1f6b9ac481ca026dc691a8a2e377844e864daf521f9cbea0070f",
+      "length": 163,
+      "file_count": 2,
+      "text": "https://szn.it/en/research/marine-animal-conservation-and-public-engagement/functional-areas-cape/darwin-dohrn-museum-dadom-historical-archives/historical-archives",
+      "locations": [
+        {
+          "file": "sources/global-archive-register.json",
+          "path": "entries[16].locator"
+        },
+        {
+          "file": "sources/upstream-institutional-specimen-supply-register.json",
+          "path": "institutions[0].archive.locators[0]"
+        }
+      ]
+    },
+    {
+      "sha256": "d1657ebf3467f4f6766825015e76161402a58971110169d30db1b753c3ce4f48",
+      "length": 166,
+      "file_count": 2,
+      "text": "https://www.grisebach.com/en/auction-house/press/the-orangerie-selected-objects-auction-tells-the-story-of-the-world-in-100-objects-from-andrea-pisano-to-gunter-sachs",
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[0].evidence[3].url"
+        },
+        {
+          "file": "auctions/auction-provenance-crosslinks.json",
+          "path": "crosslinks[0].sources[1].url"
+        }
+      ]
+    }
+  ],
+  "duplicate_objects": [
+    {
+      "sha256": "96aa55a2243e1d89a440aa56ffaf7d9a6d21c1b58eba71c99b99980825e4c194",
+      "key_count": 3,
+      "file_count": 2,
+      "object": {
+        "currency": "EUR",
+        "high": 5000,
+        "low": 3000
+      },
+      "locations": [
+        {
+          "file": "auctions/auction-catalogue-recoveries.json",
+          "path": "recoveries[0].estimate"
+        },
+        {
+          "file": "auctions/auction-data.json",
+          "path": "records[2].estimate"
+        }
+      ]
+    }
+  ]
+}
