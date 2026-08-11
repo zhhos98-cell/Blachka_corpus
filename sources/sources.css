@@ -1,3 +1,6 @@
+@import url("../typography-garamond.css?v=20260811-1");
+@import url("../mobile-v3.css?v=20260810-4");
+
 /* Sources · search first, text first, no decorative surface layer. */
 body.subpage{background:#1d1714!important;background-image:none!important;color:#f2eee9!important}
 .subpage-nav a[href*="blog"],.subpage-footer a[href*="blog"]{display:none!important}

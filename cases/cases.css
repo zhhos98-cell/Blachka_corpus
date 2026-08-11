@@ -1,4 +1,11 @@
+@import url("../typography-garamond.css?v=20260811-1");
+@import url("../mobile-v3.css?v=20260810-4");
+
 body.cases-page{background:#1d1714}
+
+/* Page-family intro retained after removing historical matrix/site-core layers. */
+html body.cases-page .page-intro{min-height:0!important;padding:clamp(58px,6vw,78px) 0 clamp(38px,4vw,54px)!important;border:0!important;background:none!important}
+html body.cases-page .page-intro::before,html body.cases-page .page-intro::after,html body.cases-page .page-intro h1::before,html body.cases-page .page-intro .page-dek::before{content:none!important;display:none!important;background-image:none!important;animation:none!important;box-shadow:none!important}
 .cases-page .subpage-main{width:min(calc(100% - 40px),1180px)}
 .cases-page .page-intro{position:relative}
 

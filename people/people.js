@@ -49,7 +49,7 @@
     history.replaceState(null, '', next.pathname + next.search + next.hash);
   };
 
-  fetch('people-data.json', { cache:'force-cache' })
+  fetch('people-ui.json?v=20260811-1', { cache:'force-cache' })
     .then(response => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
