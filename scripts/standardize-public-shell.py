@@ -15,7 +15,7 @@ def canonical_nav(current: str) -> str:
         return f'<a href="{href}"{attr}>{label}</a>'
 
     return (
-        '    <nav class="subpage-nav" aria-label="Site navigation">\n'
+        '<nav class="subpage-nav" aria-label="Site navigation">\n'
         f'      {link("cases", "../cases/", "Cases")}\n'
         '      <details class="nav-map-menu"><summary class="nav-map-trigger">Map</summary><div class="nav-map-panel"><a href="../map/">Collections map</a><a href="../map/rudolf-1892/">Rudolf 1892 journey</a></div></details>\n'
         f'      {link("people", "../people/", "People")}\n'
@@ -29,7 +29,7 @@ def canonical_nav(current: str) -> str:
 
 def replace_nav(path: Path, current: str) -> None:
     text = path.read_text(encoding="utf-8")
-    pattern = re.compile(r'    <nav class="subpage-nav" aria-label="Site navigation">.*?    </nav>', re.S)
+    pattern = re.compile(r'<nav class="subpage-nav" aria-label="Site navigation">.*?</nav>', re.S)
     updated, count = pattern.subn(canonical_nav(current), text, count=1)
     if count != 1:
         raise SystemExit(f"Expected one subpage nav in {path}")
