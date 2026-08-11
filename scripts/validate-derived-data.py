@@ -2,7 +2,8 @@
 """Read-only structural checks for derived/public data.
 
 The validator does not rewrite research records. It checks relationships between
-canonical data, derived payloads, manifests, and public/archived file placement.
+canonical data, derived payloads, manifests, minimal metadata envelopes, and
+public/archived file placement.
 """
 
 from __future__ import annotations
@@ -47,6 +48,53 @@ def validate_manifest(directory: Path, manifest_name: str, glob_pattern: str, ro
     return len(actual)
 
 
+def validate_envelope(directory: Path, glob_pattern: str, schema_path: Path, excluded: set[str] | None = None) -> int:
+    """Validate only the simple metadata envelope described by checked-in schemas.
+
+    This intentionally implements the subset used by the envelope schemas
+    (required fields, primitive type and minLength). Topic-specific properties
+    remain unconstrained and no evidence values are normalized.
+    """
+    excluded = excluded or set()
+    schema = load(schema_path)
+    required = schema.get("required", [])
+    properties = schema.get("properties", {})
+    type_map = {
+        "string": str,
+        "integer": int,
+        "number": (int, float),
+        "boolean": bool,
+        "object": dict,
+        "array": list,
+    }
+    checked = 0
+    for path in sorted(directory.glob(glob_pattern)):
+        if path.name in excluded:
+            continue
+        payload = load(path)
+        for field in required:
+            if field not in payload:
+                raise SystemExit(f"Envelope field {field!r} missing in {path.relative_to(ROOT)}")
+        for field, rule in properties.items():
+            if field not in payload:
+                continue
+            expected = rule.get("type")
+            if expected in type_map:
+                expected_type = type_map[expected]
+                value = payload[field]
+                if expected == "integer" and isinstance(value, bool):
+                    raise SystemExit(f"Envelope field {field!r} has wrong type in {path.relative_to(ROOT)}")
+                if expected == "number" and isinstance(value, bool):
+                    raise SystemExit(f"Envelope field {field!r} has wrong type in {path.relative_to(ROOT)}")
+                if not isinstance(value, expected_type):
+                    raise SystemExit(f"Envelope field {field!r} has wrong type in {path.relative_to(ROOT)}")
+            if isinstance(payload[field], str) and rule.get("minLength"):
+                if len(payload[field]) < int(rule["minLength"]):
+                    raise SystemExit(f"Envelope field {field!r} is empty in {path.relative_to(ROOT)}")
+        checked += 1
+    return checked
+
+
 def main() -> None:
     canonical_path = ROOT / "people" / "people-data.json"
     ui_path = ROOT / "people" / "people-ui.json"
@@ -80,6 +128,11 @@ def main() -> None:
         "registers",
         "register_count",
     )
+    source_envelopes = validate_envelope(
+        sources_dir,
+        "*-register.json",
+        ROOT / "schemas" / "source-register-envelope.schema.json",
+    )
 
     auctions_dir = ROOT / "auctions"
     auction_data = load(auctions_dir / "auction-data.json")
@@ -95,11 +148,19 @@ def main() -> None:
         "files",
         "file_count",
     )
+    auction_envelopes = validate_envelope(
+        auctions_dir,
+        "*.json",
+        ROOT / "schemas" / "auction-layer-envelope.schema.json",
+        excluded={"data-manifest.json"},
+    )
 
     print(f"People canonical/UI records: {len(records)}")
     print(f"Global archive register entries: {len(ids)}")
     print(f"Source register manifest entries: {source_count}")
+    print(f"Source register envelopes: {source_envelopes}")
     print(f"Auction JSON manifest entries: {auction_count}")
+    print(f"Auction JSON envelopes: {auction_envelopes}")
     print("Public JSON structural checks: OK")
 
 
