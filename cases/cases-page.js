@@ -10,6 +10,9 @@
   const target = document.getElementById('case-sections');
   if (!target) return;
 
+  const directoryNote = document.querySelector('.cases-directory-copy > p');
+  if (directoryNote) directoryNote.textContent = 'Select a case to jump to the full documentary chain.';
+
   const applyIncomingSearch = () => {
     const raw = (new URLSearchParams(location.search).get('q') || '').trim();
     if (!raw) return;
