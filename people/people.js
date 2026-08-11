@@ -22,11 +22,10 @@
       }).join(' · ') || '<a href="../sources/">Project sources ↗</a>';
       const open = person.open ? `<p class="person-open"><span>Open:</span> ${esc(person.open)}</p>` : '';
       const dates = person.dates || 'dates under review';
-      const status = person.status === 'partial' ? 'partially documented' : 'documented';
       const search = [person.name, person.sort, person.dates, groups[person.group], person.roles, person.bio, ...(person.aka || [])].join(' ');
       return `<article class="person-record" id="person-${esc(person.slug)}" data-role-group="${esc(person.group)}" data-search="${esc(search)}">
         <div class="person-index"><p class="person-group">${esc(groups[person.group] || person.group)}</p><p class="person-dates">${esc(dates)}</p></div>
-        <div class="person-copy"><h2>${esc(person.name)}</h2><p class="person-role">${esc(person.roles || '')}</p><p class="person-bio">${esc(person.bio)}</p>${open}<p class="person-links">${links}</p><p class="person-record-meta">${esc(person.id)} · ${status} · version 2.0 · updated 10 August 2026</p></div>
+        <div class="person-copy"><h2>${esc(person.name)}</h2><p class="person-role">${esc(person.roles || '')}</p><p class="person-bio">${esc(person.bio)}</p>${open}<p class="person-links">${links}</p></div>
       </article>`;
     }).join('');
   };
@@ -69,6 +68,6 @@
     })
     .catch(() => {
       count.textContent = 'People index unavailable';
-      list.innerHTML = '<p class="people-no-results">The people data could not be loaded. The machine-readable manifest is <a href="people-records.json">available here</a>.</p>';
+      list.innerHTML = '<p class="people-no-results">The people data could not be loaded. The machine-readable records remain available in <a href="people-records.json">people-records.json</a>.</p>';
     });
 })();
