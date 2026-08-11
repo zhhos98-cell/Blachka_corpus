@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ROOT / "sources"
 SCHEMAS = ROOT / "schemas"
 DOCS = ROOT / "docs"
-JSON_OUT = SCHEMAS / "status-vocabulary-inventory.json"
+JSON_OUT = SCHEMAS / "generated" / "status-vocabulary-inventory.json"
 MD_OUT = DOCS / "status-vocabulary-audit-2026-08-11.md"
 
 
@@ -80,7 +80,7 @@ def main() -> None:
         "vocabularies": vocabularies,
         "repeated_terms": repeated,
     }
-    SCHEMAS.mkdir(exist_ok=True)
+    JSON_OUT.parent.mkdir(parents=True, exist_ok=True)
     JSON_OUT.write_text(json.dumps(inventory, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     lines = [
@@ -115,7 +115,7 @@ def main() -> None:
         "",
         "A shared vocabulary file should contain only terms whose definitions are identical across current uses, or terms later linked by an explicit reviewed mapping. Conflicting or file-specific statuses remain local. The inventory is evidence about schema reuse, not authority to edit the underlying registers.",
         "",
-        "Machine-readable detail: `../schemas/status-vocabulary-inventory.json`.",
+        "Machine-readable detail: `../schemas/generated/status-vocabulary-inventory.json`.",
         "",
     ])
     MD_OUT.write_text("\n".join(lines), encoding="utf-8")

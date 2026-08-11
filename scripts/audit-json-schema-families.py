@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
 DOCS = ROOT / "docs"
-PROFILE_OUT = SCHEMAS / "schema-family-profile.json"
+PROFILE_OUT = SCHEMAS / "generated" / "schema-family-profile.json"
 REPORT_OUT = DOCS / "schema-family-audit-2026-08-11.md"
 
 
@@ -205,7 +205,7 @@ def main():
         ),
         "groups": {"sources": sources, "auctions": auctions},
     }
-    SCHEMAS.mkdir(exist_ok=True)
+    PROFILE_OUT.parent.mkdir(parents=True, exist_ok=True)
     PROFILE_OUT.write_text(json.dumps(profile, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     lines = [
@@ -225,7 +225,7 @@ def main():
         "4. Status vocabularies should be extracted only where definitions are identical or explicitly mapped. Similar labels are not to be normalized by spelling alone.",
         "5. The next safe step is to define a minimal non-evidentiary envelope schema plus optional vocabulary registries, while leaving every current data file untouched.",
         "",
-        "Machine-readable detail: `../schemas/schema-family-profile.json`.",
+        "Machine-readable detail: `../schemas/generated/schema-family-profile.json`.",
         "",
     ])
     REPORT_OUT.write_text("\n".join(lines), encoding="utf-8")

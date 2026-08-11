@@ -72,4 +72,4 @@ Repeated list-field names occurring in at least two files: **3**. The profile re
 4. Status vocabularies should be extracted only where definitions are identical or explicitly mapped. Similar labels are not to be normalized by spelling alone.
 5. The next safe step is to define a minimal non-evidentiary envelope schema plus optional vocabulary registries, while leaving every current data file untouched.
 
-Machine-readable detail: `../schemas/schema-family-profile.json`.
+Machine-readable detail: `../schemas/generated/schema-family-profile.json`.
