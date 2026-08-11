@@ -1,0 +1,52 @@
+name: One-shot field semantic audit
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-field-semantic-audit.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Snapshot protected data
+        shell: bash
+        run: |
+          sha256sum people/people-data.json > /tmp/protected.sha
+          find research/data -type f -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected.sha
+          find sources -maxdepth 1 -type f -name '*-register.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected.sha
+          find auctions -maxdepth 1 -type f -name '*.json' ! -name 'data-manifest.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected.sha
+      - name: Run semantic-role audit
+        run: python scripts/audit-field-semantics.py
+      - name: Verify protected data unchanged
+        shell: bash
+        run: |
+          sha256sum people/people-data.json > /tmp/protected-after.sha
+          find research/data -type f -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected-after.sha
+          find sources -maxdepth 1 -type f -name '*-register.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected-after.sha
+          find auctions -maxdepth 1 -type f -name '*.json' ! -name 'data-manifest.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected-after.sha
+          diff -u /tmp/protected.sha /tmp/protected-after.sha
+      - name: Validate structured data
+        run: python scripts/validate-derived-data.py
+      - name: Commit audit outputs
+        shell: bash
+        run: |
+          git add schemas/generated/field-semantic-role-map.json docs/field-semantic-audit-2026-08-11.md
+          if git diff --cached --quiet; then
+            echo "Semantic audit outputs already current"
+            exit 0
+          fi
+          git config user.name "Haohao Zhang"
+          git config user.email "zhhos98@gmail.com"
+          git commit -m "Record field semantic-role audit"
+          git push origin HEAD:main
