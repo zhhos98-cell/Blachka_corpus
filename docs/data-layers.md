@@ -34,7 +34,7 @@ Current examples:
 - generator: `scripts/build-people-ui.py`
 - structural manifests: `sources/register-manifest.json` and `auctions/data-manifest.json`
 - manifest generator: `scripts/build-structural-manifests.py`
-- generated schema/vocabulary audits: `schemas/generated/`
+- generated structural/semantic audits: `schemas/generated/`
 
 ## 3. Historical / retired data
 
@@ -55,7 +55,8 @@ Housekeeping may:
 - add schema metadata, counts, vocabulary definitions, manifests, documentation and validators;
 - generate smaller public payloads from canonical files;
 - normalize filenames for new non-public tooling when stable URLs are unaffected;
-- remove obsolete runtime references after verifying that the replacement is active.
+- remove obsolete runtime references after verifying that the replacement is active;
+- audit naming drift, duplicate locators, repeated prose or exact structured duplication without treating the audit itself as authority to merge records.
 
 Housekeeping must not:
 
@@ -64,7 +65,10 @@ Housekeeping must not:
 - normalize OCR or historical spellings without an evidence record;
 - replace a source URL, archival shelfmark or identifier merely for stylistic consistency;
 - turn candidate/comparator material into direct evidence;
-- mutate `research/data/` as a side effect of frontend work.
+- mutate `research/data/` as a side effect of frontend work;
+- retroactively rename evidence-bearing fields merely to satisfy later naming conventions.
+
+Prospective field naming for new or substantially rebuilt JSON is documented in `json-field-conventions.md` and machine-readable in `../schemas/field-role-conventions.json`. Existing fields remain authoritative in their original registers unless a separate reviewed research migration is explicitly undertaken.
 
 ## 5. Validation
 
@@ -81,6 +85,8 @@ For structural review rather than routine regeneration, the read-only audit tool
 ```bash
 python scripts/audit-json-schema-families.py
 python scripts/audit-status-vocabularies.py
+python scripts/audit-field-semantics.py
+python scripts/audit-cross-register-duplication.py
 ```
 
 The audit outputs belong under `schemas/generated/` and dated notes under `docs/`; they do not feed changes back into canonical research data.
