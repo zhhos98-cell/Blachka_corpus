@@ -31,7 +31,7 @@ The repository uses three explicit data layers.
 2. **Derived public/structural data** — reproducible projections, manifests and diagnostics. [`people/people-ui.json`](people/people-ui.json), for example, is generated from the canonical People authority file and is not an independent research source.
 3. **Historical / retired data** — superseded shards, supplements and implementation artefacts retained under [`archive/`](archive/) for provenance or rollback.
 
-See [`docs/data-layers.md`](docs/data-layers.md) for mutation rules and [`docs/json-field-conventions.md`](docs/json-field-conventions.md) for prospective naming conventions. Structural cleanup must not silently alter evidence status, archival references, guards, locators, uncertainty language, OCR readings or stable identifiers.
+See [`docs/data-layers.md`](docs/data-layers.md) for mutation rules, [`docs/json-field-conventions.md`](docs/json-field-conventions.md) for prospective naming conventions, and [`docs/source-authority-model.md`](docs/source-authority-model.md) for the derived exact-locator graph. Structural cleanup must not silently alter evidence status, archival references, guards, locators, uncertainty language, OCR readings or stable identifiers.
 
 ## Research state
 
@@ -70,12 +70,13 @@ The census layer and deeper provenance layer remain distinct. A secure surviving
 │   └── bibliography/          # working research bibliographies
 ├── scripts/                   # reproducible builders, validators and read-only audits
 ├── schemas/                   # minimal schemas + prospective field conventions
-│   └── generated/             # machine-generated structural/semantic audit indexes
+│   └── generated/             # generated structural/semantic/authority indexes
 ├── docs/
 │   ├── README.md              # documentation map
 │   ├── architecture.md        # repository/public/research separation
 │   ├── data-layers.md         # canonical / derived / archive mutation contract
 │   ├── json-field-conventions.md
+│   ├── source-authority-model.md
 │   ├── record-architecture-v1.md
 │   ├── site-performance.md
 │   ├── audits/                # dated diagnostic reports
@@ -102,7 +103,9 @@ Sources and Auctions retain heterogeneous evidence structures rather than being 
 
 The global archive register has been flattened only where a supplement explicitly belonged to the same canonical register: seven records from the 10 August supplement are now part of [`sources/global-archive-register.json`](sources/global-archive-register.json), while the historical supplement remains under `archive/data/`. Topic-specific registers remain separate where they encode distinct evidence chains or research questions.
 
-Minimal metadata envelope schemas and prospective field conventions live under [`schemas/`](schemas/). Generated schema-family, vocabulary, semantic-role, duplication and canonical-sync diagnostics live under [`schemas/generated/`](schemas/generated/); dated human-readable reports live under [`docs/audits/`](docs/audits/). These diagnostics are descriptive and never feed edits back into canonical evidence automatically.
+Minimal metadata envelope schemas and prospective field conventions live under [`schemas/`](schemas/). Generated schema-family, vocabulary, semantic-role, duplication, canonical-sync and exact-locator authority diagnostics live under [`schemas/generated/`](schemas/generated/); dated human-readable reports live under [`docs/audits/`](docs/audits/). These derived layers are descriptive and never feed edits back into canonical evidence automatically.
+
+The exact-locator authority graph maps repeated public URLs back to every Source/Auction register and field path that uses them. It can support later source-network navigation, but a shared URL remains only a shared access/source node: it does not collapse the surrounding evidence records or replace archival references.
 
 EB Garamond is served locally. A corpus-derived public subset is used for ordinary page text, with the full variable font retained as a missing-glyph fallback; the OFL notice remains in `assets/fonts/`.
 
@@ -115,6 +118,7 @@ Routine derived-data maintenance is reproducible and read-only with respect to c
 ```bash
 python scripts/build-people-ui.py
 python scripts/build-structural-manifests.py
+python scripts/build-source-authority-crosswalk.py
 python scripts/validate-derived-data.py
 ```
 
