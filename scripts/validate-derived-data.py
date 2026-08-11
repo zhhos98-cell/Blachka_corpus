@@ -22,6 +22,31 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def validate_manifest(directory: Path, manifest_name: str, glob_pattern: str, rows_key: str, count_key: str) -> int:
+    manifest_path = directory / manifest_name
+    if not manifest_path.exists():
+        raise SystemExit(f"Manifest is missing: {manifest_path.relative_to(ROOT)}")
+    manifest = load(manifest_path)
+    actual = sorted(
+        path.name
+        for path in directory.glob(glob_pattern)
+        if path.name != manifest_name
+    )
+    rows = manifest.get(rows_key, [])
+    paths = [row.get("path") for row in rows]
+    if manifest.get(count_key) != len(actual):
+        raise SystemExit(f"Manifest count does not match current files: {manifest_name}")
+    if paths != actual:
+        raise SystemExit(f"Manifest paths do not match current files: {manifest_name}")
+    for row in rows:
+        path = directory / row["path"]
+        if row.get("bytes") != path.stat().st_size:
+            raise SystemExit(f"Manifest byte count is stale for {path}")
+        if row.get("sha256") != sha256(path):
+            raise SystemExit(f"Manifest checksum is stale for {path}")
+    return len(actual)
+
+
 def main() -> None:
     canonical_path = ROOT / "people" / "people-data.json"
     ui_path = ROOT / "people" / "people-ui.json"
@@ -46,32 +71,35 @@ def main() -> None:
     if archive_register.get("entry_count") != len(archive_register.get("entries", [])):
         raise SystemExit("Global archive register entry_count does not match entries length")
 
-    source_json = sorted(sources_dir.glob("*.json"))
-    for path in source_json:
+    for path in sorted(sources_dir.glob("*.json")):
         load(path)
+    source_count = validate_manifest(
+        sources_dir,
+        "register-manifest.json",
+        "*-register.json",
+        "registers",
+        "register_count",
+    )
 
-    manifest_path = sources_dir / "register-manifest.json"
-    if not manifest_path.exists():
-        raise SystemExit("Source register manifest is missing")
-    manifest = load(manifest_path)
-    actual_registers = sorted(path.name for path in sources_dir.glob("*-register.json"))
-    manifest_rows = manifest.get("registers", [])
-    manifest_paths = [row.get("path") for row in manifest_rows]
-    if manifest.get("register_count") != len(actual_registers):
-        raise SystemExit("Source register manifest count does not match current files")
-    if manifest_paths != actual_registers:
-        raise SystemExit("Source register manifest paths do not match current files")
-
-    for row in manifest_rows:
-        path = sources_dir / row["path"]
-        if row.get("bytes") != path.stat().st_size:
-            raise SystemExit(f"Manifest byte count is stale for {path.name}")
-        if row.get("sha256") != sha256(path):
-            raise SystemExit(f"Manifest checksum is stale for {path.name}")
+    auctions_dir = ROOT / "auctions"
+    auction_data = load(auctions_dir / "auction-data.json")
+    auction_ids = [record.get("record_id") for record in auction_data.get("records", [])]
+    if len(auction_ids) != len(set(auction_ids)):
+        raise SystemExit("Duplicate record_id values in canonical auction-data.json")
+    for path in sorted(auctions_dir.glob("*.json")):
+        load(path)
+    auction_count = validate_manifest(
+        auctions_dir,
+        "data-manifest.json",
+        "*.json",
+        "files",
+        "file_count",
+    )
 
     print(f"People canonical/UI records: {len(records)}")
     print(f"Global archive register entries: {len(ids)}")
-    print(f"Source register manifest entries: {len(actual_registers)}")
+    print(f"Source register manifest entries: {source_count}")
+    print(f"Auction JSON manifest entries: {auction_count}")
     print("Public JSON structural checks: OK")
 
 
