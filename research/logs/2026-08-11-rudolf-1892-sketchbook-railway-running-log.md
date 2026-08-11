@@ -68,6 +68,12 @@ Primary correspondence currently gives the strongest chronological skeleton:
 
 Sketchbook pp. 12–13 can therefore be dated to 24 April with high confidence at corridor level.
 
+### Clock-standard control: Pacific time
+
+A very useful independent primary control has now been recovered in the official itinerary for President Benjamin Harrison's April 1891 Southern Pacific journey. The itinerary explicitly converts El Paso from Central time to Pacific time, then continues to label Tucson, Yuma and Los Angeles on Pacific time. Yuma and Los Angeles station minutes in that itinerary belong to a presidential special and are **not** substituted for Rudolf's ordinary service, but the document is strong evidence for the Southern Pacific clock convention on this western segment.
+
+This materially strengthens the decision to compare Rudolf's Maricopa/Yuma/California clock sequence against a fixed Pacific-time daylight model while still preserving historical-clock uncertainty.
+
 ### New clock control: Yuma
 
 A near-contemporary primary timetable printed in the `Arizona Sentinel`, 6 June 1891, reproduces Southern Pacific Pacific System times (table stated in effect from June 15, 1890). Despite noisy OCR, the westbound row can be read as a **12:40 p.m. departure from Yuma** toward Banning, Colton, Los Angeles, Santa Barbara, Sacramento, San Francisco, Portland, Ogden and the East/West coast network.
@@ -80,11 +86,37 @@ That sequence independently fits Rudolf's own Sunday-morning departure, same-day
 
 A complementary archive target has now been identified: Yuma County Library District's Arizona Historical Digital/ephemera holdings list **Southern Pacific – Timetables, 1887–1976** together with additional Southern Pacific material from 1877–1899. If online extraction fails, this is a focused institutional target for the exact April 1892 schedule.
 
+## Daylight-window audit — 24 April 1892
+
+A structured backend calculation is now stored at `research/data/rudolf-1892-daylight-window-audit_2026-08-11.json`. It uses NOAA-style solar equations and converts the astronomical events to a fixed UTC-8/Pacific comparison clock. This is an exclusion model, not a claim about every local clock.
+
+Rounded working values:
+
+| Place | Sunrise | Sunset | Civil dusk |
+|---|---:|---:|---:|
+| Maricopa | 04:47 | 18:06 | 18:32 |
+| Yuma | 04:58 | 18:16 | 18:42 |
+| Salton area | 05:02 | 18:22 | 18:48 |
+| Indio | 05:03 | 18:23 | 18:50 |
+| Banning | 05:05 | 18:26 | 18:53 |
+| Colton | 05:07 | 18:28 | 18:55 |
+| Los Angeles | 05:10 | 18:32 | 18:58 |
+
+Consequences:
+
+- Maricopa ~06:35 is unambiguously daylight, roughly 1h48 after modeled sunrise; modeled solar altitude is about 21°.
+- Yuma ~12:40 is strong midday daylight; modeled solar altitude is about 65°.
+- The critical illumination transition is the Salton/Indio→Banning/San Jacinto approach, where sunset falls around 18:22–18:26 and civil dusk around 18:48–18:53.
+- Los Angeles ~22:00 is far after twilight. Therefore p.12/13, if it represents a directly observed landscape rather than a later memory sketch, should not be assigned to the final Colton→Los Angeles night approach.
+- Viable direct-observation windows remain morning Arizona/Yuma, lower Colorado/California desert, Salton/Coachella afternoon, and late-afternoon/twilight San Jacinto/Banning approach.
+
+A deliberately crude elapsed-time plausibility check uses Yuma→Los Angeles = 249 miles in the 1891 Harrison itinerary and Banning = 88 miles from Los Angeles in a near-contemporary regional description. If one falsely assumed uniform running speed between the provisional Yuma 12:40 and Rudolf-derived Los Angeles ~22:00, the Banning mileage would fall around 18:40–18:45: almost exactly sunset/civil twilight. This is **not** being used as a timetable. Its only value is to show why real station rows are likely to be decisive and why Rudolf's visual observation of snow-covered San Jacinto is temporally plausible as a late-day event.
+
 ## External timetable recovery — live status
 
 ### 1. Official Railway Guide, 1892
 
-NAOTC identifies a March–April 1892 `Official Railway Guide`, Google Books volume ID `qrwsAQAAMAAJ`. Google Books/Google Play also exposes a January 1892 guide under volume ID **`Nh84AQAAMAAJ`**, shown as a free full volume. NAOTC cautions that Google's old-guide metadata often labels these scans generically as a `Freight Service Edition`, so the volume contents rather than the edition label must control use.
+NAOTC identifies a March–April 1892 `Official Railway Guide`, Google Books volume ID `qrwsAQAAMAAJ`. Google Books/Google Play also exposes a January 1892 guide as a free full volume. NAOTC cautions that Google's old-guide metadata often labels these scans generically as a `Freight Service Edition`, so the volume contents rather than the edition label must control use.
 
 Station-by-station Southern Pacific pages have not yet been extracted.
 
@@ -115,24 +147,23 @@ The 1 May Los Angeles public timetable is only six days after Rudolf's 24–25 A
 
 ### 5. Southern California Railway / Santa Fe, Los Angeles–San Diego
 
-A same-year reproduction has now been located: Historic Broadway San Diego reproduces a **Southern California Railway / Santa Fe Route schedule from the National City Record, 29 September 1892**. Five months later than Rudolf's passage, so it cannot control April times by itself, but it is a useful same-year corporate/local schedule and may expose station order and service pattern.
+A same-year reproduction has been located: Historic Broadway San Diego reproduces a **Southern California Railway / Santa Fe Route schedule from the National City Record, 29 September 1892**. Five months later than Rudolf's passage, so it cannot control April times by itself, but it is a useful same-year corporate/local schedule and may expose station order and service pattern.
 
-The 1892 Southern California Railway promotional map also confirms the Los Angeles–Orange County–Oceanside–San Diego network. Historical route work indicates that by this period the coastal alignment had become the durable connection after recurrent storm damage on the Temecula route. Exact April/May station times remain the target.
+The 1892 Southern California Railway promotional map confirms the Los Angeles–Orange County–Oceanside–San Diego network. Exact April/May station times remain the target.
 
 ### 6. Southern Pacific archival control at Yuma
 
-Yuma County Library District holdings list Southern Pacific timetable material covering 1887–1976 and related 1877–1899 ephemera. This is now the best identified institutional fallback for exact-date timetable acquisition.
+Yuma County Library District holdings list Southern Pacific timetable material covering 1887–1976 and related 1877–1899 ephemera. This is the best identified institutional fallback for exact-date timetable acquisition.
 
-## Why actual timetable extraction matters
+## Structured data created in this pass
 
-Once one issue-level or same-week table is recovered, the next operation is not merely route confirmation. It will produce `railway clock → daylight window → visible terrain`. That can eliminate p.12/p.13 mountain candidates passed before sunrise or after sunset and can distinguish lower-Colorado/Salton views from the San Jacinto approach.
-
-The provisional Maricopa→Yuma→Los Angeles clock skeleton is already strong enough to guide the next search, but it remains explicitly tiered because the Yuma 12:40 row is from a June-1890-effective table printed in June 1891, whereas the Maricopa 6:35 row is a close May 1892 same-year control.
+- `research/data/rudolf-1892-provisional-railway-clock-table_2026-08-11.json` — separates A/A-/B/C evidence grades and keeps exact reported times distinct from proxies/inference.
+- `research/data/rudolf-1892-daylight-window-audit_2026-08-11.json` — solar windows and p.12/13 daylight exclusions.
 
 ## Next research action
 
 1. Recover actual schedule panels from Rumsey 3139B or an 1892 `Official Railway Guide`.
 2. Recover an issue-level April/May 1892 Yuma/Maricopa Southern Pacific table; if unavailable online, prepare a narrow Yuma Library request.
 3. Recover the Wx4 1 May 1892 Los Angeles public timetable or an equivalent newspaper reproduction.
-4. Recover an April/May 1892 Southern California Railway / Santa Fe Los Angeles–San Diego table; use the September schedule only as same-year structural control.
-5. As soon as an exact/near-exact station table is recovered, append station/time rows here and create a structured clock table in `research/data/` before calculating daylight windows and terrain elimination.
+4. Recover an April/May 1892 Southern California Railway / Santa Fe Los Angeles–San Diego table.
+5. Replace the crude elapsed-time check with actual Salton/Indio/Banning/Colton rows, then calculate sun altitude/azimuth at those exact passage times before attempting DEM skyline elimination.
