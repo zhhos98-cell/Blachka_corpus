@@ -25,13 +25,13 @@ Public URLs are treated as stable. Research files, generated UI payloads and his
 
 ## Data layers
 
-The repository now uses three explicit data layers.
+The repository uses three explicit data layers.
 
-1. **Canonical research data** — evidence-bearing files that are edited only through research review. Examples include [`research/data/`](research/data/), [`people/people-data.json`](people/people-data.json), and current source registers.
-2. **Derived public data** — reproducible projections used by the interface. [`people/people-ui.json`](people/people-ui.json), for example, is generated from the canonical People authority file and is not an independent research source.
+1. **Canonical research data** — evidence-bearing files edited only through research review. Examples include [`research/data/`](research/data/), [`people/people-data.json`](people/people-data.json), current Source registers, and the canonical Auction lot table.
+2. **Derived public/structural data** — reproducible projections, manifests and diagnostics. [`people/people-ui.json`](people/people-ui.json), for example, is generated from the canonical People authority file and is not an independent research source.
 3. **Historical / retired data** — superseded shards, supplements and implementation artefacts retained under [`archive/`](archive/) for provenance or rollback.
 
-See [`docs/data-layers.md`](docs/data-layers.md) for the mutation rules. Structural cleanup must not silently alter evidence status, archival references, guards, locators, uncertainty language or stable identifiers.
+See [`docs/data-layers.md`](docs/data-layers.md) for mutation rules and [`docs/json-field-conventions.md`](docs/json-field-conventions.md) for prospective naming conventions. Structural cleanup must not silently alter evidence status, archival references, guards, locators, uncertainty language, OCR readings or stable identifiers.
 
 ## Research state
 
@@ -55,8 +55,8 @@ The census layer and deeper provenance layer remain distinct. A secure surviving
 ├── map/                       # collections map + Rudolf 1892 journey
 ├── people/                    # canonical People data + derived public payload
 ├── bibliography/              # public bibliography + data/tools
-├── sources/                   # public source index + evidence registers
-├── auctions/                  # public auction route + auction research records
+├── sources/                   # public source index + evidence registers + structural manifest
+├── auctions/                  # public auction route + canonical/supporting research layers
 ├── about/                     # public project/method route
 ├── rights/                    # public image-rights route
 ├── privacy/                   # public privacy route
@@ -68,12 +68,17 @@ The census layer and deeper provenance layer remain distinct. A secure surviving
 │   ├── working/               # active bounded research files
 │   ├── logs/                  # detailed dated research logs
 │   └── bibliography/          # working research bibliographies
-├── scripts/                   # reproducible derived-data builders and validators
+├── scripts/                   # reproducible builders, validators and read-only audits
+├── schemas/                   # minimal schemas + prospective field conventions
+│   └── generated/             # machine-generated structural/semantic audit indexes
 ├── docs/
+│   ├── README.md              # documentation map
 │   ├── architecture.md        # repository/public/research separation
 │   ├── data-layers.md         # canonical / derived / archive mutation contract
+│   ├── json-field-conventions.md
 │   ├── record-architecture-v1.md
 │   ├── site-performance.md
+│   ├── audits/                # dated diagnostic reports
 │   ├── development/
 │   └── design-history/
 ├── archive/
@@ -89,26 +94,43 @@ The census layer and deeper provenance layer remain distinct. A secure surviving
 
 The site remains framework-free: static HTML, CSS, JavaScript, JSON/CSV, and GitHub Pages. Long Sources and Bibliography pages remain static HTML by design so browser Find, indexing, stable fragments and no-JavaScript reading continue to work.
 
-The August 10–11 cleanup removed the obsolete Sources pass requests, detached Cases and Sources from the historical `site-core.css` bundle, retired the old Cases visual matrix, and moved unreferenced iterative UI layers out of the repository root into `archive/ui/2026-08-11/`. The active interface now uses page-family CSS with the shared navigation and accessibility layers rather than a single historical mega-bundle.
+The August 10–11 cleanup removed the obsolete Sources pass requests, detached Cases and Sources from the historical `site-core.css` bundle, retired the old Cases visual matrix, and moved unreferenced iterative UI layers out of the repository root into `archive/ui/2026-08-11/`. The active interface now uses page-family CSS with shared navigation and accessibility layers rather than a single historical mega-bundle.
 
-People uses [`people/people-data.json`](people/people-data.json) as its canonical authority file and [`people/people-ui.json`](people/people-ui.json) as the smaller interface projection. The old seventeen People shards and their stale manifest are preserved unchanged under `archive/data/people-shards-2026-08-10/`. Regenerate the public payload with `python scripts/build-people-ui.py`.
+People uses [`people/people-data.json`](people/people-data.json) as its canonical authority file and [`people/people-ui.json`](people/people-ui.json) as the smaller interface projection. The old seventeen People shards and their stale manifest are preserved unchanged under `archive/data/people-shards-2026-08-10/`.
 
-The global archive register has also been flattened: the seven records from the 10 August supplement are now part of the canonical [`sources/global-archive-register.json`](sources/global-archive-register.json), while the historical supplement is retained under `archive/data/`. Topic-specific source registers remain separate where they encode distinct evidence chains or research questions.
+Sources and Auctions retain heterogeneous evidence structures rather than being flattened into generic tables. [`sources/register-manifest.json`](sources/register-manifest.json) inventories the 34 current Source registers structurally; [`auctions/data-manifest.json`](auctions/data-manifest.json) inventories the Auction JSON layer while preserving [`auctions/auction-data.json`](auctions/auction-data.json) as the canonical lot table and the other files as supporting research/audit layers.
+
+The global archive register has been flattened only where a supplement explicitly belonged to the same canonical register: seven records from the 10 August supplement are now part of [`sources/global-archive-register.json`](sources/global-archive-register.json), while the historical supplement remains under `archive/data/`. Topic-specific registers remain separate where they encode distinct evidence chains or research questions.
+
+Minimal metadata envelope schemas and prospective field conventions live under [`schemas/`](schemas/). Generated schema-family, vocabulary, semantic-role, duplication and canonical-sync diagnostics live under [`schemas/generated/`](schemas/generated/); dated human-readable reports live under [`docs/audits/`](docs/audits/). These diagnostics are descriptive and never feed edits back into canonical evidence automatically.
 
 EB Garamond is served locally. A corpus-derived public subset is used for ordinary page text, with the full variable font retained as a missing-glyph fallback; the OFL notice remains in `assets/fonts/`.
 
-The performance contract is recorded in [`docs/site-performance.md`](docs/site-performance.md). Further optimization should be driven by browser measurements and actual transfer/render costs rather than by file size alone.
+The performance contract is recorded in [`docs/site-performance.md`](docs/site-performance.md). Further optimization should be driven by browser measurements and actual transfer/render costs rather than file size alone.
 
-## Validation
+## Validation and maintenance
 
-Derived-data cleanup is reproducible and read-only with respect to canonical research sources:
+Routine derived-data maintenance is reproducible and read-only with respect to canonical research evidence:
 
 ```bash
 python scripts/build-people-ui.py
+python scripts/build-structural-manifests.py
 python scripts/validate-derived-data.py
 ```
 
-The validator checks canonical/derived People counts, the absence of retired People shards from the public directory, duplicate IDs in the global archive register, and JSON parseability for current Source registers.
+The validator checks People canonical/derived counts, retired-shard placement, Source/Auction manifest checksums and file coverage, minimal metadata envelopes, duplicate canonical IDs, JSON parseability, and selected canonical/derived relationships.
+
+Structural diagnostics are separate from routine regeneration:
+
+```bash
+python scripts/audit-json-schema-families.py
+python scripts/audit-status-vocabularies.py
+python scripts/audit-field-semantics.py
+python scripts/audit-cross-register-duplication.py
+python scripts/audit-auction-canonical-sync.py
+```
+
+These audits identify schema families, local vocabulary boundaries, naming drift, exact duplication and support-layer/canonical sync backlogs. They do not merge records or apply proposed canonical updates. See [`scripts/README.md`](scripts/README.md) and [`schemas/README.md`](schemas/README.md).
 
 ## Record architecture
 
