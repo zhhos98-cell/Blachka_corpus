@@ -36,9 +36,11 @@ Current examples:
 - manifest generator: `scripts/build-structural-manifests.py`
 - exact-locator authority graph: `schemas/generated/source-authority-crosswalk.json`
 - authority generator: `scripts/build-source-authority-crosswalk.py`
+- compact public source-reuse projection: `sources/source-reuse-ui.json`
+- reuse projection generator: `scripts/build-source-reuse-ui.py`
 - generated structural/semantic audits: `schemas/generated/`
 
-The source-authority graph is derived navigation/maintenance structure. Its `SRCNODE-*` identifiers do not replace source citations, archival references, object identifiers, or evidence records. See `source-authority-model.md`.
+The source-authority graph is derived navigation/maintenance structure. Its `SRCNODE-*` identifiers do not replace source citations, archival references, object identifiers, or evidence records. The smaller public reuse projection contains only shared exact locators that are actually linked from the Sources page; its counts remain descriptive rather than evidentiary rankings. See `source-authority-model.md`.
 
 ## 3. Historical / retired data
 
@@ -86,6 +88,7 @@ For the normal derived-data maintenance cycle, run:
 python scripts/build-people-ui.py
 python scripts/build-structural-manifests.py
 python scripts/build-source-authority-crosswalk.py
+python scripts/build-source-reuse-ui.py
 python scripts/validate-derived-data.py
 ```
 
@@ -99,6 +102,6 @@ python scripts/audit-cross-register-duplication.py
 python scripts/audit-auction-canonical-sync.py
 ```
 
-Generated structural outputs belong under `schemas/generated/` and dated diagnostic notes under `docs/audits/YYYY-MM-DD/`; they do not feed changes back into canonical research data.
+Generated structural outputs belong under `schemas/generated/`, the compact Sources UI projection belongs under `sources/`, and dated diagnostic notes belong under `docs/audits/YYYY-MM-DD/`. None of these layers feed changes back into canonical research data.
 
 A clean run confirms structural relationships; it does not validate historical truth. Evidence review remains a separate research operation.
