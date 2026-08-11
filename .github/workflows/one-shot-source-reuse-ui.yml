@@ -1,0 +1,65 @@
+name: One-shot source reuse UI projection
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-source-reuse-ui.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Snapshot protected data
+        shell: bash
+        run: |
+          sha256sum people/people-data.json > /tmp/protected.sha
+          find research/data -type f -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected.sha
+          find sources -maxdepth 1 -type f -name '*-register.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected.sha
+          find auctions -maxdepth 1 -type f -name '*.json' ! -name 'data-manifest.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected.sha
+      - name: Build compact reuse projection
+        run: python scripts/build-source-reuse-ui.py
+      - name: Refresh Sources asset keys
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p = Path('sources/index.html')
+          text = p.read_text(encoding='utf-8')
+          text = re.sub(r'sources\.css\?v=[^"\']+', 'sources.css?v=20260811-2', text)
+          text = re.sub(r'sources-filter\.js\?v=[^"\']+', 'sources-filter.js?v=20260811-2', text)
+          p.write_text(text, encoding='utf-8')
+          PY
+      - name: Verify protected data unchanged
+        shell: bash
+        run: |
+          sha256sum people/people-data.json > /tmp/protected-after.sha
+          find research/data -type f -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected-after.sha
+          find sources -maxdepth 1 -type f -name '*-register.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected-after.sha
+          find auctions -maxdepth 1 -type f -name '*.json' ! -name 'data-manifest.json' -print0 | sort -z | xargs -0 sha256sum >> /tmp/protected-after.sha
+          diff -u /tmp/protected.sha /tmp/protected-after.sha
+      - name: Check frontend syntax and derived data
+        shell: bash
+        run: |
+          node --check sources/sources-filter.js
+          python -m json.tool sources/source-reuse-ui.json >/dev/null
+          python scripts/validate-derived-data.py
+      - name: Commit projection and cache rollout
+        shell: bash
+        run: |
+          git add sources/source-reuse-ui.json sources/index.html
+          git config user.name "Haohao Zhang"
+          git config user.email "zhhos98@gmail.com"
+          git commit -m "Publish compact Sources reuse index"
+          git pull --rebase origin main
+          git push origin HEAD:main
