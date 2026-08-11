@@ -2,12 +2,10 @@
   const css = document.querySelector('link[href*="bibliography.css"]');
   if (css) css.href = 'bibliography.css?v=20260810-8';
 
-  /* Shell enhancement is optional. The static bibliography is already complete and
-     remains visible even if this request is slow or unavailable. */
   if (!window.__blaschkaUnifiedUI && !window.__blaschkaUnifiedUIRequested) {
     window.__blaschkaUnifiedUIRequested = true;
     const ui = document.createElement('script');
-    ui.src = '../unified-ui.js?v=20260811-2';
+    ui.src = '../unified-ui.js?v=20260811-4';
     ui.async = true;
     document.head.appendChild(ui);
   }
