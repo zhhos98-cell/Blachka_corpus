@@ -1,9 +1,12 @@
 # Repository architecture
 
-The repository serves two different purposes and keeps them visibly separate:
+The repository serves three related purposes and keeps them visibly distinct:
 
 1. a public, stable GitHub Pages site;
-2. a research workspace that preserves evidence, uncertainty, working tables, and handoff state.
+2. a research workspace that preserves evidence, uncertainty, working tables, and handoff state;
+3. an archive for retired generated data and implementation layers that remain useful for provenance or rollback.
+
+The data-mutation boundary is defined in [`data-layers.md`](data-layers.md).
 
 ## 1. Public routes
 
@@ -11,90 +14,90 @@ Public URLs stay shallow and readable:
 
 - `/` — landing page
 - `/cases/` — documentary cases
+- `/map/` — collections map
+- `/map/rudolf-1892/` — Rudolf Blaschka 1892 journey
+- `/people/` — people authority interface
 - `/bibliography/` — bibliography and exports
 - `/sources/` — source index
 - `/auctions/` — auction/provenance records
+- `/about/` — scope and method
+- `/rights/` — rights and image credits
 - `/privacy/` — privacy notice
+- `/accessibility/` — accessibility statement
 
-These directories may contain page-specific CSS, JavaScript, and data when keeping them close to the route improves maintenance. Public routes should not be renamed simply to make the repository tree look cleaner.
+Public routes should not be renamed simply to make the repository tree look cleaner. Stable fragments and machine-readable public paths are treated the same way when external use is plausible.
 
 ## 2. Shared site assets
 
-Shared binary assets belong under `/assets/`. Fonts are the first shared assets moved there. The iterative frontend currently still has several root-level CSS and JavaScript layers; they should be consolidated before relocation so the repository does not merely hide technical debt inside a folder.
+The active frontend is framework-free. Shared assets remain at shallow paths where moving them would create churn without a runtime benefit:
 
-Target after consolidation:
+- `styles.css` and `secondary.css` — active base layers;
+- `navigation-shell.css` — canonical navigation shell;
+- `accessibility.css` and `accessibility.js` — accessibility behavior;
+- `typography-garamond.css` and `assets/fonts/` — reading typography;
+- `mobile-v3.css` — active responsive layer still imported by page-family CSS;
+- `unified-ui.js` — cross-page navigation/accessibility normalization while static shells are gradually standardized.
 
-```text
-assets/
-├── css/
-│   ├── core.css
-│   ├── home.css
-│   ├── subpages.css
-│   └── motion.css
-├── js/
-│   ├── site.js
-│   ├── home.js
-│   └── motion.js
-└── fonts/
-```
+Page-family CSS/JS stays beside its route where that improves maintenance. Historical consolidated bundles and superseded iterative layers have been moved to `archive/ui/2026-08-11/` after an active-reference audit.
 
-The important rule is behavioral stability: consolidate in the same cascade/execution order, verify desktop/tablet/mobile behavior, then remove superseded pass files.
+Future frontend consolidation should be behavioral, not cosmetic: remove a shared layer only after every active selector or behavior has an explicit replacement.
 
 ## 3. Research workspace
 
-`/research/` is a handoff layer, not the full provenance backend.
+`/research/` is a handoff and evidence-management layer, not merely website content.
 
-- `research/data/` contains canonical working tables and baselines.
+- `research/data/` contains canonical census and baseline tables.
 - `research/working/` contains bounded investigations, ingest priorities, deltas, and temporary structured outputs.
 - `research/logs/` contains detailed dated runs.
 - `research/bibliography/` contains research-question-specific bibliographies.
 - `research/RESEARCH_LOG.md` records decisions and corrections across runs.
 
-Promotion rule: a working JSON should move into a canonical table only when its evidential status and schema are stable enough to support repeated use.
+Promotion rule: a working JSON should become canonical only when its evidential status and schema are stable enough to support repeated use. Frontend cleanup does not mutate `research/data/`.
 
 ## 4. Public evidence directories
 
-`/sources/`, `/auctions/`, and `/bibliography/` currently mix public page code with structured research records. This is acceptable while the public page consumes those records directly or while their relationship to the route remains clear. Future cleanup should prefer local subdirectories such as `data/`, `runtime/`, and `legacy/` rather than moving all research JSON into one global dumping ground.
+`/sources/`, `/auctions/`, `/bibliography/`, and `/people/` contain both public interfaces and structured data because the relationship to the route remains explicit.
 
-Suggested pattern:
+Current canonical/derived examples:
 
-```text
-sources/
-├── index.html
-├── sources.css
-├── sources-az.js
-├── data/
-└── legacy/
-```
+- `people/people-data.json` — canonical authority records;
+- `people/people-ui.json` — derived interface projection;
+- `sources/global-archive-register.json` — canonical cross-institution archive register;
+- topic-specific Source registers — separate evidence modules where research questions and guards differ.
 
-The same pattern can be used for auctions and bibliography.
+Do not merge topic-specific registers solely because filenames or institutions overlap. Consolidation is appropriate when a file explicitly declares itself a supplement or generated fragment of one canonical parent and record values can be preserved.
 
-## 5. Documentation and archive
+## 5. Documentation, tooling, and archive
 
+- `/scripts/` — reproducible builders and read-only structural validators for derived/public data.
 - `/docs/development/` — implementation notes that remain useful.
 - `/docs/design-history/` — superseded layout experiments and design checkpoints.
-- `/archive/` — retired code or workflows kept only for provenance/recovery.
+- `/archive/data/` — retired generated data, historical shards and flattened supplements.
+- `/archive/ui/` — retired frontend code retained for a release cycle or historical comparison.
+- `/archive/workflows/` — retired workflows retained as passive provenance.
 
-Retired workflows do not remain under `.github/workflows/`, because files there are executable configuration rather than passive documentation.
+Files under `.github/workflows/` are executable configuration; retired workflows belong in `archive/workflows/` instead.
 
 ## 6. Naming rules
 
 - Public route names: stable, lowercase, semantic.
 - Canonical research tables: short noun phrases (`current_holders.csv`, `census.csv`).
+- Derived data: semantic name tied to its consumer or projection (`people-ui.json`), with a documented canonical source.
 - Working outputs: descriptive names with dates only when the date is analytically meaningful.
-- Avoid version-number filenames (`pass17`, `v4`) for new canonical code. Version history belongs in Git. Existing pass files should be retired during consolidation rather than renamed one by one.
+- Avoid new canonical filenames such as `pass17`, `v4`, `final2`, or `new`. Version history belongs in Git.
+- Historical files may retain old names unchanged when archived; provenance is more important than cosmetic normalization.
 
-## 7. Frontend consolidation order
+## 7. Cleanup order
 
-The current interface was produced by rapid iterative passes. Cleanup should occur in this order:
+Repository cleanup should occur in this order:
 
-1. freeze the present visual behavior;
-2. identify active versus unreferenced files;
-3. merge CSS in actual cascade order;
-4. merge JavaScript only where execution order is explicit and safe;
-5. update page references;
-6. verify desktop, tablet, phone, reduced-motion, and keyboard behavior;
-7. move superseded files to `archive/ui/` for one release cycle;
-8. delete them after the replacement has proved stable.
+1. identify the canonical source and current runtime consumers;
+2. distinguish evidence-bearing data from generated projections;
+3. freeze stable URLs and identifiers;
+4. make derived transformations reproducible where practical;
+5. consolidate only value-preserving supplements/fragments with a declared canonical parent;
+6. verify the active site and structural invariants;
+7. move superseded files to `archive/` rather than rewriting their history;
+8. delete archived implementation material only after the replacement has proved stable and provenance value is negligible.
 
-This avoids the common failure mode in which a repository becomes visually tidy while runtime behavior becomes harder to debug.
+This order keeps the repository legible without turning housekeeping into an undocumented research edit.
