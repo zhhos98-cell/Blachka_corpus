@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-13",
+  "title": "The Blaschka Object Network — Harvard Receiving, Unpacking and Installation Labor Register",
+  "scope": "Direct Blaschka/Harvard evidence for the skilled work performed after fragile glass models reached the receiving institution: outer handling, customs-supervised opening, unpacking, support removal, repair, remounting, setting-up, installation and public demonstration. The register keeps legal authority, material handling skill, paid technical service, patron participation and curatorial work distinct.",
+  "core_guard": "Do not collapse all receiving actors into a generic museum technician. The customs inspector possessed opening/inspection authority; E. A. Snow coordinated papers and inspection; porters handled outer packing and internal movement; Mary Lee Ware, Goodale, Waugh and Bierweiler possessed different forms of handling/mounting skill. 'Receiving-side craft' and 'serial reassembly' are project analytical terms. 'Professionalization' is too strong unless employment structures are independently demonstrated.",
+  "events": [
+    {
+      "id": "RECV-1892-HARVARD-PRELIMINARY",
+      "date": "1892-02-19",
+      "evidence": ["BLA-D00695 / 017:49", "BLA-D00028 / 015:28"],
+      "actors": [
+        {"actor":"unnamed Botanical Museum porter/houseboy","role":"internal lift/outer packing handling"},
+        {"actor":"George Lincoln Goodale","role":"case opening and careful model handling"},
+        {"actor":"Rudolf Blaschka","role":"maker present as observer/participant during preliminary opening"},
+        {"actor":"E. A. Snow","role":"paper/customs coordination"},
+        {"actor":"Capt. Wales of the Custom House","role":"formal customs inspection authority on later opening"}
+      ],
+      "sequence": [
+        "five boxes reach the museum",
+        "boxes are lifted to the third floor by chairlift/elevator",
+        "porter removes outer packing",
+        "Goodale opens a case and removes Datura arborea",
+        "further opening waits for customs authority",
+        "on 23 February Capt. Wales conducts a formal sample inspection; about eight specimens are opened and reported in excellent condition"
+      ],
+      "research_value": "The arrival sequence already distributes authority and skill. Preliminary museum handling and formal customs inspection are separate events; the receiver is an active site of object conversion rather than a passive endpoint."
+    },
+    {
+      "id": "RECV-1894-PUBLIC-DEMONSTRATION",
+      "date": "1894-11-07 speech / contemporary report in archive",
+      "evidence": ["BLA-D00264 / 015:267 and duplicate occurrences", "Harvard finding-aid item: An Account of the Blaschka Glass Models of Flowers by George L. Goodale, Boston Society of Natural History, 7 Nov 1894"],
+      "actions": [
+        "Goodale exhibits the method of packing to a large audience",
+        "three models from the latest importation are unpacked before the audience"
+      ],
+      "research_value": "Packing/unpacking becomes a public demonstration of technique. Receiving work was sufficiently remarkable to be shown as part of explaining the collection, rather than hidden as backstage logistics."
+    },
+    {
+      "id": "RECV-1897-PUBLISHED-SKILL",
+      "date": "1897",
+      "evidence": ["Marcia E. Hale, 'The Blaschka Flower Models of the Harvard Museum,' Popular Science Monthly 50 (Mar. 1897)"],
+      "claim": "The contemporary published account explicitly describes unpacking as equally delicate as packing and treats low breakage as evidence of skill in both processes.",
+      "research_value": "Contemporary reception recognizes unpacking as a distinct skilled operation, not merely the reversal of a packing sequence."
+    },
+    {
+      "id": "RECV-1900-WARE-SKILL",
+      "date": "1900-11-04",
+      "evidence": ["BLA-D01822–01823 / 020:353–354"],
+      "actor": "Mary Lee Ware",
+      "source_view": "Rudolf Blaschka",
+      "actions_or_skill": [
+        "Rudolf answers visitors' worries about packing/unpacking by saying Ware is 'marvelously skilled in unpacking'",
+        "he describes her removing tissue paper deftly and carefully",
+        "he contrasts her method with violently pulling against obstacles such as spines",
+        "he says she has never broken a flower or leaf"
+      ],
+      "research_value": "The maker explicitly recognizes the patron as a trusted handler. Expertise at the receiving end is neither anonymous nor reducible to curatorial rank."
+    },
+    {
+      "id": "RECV-1903-EMBODIED-RISK-ADVICE",
+      "date": "circa 1903 sequence; exact header not on OCR page",
+      "evidence": ["BLA-D01981 / 020:517"],
+      "source_view": "Rudolf Blaschka",
+      "advice": "People unpacking should remove ringed jackets, shawls and coats to prevent clothing/jewelry from catching on the models.",
+      "research_value": "Unpacking risk is embodied. The handler's clothing becomes part of the object environment and can snag fragile forms even when the case itself has survived heavy shocks.",
+      "guard": "OCR is imperfect; use only the secure operational meaning until image-level transcription."
+    },
+    {
+      "id": "RECV-1906-WAUGH-PAID-SERVICE",
+      "date": "1906-06-04/12",
+      "evidence": ["BLA-D02082 / 021:99"],
+      "actor": "John Waugh",
+      "document_type": "Harvard College service/payment receipt",
+      "service": "packing, setting-up, and unpacking Blaschka models for exhibition in the Administration Building of the New Medical School, A.M.A., June 4th to 12th",
+      "external_date_control": "The American Medical Association's 57th annual session was held in Boston 5–8 June 1906, with its House of Delegates convening 4 June.",
+      "research_value": "Handling and installation appear as an explicitly paid service category. The same worker can span packing, exhibition setup and unpacking rather than belonging only to one end of a journey."
+    },
+    {
+      "id": "RECV-1906-CUSTOMS-SOCIAL-UNPACKING",
+      "date": "late November 1906 sequence; BLA-D02098 continuation ends Tuesday 27th",
+      "evidence": ["BLA-D02093–02098 / 021:110–115"],
+      "actors": ["Custom House Inspector", "Mary Lee Ware", "George Lincoln Goodale", "President Charles W. Eliot and Mrs. Eliot as invited observers"],
+      "sequence": [
+        "shipment approaches America on Friedrich der Grosse",
+        "Goodale asks Treasurer's Office to retain papers and arrange museum-side customs opening",
+        "inspector scheduled for Monday 10 a.m. to superintend unpacking",
+        "Ware asks Eliot and his wife to attend",
+        "Goodale explicitly says 'the unpacking is a matter of considerable interest'",
+        "after completion Goodale reports only slight breakage and says he showed packing and unpacking in Ware's presence to Mrs. Eliot and then President Eliot"
+      ],
+      "research_value": "Unpacking is simultaneously a customs-controlled operation, skilled handling event and staged scientific/social demonstration. The object's entry into the collection is observable to elite witnesses rather than hidden backstage.",
+      "date_guard": "Sequence is securely 1906 from adjacent dated correspondence; exact day of the undated individual pages should be image/catalog checked before citation."
+    },
+    {
+      "id": "RECV-METHOD-TRANSPORT-INSTALLATION",
+      "date": "undated procedural text in Harvard archive; later collection practice",
+      "evidence": ["05B embedded OCR: Series V, Subseries II, 'METHOD OF PREPARING THE MODELS FOR TRANSPORTATION AND THEIR INSTALLATION'"],
+      "sequence": [
+        "model fastened to firm cardboard support",
+        "placed in strong cardboard box",
+        "pendent parts immobilized with crushed tissue",
+        "inner boxes packed in wooden case with straw and outer burlap/straw bale",
+        "Customhouse Inspector opens boxes in Museum",
+        "models removed from cardboard transport supports",
+        "models attached to gypsum plaques",
+        "placed in proper case and labelled"
+      ],
+      "technical_actors": [
+        {"actor":"Dr. Henry F. Libby","role":"devised gypsum-tablet method"},
+        {"actor":"John Waugh","role":"perfected manufacture process; initially made Botanical Museum plaques"},
+        {"actor":"Louis C. Bierweiler","role":"later made plaques; identified as assistant in Botanical Museum"}
+      ],
+      "research_value": "Unpacking is a state transformation, not simple removal from a box. A transport assemblage is dismantled and the glass model is reconstructed as a mounted, labelled museum object."
+    },
+    {
+      "id": "RECV-C1911-DIENER-BUDGET",
+      "date": "circa 1911 sequence; undated page between late-1910/early-1911 correspondence",
+      "evidence": ["BLA-D02254–02255 / 021:271–272"],
+      "institutional_plan": "Goodale defines a necessary assistant to the Curator, comparable to a German DIENER, who should know museum materials/appliances and every method of preservation and installation, prepare specimens, inspect exhibition material and guide visitors.",
+      "salary_context": "Goodale notes Louis C. Bierweiler at $16/week and says he should soon receive at least $18/week (about $936/year). Freight and expressage also appear in the projected museum contingent budget.",
+      "research_value": "Preservation and installation knowledge is being described as durable museum staffing rather than an ad hoc favor. This supports differentiation/institutionalization of receiving expertise without requiring the anachronistic label 'registrar'.",
+      "guard": "Exact date of this undated budget memo remains to be catalog-verified."
+    },
+    {
+      "id": "RECV-1929-BIERWEILER-CLEAR-LOOSEN-REPAIR",
+      "date_range": "1929-04 to 1929-07",
+      "evidence": ["BLA-D02885 / 040:244", "BLA-D02891–02892 / 040:250–251"],
+      "actor": "Louis C. Bierweiler",
+      "roles": [
+        "sent by Ames to Treasurer's Office to arrange prompt clearing of four incoming cases",
+        "anticipated by Rudolf as the skilled person who will loosen models from framed transport plates for another mounting",
+        "repairs one or two slight breaks after arrival",
+        "participates in moving the received models into temporary cases for study/display planning"
+      ],
+      "research_value": "By 1929 one named museum worker spans administrative clearance, physical support removal, minor repair and installation."
+    },
+    {
+      "id": "RECV-1932-BIERWEILER-UNPACKING-SKILL",
+      "date": "1932-10-31",
+      "evidence": ["BLA-D02914 / 040:273"],
+      "source_view": "Rudolf Blaschka",
+      "actor": "Louis C. Bierweiler",
+      "claim": "Rudolf says the shipment contained complicated things to unpack and compliments Bierweiler's skill and carefulness for bringing them through splendidly.",
+      "research_value": "Maker trust in receiving skill persists across decades and is attached to a named museum assistant/technician rather than to anonymous institutional capacity."
+    }
+  ],
+  "role_distinctions": [
+    {"role":"customs authority","actors":["Capt./Col. Wales", "unnamed Custom House Inspector"],"operations":["authorize/select opening", "inspect/pass cases", "superintend customs-sensitive unpacking"],"guard":"authority is not identical to delicate handling skill"},
+    {"role":"document/clearance coordination","actors":["E. A. Snow", "Harvard Treasurer's Office", "later Bierweiler in clearance arrangement"],"operations":["papers", "broker/importation work", "inspector arrangement", "clearance"],"guard":"separate administrative from physical object handling"},
+    {"role":"outer/internal handling","actors":["unnamed 1892 porter/houseboy"],"operations":["elevator movement", "outer packing removal"]},
+    {"role":"patron-handler","actors":["Mary Lee Ware"],"operations":["skilled unpacking", "receiving oversight", "organizing/attending demonstrations"],"guard":"do not relabel Ware as a technician"},
+    {"role":"curator/scientist-handler","actors":["George Lincoln Goodale", "William F. Ganong", "Oakes Ames"],"operations":["opening", "condition judgment", "repair", "installation decisions", "demonstration", "delegation"]},
+    {"role":"paid technical/installational labor","actors":["John Waugh", "Louis C. Bierweiler"],"operations":["packing", "unpacking", "setting-up", "support/gypsum plaque manufacture", "loosening/remounting", "minor repair", "exhibition/collections care"]}
+  ],
+  "analytical_observations": [
+    "Unpacking was not simply packing in reverse. Packing created a temporary transport assemblage; receiving work dismantled that assemblage, inspected condition, removed temporary supports, repaired as necessary, remounted the model, labelled it and installed it for use/display.",
+    "Receiving expertise was distributed across actors with non-equivalent powers. Legal authority to open, physical skill to handle, curatorial authority to install and financial responsibility for the work could belong to different people.",
+    "Handling knowledge became increasingly explicit in the archive: maker trust in Ware's manual skill; embodied risk advice; a paid Waugh service receipt; a budget describing preservation/installation expertise; and Bierweiler's later assistant/technician role.",
+    "Public demonstrations in 1894 and 1906 show that unpacking itself could become an epistemic spectacle: spectators were invited to witness the conversion of shipped glass into museum objects.",
+    "The safest longitudinal claim is differentiation, naming, payment and institutionalization of receiving expertise. A linear story of professionalization would overstate the evidence and import later registrar/conservator categories."
+  ],
+  "web_and_archive_context": [
+    {"source":"Harvard HOLLIS ecb00006","finding":"official finding aid states that Mary Lee Ware took an active role and personally unpacked each model; collection preserves extensive correspondence, administrative files, original boxes and mailing material","locator":"https://hollisarchives.lib.harvard.edu/catalog/ecb00006"},
+    {"source":"JAMA, 1906 Boston Session official call","finding":"American Medical Association 57th annual session took place in Boston 5–8 June 1906, with House of Delegates on 4 June","locator":"https://jamanetwork.com/journals/jama/fullarticle/1108241"},
+    {"source":"Marcia E. Hale, Popular Science Monthly, March 1897","finding":"contemporary published account says unpacking was equally delicate to packing and few losses demonstrated skill in both","locator":"https://en.wikisource.org/wiki/Popular_Science_Monthly/Volume_50/March_1897/The_Blaschka_Flower_Models_of_the_Harvard_Museum"},
+    {"source":"modern museum-work historiography","finding":"technical and material care labor in museums has its own history; therefore novelty should not rest on the generic claim that backstage labor mattered","guard":"use comparative literature to delimit novelty rather than back-project modern job titles"}
+  ],
+  "next_retrievals": [
+    "original image/catalog metadata for BLA-D02082 service receipt to confirm signature and full financial context",
+    "original images for BLA-D01823 and BLA-D01981 before quotation-level use of Rudolf's manual handling descriptions",
+    "catalog/date metadata for the undated Goodale Botanical Museum budget memo BLA-D02254",
+    "original image of Goodale's 7 Nov 1894 packing/unpacking lecture or its contemporary newspaper report",
+    "Harvard payroll/personnel/administrative traces for John Waugh and Louis C. Bierweiler",
+    "determine the exact date and shipment represented by BLA-D02096–02098 late-November-1906 unpacking event",
+    "map Waugh-to-Bierweiler plaque/support production chronologically without assuming a formal occupational succession"
+  ]
+}
