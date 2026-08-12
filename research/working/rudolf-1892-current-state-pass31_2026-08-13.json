@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.2.0-handoff",
+  "generated_date": "2026-08-13",
+  "status": "current_research_state_after_pass31",
+  "project": "Rudolf Blaschka America 1892 — transport, reference media, split workshop, selective reactivation and receiving reconstruction",
+  "current_thesis": "The 1892 journey intervened in an already distributed Harvard–Hosterwitz reference-supply ecology. Travel relocated part of reference selection into the maker's presence, but field productivity remained governed by season, bodily/time capacity and Harvard's existing collection: Cambridge could make a locally available plant redundant before it became a retained reference. Selected plants were assigned to different media whose temporal capacities differed. Drawings stabilized completed observations; dried/alcohol material preserved selected structures; seeds, bulbs and live plants could transport future observability; deferred local supply and cultivated institutions repaired phenological or geographic inaccessibility. These references moved asynchronously through caches and relays, and only some were later reactivated in glass. Finished models then underwent another sequence of state changes as freight, customs-controlled assemblages, unpacked/remounted museum objects and sometimes destabilized exhibition objects. Transport redistributed work in space, time, media and authority by repeatedly changing what counted as the useful, movable or observable object.",
+  "new_after_pass28": [
+    {
+      "pass": 29,
+      "result": "BLA-D00879 proves collection-aware field filtering: Rudolf says Cambridge does not want some species because they are already represented. Harvard's existing collection therefore acts as a remote negative selector upstream of return. Named rejected taxa remain unrecovered."
+    },
+    {
+      "pass": 30,
+      "result": "Formal denominator guard added. The nine-sheet Tempe packet is a minimum discovered micro-packet, while Harvard's >300 specimen statement combines 1892 and 1895. Selective conversion is an event-level mechanism, not a measured 1/9 or expedition-wide rate."
+    },
+    {
+      "pass": 31,
+      "result": "Deferred access split by fulfillment status: Crinum/Orcutt = later supply actually received in Cambridge; Sequoia = planned later flowering-material supply with no dispatch/receipt yet; Darlingtonia = cultivated institutional substitution after route rejection."
+    }
+  ],
+  "strongest_mechanisms": [
+    "residual inaccessibility inside an existing remote-supply ecology",
+    "maker-present field selection versus delegated access",
+    "collection-aware remote negative selection: already represented versus collection gap",
+    "field media assignment before packing",
+    "two-stage selective conversion: Gate A entry into reference stock; Gate B later workshop reactivation",
+    "access repair by planned deferral, fulfilled deferral, institutional substitution, delegation, remote route governance or rejection",
+    "transport of future biological observability through seeds, bulbs and living material",
+    "packet aggregation with heterogeneous internal provenance",
+    "Cambridge as cache, relay, collection-state filter and two-way workshop interface",
+    "media-specific counting and source-specific denominators",
+    "temporal stock: returned reference material converted into projected years of future workshop labour",
+    "finished-model state changes through freight, customs, receiving, installation, repair and re-stabilization",
+    "mixed receiving craft ecology and distributed handling authority"
+  ],
+  "selection_model": {
+    "gate_A_reference_entry": [
+      "ecological/seasonal availability",
+      "maker interest and morphological usefulness",
+      "Harvard collection-gap / already-represented test",
+      "reference-medium feasibility",
+      "body, time, route and cost capacity",
+      "retention as field reference"
+    ],
+    "gate_B_workshop_reactivation": [
+      "retained reference",
+      "production priority",
+      "supporting material and seasonal usability",
+      "workshop labour/capacity",
+      "selection for glass manufacture"
+    ]
+  },
+  "deferred_access_status_ontology": [
+    "desired/needed",
+    "temporarily inaccessible",
+    "repair strategy selected",
+    "promised/requested",
+    "dispatched",
+    "received at relay",
+    "forwarded onward",
+    "survived/cultivated",
+    "entered target biological state",
+    "drawn/preserved",
+    "reactivated in model production"
+  ],
+  "evidence_denominators": {
+    "D1": "current discovered/indexed micro-packets such as the nine Tempe sheets; qualitative use only",
+    "D2": "complete 1892 Ganong-Blaschka HUH herbarium subset; not yet bounded",
+    "D3": "all 1892 expedition reference outputs across drawings, dried/alcohol material, seeds, bulbs, living/fresh material and collaborators; heterogeneous and not yet enumerable"
+  },
+  "best_empirical_anchors": [
+    "Colorado Springs 24 May: collection-aware filtering and 200/projected-400 post-filter working counts",
+    "Tempe 18–22 April: minimum dated herbarium packet and explicit field selection",
+    "Hoffmannseggia 433: specimen/model divergence and delayed workshop reactivation",
+    "Abronia 345: direct encounter + early model + guarded drawing genealogy",
+    "Crinum/Orcutt: fulfilled deferred supply to Cambridge after field phenology could not be waited for",
+    "Sequoia sempervirens: planned deferred supply after missed flowering season, fulfillment open",
+    "Darlingtonia: remote route governance + cancelled Shasta proposal + cultivated St Louis substitution",
+    "San Diego live cactus/bulb packet: heterogeneous provenance aggregated into one dispatch packet",
+    "Jamaica ~100/106/116: forecast, self-count and institutional coloured-drawing ledger remain separate",
+    "Chicago 1893: installation creates renewed movement/breakage/reconstruction",
+    "Harvard receiving craft ecology: Ware, Goodale, Snow/customs, Waugh, Bierweiler"
+  ],
+  "negative_evidence_rules": [
+    "Do not infer named Cambridge rejections from later model absence; BLA-D00879 proves a mechanism, not a taxon list.",
+    "No HUH search hit is not historical specimen absence.",
+    "No exact model-list species string is not proof of no glass descendant; historical synonymy and labels must be checked.",
+    "Same genus is not a descendant relationship.",
+    "Specimen/model metadata alignment does not prove the surviving sheet was the sole workshop template.",
+    "Harvard's >300 specimens combines 1892 and 1895 and is not an 1892 denominator.",
+    "Do not use 1/9 or any current packet count as a conversion rate.",
+    "A promised later supply is not a dispatched, received, survived or modelled supply."
+  ],
+  "quantitative_rules": [
+    "Never use a single expedition 'species collected' total.",
+    "Attach each number to actor, date, medium/operation and status.",
+    "Treat Colorado 200 and projected 400 as already conditioned by season, collection-state filtering and work capacity.",
+    "Preserve Jamaica ~100/106/116 separately as forecast/self-count/institutional drawing ledger.",
+    "Preserve Rudolf ~3-year and Goodale actor-specific future-work estimates separately until original Goodale letters are closed.",
+    "Packet quantities remain separate from species-study, herbarium-sheet and model-output counts."
+  ],
+  "article_architecture_candidate": [
+    "I. An existing distributed supply system and the residual access gap, 1889–1891",
+    "II. Selection before transport: maker judgment, collection-state filtering and media assignment",
+    "III. Repairing inaccessibility: deferral, substitution, cache, relay and asynchronous packet networks",
+    "IV. Cambridge inventory: field mobility translated into temporal stock and future workshop labour",
+    "V. Selective reactivation: bounded reference lineages and later glass",
+    "VI. Finished glass on the move: freight, customs, receiving, installation and renewed reconstruction"
+  ],
+  "public_map_guard": "No more generic route lines. Represent collection filtering as decision edges; deferred-supply states as packet/status cards; failed or promised routes only when their documentary status is explicit; within-building receiving/installation as object-state timelines.",
+  "next_highest_value_retrievals": [
+    "Find named examples of Cambridge 'already represented' rejection in 1892 Acquisition, Development, and Shipping lists or Goodale correspondence.",
+    "Bound D2: obtain complete 1892 W. F. Ganong & R. Blaschka HUH specimen export/query, then inspect original sheet labels and historical names.",
+    "Trace Crinum/Orcutt and the May live cactus/bulb box from Cambridge onward into Hosterwitz receipt, survival, cultivation, flowering, drawing or model records.",
+    "Search later 1892–1894 correspondence for actual fulfillment of the promised Sequoia flowering-material supply.",
+    "Inspect GH 01676890 and original model-433 label images; Corning Abronia drawing and model-345 labels.",
+    "Image-transcribe Chicago BLA-D00145/149/150 and Snow BLA-D00140.",
+    "Resolve the original Goodale correspondence behind the future-work estimates and the June return inventory.",
+    "Continue 1889–1891 named access-gap search to connect 'hitherto inaccessible' to individual 1892 target forms."
+  ],
+  "recent_passes": [
+    "pass23 return inventory / temporal stock",
+    "pass24 routine supply / field-access gap",
+    "pass25 access failure / substitution repertoire",
+    "pass26 yield governance / bilateral selection",
+    "pass27 yield ontology / quantitative register",
+    "pass28 Jamaica count progression / media accounting",
+    "pass29 collection-aware filtering / negative evidence",
+    "pass30 herbarium denominator / evidence bounds",
+    "pass31 deferred supply / phenology fulfillment status"
+  ]
+}
