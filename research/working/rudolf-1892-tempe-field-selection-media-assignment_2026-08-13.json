@@ -1,0 +1,122 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "primary_source_mechanism_model",
+  "title": "Rudolf Blaschka 1892 — Tempe field selection, preservation choice and media assignment",
+  "purpose": "Extend pass19-20 by asking whether selective conversion began only later in Hosterwitz or was already built into fieldwork at Tempe. The Tempe letters show an earlier filtering stage: abundant vegetation was reduced to a subset judged useful, showy, characteristic and practically handleable, and different references were assigned different preservation/media routes.",
+  "primary_sources": [
+    {
+      "source": "BLA-D00773 / 017:127",
+      "date": "1892-04-18",
+      "place": "Tempe, Arizona",
+      "direct_finding": "Rudolf describes Tempe as the first western destination and says he and Ganong expect to remain a few days because the vegetation provides abundant good study material.",
+      "mechanism": "site duration responds to reference yield"
+    },
+    {
+      "source": "BLA-D00779 / 017:133",
+      "date": "1892-04-20",
+      "place": "Tempe, Arizona",
+      "direct_finding": "Rudolf says that after much drawing on the previous day he now has ten interesting species. He describes a carriage excursion into the desert with Ganong, notes abundant unfamiliar vegetation, and says he has already drawn two additional smaller cactus species that day.",
+      "mechanism": "drawing converts field abundance into a counted working set",
+      "guard": "Do not equate the ten 'interesting species' automatically with the later count of twenty-five 'useful' species; the categories and time windows differ."
+    },
+    {
+      "source": "BLA-D00785 / 017:139",
+      "date": "1892-04-22",
+      "place": "Tempe, Arizona",
+      "direct_findings": [
+        "A group excursion went by rented wagon to mountains/desert a few miles outside Tempe.",
+        "The party carried holders to keep plants fresh.",
+        "Rudolf drew flowers of about four cactus species and dug up young examples of those species to take with him.",
+        "He explicitly says these cacti did not need to be preserved in alcohol; he intended instead to send them from California to Hosterwitz.",
+        "He deliberately did not collect the dangerous 'Jumping Cactus' because of its hooked spines.",
+        "He found a striking Delphinium in a small desert patch and drew it immediately after returning in the afternoon.",
+        "He says a large proportion of desert plants were very small, so most were ignored; the party selected the most showy and most characteristic plants, giving twenty-five species useful to them.",
+        "He expected to finish all his Tempe sketches before leaving for Maricopa and California."
+      ],
+      "mechanism": "explicit field filtering plus medium-specific preservation/transport choice"
+    }
+  ],
+  "field_selection_model": {
+    "sequence": [
+      "encounter abundant vegetation",
+      "evaluate usefulness / showiness / characteristic form / handling feasibility",
+      "select or reject",
+      "assign a reference medium or preservation route",
+      "stabilize or dispatch the reference",
+      "later workshop reactivation or non-reactivation"
+    ],
+    "media_and_handling_routes_visible": [
+      {
+        "route": "drawing",
+        "evidence": "ten interesting species from recent drawing by 20 April; cactus flowers and Delphinium drawn by 22 April",
+        "function": "retains visible/formal information without requiring continuous carriage of the whole plant"
+      },
+      {
+        "route": "temporary freshness holders",
+        "evidence": "22 April excursion equipped with holders to keep plants fresh",
+        "function": "keeps plant material usable between field encounter and near-term study/drawing"
+      },
+      {
+        "route": "live uprooted specimen + planned postal/freight dispatch",
+        "evidence": "young cactus examples dug up and intended for shipment from California to Hosterwitz",
+        "function": "moves living reference material across the split workshop"
+      },
+      {
+        "route": "alcohol preservation considered but rejected for selected cacti",
+        "evidence": "Rudolf explicitly contrasts live shipment with preserving those cacti in alcohol",
+        "function": "reveals a preservation menu rather than one default transport form"
+      },
+      {
+        "route": "pressed/herbarium specimen",
+        "evidence": "independent Harvard University Herbaria records preserve multiple Ganong-Blaschka Tempe specimens dated 18-22 April 1892",
+        "function": "creates a durable institutional reference lineage distinct from drawings and living dispatches",
+        "guard": "The Tempe letters cited here do not individually identify each surviving HUH sheet; this route is established by joining the correspondence to the independent herbarium records."
+      },
+      {
+        "route": "noncollection",
+        "evidence": "most tiny desert plants were ignored; Jumping Cactus was deliberately not collected",
+        "function": "absence from the transported packet can be actively produced in the field"
+      }
+    ]
+  },
+  "two_stage_selective_conversion": {
+    "stage_1_field": "Field selection and media assignment: abundant vegetation is reduced to a practically and representationally useful packet.",
+    "stage_2_workshop": "Workshop reactivation: only some returned references later become drawings, analytical studies or glass models.",
+    "claim": "Selective conversion therefore begins before transport from Arizona. Transportable reference forms are produced through field choices about what is worth retaining and how it can survive or remain usable."
+  },
+  "temporal_source_criticality": {
+    "letter_calendar": {
+      "1892-04-18": "Monday",
+      "1892-04-19": "Tuesday",
+      "1892-04-20": "Wednesday",
+      "1892-04-21": "Thursday",
+      "1892-04-22": "Friday"
+    },
+    "letter_evidence": "On 22 April Rudolf refers to excursions 'today and Tuesday', indicating at least two named group excursions on 22 and 19 April.",
+    "minimum_HUH_sheet_dates": [
+      "1892-04-18",
+      "1892-04-20",
+      "1892-04-21",
+      "1892-04-22"
+    ],
+    "result": "Herbarium specimen dates should not be mapped one-to-one onto the two named group-excursion dates. They may register collecting outside group excursions, Ganong's collecting, preparation/label dates, or other field episodes.",
+    "guard": "Keep mobility clock, drawing/work clock, specimen-label clock and dispatch clock distinct until sheet images and complete itinerary evidence are joined."
+  },
+  "research_claims": [
+    "The field did not output an undifferentiated mass of plants; it output selected references in different material/media states.",
+    "Usefulness was an explicit historical category in Rudolf's own account: many plants were ignored, while showy and characteristic forms were selected.",
+    "Material properties affected medium choice: cactus survival made live shipment possible, dangerous spines could prevent collection, and temporary holders kept other material fresh.",
+    "Portability was produced through selection and representation before later packing and freight operations.",
+    "The split workshop was coupled by heterogeneous reference forms, not by a single specimen channel."
+  ],
+  "article_consequence": "Pass19-20 showed selective workshop reactivation and the need to separate reference continuity from name continuity. Pass21 moves the selection mechanism upstream: the reference corpus itself was already filtered and materially differentiated in the field. A stronger article architecture can therefore follow two gates: field selection/media assignment, then workshop reactivation/model production.",
+  "map_decision": "No new public geographic lines. Tempe should eventually support a detail-layer media-switch diagram showing encounter -> select/reject -> draw/fresh/live/pressed -> dispatch/retain, rather than additional route geometry.",
+  "next_steps": [
+    "Retrieve the complete Ganong-Blaschka 1892 HUH collector-level result set and inspect original sheet-label dates/names.",
+    "Search the Tempe and immediate California letters for the actual dispatch of the live cactus packet and whether Hosterwitz confirms receipt/growth.",
+    "Crosswalk the twenty-five useful Tempe species, where identifiable, against Corning preparatory drawings, HUH sheets and later model numbers.",
+    "Keep the ten-species and twenty-five-species counts separate unless an intermediate letter establishes cumulative identity.",
+    "Test whether comparable explicit selection language appears in Jamaica and San Diego, which would show whether the Tempe mechanism was local or a recurrent field method."
+  ]
+}
