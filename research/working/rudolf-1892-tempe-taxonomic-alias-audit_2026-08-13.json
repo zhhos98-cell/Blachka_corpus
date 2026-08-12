@@ -1,0 +1,170 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "taxonomic_stress_test_of_pass19_selective_conversion",
+  "title": "Rudolf Blaschka 1892 — Tempe packet taxonomic alias audit",
+  "purpose": "Test whether the apparent scarcity of model descendants in the pass19 Tempe herbarium packet is merely an artefact of historical nomenclature. Current taxonomic backbones are used only as alias maps; they do not substitute for nineteenth-century labels or prove historical identity by themselves.",
+  "source_policy": {
+    "taxonomy": "Royal Botanic Gardens, Kew, Plants of the World Online (POWO) as primary current name/synonym backbone; ITIS used for Acmispon maritimus var. maritima where the current indexed Kew search did not expose the synonym list clearly.",
+    "model_corpus": "05B_Blaschka_Digital_Archive_Literature_Technical_MASTER(1).json exact case-insensitive string search across the mounted full JSON.",
+    "negative_rule": "A zero string count is a corpus-search negative, not proof that no model, drawing or unpublished workshop reference existed."
+  },
+  "audit_rows": [
+    {
+      "herbarium_taxon": "Brassica nigra (L.) W.D.J.Koch",
+      "barcode": "GH 00672769",
+      "current_backbone": "POWO currently treats Brassica nigra as a synonym of Mutarda nigra (L.) Bernh.",
+      "historically_relevant_aliases_checked": [
+        "Brassica nigra",
+        "Mutarda nigra",
+        "Sinapis nigra",
+        "Sisymbrium nigrum"
+      ],
+      "05B_counts": {
+        "Brassica nigra": 0,
+        "Mutarda nigra": 0,
+        "Sinapis nigra": 0,
+        "Sisymbrium nigrum": 0
+      },
+      "result": "no_alias_level_model_or_drawing_match_in_05B",
+      "guard": "POWO's 2026 acceptance of Mutarda nigra is a modern backbone choice. It is used here only to widen the search, not to rewrite the 1892 specimen name."
+    },
+    {
+      "herbarium_taxon": "Daucus pusillus Michx.",
+      "barcode": "GH 00973362",
+      "current_backbone": "POWO accepts Daucus pusillus and lists nine heterotypic synonyms.",
+      "historically_relevant_aliases_checked": [
+        "Daucus pusillus",
+        "Babiron pusillum",
+        "Daucus australis",
+        "Daucus brevifolius",
+        "Daucus hispidifolius",
+        "Daucus montevidensis",
+        "Daucus scaber"
+      ],
+      "05B_counts": {
+        "Daucus pusillus": 0,
+        "Babiron pusillum": 0,
+        "Daucus australis": 0,
+        "Daucus brevifolius": 0,
+        "Daucus hispidifolius": 0,
+        "Daucus montevidensis": 0,
+        "Daucus scaber": 0
+      },
+      "result": "no_alias_level_match_in_05B"
+    },
+    {
+      "herbarium_taxon": "Erodium cicutarium (L.) L'Her.",
+      "barcode": "GH 01863429",
+      "current_backbone": "POWO accepts Erodium cicutarium and lists Geranium cicutarium L. as its homotypic synonym, among a very large synonym set.",
+      "historically_relevant_aliases_checked": [
+        "Erodium cicutarium",
+        "Geranium cicutarium"
+      ],
+      "05B_counts": {
+        "Erodium cicutarium": 0,
+        "Geranium cicutarium": 0
+      },
+      "result": "no_primary_homotypic_alias_match_in_05B",
+      "guard": "The full POWO synonym set is much larger than the two names searched here. This row is not yet an exhaustive historical-name audit."
+    },
+    {
+      "herbarium_taxon": "Cryptantha maritima (Greene) Greene",
+      "barcode": "GH 02024320",
+      "current_backbone": "POWO accepts Cryptantha maritima and lists Krynitzkia maritima Greene as a homotypic synonym published in 1885.",
+      "historically_relevant_aliases_checked": [
+        "Cryptantha maritima",
+        "Krynitzkia maritima"
+      ],
+      "05B_counts": {
+        "Cryptantha maritima": 0,
+        "Krynitzkia maritima": 0
+      },
+      "result": "no_1892_plausible_alias_match_in_05B"
+    },
+    {
+      "herbarium_taxon": "Lycium fremontii A.Gray",
+      "barcode": "GH 00939452",
+      "current_backbone": "POWO accepts Lycium fremontii; nineteenth-century aliases include Lycium gracilipes A.Gray (1877), Lycium fremontii var. gracilipes A.Gray (1886), and Lycium umbellatum Rose (1890, illegitimate later homonym).",
+      "historically_relevant_aliases_checked": [
+        "Lycium fremontii",
+        "Lycium gracilipes"
+      ],
+      "05B_counts": {
+        "Lycium fremontii": 0,
+        "Lycium gracilipes": 0,
+        "Lycium vulgare": 2
+      },
+      "nearby_model": "model 343 is Lycium vulgare in the seventh shipment",
+      "result": "model_343_is_not_an_alias_match_to_Lycium_fremontii",
+      "guard": "Genus identity is insufficient for a specimen-to-model crosswalk."
+    },
+    {
+      "herbarium_taxon": "Eriogonum inflatum Torr.",
+      "barcodes": [
+        "GH 01851133",
+        "GH 01851145"
+      ],
+      "current_backbone": "POWO accepts Eriogonum inflatum; Eriogonum glaucum Small is a later heterotypic synonym published in 1898.",
+      "historically_relevant_aliases_checked": [
+        "Eriogonum inflatum",
+        "Eriogonum glaucum"
+      ],
+      "05B_counts": {
+        "Eriogonum inflatum": 0,
+        "Eriogonum glaucum": 0,
+        "Eriogonum fasciculatum": 3
+      },
+      "nearby_model_or_drawing": "05B contains Eriogonum fasciculatum in the Corning drawing list and as model 580 in the 12th shipment, January 1896.",
+      "result": "Eriogonum_fasciculatum_is_a_different_species_not_a_synonym_rescue_for_the_Tempe_sheets"
+    },
+    {
+      "herbarium_taxon": "Acmispon maritimus (Nutt.) D.D.Sokoloff",
+      "barcode": "GH 01963615",
+      "current_backbone": "ITIS verifies Acmispon maritimus var. maritima with synonyms Hosackia maritima Nutt. and Lotus salsuginosus var. salsuginosus.",
+      "historically_relevant_aliases_checked": [
+        "Acmispon maritimus",
+        "Hosackia maritima",
+        "Lotus salsuginosus",
+        "Anisolotus maritimus"
+      ],
+      "05B_counts": {
+        "Acmispon maritimus": 0,
+        "Hosackia maritima": 0,
+        "Lotus salsuginosus": 0,
+        "Anisolotus maritimus": 0,
+        "Hosackia strigosa": 1
+      },
+      "false_positive_control": {
+        "05B_record": "Corning drawing list contains Hosackia strigosa, 1892 or 1895.",
+        "taxonomy": "POWO treats Hosackia strigosa Nutt. as a homotypic synonym of Acmispon strigosus (Nutt.) Brouillet, not Acmispon maritimus. POWO also lists an illegitimate later homonym Hosackia maritima Torr. under Acmispon strigosus, which makes name-only matching especially hazardous.",
+        "result": "do_not_crosswalk_GH01963615_to_Hosackia_strigosa_drawing"
+      },
+      "result": "no_secure_alias_level_match_in_05B"
+    }
+  ],
+  "stress_test_result": {
+    "headline": "Selective conversion survives nomenclatural expansion.",
+    "finding": "Expanding the pass19 exact-string search through historically plausible synonyms does not reveal a hidden one-to-one model pipeline for the Tempe packet. The strongest new outcome is methodological: taxonomic generic transfers can manufacture plausible false matches, especially in Acmispon/Hosackia/Lotus.",
+    "secure_model_descendants_after_audit": [
+      "Hoffmannseggia / model 433 remains the only currently secure specimen-to-later-model branch in the minimum Tempe packet."
+    ],
+    "do_not_upgrade": [
+      "Lycium fremontii -> model 343 Lycium vulgare",
+      "Eriogonum inflatum -> model/drawing Eriogonum fasciculatum",
+      "Acmispon maritimus -> Corning drawing Hosackia strigosa"
+    ]
+  },
+  "digital_completeness_guard": {
+    "HUH_current_statement": "Harvard's current specimen-search page states that the Herbaria steward approximately six million specimens, of which about 1.8 million are digitized and searchable, with new records added daily.",
+    "consequence": "The nine-sheet Tempe packet is a minimum digital packet. A missing online result cannot be treated as absence from the physical Harvard collections. Collector-level completeness requires database assistance/export or staff inquiry."
+  },
+  "article_consequence": "The selective-conversion argument is stronger after alias stress-testing because it no longer rests on naive exact-name matching. The archive contains several tempting same-genus or historical-generic neighbors, but current taxonomic control shows that these should remain separate lineages unless nineteenth-century model labels or drawings explicitly join them.",
+  "next_steps": [
+    "Request or derive a complete HUH collector-level result set for W. F. Ganong & R. Blaschka, 1892.",
+    "Inspect all nine currently indexed sheet images and record verbatim original label names separately from current HUH determinations.",
+    "Extend alias audit to the full eventual collector packet, using names actually available by 1892 before later synonyms are used as search aids.",
+    "Search the Corning preparatory-drawing list under both original nineteenth-century names and current accepted names, keeping taxonomic identity separate from document-title identity.",
+    "Do not change the public map from this pass."
+  ]
+}
