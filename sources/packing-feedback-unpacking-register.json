@@ -1,18 +1,24 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.0.1",
   "title": "The Blaschka Object Network — Packing Feedback and Skilled Unpacking Register",
-  "generated_date": "2026-08-10",
+  "generated_date": "2026-08-12",
   "scope": "Primary-source sequences in which packing design, customs opening, museum unpacking, repair and receiver feedback become one iterative circulation process. The register concentrates on the Ware Collection because the correspondence preserves both workshop-side methods and receiver-side evaluation across multiple shipments.",
-  "methodological_guard": "Successful arrival is not treated as proof that packing alone worked. Customs inspection, route choice, handling, receiver skill, remounting and repair are recorded as separate actions. Retrospective statements are distinguished from dated transaction documents, and OCR wording is not silently normalised where an image check remains useful.",
+  "methodological_guard": "Successful arrival is not treated as proof that packing alone worked. Customs inspection, route choice, handling, receiver skill, remounting and repair are recorded as separate actions. Retrospective statements are distinguished from dated transaction documents, sampled condition reports are not generalized to unopened contents, and OCR wording is not silently normalised where an image check remains useful.",
   "events": [
     {
       "id": "PACK-1892-CUSTOMS-OPENING",
-      "date_range": "1892",
-      "status": "direct_primary_evidence",
-      "event": "Five cases arrive Cambridge and are opened under customs supervision",
-      "evidence": "The 1892 correspondence identifies five cases L.B. 1–5, consigned through Boston. Rudolf later reported from Cambridge that all five boxes had been found, that the first was opened before a customs inspector, and that the contents had arrived without even a scratch before the remaining cases were opened over subsequent days.",
-      "stages": ["arrival", "customs", "unpacking", "condition feedback"],
-      "research_value": "Customs opening was already embedded in the receiving procedure at the beginning of the botanical-model programme."
+      "date_range": "1892-02",
+      "status": "direct_multi_document_chain_rebuilt_2026-08-12",
+      "event": "U.B. 346–350 reach Cambridge; unpacking is staged around museum skill and customs inspection",
+      "evidence": "BLA-D00695 / 017:49 reports five boxes reaching the museum on 19 February 1892 and looking well preserved. The Botanical Museum porter removed outer packing; George L. Goodale opened a case and the Datura arborea model examined was well preserved; further opening waited for the customs inspector. A later Goodale letter, BLA-D00028 / 015:28, reports Capt. Wales of the Custom House opening about eight specimens, all found in excellent condition, while the remainder awaited further unpacking.",
+      "case_marks": "U.B. 346–350 from BLA-D00016 / 015:16",
+      "stages": ["arrival", "museum handling", "customs", "sample opening", "unpacking", "condition feedback"],
+      "source_guards": [
+        "The direct evidence does not support the earlier derived wording 'L.B. 1–5'.",
+        "The direct evidence does not support generalizing 'without even a scratch' to the whole unopened consignment.",
+        "Good condition is asserted only for the boxes as visually received, the Datura model directly examined, and the later customs sample of about eight specimens."
+      ],
+      "research_value": "Receiving success depended on distributed handling competence and staged authority. Museum staff, Goodale, a customs inspector and later Capt. Wales/Ganong occupy different parts of the opening sequence; the historical unit is a receiving and inspection process, not simply a crate arriving intact."
     },
     {
       "id": "PACK-1929-PROTECTION-REGULATION-REPAIR",
@@ -67,11 +73,19 @@
       "knowledge": ["temporary mounting", "immobilisation", "crate architecture", "material selection", "case marking"]
     },
     {
+      "actor": "George L. Goodale / Harvard receiver",
+      "knowledge": ["careful unpacking", "condition assessment", "coordination with customs and helpers"]
+    },
+    {
+      "actor": "Botanical Museum porter / receiving staff",
+      "knowledge": ["outer-packing removal", "museum movement and handling"]
+    },
+    {
       "actor": "Oakes Ames / Harvard receiver",
       "knowledge": ["arrival condition", "vibration effects", "quarantine sensitivity of packing materials", "feedback for future shipments"]
     },
     {
-      "actor": "Custom-house Inspector",
+      "actor": "Custom-house Inspector / Capt. Wales",
       "knowledge": ["authorised inspection/opening", "border compliance"]
     },
     {
@@ -83,5 +97,5 @@
       "knowledge": ["plaster-plaque remounting method"]
     }
   ],
-  "research_observation": "Packing functioned as a distributed instruction and feedback system. The workshop encoded handling knowledge into supports, tissue, boxes and crate architecture; customs officers controlled opening; museum technicians translated temporary transport mounts into exhibition mounts; receiver reports of vibration, breakage and regulated packing material were fed back into later shipments. The historical unit is therefore a packing–unpacking loop rather than a crate."
+  "research_observation": "Packing functioned as a distributed instruction and feedback system. The workshop encoded handling knowledge into supports, tissue, boxes and crate architecture; customs officers controlled opening; museum staff translated freight cases into inspectable and displayable objects; receiver reports of vibration, breakage and regulated packing material were fed back into later shipments. The historical unit is therefore a packing–unpacking loop rather than a crate."
 }
