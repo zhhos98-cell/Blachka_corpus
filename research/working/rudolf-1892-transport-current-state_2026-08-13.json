@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0.0-handoff",
+  "generated_date": "2026-08-13",
+  "status": "current_research_state_before_next_conversation",
+  "project": "Rudolf Blaschka America 1892 transport / handoff / split-workshop study",
+  "current_thesis": "1892 split the Blaschka workshop without stopping production. Transport kept the split workshop coupled by converting plants, models, papers and references into differently movable, handleable, inspectable, certifiable, countable and settleable forms. Later shipments aggregated asynchronous production histories into apparently coherent consignments, while customs release, accounting and exhibition installation could continue the object's mobility history after physical arrival.",
+  "core_mechanisms": [
+    "controlled decomposition and selective reassembly",
+    "packetization into transport-specific media",
+    "handoff and temporary reassignment of authority",
+    "split workshop: travelling Rudolf + stationary Leopold production",
+    "shipment as aggregation technology",
+    "representational divergence",
+    "borrowed commercial infrastructure",
+    "distributed handling knowledge",
+    "transport infrastructure as memory infrastructure",
+    "post-arrival settlement and installation mobility"
+  ],
+  "clock_model": [
+    "production",
+    "dispatch",
+    "transport_clearance",
+    "settlement_accounting",
+    "reference",
+    "shipment_counting",
+    "installation_exhibition"
+  ],
+  "public_map_state": {
+    "layout": "full-width horizontal map; former right detail panel moved below map",
+    "analytical_modes": ["Journey", "Work", "Flows"],
+    "entity_filter": ["Person", "Objects", "Both"],
+    "first_public_object_packet": "U.B.346-350",
+    "object_route": ["Hosterwitz", "Bremen forwarding", "Atlantic freight", "New York", "in bond toward Boston", "receiving/customs chain", "Harvard Botanical Museum"],
+    "current_guard": "Do not add more public lines until pending image/source checks are complete. Settlement and installation are better represented as object-state timelines/detail-strip events than as new geographic lines."
+  },
+  "closed_or_high_confidence_findings": [
+    {
+      "id": "shipment-6-boundary",
+      "finding": "January 1892 sixth shipment = model nos. 252-311 inclusive, exactly 60 models.",
+      "evidence": ["Harvard annotated shipment list", "BLA-D00006", "BLA-D00016"],
+      "guard": "Do not use 251-310; no model-to-case allocation among U.B.346-350 yet."
+    },
+    {
+      "id": "shipment-9-boundary",
+      "finding": "January 1894 ninth shipment = model nos. 424-473 inclusive, exactly 50 models; model 474 begins tenth shipment.",
+      "evidence": ["cleaner annotated shipment-list OCR", "BLA-D00222", "BLA-D00237"]
+    },
+    {
+      "id": "shipment-10-boundary",
+      "finding": "August 1894 tenth shipment = model nos. 474-523 inclusive, exactly 50 models; physical cases I.B.366-369.",
+      "evidence": ["annotated shipment list", "BLA-D00247"]
+    },
+    {
+      "id": "stationary-leopold-production",
+      "finding": "Models 312-322 were made by Leopold in the first half of 1892 and shipped only in February 1893.",
+      "evidence": ["Harvard annotated shipment list", "BLA-D01748", "BLA-D00884-00885"]
+    },
+    {
+      "id": "eighth-shipment-regional-block",
+      "finding": "374-410 = 37 ordinary plant models; 20/15/2 regional partition strongly reconstructs 374-393 Jamaica, 394-408 West, 409-410 garden material.",
+      "evidence": ["BLA-D00168-00169", "annotated shipment list"],
+      "confidence": "high inference",
+      "guard": "Confirm with original list image/model labels before publication."
+    },
+    {
+      "id": "model-290",
+      "finding": "Datura arborea model 290 was already made, shipped and unpacked at Harvard before Rudolf's later living encounter with Datura in Jamaica.",
+      "evidence": ["annotated shipment list", "BLA-D00695", "BLA-D00711-00712", "BLA-D01746-01749"]
+    },
+    {
+      "id": "model-433",
+      "finding": "Hoffmannseggia model 433 forms the strongest current herbarium-specimen / glass-model divergence case.",
+      "evidence": ["HUH GH01676890", "Harvard model-label layer", "BLA-D01746-01749", "January 1894 shipment chronology"],
+      "guard": "Inspect original model-433 label and specimen sheet/image before publication-level one-to-one modelling-source claim."
+    },
+    {
+      "id": "snow-longitudinal",
+      "finding": "E. A. Snow is a durable Boston receiving-side intermediary visible from 1892 through 1923 in documentary handoff, customs inspection, freight/importation bills and route memory.",
+      "evidence": ["BLA-D00024", "BLA-D00028", "BLA-D00140", "BLA-D00191-00192", "BLA-D00239", "BLA-D02095", "BLA-D02693", "BLA-D00341", "BLA-D01745"],
+      "guard": "First name/corporate identity unresolved."
+    },
+    {
+      "id": "chicago-installation",
+      "finding": "Chicago 1893 demonstrates post-arrival remobilization: apparently successful carriage was followed by installation-induced movement/breakage and receiving-side repair/remounting/testing.",
+      "evidence": ["BLA-D00145", "BLA-D00149", "BLA-D00150"],
+      "guard": "Image-level transcription required before direct publication quotation of corrupt OCR details."
+    }
+  ],
+  "highest_priority_open_questions": [
+    "Image-level transcription of BLA-D00140: Snow $106.97 bill; resolve case wording, bounded/bonded wording and corrupt local-freight phrase.",
+    "Image-level transcription of BLA-D00145, BLA-D00149 and BLA-D00150 for Chicago express/velvet/repair sequence.",
+    "Locate Harvard 1892 receipts and bills folder and Field trip expenses from estate, 1892.",
+    "Inspect original digitized Harvard model 433 label and GH01676890 specimen image/annotations.",
+    "Inspect Abronia umbellata model 345 label and Corning preparatory drawing to test one of Goodale's 'few American plants'.",
+    "Resolve exact 1892 New York-to-Boston bonded freight leg for U.B.346-350.",
+    "Identify exact 1893 carrier/transfer meant by 'Ocean and the Sound Steamers'.",
+    "Resolve E. A. Snow's full identity through Boston directories/customs-broker records.",
+    "Search Baker Library Boston Fruit Company 1891-1894 letterpress copybook and 1892-1898 private ledger.",
+    "Search NARA Boston RG36 for Snow/Wales/Harvard/importation/inspection records.",
+    "Resolve model-to-case allocation within U.B.346-350.",
+    "Identify exact individual seventh-shipment American models beyond current guarded candidates."
+  ],
+  "recommended_next_session_order": [
+    "image-check the four critical 1893 primary pages",
+    "close model 433 and Abronia 345 through digitized labels/specimen/drawing records",
+    "attack Harvard receipts/bills and field-trip expense records",
+    "continue Boston Fruit Company and NARA counterpart-archive work",
+    "only then decide what new object packets or state timelines should be promoted to the public map",
+    "draft article architecture around two main anchors: five cases + one glassmaker; field plant -> divergent descendants -> later glass",
+    "use Chicago 1893 as a third anchor if original-image transcription confirms the OCR-level mechanism"
+  ],
+  "recent_logs": [
+    "research/logs/2026-08-12-rudolf-1892-transport-handoff-calibration-pass09.md",
+    "research/logs/2026-08-12-rudolf-1892-map-layout-object-route-pass10.md",
+    "research/logs/2026-08-12-rudolf-1892-multiplex-transport-research-pass11.md",
+    "research/logs/2026-08-12-rudolf-1892-map-packetization-pass12.md",
+    "research/logs/2026-08-12-rudolf-1892-shipment-contents-split-workshop-pass13.md",
+    "research/logs/2026-08-12-rudolf-1892-borrowed-commercial-infrastructure-pass14.md",
+    "research/logs/2026-08-12-rudolf-1892-specimen-model-divergence-dispatch-pass14.md",
+    "research/logs/2026-08-13-rudolf-1892-snow-settlement-exhibition-transport-pass15.md",
+    "research/logs/2026-08-13-rudolf-1892-transport-research-handoff-pass16.md"
+  ],
+  "working_files": [
+    "research/working/rudolf-1892-transport-handoff-ledger_2026-08-12.json",
+    "research/working/rudolf-1892-multiplex-transport-chronology_2026-08-12.json",
+    "research/working/rudolf-1892-map-packets-pass12_2026-08-12.json",
+    "research/working/rudolf-1892-shipment-output-crosswalk_2026-08-12.json",
+    "research/working/rudolf-1892-specimen-model-value-crosswalk_2026-08-12.json",
+    "research/working/rudolf-1892-settlement-installation-clocks_2026-08-13.json",
+    "research/working/rudolf-1892-transport-current-state_2026-08-13.json"
+  ],
+  "source_registers": [
+    "sources/forwarder-longitudinal-register.json",
+    "sources/customs-regulation-register.json",
+    "sources/ware-transatlantic-logistics-register.json",
+    "sources/boston-fruit-jamaica-mobility-register.json",
+    "sources/ea-snow-boston-settlement-register.json"
+  ]
+}
