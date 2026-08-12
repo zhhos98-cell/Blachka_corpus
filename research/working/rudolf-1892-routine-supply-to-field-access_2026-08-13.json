@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "pretrip_control_and_novelty_calibration",
+  "title": "Rudolf Blaschka 1892 — from routine reference supply to field access",
+  "purpose": "Calibrate the novelty of the 1892 journey against the pre-existing Harvard–Hosterwitz supply ecology. Fresh plant circulation, seed cultivation and remote reference provision were already contractual and operational before Rudolf travelled. The 1892 journey should therefore be read as an intervention aimed at forms that routine remote supply had left inaccessible, not as the invention of long-distance botanical reference circulation.",
+  "pretrip_controls": [
+    {
+      "source": "Harvard–Blaschka proposition/agreement, Hosterwitz, 1889-07-10",
+      "direct_findings": [
+        "Harvard undertakes reasonable expenses for care of the garden for American plants during spring and summer.",
+        "Harvard, through George L. Goodale, is to provide plants, seeds and books needed for preparation of the collection.",
+        "The agreement therefore treats biological/reference supply as part of the production arrangement rather than an occasional favor."
+      ],
+      "mechanism": "reference provision and cultivation are embedded in the institutional production contract",
+      "ocr_guard": "Currency wording in the garden-expense clause is corrupt; use the obligation, not the exact weekly amount, until image checked."
+    },
+    {
+      "source": "BLA-D01178–01179 / 018:48–49, Hosterwitz, 1889-09-23",
+      "direct_findings": [
+        "Leopold and Rudolf say that for fresh material they arranged with Goodale to raise most open-air plants from seeds in their own garden.",
+        "Some plants difficult to raise in Germany were to be supplied differently; Goodale had promised large quantities of fresh seeds and roots for selected plants, with roots routed via Holland.",
+        "The Blaschkas were also buying roots and shrubs of American plants from botanical and other gardens, while cut flowers and leaves of hot-house plants and trees could be obtained locally or abroad.",
+        "They explicitly present Goodale's assistance in these supply routes as necessary to making the collection complete."
+      ],
+      "mechanism": "distributed reference ecology combines cultivation, transnational plant supply, garden purchase and detached fresh material before 1892"
+    },
+    {
+      "source": "BLA-D00006 / 015:6, Hosterwitz, 1891-12-17",
+      "direct_finding": "On the eve of the journey Leopold and Rudolf say Rudolf looks forward to analyzing and collecting 'those important forms of American plants which have been hitherto inaccessible to us.'",
+      "mechanism": "field travel is framed as a response to residual inaccessibility inside an already functioning remote-supply system"
+    }
+  ],
+  "revised_novelty_claim": {
+    "reject": [
+      "1892 created the transatlantic supply of fresh American botanical material to Hosterwitz.",
+      "The Blaschkas previously worked only from books or dead specimens until Rudolf travelled.",
+      "Live reference circulation began with the 1892 cactus packets."
+    ],
+    "support": "By 1889 cultivation costs, provision of plants/seeds/books, garden raising from seed, roots via Holland, purchases from botanical gardens, and acquisition of cut flowers/leaves were already part of the production ecology.",
+    "stronger_claim": "The 1892 journey targeted the remainder produced by remote supply: important American forms that still could not be made adequately accessible through seed, root, garden, book or detached-material channels. Field travel expanded and recalibrated an existing reference infrastructure rather than replacing it.",
+    "working_term": "access gap / residual inaccessibility",
+    "term_guard": "Analytical shorthand; the historical source itself uses 'hitherto inaccessible'."
+  },
+  "infrastructure_model": {
+    "routine_pre1892_channels": [
+      "Hosterwitz garden cultivation from seed",
+      "Goodale-supplied seeds",
+      "roots supplied through transnational routes including Holland",
+      "purchase from botanical and other gardens",
+      "cut flowers and leaves obtained locally or abroad",
+      "books/reference literature supplied by Harvard"
+    ],
+    "1892_added_channels": [
+      "maker's direct field observation",
+      "maker's immediate drawing from living plants",
+      "joint field collection with Ganong and local botanical actors",
+      "pressed/herbarium specimens with expedition provenance",
+      "live plants and bulbs personally selected/assembled during travel",
+      "mixed-origin packets relayed through Cambridge",
+      "field judgments about showiness, characteristic form, danger and usefulness"
+    ],
+    "result": "Travel increases the kinds of access and provenance available to the workshop. It does not abolish remote supply; after the journey both field-derived and routine garden/supply channels continue to coexist."
+  },
+  "why_field_presence_matters": {
+    "claim": "The strongest distinction is not live versus dead material but delegated versus maker-present access.",
+    "pre1892": "Goodale, gardens and supply routes could deliver seeds, roots, books, cut flowers and leaves to Hosterwitz.",
+    "1892": "Rudolf could choose plants in situ, decide immediately what to draw or reject, preserve or uproot, compare forms in a landscape, and record provenance/conditions through his own embodied encounter.",
+    "consequence": "The journey changes who performs selection and at what stage. Reference selection shifts upstream from institutional suppliers toward the maker in the field."
+  },
+  "relation_to_pass21_22": "Pass21 reconstructed field selection/media assignment; pass22 reconstructed packet assembly and asynchronous relay. The 1889 controls show that these mechanisms extend an older supply ecology. Their 1892 specificity lies in maker-controlled selection and direct access to forms the existing supply system could not deliver adequately.",
+  "article_consequence": "This calibration prevents a weak discovery narrative. The paper can present 1892 as a repair or expansion of a distributed production system facing access limits. The travel episode becomes historically legible because the archive preserves both the normal system and the exceptional journey designed to overcome its residual gaps.",
+  "map_decision": "No map expansion. Pre-1892 supply routes belong in a contextual diagram/table, not the 1892 public route. A small background layer may later show 'routine supply ecology' versus '1892 field-derived packets'.",
+  "next_steps": [
+    "Search 1889–1891 correspondence for concrete failures or complaints in the routine seed/root/fresh-material supply system that identify why particular plants remained inaccessible.",
+    "Crosswalk the December 1891 'hitherto inaccessible' category against plants Rudolf explicitly targeted in 1892, especially Darlingtonia and other Goodale-requested forms.",
+    "Determine whether Goodale's pre-trip lists/instructions identify species that could not be grown or supplied remotely.",
+    "Use 1895 second journey as a later control only after the 1892 access-gap mechanism is closed; do not broaden the current paper prematurely.",
+    "Preserve the contractual reference-provision clauses as evidence that biological supply was part of the economics/institutional structure of model production."
+  ]
+}
