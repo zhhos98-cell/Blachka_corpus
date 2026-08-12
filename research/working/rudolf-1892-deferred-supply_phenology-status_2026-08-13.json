@@ -1,0 +1,102 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "working_access-repair_status_ontology",
+  "title": "Rudolf Blaschka 1892 — deferred supply, phenology and fulfillment status",
+  "purpose": "Separate different ways the expedition repaired temporary inaccessibility instead of collapsing them into generic 'later supply'.",
+  "cases": [
+    {
+      "id": "CRINUM-ORCUTT",
+      "taxon_or_material": "Crinum bulb plus earlier seed packet from C. R. Orcutt",
+      "source": "BLA-D00927 / 017:282, Cambridge, June 1892",
+      "problem": "Rudolf could not wait in California for the flowering time of all useful plants.",
+      "repair_strategy": "delegated later supply through a local botanical supplier",
+      "observed_status_chain": [
+        "field-season phenological mismatch",
+        "Orcutt relationship established",
+        "seed packet sent and received",
+        "large Crinum bulb sent later and received by Rudolf in Cambridge",
+        "Rudolf proposes a larger standing arrangement for seeds and bulbs of plants whose flowering he could not wait for"
+      ],
+      "closure_level": "fulfilled to Cambridge",
+      "open": "onward forwarding to Hosterwitz, survival, cultivation, flowering, drawing and model use not yet closed"
+    },
+    {
+      "id": "SEQUOIA-SEMPERVIRENS",
+      "taxon_or_material": "Sequoia sempervirens flowering material",
+      "source": "BLA-D00856 / 017:210, San Francisco, 18 May 1892",
+      "problem": "Flowering season of most conifers in central California had already passed; direct observation failed.",
+      "repair_strategy": "planned later local supply through botanical acquaintances",
+      "observed_status_chain": [
+        "target reached geographically",
+        "desired reproductive state unavailable",
+        "local botanist network expected to send flowers later"
+      ],
+      "closure_level": "planned deferred supply",
+      "open": "no dispatch/receipt/survival/model chain yet recovered"
+    },
+    {
+      "id": "DARLINGTONIA-CULTIVATED-SUBSTITUTION",
+      "taxon_or_material": "Darlingtonia californica",
+      "sources": [
+        "BLA-D00856 / 017:210",
+        "BLA-D00873-BLA-D00874 / 017:227-228",
+        "BLA-D00896 / 017:251"
+      ],
+      "problem": "Desired habitat trip near Shasta was time- and cost-intensive; Goodale's delayed telegram ultimately instructed them not to go.",
+      "repair_strategy": "route rejection followed by cultivated institutional substitution",
+      "observed_status_chain": [
+        "desired target",
+        "4-day / $70 route proposal",
+        "remote consultation with Goodale",
+        "Shasta leg cancelled",
+        "flowering cultivated plant encountered at St Louis botanical garden",
+        "colour sketch made",
+        "specimen placed in alcohol"
+      ],
+      "closure_level": "substitution fulfilled at reference-capture level",
+      "open": "exact genealogy from St Louis reference to Corning drawing 133264 and Harvard model 444 remains open"
+    }
+  ],
+  "status_ontology": [
+    "desired/needed",
+    "temporarily inaccessible",
+    "repair strategy selected",
+    "promised/requested",
+    "dispatched",
+    "received at relay",
+    "forwarded onward",
+    "survived/cultivated",
+    "entered observable target state (for example flowering)",
+    "drawn/preserved",
+    "reactivated in model production"
+  ],
+  "repair_types": [
+    {
+      "type": "planned deferral",
+      "example": "Sequoia flowers",
+      "definition": "wait for a later biological state and ask a local contact to send material"
+    },
+    {
+      "type": "fulfilled deferral to relay",
+      "example": "Orcutt seeds + Crinum bulb",
+      "definition": "later material actually reaches the expedition/museum relay after the traveller has left the field site"
+    },
+    {
+      "type": "institutional substitution",
+      "example": "Darlingtonia",
+      "definition": "replace a costly habitat visit with cultivated access that provides the desired observable state"
+    }
+  ],
+  "main_result": "Phenological failure was not a terminal category. The network could shift time, supplier, route or site of observation. These repairs had different fulfillment statuses and should be tracked event by event.",
+  "analytical_claim": "Transport could move future observability rather than a completed observation. Seeds and bulbs carried the capacity for a later biological state; deferred fresh material carried a future moment of flowering; cultivated institutions could substitute a currently observable specimen for an abandoned habitat route.",
+  "negative_evidence_rule": "A plan to send material later is not evidence that the material was ever dispatched or received. Keep promised/requested, dispatched, received, survived, flowered and modelled as separate statuses.",
+  "next_retrievals": [
+    "Search Goodale/Harvard correspondence for receipt and forwarding of the May 4 live cactus/bulb box and June Orcutt material.",
+    "Search Hosterwitz letters July 1892 onward for Crinum, Orcutt, California bulbs/seeds, germination, flowering or loss.",
+    "Search later 1892-1894 correspondence for Sequoia flowering material sent by California botanists or Lemmon-related contacts.",
+    "Crosswalk any fulfilled deferred supply against Corning preparatory drawings and model labels.",
+    "Keep Darlingtonia substitution separate from deferred supply because its access problem was repaired by changing site rather than waiting for later delivery."
+  ],
+  "map_decision": "Represent repair status as asynchronous packet/event edges or status cards. Do not add hypothetical geographic lines for promised-but-unverified later supply."
+}
