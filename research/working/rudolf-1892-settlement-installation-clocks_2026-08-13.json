@@ -1,0 +1,123 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "working_source_critical_not_public_projection",
+  "title": "Rudolf Blaschka 1892–1894 — settlement/accounting and installation/exhibition clocks",
+  "research_question": "What remains to happen after a Blaschka shipment has physically arrived, and can post-arrival accounting and exhibition handling be reconstructed as distinct transport regimes?",
+  "current_thesis": "Arrival is not the end of transport. A shipment can continue administratively through broker bills, residual charges and customs release, and physically through unpacking, mounting, exhibition movement and vibration. These processes create settlement and installation clocks independent of the cargo's point-to-point travel time.",
+  "clock_model": [
+    {"clock":"production","question":"When is the model made/finished?","examples":["312–322 made H1 1892 but shipped Feb 1893","models ready July 1893 before crate timing"]},
+    {"clock":"dispatch","question":"When can a finished model become dispatchable?","examples":["mounting on glass panes","crate-maker availability","packing","insurance","consular certification"]},
+    {"clock":"transport_clearance","question":"When do freight, bond, broker and customs movements place the cases at the receiving institution?","examples":["U.B.346–350","Snow/Wales museum inspection"]},
+    {"clock":"settlement_accounting","question":"When are geographically distributed charges reconstructed and financially closed?","examples":["Snow $106.97 bill 28 Mar 1893","September 1893 residual Wales carriage added to later bill"]},
+    {"clock":"reference","question":"When do seeds, specimens, drawings, books and living materials become available for later work?","examples":["Cambridge seeds","preserved-material lag","reference books after Rudolf's return"]},
+    {"clock":"shipment_counting","question":"When is heterogeneous production aggregated into a numbered/periodic consignment?","examples":["7th–10th shipments","renegotiated 30–40 model future count"]},
+    {"clock":"installation_exhibition","question":"When does a received object become stable in display/use, and can it become mobile/damaged again after installation?","examples":["1893 Chicago velvet-induced movement and breakage","Goodale repair/remounting/stress testing"]}
+  ],
+  "snow_settlement_events": [
+    {
+      "date":"1892-02",
+      "evidence":["BLA-D00024","BLA-D00028"],
+      "event":"papers for the five Elbe cases pass to Snow; Snow sends Capt. Wales for museum-side customs inspection",
+      "analytical_role":"documentary/customs handoff before full unpacking"
+    },
+    {
+      "date":"1893-03-28",
+      "evidence":["BLA-D00140","BLA-D00141"],
+      "amount":"$106.97",
+      "secure_components":["German railroad bills","Ocean and Sound Steamers freight","customs expenses","inspector carriage","Snow commission"],
+      "guards":["case-count wording OCR unsafe","'bounded boxes' not silently normalized","one local-freight phrase OCR unsafe"],
+      "analytical_role":"invoice as retrospective compression of a transnational multimodal chain"
+    },
+    {
+      "date":"1893-09-06",
+      "evidence":["BLA-D00191","BLA-D00192"],
+      "event":"Snow bills all freight/express Hosterwitz→Cambridge plus special inspector costs and rolls an omitted Col. Wales carriage charge from a previous visit into the new bill; Goodale sends memoranda to Ware for preservation",
+      "address":"42 Summer Street, Boston",
+      "analytical_role":"inter-shipment accounting memory; administrative closure lags physical arrival"
+    },
+    {
+      "date":"1894-03-19",
+      "evidence":["BLA-D00239"],
+      "event":"Snow commission/importation-expense bill; inspector passes cases; only then can Harvard open at leisure",
+      "guard":"amount OCR unsafe",
+      "analytical_role":"broker settlement and customs release remain separate from physical presence at museum"
+    },
+    {
+      "date":"1906",
+      "evidence":["BLA-D02095"],
+      "event":"goods still consigned to Snow although he is no longer in business; Goodale says he had always done the work well and Harvard must hunt him up/repair the clearance arrangement",
+      "analytical_role":"procedural memory embedded in obsolete address/actor"
+    },
+    {
+      "date":"1923-09/11",
+      "evidence":["BLA-D02693","BLA-D00341","BLA-D01745"],
+      "event":"Rudolf still routes R.B.1–4 in bond to Boston care of Snow; Bremen agents later learn Snow no longer exists and ask American Line for another agent; Rudolf says this probably caused delay",
+      "analytical_role":"path dependence becomes observable failure"
+    }
+  ],
+  "chicago_exhibition_control": {
+    "date_range":"1893-05",
+    "scope_guard":"Ware botanical glass models exhibited at the World's Columbian Exposition; keep separate from the Field Museum/Ward zoological-Blaschka collection history in 06 backend.",
+    "events":[
+      {
+        "evidence":"BLA-D00145 / 015:145",
+        "event":"Ganong reports models safely set up in Chicago despite rough treatment by the express company, with only two unimportant/easily mended breaks.",
+        "ocr_guard":"The OCR is poor; publication quotation requires image check. The basic safe-arrival/minor-breakage meaning is retained only at paraphrase level."
+      },
+      {
+        "date":"1893-05-28",
+        "evidence":["BLA-D00149 / 015:149","BLA-D00150 / 015:150"],
+        "event":"Goodale finds the velvet meant to keep the glass specimens safe has acted as a 'machine for moving them in all directions'; specimens have become huddled and many are broken by movement/vibration. He creates a work area, repairs fractures, remounts/labels/recovers the case and experimentally shakes/fans the installation before reopening it to the public.",
+        "source_guard":"The exact OCR phrase describing the source of vibration is corrupt; do not normalize beyond 'movement/vibration associated with the exhibition setting' without manuscript image. The phrase 'machine for moving them in all directions' is unusually clear in OCR but original-image verification remains preferable for publication."
+      }
+    ],
+    "analytical_value":[
+      "A model can arrive at an exhibition in good condition and then become damaged after installation.",
+      "Protective mounting material can reverse function: velvet intended to immobilize objects becomes an agent of movement.",
+      "Display is another handling/transport regime, not the stable endpoint of freight.",
+      "Goodale's repair and stress testing show receiving/exhibition practice actively redesigning object stability."
+    ]
+  },
+  "route_inference_guards": [
+    "BLA-D00140 directly names 'Ocean and the Sound Steamers' for the March 1893 settled shipment. This is evidence for that shipment only and must not be back-projected onto U.B.346–350 in 1892.",
+    "The Sound-steamer carrier and exact New York/Boston transfer point remain unidentified.",
+    "Goodale's September 1893 reference to Col. Wales's previous visit proves a residual charge, but does not by itself identify which earlier shipment/inspection generated it.",
+    "Do not infer E. A. Snow's first name from initials or unrelated directory entries."
+  ],
+  "external_context": [
+    {
+      "source":"National Archives at Boston, RG 36 holdings description",
+      "finding":"Boston Customs records cover 1839–1966 and include manifests, entries, imports/exports, correspondence and financial/administrative records.",
+      "use":"counterpart archive for Snow/Wales/importation/inspection transactions",
+      "guard":"jurisdiction and record-type match only; no Blaschka-specific government file yet located"
+    },
+    {
+      "source":"Harvard HOLLIS ecb00006",
+      "finding":"Ware correspondence is arranged in files covering 1892 Jan-Jun, 1892 Jul-1893 Jun, 1893 Jul-Dec and 1894-95; the collection also lists Acquisition, Development, and Shipping lists and preserves original boxes/mailing material.",
+      "use":"document-level route/bill/installation retrieval",
+      "guard":"finding-aid description does not substitute for the bills themselves"
+    },
+    {
+      "source":"Smithsonian Institution 1893 World's Columbian Exposition visual records",
+      "finding":"contemporary images document the Manufactures and Liberal Arts Building and fair grounds",
+      "use":"exhibition-site context only",
+      "guard":"does not independently identify the Harvard Glass Flowers display or explain the vibration event"
+    }
+  ],
+  "strongest_new_formulations": [
+    "An invoice can function as a retrospective route map: it reassembles German rail, ocean carriage, Sound-steamer carriage, customs, inspector transport and commission after those movements have occurred.",
+    "Transport can remain administratively unfinished after the object has arrived; omitted charges and broker settlement continue on a separate clock.",
+    "Installation does not terminate mobility. At Chicago, supposedly stabilized models were remobilized by their display support/environment and required repair plus a new stabilization procedure.",
+    "A durable route is partly a durable memory of whom to address, who pays, who brings the inspector and who knows the routine. The Snow chain shows that this memory can persist after the intermediary ceases to exist."
+  ],
+  "next_retrievals": [
+    "image-level transcription of BLA-D00140 to resolve case count, 'bounded/bonded boxes' and the corrupt local-freight phrase",
+    "image-level transcription of BLA-D00145, BLA-D00149 and BLA-D00150",
+    "Harvard 1892/1893/1894 bills, receipts and shipping lists; isolate the original Snow invoices if preserved",
+    "Boston directories/customs-broker records for E. A. Snow, especially 42 Summer Street and State Street",
+    "NARA Boston RG36 search for Snow, Wales, Harvard/University Museum and relevant 1892–1894 entries",
+    "identify the carrier/route meant by the 1893 'Sound Steamers' charge before mapping it",
+    "separate Chicago express carriage, exhibition mounting and intra-building vibration into a full post-arrival object timeline"
+  ]
+}
