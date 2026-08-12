@@ -152,5 +152,6 @@
   .route-index{grid-template-columns:1fr}
   .route-index-item{min-height:62px}
   .detail-links{grid-template-columns:1fr}
-  .journey-reference{grid-template-columns:1fr;gap:9px}.journey-reference-note,.journey-reference>a{grid-column:1}
+  .journey-reference{grid-template-columns:1fr;gap:9px}.journey-reference-note,.journey-reference>a{grid-column:1}.journey-reference>a{white-space:normal}
 }
+@media(prefers-reduced-motion:reduce){.journey-marker,.object-handoff-marker,.map-mode-switch button,.route-scope-switch button{transition:none!important}}
