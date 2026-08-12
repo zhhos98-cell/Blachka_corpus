@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "working_source_critical_not_public_projection",
+  "title": "Rudolf/Harvard Blaschka receiving reconstruction — state, authority and labor model",
+  "research_question": "What operations, actors and authority changes convert a Blaschka transport assemblage into a stable museum/exhibition object after arrival?",
+  "current_thesis": "Unpacking was a receiving-side craft of serial reconstruction, not the simple inverse of packing. The transport assemblage had to be legally opened, materially dismantled, inspected, sometimes repaired, detached from temporary supports, remounted, labelled and stabilized by actors whose authorities and skills were distributed across patronage, customs, curatorship and paid technical work.",
+  "object_state_sequence": [
+    {"state":"finished representation","location":"Hosterwitz","operations_to_next":["temporary mounting","immobilisation","boxing"]},
+    {"state":"transport assemblage","location":"Hosterwitz → carrier system","operations_to_next":["freight forwarding","customs/bond classification"]},
+    {"state":"inspectable freight","location":"receiving customs/museum boundary","operations_to_next":["authorized opening","sample inspection","condition judgment"]},
+    {"state":"unpacked glass model","location":"museum work space","operations_to_next":["temporary support removal","repair if needed"]},
+    {"state":"museum-mounted model","location":"Botanical Museum","operations_to_next":["gypsum plaque attachment","labeling","case placement"]},
+    {"state":"installed/display object","location":"gallery/exhibition","operations_to_next":["monitoring","possible vibration/movement","repair/restabilization"]}
+  ],
+  "authority_transitions": [
+    {"transition":"cargo papers → clearance routine","actors":["E. A. Snow","Harvard administrative offices"],"authority":"documentary/administrative","evidence":["BLA-D00024","BLA-D02095"]},
+    {"transition":"sealed/controlled case → legally openable case","actors":["Capt./Col. Wales","Custom House Inspector"],"authority":"regulatory","evidence":["BLA-D00028","BLA-D02096"]},
+    {"transition":"outer package → accessible inner cases","actors":["museum porter/houseboy","Goodale"],"authority":"delegated material handling","evidence":["BLA-D00695"]},
+    {"transition":"tissue-supported fragile model → safely released model","actors":["Mary Lee Ware","Goodale","John Waugh","Louis C. Bierweiler"],"authority":"handling expertise; varies by event","evidence":["BLA-D01823","BLA-D02082","BLA-D02885","BLA-D02914"]},
+    {"transition":"transport support → permanent/working mount","actors":["John Waugh","Louis C. Bierweiler","curatorial staff"],"authority":"technical installation","evidence":["05B transportation/installation method","BLA-D00548"]},
+    {"transition":"received object → exhibition object","actors":["Goodale","Ganong","Waugh","Bierweiler","museum staff"],"authority":"curatorial/technical","evidence":["BLA-D00145","BLA-D00149-150","BLA-D02082"]}
+  ],
+  "actor_matrix": [
+    {"actor":"Mary Lee Ware","actor_type":"donor/patron and receiving participant","direct_functions":["personal unpacking according to Harvard finding aid","manual unpacking praised by Rudolf","inviting/attending unpacking demonstrations"],"non_claims":["not labelled museum technician","no generic customs authority"]},
+    {"actor":"George Lincoln Goodale","actor_type":"curator/scientist","direct_functions":["opens cases","handles models","coordinates inspection/broker","repairs/remounts exhibition damage","demonstrates packing/unpacking publicly","invites observers"],"non_claims":["does not replace customs authority"]},
+    {"actor":"unnamed 1892 Botanical Museum porter/houseboy","actor_type":"museum labor","direct_functions":["moves cases internally","removes outer packing"],"non_claims":["no evidence for delicate inner-model unpacking beyond source description"]},
+    {"actor":"E. A. Snow","actor_type":"broker/forwarding-clearance intermediary","direct_functions":["receives papers","coordinates customs inspector","bills freight/importation/inspector costs"],"non_claims":["do not describe as model handler without evidence"]},
+    {"actor":"Capt./Col. Wales and other inspectors","actor_type":"customs authority","direct_functions":["select/open samples","inspect/pass cases","superintend customs-sensitive unpacking"],"non_claims":["inspection authority is not equivalent to delicate handling skill"]},
+    {"actor":"John Waugh","actor_type":"paid technical/installation worker","direct_functions":["paid packing/setting-up/unpacking at 1906 AMA exhibition","perfects gypsum-tablet manufacturing process","initially makes Botanical Museum plaques"],"non_claims":["formal job title unresolved"]},
+    {"actor":"Louis C. Bierweiler","actor_type":"museum assistant/technician in later records","direct_functions":["plaque manufacture","preservation/installation work context","clearance arrangements","transport-support loosening","remounting","minor repair","skilled unpacking"],"non_claims":["do not back-project 1930s title to all earlier years"]}
+  ],
+  "public_demonstration_events": [
+    {"date":"1894-11-07","event":"Goodale demonstrates packing and three recent models are unpacked before Boston Society of Natural History audience","evidence":["BLA-D00264","Harvard finding-aid speech item"]},
+    {"date":"late Nov 1906","event":"Customs-supervised new importation unpacking treated as 'a matter of considerable interest'; President Eliot and Mrs. Eliot invited; Goodale later shows packing/unpacking in Ware's presence","evidence":["BLA-D02096-02098"]}
+  ],
+  "paid_or_institutionalized_labor_evidence": [
+    {"date":"1906-06-04/12","document":"Harvard College receipt to John Waugh","service":"packing, setting-up, and unpacking Blaschka models for exhibition at New Medical School during A.M.A. period","evidence":"BLA-D02082"},
+    {"date":"circa 1911 sequence","document":"Goodale Botanical Museum budget memo","service_model":"assistant/Diener expected to know preservation and installation methods, prepare/inspect specimens and guide visitors; Bierweiler salary cited","evidence":"BLA-D02254-02255","guard":"memo date requires catalog verification"},
+    {"date":"later procedural text","document":"Method of preparing models for transportation and installation","service_model":"Waugh perfects gypsum tablet manufacture; plaques first by Waugh, later Bierweiler","evidence":"05B embedded Harvard procedural OCR"}
+  ],
+  "material_risk_rules": [
+    {"risk":"tissue paper catches on spines/obstacles","mitigation":"deft removal without violent pulling","evidence":"BLA-D01823"},
+    {"risk":"rings/jackets/shawls/coats catch on fragile model parts","mitigation":"remove snagging clothing/jewelry before unpacking","evidence":"BLA-D01981","guard":"image verification before quotation"},
+    {"risk":"models strongly bound to framed transport plates","mitigation":"skilled loosening, time and patience before remounting","evidence":"BLA-D00548; BLA-D02885"},
+    {"risk":"post-installation movement/vibration","mitigation":"repair, remount, relabel and stress-test display","evidence":"BLA-D00149-00150"}
+  ],
+  "historiographical_calibration": {
+    "already_known_ground": [
+      "museum collections depend on backstage material labor and care",
+      "preparators/technicians have histories in nineteenth-century natural-history museums",
+      "modern registrar/collections-management functions include logistics, packing, handling and installation"
+    ],
+    "do_not_claim": [
+      "that Blaschka/Harvard invented museum technical labor",
+      "that Mary Ware was a proto-registrar",
+      "that Waugh/Bierweiler form a simple linear professionalization narrative"
+    ],
+    "stronger_specific_contribution": "The Blaschka correspondence allows receiving work to be reconstructed transaction by transaction as a choreography of differentiated authority and skill around an exceptionally fragile object. It also shows this work being publicly demonstrated, explicitly paid, technically codified and trusted by the maker across decades."
+  },
+  "map_implication": {
+    "decision":"do not add more geographic lines yet",
+    "recommended_projection":"use the full-width map for person/packet routes; use the lower evidence strip for a state timeline showing transport assemblage → customs-openable → unpacked → remounted → installed → repaired/restabilized",
+    "reason":"settlement and unpacking events are state/authority transitions, often within one geographic node, and drawing them as routes would confuse movement with reconstruction"
+  },
+  "next_questions": [
+    "Can John Waugh's payment receipt be tied to a precise dollar amount and employment identity?",
+    "Can the Goodale budget memo be dated and connected to Bierweiler's formal appointment history?",
+    "Does the Harvard archive preserve unpacking instructions or condition reports signed by Ware/Waugh/Bierweiler?",
+    "Can the 1894 public lecture report and the 1906 Eliot unpacking event be image-transcribed at publication quality?",
+    "Can plaque/remounting work be linked to specific model numbers or shipments?",
+    "How often did customs inspectors physically touch the models versus simply supervise selected openings?"
+  ]
+}
