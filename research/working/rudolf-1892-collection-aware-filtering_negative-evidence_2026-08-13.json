@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "source_critical_working_register",
+  "title": "Rudolf Blaschka 1892 — collection-aware field filtering and negative-evidence discipline",
+  "core_source": {
+    "record": "BLA-D00879 / 017:233",
+    "date": "1892-05-24",
+    "place": "Colorado Springs",
+    "direct_evidence": [
+      "Rudolf says season itself limits the available selection.",
+      "He says Cambridge is 'picky' and does not want certain species because they are already represented.",
+      "He reports 200 species drawn and studied to date and estimates 400 by departure.",
+      "He says 600-800 would require wandering America for an entire year, which he explicitly rejects.",
+      "He contrasts wild collecting with botanical-garden access, where names and other identifying information are already at hand."
+    ]
+  },
+  "main_result": "Field yield was collection-aware before material returned to Cambridge. Harvard's existing collection operated as a remote negative selector: a plant could be locally available and botanically interesting yet excluded because the receiving collection already represented it.",
+  "revised_selection_model": [
+    "ecological/seasonal availability",
+    "maker's judgment of interest or characteristic form",
+    "Cambridge collection-state test: already represented or still lacking",
+    "feasible reference medium: drawing, dried specimen, alcohol, seed, bulb, live plant, later supply",
+    "bodily/time capacity",
+    "route and cost constraints",
+    "retention as field reference"
+  ],
+  "formula": "field reference yield = availability × maker selection × collection gap × media feasibility × bodily/time/route capacity",
+  "historical_implication": "The expedition was not autonomous field collecting followed by downstream institutional acceptance. Collection development reached upstream into field practice. Cambridge's inventory shaped what Rudolf considered worth recording while he was still travelling.",
+  "negative_evidence_rule": "The current sources identify the filtering mechanism but do not yet name individual species explicitly rejected by Cambridge as 'already represented'. Do not manufacture a rejected-taxon list from later absences or same-genus matches.",
+  "distinctions": [
+    {
+      "category": "encountered but rejected by maker",
+      "status": "attested as a general operation elsewhere in the 1892 correspondence; individual list incomplete"
+    },
+    {
+      "category": "maker candidate but rejected/filtered because Cambridge already represented it",
+      "status": "mechanism directly attested in BLA-D00879; named taxa not yet recovered"
+    },
+    {
+      "category": "retained field reference but never securely reactivated as glass",
+      "status": "visible in minimum Tempe herbarium packet, but historical synonym and corpus-completeness checks remain necessary"
+    },
+    {
+      "category": "retained field reference later reactivated as glass",
+      "status": "Hoffmannseggia/model 433 is strongest current metadata-level example"
+    }
+  ],
+  "relation_to_yield_counts": "Rudolf's 200 and projected 400 are not raw encounter totals. They sit downstream from environmental availability, collection-state filtering and his own working capacity. They should remain in the 'drawn/studied or projected retained reference' family rather than being called species encountered or collected without qualification.",
+  "next_retrievals": [
+    "Search Harvard Acquisition, Development, and Shipping lists for 1892 for species-level desired/already-represented decisions.",
+    "Search Goodale correspondence during April-May 1892 for instructions that name duplicates or gaps.",
+    "Compare the first six Harvard botanical-model shipments and current collection list against taxa named in Rudolf's 1892 letters, looking only for explicit cross-reference rather than inferred rejection.",
+    "Search Ware correspondence for discussions of collection completeness or redundancy during the trip.",
+    "If a named rejected species is found, reconstruct the full chain: field encounter -> proposed reference -> Cambridge inventory response -> rejection or substitution."
+  ],
+  "map_decision": "No route change. Collection filtering is a remote decision edge and belongs in a decision/evidence layer rather than a geographic line."
+}
