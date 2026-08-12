@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-13",
+  "title": "The Blaschka Object Network — E. A. Snow Boston Settlement, Clearance and Forwarding Register",
+  "actor": "E. A. Snow",
+  "known_addresses_and_roles": [
+    {
+      "date": "1893-09",
+      "address": "42 Summer Street, Boston",
+      "evidence": "BLA-D00192 / 015:194",
+      "status": "direct primary"
+    },
+    {
+      "date": "1906",
+      "role": "formerly a Custom-house Broker on State St.",
+      "evidence": "BLA-D02095 / 021:112, Goodale to Harvard Treasurer's Office",
+      "status": "direct primary",
+      "note": "Goodale says Snow was no longer in business by 1906 and adds: 'He always did our work well.'"
+    },
+    {
+      "date": "1923-09",
+      "role": "Customhouse broker and forwarding agent, Boston, Mass.",
+      "evidence": "BLA-D02693 / 040:49, Rudolf's shipping instruction",
+      "status": "direct primary but institutionally obsolete by the time the shipment arrived"
+    }
+  ],
+  "scope": "Direct Blaschka/Harvard correspondence reconstructing E. A. Snow as the durable Boston receiving-side intermediary through whom papers, freight/express accounts, customs inspection, inspector carriage, importation expenses and onward museum delivery were coordinated. The register separates physical movement from later financial settlement and tracks the consequences when an address/actor retained in the route ceased to function.",
+  "methodological_guard": "Do not infer Snow's first name, corporate identity, successor or exact legal status from initials alone. Public-web searches in this pass did not securely identify him in a Boston business directory. The primary archive itself securely supplies the 1893 address and later role descriptions. OCR-corrupt freight wording in BLA-D00140 must be checked against the manuscript image before quotation.",
+  "events": [
+    {
+      "id": "SNOW-1892-PAPER-HANDOFF",
+      "date": "1892-02",
+      "shipment": "U.B. 346–350 / five cases / 60 models + 329 analytical details",
+      "evidence": ["BLA-D00024 / 015:24", "BLA-D00028 / 015:28"],
+      "actions": [
+        "Goodale receives advice that five cases have arrived by Elbe",
+        "Goodale turns the papers over to E. A. Snow",
+        "Snow later sends Capt. Wales of the Custom House to Harvard for inspection"
+      ],
+      "research_value": "Snow first becomes visible as a documentary/customs handoff actor. Papers enter his chain before the cases are fully unpacked at the museum."
+    },
+    {
+      "id": "SNOW-1893-MARCH-INTEGRATED-BILL",
+      "date": "1893-03-28",
+      "shipment": "the immediately preceding 1893 Harvard consignment; chronology strongly points to the seventh shipment but case count wording is OCR-unsafe",
+      "evidence": ["BLA-D00140 / 015:140", "BLA-D00141 / 015:141", "BLA-D00128 / 015:128", "BLA-D00131 / 015:131"],
+      "amount": "$106.97",
+      "bill_components_secure_or_near_secure": [
+        "railroad bills in Germany",
+        "freight by the Ocean and the Sound Steamers",
+        "customs expenses",
+        "carriage for the inspector",
+        "Snow commission"
+      ],
+      "ocr_guards": [
+        "OCR reads 'trip cases'; likely case count/type must be image-checked.",
+        "OCR reads 'bounded boxes'; 'bonded boxes' is plausible but must not be normalized without image verification.",
+        "One local-freight phrase OCRs as 'freight to Berlin' and is internally suspicious; omit from publication until image-checked."
+      ],
+      "research_value": "One receiver-side invoice retrospectively aggregates charges generated across German rail, transatlantic carriage, a U.S. Sound-steamer leg, customs, inspector mobility and broker commission. The invoice is therefore a documentary compression of a geographically distributed transport chain."
+    },
+    {
+      "id": "SNOW-1893-SEPTEMBER-ROLLING-ACCOUNT",
+      "date": "1893-09-06",
+      "shipment": "eighth shipment / July-August 1893 production-dispatch sequence",
+      "evidence": ["BLA-D00191 / 015:193", "BLA-D00192 / 015:194"],
+      "actions": [
+        "cases reported at Cambridge and deposited safely in the Museum",
+        "one case opened by the special inspector",
+        "Snow bills all freight and express charges from Hosterwitz to Cambridge, including special inspector expenses",
+        "Snow includes carriage from Col. Wales's previous visit that had been omitted from an earlier bill",
+        "Goodale forwards the bill to the Wares 'for preservation'"
+      ],
+      "address": "42 Summer Street, Boston",
+      "research_value": "Settlement does not end with the physical shipment. An omitted inspector-carriage charge survives and is rolled into a later bill. The account therefore carries inter-shipment administrative memory, while Goodale treats the bills themselves as records worth preserving."
+    },
+    {
+      "id": "SNOW-1894-MARCH-IMPORTATION-BILL",
+      "date": "1894-03-19",
+      "shipment": "ninth shipment / January 1894, 50 models",
+      "evidence": ["BLA-D00239 / 015:242"],
+      "actions": [
+        "Goodale receives Snow's bill for commission and expenses on the importation",
+        "an inspector comes and passes the cases",
+        "Harvard can then open them at leisure"
+      ],
+      "amount_guard": "The dollar amount is OCR-unsafe and is not retained as evidence in this register.",
+      "research_value": "Broker settlement and official release remain distinct operations; the cases become freely openable museum objects only after inspection/pass."
+    },
+    {
+      "id": "SNOW-1906-OBSOLETE-INTERMEDIARY",
+      "date": "1906-11",
+      "evidence": ["BLA-D02095 / 021:112", "BLA-D02096 / 021:113"],
+      "actions": [
+        "incoming boxes are shipped as before by Ehrhorn, Emden & Mayer and consigned to E. A. Snow",
+        "Goodale tells Harvard's Treasurer that Snow was formerly a Custom-house Broker on State Street but is no longer in business",
+        "Harvard must 'hunt Snow up and arrange with him'",
+        "goods are to be sent to the University Museum and opened there under a custom-house inspector"
+      ],
+      "research_value": "A routinized address/actor outlives the actor's active business. Transport infrastructure can fail because procedural memory is embedded in paperwork that has become obsolete."
+    },
+    {
+      "id": "SNOW-1923-PATH-DEPENDENCE-FAILURE",
+      "date_range": "1923-09 to 1923-11",
+      "evidence": ["BLA-D02693 / 040:49", "BLA-D00341 / 015:344", "BLA-D01745 / 020:274"],
+      "actions": [
+        "Rudolf instructs R.B. 1–4 to travel Bremen → New York → in bond to Boston, care of E. A. Snow, Customhouse broker and forwarding agent",
+        "the Bremen agents later become anxious because the Boston agent E. A. Snow 'does no more exist'",
+        "the American Line is asked to provide another agent",
+        "Rudolf attributes the delay probably to this failure"
+      ],
+      "research_value": "The named intermediary had become part of the route itself. His disappearance generated delay, showing path dependence created by institutional memory rather than physical geography alone."
+    }
+  ],
+  "analytical_observations": [
+    "Snow should not be reduced to 'customs broker'. Across the surviving correspondence he acts at the junction of papers, forwarding, freight and express billing, customs inspection, inspector carriage, commission and museum delivery.",
+    "Physical arrival and financial/administrative closure have different clocks. Bills can arrive later and can carry omitted costs from an earlier encounter.",
+    "Invoices are evidentially valuable because they can reassemble route segments that correspondence treats separately. They are retrospective maps in accounting form.",
+    "The repeated use of Snow from 1892 onward shows durable receiver-side procedural memory; 1906 and 1923 show the fragility of that memory when the individual/firma disappears."
+  ],
+  "comparison_guard": {
+    "sound_steamer": "The March 1893 bill directly names freight by 'the Ocean and the Sound Steamers' for that shipment. It must not be projected backward onto U.B. 346–350 in 1892 until the 1892 bill, manifest or equivalent route document is found.",
+    "wales_carriage": "The September 1893 bill includes a carriage charge from Col. Wales's previous visit that Snow had omitted. The exact earlier inspection event to which the residual charge belongs must be source-checked rather than assumed."
+  },
+  "external_archive_targets": [
+    {
+      "repository": "National Archives at Boston",
+      "reference": "RG 36, Records of the U.S. Customs Service",
+      "coverage": "Boston records 1839–1966 in the regional holdings description",
+      "record_types": ["imports and exports", "manifests", "entries", "financial accounting", "customs administration", "vessel entrance/clearance"],
+      "search_terms": ["E. A. Snow", "42 Summer Street", "State Street", "George L. Goodale", "Harvard", "University Museum", "Capt./Col. Wales", "glass models", "Hosterwitz", "Dresden", "1892", "1893", "1894"],
+      "status": "high-priority counterpart archive; no individual file claimed until located"
+    },
+    {
+      "repository": "Harvard Botany Libraries",
+      "collection": "ecb00006",
+      "targets": [
+        "Ware correspondence, Oversize-box 1, Folder 5 (1892 Jan-Jun)",
+        "Ware correspondence, Oversize-box 1, Folder 6 (1892 Jul-1893 Jun)",
+        "Ware correspondence, Oversize-box 1, Folder 7 (1893 Jul-Dec)",
+        "Ware correspondence, Oversize-box 1, Folder 8 (1894-1895)",
+        "Acquisition, Development, and Shipping lists, circa 1890-1982",
+        "original boxes and mailing material",
+        "1892 financial/receipt material identified in the project finding-aid pass"
+      ],
+      "status": "core receiving-side source universe"
+    },
+    {
+      "repository": "Boston city/business directories and customs-broker licensing/administrative records",
+      "target": "resolve E. A. Snow's full name, business classification, office chronology, and relationship between 42 Summer Street and later State Street wording",
+      "status": "unresolved; generic web search did not securely identify the actor"
+    }
+  ]
+}
