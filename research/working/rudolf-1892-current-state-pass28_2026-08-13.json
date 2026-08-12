@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.1.0-handoff",
+  "generated_date": "2026-08-13",
+  "status": "current_research_state_after_pass28",
+  "project": "Rudolf Blaschka America 1892 — transport, reference media, split workshop and receiving reconstruction",
+  "current_thesis": "The 1892 journey intervened in an already distributed Harvard–Hosterwitz reference-supply system whose seeds, roots, gardens, books and detached fresh material still left important American forms inaccessible. Rudolf's travel relocated part of reference selection into the maker's field encounter, where plants were selected or rejected and assigned to drawings, dried specimens, preserved material, seeds, bulbs or living carriage. These reference packets then moved asynchronously through caches and relays while Rudolf continued travelling. Cambridge filtered them against collection needs and translated the returned stock into projected years of future work. Later Hosterwitz production selectively reactivated only some reference lineages as glass. Finished models in turn had to be rebuilt into freight assemblages, customs objects and installed museum objects, and installation could itself generate renewed movement, breakage and repair. Transport therefore redistributed work in space, time, media and authority by repeatedly changing what counted as the movable or usable object.",
+  "strongest_mechanisms": [
+    "residual inaccessibility inside an existing remote-supply ecology",
+    "maker-present field selection versus delegated access",
+    "field selection and media assignment before packing",
+    "two-stage selective conversion: field retention then workshop reactivation",
+    "access repair by substitution, deferral, delegation, medium change, remote route governance or rejection",
+    "packet aggregation with heterogeneous internal provenance",
+    "Cambridge as cache, relay and later two-way workshop interface",
+    "transport of future biological observability through living references",
+    "yield governance by field choice, Cambridge duplicate filtering, season, body, itinerary and workshop capacity",
+    "media-specific accounting: quantities are stage-specific rather than one master expedition total",
+    "temporal stock: reference material converted into projected years of future workshop labour",
+    "finished-model state changes: transport support, customs, unpacking, mounting, installation, displacement, repair and re-stabilization",
+    "receiving craft ecology combining curator, patron, customs, broker, external workshop and museum technician"
+  ],
+  "best_empirical_anchors": [
+    {
+      "anchor": "Tempe 18–22 April",
+      "value": "explicit field selection plus minimum HUH herbarium packet; only Hoffmannseggia currently has a secure later model descendant after synonym stress test",
+      "claim": "field collecting produced a broader reference packet than later glass production"
+    },
+    {
+      "anchor": "Hoffmannseggia model 433",
+      "value": "field specimen GH 01676890 + later model 433 + January 1894 shipment",
+      "claim": "reference-lineage divergence rather than movement of one object",
+      "guard": "specimen/model physical-template genealogy remains image-open"
+    },
+    {
+      "anchor": "Abronia model 345",
+      "value": "direct 1892 field encounter + February 1893 model shipment + Corning preparatory drawing dated 1892 or 1895",
+      "claim": "strong drawing/observation-route candidate without currently surfaced herbarium sheet",
+      "guard": "drawing-to-model genealogy remains open"
+    },
+    {
+      "anchor": "San Diego live cactus/bulb packet",
+      "value": "Jamaica + Arizona + San Diego materials assembled into one box, sent 4 May to Cambridge for onward Hosterwitz relay",
+      "claim": "packet dispatch place masks heterogeneous provenance; living carriage can preserve future flowering capacity",
+      "guard": "Hosterwitz receipt/survival not yet closed"
+    },
+    {
+      "anchor": "Darlingtonia access repair",
+      "value": "costly Shasta habitat proposal remotely cancelled after Goodale telegram; St Louis garden supplies flowering plant, workroom, colour sketch and alcohol specimen",
+      "claim": "cultivated institutional access can substitute for direct habitat travel",
+      "guard": "retain Shasta as proposed/cancelled pending German-image check of one contradictory English phrase"
+    },
+    {
+      "anchor": "Jamaica quantitative progression",
+      "value": "~100 forecast -> 106 Rudolf completed-work count -> 116 institutional coloured-drawing count + Cameron dried same/other plants",
+      "claim": "one field season produced several media-specific ledgers rather than one master total",
+      "guard": "106/116 final ten-species difference remains unresolved"
+    },
+    {
+      "anchor": "Chicago 1893 installation failure",
+      "value": "apparently successful arrival followed by velvet-mediated displacement under building vibration, breakage, repair, remounting, testing and re-exhibition",
+      "claim": "arrival did not terminate mobility; installation created a new movement regime",
+      "guard": "critical wording still needs image transcription"
+    },
+    {
+      "anchor": "Harvard receiving craft ecology",
+      "value": "Ware, Goodale, Snow, customs officials, John Waugh and Louis Bierweiler occupy non-equivalent handling/authority roles across decades",
+      "claim": "fragile-object receiving depended on mixed external and internal craft capacity"
+    }
+  ],
+  "quantitative_rules": [
+    "Never use a single 'species collected' total for the expedition.",
+    "Attach every number to actor, date, medium/operation and temporal status: observed, selected, drawn, studied, preserved, forecast, reported, dispatched, modelled or converted to years of work.",
+    "Preserve ~100/106/116 Jamaica as separate forecast, self-count and institutional drawing ledger until direct reconciliation exists.",
+    "Preserve Rudolf ~3-year and Goodale ~4-year work-horizon estimates as actor-specific forecasts.",
+    "Treat San Diego 25 -> 36 as closed temporal progression, not contradiction.",
+    "Keep packet quantities separate from species-study and model-output counts."
+  ],
+  "public_map_guard": "Do not add more generic geographic lines. New findings should enter through packet cards, media-switch diagrams, object-state timelines and evidence/detail layers. Failed/cancelled access, cache/relay functions and within-building installation states should not be forced into route geometry.",
+  "next_highest_value_retrievals": [
+    "Image-level transcription of Jamaica early ~100 forecast, BLA-D00725 106 count, and original Jamaican Bulletin p.18 116 statement.",
+    "Complete collector-level HUH result set for W. F. Ganong & R. Blaschka in 1892, followed by original sheet-label inspection and historical-name crosswalk.",
+    "HUH image GH 01676890 and original Harvard model-433 labels; Corning Abronia drawing and Harvard model-345 labels.",
+    "Goodale May 1892 correspondence for actual receipt/forwarding of the live cactus/bulb box; Hosterwitz correspondence for receipt, survival or flowering.",
+    "Trace the two badly broken Harvard models Rudolf planned to carry back after June 1892 repair work.",
+    "Image-level transcription of Chicago BLA-D00145, BLA-D00149, BLA-D00150 and Snow $106.97 bill BLA-D00140.",
+    "Search 1889–1891 correspondence for named examples of routine remote-supply failure, tying 'hitherto inaccessible' to individual 1892 targets.",
+    "Identify species explicitly rejected by Cambridge as already represented.",
+    "Trace Orcutt/Crinum and Sequoia deferred-supply channels into later cultivation, drawing or model records."
+  ],
+  "article_architecture_candidate": [
+    "I. An existing distributed supply system and its access gap, 1889–1891",
+    "II. Field selection: what becomes a reference and in which medium",
+    "III. Packet networks: cache, relay, substitution and asynchronous return",
+    "IV. Cambridge inventory: field mobility converted into future workshop time",
+    "V. Selective reactivation: divergent descendants and later glass",
+    "VI. Finished glass on the move: freight, customs, receiving, installation and renewed reconstruction"
+  ],
+  "recent_passes": [
+    "pass23 return inventory / temporal stock",
+    "pass24 routine supply / field-access gap",
+    "pass25 access failure / substitution repertoire",
+    "pass26 yield governance / bilateral selection",
+    "pass27 yield ontology / quantitative register",
+    "pass28 Jamaica count progression / media accounting"
+  ]
+}
