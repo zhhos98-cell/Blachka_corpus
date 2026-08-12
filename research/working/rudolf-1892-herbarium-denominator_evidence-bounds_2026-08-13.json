@@ -1,0 +1,63 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "methodological_guardrail",
+  "title": "Rudolf Blaschka 1892 — herbarium denominator and evidence bounds",
+  "problem": "The minimum Tempe packet currently contains nine independently indexed Ganong-Blaschka sheets and only Hoffmannseggia has a secure later model descendant. That pattern is analytically useful but cannot yet be converted into a percentage or expedition-wide model-conversion rate.",
+  "institutional_bounds": {
+    "harvard_finding_aid": "Harvard's Blaschka/Ware finding aid reports more than 300 herbarium specimens collected by Rudolf and Harvard-affiliated botanists during the 1892 and 1895 visits combined, and says these specimens remained in the Harvard University Herbaria.",
+    "year_problem": "The >300 figure combines 1892 and 1895 and cannot serve as a denominator for 1892 without item-level separation.",
+    "database_problem": "The public HUH specimen database is a digitized/indexed view into a larger and evolving physical collection. Search absence is therefore not historical absence."
+  },
+  "denominators": [
+    {
+      "id": "D1",
+      "name": "current discovered/indexed packet",
+      "definition": "The nine Tempe sheets surfaced in the present search and independently verified in HUH metadata.",
+      "use": "Qualitative microhistory of branching, repeated sampling and secure/uncertain descendant links.",
+      "prohibition": "Do not call this the complete Tempe collection or use 1/9 as a conversion rate."
+    },
+    {
+      "id": "D2",
+      "name": "complete 1892 Ganong-Blaschka herbarium subset",
+      "definition": "All HUH sheets attributable to W. F. Ganong & R. Blaschka in 1892, separated by date/locality and historical/accepted taxonomy.",
+      "status": "not yet recovered as a complete export/query result",
+      "use": "Once bounded, can support locality-level retention analysis and systematic specimen/model crosswalks."
+    },
+    {
+      "id": "D3",
+      "name": "all 1892 expedition reference outputs",
+      "definition": "Drawings, dried specimens, alcohol-preserved material, seeds, bulbs, living plants, detached fresh material and other documented reference media produced by Rudolf, Ganong, Cameron and local collaborators.",
+      "status": "heterogeneous and not yet enumerable as one closed corpus",
+      "use": "Necessary denominator for any broad claim about how field reference production was later reactivated in glass."
+    }
+  ],
+  "negative_evidence_rules": [
+    "No current HUH hit does not mean no historical specimen existed.",
+    "No exact species-string model hit does not mean no glass descendant existed; historical synonymy and label changes must be checked.",
+    "A same-genus model is not a descendant without species-level or documentary linkage.",
+    "A specimen/model metadata match does not prove the surviving sheet was the sole physical template used in the workshop.",
+    "More than 300 specimens across 1892+1895 is not an 1892 count.",
+    "Conversion-rate language is prohibited until the relevant denominator is explicitly bounded."
+  ],
+  "what_the_nine_sheet_packet_does_prove": [
+    "A tightly dated Tempe collecting episode generated multiple retained herbarium references.",
+    "The same taxon, Eriogonum inflatum, was sampled on adjacent days, showing repeated sampling rather than a one-row species checklist.",
+    "Hoffmannseggia provides a secure metadata-level branch from field specimen to later model 433.",
+    "Several other discovered sheets currently lack secure model descendants, demonstrating that the archival branches are non-identical even if later synonym work changes individual classifications."
+  ],
+  "what_it_does_not_prove": [
+    "that only one of nine Tempe references was modelled",
+    "that all nine sheets represent everything collected at Tempe",
+    "that the herbarium corpus exhausts the field reference stock",
+    "that absent exact-string matches are true historical negatives"
+  ],
+  "next_retrievals": [
+    "Obtain a collector-level HUH export/search result for W. F. Ganong & R. Blaschka, year 1892, including barcode, historical name, accepted name, locality, date and image link.",
+    "If public search cannot enumerate the full set reliably, request a database export or staff-assisted query from HUH.",
+    "Separate 1892 and 1895 within the >300-specimen finding-aid aggregate.",
+    "Crosswalk every recovered 1892 sheet through historical synonyms against Harvard model labels and shipment lists.",
+    "Keep drawings/living material/preserved material as separate media ledgers before any attempt at expedition-wide conversion analysis."
+  ],
+  "article_use": "The source-critical contribution is stronger if the paper displays bounded evidence and missing denominators explicitly. Selective conversion is currently an event-level mechanism, not a measured expedition-wide rate."
+}
