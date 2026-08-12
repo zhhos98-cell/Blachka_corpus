@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-12",
+  "title": "The Blaschka Object Network — Boston Fruit Company / Rudolf Blaschka Jamaica Mobility Register",
+  "scope": "Source-controlled reconstruction of the commercial fruit-shipping infrastructure used by Rudolf Blaschka during the 1892 Jamaica journey. The register keeps direct Blaschka correspondence separate from contemporary commercial description and later archival targets. It asks how a scientific traveller, his luggage, letters and plant-reference work moved through a network primarily organized around perishable banana freight.",
+  "analytical_guard": "Borrowed commercial infrastructure is a project analytical phrase, not Rudolf Blaschka's own category. Direct correspondence establishes use of Boston Fruit Company steamers and employees; the broader claim that commodity logistics shaped scientific mobility is an inference from those dated movements plus contemporary route/port evidence.",
+  "direct_primary_events": [
+    {
+      "id": "BFC-1892-OUTBOUND",
+      "date": "1892-02-19 planning; departure 20/21 February sequence",
+      "direction": "Boston/Cambridge to Jamaica",
+      "carrier": "Bowden",
+      "company": "Boston Fruit Company",
+      "evidence": "BLA-D00690 / 017:44 says Rudolf will take the steamship Bowden of the Boston Fruit Company to Jamaica, a six-day passage, landing at Port Antonio on the north coast.",
+      "research_value": "The scientific journey begins on a commodity carrier rather than a dedicated research vessel."
+    },
+    {
+      "id": "BFC-1892-NORTHCOAST-DETOUR",
+      "date": "1892-02-28 to 1892-03-01 sequence",
+      "direction": "Port Antonio to Annotto Bay",
+      "carrier": "Bowden",
+      "company": "Boston Fruit Company",
+      "evidence": "BLA-D00704 / 017:58 says the party expected a roughly three-hour steamer trip but the ship first visited another north-coast port to deliver bananas and then Port Maria, so Annotto Bay was not reached until midnight. BLA-D00736 / 017:90 retrospectively names Port Maria and Rio Novo as banana-delivery calls.",
+      "route_guard": "The two letters differ in granularity. Preserve the contemporary 6 March formulation and the later retrospective Port Maria/Rio Novo naming rather than forcing a single exact call sequence until the German originals or a vessel schedule are checked.",
+      "research_value": "Cargo work altered the traveller's timetable and exposed him to additional coastal ports and landscapes. The scientific itinerary was partly a consequence of the fruit vessel's cargo itinerary."
+    },
+    {
+      "id": "BFC-1892-ANNOTTO-LOCAL",
+      "date": "1892-03-01 sequence",
+      "place": "Annotto Bay",
+      "actors": ["Boston Fruit Company employee, unnamed in BLA-D00704", "Mr. Kennedy, company clerk / senior local employee in Rudolf's later account"],
+      "evidence": "BLA-D00704 / 017:58 says a Boston Fruit Company employee helped the travellers find a good hotel. The same letter describes their transport problem: the mail coach would not take trunks and Cameron had additional boxes with glass jars, creating a large wagon-load of material. Mr. Kennedy then helped arrange onward ground transport. BLA-D00736 / 017:90 says Kennedy also volunteered to take Rudolf's heavy letter to the post office and paid its postage.",
+      "ocr_guard": "The translated clause specifying Kennedy's exact ground-transport arrangement is badly corrupted ('two bananas ... donkeys ...'); do not quote or normalize its vehicle/animal details without image-level checking.",
+      "research_value": "A commercial port employee became lodging, luggage/ground-transport and postal intermediary for the scientific party."
+    },
+    {
+      "id": "BFC-1892-RETURN",
+      "date": "late March / early April 1892 return sequence",
+      "direction": "Jamaica to Boston",
+      "carrier": "Albert Dumois",
+      "actors": ["Rudolf Blaschka", "William F. Ganong / Jamaica expedition network", "Mr. Kennedy at Annotto Bay", "Captain Rustad"],
+      "evidence": "BLA-D00736-00737 / 017:90-91 says Rudolf returned to the company steamship system at Annotto Bay, travelled on Albert Dumois, and explains that the fruit load required calls at multiple Jamaican ports before the vessel finally left for Boston. Rudolf states that the ship carried about 19,200 banana bunches and names Hope Bay, a Margaret/Morant OCR-variant port, Port Antonio and Port Morant in the loading sequence. He identifies Captain Rustad and a Norwegian crew.",
+      "quantity_guard": "The English translation gives 19,200 bunches and financial/charter figures for the company. The underlying handwritten/OCR page is difficult; use the qualitative cargo-route point before publication and image-check exact quantities, port spelling, ownership and rental figures.",
+      "research_value": "The return passenger route was literally embedded in a banana-collection loop. The passenger could not leave Jamaica when he reached the vessel because the vessel still had commodity-loading work to perform."
+    }
+  ],
+  "contemporary_external_calibration": [
+    {
+      "source": "James Ellis Humphrey, 'Where Bananas Grow,' Popular Science Monthly 44 (February 1894)",
+      "status": "contemporary published commercial/travel description, two years after Rudolf's trip",
+      "locator": "https://en.wikisource.org/wiki/Popular_Science_Monthly/Volume_44/February_1894/Where_Bananas_Grow",
+      "findings": [
+        "Steam carriage had largely displaced slower sailing carriage for perishable bananas because regular fast passage mattered to fruit viability.",
+        "Port Antonio and Port Morant had wharves, while many smaller north/east-coast ports loaded vessels offshore by surfboats.",
+        "Boston Fruit Company was a leading shipper across the eastern/northern Jamaican corridor, with its range reaching Annotto Bay.",
+        "Fruit steamers called at multiple coastal loading points and loading could continue around the clock until a vessel was full.",
+        "The company maintained local office and shipping personnel, including American staff at major ports and Jamaican clerks/tallymen/superintendents."
+      ],
+      "research_value": "Independently explains why a company steamer carrying Rudolf made repeated coastal calls and why local company employees could solve passenger, luggage and communication problems."
+    },
+    {
+      "source": "The Albert Dumois, 54 F. 529 (E.D.N.Y. 1893)",
+      "status": "contemporary federal admiralty record",
+      "locator": "https://openjurist.org/54/f1d/529",
+      "findings": [
+        "The named steamship Albert Dumois and master Rustad are independently documented in a January 1893 admiralty case.",
+        "The vessel operated through charter/subcharter arrangements rather than a simple owner-operated model."
+      ],
+      "research_value": "Corroborates Rudolf's vessel/captain identification and cautions against simplifying his translated statement about who 'owned' or 'rented' the steamer."
+    },
+    {
+      "source": "Savannah Morning News, 1896 collision reporting on Bowden",
+      "status": "later contemporary newspaper corroboration",
+      "locator": "https://gahistoricnewspapers.galileo.usg.edu/lccn/sn86063034/1896-05-19/ed-1/seq-1/",
+      "finding": "Reporting identifies Bowden as owned by Boston Fruit Company, while noting that it could be under charter to another fruit concern.",
+      "research_value": "Supports the vessel/company identity while again showing that ship ownership and operational charter were separable."
+    }
+  ],
+  "counterpart_archive": {
+    "repository": "Baker Library Special Collections and Archives, Harvard Business School",
+    "collection": "Boston Fruit Company records, 1891-1901",
+    "call_number": "Mss:1 1891-1901 B747",
+    "extent": "3 linear feet (3 volumes)",
+    "digital_content": "none listed in current HOLLIS finding aid",
+    "collection_locator": "https://hollisarchives.lib.harvard.edu/catalog/bak00235",
+    "components": [
+      {
+        "volume": "1",
+        "title": "Letterpress copybook",
+        "date_range": "1891-09-16 to 1894-11-09",
+        "priority": "core",
+        "research_questions": [
+          "Do outgoing letters name Kennedy or other Annotto Bay/Port Antonio employees?",
+          "Do February-April 1892 letters mention Bowden, Albert Dumois, passenger carriage, mail, port calls, charter arrangements or Jamaica office instructions?",
+          "Can company correspondence recover the operational timetable behind Rudolf's detours and return loading loop?"
+        ]
+      },
+      {
+        "volume": "2",
+        "title": "Private ledger No. I",
+        "date_range": "1892-1898",
+        "priority": "very high",
+        "research_questions": [
+          "Are vessel charter/rental costs, port agents, Jamaican operating accounts or steamship expenses itemized in 1892?",
+          "Can Rudolf's translated claims about scale or ship rental be checked against company accounting?"
+        ]
+      },
+      {
+        "volume": "3",
+        "title": "Register of ships",
+        "date_range": "1898-1901",
+        "priority": "context only for 1892",
+        "research_question": "Use for later company fleet structure, not as direct evidence for the 1892 voyage."
+      }
+    ],
+    "survival_guard": "The HOLLIS finding aid explicitly describes the three surviving volumes as fragmentary rather than a comprehensive company archive."
+  },
+  "related_visual_archive": {
+    "repository": "Baker Library Special Collections and Archives, Harvard Business School",
+    "collection": "United Fruit Company Photograph Collection, 1891-1962",
+    "status": "successor-company visual context, not direct 1892 Rudolf evidence",
+    "locator": "https://www.library.hbs.edu/special-collections-and-archives/collections/highlights/united-fruit",
+    "research_use": "Potential visual context for fruit loading, wharves, rail/port infrastructures and company landscapes. Image dates and Jamaica location must be checked before use."
+  },
+  "historiographical_position": {
+    "baseline": "Historians have already shown that scientific collecting relied on commercial networks, local intermediaries and mundane transport logistics. Merchant infrastructure as a support for scholarly circulation is therefore not itself a sufficient novelty claim.",
+    "case_specific_advance": "The Rudolf evidence makes the commercial carrier's own cargo itinerary causally visible inside the scientific itinerary. A fruit steamer's need to collect and deliver perishable cargo changed when and where the scientific traveller moved; company employees then solved lodging, luggage and postal problems. The infrastructure was optimized for another commodity, yet its operating rhythm became part of the production conditions for botanical field knowledge.",
+    "working_term": "borrowed commercial infrastructure"
+  },
+  "open_questions": [
+    "Can Boston Fruit Company Volume 1 identify Mr. Kennedy and his exact role at Annotto Bay?",
+    "Can company records document Bowden's February 1892 Boston-Port Antonio sailing and the late-March/early-April Albert Dumois voyage?",
+    "Can a contemporary sailing notice or ship manifest resolve every banana-loading port and date?",
+    "Was passenger carriage an ordinary feature of these fruit steamers, and on what terms was Rudolf carried?",
+    "Did Boston Fruit Company steamers carry mail officially in 1892, or was Kennedy simply using the local post office?",
+    "Can the Harvard 1892 field-trip expense folder identify fare, luggage/cartage or Boston Fruit Company payments?",
+    "How did bulky scientific luggage containing glass jars interact with ship, surfboat, coach and local-cart constraints?"
+  ],
+  "research_observation": "Jamaica changes the transport argument from a history of moving scientific objects to a history of scientific work embedded in a commodity corridor. Rudolf's passenger route, correspondence and specimen-making were partly synchronized to a perishable-fruit logistics system whose port calls, local staff and steamship schedules were designed for bananas. The useful comparison is not metaphorical similarity between bananas and specimens; it is the documented fact that the same infrastructure physically carried the scientific traveller and shaped his sequence of movement."
+}
