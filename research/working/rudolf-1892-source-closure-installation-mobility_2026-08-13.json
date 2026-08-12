@@ -1,0 +1,134 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "source_critical_closure_status_not_public_projection",
+  "title": "Rudolf Blaschka 1892 — reference-lineage closure and post-arrival installation mobility",
+  "purpose": "Continue the transport study by separating metadata-level closure from image-level closure for two object anchors, and by treating the Chicago 1893 installation failure as a post-arrival mobility event rather than as a simple damage anecdote.",
+  "results": [
+    {
+      "id": "HOF-433-METADATA-CLOSURE",
+      "object": "Model 433 — Hoffmannseggia",
+      "status": "metadata_crosswalk_high_confidence_image_level_closure_open",
+      "field_specimen": {
+        "repository": "Harvard University Herbaria",
+        "barcode": "GH 01676890",
+        "accepted_name": "Hoffmannseggia glauca (Ortega) Eifert",
+        "place": "Arizona, Tempe?",
+        "collectors": [
+          "W. F. Ganong",
+          "R. Blaschka"
+        ],
+        "date": "1892-04",
+        "evidence_status": "official HUH metadata independently rechecked; specimen image is listed as available but annotations have not yet been inspected in this pass"
+      },
+      "glass_model": {
+        "model_no": 433,
+        "historical_label": "Hoffmanseggia densiflora (Hoffmanseggia stricta)",
+        "updated_label": "Hoffmannseggia glauca [syn H. densiflora]",
+        "shipment": "9th Shipment, January 1894, model span 424-473",
+        "maker_evidence": "BLA-D01749 / 020:278 retrospectively places 433 Hoffmannseggia among the smaller models Rudolf says he constructed himself; analytical details were largely Leopold's work.",
+        "label_status": "Harvard component metadata / existing crosswalk supports the label pair; original digitized model-label image still needs inspection before publication-level closure"
+      },
+      "claim": "The field reference and the later glass object can now be joined at metadata level without collapsing them into a single travelling object. The April 1892 field specimen remained at Harvard while a later glass descendant was manufactured in Hosterwitz and returned in January 1894.",
+      "guard": "Do not claim that GH 01676890 was the sole or direct physical template for model 433 until the specimen sheet annotations and original model label are inspected. The defensible category is reference-lineage divergence."
+    },
+    {
+      "id": "ABR-345-SHIPMENT-HEADER-CLOSURE",
+      "object": "Model 345 — Abronia umbellata",
+      "status": "shipment_placement_closed_drawing_genealogy_guarded",
+      "shipment_evidence": {
+        "source": "05B annotated shipment list",
+        "sequence": [
+          "7th Shipment, Feb. 1893 begins at model 312",
+          "model 345 is listed as Abronia umbellata, Lam.",
+          "8th Shipment, July 1893 begins only after model 373, at model 374"
+        ],
+        "result": "Model 345 is directly inside the seventh shipment, model span 312-373."
+      },
+      "field_evidence": {
+        "source": "BLA-D00797 / 017:151",
+        "date_context": "late April 1892 western journey, San Diego / southern California sequence",
+        "finding": "Rudolf explicitly notices the violet heads of Abronia umbellata in the landscape."
+      },
+      "drawing_evidence": {
+        "repository": "Rakow Research Library / Corning Museum of Glass",
+        "finding_aid": "Leopold and Rudolf Blaschka Collection, botanical preparatory drawings subseries",
+        "record": "Abronia umbellata, 1892 or 1895",
+        "status": "institutional finding-aid date remains disjunctive; original drawing and its annotations have not yet been inspected"
+      },
+      "claim": "Shipment placement is now fully closed at list-header level. A direct 1892 encounter and a Corning preparatory drawing exist for the same species, but the drawing-to-model genealogy remains a guarded inference.",
+      "guard": "Because model 345 shipped in February 1893, a drawing actually used for that model would have to belong to the 1892 rather than 1895 fieldwork. This chronological constraint does not by itself prove that the listed drawing was the working drawing for model 345."
+    },
+    {
+      "id": "CHI-1893-INSTALLATION-MOBILITY",
+      "event": "Chicago World's Columbian Exposition display, May 1893",
+      "status": "mechanism_high_confidence_exact_wording_partially_image_open",
+      "sources": [
+        "BLA-D00145",
+        "BLA-D00149 / 015:149",
+        "BLA-D00150 / 015:150"
+      ],
+      "sequence": [
+        "models arrive and are set up in Chicago",
+        "display support using velvet is initially treated as a safety arrangement",
+        "once installed, the velvet permits or amplifies model movement under building vibration",
+        "specimens become displaced/huddled and multiple pieces break",
+        "Goodale creates a curtained-off repair workspace",
+        "fractures are repaired",
+        "models are remounted and relabelled",
+        "the case is reassembled",
+        "the restored installation is deliberately tested by shaking/jarring",
+        "the exhibit is reopened to the public"
+      ],
+      "claim": "The Chicago event makes post-arrival mobility literal. Transport success did not create a stable endpoint: the exhibition support system generated a new movement regime after arrival, forcing another cycle of repair, mounting, testing and stabilization.",
+      "analytical_consequence": "Installation should be treated as a transport-adjacent object state with its own affordances and risks. A material selected to immobilize fragile models could become a mechanism of displacement under a different vibration environment.",
+      "guard": "The exact damaged-object nouns, carrier-treatment wording in BLA-D00145, and several phrases in BLA-D00149-00150 remain OCR-unsafe. Publication quotation requires image-level transcription. The operational sequence above uses only the portions stable across OCR variants."
+    },
+    {
+      "id": "SNOW-1893-10697-SETTLEMENT",
+      "event": "E. A. Snow receiving-side settlement bill",
+      "status": "amount_high_confidence_category_level_closed_route_wording_image_open",
+      "source": "BLA-D00140 / 015:140",
+      "amount_usd": 106.97,
+      "expense_classes_visible_in_ocr": [
+        "German railroad charges",
+        "freight by ocean and Sound steamers",
+        "additional freight / local transfer charge with place wording currently OCR-unsafe",
+        "Custom House expenses",
+        "carriage for the inspector",
+        "Snow commission"
+      ],
+      "claim": "The bill aggregates heterogeneous legs, regulatory work and intermediary commission into one receiving-side settlement event. This is evidence for an accounting clock distinct from physical arrival.",
+      "guard": "Do not normalize the corrupt local-freight place phrase or the exact case/bonded wording until the manuscript image is checked."
+    }
+  ],
+  "revised_object_state_model": [
+    "manufactured",
+    "packed / temporarily supported",
+    "freight",
+    "bonded or customs-controlled",
+    "inspected",
+    "unpacked",
+    "transport support removed",
+    "mounted / labelled",
+    "installed",
+    "installation-induced displacement or breakage",
+    "repaired / remounted",
+    "stress-tested",
+    "re-exhibited"
+  ],
+  "map_decision": "No new public geographic line. If promoted later, Chicago should appear as an object-state episode attached to the existing location, while model 433 and model 345 belong in the evidence/detail layer as reference-lineage packets.",
+  "next_retrievals": [
+    "Inspect the HUH digital image of GH 01676890, including collector, determination and annotation layers.",
+    "Inspect the original Harvard model-433 old and updated label images.",
+    "Retrieve the original Corning/Rakow Abronia umbellata preparatory drawing record/image and inspect annotations, medium and dating.",
+    "Inspect Harvard model-345 label images for historical nomenclature and any provenance annotation.",
+    "Image-transcribe BLA-D00145, BLA-D00149 and BLA-D00150 as a single Chicago installation/repair sequence.",
+    "Image-transcribe BLA-D00140 to resolve the $106.97 Snow bill's corrupt case/bonded/local-freight wording."
+  ],
+  "relation_to_previous_passes": {
+    "pass14": "Abronia 345 was already identified as the strongest seventh-shipment American-plant candidate. This pass closes its shipment placement from the actual list-header continuity and preserves the drawing link as an inference rather than upgrading it prematurely.",
+    "pass16": "Receiving was modeled as serial reconstruction. Chicago adds a second reconstruction cycle after installation itself destabilizes the objects.",
+    "pass17": "Mixed receiving craft ecology remains intact. The present pass adds the material affordance of the installation substrate as a separate causal layer."
+  }
+}
