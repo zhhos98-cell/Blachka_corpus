@@ -1,0 +1,130 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "primary_source_yield_governance_model",
+  "title": "Rudolf Blaschka 1892 — yield governance, bilateral selection and work-capacity conversion",
+  "purpose": "Continue the access-repair analysis by testing what the expedition's species counts actually measure. The archive shows that yield was governed from both ends: Rudolf selected plants in the field, Cambridge filtered against existing collection coverage, season and travel time constrained availability, and later Harvard/Hosterwitz actors translated the surviving reference stock into feasible model output and years of work.",
+  "primary_sources": [
+    {
+      "source": "BLA-D00682 / 017:36",
+      "date": "1892-02-15",
+      "place": "Cambridge",
+      "direct_finding": "Rudolf, Mrs. and Miss Ware, with Goodale's agreement, decide not to bind the work to exactly 60 species. They will produce as many as can be comfortably made, with 50 as the minimum.",
+      "mechanism": "commission output is explicitly elastic and tied to maker capacity before fieldwork begins"
+    },
+    {
+      "source": "BLA-D00785 / 017:139",
+      "date": "1892-04-22",
+      "place": "Tempe",
+      "direct_finding": "Rudolf says most very small desert plants were ignored and that the party chose the showiest and most characteristic forms, producing 25 species useful to them.",
+      "mechanism": "field-side representational filtering"
+    },
+    {
+      "source": "BLA-D00879 / 017:233",
+      "date": "1892-05-24 sequence",
+      "place": "Colorado Springs",
+      "direct_findings": [
+        "Rudolf says he is working casually so as not to overtax himself and will get together as many species as possible under the circumstances.",
+        "He says the season does not offer a large selection.",
+        "He says people in Cambridge reject some species because they are already represented.",
+        "He estimates that 600–800 species would require wandering around America for the whole year, which he does not want to do.",
+        "He reports 200 species drawn and studied so far and guesses he may have 400 by departure.",
+        "He says a good botanical garden makes finding material easier because names and other identifying information are at hand."
+      ],
+      "mechanism": "yield is jointly constrained by body, season, institutional duplicate filtering, travel duration and identification infrastructure"
+    },
+    {
+      "source": "BLA-D00927 / 017:282",
+      "date": "mid-June 1892 Cambridge return sequence",
+      "place": "Cambridge",
+      "direct_finding": "Rudolf says that through drawing and studying what was collected he acquired about three years of material, despite limited work days, and tried not to neglect anything in flower, even small weeds.",
+      "mechanism": "field/reference count is converted into anticipated workshop duration"
+    },
+    {
+      "source": "BLA-D00091 / 015:91",
+      "date": "post-departure June 1892",
+      "place": "Cambridge / Goodale to Wares",
+      "direct_finding": "Goodale independently estimates that Rudolf has material on hand for about four years' work and connects that future horizon to discussion of the contract and Leopold's continued labour.",
+      "mechanism": "receiving/commissioning side performs a separate work-horizon valuation",
+      "guard": "Keep Goodale's four-year estimate separate from Rudolf's approximately three-year estimate; they are actor-specific forecasts, not a discrepancy to average away."
+    }
+  ],
+  "governance_layers": [
+    {
+      "layer": "commission capacity",
+      "actor": "Rudolf + Wares + Goodale",
+      "rule": "50 minimum, no fixed 60, make as many as can be comfortably produced",
+      "effect": "expected finished output remains elastic"
+    },
+    {
+      "layer": "field representational selection",
+      "actor": "Rudolf and field collaborators",
+      "rule": "select useful/showy/characteristic plants; reject tiny/dangerous/low-value material",
+      "effect": "encountered flora is reduced before preservation or dispatch"
+    },
+    {
+      "layer": "collection-coverage filtering",
+      "actor": "Cambridge / Harvard",
+      "rule": "reject some candidate species already represented",
+      "effect": "a botanically available species can be institutionally redundant"
+    },
+    {
+      "layer": "season and itinerary",
+      "actor": "environment + traveller",
+      "rule": "only plants in useful states during limited travel windows are directly recordable; large totals would require much longer travel",
+      "effect": "potential flora exceeds attainable reference yield"
+    },
+    {
+      "layer": "bodily work rate",
+      "actor": "Rudolf",
+      "rule": "drawing/studying capacity and fatigue constrain throughput",
+      "effect": "more accessible plants do not automatically produce more usable references"
+    },
+    {
+      "layer": "identification infrastructure",
+      "actor": "botanical garden / local experts",
+      "rule": "named, organized collections reduce search and identification cost",
+      "effect": "usable-reference yield per unit time can rise without a richer natural flora"
+    },
+    {
+      "layer": "work-horizon valuation",
+      "actor": "Rudolf and Goodale separately",
+      "rule": "returned material is translated into projected years of future workshop labour",
+      "effect": "expedition success is assessed temporally rather than by raw species total"
+    }
+  ],
+  "yield_ontology": {
+    "do_not_merge": [
+      "plants encountered",
+      "plants considered",
+      "plants selected as useful",
+      "species drawn",
+      "species studied",
+      "species preserved/dried",
+      "seeds/bulbs/live plants acquired",
+      "references dispatched",
+      "candidate species rejected as duplicates",
+      "models later made",
+      "model sets later produced",
+      "years of future work estimated"
+    ],
+    "reason": "The archive's numerical statements belong to different operations and actors. Treating every number as 'species collected' erases the filtering and conversion mechanisms that produce yield."
+  },
+  "bilateral_selection_claim": {
+    "field_end": "Rudolf and collaborators decide what is useful enough to record or carry.",
+    "museum_end": "Cambridge decides whether a candidate adds something to the existing collection and commission.",
+    "workshop_end": "Maker capacity and future labour determine how much of the reference stock can become finished models.",
+    "result": "Selection is bilateral/multilateral rather than a sovereign choice by the field collector."
+  },
+  "strongest_claim": "The expedition's yield was governed, not simply harvested. Rudolf's field choices, Cambridge's duplicate filter, seasonal availability, travel duration, bodily work rate, botanical-garden identification infrastructure and projected workshop capacity all intervened between plants seen and models that could eventually be made. Species counts are therefore outputs of a distributed selection system rather than neutral measures of collecting success.",
+  "quantitative_guard": "Do not compare 25, 200, 400, 600–800, three years and four years on one numerical scale. Each has a different ontology: selected useful species, drawn/studied references, forecast departure total, counterfactual annual travel total, maker work-horizon estimate, commissioner work-horizon estimate.",
+  "article_consequence": "This pass gives a clean reason to retain contradictory or nonmatching numbers. The variation documents who was counting what, for which decision. A figure/table can show the transformations from encountered flora to institutionally useful references to feasible workshop output instead of presenting a single total expedition yield.",
+  "map_decision": "No new route layer. Use a filter/conversion diagram at Cambridge/field interface: encountered -> field-selected -> Harvard nonduplicate -> stabilized reference -> workshop queue -> model. Counts should attach only to the stage they actually describe.",
+  "next_steps": [
+    "Re-enter every major 1892 quantitative statement into a yield ontology table with date, actor, operation and evidential status.",
+    "Recover individual examples of Cambridge duplicate rejection if Goodale lists or correspondence name them.",
+    "Compare the 15 February flexible 50/60 output decision with later actual shipment/model chronology without assuming expedition references map directly to the next shipment.",
+    "Image-check BLA-D00091 and BLA-D00927 before publication quotation of four-year and three-year forecasts.",
+    "Test whether botanical gardens measurably change daily drawing/study throughput using dated Rudolf counts, while keeping travel/workday uncertainty explicit."
+  ]
+}
