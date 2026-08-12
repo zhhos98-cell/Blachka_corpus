@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive map of Rudolf Blaschka’s 1892 journey, comparing his bodily route with the movement of models, plant material, references and decisions.">
-  <title>A workshop on the move · Rudolf Blaschka 1892 · The Blaschka Object Network</title>
+  <meta name="description" content="Interactive map of Rudolf Blaschka’s 1892 journey, comparing his bodily route with the freight, postal and reference packets through which the Harvard glass-model project worked at distance.">
+  <title>A workshop in transit · Rudolf Blaschka 1892 · The Blaschka Object Network</title>
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../secondary.css">
   <link rel="stylesheet" href="../../navigation-shell.css?v=20260811-2">
@@ -25,14 +25,14 @@
   <main class="subpage-main" id="main-content">
     <section class="page-intro journey-intro" aria-labelledby="journey-title">
       <p class="eyebrow">Rudolf Blaschka · 1892</p>
-      <h1 id="journey-title">A workshop on the move</h1>
-      <p class="page-dek">Follow Rudolf’s route alongside the work done on the journey, then compare it with objects that travelled on their own schedules through freight, post, customs and museum handling.</p>
-      <p class="journey-thesis">People, specimens, books and decisions moved on different clocks.</p>
+      <h1 id="journey-title">A workshop in transit</h1>
+      <p class="page-dek">Rudolf and the things his work depended on did not travel together. Compare his bodily route with freight, postal and reference packets that split from the workshop, crossed different legal and material systems, and arrived on different schedules.</p>
+      <p class="journey-thesis">The workshop worked at distance by being decomposed into differently transportable parts.</p>
     </section>
 
     <section class="journey-workspace" aria-labelledby="workspace-title">
       <div class="journey-workspace-head">
-        <div><p class="eyebrow">Interactive map</p><h2 id="workspace-title">Read the journey three ways</h2></div>
+        <div><p class="eyebrow">Interactive map</p><h2 id="workspace-title">Read movement three ways</h2></div>
         <div class="workspace-switches">
           <div class="map-mode-switch" role="group" aria-label="Analytical map view">
             <button type="button" data-map-mode="journey" class="is-active" aria-pressed="true"><span>01</span> Journey</button>
@@ -48,13 +48,13 @@
       </div>
 
       <div class="mode-explainer">
-        <p id="mode-copy"><strong>Journey</strong> follows documented movement. The dashed line shows the route reported publicly at the time.</p>
+        <p id="mode-copy"><strong>Journey</strong> follows documented bodily movement. Switch to Objects or Both to compare the independently moving packets reconstructed from the same project.</p>
         <div class="mode-legend" id="mode-legend" aria-label="Current map legend"></div>
       </div>
 
       <div class="journey-map-column journey-map-column-full">
         <div class="map-frame journey-map-frame"><div id="journey-map" role="region" aria-label="Interactive map of Rudolf Blaschka’s 1892 journey and object routes"></div></div>
-        <p class="map-method journey-map-note">Numbers show documented stops on Rudolf’s route. Object packets use square handoff markers and retain source guards where an intermediate place or date is approximate. Translucent rail segments are corridor-level timing and observation windows, not extra visited nodes; the darker final segment is a daylight exclusion control. Gold <strong>S</strong> markers open historical views that closely match landscapes in Rudolf’s sketchbook without claiming an exact drawing position.</p>
+        <p class="map-method journey-map-note">Numbers mark documented stops on Rudolf’s route. Letter-number markers identify packet-specific handoffs: <strong>G</strong> glass cases, <strong>R</strong> repair materials, <strong>S</strong> seeds and <strong>B</strong> reference books. Solid, dashed and dotted segments retain distinctions between directly reconstructed movement, bonded transit, international post, requested movement and expected delivery. A packet line establishes only what the source permits; it does not invent intermediate post offices, ports or cargo documents.</p>
       </div>
 
       <section class="journey-detail journey-detail-strip" id="detail-panel" aria-live="polite" aria-label="Selected route evidence">
@@ -74,13 +74,13 @@
         </div>
 
         <div id="object-detail-content" hidden>
-          <div class="detail-heading"><span class="detail-number object-detail-marker" id="object-detail-no">O1</span><div><p id="object-detail-date">20–21 Jan 1892</p><h2 id="object-detail-title">Hosterwitz</h2></div></div>
+          <div class="detail-heading"><span class="detail-number object-detail-marker" id="object-detail-no">G1</span><div><p id="object-detail-date">20–21 Jan 1892</p><h2 id="object-detail-title">Hosterwitz</h2></div></div>
           <p class="detail-summary" id="object-detail-summary">Five numbered cases enter the forwarding system.</p>
           <div class="detail-tags" id="object-detail-tags"></div>
           <dl class="knowledge-fields knowledge-fields-horizontal object-fields">
-            <div><dt>Object</dt><dd id="object-detail-object"></dd></div>
+            <div><dt>Packet</dt><dd id="object-detail-object"></dd></div>
             <div><dt>Handoff</dt><dd id="object-detail-action"></dd></div>
-            <div><dt>Handler</dt><dd id="object-detail-handler"></dd></div>
+            <div><dt>Handler / authority</dt><dd id="object-detail-handler"></dd></div>
             <div><dt>State change</dt><dd id="object-detail-state"></dd></div>
           </dl>
           <div class="detail-why"><p class="detail-label">What the source allows</p><p id="object-detail-description"></p></div>
@@ -92,26 +92,29 @@
     </section>
 
     <section class="route-directory" aria-labelledby="route-index-title">
-      <div class="route-directory-head"><div><p class="eyebrow">Person route</p><h2 id="route-index-title">Rudolf’s sequence</h2></div><p>Select a stop to return to it on the map. This directory records Rudolf’s bodily route, not every material movement generated by the journey.</p></div>
+      <div class="route-directory-head"><div><p class="eyebrow">Person route</p><h2 id="route-index-title">Rudolf’s sequence</h2></div><p>Select a stop to return to it on the map. This directory records Rudolf’s bodily route. It should be read beside, not as a container for, the freight, post and reference routes generated by the same work.</p></div>
       <div class="route-index" id="route-index" role="list" aria-label="Numbered route stops"></div>
     </section>
 
     <section class="object-directory" aria-labelledby="object-index-title">
-      <div class="route-directory-head"><div><p class="eyebrow">Object routes</p><h2 id="object-index-title">Packets and handoffs</h2></div><p>Objects are reconstructed as packets with their own carriers, paperwork and receiving sequences. The first packet follows five cases of finished models sent ahead of Rudolf.</p></div>
+      <div class="route-directory-head"><div><p class="eyebrow">Object routes</p><h2 id="object-index-title">Packets and handoffs</h2></div><p>The first public packet set is deliberately selective. It includes a finished-model freight chain, a requested repair-material postal packet, a reverse-moving seed packet and post-return reference books. Each carries its own evidence guard and clock.</p></div>
       <div class="object-packet-list" id="object-packet-list" role="list" aria-label="Object route packets"></div>
     </section>
 
     <section class="journey-method" aria-labelledby="journey-method-title">
       <p class="eyebrow">How to read it</p>
-      <div><h2 id="journey-method-title">Route, material and evidence stay separate.</h2><p>A dated place can establish presence without proving a collecting trip. A corridor can narrow where observation remained possible without naming a mountain or milepoint. An object handoff can establish transfer without proving every intermediate mile. Passenger customs, bonded freight and museum inspection are therefore kept distinct. Return to Hosterwitz also did not mean that every specimen, reference book or modelling decision arrived at the same moment.</p></div>
+      <div><h2 id="journey-method-title">Movement changes the historical object.</h2><p><em>Packet</em>, <em>handoff</em> and <em>controlled decomposition</em> are analytical terms used here, not actor categories. A finished model can become numbered freight and then bonded merchandise; workshop chemistry can become a postal sample; living botanical potential can become seeds plus cultivation instructions; an immobile library reference can become a purchased duplicate. Handoff authority means temporary, source-supported power to route, classify, inspect, open, handle, repair or reassemble. A line therefore records an evidenced transport relation and its uncertainty, not a claim that every intermediate mile is known.</p></div>
     </section>
 
     <section class="journey-references" aria-labelledby="journey-references-title">
-      <div class="journey-references-head"><p class="eyebrow">Sources</p><div><h2 id="journey-references-title">The evidence behind the map</h2><p>Archival images stay with their holding institutions unless the reproduced comparison image is rights-safe.</p></div></div>
+      <div class="journey-references-head"><p class="eyebrow">Sources</p><div><h2 id="journey-references-title">The evidence behind the map</h2><p>Archival correspondence remains the evidential base. External shipping, customs and commercial records are used to calibrate infrastructure and identify the next documentary targets; matching context is kept distinct from a surviving cargo record.</p></div></div>
       <div class="journey-reference-list">
-        <article class="journey-reference"><p class="journey-reference-type">Secondary study</p><p class="journey-reference-citation">Susan M. Rossi-Wilcox, “The Botanical Models (1886–1936),” in <em>Drawing upon Nature: Studies for the Blaschkas’ Glass Models</em> (Corning Museum of Glass, 2007), 20–33.</p><p class="journey-reference-note">Chronology checks, selected identifications and published drawing/model comparisons.</p><a href="https://info.cmog.org/publication/drawing-upon-nature-studies-blaschkas-glass-models" target="_blank" rel="noopener noreferrer">Corning ↗</a></article>
-        <article class="journey-reference"><p class="journey-reference-type">Primary archive</p><p class="journey-reference-citation"><em>Archives of Rudolf and Leopold Blaschka and the Ware Collection of Blaschka Glass Models of Plants</em>, Botanical Museum–Harvard University Herbaria.</p><p class="journey-reference-note">Main source for dates, route, work, repairs, material movement, telegraphic decisions, transport handoffs and post-return reassembly.</p><a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener noreferrer">HOLLIS ↗</a></article>
-        <article class="journey-reference"><p class="journey-reference-type">Sketchbook</p><p class="journey-reference-citation">Rudolf Blaschka, <em>R. Blaschka [sketchbook]</em>, c. 1892. Rakow Research Library, Corning Museum of Glass. Identifier 87384; Alma MMS 99873843504126.</p><p class="journey-reference-note">The current digital surrogate and catalogue description do not fully agree on the opening sequence; that discrepancy remains open.</p><a href="https://info.cmog.org/library" target="_blank" rel="noopener noreferrer">Rakow Library ↗</a></article>
+        <article class="journey-reference"><p class="journey-reference-type">Primary archive</p><p class="journey-reference-citation"><em>Archives of Rudolf and Leopold Blaschka and the Ware Collection of Blaschka Glass Models of Plants</em>, Botanical Museum–Harvard University Herbaria.</p><p class="journey-reference-note">Main source for dates, route, work, repairs, postal requests, material movement, customs handoffs and post-return reassembly.</p><a href="https://hollisarchives.lib.harvard.edu/catalog/ecb00006" target="_blank" rel="noopener noreferrer">HOLLIS ↗</a></article>
+        <article class="journey-reference"><p class="journey-reference-type">Secondary study</p><p class="journey-reference-citation">Susan M. Rossi-Wilcox, “The Botanical Models (1886–1936),” in <em>Drawing upon Nature: Studies for the Blaschkas’ Glass Models</em> (Corning Museum of Glass, 2007), 20–33.</p><p class="journey-reference-note">Chronology, the 1892 repair-and-study purpose, selected identifications and published drawing/model comparisons.</p><a href="https://info.cmog.org/publication/drawing-upon-nature-studies-blaschkas-glass-models" target="_blank" rel="noopener noreferrer">Corning ↗</a></article>
+        <article class="journey-reference"><p class="journey-reference-type">Shipping context</p><p class="journey-reference-citation">Bremen emigration-ship departure database, Norddeutscher Lloyd <em>Elbe</em>, Bremen to the United States, 30 January 1892.</p><p class="journey-reference-note">A strong sailing/date match for the vessel named in Harvard receiving correspondence. It is contextual corroboration, not the bill of lading for U.B. 346–350.</p><a href="https://www.public-juling.de/auswanderung/abfahrtsdaten/passagen.php?lang=de&amp;s=s&amp;v=Elbe" target="_blank" rel="noopener noreferrer">Bremen departures ↗</a></article>
+        <article class="journey-reference"><p class="journey-reference-type">Customs archive target</p><p class="journey-reference-citation">U.S. National Archives at Boston, Record Group 36, Records of the U.S. Customs Service.</p><p class="journey-reference-note">Relevant environment for vessel entrance/clearance, imports, bonded movement, warehousing and customs administration. The 1892 transaction has not yet been matched to a surviving entry or bond.</p><a href="https://www.archives.gov/boston/holdings/rg-001-049.html" target="_blank" rel="noopener noreferrer">NARA Boston ↗</a></article>
+        <article class="journey-reference"><p class="journey-reference-type">Commercial infrastructure</p><p class="journey-reference-citation">Boston Fruit Company records, 1891–1901, Baker Library, Harvard Business School.</p><p class="journey-reference-note">Fragmentary company records relevant to the Jamaica transport environment in which banana shipping, local company personnel and scientific baggage intersected.</p><a href="https://hollisarchives.lib.harvard.edu/catalog/bak00235" target="_blank" rel="noopener noreferrer">Baker Library ↗</a></article>
+        <article class="journey-reference"><p class="journey-reference-type">Sketchbook</p><p class="journey-reference-citation">Rudolf Blaschka, <em>R. Blaschka [sketchbook]</em>, c. 1892. Rakow Research Library, Corning Museum of Glass. Identifier 87384; Alma MMS 99873843504126.</p><p class="journey-reference-note">The digital surrogate and catalogue description do not fully agree on the opening sequence; that discrepancy remains open.</p><a href="https://info.cmog.org/library" target="_blank" rel="noopener noreferrer">Rakow Library ↗</a></article>
         <article class="journey-reference"><p class="journey-reference-type">Timetable</p><p class="journey-reference-citation"><em>Arizona Republican</em>, 29 May 1892, Southern Pacific timetable.</p><p class="journey-reference-note">A close same-year control for the Maricopa departure window, not exact-day proof.</p><a href="https://azmemory.azlibrary.gov/nodes/view/172419" target="_blank" rel="noopener noreferrer">Arizona Memory Project ↗</a></article>
       </div>
     </section>
@@ -123,9 +126,9 @@
   <script src="./route-data.js?v=20260811-2"></script>
   <script src="./knowledge-data.js?v=20260811-2"></script>
   <script src="./source-data.js?v=20260811-3"></script>
-  <script src="./object-route-data.js?v=20260812-1"></script>
+  <script src="./object-route-data.js?v=20260812-2"></script>
   <script src="./visual-match-data.js?v=20260811-2"></script>
-  <script src="./map.js?v=20260812-1"></script>
+  <script src="./map.js?v=20260812-2"></script>
   <script src="../../unified-ui.js?v=20260811-5" defer></script>
 </body>
 </html>
