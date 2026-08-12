@@ -1,0 +1,114 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "primary_source_return_interface_model",
+  "title": "Rudolf Blaschka 1892 — return inventory, temporal stock and Cambridge workshop interface",
+  "purpose": "Continue the packet-network analysis through Rudolf's June return to Cambridge. The return did not simply close the journey. Goodale translated accumulated field references into projected years of future work while Rudolf simultaneously repaired earlier glass models at Harvard. Cambridge thus briefly joined incoming reference stock, outgoing return travel, repair of old output and financial settlement in one interface.",
+  "primary_sources": [
+    {
+      "source": "BLA-D00076 / 015:76",
+      "date": "1892-06-07",
+      "place": "Cambridge, Massachusetts",
+      "direct_finding": "Goodale reports Rudolf back in Cambridge, very homesick, repairing remaining breaks, planning to see a seedsman in Southwick, and eager to return to work on the models.",
+      "mechanism": "return is still an active acquisition/repair/work phase rather than a passive endpoint",
+      "ocr_guard": "The seedsman/Southwick wording is corrupt in OCR; the broad function is independently normalized in the 2007 Corning chapter. Avoid verbatim quotation until image transcription."
+    },
+    {
+      "source": "BLA-D00081 / 015:81",
+      "date": "1892-06-10",
+      "place": "Cambridge, Massachusetts",
+      "direct_findings": [
+        "Goodale says Rudolf has accumulated material sufficient for a multi-year period of solid work; the OCR reads 'their years', while the contemporary sequence and later Corning transcription support 'three years'.",
+        "Goodale separately says Rudolf has secured seeds and plants for 'at least six years in all'.",
+        "Rudolf is concurrently repairing earlier models, with all but two of the worst damaged examples put into excellent order.",
+        "Two very badly broken models are to be taken back with Rudolf; the continuation attributes their damage to an earlier New York Custom House episode."
+      ],
+      "mechanism": "field material is converted into a forecast work horizon while older glass output re-enters repair circulation",
+      "numeric_guard": "Use 'multi-year / approximately three years solid work' unless the original image is checked. The 'at least six years in all' phrase is clearer but still OCR-derived."
+    },
+    {
+      "source": "BLA-D00085 / 015:85",
+      "date": "1892-06-15",
+      "place": "Cambridge, Massachusetts",
+      "direct_findings": [
+        "Goodale reports that Rudolf has repaired the damaged preparations/models so effectively that it would be hard to tell which had been broken.",
+        "In some cases Rudolf made new petals in Cambridge using Harvard's appliances.",
+        "Goodale assesses the whole trip as a very great success 'in the way of material' and in other respects.",
+        "Rudolf is to leave for New York the following day and sail Saturday."
+      ],
+      "mechanism": "material success is explicitly evaluated before bodily departure; Cambridge temporarily supports fabrication/repair work"
+    },
+    {
+      "source": "BLA-D00079–00080 / 015:79–80",
+      "date": "1892-06-16",
+      "place": "Cambridge, Massachusetts",
+      "direct_findings": [
+        "Goodale says final arrangements for Rudolf's return have been made.",
+        "He states that 'we have a large amount of material on hand'.",
+        "He states that all the models are mended.",
+        "The same letter still carries residual fares/freight/expenditure accounting, although the exact figures and several words are OCR-unsafe."
+      ],
+      "mechanism": "return inventory, repaired objects and unsettled mobility costs coexist on different clocks",
+      "financial_guard": "Do not publish exact remaining-balance/fare/freight figures from OCR without image-level transcription."
+    }
+  ],
+  "temporal_stock_model": {
+    "definition": "Analytical shorthand for references whose value is expressed as a projected duration of future workshop activity, cultivation or observation.",
+    "source_basis": [
+      "Goodale's June 10 estimate of material for approximately three years of solid work",
+      "Goodale's separate statement that seeds and plants extend the horizon to at least six years in all",
+      "June 16 statement that a large amount of material is 'on hand'"
+    ],
+    "claim": "Return converted geographical mobility into a temporal reserve. The expedition's output was evaluated not only by species or boxes but by how long it could keep the Hosterwitz workshop productively occupied.",
+    "guard": "Do not treat Goodale's estimates as measured productivity ratios or fixed conversion rates from specimen count to years of models. They are contemporary managerial forecasts."
+  },
+  "heterogeneous_time_horizons": {
+    "fixed_or_stabilized_references": "drawings, dried specimens and preserved material could support relatively immediate study once available",
+    "living_references": "seeds, bulbs, cuttings and live plants could retain future biological states such as growth and flowering, extending usefulness beyond immediate return",
+    "result": "Different media carried different future work horizons; Goodale's separate multi-year estimates are consistent with the packet/media distinctions reconstructed in passes 21–22.",
+    "guard": "The source does not allocate exact years to each medium category one by one. Keep this as a mechanism-level inference, not an arithmetic partition."
+  },
+  "cambridge_interface": {
+    "incoming": [
+      "field drawings/specimens/preserved packets",
+      "seeds and living plants",
+      "Ganong material cached in Cambridge",
+      "Rudolf himself returning from the journey"
+    ],
+    "operations": [
+      "inventory and evaluation of future work value",
+      "repair of previously imported Harvard glass models",
+      "fabrication of replacement petals using Harvard appliances",
+      "possible further seed acquisition through a Southwick seedsman",
+      "preparation of final return arrangements and freight/fare settlement"
+    ],
+    "outgoing": [
+      "Rudolf toward New York/Germany",
+      "two severely broken older models carried back for further repair",
+      "reference materials whose later Hosterwitz routes remain packet-specific"
+    ],
+    "strongest_claim": "For a short June interval Cambridge became a two-way workshop interface: new American references were consolidated for future German production while older German-made glass returned to workshop status through repair and possible re-export."
+  },
+  "revised_clock_model": [
+    "field encounter / selection clock",
+    "drawing and specimen-preparation clock",
+    "packet dispatch / cache / relay clock",
+    "Cambridge inventory / work-horizon clock",
+    "bodily return clock",
+    "repair clock for existing models",
+    "fare/freight/accounting settlement clock",
+    "Hosterwitz workshop reactivation clock",
+    "future cultivation / flowering clock"
+  ],
+  "relation_to_pass22": "Pass22 showed that packets could move east before Rudolf and that live references could carry future flowering. Pass23 shows what happened when those heterogeneous returns were evaluated institutionally: mobility was translated into projected workshop time.",
+  "relation_to_transport_thesis": "The return journey did not collapse the distributed expedition back into one object. Cambridge gathered some lanes, left others unresolved, and converted them into new operational categories: stock on hand, years of work, repaired objects, return baggage and outstanding expenses.",
+  "map_decision": "No additional geographic route. Cambridge should eventually carry a June interface/state card: incoming references -> inventory/work-years; older models -> repair/new petals; Rudolf -> New York/Germany; costs -> settlement. This is an interface episode at one coordinate, not another line.",
+  "next_steps": [
+    "Image-check BLA-D00081 to resolve 'three years solid work' and the exact 'six years in all' wording.",
+    "Image-check BLA-D00085 for the exact noun Goodale uses for the repaired objects and the phrase 'success in the way of material'.",
+    "Locate the Southwick seedsman and determine whether Rudolf actually made the visit or acquired additional reference material before departure.",
+    "Track the two badly broken older models Rudolf planned to take back, testing whether later Hosterwitz correspondence identifies their repair/return.",
+    "Search Goodale/Ware correspondence immediately after Rudolf's departure for a fuller material inventory or revised estimate of years of work.",
+    "Compare the June contemporary work-horizon estimates with later shipment chronology, but do not treat the estimate as a production forecast until model-level output is reconstructed."
+  ]
+}
