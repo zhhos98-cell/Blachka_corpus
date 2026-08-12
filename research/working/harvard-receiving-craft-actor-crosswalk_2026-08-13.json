@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "working_source_critical_not_public_projection",
+  "title": "Harvard Blaschka receiving craft actor crosswalk, 1892–1932",
+  "research_question": "How were the material, legal and administrative operations required to receive and install the Glass Flowers distributed among actors inside and outside Harvard?",
+  "actor_rows": [
+    {"actor":"E. A. Snow","institutional_position":"external broker/forwarding intermediary","operations":["receive papers","coordinate customs inspection","settle freight/importation/inspector bills"],"knowledge_type":"procedural/route memory","key_evidence":["BLA-D00024","BLA-D00140","BLA-D00192","BLA-D02095","BLA-D02693"]},
+    {"actor":"Capt./Col. Wales / customs inspectors","institutional_position":"government authority","operations":["inspect/pass cases","select or supervise opening","authorize transition out of customs-controlled state"],"knowledge_type":"regulatory authority","key_evidence":["BLA-D00028","BLA-D02096"]},
+    {"actor":"unnamed 1892 porter/houseboy","institutional_position":"Botanical Museum labor","operations":["elevator/case movement","outer packing removal"],"knowledge_type":"physical handling","key_evidence":["BLA-D00695"]},
+    {"actor":"Mary Lee Ware","institutional_position":"donor/patron","operations":["personal unpacking","receiving oversight","staged observation of unpacking"],"knowledge_type":"trusted manual handling","key_evidence":["Harvard HOLLIS ecb00006","BLA-D01823","BLA-D02096-02098"]},
+    {"actor":"George Lincoln Goodale","institutional_position":"Botanical Museum director/curator","operations":["case opening","condition judgment","repair/remounting","broker/customs coordination","public demonstration","contract local craftsmen"],"knowledge_type":"curatorial coordination plus hands-on handling","key_evidence":["BLA-D00695","BLA-D00149-150","BLA-D00264","BLA-D02127"]},
+    {"actor":"John Waugh","institutional_position":"external Cambridge carpenter/builder; recurring contractor","operations":["pack","unpack","set up exhibits","move models","construct/repair cases","make/perfect plaster/gypsum plaques"],"knowledge_type":"contracted cabinetmaking/installational craft","key_evidence":["BLA-D02082","BLA-D02127-02128","BLA-D00270","BLA-D00364","Harvard transportation/installation method"],"external_control":"Cambridge Directory 1907, 113 Mt. Auburn St."},
+    {"actor":"Louis C. Bierweiler","institutional_position":"museum assistant/technical collections worker; later Assistant and Technician / Curator of Botanical Collections","operations":["construct plaques","wire/mount models","clear cases","loosen transport supports","repair","unpack","arrange/install","museum administration"],"knowledge_type":"embodied handling/installational memory","key_evidence":["BLA-D02254","BLA-D02332","BLA-D00434","BLA-D02885","BLA-D02891-02892","BLA-D02914"],"later_control":"Harvard Crimson obituary says joined museum 1901, early duty unpacking crates; official HOLLIS preserves Bierweiler papers/1931 diary"},
+    {"actor":"Oakes Ames","institutional_position":"curator","operations":["delegate clearing","coordinate installation","assess condition","describe/value Bierweiler's long-trained expertise"],"knowledge_type":"institutional/curatorial coordination","key_evidence":["BLA-D00429-00434","BLA-D02891-02892"]}
+  ],
+  "boundary_changes": [
+    {"date":"1892","configuration":"receiving depends heavily on curator + patron + porter + broker/customs; technical labor is visible but only partly named"},
+    {"date":"1906–1907","configuration":"Waugh appears explicitly as paid external pack/setup/unpack contractor with independent workshop; Ware remains skilled unpacker; customs-supervised unpacking is staged publicly"},
+    {"date":"circa 1911–1913","configuration":"museum begins explicitly describing preservation/installation skill as staff competence; Bierweiler is salaried and making/wiring plaques while Waugh remains a separate craft resource"},
+    {"date":"1923–1924","configuration":"Harvard reports publicly/administratively on Bierweiler's long training, handling skill, mounting technique and museum traditions; Waugh simultaneously continues building cases"},
+    {"date":"1929–1932","configuration":"Bierweiler spans clearing, support removal, repair, remounting and unpacking; Rudolf directly recognizes him as the receiver-side skilled counterpart"}
+  ],
+  "interpretive_model": {
+    "not_a_linear_professionalization_story": "The evidence does not show a clean transition from amateur to professional or contractor to registrar. Patron, curator, contractor and museum assistant remain concurrent.",
+    "stronger_model": "A mixed receiving ecology progressively made distinct forms of expertise visible and durable. Some capacity remained outsourced to a local workshop; some became embodied in long-serving museum staff; some remained attached to patronage or curatorial office.",
+    "transport_implication": "The route ends only when this receiving ecology has successfully undone the transport assemblage and rebuilt a stable museum object."
+  },
+  "map_implication": "Keep these actors in Harvard-node state/authority timeline rather than drawing separate geographical routes. Waugh's 113 Mt. Auburn workshop could eventually appear as a local inset only if a Cambridge-scale map becomes useful."
+}
