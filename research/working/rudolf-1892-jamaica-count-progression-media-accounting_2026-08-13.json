@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "focused_quantitative_source_criticality",
+  "title": "Rudolf Blaschka 1892 — Jamaica count progression and media-specific accounting",
+  "purpose": "Resolve as far as possible the long-standing 106/116 Jamaica count problem by restoring chronology, actor and counted output. A newly isolated early-March forecast of approximately 100 species shows that 106 is part of a plausible productivity sequence, while the institutional 116 remains a differently worded coloured-drawing total rather than a simple correction.",
+  "count_sequence": [
+    {
+      "stage": "forecast",
+      "date": "early March 1892 Hope Garden sequence",
+      "actor": "Rudolf Blaschka",
+      "source": "BLA-D00705–00706 / 017:59–60 sequence",
+      "quantity": 100,
+      "qualifier": "approximately",
+      "counted_object": "collection/species expected from plants then blooming and Rudolf's productivity in examining them",
+      "source_wording_summary": "Rudolf reckons from the plants blooming in March and his productivity in examining them that, if all goes well, he will be able to bring together a collection of approximately 100 species.",
+      "status": "direct translated primary",
+      "interpretation": "prospective yield forecast based on phenology and work rate"
+    },
+    {
+      "stage": "departure self-count",
+      "date": "1892-03-27",
+      "actor": "Rudolf Blaschka",
+      "source": "BLA-D00725 / 017:79",
+      "quantity": 106,
+      "counted_object": "species with which Rudolf says he has finished his work",
+      "source_wording_summary": "Before leaving Jamaica Rudolf tells his parents he has finished his work with 106 species.",
+      "status": "direct translated primary",
+      "interpretation": "retrospective self-count of completed Jamaica work at departure"
+    },
+    {
+      "stage": "institutional retrospective report",
+      "date": "1892 report on March visit",
+      "actor": "Botanical Department, Jamaica",
+      "source": "Foreign Students in the Gardens, Bulletin of the Botanical Department, Jamaica, p.18",
+      "quantity": 116,
+      "counted_object": "species represented in accurate coloured drawings by Blaschka",
+      "associated_output": "Robert Cameron made dried collections of the same and other plants for the herbarium.",
+      "status": "direct institutional report as preserved in project source register; exact page image remains desirable",
+      "interpretation": "institutional pictorial-output count with a separately broader dried-collection statement"
+    }
+  ],
+  "resolution": {
+    "100_to_106": "best read as forecast-to-completed progression. The approximately-100 early estimate is explicitly conditional on March flowering and Rudolf's productivity; the 106 departure count slightly exceeds that forecast.",
+    "106_to_116": "remains unresolved and should not be forced into one corrected total. The nouns and actors differ: Rudolf counts species with which he has finished his work; the Jamaican report counts species in accurate coloured drawings. The institutional report also gives Cameron a dried collection of the same and other plants, creating a third, potentially broader material ledger.",
+    "digit_error_assessment": "The early approximately-100 forecast makes Rudolf's later 106 internally plausible and reduces the likelihood that 106 is merely an OCR/transcription slip for 116. Image-level verification remains required for publication quotation.",
+    "preferred_status_label": "media/accounting discrepancy, not simple numerical contradiction"
+  },
+  "jamaica_ledgers": [
+    {
+      "ledger": "productivity forecast",
+      "unit": "approximately 100 species",
+      "basis": "March flowering + examining productivity",
+      "actor": "Rudolf"
+    },
+    {
+      "ledger": "completed work",
+      "unit": "106 species",
+      "basis": "Rudolf's departure self-assessment",
+      "actor": "Rudolf"
+    },
+    {
+      "ledger": "coloured drawings",
+      "unit": "116 species",
+      "basis": "institutional report of pictorial output",
+      "actor": "Jamaican Botanical Department reporting Blaschka"
+    },
+    {
+      "ledger": "dried herbarium material",
+      "unit": "same and other plants; no single numeric total given in current report summary",
+      "basis": "Cameron's dried collection",
+      "actor": "Robert Cameron / institutional report"
+    },
+    {
+      "ledger": "seed/propagule packets",
+      "unit": "separately enumerated or partially unidentified packets; not part of 106/116 by default",
+      "basis": "Rudolf's letters sending seeds and discussing later cultivation",
+      "actor": "Rudolf + Cameron + Hosterwitz recipients"
+    }
+  ],
+  "strongest_claim": "Jamaica did not generate one master total. It generated multiple accounting surfaces tied to different media and decisions: a phenology/productivity forecast, Rudolf's completed-work self-count, an institutional coloured-drawing total, Cameron's dried collection, and separate propagule packets. The 106/116 gap is therefore evidence for media-specific bookkeeping until a source explicitly proves that both numbers were intended to count the same objects.",
+  "article_consequence": "The Jamaica count problem can now function as a compact demonstration of the paper's broader method. Instead of normalizing discrepant totals, reconstruct the operation that produced each number. This turns numerical mismatch into evidence for how botanical encounters were converted into drawings, specimens and future cultivation.",
+  "figure_candidate": {
+    "title": "One field season, several ledgers",
+    "sequence": [
+      "~100 projected species",
+      "106 completed-work species",
+      "116 coloured-drawing species",
+      "dried collection: same + other plants",
+      "seed/propagule packets: separate route"
+    ],
+    "visual_rule": "Use separate lanes by medium/actor rather than a single rising total."
+  },
+  "next_steps": [
+    "Image-check the early-March ~100 forecast page and BLA-D00725 106 page for exact German/English wording.",
+    "Retrieve or inspect the original Jamaican Bulletin p.18 image and transcribe the sentence containing 116 and Cameron's dried collections.",
+    "Search late-March/early-April correspondence for any post-27-March drawing work that could explain ten additional pictorial species.",
+    "Search whether Cameron kept a numbered herbarium/drawing concordance; if so, compare its terminal number with 106 and 116.",
+    "Keep seed, drawing, dried-specimen and studied-species totals separate in the yield ontology register."
+  ]
+}
