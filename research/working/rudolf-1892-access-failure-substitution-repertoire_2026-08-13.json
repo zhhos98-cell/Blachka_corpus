@@ -1,0 +1,110 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "mechanism_synthesis_from_primary_cases",
+  "title": "Rudolf Blaschka 1892 — access failure, substitution and deferred supply repertoire",
+  "purpose": "Integrate the pre-trip access-gap calibration with several 1892 cases in which the desired botanical reference was unavailable in the expected place, season or form. The journey repeatedly repaired access through substitution, delay, relay, remote decision and future cultivation rather than through a single norm of direct wild collecting.",
+  "case_matrix": [
+    {
+      "case": "Sequoia sempervirens",
+      "source": "BLA-D00856 / 017:210",
+      "problem": "Rudolf reaches the California redwoods, but flowering of most conifers in central California is already over. The direct target state is seasonally unavailable.",
+      "repair_strategy": "future local supply",
+      "operation": "Rudolf expects acquaintances among local botanists to send flowers later.",
+      "reference_logic": "habitat presence without the needed phenological state is insufficient; the field encounter creates a supplier relation that is intended to deliver the missing state later.",
+      "status": "direct contemporary plan; later delivery not yet closed"
+    },
+    {
+      "case": "Darlingtonia californica",
+      "sources": [
+        "BLA-D00856 / 017:210",
+        "BLA-D00873–00874 / 017:227–228",
+        "BLA-D00896 / 017:251"
+      ],
+      "problem": "Goodale's desired plant does not flower in the greenhouses available to him; a Shasta habitat excursion is estimated at four days and $70.",
+      "repair_strategy": "remote decision plus institutional substitution",
+      "operation": "Ganong proposes telegraphing Goodale; the later Colorado follow-up says the telegraphic answer was not to go to Shasta. In St Louis the botanical garden supplies Darlingtonia in flower, a workroom, identification context and preservable access; Rudolf makes a colour sketch and puts a specimen in alcohol.",
+      "reference_logic": "expensive habitat access is cancelled and replaced by cultivated institutional access to the desired phenological state.",
+      "status": "route decision and St Louis access high confidence; BLA-D00896 English phrase implying a Shasta trip remains translation/OCR-conflicted and should not reopen the route without German-image evidence"
+    },
+    {
+      "case": "Crinum / California flowering plants",
+      "source": "BLA-D00927 / 017:282",
+      "problem": "During the California stay Rudolf cannot wait for the flowering time of all desired plants.",
+      "repair_strategy": "delayed supplier channel",
+      "operation": "At Cambridge he receives a large Crinum bulb from Orcutt after an earlier seed packet and proposes a continuing arrangement for large quantities of seeds and bulbs of plants whose flowers he could not wait for in California.",
+      "reference_logic": "the field season is extended institutionally after the traveller leaves; missed phenology becomes a procurement programme rather than a terminal failure.",
+      "status": "direct contemporary receiving-side statement"
+    },
+    {
+      "case": "Arizona/Jamaica cacti",
+      "sources": [
+        "BLA-D00785 / 017:139",
+        "BLA-D00803 / 017:157",
+        "BLA-D00814 / 017:168",
+        "BLA-D00840 / 017:194"
+      ],
+      "problem": "The workshop needs future flower states that cannot be fully represented by immediate preservation; some cacti can survive carriage better than alcohol storage preserves their future biology.",
+      "repair_strategy": "live relay / deferred observation",
+      "operation": "Rudolf digs up young cacti, carries Arizona plants to San Diego, aggregates them with Jamaica cacti and San Diego bulbs, sends a box to Cambridge for onward forwarding, and explains that living receipt is preferable because the workshop can grow the flower itself.",
+      "reference_logic": "transport the organism's capacity to produce a later observable state rather than only a preserved snapshot.",
+      "status": "dispatch to Cambridge direct; Hosterwitz receipt/survival still open"
+    },
+    {
+      "case": "duplicate/already represented species",
+      "source": "BLA-D00879 / 017:233",
+      "problem": "Potentially observable species may add little to the Harvard project because Cambridge says some are already represented.",
+      "repair_strategy": "remote institutional filtering / rejection",
+      "operation": "Rudolf explicitly notes that people in Cambridge are picky and reject some species because they are already represented.",
+      "reference_logic": "access alone does not make a reference useful; collection state and commissioner priorities filter the field yield.",
+      "status": "direct contemporary statement; individual rejected taxa not yet identified"
+    },
+    {
+      "case": "very small or dangerous desert plants",
+      "source": "BLA-D00785 / 017:139",
+      "problem": "Plants may be technically present yet impractical or low-value as references because of size or handling danger.",
+      "repair_strategy": "deliberate noncollection",
+      "operation": "Rudolf says most very small desert plants were ignored while showy and characteristic forms were chosen; the Jumping Cactus was not collected because of hooked spines.",
+      "reference_logic": "noncollection is itself part of reference production. A field system remains productive by excluding material that is unsafe or insufficiently useful.",
+      "status": "direct contemporary statement"
+    }
+  ],
+  "repertoire": [
+    {
+      "operation": "substitute site",
+      "example": "Darlingtonia: St Louis cultivated plant replaces cancelled Shasta habitat trip"
+    },
+    {
+      "operation": "defer in time",
+      "example": "Sequoia flowers to be sent later; California flowers pursued through later Orcutt supply"
+    },
+    {
+      "operation": "change medium",
+      "example": "live cactus instead of alcohol when future flowering matters"
+    },
+    {
+      "operation": "delegate access",
+      "example": "Orcutt/local botanists supply later flowers, seeds or bulbs"
+    },
+    {
+      "operation": "remote-govern route",
+      "example": "Goodale telegram determines whether costly Darlingtonia habitat leg should be attempted"
+    },
+    {
+      "operation": "reject",
+      "example": "Cambridge duplicates; tiny desert plants; dangerous Jumping Cactus"
+    }
+  ],
+  "strongest_claim": "The 1892 expedition was not organized around a single ideal of direct collecting. It repeatedly converted access failures into alternative reference pathways. When a flower was out of season, a supplier could send it later; when habitat travel was too costly, telegraphy and a cultivated garden could substitute; when future flowering mattered, a living plant could be relayed; when a plant duplicated existing coverage or was impractical to handle, it could be rejected. The productive unit is therefore the access-repair operation, not the visited place by itself.",
+  "historiographical_guard": "Do not claim that substitution, supplier networks or botanical-garden access were unique to Blaschka. The case's value is the unusually fine-grained ability to compare several repair strategies inside one commissioned modelling journey and connect them to later reference/model states.",
+  "relation_to_pass24": "Pass24 established that routine remote supply predated the journey and left residual inaccessible forms. Pass25 shows how the journey itself continued to generate new access failures and how actors repaired them without insisting on direct collection.",
+  "relation_to_map": "The public route should not mark failed access as missing data. Darlingtonia/Shasta, Sequoia and deferred Orcutt supply are analytically meaningful non-events/alternative routes. A detail layer could encode requested target -> access problem -> substitution/defer/reject -> usable reference.",
+  "next_steps": [
+    "Close the later Sequoia flower-supply outcome if a follow-up letter exists.",
+    "Trace the Crinum bulb and Orcutt supply arrangement into Hosterwitz cultivation/drawing/model records.",
+    "Identify individual Cambridge-rejected duplicate species if Goodale lists or letters survive.",
+    "Search Jamaica for parallel failed-access strategies, especially plants obtained from gardens or local intermediaries after wild access failed.",
+    "Build one compact article figure comparing six access-repair operations rather than another route map.",
+    "Keep each case's planned, dispatched, received, cultivated and modelled states separate."
+  ]
+}
