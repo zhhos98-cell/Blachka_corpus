@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-13",
+  "title": "The Blaschka Object Network — Harvard Receiving Craft Ecology Register",
+  "scope": "A source-controlled reconstruction of the local craft, museum, administrative and patronage capacities that converted shipped Blaschka models into stable Harvard museum objects. This register distinguishes an external Cambridge carpenter/builder workshop (John Waugh), museum-based technical continuity (Louis C. Bierweiler), donor handling (Mary Lee Ware), curatorial handling (Goodale/Ames), customs authority and broker coordination.",
+  "analytical_guard": "'Receiving craft ecology', 'contracted craft capacity', 'procedural memory' and 'embodied handling memory' are project analytical terms. Do not describe Waugh as Harvard museum staff unless a direct appointment source is found; the 1907 Cambridge directory and Goodale correspondence instead show an independent workshop. Do not call Bierweiler a registrar/conservator in the early period; later titles must not be back-projected.",
+  "actors": [
+    {
+      "actor": "John Waugh",
+      "actor_type": "external Cambridge carpenter/builder and recurring Harvard museum contractor",
+      "external_identity_evidence": {
+        "source": "Cambridge Directory, 1907",
+        "entry": "John Waugh, Carpenter and Builder; cabinet work of all descriptions made to order; band/circular sawing and mill work; 113 Mt. Auburn Street, Cambridge",
+        "status": "contemporary directory evidence",
+        "guard": "Directory OCR/web transcription should be checked against the scanned page for publication-level quotation."
+      },
+      "primary_archive_events": [
+        {
+          "date": "1906-06-04/12",
+          "evidence": "BLA-D02082 / 021:99",
+          "event": "Harvard College receipt for Waugh's services in packing, setting-up and unpacking Blaschka models for the New Medical School exhibition during the A.M.A. period."
+        },
+        {
+          "date": "1907",
+          "evidence": "BLA-D02127–02128 / 021:144–145",
+          "event": "Goodale says Waugh must shut his workshop for two or three weeks and discharge his men during appendicitis surgery; Goodale also budgets Waugh's services in moving models for a photographic campaign.",
+          "research_value": "Directly confirms Waugh operated an independent workshop with employees while serving the museum."
+        },
+        {
+          "date": "1920",
+          "evidence": "BLA-D00270 / 015:273",
+          "event": "Waugh submits formal estimates for repairing/finishing pine cases and cherry display cases.",
+          "research_value": "Museum display furniture and object handling belong to the same contracted craft relationship."
+        },
+        {
+          "date": "1924-01-16",
+          "evidence": "BLA-D00364 / 015:367",
+          "event": "Ames reports Waugh completed case work and was paid the amount of his contract; further case construction remained anticipated."
+        },
+        {
+          "date": "1924-05-14 onward",
+          "evidence": "BLA-D00395 / 015:398 and duplicates; BLA-D02760 / 040:118; BLA-D02764 / 040:122",
+          "event": "Waugh arrives with material for new museum cases; Ames discusses how to meet Waugh's bill and later museum renovation costs.",
+          "research_value": "The receiving/exhibition system repeatedly borrows a local cabinetmaking/building shop rather than internalizing every material operation."
+        }
+      ],
+      "technical_link": "The later Harvard transportation/installation procedural text says the gypsum-plaque manufacturing process was perfected by John Waugh and that Waugh initially made the Botanical Museum plaques.",
+      "analytical_role": "contracted local craft capacity spanning case construction, mounting-support production, model moving, packing, unpacking and exhibition setup"
+    },
+    {
+      "actor": "Louis C. Bierweiler",
+      "actor_type": "museum-based handling/installational specialist whose functions broadened over time",
+      "later_biographical_control": {
+        "source": "Harvard Crimson obituary, 14 Dec 1964",
+        "claim": "Bierweiler came to the Botanical Museum in 1901 at age 15; one of his first duties was unpacking model crates; later he mounted, displayed and repaired the models; he retired in 1957 as curator of botanical collections.",
+        "status": "late Harvard secondary witness, not contemporary 1901 appointment evidence",
+        "guard": "Use to guide archive retrieval; primary staffing/payroll evidence is preferable for publication."
+      },
+      "official_archive_context": {
+        "source": "Harvard HOLLIS ecb00006",
+        "evidence": [
+          "finding aid includes biographical material and a 1931 Bierweiler diary documenting his Hosterwitz visit",
+          "collection includes later images/transparencies of Bierweiler working with the glass models",
+          "Louis C. Bierweiler material is a named archival sub-collection/biographical target"
+        ],
+        "status": "official institutional finding-aid evidence"
+      },
+      "primary_archive_events": [
+        {
+          "date": "circa 1911 sequence",
+          "evidence": "BLA-D02254 / 021:271",
+          "event": "Goodale's museum budget describes a necessary DIENER-like assistant trained in preservation/installation; he states Bierweiler receives $16/week and should soon receive at least $18/week.",
+          "guard": "Exact date of the undated memo requires catalog verification."
+        },
+        {
+          "date": "spring 1913",
+          "evidence": "BLA-D02332 / 021:351",
+          "event": "Goodale says 'Louis' is constructing plaques for new models and can wire them satisfactorily; labels and case space are coordinated as the next installation steps.",
+          "research_value": "Bierweiler participates in the actual conversion from received model to mounted/labelled exhibition object."
+        },
+        {
+          "date": "post-Goodale, 1923",
+          "evidence": "BLA-D00343–00344 / 015:346–347",
+          "event": "Harvard visiting committee describes Bierweiler as Goodale's faithful and devoted helper and explicitly hopes his valuable and poorly paid services will receive University recognition.",
+          "guard": "Report date should be verified from full committee-document metadata; sequence is after Goodale's death in 1923."
+        },
+        {
+          "date_range": "academic year 1923–1924",
+          "evidence": "BLA-D00429–00434 / 015:432–437",
+          "event": "Ames's Curator report says Bierweiler's services in reorganization and administration were of 'immeasurable value'; his long training in handling glass models, knowledge of mounting models on plaster tablets, and familiarity with Museum traditions made the Curator's work substantially easier.",
+          "research_value": "Handling knowledge is explicitly described as long-trained institutional memory."
+        },
+        {
+          "date": "1929",
+          "evidence": "BLA-D02885, BLA-D02891–02892",
+          "event": "Bierweiler arranges prompt case clearing, is expected to loosen models from framed transport plates, mends slight breaks and assists the transition to temporary/display mounting."
+        },
+        {
+          "date": "1932-10-31",
+          "evidence": "BLA-D02914 / 040:273",
+          "event": "Rudolf directly compliments Bierweiler's skill and carefulness in unpacking complicated models."
+        }
+      ],
+      "later_title_evidence": "1936–1937 Botanical Museum letterheads in the archive list Louis C. Bierweiler as Assistant and Technician; later material identifies him as Curator of Botanical Collections.",
+      "analytical_role": "embodied handling and installation memory increasingly situated inside the museum"
+    },
+    {
+      "actor": "Mary Lee Ware",
+      "actor_type": "patron-handler",
+      "evidence": [
+        "Harvard HOLLIS: Mary Ware personally unpacked each model",
+        "BLA-D01823: Rudolf describes her as marvelously skilled in unpacking"
+      ],
+      "analytical_role": "trusted manual handling located in patronage rather than formal museum labor"
+    },
+    {
+      "actor": "George Lincoln Goodale / Oakes Ames",
+      "actor_type": "curatorial coordinators and handlers",
+      "evidence": [
+        "1892 preliminary opening and condition judgment",
+        "Goodale public packing/unpacking demonstrations",
+        "Waugh contracting and Bierweiler staffing/budgeting",
+        "Ames 1929 clearance/remounting coordination"
+      ],
+      "analytical_role": "coordinate legal, financial, craft and exhibition operations rather than personally perform every step"
+    }
+  ],
+  "comparative_structure": {
+    "field_side": "Rudolf's Jamaica travel borrowed Boston Fruit Company's commodity infrastructure; cargo schedules and local company personnel shaped scientific movement.",
+    "receiving_side": "Harvard borrowed Waugh's local cabinetmaking/building workshop while developing museum-based Bierweiler expertise; external and internal craft capacities jointly shaped fragile-object handling.",
+    "interpretive_result": "Scientific/artisanal mobility attached itself to infrastructures built for other purposes at both ends. The relevant infrastructures were not only carriers and customs systems but also local workshops able to fabricate cases, supports and exhibition furniture."
+  },
+  "memory_types": [
+    {
+      "type": "procedural/route memory",
+      "example_actor": "E. A. Snow",
+      "evidence": "broker/forwarding routine reused into 1906/1923 even after Snow's business ceased",
+      "failure_mode": "obsolete named intermediary delays clearance"
+    },
+    {
+      "type": "embodied/material handling memory",
+      "example_actor": "Louis C. Bierweiler",
+      "evidence": "Ames 1924 explicitly cites long training, mounting technique and Museum traditions",
+      "failure_mode": "not directly observed in a breakdown case; value is visible in reliance and praise"
+    },
+    {
+      "type": "contracted craft capacity",
+      "example_actor": "John Waugh",
+      "evidence": "independent workshop, employees, recurring case/plaque/moving/packing contracts",
+      "failure_mode": "1907 illness temporarily creates a 'heavy handicap' for Goodale's photographic/museum work"
+    }
+  ],
+  "research_observations": [
+    "The receiving end was neither a single institution nor a single profession. It was a mixed ecology of patron hands, curator decisions, customs authority, broker paperwork, an external cabinetmaker's shop and an internal museum assistant.",
+    "Waugh and Bierweiler should not be forced into a simple succession. Their evidence instead shows a shifting boundary between contracted craft capacity and museum-based technical continuity.",
+    "The 1907 appendicitis episode is a small natural experiment: Waugh's temporary incapacity becomes a 'heavy handicap' because moving models and other practical operations depended on a local craft contractor.",
+    "Ames's 1924 description of Bierweiler's 'long training' and familiarity with Museum traditions is unusually direct evidence that museum infrastructure consisted partly of remembered technique embodied in a worker.",
+    "The Blaschka transport history therefore connects commercial infrastructure, documentary infrastructure and craft infrastructure. Moving a fragile representation required all three."
+  ],
+  "next_retrievals": [
+    "scan Cambridge city directories before/after 1907 to establish John Waugh's workshop chronology and address stability",
+    "locate Harvard College voucher/payment metadata for Waugh's 1906, 1920 and 1924 work",
+    "identify the original or catalogue record for Goodale's DIENER budget memo",
+    "retrieve primary Harvard staffing/payroll evidence for Bierweiler beginning in 1901",
+    "read the open Louis C. Bierweiler papers and 1931 diary in ecb00006 for retrospective accounts of model handling and Rudolf's expectations",
+    "inspect the 1923 Visiting Committee report metadata and the 1923–24 Ames annual report as complete documents",
+    "test whether Waugh fabricated the same plaster/gypsum support type used in the 1913 and later Blaschka installations"
+  ]
+}
