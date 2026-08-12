@@ -2,6 +2,7 @@
   const routeData = window.RUDOLF_1892_ROUTE_DATA;
   const knowledgeData = window.RUDOLF_1892_KNOWLEDGE_DATA;
   const sourceData = window.RUDOLF_1892_SOURCE_DATA || { nodeOverrides:{}, nodeEnhancements:{}, nodeLinks:{} };
+  const objectData = window.RUDOLF_1892_OBJECT_ROUTE_DATA || { packets:[] };
   const visualMatches = window.RUDOLF_1892_VISUAL_MATCHES || [];
   if (!routeData || !knowledgeData || typeof L === 'undefined') return;
 
@@ -14,6 +15,8 @@
   const overrides = sourceData.nodeOverrides || {};
   const enhancements = sourceData.nodeEnhancements || {};
   const linksByNode = sourceData.nodeLinks || {};
+  const packets = objectData.packets || [];
+  const objectNodes = packets.flatMap(packet => packet.nodes.map((node, index) => ({ ...node, packetId:packet.id, packetTitle:packet.title, packetSubtitle:packet.subtitle, packetIndex:index })));
   const byId = new Map(documented.map((item, index) => [item.id, { ...item, index }]));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -37,6 +40,15 @@
     queue: '#b08b59'
   };
 
+  const objectTypeColors = {
+    dispatch: '#9b7e63',
+    forwarder: '#8f8a67',
+    ocean: '#6f8794',
+    bond: '#82758b',
+    broker: '#8c806f',
+    unpack: '#778b68'
+  };
+
   const displayItem = item => ({ ...item, ...(overrides[item.id] || {}) });
   const displayKnowledge = item => ({ ...(knowledge[item.id] || fallbackKnowledge(item)), ...(enhancements[item.id] || {}) });
 
@@ -50,6 +62,8 @@
   const corridorLayer = L.layerGroup();
   const plannedPointLayer = L.layerGroup().addTo(map);
   const visualMatchLayer = L.layerGroup().addTo(map);
+  const objectRouteLayer = L.layerGroup();
+  const objectMarkerLayer = L.layerGroup();
 
   const documentedLine = L.polyline(documented.map(d => [d.lat, d.lng]), {
     color: '#b67a51', weight: 4, opacity: .92, lineCap: 'round'
@@ -86,8 +100,14 @@
   renderObservationSegments();
 
   const markerMap = new Map();
+  const objectMarkerMap = new Map();
+  const packetLineMap = new Map();
   const flowNodeIds = new Set(flows.flatMap(flow => [flow.from, flow.to]));
   let currentIndex = 0;
+  let currentObjectIndex = 0;
+  let currentDetailKind = 'person';
+  let currentMode = 'journey';
+  let currentScope = 'person';
   const pad = value => String(value).padStart(2, '0');
   const numberFor = index => pad(index + 1);
 
@@ -110,6 +130,43 @@
       className: 'journey-numbered-icon',
       html: `<span class="journey-marker${faded ? ' is-muted' : ''}" style="--marker-color:${color}">${numberFor(index)}</span>`,
       iconSize: [34, 34], iconAnchor: [17, 17]
+    });
+  }
+
+  function objectMarkerIcon(node, index, mode) {
+    const color = mode === 'operations' ? (objectTypeColors[node.type] || '#88936b') : '#88936b';
+    const faded = mode === 'flows' ? ' is-muted' : '';
+    return L.divIcon({
+      className: 'object-handoff-icon',
+      html: `<span class="object-handoff-marker${faded}" style="background:${color}">O${index + 1}</span>`,
+      iconSize: [30, 30], iconAnchor: [15, 15]
+    });
+  }
+
+  function segmentStyle(toNode, mode) {
+    const muted = mode === 'operations' ? .42 : mode === 'flows' ? .68 : .94;
+    const common = { color:'#88936b', weight:3.2, opacity:muted, lineCap:'round' };
+    if (toNode.type === 'ocean') return { ...common, color:'#708794', dashArray:'3 7' };
+    if (toNode.type === 'bond') return { ...common, color:'#82758b', dashArray:'12 6' };
+    if (toNode.type === 'forwarder') return { ...common, dashArray:'8 5' };
+    if (toNode.type === 'broker') return { ...common, dashArray:'8 6' };
+    if (toNode.type === 'unpack') return { ...common, weight:3.8 };
+    return common;
+  }
+
+  function renderObjectRoutes(mode = currentMode) {
+    objectRouteLayer.clearLayers();
+    packetLineMap.clear();
+    packets.forEach(packet => {
+      const packetLines = [];
+      for (let i = 0; i < packet.nodes.length - 1; i += 1) {
+        const from = packet.nodes[i];
+        const to = packet.nodes[i + 1];
+        const line = L.polyline([[from.lat, from.lng], [to.lat, to.lng]], segmentStyle(to, mode)).addTo(objectRouteLayer);
+        line.bindTooltip(`<strong>${packet.title}</strong><br>${from.title} → ${to.title}<br><span>${to.action}</span>`, { sticky:true, className:'journey-flow-tooltip' });
+        packetLines.push(line);
+      }
+      packetLineMap.set(packet.id, packetLines);
     });
   }
 
@@ -184,11 +241,24 @@
     markerMap.set(rawItem.id, marker);
   });
 
+  objectNodes.forEach((node, index) => {
+    const marker = L.marker([node.lat, node.lng], {
+      icon: objectMarkerIcon(node, index, 'journey'),
+      title: `${node.packetTitle} · ${node.title} · ${node.date}`,
+      riseOnHover: true
+    }).addTo(objectMarkerLayer);
+    marker.bindTooltip(`<strong>${node.packetTitle}</strong><br>${node.title} · ${node.date}<br>${node.action}`, { direction:'top', offset:[0,-10] });
+    marker.on('click', () => setObjectDetail(index, true));
+    objectMarkerMap.set(node.id, marker);
+  });
+
+  renderObjectRoutes('journey');
   renderVisualMatches();
 
-  const allGroup = L.featureGroup([documentedLine, plannedLine, ...Array.from(markerMap.values())]);
-  const allBounds = allGroup.getBounds().pad(.12);
-  map.fitBounds(allBounds);
+  const personBounds = L.latLngBounds(documented.map(d => [d.lat, d.lng])).pad(.12);
+  const objectBounds = objectNodes.length ? L.latLngBounds(objectNodes.map(d => [d.lat, d.lng])).pad(.14) : personBounds;
+  const combinedBounds = L.latLngBounds([...documented.map(d => [d.lat, d.lng]), ...objectNodes.map(d => [d.lat, d.lng])]).pad(.12);
+  map.fitBounds(personBounds);
 
   const detailNo = document.getElementById('detail-no');
   const detailDate = document.getElementById('detail-date');
@@ -206,6 +276,21 @@
   const routeIndex = document.getElementById('route-index');
   const modeCopy = document.getElementById('mode-copy');
   const modeLegend = document.getElementById('mode-legend');
+  const personDetailContent = document.getElementById('person-detail-content');
+  const objectDetailContent = document.getElementById('object-detail-content');
+  const objectPacketList = document.getElementById('object-packet-list');
+
+  const objectDetailNo = document.getElementById('object-detail-no');
+  const objectDetailDate = document.getElementById('object-detail-date');
+  const objectDetailTitle = document.getElementById('object-detail-title');
+  const objectDetailSummary = document.getElementById('object-detail-summary');
+  const objectDetailTags = document.getElementById('object-detail-tags');
+  const objectDetailObject = document.getElementById('object-detail-object');
+  const objectDetailAction = document.getElementById('object-detail-action');
+  const objectDetailHandler = document.getElementById('object-detail-handler');
+  const objectDetailState = document.getElementById('object-detail-state');
+  const objectDetailDescription = document.getElementById('object-detail-description');
+  const objectDetailSource = document.getElementById('object-detail-source');
 
   function renderNodeLinks(item) {
     if (!detailLinks) return;
@@ -222,7 +307,20 @@
     });
   }
 
+  function showPersonDetail() {
+    currentDetailKind = 'person';
+    personDetailContent.hidden = false;
+    objectDetailContent.hidden = true;
+  }
+
+  function showObjectDetail() {
+    currentDetailKind = 'object';
+    personDetailContent.hidden = true;
+    objectDetailContent.hidden = false;
+  }
+
   function setDetail(index, focusMap = false) {
+    showPersonDetail();
     currentIndex = index;
     const rawItem = documented[index];
     const item = displayItem(rawItem);
@@ -263,11 +361,49 @@
       const el = marker.getElement()?.querySelector('.journey-marker');
       if (el) el.classList.toggle('is-active', node.index === index);
     });
+    objectMarkerMap.forEach(marker => marker.getElement()?.querySelector('.object-handoff-marker')?.classList.remove('is-active'));
 
     if (focusMap) {
       const targetZoom = Math.max(map.getZoom(), 5);
       if (reduced) map.setView([rawItem.lat, rawItem.lng], targetZoom);
       else map.flyTo([rawItem.lat, rawItem.lng], targetZoom, { duration:.55 });
+    }
+  }
+
+  function setObjectDetail(index, focusMap = false) {
+    if (!objectNodes.length) return;
+    showObjectDetail();
+    currentObjectIndex = index;
+    const node = objectNodes[index];
+    objectDetailNo.textContent = `O${index + 1}`;
+    objectDetailDate.textContent = node.date;
+    objectDetailTitle.textContent = node.title;
+    objectDetailSummary.textContent = node.detail;
+    objectDetailObject.textContent = `${node.packetTitle}. ${node.packetSubtitle || ''}`.trim();
+    objectDetailAction.textContent = node.action;
+    objectDetailHandler.textContent = node.handler;
+    objectDetailState.textContent = node.state;
+    objectDetailDescription.textContent = node.detail;
+    objectDetailSource.textContent = `${node.evidence} · confidence ${node.confidence}`;
+    objectDetailTags.innerHTML = '';
+    [node.type, node.packetTitle, node.confidence].forEach(tag => {
+      const span = document.createElement('span');
+      span.className = 'journey-tag';
+      span.textContent = tag;
+      objectDetailTags.appendChild(span);
+    });
+
+    objectMarkerMap.forEach((marker, id) => {
+      const el = marker.getElement()?.querySelector('.object-handoff-marker');
+      if (el) el.classList.toggle('is-active', id === node.id);
+    });
+    markerMap.forEach(marker => marker.getElement()?.querySelector('.journey-marker')?.classList.remove('is-active'));
+    objectPacketList?.querySelectorAll('[data-object-packet]').forEach(button => button.classList.toggle('is-active', button.dataset.objectPacket === node.packetId));
+
+    if (focusMap) {
+      const targetZoom = Math.max(map.getZoom(), node.type === 'ocean' ? 3 : 5);
+      if (reduced) map.setView([node.lat, node.lng], targetZoom);
+      else map.flyTo([node.lat, node.lng], targetZoom, { duration:.55 });
     }
   }
 
@@ -278,8 +414,27 @@
     button.className = 'route-index-item';
     button.dataset.routeIndex = index;
     button.innerHTML = `<span class="route-index-no">${numberFor(index)}</span><span class="route-index-copy"><strong>${item.title}</strong><small>${item.date}</small></span>`;
-    button.addEventListener('click', () => setDetail(index, true));
+    button.addEventListener('click', () => {
+      if (currentScope === 'objects') setScope('both', false);
+      setDetail(index, true);
+    });
     routeIndex.appendChild(button);
+  });
+
+  packets.forEach((packet, packetIndex) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'object-packet-card';
+    button.dataset.objectPacket = packet.id;
+    button.innerHTML = `<div><h3>${packet.title}</h3><p>${packet.subtitle}</p><p>${packet.summary}</p><small>${packet.dateRange} · ${packet.status}</small></div><span class="object-packet-count">${packet.nodes.length}</span>`;
+    button.addEventListener('click', () => {
+      if (currentScope === 'person') setScope('both', false);
+      const firstIndex = objectNodes.findIndex(node => node.packetId === packet.id);
+      setObjectDetail(Math.max(firstIndex, 0), false);
+      const packetBounds = L.latLngBounds(packet.nodes.map(node => [node.lat, node.lng])).pad(.18);
+      map.fitBounds(packetBounds);
+    });
+    objectPacketList?.appendChild(button);
   });
 
   function renderFlows() {
@@ -307,61 +462,133 @@
     });
   }
 
-  const modeCopyText = {
-    journey: '<strong>Journey</strong> follows documented movement. The dashed public line remains separate; translucent rail segments show corridor-level observation windows without inventing extra stops.',
-    operations: '<strong>Work</strong> colours each stop by the main activity recorded there.',
-    flows: '<strong>Flows</strong> separates material, instructions, delayed decisions, reference chains and post-return reassembly from Rudolf’s bodily route.'
-  };
+  function modeCopyText(mode, scope) {
+    if (mode === 'operations') {
+      if (scope === 'objects') return '<strong>Work</strong> colours the object route by handoff regime: workshop dispatch, forwarder, ocean transit, bonded movement, broker/customs handling and museum unpacking.';
+      if (scope === 'both') return '<strong>Work</strong> compares Rudolf’s recorded activities with the handoff regimes through which the five model cases moved independently.';
+      return '<strong>Work</strong> colours each stop by the main activity recorded there.';
+    }
+    if (mode === 'flows') {
+      if (scope === 'objects') return '<strong>Flows</strong> keeps the U.B. 346–350 packet visible while adding other material, instruction, reference and delayed-return movements generated by the expedition.';
+      if (scope === 'both') return '<strong>Flows</strong> overlays independently moving material, instructions, delayed decisions, reference chains and post-return reassembly on the bodily and object routes.';
+      return '<strong>Flows</strong> separates material, instructions, delayed decisions, reference chains and post-return reassembly from Rudolf’s bodily route.';
+    }
+    if (scope === 'objects') return '<strong>Journey</strong> follows U.B. 346–350 as an independent freight packet from Hosterwitz through forwarding, ocean transport, bonded movement and Harvard receiving. Intermediate precision remains source-guarded.';
+    if (scope === 'both') return '<strong>Journey</strong> places Rudolf’s bodily route beside U.B. 346–350. They leave the same workshop on related schedules but enter different transport and customs regimes.';
+    return '<strong>Journey</strong> follows documented movement. The dashed public line remains separate; translucent rail segments show corridor-level observation windows without inventing extra stops.';
+  }
 
   function matchLegend() {
-    return visualMatches.length ? '<span><i class="is-match"></i>sketchbook match</span>' : '';
+    return visualMatches.length && currentScope !== 'objects' ? '<span><i class="is-match"></i>sketchbook match</span>' : '';
+  }
+
+  function objectLegend() {
+    return currentScope === 'person' ? '' : '<span><i class="is-dashed" style="--legend-color:#88936b"></i>object packet</span><span><i class="is-square" style="--legend-color:#88936b"></i>handoff</span>';
   }
 
   function renderLegend(mode) {
     if (mode === 'operations') {
-      modeLegend.innerHTML = Object.entries(operations).map(([key, op]) => `<span><i style="--legend-color:${op.color}"></i>${operationLabels[key] || op.label}</span>`).join('') + matchLegend();
+      const personOps = currentScope === 'objects' ? '' : Object.entries(operations).map(([key, op]) => `<span><i style="--legend-color:${op.color}"></i>${operationLabels[key] || op.label}</span>`).join('');
+      const objectOps = currentScope === 'person' ? '' : '<span><i class="is-square" style="--legend-color:#9b7e63"></i>dispatch</span><span><i class="is-square" style="--legend-color:#8f8a67"></i>forwarder</span><span><i class="is-square" style="--legend-color:#6f8794"></i>ocean</span><span><i class="is-square" style="--legend-color:#82758b"></i>bond</span><span><i class="is-square" style="--legend-color:#778b68"></i>unpacking</span>';
+      modeLegend.innerHTML = personOps + objectOps + matchLegend();
       return;
     }
     if (mode === 'flows') {
-      modeLegend.innerHTML = '<span><i style="--legend-color:#6f91a4"></i>material</span><span><i style="--legend-color:#8a718c"></i>information</span><span><i style="--legend-color:#a56558"></i>decision lag</span><span><i style="--legend-color:#71836a"></i>reference chain</span><span><i style="--legend-color:#b08b59"></i>return / queue</span><span><i style="--legend-color:#9b8866"></i>future supply</span>' + matchLegend();
+      modeLegend.innerHTML = '<span><i style="--legend-color:#6f91a4"></i>material</span><span><i style="--legend-color:#8a718c"></i>information</span><span><i style="--legend-color:#a56558"></i>decision lag</span><span><i style="--legend-color:#71836a"></i>reference chain</span><span><i style="--legend-color:#b08b59"></i>return / queue</span><span><i style="--legend-color:#9b8866"></i>future supply</span>' + objectLegend() + matchLegend();
       return;
     }
-    modeLegend.innerHTML = '<span><i style="--legend-color:#b67a51"></i>documented route</span><span><i class="is-dashed" style="--legend-color:#71889a"></i>reported route</span><span><i class="is-dashed" style="--legend-color:#d39a79"></i>observation corridor</span><span><i class="is-dashed" style="--legend-color:#655d58"></i>night / exclusion control</span>' + matchLegend();
+    const personLegend = currentScope === 'objects' ? '' : '<span><i style="--legend-color:#b67a51"></i>documented person route</span><span><i class="is-dashed" style="--legend-color:#71889a"></i>reported route</span><span><i class="is-dashed" style="--legend-color:#d39a79"></i>observation corridor</span><span><i class="is-dashed" style="--legend-color:#655d58"></i>night / exclusion control</span>';
+    modeLegend.innerHTML = personLegend + objectLegend() + matchLegend();
+  }
+
+  function removeIfPresent(layer) {
+    if (map.hasLayer(layer)) map.removeLayer(layer);
+  }
+
+  function syncLayers() {
+    [routeLayer, plannedLayer, plannedPointLayer, markerLayer, flowLayer, corridorLayer, visualMatchLayer, objectRouteLayer, objectMarkerLayer].forEach(removeIfPresent);
+
+    const showPerson = currentScope === 'person' || currentScope === 'both';
+    const showObjects = currentScope === 'objects' || currentScope === 'both';
+
+    if (showPerson) {
+      map.addLayer(routeLayer);
+      map.addLayer(markerLayer);
+      if (currentMode === 'journey') {
+        map.addLayer(plannedLayer);
+        map.addLayer(plannedPointLayer);
+        map.addLayer(corridorLayer);
+      }
+      if (currentMode === 'flows') {
+        renderFlows();
+        map.addLayer(flowLayer);
+      }
+      map.addLayer(visualMatchLayer);
+    } else if (currentMode === 'flows') {
+      renderFlows();
+      map.addLayer(flowLayer);
+    }
+
+    if (showObjects) {
+      renderObjectRoutes(currentMode);
+      map.addLayer(objectRouteLayer);
+      map.addLayer(objectMarkerLayer);
+    }
+
+    documentedLine.setStyle({ opacity: currentMode === 'journey' ? .92 : currentMode === 'operations' ? .28 : .15, weight: currentMode === 'journey' ? 4 : 2 });
+    documented.forEach((item, index) => markerMap.get(item.id)?.setIcon(markerIcon(item, index, currentMode)));
+    objectNodes.forEach((node, index) => objectMarkerMap.get(node.id)?.setIcon(objectMarkerIcon(node, index, currentMode)));
+
+    modeCopy.innerHTML = modeCopyText(currentMode, currentScope);
+    renderLegend(currentMode);
+
+    if (currentDetailKind === 'object' && showObjects) setObjectDetail(currentObjectIndex, false);
+    else if (showPerson) setDetail(currentIndex, false);
+    else if (showObjects) setObjectDetail(currentObjectIndex, false);
   }
 
   function setMode(mode) {
+    currentMode = mode;
     document.querySelectorAll('[data-map-mode]').forEach(button => {
       const active = button.dataset.mapMode === mode;
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', String(active));
     });
-    modeCopy.innerHTML = modeCopyText[mode];
-    renderLegend(mode);
+    syncLayers();
+  }
 
-    if (map.hasLayer(plannedLayer)) map.removeLayer(plannedLayer);
-    if (map.hasLayer(plannedPointLayer)) map.removeLayer(plannedPointLayer);
-    if (map.hasLayer(flowLayer)) map.removeLayer(flowLayer);
-    if (map.hasLayer(corridorLayer)) map.removeLayer(corridorLayer);
+  function setScope(scope, refit = true) {
+    currentScope = scope;
+    document.querySelectorAll('[data-route-scope]').forEach(button => {
+      const active = button.dataset.routeScope === scope;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    syncLayers();
+    if (refit) {
+      const bounds = scope === 'person' ? personBounds : scope === 'objects' ? objectBounds : combinedBounds;
+      map.fitBounds(bounds);
+    }
+  }
 
-    documentedLine.setStyle({ opacity: mode === 'journey' ? .92 : mode === 'operations' ? .28 : .15, weight: mode === 'journey' ? 4 : 2 });
-    if (mode === 'journey') {
-      map.addLayer(plannedLayer);
-      map.addLayer(plannedPointLayer);
-      map.addLayer(corridorLayer);
+  function stepDetail(direction) {
+    if (currentDetailKind === 'object' && objectNodes.length && currentScope !== 'person') {
+      setObjectDetail((currentObjectIndex + direction + objectNodes.length) % objectNodes.length, true);
+      return;
     }
-    if (mode === 'flows') {
-      renderFlows();
-      map.addLayer(flowLayer);
-    }
-    documented.forEach((item, index) => markerMap.get(item.id)?.setIcon(markerIcon(item, index, mode)));
-    setDetail(currentIndex, false);
+    setDetail((currentIndex + direction + documented.length) % documented.length, true);
   }
 
   document.querySelectorAll('[data-map-mode]').forEach(button => button.addEventListener('click', () => setMode(button.dataset.mapMode)));
-  document.getElementById('prev-stop').addEventListener('click', () => setDetail((currentIndex - 1 + documented.length) % documented.length, true));
-  document.getElementById('next-stop').addEventListener('click', () => setDetail((currentIndex + 1) % documented.length, true));
-  document.getElementById('reset-view').addEventListener('click', () => map.fitBounds(allBounds));
+  document.querySelectorAll('[data-route-scope]').forEach(button => button.addEventListener('click', () => setScope(button.dataset.routeScope)));
+  document.getElementById('prev-stop').addEventListener('click', () => stepDetail(-1));
+  document.getElementById('next-stop').addEventListener('click', () => stepDetail(1));
+  document.getElementById('reset-view').addEventListener('click', () => {
+    const bounds = currentScope === 'person' ? personBounds : currentScope === 'objects' ? objectBounds : combinedBounds;
+    map.fitBounds(bounds);
+  });
 
   setMode('journey');
+  setScope('person', false);
   setDetail(0, false);
 })();
