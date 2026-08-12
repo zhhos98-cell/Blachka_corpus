@@ -1,0 +1,189 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-12",
+  "status": "working_source_critical_not_public_projection",
+  "title": "Rudolf Blaschka 1892 — specimen/model divergence, dispatch and circulation-value crosswalk",
+  "supersedes_or_closes": [
+    {
+      "issue": "pass13 ninth shipment 50/51 discrepancy",
+      "resolution": "closed",
+      "result": "9th Shipment January 1894 = model nos. 424-473 inclusive = 50 models; model 474 Sanguinaria canadensis begins 10th Shipment August 1894."
+    }
+  ],
+  "article_mechanism": "Transport coupled a split workshop by converting plants and models into handleable, insurable, certifiable and countable units. A field reference could diverge into durable descendants retained in different media and repositories; later shipments selectively reaggregated only some descendants and production outputs.",
+  "shipment_boundaries": [
+    {
+      "shipment": "9th Shipment January 1894",
+      "range": "424-473",
+      "count": 50,
+      "evidence": [
+        "Harvard annotated shipment list, cleaner OCR: 10th Shipment heading precedes 474 Sanguinaria canadensis",
+        "BLA-D00222 / 015:224: January consignment composed of 50 species",
+        "BLA-D00237 / 015:240: Goodale refers to new invoice of 50 plants"
+      ],
+      "status": "high-confidence direct crosswalk",
+      "correction": "Poorer OCR made a synonym/continuation after 473 look like a separate model 474; do not use 424-474 for shipment nine."
+    },
+    {
+      "shipment": "10th Shipment August 1894",
+      "range": "474-523",
+      "count": 50,
+      "case_marks": ["I.B.366", "I.B.367", "I.B.368", "I.B.369"],
+      "evidence": [
+        "Harvard annotated shipment list: 474 Sanguinaria canadensis begins tenth shipment",
+        "Rakow/workshop notebook account enumerates 50 items ending with model-corresponding Antirrhinum/Gilia/Houstonia/Allium/Calopogon sequence",
+        "BLA-D00247 / 015:250: four cases 366-369 forwarded to Bremen 28 Aug 1894"
+      ],
+      "status": "high-confidence shipment/model-span crosswalk",
+      "guard": "Individual model-to-case allocation remains unresolved."
+    }
+  ],
+  "specimen_model_crosswalks": [
+    {
+      "id": "XWALK-HOFFMANNSEGGIA-433",
+      "confidence": "high; original model label image still requested for publication closure",
+      "field_specimen": {
+        "repository": "Harvard University Herbaria",
+        "barcode": "GH 01676890",
+        "accepted_name": "Hoffmannseggia glauca (Ortega) Eifert",
+        "place": "Arizona, Tempe?",
+        "collectors": ["W. F. Ganong", "R. Blaschka"],
+        "date": "1892-04",
+        "web_source": "https://data.huh.harvard.edu/databases/specimen_search.php?family=Caesalpiniaceae&mode=search&start=8000"
+      },
+      "taxonomy_crosswalk": {
+        "accepted": "Hoffmannseggia glauca",
+        "historical_synonyms_relevant_to_model": ["Hoffmannseggia stricta Benth.", "Hoffmannseggia densiflora Benth."],
+        "authority": "Royal Botanic Gardens, Kew, Plants of the World Online"
+      },
+      "glass_model": {
+        "model_no": 433,
+        "historical_label": "Hoffmanseggia densiflora (Hoffmanseggia stricta)",
+        "updated_label": "Hoffmannseggia glauca [syn H. densiflora]",
+        "shipment": "9th Shipment January 1894",
+        "workshop_notebook_ocr": "Hoffmannsgia striata",
+        "ocr_guard": "striata conflicts with Harvard model label/taxonomy and is treated as OCR error pending image check",
+        "maker_evidence": "BLA-D01749 / 020:278: Rudolf retrospectively lists 433 Hoffmannergia among smaller models constructed by himself alone, while saying analytical details were mostly his father's work."
+      },
+      "analytical_value": "A Tempe field reference survives as a herbarium sheet at Harvard while a later glass descendant is manufactured at Hosterwitz and shipped back to Harvard. This is a reference-lineage divergence, not simple movement of one object."
+    }
+  ],
+  "retained_specimens_without_secure_model_crosswalk": [
+    {
+      "barcode": "GH 00973362",
+      "name": "Daucus pusillus Michaux",
+      "place": "Arizona, Tempe",
+      "date": "1892-04-21",
+      "collectors": ["W. F. Ganong", "R. Blaschka"],
+      "status": "direct 1892 expedition specimen; no exact model match isolated in current shipment/model OCR"
+    },
+    {
+      "barcode": "GH 02024320",
+      "name": "Cryptantha maritima (Greene) Greene",
+      "place": "Arizona, Tempe",
+      "date": "1892-04",
+      "collectors": ["W. F. Ganong", "R. Blaschka"],
+      "status": "direct 1892 expedition specimen; no exact model match isolated in current shipment/model OCR"
+    },
+    {
+      "barcode": "GH 00672769",
+      "name": "Brassica nigra (L.) W. D. J. Koch",
+      "place": "Arizona, Tempe",
+      "date": "1892-04-18",
+      "collectors": ["W. F. Ganong", "R. Blaschka"],
+      "status": "direct 1892 expedition specimen; no exact model match isolated in current shipment/model OCR"
+    }
+  ],
+  "dispatch_clock_evidence": [
+    {
+      "source": "BLA-D00168 / 015:169",
+      "date": "1893-07-18",
+      "finding": "Models were substantially ready but shipment date remained uncertain because mounting remained and packing boxes had to be ordered at the last moment; timing depended on the crate maker and could shift one or two weeks.",
+      "mechanism": "production completion != dispatchability"
+    },
+    {
+      "source": "BLA-D00169 / 015:170",
+      "date": "1893-07-18 continuation",
+      "finding": "Most models were fixed on glass panes because otherwise the fragile objects could not be handled.",
+      "mechanism": "support architecture creates a handleable transport state"
+    }
+  ],
+  "shipment_size_negotiation": [
+    {
+      "source": "BLA-D00250 / 015:253",
+      "date": "1894-09-02",
+      "finding": "Goodale proposes authorizing 30 or 40 models for the next January instalment after summer-shipment delay suggests the Blaschkas are beyond their strength."
+    },
+    {
+      "source": "BLA-D00260 / 015:263",
+      "date": "1894-11-03",
+      "finding": "Blaschkas thank Goodale/Wares for permission to reduce next shipment count and explain that some American specimens take weeks, delaying shipment until the specified number is complete."
+    }
+  ],
+  "contract_and_value_layers": {
+    "contract": {
+      "source": "BLA-D01210 / 018:80",
+      "terms": {
+        "annual_payment_marks": 8800,
+        "half_year_installment_marks": 4400,
+        "shipments_per_year": 2,
+        "harvard_defrays": ["expenses from place of manufacture to Cambridge", "insurance", "consular certificate"]
+      }
+    },
+    "payment_control": {
+      "source": "BLA-D00231 / 015:234",
+      "date": "1894-01-10",
+      "amount_marks": 4400,
+      "type": "bank check / half-year payment control"
+    },
+    "august_1894_workshop_account": {
+      "modelle_marks": 4240,
+      "four_cases_marks": 50,
+      "cartons_marks": 55,
+      "packing_marks": 30.30,
+      "transport_to_dresden_marks": 11.50,
+      "insurance_to_bremen_marks": 2.50,
+      "consular_certification_marks": 10.70,
+      "circulation_costs_sum_marks": 160,
+      "account_total_marks": 4400,
+      "arithmetic_status": "exact",
+      "interpretive_guard": "Do not equate notebook total with contractual salary or sale price until matching Harvard invoice/source genre is identified."
+    },
+    "january_1894_workshop_account": {
+      "modelle_marks": 4240,
+      "account_total_marks": 4400,
+      "visible_costs": [
+        "4 cases 30",
+        "packing 32.20",
+        "transport to Dresden 10.50",
+        "insurance to Bremen 1.50",
+        "consular certification approximately 10.70"
+      ],
+      "guard": "OCR misses/obscures at least one charge; do not force reconstruction of the 160-mark difference from text alone."
+    },
+    "receiving_cost_layer": {
+      "source": "BLA-D00239 / 015:242",
+      "date": "1894-03-19",
+      "finding": "Goodale reports Snow's bill for commission and expenses on importation and subsequent official passage/release of the cases.",
+      "guard": "Exact dollar amount is OCR-unsafe."
+    }
+  },
+  "research_claims": [
+    "A field plant could generate multiple durable descendants that remained in different repositories/media.",
+    "Finished representation and dispatchable freight are distinct object states.",
+    "Packing/support made fragile models handleable, not merely safer.",
+    "Shipment count linked material difficulty, labour capacity and institutional scheduling and could be renegotiated.",
+    "Circulation costs and administrative certification were explicitly itemized apart from model value in workshop accounting.",
+    "A shipment aggregated objects while masking differences in production date, maker, reference lineage and circulation cost."
+  ],
+  "next_retrievals": [
+    "Harvard original digitized model-433 old and updated label images",
+    "HUH GH 01676890 specimen image and label/determination history",
+    "Harvard receipts and bills folder, 1892",
+    "Harvard Acquisition, Development, and Shipping lists around 1893-1894",
+    "Harvard-side January and August 1894 invoices",
+    "original notebook images for January/August 1894 accounting pages",
+    "model-to-case allocation for I.B.366-369 and U.B.346-350",
+    "additional specimen-to-model and specimen-without-model controls from 1892 expedition sheets"
+  ]
+}
