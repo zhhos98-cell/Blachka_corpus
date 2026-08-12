@@ -1,0 +1,118 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "minimum_verified_packet_from_indexed_HUH_results",
+  "title": "Rudolf Blaschka 1892 — Tempe herbarium packet and selective conversion into models",
+  "scope_note": "This is a minimum packet reconstructed from currently indexed Harvard University Herbaria search results, not a complete inventory of all Ganong-Blaschka collections at Tempe. Every row below is independently visible in HUH metadata. Further collector-level export/search may enlarge the packet.",
+  "packet": [
+    {
+      "barcode": "GH 00672769",
+      "taxon": "Brassica nigra (Linnaeus) W. D. J. Koch",
+      "place": "Arizona, Tempe",
+      "collectors": "W. F. Ganong & R. Blaschka",
+      "date": "1892-04-18",
+      "image_available": true,
+      "model_corpus_check": "No exact-string Brassica nigra match found in the current 05B shipment/model list search.",
+      "status": "retained_field_reference_no_exact_model_match_yet"
+    },
+    {
+      "barcode": "GH 00939452",
+      "taxon": "Lycium fremontii A. Gray",
+      "place": "Arizona, Tempe",
+      "collectors": "W. F. Ganong & R. Blaschka",
+      "date": "1892-04-20",
+      "image_available": true,
+      "model_corpus_check": "05B includes model 343 as Lycium halimifolium / Lycium vulgare, a different taxon string. No exact Lycium fremontii match found.",
+      "status": "retained_field_reference_taxonomically_near_model_genus_but_no_exact_species_match"
+    },
+    {
+      "barcode": "GH 00973362",
+      "taxon": "Daucus pusillus Michaux",
+      "place": "Arizona, Tempe",
+      "collectors": "W. F. Ganong & R. Blaschka",
+      "date": "1892-04-21",
+      "image_available": true,
+      "model_corpus_check": "No exact-string Daucus pusillus match found in the current 05B shipment/model list search.",
+      "status": "retained_field_reference_no_exact_model_match_yet"
+    },
+    {
+      "barcode": "GH 01863429",
+      "taxon": "Erodium cicutarium (Linnaeus) L'Heritier ex Aiton",
+      "place": "Arizona, Tempe",
+      "collectors": "W. F. Ganong & R. Blaschka",
+      "date": "1892-04-21",
+      "image_available": true,
+      "model_corpus_check": "No Erodium exact-string match found in the current 05B shipment/model list search.",
+      "status": "retained_field_reference_no_exact_model_match_yet"
+    },
+    {
+      "barcode": "GH 01963615",
+      "taxon": "Acmispon maritimus (Nuttall) D. D. Sokoloff",
+      "place": "Arizona, Tempe",
+      "collectors": "W. F. Ganong & R. Blaschka",
+      "date": "1892-04-21",
+      "image_available": true,
+      "model_corpus_check": "No exact Acmispon maritimus string found in 05B. Historical synonym-level checking remains open and is required before calling this a true model-negative.",
+      "status": "retained_field_reference_exact_match_absent_synonym_check_open"
+    },
+    {
+      "barcode": "GH 01851133",
+      "taxon": "Eriogonum inflatum Torrey & Fremont",
+      "place": "Arizona, Tempe",
+      "collectors": "W. F. Ganong & R. Blaschka",
+      "date": "1892-04-21",
+      "image_available": true,
+      "model_corpus_check": "05B later includes model 580 Eriogonum fasciculatum in the 12th shipment, January 1896. No exact Eriogonum inflatum match found.",
+      "status": "retained_field_reference_same_genus_later_model_different_species"
+    },
+    {
+      "barcode": "GH 01851145",
+      "taxon": "Eriogonum inflatum Torrey & Fremont",
+      "place": "Arizona, Tempe",
+      "collectors": "W. F. Ganong & R. Blaschka",
+      "date": "1892-04-22",
+      "image_available": true,
+      "model_corpus_check": "Second independently indexed Ganong-Blaschka sheet of Eriogonum inflatum on the following day; no exact model match found.",
+      "status": "repeat_sampling_same_taxon_across_adjacent_days"
+    },
+    {
+      "barcode": "GH 02024320",
+      "taxon": "Cryptantha maritima (Greene) Greene",
+      "place": "Arizona, Tempe",
+      "collectors": "W. F. Ganong & R. Blaschka",
+      "date": "1892-04",
+      "image_available": true,
+      "model_corpus_check": "No exact-string Cryptantha maritima match found in the current 05B shipment/model list search.",
+      "status": "retained_field_reference_no_exact_model_match_yet"
+    },
+    {
+      "barcode": "GH 01676890",
+      "taxon": "Hoffmannseggia glauca (Ortega) Eifert",
+      "place": "Arizona, Tempe?",
+      "collectors": "W. F. Ganong & R. Blaschka",
+      "date": "1892-04",
+      "image_available": true,
+      "model_corpus_check": "Clear later model descendant: model 433, historical label Hoffmannseggia densiflora (Hoffmanseggia stricta), updated to Hoffmannseggia glauca [syn H. densiflora], 9th shipment January 1894.",
+      "status": "later_model_descendant_metadata_crosswalk_high_confidence"
+    }
+  ],
+  "minimum_packet_summary": {
+    "indexed_sheets": 9,
+    "distinct_taxa": 8,
+    "date_span_with_day_precision": "1892-04-18 to 1892-04-22",
+    "rows_with_only_month_precision": 2,
+    "exact_or_metadata-secure_later_model_descendants": 1,
+    "secure_descendant_object": "model 433 Hoffmannseggia",
+    "interpretive_result": "The Tempe collecting episode is already demonstrably broader than a model-production shopping list. The herbarium packet retains several taxa for which the current model/shipment corpus yields no exact species match, while one taxon, Hoffmannseggia, later branches into a glass descendant."
+  },
+  "analytical_claim": "Field collecting and glass manufacture were coupled through selective reference lineages, not by a one-specimen-to-one-model pipeline. A local collecting packet could preserve multiple botanical references at Harvard while only some references were later reactivated as glass models, sometimes after a substantial delay.",
+  "important_negative_evidence_rule": "Treat absence from the current model list as an exact-string negative only. Historical synonymy, withdrawn models, unpublished workshop studies and missing labels can create false negatives. Upgrade a row to 'no model descendant' only after synonym and model-label checking.",
+  "comparison_with_model_345": "Abronia umbellata differs structurally from the Tempe herbarium packet. Rudolf directly reports seeing it in the late-April western landscape and model 345 was shipped in February 1893, while no indexed Ganong-Blaschka Harvard herbarium sheet has yet been found in the present search. This suggests that model-relevant field reference could be retained through a drawing or observation pathway without requiring a surviving herbarium sheet.",
+  "next_steps": [
+    "Find or derive a collector-level HUH search/export for W. F. Ganong & R. Blaschka and reconstruct the complete 1892 herbarium corpus with date and locality.",
+    "Run historical-synonym checks for Acmispon maritimus, Erodium cicutarium, Daucus pusillus, Cryptantha maritima, Brassica nigra and Lycium fremontii against all Harvard model labels and Blaschka shipment lists.",
+    "Inspect the nine HUH sheet images, prioritizing GH 01676890 and repeated Eriogonum inflatum sheets for handwritten collection/field annotations.",
+    "Compare day-level Tempe collecting dates with Rudolf/Ganong itinerary correspondence to determine whether the packet represents repeated local collecting, teaching exchange, or deliberate reference accumulation.",
+    "Keep this packet off the public route map until collector-level completeness and synonym checks are done; use it first as an argument about selective conversion of field references."
+  ]
+}
