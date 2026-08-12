@@ -1,0 +1,205 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "stage_specific_quantitative_register",
+  "title": "Rudolf Blaschka 1892 — yield ontology and quantitative statement register",
+  "purpose": "Operationalize pass26 by recording major 1892 quantities according to what each source actually counts. The register deliberately preserves incompatible totals where they belong to different dates, actors, media or operations.",
+  "rows": [
+    {
+      "date": "1892-02-15",
+      "place": "Cambridge",
+      "actor": "Rudolf + Wares + Goodale",
+      "source": "BLA-D00682 / 017:36",
+      "quantity": 60,
+      "unit": "species",
+      "ontology": "former_or_default_model_output_target",
+      "statement": "The parties decide not to bind themselves to 60 species.",
+      "status": "direct",
+      "do_not_read_as": "expedition collection target or actual model output"
+    },
+    {
+      "date": "1892-02-15",
+      "place": "Cambridge",
+      "actor": "Rudolf + Wares + Goodale",
+      "source": "BLA-D00682 / 017:36",
+      "quantity": 50,
+      "unit": "species",
+      "ontology": "minimum_feasible_future_model_output",
+      "statement": "Fifty will be the minimum while the makers will produce as many as can comfortably be made.",
+      "status": "direct",
+      "do_not_read_as": "number Rudolf must collect during travel"
+    },
+    {
+      "date": "1892-02-19",
+      "place": "Cambridge",
+      "actor": "Rudolf",
+      "source": "BLA-D00695 / 017:49",
+      "quantity": 29,
+      "qualifier": "about",
+      "unit": "species of seeds",
+      "ontology": "pre_fieldwork_seed_packet_to_Hosterwitz",
+      "statement": "Rudolf sends about 29 species of Cambridge Botanic Garden seeds to Hosterwitz as a sample without value, with sowing instructions.",
+      "status": "direct",
+      "do_not_read_as": "field-collected American species"
+    },
+    {
+      "date": "1892-03-27",
+      "place": "Hope Garden, Jamaica",
+      "actor": "Rudolf",
+      "source": "BLA-D00725 / 017:79 (Hope Garden letter; record page visible in compact/full OCR)",
+      "quantity": 106,
+      "unit": "species",
+      "ontology": "Rudolf_completed_work_Jamaica",
+      "statement": "Before leaving Jamaica Rudolf says he has finished his work with 106 species.",
+      "status": "direct translated primary",
+      "do_not_read_as": "necessarily 106 colour drawings, 106 herbarium sheets, or 106 later models"
+    },
+    {
+      "date": "1892 institutional report after March fieldwork",
+      "place": "Hope Botanical Gardens, Jamaica",
+      "actor": "Botanical Department Jamaica report",
+      "source": "Foreign Students in the Gardens, Bulletin of the Botanical Department, Jamaica, p.18",
+      "quantity": 116,
+      "unit": "species represented by accurate coloured drawings",
+      "ontology": "institutionally_reported_coloured_drawing_output",
+      "statement": "The Jamaican institutional report states that Blaschka made accurate coloured drawings of 116 species; Cameron made dried collections of the same and other plants.",
+      "status": "direct institutional report",
+      "do_not_read_as": "a correction of Rudolf's 106 without reconciling date/category/reporting practice"
+    },
+    {
+      "date": "1892-04-20",
+      "place": "Tempe",
+      "actor": "Rudolf",
+      "source": "BLA-D00779 / 017:133",
+      "quantity": 10,
+      "unit": "interesting species",
+      "ontology": "recent_drawing_working_set",
+      "statement": "After substantial drawing Rudolf says he now has ten interesting species.",
+      "status": "direct",
+      "do_not_read_as": "Tempe final total"
+    },
+    {
+      "date": "1892-04-22",
+      "place": "Tempe",
+      "actor": "Rudolf / field party",
+      "source": "BLA-D00785 / 017:139",
+      "quantity": 25,
+      "unit": "species",
+      "ontology": "useful_field_selected_species",
+      "statement": "After ignoring most very small plants and selecting showy/characteristic forms, Rudolf says the useful species total is 25.",
+      "status": "direct",
+      "do_not_read_as": "all species encountered or all herbarium specimens"
+    },
+    {
+      "date": "early May 1892 before 4 May",
+      "place": "San Diego",
+      "actor": "Rudolf",
+      "source": "BLA-D00808–00809 / 017:162–163 sequence",
+      "quantity": 25,
+      "unit": "species",
+      "ontology": "San_Diego_drawn_or_finished_so_far",
+      "statement": "Rudolf says he draws during the day and has finished 25 species in San Diego so far.",
+      "status": "direct",
+      "do_not_read_as": "final San Diego total"
+    },
+    {
+      "date": "1892-05-04",
+      "place": "San Diego",
+      "actor": "Rudolf",
+      "source": "BLA-D00814 / 017:168",
+      "quantity": 36,
+      "unit": "species",
+      "ontology": "San_Diego_completed_species_final_or_near_final",
+      "statement": "At departure Rudolf calls the San Diego stay botanically favorable and says he completed 36 species there, aided especially by Orcutt's procurement of plant material.",
+      "status": "direct",
+      "do_not_read_as": "cumulative expedition total"
+    },
+    {
+      "date": "late May 1892",
+      "place": "Colorado Springs",
+      "actor": "Rudolf",
+      "source": "BLA-D00879 / 017:233",
+      "quantity": 200,
+      "unit": "species",
+      "ontology": "cumulative_drawn_and_studied_so_far",
+      "statement": "Rudolf reports that he has drawn and studied 200 species up to that point.",
+      "status": "direct",
+      "do_not_read_as": "preserved specimens, later model count, or unique nonduplicate Harvard additions"
+    },
+    {
+      "date": "late May 1892",
+      "place": "Colorado Springs",
+      "actor": "Rudolf",
+      "source": "BLA-D00879 / 017:233",
+      "quantity": 400,
+      "unit": "species",
+      "ontology": "forecast_departure_reference_yield",
+      "statement": "Rudolf thinks he may have collected/assembled 400 by the time he leaves America.",
+      "status": "direct forecast",
+      "do_not_read_as": "actual final count"
+    },
+    {
+      "date": "late May 1892",
+      "place": "Colorado Springs",
+      "actor": "Rudolf",
+      "source": "BLA-D00879 / 017:233",
+      "quantity_range": [600,800],
+      "unit": "species",
+      "ontology": "counterfactual_year_long_expedition_yield",
+      "statement": "Rudolf says reaching 600–800 species would require spending the whole year wandering around America.",
+      "status": "direct counterfactual",
+      "do_not_read_as": "goal or expected final yield"
+    },
+    {
+      "date": "mid-June 1892",
+      "place": "Cambridge",
+      "actor": "Rudolf",
+      "source": "BLA-D00927 / 017:282 continuation",
+      "quantity": 3,
+      "qualifier": "about / OCR-image check still advisable",
+      "unit": "years of work",
+      "ontology": "maker_estimated_future_work_horizon",
+      "statement": "Rudolf evaluates the material generated through drawing/study as roughly three years of future work.",
+      "status": "primary translated/OCR; wording to image-check",
+      "do_not_read_as": "measured production time or contract duration"
+    },
+    {
+      "date": "post-departure June 1892",
+      "place": "Cambridge",
+      "actor": "George Lincoln Goodale",
+      "source": "BLA-D00091 / 015:91",
+      "quantity": 4,
+      "qualifier": "about",
+      "unit": "years of work",
+      "ontology": "commissioner_estimated_future_work_horizon",
+      "statement": "Goodale writes that in his view Rudolf has material on hand for about four years' work.",
+      "status": "direct primary OCR, high-confidence phrase",
+      "do_not_read_as": "correction of Rudolf's three-year estimate"
+    }
+  ],
+  "key_discrepancy_cases": [
+    {
+      "pair": "Jamaica 106 vs 116",
+      "interpretive_status": "ontology/date/reporting discrepancy, unresolved",
+      "rule": "Preserve both. Rudolf's 106 is 'finished my work with 106 species'; the institutional 116 is 'accurate coloured drawings of 116 species'. Determine whether additional drawings, counting conventions, report compilation, or source transcription account for the ten-unit difference."
+    },
+    {
+      "pair": "San Diego 25 vs 36",
+      "interpretive_status": "closed as temporal progression",
+      "rule": "The 25 is an interim 'so far' count; 36 is the 4 May departure count. Do not treat as contradiction."
+    },
+    {
+      "pair": "three years vs four years",
+      "interpretive_status": "actor-specific valuation",
+      "rule": "Rudolf and Goodale are independently forecasting future work. Preserve actor and decision context rather than averaging."
+    }
+  ],
+  "strongest_methodological_result": "The archive's numbers become more informative when they fail to match. A quantity is evidence only after its operation is specified. Counts move through a chain from target -> working set -> selected set -> completed local set -> cumulative study count -> forecast yield -> institutional drawing report -> future work horizon. Apparent discrepancies can therefore reveal conversion stages rather than errors.",
+  "next_steps": [
+    "Image-check the Jamaica 106 letter and retrieve the original Jamaican bulletin page image side-by-side.",
+    "Locate the exact date/source for the San Diego 25 interim count and freeze it in the register.",
+    "Add daily/local counts from Jamaica, Arizona, Colorado and St Louis only when their ontology is explicit.",
+    "Add packet quantities (29 seed species, two Ganong boxes, cactus/bulb box) in a separate material-packet table instead of merging with species-study totals.",
+    "Add actual later model descendants only in a downstream conversion table, preserving lag and selective reactivation."
+  ]
+}
