@@ -1,0 +1,255 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-12",
+  "status": "working_source_critical_not_public_projection",
+  "title": "Rudolf Blaschka 1892 — shipment, production-lane and expedition-output crosswalk",
+  "research_question": "How do the 1892 journey, stationary Hosterwitz production, later model-making and outbound shipments relate when shipment is treated as an aggregation event rather than a production-time unit?",
+  "current_thesis": "1892 split the workshop without stopping production. One maker travelled while Leopold continued manufacturing at Hosterwitz; reference packets and finished models moved asynchronously; later shipments serially aggregated work with different production dates, makers and reference genealogies.",
+  "analytical_terms_guard": "split workshop, packet, aggregation technology, serial reassembly and production queue are project analytical terms, not actor vocabulary unless independently attested.",
+  "shipment_crosswalks": [
+    {
+      "shipment": "6th Shipment January 1892",
+      "case_marks": ["U.B.346", "U.B.347", "U.B.348", "U.B.349", "U.B.350"],
+      "annotated_model_range": "252-311",
+      "numbered_models": 60,
+      "analytical_details": 329,
+      "boundary_evidence": "Annotated list places model 251 before the heading '6th. Shipment January, 1892.'; model 252 follows the heading; model 311 precedes the 7th Shipment heading. 252-311 inclusive equals 60.",
+      "primary_dispatch_evidence": ["BLA-D00006", "BLA-D00016 / 015:16"],
+      "contents_list_evidence": "Harvard annotated shipment list, Series V Subseries I, OCR Part1/Part3 in 05B",
+      "status": "high confidence shipment/model-range crosswalk",
+      "guards": [
+        "Do not use 251-310; model 251 is before the sixth-shipment heading.",
+        "No current evidence allocates individual models among the five U.B. cases.",
+        "The 329 analytical-detail total comes from the dispatch letter and should not be recomputed from imperfect list OCR."
+      ]
+    },
+    {
+      "shipment": "7th Shipment February 1893",
+      "annotated_model_range": "312-373",
+      "numbered_span": 62,
+      "production_layers": [
+        {
+          "range": "312-322",
+          "count": 11,
+          "maker_note": "Annotated list: made by Leopold Blaschka in the first half year 1892.",
+          "corroboration": "BLA-D01748, Rudolf 7 Aug 1900: 'the 11 models my father has prepared from January till July 1892' and list sent to Goodale in July 1892.",
+          "status": "direct list annotation plus retrospective corroboration"
+        },
+        {
+          "range": "321 onward within early seventh shipment",
+          "type": "cryptogamic/anatomical/scientific block",
+          "examples": ["Claviceps purpurea", "Arcyria", "Physarum", "Fucus", "Marchantia", "Funaria", "Atrichum", "Lycopodium", "wood structure"],
+          "status": "direct annotated-list content"
+        },
+        {
+          "type": "journey-derived American plants",
+          "quantity": "a few",
+          "evidence": "BLA-D00131, Goodale 31 Jan 1893: 'a few of the American plants collected on the journey, and a large group of Cryptogamia.'",
+          "status": "direct letter; model-number assignments unresolved"
+        }
+      ],
+      "analytical_value": "One February 1893 shipment aggregates first-half-1892 stationary Leopold production, later cryptogamic/scientific work and at least some journey-derived American material.",
+      "guard": "Do not assign specific seventh-shipment model numbers to Goodale's 'few American plants' without further model-label/reference crosswalk."
+    },
+    {
+      "shipment": "8th Shipment July/August 1893",
+      "annotated_shipment_heading": "8th Shipment, July 1893",
+      "ordinary_plant_block": "374-410",
+      "ordinary_plant_count": 37,
+      "scientific_block": "411-423",
+      "letter_evidence": "BLA-D00168-00169, 18 Jul 1893",
+      "letter_partition": {
+        "total_ordinary_species": 37,
+        "jamaica": 20,
+        "west": 15,
+        "garden_material": 2,
+        "garden_count_guard": "OCR reads 'E'; value 2 is reconstructed because 37 - 20 - 15 = 2 and the sentence identifies the remainder as garden material."
+      },
+      "sequence_based_regional_reconstruction": [
+        {
+          "range": "374-393",
+          "count": 20,
+          "inferred_origin": "Jamaica studies",
+          "named_anchors": ["384 Tribulus cistoides", "391 Passiflora murucuja"],
+          "confidence": "high inference"
+        },
+        {
+          "range": "394-408",
+          "count": 15,
+          "inferred_origin": "western studies",
+          "named_anchors": ["396 Rosa woodsii", "397 Rosa gymnocarpa", "398 Viola"],
+          "confidence": "high inference"
+        },
+        {
+          "range": "409-410",
+          "count": 2,
+          "inferred_origin": "garden material",
+          "confidence": "high inference by exact numerical fit"
+        }
+      ],
+      "scientific_examples_411_423": ["Puccinia graminis", "Urocystis occulta", "Tilletia caries/corresponding OCR", "Tetraphis pellucida", "Salvinia", "Marsilia", "Selaginella", "anther-development models"],
+      "analytical_value": "The expedition is converted into a quantified model block but shipped together with scientific models generated through different reference systems.",
+      "guard": "The 374-393 / 394-408 / 409-410 regional ranges are inferred from the exact 20/15/2 count and named species sequence; the OCR does not print regional subheadings. Inspect original list image/model labels before publication."
+    },
+    {
+      "shipment": "9th Shipment January 1894",
+      "annotated_heading_start": 424,
+      "next_heading_position": "10th Shipment heading appears after 474 and before 475",
+      "apparent_numbered_span": "424-474",
+      "apparent_count": 51,
+      "planning_letter": "BLA-D00222, 15 Dec 1893",
+      "planning_letter_count": "50 species, flowers and details",
+      "source_origin_statement": "with only a few stated exceptions, made with help of material and studies of Jamaica and the West",
+      "named_examples": ["Anacardium", "Coca", "Eucalyptus", "Darlingtonia californica", "western desert plants"],
+      "status": "strong journey-afterlife evidence; exact 50/51 list count unresolved",
+      "guards": [
+        "Do not force the range to 424-473 simply to make 50.",
+        "Possible explanations include a list/layout issue, a post-letter shipment change, or one entry outside the letter's '50 species' category; image-level inspection required."
+      ]
+    }
+  ],
+  "object_biographies": [
+    {
+      "model_no": 290,
+      "name": "Datura arborea",
+      "timeline": [
+        {
+          "phase": "shipment list",
+          "date": "January 1892",
+          "event": "listed in sixth shipment; cleaner OCR gives five details",
+          "evidence": "Harvard annotated shipment list"
+        },
+        {
+          "phase": "arrival/unpacking",
+          "date": "19 February 1892",
+          "event": "Goodale opens a new case at Harvard; Datura arborea is removed and found well preserved",
+          "evidence": "BLA-D00695 / 017:49"
+        },
+        {
+          "phase": "living counterpart encountered",
+          "date": "March 1892",
+          "event": "Rudolf describes a Jamaica veranda surrounded by Datura arborea blossoms",
+          "evidence": "BLA-D00711-00712",
+          "guard": "Encounter does not prove correction, validation or model-specific study."
+        },
+        {
+          "phase": "retrospective authorship",
+          "date": "7 August 1900",
+          "event": "Rudolf lists 290-291 Datura among models where Leopold's hand predominated in glasswork, while stating that every collection model passed through Rudolf's painting/finishing work",
+          "evidence": "BLA-D01746-01749",
+          "guard": "Joint work was explicitly described as amalgamated; do not call model 290 solely Leopold's work."
+        },
+        {
+          "phase": "technical conservation analysis",
+          "date": "1993 publication",
+          "event": "original adhesive from Datura model 290 (1892) identified as animal/hide glue",
+          "evidence": "McNally & Buschini, JAIC 32.3 (1993)",
+          "guard": "Technical object identity/date evidence, not historical maker attribution."
+        }
+      ],
+      "analytical_value": "A finished representation travelled and was unpacked before Rudolf's later living encounter with the species, providing an anti-linear control on fieldwork-to-model narratives."
+    }
+  ],
+  "stationary_production_lane": {
+    "date_range": "January-July 1892",
+    "maker": "Leopold Blaschka",
+    "models": [
+      {"no":312,"name":"Clintonia borealis"},
+      {"no":313,"name":"Saxifraga umbrosa"},
+      {"no":314,"name":"Saxifraga trifurcata / OCR variant"},
+      {"no":315,"name":"Aquilegia canadensis"},
+      {"no":316,"name":"Podophyllum peltatum"},
+      {"no":317,"name":"Rhododendron praecox"},
+      {"no":318,"name":"Phyllocactus ackermannii"},
+      {"no":319,"name":"Phyllocactus phyllanthoides"},
+      {"no":320,"name":"Polypodium aureum"},
+      {"no":321,"name":"Claviceps purpurea"},
+      {"no":322,"name":"Sedum pulchellum"}
+    ],
+    "direct_evidence": "Harvard annotated shipment list note",
+    "retrospective_corroboration": "BLA-D01748, Rudolf 1900",
+    "journey_side_corroboration": "BLA-D00884-00885: Rudolf responds to his father's report about work while in Colorado",
+    "shipment_queue": "These models enter the seventh shipment in February 1893, months after production.",
+    "analytical_value": "Production clock and shipment clock diverge; the workshop remains active at Hosterwitz while Rudolf travels."
+  },
+  "field_media_decisions": [
+    {
+      "id":"agua-caliente-preservation-cache",
+      "date":"7 May 1892 sequence",
+      "evidence":"BLA-D00829",
+      "event":"Ganong handles plants in glass containers with alcohol and water and as dried specimens; two boxes of material already sent to Cambridge to stay until Rudolf is ready to return.",
+      "mechanism":"preservation plus staging/cache"
+    },
+    {
+      "id":"cacti-alive-vs-alcohol",
+      "date":"May 1892 sequence",
+      "evidence":"BLA-D00840",
+      "event":"Rudolf says cacti are better received alive than in alcohol because the workshop can grow the flower itself; three cacti were collected in Jamaica.",
+      "mechanism":"transport medium preserves different future epistemic affordances"
+    },
+    {
+      "id":"san-diego-live-material",
+      "date":"early May 1892",
+      "evidence":"BLA-D00814",
+      "event":"after completing 36 species in San Diego, Rudolf sends a small box of cacti and flowering bulbs with other things to Cambridge for Goodale to forward to Hosterwitz; a giant-cactus cutting may rot.",
+      "mechanism":"live transport + viability risk + relay through Harvard"
+    },
+    {
+      "id":"orcut-postdeparture-supply",
+      "date":"June 1892",
+      "evidence":"BLA-D00927",
+      "event":"Crinum bulb and earlier seed packet arrive from Orcutt after the party has left California; Rudolf plans continued seed/bulb supply for flowering windows the journey could not wait for.",
+      "mechanism":"seasonal delay converted into future-supply relation"
+    }
+  ],
+  "production_afterlife": [
+    {
+      "date":"June 1892",
+      "claim":"Rudolf estimates drawing/studying/collecting has produced about three years of material.",
+      "evidence":"BLA-D00927",
+      "status":"contemporaneous estimate"
+    },
+    {
+      "date":"July/August 1893",
+      "claim":"37 ordinary plant models explicitly partitioned as 20 Jamaica, 15 West, 2 garden, plus a scientific second portion.",
+      "evidence":"BLA-D00168-00169 + annotated eighth shipment list",
+      "status":"direct quantified output"
+    },
+    {
+      "date":"January 1894",
+      "claim":"planned 50-species consignment described as almost entirely based on Jamaica/West material and studies.",
+      "evidence":"BLA-D00222",
+      "status":"direct production/dispatch planning"
+    },
+    {
+      "date":"November 1894",
+      "claim":"workshop still preparing American-collected plants; some material takes weeks; many Arizona/California forms lacked pictures in books.",
+      "evidence":"BLA-D00260-00261",
+      "status":"direct evidence of multi-year afterlife"
+    }
+  ],
+  "revised_lanes": [
+    "Rudolf bodily/passenger route and field/repair work",
+    "U.B.346-350 finished-glass westbound route, models 252-311",
+    "asynchronous reference/material/document/information packets in both directions",
+    "Leopold stationary-production lane at Hosterwitz, models 312-322 in H1 1892",
+    "serial outbound reassembly through 1893-1894 shipments"
+  ],
+  "open_questions": [
+    "Can original annotated-list images confirm every heading boundary and the 8th-shipment regional block inference?",
+    "Can U.B.346-350 be resolved to model-to-case contents?",
+    "Which seventh-shipment models are Goodale's 'few American plants'?",
+    "Why does the ninth annotated span appear to contain 51 model numbers when the planning letter says 50 species?",
+    "Can the original July 1892 list of Leopold's eleven models and the March 30 1892 letter quoted in 1900 be recovered?",
+    "Which 1892 herbarium specimens remained at Harvard and which preserved packets travelled onward to Hosterwitz?",
+    "Can 1893-1894 shipment case marks/packing lists show how field-derived and scientific models were physically aggregated?"
+  ],
+  "retrieval_priorities": [
+    "Harvard Acquisition, Development, and Shipping lists, circa 1890-1982",
+    "Harvard digitized model and section labels for 252-322 and 374-474",
+    "Harvard folder of receipts and bills, 1892",
+    "original annotated shipment-list images at heading boundaries",
+    "1893-1894 packing/receiving/shipping papers",
+    "1892/1895 Harvard Herbaria specimen-level records"
+  ]
+}
