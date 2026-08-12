@@ -16,7 +16,17 @@
   const enhancements = sourceData.nodeEnhancements || {};
   const linksByNode = sourceData.nodeLinks || {};
   const packets = objectData.packets || [];
-  const objectNodes = packets.flatMap(packet => packet.nodes.map((node, index) => ({ ...node, packetId:packet.id, packetTitle:packet.title, packetSubtitle:packet.subtitle, packetIndex:index })));
+  const objectNodes = packets.flatMap(packet => packet.nodes.map((node, index) => ({
+    ...node,
+    packetId: packet.id,
+    packetTitle: packet.title,
+    packetSubtitle: packet.subtitle,
+    packetCode: packet.code || 'O',
+    packetColor: packet.color || '#88936b',
+    packetDirection: packet.direction || '',
+    packetStatus: packet.status || '',
+    packetIndex: index
+  })));
   const byId = new Map(documented.map((item, index) => [item.id, { ...item, index }]));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -46,7 +56,30 @@
     ocean: '#6f8794',
     bond: '#82758b',
     broker: '#8c806f',
-    unpack: '#778b68'
+    unpack: '#778b68',
+    postal: '#8f6f79',
+    receipt: '#768a72',
+    conversion: '#9a805a',
+    sorting: '#7f7c94',
+    procurement: '#777f9a',
+    delayed: '#a47a63',
+    reassembly: '#7b8968'
+  };
+
+  const objectTypeLabels = {
+    dispatch: 'dispatch',
+    forwarder: 'forwarder',
+    ocean: 'ocean',
+    bond: 'bond',
+    broker: 'broker / customs',
+    unpack: 'unpacking',
+    postal: 'postal packet',
+    receipt: 'receipt / destination',
+    conversion: 'media conversion',
+    sorting: 'sorting',
+    procurement: 'procurement',
+    delayed: 'delayed / awaited',
+    reassembly: 'workshop reassembly'
   };
 
   const displayItem = item => ({ ...item, ...(overrides[item.id] || {}) });
@@ -69,7 +102,7 @@
     color: '#b67a51', weight: 4, opacity: .92, lineCap: 'round'
   }).addTo(routeLayer);
 
-  const plannedLine = L.polyline(planned.map(d => [d.lat, d.lng]), {
+  L.polyline(planned.map(d => [d.lat, d.lng]), {
     color: '#71889a', weight: 2.6, opacity: .82, dashArray: '7 9', lineCap: 'round'
   }).addTo(plannedLayer);
 
@@ -101,7 +134,6 @@
 
   const markerMap = new Map();
   const objectMarkerMap = new Map();
-  const packetLineMap = new Map();
   const flowNodeIds = new Set(flows.flatMap(flow => [flow.from, flow.to]));
   let currentIndex = 0;
   let currentObjectIndex = 0;
@@ -133,40 +165,40 @@
     });
   }
 
-  function objectMarkerIcon(node, index, mode) {
-    const color = mode === 'operations' ? (objectTypeColors[node.type] || '#88936b') : '#88936b';
-    const faded = mode === 'flows' ? ' is-muted' : '';
+  function objectMarkerIcon(node, mode) {
+    const color = mode === 'operations' ? (objectTypeColors[node.type] || node.packetColor) : node.packetColor;
+    const label = `${node.packetCode}${node.packetIndex + 1}`;
     return L.divIcon({
       className: 'object-handoff-icon',
-      html: `<span class="object-handoff-marker${faded}" style="background:${color}">O${index + 1}</span>`,
+      html: `<span class="object-handoff-marker" style="background:${color}">${label}</span>`,
       iconSize: [30, 30], iconAnchor: [15, 15]
     });
   }
 
-  function segmentStyle(toNode, mode) {
-    const muted = mode === 'operations' ? .42 : mode === 'flows' ? .68 : .94;
-    const common = { color:'#88936b', weight:3.2, opacity:muted, lineCap:'round' };
-    if (toNode.type === 'ocean') return { ...common, color:'#708794', dashArray:'3 7' };
-    if (toNode.type === 'bond') return { ...common, color:'#82758b', dashArray:'12 6' };
-    if (toNode.type === 'forwarder') return { ...common, dashArray:'8 5' };
-    if (toNode.type === 'broker') return { ...common, dashArray:'8 6' };
-    if (toNode.type === 'unpack') return { ...common, weight:3.8 };
+  function segmentStyle(packet, toNode, mode) {
+    const color = mode === 'operations' ? (objectTypeColors[toNode.type] || packet.color || '#88936b') : (packet.color || '#88936b');
+    const common = { color, weight: mode === 'operations' ? 3 : 3.2, opacity: mode === 'flows' ? .72 : mode === 'operations' ? .62 : .93, lineCap:'round' };
+    if (toNode.lineKind === 'prospective' || toNode.lineKind === 'requested') return { ...common, dashArray:'3 9', opacity:.72 };
+    if (toNode.lineKind === 'delayed') return { ...common, dashArray:'2 8', opacity:.82 };
+    if (toNode.lineKind === 'postal') return { ...common, dashArray:'6 6' };
+    if (toNode.lineKind === 'guarded') return { ...common, dashArray:'4 8', opacity:.78 };
+    if (toNode.type === 'ocean') return { ...common, dashArray:'3 7' };
+    if (toNode.type === 'bond') return { ...common, dashArray:'12 6', weight:3.5 };
+    if (toNode.type === 'forwarder' || toNode.type === 'broker') return { ...common, dashArray:'8 5' };
+    if (toNode.type === 'unpack' || toNode.type === 'receipt' || toNode.type === 'reassembly') return { ...common, weight:3.8 };
     return common;
   }
 
   function renderObjectRoutes(mode = currentMode) {
     objectRouteLayer.clearLayers();
-    packetLineMap.clear();
     packets.forEach(packet => {
-      const packetLines = [];
       for (let i = 0; i < packet.nodes.length - 1; i += 1) {
         const from = packet.nodes[i];
         const to = packet.nodes[i + 1];
-        const line = L.polyline([[from.lat, from.lng], [to.lat, to.lng]], segmentStyle(to, mode)).addTo(objectRouteLayer);
-        line.bindTooltip(`<strong>${packet.title}</strong><br>${from.title} → ${to.title}<br><span>${to.action}</span>`, { sticky:true, className:'journey-flow-tooltip' });
-        packetLines.push(line);
+        const line = L.polyline([[from.lat, from.lng], [to.lat, to.lng]], segmentStyle(packet, to, mode)).addTo(objectRouteLayer);
+        const guard = to.routeGuard ? `<br><em>${to.routeGuard}</em>` : '';
+        line.bindTooltip(`<strong>${packet.code || 'O'} · ${packet.title}</strong><br>${from.title} → ${to.title}<br><span>${to.action}</span>${guard}`, { sticky:true, className:'journey-flow-tooltip' });
       }
-      packetLineMap.set(packet.id, packetLines);
     });
   }
 
@@ -200,16 +232,11 @@
         icon: visualMatchIcon(), keyboard: true, riseOnHover: true,
         title: `Sketchbook match: ${match.title}`
       }).addTo(visualMatchLayer);
-
       marker.bindPopup(visualMatchPopup(match), {
         className: 'visual-match-popup', maxWidth: 340, minWidth: 280, autoPan: false, closeButton: true
       });
-
       let closeTimer = 0;
-      const cancelClose = () => {
-        if (closeTimer) clearTimeout(closeTimer);
-        closeTimer = 0;
-      };
+      const cancelClose = () => { if (closeTimer) clearTimeout(closeTimer); closeTimer = 0; };
       const scheduleClose = () => {
         cancelClose();
         closeTimer = setTimeout(() => {
@@ -243,11 +270,11 @@
 
   objectNodes.forEach((node, index) => {
     const marker = L.marker([node.lat, node.lng], {
-      icon: objectMarkerIcon(node, index, 'journey'),
-      title: `${node.packetTitle} · ${node.title} · ${node.date}`,
+      icon: objectMarkerIcon(node, 'journey'),
+      title: `${node.packetCode} · ${node.packetTitle} · ${node.title} · ${node.date}`,
       riseOnHover: true
     }).addTo(objectMarkerLayer);
-    marker.bindTooltip(`<strong>${node.packetTitle}</strong><br>${node.title} · ${node.date}<br>${node.action}`, { direction:'top', offset:[0,-10] });
+    marker.bindTooltip(`<strong>${node.packetCode} · ${node.packetTitle}</strong><br>${node.title} · ${node.date}<br>${node.action}`, { direction:'top', offset:[0,-10] });
     marker.on('click', () => setObjectDetail(index, true));
     objectMarkerMap.set(node.id, marker);
   });
@@ -375,7 +402,8 @@
     showObjectDetail();
     currentObjectIndex = index;
     const node = objectNodes[index];
-    objectDetailNo.textContent = `O${index + 1}`;
+    objectDetailNo.textContent = `${node.packetCode}${node.packetIndex + 1}`;
+    objectDetailNo.style.background = node.packetColor;
     objectDetailDate.textContent = node.date;
     objectDetailTitle.textContent = node.title;
     objectDetailSummary.textContent = node.detail;
@@ -383,10 +411,10 @@
     objectDetailAction.textContent = node.action;
     objectDetailHandler.textContent = node.handler;
     objectDetailState.textContent = node.state;
-    objectDetailDescription.textContent = node.detail;
+    objectDetailDescription.textContent = node.routeGuard ? `${node.detail} Guard: ${node.routeGuard}` : node.detail;
     objectDetailSource.textContent = `${node.evidence} · confidence ${node.confidence}`;
     objectDetailTags.innerHTML = '';
-    [node.type, node.packetTitle, node.confidence].forEach(tag => {
+    [node.packetDirection, objectTypeLabels[node.type] || node.type, node.packetStatus, node.confidence].filter(Boolean).forEach(tag => {
       const span = document.createElement('span');
       span.className = 'journey-tag';
       span.textContent = tag;
@@ -421,12 +449,12 @@
     routeIndex.appendChild(button);
   });
 
-  packets.forEach((packet, packetIndex) => {
+  packets.forEach(packet => {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'object-packet-card';
     button.dataset.objectPacket = packet.id;
-    button.innerHTML = `<div><h3>${packet.title}</h3><p>${packet.subtitle}</p><p>${packet.summary}</p><small>${packet.dateRange} · ${packet.status}</small></div><span class="object-packet-count">${packet.nodes.length}</span>`;
+    button.innerHTML = `<div><h3>${packet.code || 'O'} · ${packet.title}</h3><p>${packet.subtitle}</p><p>${packet.summary}</p><small>${packet.direction || ''}${packet.direction ? ' · ' : ''}${packet.dateRange} · ${packet.status}</small></div><span class="object-packet-count" style="background:${packet.color || '#88936b'}">${packet.code || packet.nodes.length}</span>`;
     button.addEventListener('click', () => {
       if (currentScope === 'person') setScope('both', false);
       const firstIndex = objectNodes.findIndex(node => node.packetId === packet.id);
@@ -464,18 +492,18 @@
 
   function modeCopyText(mode, scope) {
     if (mode === 'operations') {
-      if (scope === 'objects') return '<strong>Work</strong> colours the object route by handoff regime: workshop dispatch, forwarder, ocean transit, bonded movement, broker/customs handling and museum unpacking.';
-      if (scope === 'both') return '<strong>Work</strong> compares Rudolf’s recorded activities with the handoff regimes through which the five model cases moved independently.';
+      if (scope === 'objects') return '<strong>Work</strong> recolours each object node by handoff regime: dispatch, forwarding, bonded movement, post, procurement, customs handling, receipt or reassembly.';
+      if (scope === 'both') return '<strong>Work</strong> compares Rudolf’s recorded activities with the regimes through which freight, postal packets and references moved independently.';
       return '<strong>Work</strong> colours each stop by the main activity recorded there.';
     }
     if (mode === 'flows') {
-      if (scope === 'objects') return '<strong>Flows</strong> keeps the U.B. 346–350 packet visible while adding other material, instruction, reference and delayed-return movements generated by the expedition.';
-      if (scope === 'both') return '<strong>Flows</strong> overlays independently moving material, instructions, delayed decisions, reference chains and post-return reassembly on the bodily and object routes.';
+      if (scope === 'objects') return '<strong>Flows</strong> keeps independently reconstructed packets visible while adding material, instruction, reference and delayed-return movements generated by the expedition.';
+      if (scope === 'both') return '<strong>Flows</strong> overlays independently moving material, instructions, delayed decisions, reference chains and post-return reassembly on the bodily and packet routes.';
       return '<strong>Flows</strong> separates material, instructions, delayed decisions, reference chains and post-return reassembly from Rudolf’s bodily route.';
     }
-    if (scope === 'objects') return '<strong>Journey</strong> follows U.B. 346–350 as an independent freight packet from Hosterwitz through forwarding, ocean transport, bonded movement and Harvard receiving. Intermediate precision remains source-guarded.';
-    if (scope === 'both') return '<strong>Journey</strong> places Rudolf’s bodily route beside U.B. 346–350. They leave the same workshop on related schedules but enter different transport and customs regimes.';
-    return '<strong>Journey</strong> follows documented movement. The dashed public line remains separate; translucent rail segments show corridor-level observation windows without inventing extra stops.';
+    if (scope === 'objects') return '<strong>Journey</strong> follows packets that left the same project under different transport regimes. Solid, dashed and dotted segments distinguish directly reconstructed movement from postal, bonded, requested or guarded legs.';
+    if (scope === 'both') return '<strong>Journey</strong> places Rudolf’s bodily route beside freight and postal packets. The workshop did not move as a unit: people, models, repair materials, seeds and books split apart and reassembled on different clocks.';
+    return '<strong>Journey</strong> follows documented bodily movement. The dashed public line remains separate; translucent rail segments show corridor-level observation windows without inventing extra stops.';
   }
 
   function matchLegend() {
@@ -483,13 +511,14 @@
   }
 
   function objectLegend() {
-    return currentScope === 'person' ? '' : '<span><i class="is-dashed" style="--legend-color:#88936b"></i>object packet</span><span><i class="is-square" style="--legend-color:#88936b"></i>handoff</span>';
+    if (currentScope === 'person') return '';
+    return packets.map(packet => `<span><i class="is-dashed" style="--legend-color:${packet.color || '#88936b'}"></i>${packet.code || 'O'} ${packet.legend || packet.title}</span>`).join('');
   }
 
   function renderLegend(mode) {
     if (mode === 'operations') {
       const personOps = currentScope === 'objects' ? '' : Object.entries(operations).map(([key, op]) => `<span><i style="--legend-color:${op.color}"></i>${operationLabels[key] || op.label}</span>`).join('');
-      const objectOps = currentScope === 'person' ? '' : '<span><i class="is-square" style="--legend-color:#9b7e63"></i>dispatch</span><span><i class="is-square" style="--legend-color:#8f8a67"></i>forwarder</span><span><i class="is-square" style="--legend-color:#6f8794"></i>ocean</span><span><i class="is-square" style="--legend-color:#82758b"></i>bond</span><span><i class="is-square" style="--legend-color:#778b68"></i>unpacking</span>';
+      const objectOps = currentScope === 'person' ? '' : Object.entries(objectTypeColors).map(([key, color]) => `<span><i class="is-square" style="--legend-color:${color}"></i>${objectTypeLabels[key] || key}</span>`).join('');
       modeLegend.innerHTML = personOps + objectOps + matchLegend();
       return;
     }
@@ -507,7 +536,6 @@
 
   function syncLayers() {
     [routeLayer, plannedLayer, plannedPointLayer, markerLayer, flowLayer, corridorLayer, visualMatchLayer, objectRouteLayer, objectMarkerLayer].forEach(removeIfPresent);
-
     const showPerson = currentScope === 'person' || currentScope === 'both';
     const showObjects = currentScope === 'objects' || currentScope === 'both';
 
@@ -537,8 +565,7 @@
 
     documentedLine.setStyle({ opacity: currentMode === 'journey' ? .92 : currentMode === 'operations' ? .28 : .15, weight: currentMode === 'journey' ? 4 : 2 });
     documented.forEach((item, index) => markerMap.get(item.id)?.setIcon(markerIcon(item, index, currentMode)));
-    objectNodes.forEach((node, index) => objectMarkerMap.get(node.id)?.setIcon(objectMarkerIcon(node, index, currentMode)));
-
+    objectNodes.forEach(node => objectMarkerMap.get(node.id)?.setIcon(objectMarkerIcon(node, currentMode)));
     modeCopy.innerHTML = modeCopyText(currentMode, currentScope);
     renderLegend(currentMode);
 
