@@ -1,0 +1,141 @@
+{
+  "schema_version": "0.1.0-working",
+  "generated_date": "2026-08-13",
+  "status": "primary_source_packet_network_model",
+  "title": "Rudolf Blaschka 1892 — live-reference relay and Cambridge packet hub",
+  "purpose": "Continue pass21 from field selection/media assignment into actual packet movement. The western trip did not generate one return cargo. By early May, reference materials were already moving east while Rudolf continued west/north, and Cambridge performed at least two distinct packet functions: temporary cache and onward relay to the split workshop in Hosterwitz.",
+  "packet_lanes": [
+    {
+      "packet_id": "LIVE-CACTUS-BULB-RELAY",
+      "media_state": "living plants / cuttings / bulbs",
+      "chronology": [
+        {
+          "source": "BLA-D00785 / 017:139",
+          "date": "1892-04-22",
+          "place": "Tempe, Arizona",
+          "event": "Rudolf digs up young examples of about four cactus species after drawing their flowers. He explicitly says these cacti need not be preserved in alcohol and plans to send them from California to Hosterwitz.",
+          "status": "direct plan"
+        },
+        {
+          "source": "BLA-D00803 / 017:157 with BLA-D00804 / 017:158 header",
+          "date": "1892-04-30",
+          "place": "San Diego, California",
+          "event": "Rudolf says the Arizona cacti he personally collected are now with him in San Diego. He plans to obtain important bulbs through Mr. Orcutt and send the cacti and bulbs together to his parents.",
+          "status": "direct packet assembly"
+        },
+        {
+          "source": "BLA-D00814 / 017:168",
+          "date": "1892-05-04",
+          "place": "San Diego, California",
+          "event": "Rudolf reports that a small box of cacti and flowering bulbs was sent that day, with other things, to Cambridge; he will ask Goodale to forward it to Hosterwitz. He expects most material to survive but notes that a piece of giant cactus cut from a large plant is already rotting at the cut surface.",
+          "status": "direct dispatch San Diego -> Cambridge plus onward instruction"
+        },
+        {
+          "source": "BLA-D00840 / 017:194",
+          "date": "early/mid-May 1892 California sequence; exact letter header not frozen here",
+          "place": "California",
+          "event": "Rudolf refers to the cacti he has sent and states that live receipt is preferable to alcohol because the workshop can grow the flower itself. He identifies three cacti in the sent material as having been personally collected in Jamaica: a long snake cactus, a small Cereus from Kingston, and an Opuntia; these must be grown indoors.",
+          "status": "direct retrospective description of packet contents and preservation rationale"
+        }
+      ],
+      "internal_provenance": [
+        {
+          "origin": "Jamaica",
+          "contents": [
+            "long snake cactus",
+            "small Cereus from Kingston",
+            "an Opuntia"
+          ],
+          "evidence": "BLA-D00840 / 017:194"
+        },
+        {
+          "origin": "Arizona / Tempe and western fieldwork",
+          "contents": "cacti personally collected by Rudolf, including young examples dug up after flower drawings",
+          "evidence": [
+            "BLA-D00785 / 017:139",
+            "BLA-D00803 / 017:157"
+          ]
+        },
+        {
+          "origin": "San Diego botanical network",
+          "contents": "important / flowering bulbs obtained or intended to be obtained through Mr. Orcutt",
+          "evidence": [
+            "BLA-D00803 / 017:157",
+            "BLA-D00814 / 017:168"
+          ]
+        }
+      ],
+      "condition_and_risk": [
+        "Living reference survival was uneven: Rudolf expected most of the box to arrive unharmed, but one giant-cactus cutting was already rotting where it had been cut.",
+        "Spines affected collection and handling choices elsewhere in the same fieldwork sequence.",
+        "For selected cacti, survival alive mattered because later flowering at Hosterwitz would generate observations unavailable from an alcohol-preserved body."
+      ],
+      "destination_status": {
+        "Cambridge_arrival_or_forwarding": "Dispatch to Cambridge is direct. Goodale forwarding to Hosterwitz is explicitly requested.",
+        "Hosterwitz_receipt": "open; no clean primary receipt confirmation recovered in the current pass",
+        "guard": "Do not narrate successful Hosterwitz arrival until a Leopold/Karolina or later Rudolf source confirms receipt/survival."
+      }
+    },
+    {
+      "packet_id": "GANONG-TWO-BOX-CACHE",
+      "media_state": "alcohol/water preparations plus dried specimens",
+      "chronology": [
+        {
+          "source": "BLA-D00829 / 017:183",
+          "date": "1892-05-07",
+          "place": "California sequence; letter belongs to the Hesperia/Banning/Aqua Caliente phase",
+          "event": "Rudolf says Ganong is taking care of preserving/holding plants in glass containers with alcohol and water and as dried specimens. Ganong has already sent two boxes of material to Cambridge, where they are to remain until Rudolf is ready to return home.",
+          "status": "direct dispatch plus explicit dwell instruction"
+        }
+      ],
+      "destination_status": {
+        "Cambridge_function": "temporary cache / holding node",
+        "next_hop": "wait for Rudolf's return; no onward Hosterwitz instruction is attached to these two boxes in this source"
+      }
+    }
+  ],
+  "cambridge_node_model": {
+    "finding": "Cambridge is not a unitary endpoint. In the same western fieldwork phase it performs at least two packet functions.",
+    "functions": [
+      {
+        "function": "cache",
+        "packet": "Ganong two-box preserved/dried material",
+        "logic": "material moves east ahead of the traveller and waits for him"
+      },
+      {
+        "function": "relay",
+        "packet": "live cactus/bulb box",
+        "logic": "material moves east to Cambridge with an instruction to continue transatlantic to Hosterwitz"
+      }
+    ],
+    "analytical_term": "packet hub / switchyard",
+    "guard": "Use as analytical shorthand, not a historical institutional title."
+  },
+  "asynchronous_mobility": {
+    "body": "Rudolf and Ganong continue through California toward San Francisco/Oakland.",
+    "preserved_reference_packets": "At least two boxes travel east to Cambridge and wait.",
+    "live_reference_packet": "A separate small cactus/bulb box travels east to Cambridge and is intended to continue to Hosterwitz.",
+    "result": "The expedition is already geographically decomposed before Rudolf turns east. Person and reference packets move in opposite directions and on different schedules."
+  },
+  "deferred_observability": {
+    "direct_basis": "BLA-D00840: live cacti are preferable to alcohol because 'we can grow the flower ourselves.'",
+    "claim": "The live packet transported more than plant bodies. It transported the capacity to generate a future flowering event at Hosterwitz, extending field observation beyond the field season.",
+    "working_term": "deferred observability / transporting future observation",
+    "guard": "Analytical shorthand only. The historical source states the practical aim of growing the flower; it does not use this terminology."
+  },
+  "packet_aggregation": {
+    "finding": "The San Diego box makes Jamaican, Arizona and Californian references materially co-present in one dispatch.",
+    "consequence": "Packet identity masks heterogeneous provenance. The dispatch date and place describe the assembled box, not the origin of every reference within it.",
+    "parallel_with_later_model_shipments": "Later glass consignments likewise aggregate objects with different production dates, makers and reference lineages into apparently coherent shipment units."
+  },
+  "strongest_claim": "The 1892 journey created a packet network rather than a single return cargo. Cambridge functioned as both cache and relay: preserved references could move east ahead of Rudolf and wait there, while a mixed-origin live packet was routed through Cambridge toward Hosterwitz. Live shipment preserved the possibility of future flowering, so transport extended the temporal reach of observation as well as the spatial reach of the split workshop.",
+  "map_decision": "No new generic route lines. If the cactus/bulb box is promoted to the public map, it must expose internal provenance (Jamaica + Arizona + San Diego), the Cambridge relay, and the unclosed Hosterwitz receipt rather than appearing as a simple San Diego-origin object line.",
+  "next_steps": [
+    "Search Leopold/Karolina correspondence and later Rudolf references for explicit receipt, survival, potting or flowering of the May 1892 cactus/bulb packet in Hosterwitz.",
+    "Identify the exact contents and later disposition of Ganong's two boxes cached at Cambridge.",
+    "Check Goodale correspondence around 4-15 May 1892 for receipt and forwarding instructions/actions for the cactus/bulb box.",
+    "Crosswalk the named Jamaica cacti and Arizona cacti against later botanical-model lists/drawings to test whether living survival actually produced glass descendants.",
+    "Search Orcutt correspondence / bulbs / seed requests for the San Diego contribution to the packet.",
+    "Keep packet dispatch, Cambridge arrival, Cambridge forwarding and Hosterwitz receipt as separate events until each is directly evidenced."
+  ]
+}
