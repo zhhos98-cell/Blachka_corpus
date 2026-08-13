@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0.0-pass37",
+  "generated_date": "2026-08-13",
+  "title": "Gillett-Watson-Goodale counterpart archive register",
+  "scope": "Digitized counterpart sources for testing whether the Southwick nursery supply system documented from the Blaschka workshop side can be independently connected to Harvard procurement or taxonomy through Sereno Watson.",
+  "evidential_status": "metadata_direct_content_pending",
+  "hypothesis": {
+    "statement": "Sereno Watson may have occupied a taxonomic or procurement junction between George Lincoln Goodale and Edward Gillett during the same period in which living American botanical references were supplied to the Blaschka workshop.",
+    "status": "testable_not_proven",
+    "guard": "Date adjacency, shared recipient and invoice survival do not establish a Blaschka transaction. Promotion requires content-level evidence from the letters or invoices."
+  },
+  "source_environment": {
+    "collection": "Asa Gray correspondence. Senders Ga-Go",
+    "holding_institution": "Harvard University Botany Libraries",
+    "digitization_platform": "Biodiversity Heritage Library",
+    "date_span": "1835-1891",
+    "relevant_senders": ["Edward Gillett", "George Lincoln Goodale"],
+    "shared_recipient": "S. Watson / Sereno Watson",
+    "source_status": "BHL metadata directly indexes the individual correspondence parts; several parts are mirrored as PDFs by Zenodo/Plazi."
+  },
+  "gillett_sequence": [
+    {
+      "date": "1891-07-24",
+      "sender": "Edward Gillett",
+      "recipient": "S. Watson",
+      "pages": "1-2",
+      "bhl_part_id": "260067",
+      "zenodo_record": "16351784",
+      "file_name": "bhlpart260067.pdf",
+      "status": "metadata_direct_content_not_read",
+      "priority": "core"
+    },
+    {
+      "date": "1891-08-22",
+      "sender": "Edward Gillett",
+      "recipient": "S. Watson",
+      "status": "metadata_direct_content_not_read",
+      "priority": "high"
+    },
+    {
+      "date": "1891-10-06",
+      "sender": "Edward Gillett",
+      "recipient": "S. Watson",
+      "status": "metadata_direct_content_not_read",
+      "priority": "high"
+    },
+    {
+      "date": "1891-11-09",
+      "sender": "Edward Gillett",
+      "recipient": "S. Watson",
+      "status": "metadata_direct_content_not_read",
+      "priority": "very_high",
+      "associated_document": "enclosed invoice"
+    },
+    {
+      "date": "1891-11-09",
+      "document_type": "enclosed invoice",
+      "bhl_part_id": "260070",
+      "zenodo_record": "16351819",
+      "file_name": "bhlpart260070.pdf",
+      "status": "metadata_direct_content_not_read",
+      "priority": "core"
+    },
+    {
+      "date": "1891-11-11",
+      "document_type": "invoice",
+      "sender_context": "Edward Gillett / Southwick nursery correspondence cluster",
+      "recipient_context": "S. Watson",
+      "status": "metadata_direct_content_not_read",
+      "priority": "core"
+    },
+    {
+      "date": "1891-11-20",
+      "sender": "Edward Gillett",
+      "recipient": "S. Watson",
+      "status": "metadata_direct_content_not_read",
+      "priority": "high"
+    }
+  ],
+  "goodale_sequence": [
+    {
+      "date": "1889-05-08",
+      "sender": "George Lincoln Goodale",
+      "recipient": "S. Watson",
+      "date_guard": "BHL metadata renders year in brackets",
+      "status": "metadata_direct_content_not_read",
+      "priority": "context"
+    },
+    {
+      "date": "1890-10-13",
+      "sender": "George Lincoln Goodale",
+      "recipient": "S. Watson",
+      "status": "metadata_direct_content_not_read",
+      "priority": "high"
+    },
+    {
+      "date": "1890-12-20",
+      "sender": "George Lincoln Goodale",
+      "recipient": "S. Watson",
+      "status": "metadata_direct_content_not_read",
+      "priority": "high"
+    },
+    {
+      "date": "1891-06-06",
+      "sender": "George Lincoln Goodale",
+      "recipient": "S. Watson",
+      "bhl_part_id": "260119",
+      "zenodo_record": "16343565",
+      "file_name": "bhlpart260119.pdf",
+      "status": "metadata_direct_content_not_read",
+      "priority": "core"
+    },
+    {
+      "date": "1891-08-14",
+      "sender": "George Lincoln Goodale",
+      "recipient": "S. Watson",
+      "status": "metadata_direct_content_not_read",
+      "priority": "core"
+    }
+  ],
+  "workshop_comparison_anchor": {
+    "date": "1891-07-19",
+    "source": "Blaschka to Goodale workshop correspondence",
+    "taxon_as_written": "Fritillaria recurva",
+    "event": "California bulb supplied by Gillett & Horsford in the previous year had flowered at Hosterwitz; colour differed from published descriptions; workshop intended modelling while expecting Goodale-side determination.",
+    "relationship_to_counterpart_cluster": "The first indexed 1891 Gillett-to-Watson letter is dated five days later, on 24 July 1891.",
+    "guard": "Temporal adjacency is a retrieval cue only and is not evidence of correspondence about this Fritillaria."
+  },
+  "catalogue_context": [
+    {
+      "date": "1890",
+      "title": "Southwick Nurseries 1890 wholesale catalogue of North American perennials, new Tigridias, California bulbs, etc",
+      "platform": "Biodiversity Heritage Library",
+      "bibliography_id": "85446",
+      "holding_institution": "U.S. Department of Agriculture, National Agricultural Library",
+      "status": "metadata_direct_page_level_taxon_extraction_pending",
+      "research_value": "Directly shows California bulbs as a Southwick commercial stock category in the year the workshop later said its California Fritillaria bulb was sent."
+    },
+    {
+      "date": "1890",
+      "title": "Gillett & Horsford's 1890 descriptive catalogue of wild flowers, shrubs, trees and vines",
+      "platform": "Biodiversity Heritage Library",
+      "holding_institution": "U.S. Department of Agriculture, National Agricultural Library",
+      "status": "metadata_direct_page_level_taxon_extraction_pending"
+    }
+  ],
+  "content_search_terms": [
+    "Blaschka",
+    "Hosterwitz",
+    "Dresden",
+    "Goodale",
+    "Fritillaria",
+    "recurva",
+    "Cypripedium",
+    "Cypriped",
+    "orchid",
+    "California",
+    "bulb",
+    "plant",
+    "seed",
+    "send",
+    "shipment",
+    "Germany",
+    "model",
+    "glass",
+    "invoice",
+    "price",
+    "packing",
+    "postage",
+    "carriage"
+  ],
+  "invoice_extraction_fields": [
+    "taxon",
+    "quantity",
+    "unit_price",
+    "total",
+    "customer_or_recipient",
+    "destination",
+    "packing",
+    "postage_or_carriage",
+    "payment_status",
+    "annotations"
+  ],
+  "failure_conditions": [
+    "Gillett-Watson correspondence concerns unrelated herbarium/taxonomic exchange only.",
+    "Invoices are Watson's private purchases or belong to another transaction.",
+    "Goodale-Watson letters are unrelated to plant procurement or identification for the Blaschka programme.",
+    "No Blaschka, Hosterwitz or relevant supply terms occur in the cluster."
+  ],
+  "research_value_if_negative": "Even a negative linkage would provide a same-year control showing the ordinary structure of Harvard-nursery exchange against which the Blaschka supply chain can be compared.",
+  "next_actions": [
+    "Transcribe BHL part 260067, Gillett to Watson, 24 July 1891.",
+    "Transcribe BHL part 260119, Goodale to Watson, 6 June 1891.",
+    "Read Goodale to Watson, 14 August 1891.",
+    "Transcribe BHL part 260070 and the separate 11 November invoice.",
+    "Read the remaining Gillett letters in chronological order.",
+    "Extract 1890 Southwick catalogue pages for Fritillaria, Cypripedium and California-bulb stock plus prices/shipping language.",
+    "Crosswalk any recovered taxa or charges against the 1890-1891 Blaschka workshop correspondence."
+  ],
+  "public_map_change": false
+}
