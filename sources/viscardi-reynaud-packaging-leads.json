@@ -1,0 +1,243 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Viscardi-Reynaud packaging, metrology, conservation and shipment leads",
+  "generated_date": "2026-08-13",
+  "source_context": {
+    "correspondence_date": "2026-08-10",
+    "participants": [
+      {
+        "name": "Paolo Viscardi",
+        "affiliation_context": "National Museum of Ireland",
+        "source_type": "direct email to researcher"
+      },
+      {
+        "name": "Emmanuel Reynaud",
+        "affiliation_context": "University College Dublin",
+        "source_type": "direct email to researcher"
+      }
+    ],
+    "evidential_status": "expert_curator_researcher_testimony_pending_underlying_source_or_database_inspection",
+    "guard": "Email statements are retained as high-value research leads. They are not silently converted into archival facts where the underlying invoice, database field, object, packing material, dimension record or condition documentation has not yet been inspected."
+  },
+  "published_overlap": {
+    "source": {
+      "title": "Blaschka invertebrate models in Irish institutions",
+      "authors": ["Hazel Doyle", "Eric Callaghan", "Emmanuel G. Reynaud"],
+      "journal": "Journal of the History of Collections",
+      "volume": 29,
+      "issue": 3,
+      "year": 2017,
+      "pages": "439-450",
+      "doi": "10.1093/jhc/fhw030",
+      "backend_source_id": "JHC-IRELAND-2017",
+      "embedded_filename": "02_Blaschka_models_Irish_institutions_2016.pdf"
+    },
+    "verified_relevance": [
+      "The study converted archival order documents into Word and Excel for analysis.",
+      "The located 1882 NMI and 1885 UCD invoices list scientific names, Ward catalogue numbers and individual model prices.",
+      "The invoices also break down the overall order cost, including packaging, transport and boxes.",
+      "The published research therefore already contains a structured invoice/packing-cost layer, although it does not reconstruct transport as a full handoff history."
+    ]
+  },
+  "new_leads_from_reynaud_email": [
+    {
+      "lead_id": "VR-REYNAUD-PACK-ELEMENT-LIST",
+      "category": "database_structure",
+      "claim": "The database contains a long list of associated packaging elements that were notified to customers as additional shipment costs.",
+      "status": "direct_email_claim_pending_database_inspection",
+      "priority": "core",
+      "questions": [
+        "Are packaging fields attached to individual models, inner boxes, outer cases, orders or shipments?",
+        "Which archival document genres generated these fields?",
+        "Are original wording and charges retained alongside normalized terms?"
+      ]
+    },
+    {
+      "lead_id": "VR-REYNAUD-METROLOGY-FOOT",
+      "category": "measurement_regime",
+      "claim": "The Blaschkas used local measures and a Dresden foot was not equivalent to a British or Frankfurt foot.",
+      "status": "direct_email_claim_underlying_source_unidentified_in_current_backend",
+      "priority": "core",
+      "research_value": "Potentially converts crate dimensions from apparently comparable numbers into a metrological-translation problem across workshop, commercial and receiving records.",
+      "proposed_transformation": "local workshop measure -> transport/commercial measure -> receiver interpretation",
+      "questions": [
+        "What exact source establishes the unit system?",
+        "Are dimensions stored in original units before conversion?",
+        "Does the database preserve the conversion rule and uncertainty?"
+      ]
+    },
+    {
+      "lead_id": "VR-REYNAUD-CARDBOARD-WIRE-CORK",
+      "category": "packing_morphology",
+      "claim": "An elaborate support system used cardboard bases and wires, with cork elements; some models had flatter sides and boxes varied in size.",
+      "status": "mixed_existing_and_new",
+      "priority": "high",
+      "current_backend_comparison": {
+        "cardboard_support": "strongly documented in later Harvard transport procedure",
+        "wire": "common in model construction/support records but transport-specific use must be demonstrated separately",
+        "cork": "new lead; no equivalent high-confidence packing evidence yet isolated in current backend",
+        "variable_box_size": "plausible and consistent with shipment architecture but requires source-level matching"
+      },
+      "guard": "Do not infer that all wire mentioned in object construction records functioned as packing wire."
+    },
+    {
+      "lead_id": "VR-REYNAUD-WOOD-SHAVINGS",
+      "category": "packing_material_calibration",
+      "claim": "Wood-shaving fill could be coarse or fine depending on the model.",
+      "status": "direct_email_claim_new_to_current_backend",
+      "priority": "core",
+      "research_value": "Suggests filler was a calibrated mechanical variable tied to object form rather than generic waste packing.",
+      "questions": [
+        "What source distinguishes coarse from fine shavings?",
+        "Is the distinction linked to catalogue number, geometry, fragility, price or case type?",
+        "Can one shipment be reconstructed model-by-model against filler type?"
+      ]
+    }
+  ],
+  "new_leads_from_viscardi_email": [
+    {
+      "lead_id": "VR-VISCARDI-LIVERPOOL-WARTIME",
+      "category": "post_arrival_damage",
+      "institution": "World Museum Liverpool / historical Liverpool Museum",
+      "claim": "The Liverpool Blaschka collection suffered after arrival; bombing destroyed some models and later storage conditions also caused problems.",
+      "status": "direct_curator_email_claim_object_level_documentation_pending",
+      "priority": "core",
+      "existing_backend_guard": "The current Liverpool module records severe May 1941 institutional wartime risk but intentionally leaves Blaschka-specific loss count unresolved.",
+      "next_sources": [
+        "pre-war and post-war Blaschka inventories",
+        "wartime loss or damage registers",
+        "storage-move records",
+        "object condition reports",
+        "conservation files",
+        "current collections-management export"
+      ]
+    },
+    {
+      "lead_id": "VR-VISCARDI-DUBLIN-RECENT-MOVE",
+      "category": "contemporary_mobility_and_conservation",
+      "institution": "National Museum of Ireland",
+      "claim": "The collection was recently moved in its entirety across Dublin into bespoke storage; conservation for eventual redisplay is ongoing and Viscardi is writing a paper on the move.",
+      "status": "direct_curator_email_claim",
+      "priority": "high",
+      "research_value": "Provides a contemporary comparator for repeated mobility of the same class of fragile objects: condition assessment, packing, transport, storage, conservation and redisplay.",
+      "guard": "Use as a comparative mobility/conservation regime, not as direct evidence for nineteenth-century practice.",
+      "next_sources": [
+        "move condition surveys",
+        "packing specifications",
+        "crate or support documentation",
+        "mover/conservator records",
+        "before-and-after object lists",
+        "forthcoming Viscardi paper"
+      ]
+    }
+  ],
+  "crosscheck_cases": [
+    {
+      "case_id": "VR-CROSSCHECK-LIVERPOOL-1887",
+      "institution": "Liverpool Museum / World Museum Liverpool",
+      "backend_module": "world_museum_liverpool_1887_blaschka",
+      "shipment_mark": "I.B. 268",
+      "known_account_layers": {
+        "models_only_marks": 247,
+        "packing_estimate_marks": "approximately 50",
+        "dispatch_invoice_whole_amount_ocr_marks": 268
+      },
+      "route": ["Hosterwitz/Dresden", "M. O. W. Moller, Hamburg", "Liverpool / Higgins"],
+      "problem": "The relationship between 247 Marks, the approximately 50-Mark packing estimate and the later 268-Mark whole amount remains unresolved.",
+      "guard": "Do not calculate 21 Marks as the final packing charge solely from 268 minus 247.",
+      "database_question": "Does Reynaud's database contain this shipment/order or a related Damon entry with packaging fields capable of resolving the account layers?",
+      "priority": "core"
+    },
+    {
+      "case_id": "VR-CROSSCHECK-DUBLIN-1887",
+      "institution": "Royal College of Science Dublin / Trinity College Dublin",
+      "actors": ["Alfred Cort Haddon", "W. J. Sollas"],
+      "primary_workshop_sequence": {
+        "haddon_case_mark_ocr": "L.D. 262",
+        "haddon_case_mark_status": "image_check_required",
+        "haddon_insurance_marks": 500,
+        "haddon_invoice_marks": 495,
+        "forwarder_ocr": "M.Miller",
+        "forwarder_status": "do_not_normalize_without_image_check",
+        "sollas_misrouting": "shipment landed at Bristol because of mistake in shipper's note",
+        "delay": "approximately two weeks",
+        "broken_models": [239, 356],
+        "recovery": "fresh examples included in Haddon's later consignment"
+      },
+      "operational_chain": "shipper's note error -> wrong port -> delay -> breakage -> replacement -> consolidation into another customer's shipment",
+      "database_question": "Can the Irish database recover the order contents, packing charges, replacement entries or object numbers around this failure chain?",
+      "priority": "core"
+    },
+    {
+      "case_id": "VR-CROSSCHECK-HARVARD-1929-1932",
+      "institution": "Harvard Botanical Museum",
+      "existing_registers": [
+        "sources/packing-feedback-unpacking-register.json",
+        "sources/workshop-logistics-document-register.json",
+        "sources/ware-transatlantic-logistics-register.json"
+      ],
+      "known_sequence": [
+        "four outer cases and twenty-seven framed boxes in 1929",
+        "packing materials, packing wages, railway transport and consular paperwork separated in the account",
+        "straw/hay becomes a U.S. plant-quarantine problem",
+        "1930 method uses cardboard supports, cardboard boxes, tissue immobilisation, pinewood outer boxes, straw and burlap",
+        "museum customs opening is followed by removal from temporary supports and plaster remounting",
+        "Ames feeds vibration and packing-material regulation knowledge back to Rudolf",
+        "1932 near-perfect arrival is explicitly linked by Rudolf to Louis Bierweiler's careful unpacking"
+      ],
+      "research_function": "longitudinal control for testing whether the Irish packaging-element typology corresponds to actual transport, border and receiving outcomes"
+    }
+  ],
+  "project_boundary": {
+    "viscardi_reynaud_probable_strengths": [
+      "institutional order database",
+      "object and catalogue concordance",
+      "invoice economics",
+      "packing charge components",
+      "packaging-element typology",
+      "measurement conventions",
+      "Irish collection and conservation knowledge"
+    ],
+    "current_project_strengths": [
+      "shipment as multi-stage event",
+      "forwarder/carrier/customs/broker/receiver role separation",
+      "misrouting and transport failure",
+      "replacement through later consignments",
+      "customs and quarantine transformations",
+      "skilled unpacking and remounting",
+      "receiver-to-workshop feedback",
+      "accounting and settlement clocks",
+      "post-arrival movement, damage and repair",
+      "multiplex movement of people, models, specimens, drawings, seeds, money and documents"
+    ],
+    "working_synthesis": "Their material can supply a packaging vocabulary and database-level component structure; the current project can show how those components behaved once shipments entered transport, customs, receiving, storage, damage and repair regimes."
+  },
+  "video_call_priority_questions": {
+    "reynaud": [
+      "Show one complete shipment/order record with packaging fields.",
+      "Identify the source types behind each packaging field.",
+      "Clarify whether fields are model-, box-, case-, order- or shipment-level.",
+      "Identify the source and conversion method for Dresden/British/Frankfurt feet.",
+      "Show source-level evidence for cardboard, wire and cork.",
+      "Show source-level evidence for coarse versus fine wood shavings.",
+      "Check Liverpool 1887 / I.B. 268 and the 247 / ~50 / 268 account problem.",
+      "Check Haddon/Sollas 1887, Bristol misrouting and replacement models 239 and 356.",
+      "Clarify whether the database is still maintained and whether a bounded export/sample is shareable."
+    ],
+    "viscardi": [
+      "Identify the documentary basis for Blaschka-specific Liverpool wartime losses.",
+      "Locate pre/post-war inventories or condition documentation.",
+      "Clarify later Liverpool storage/damage episodes and their object-level records.",
+      "Identify documentation created for the recent Dublin move and bespoke storage project.",
+      "Clarify whether the forthcoming paper records packing/risk-management procedure as well as conservation outcomes."
+    ]
+  },
+  "preferred_initial_data_request": [
+    "Liverpool 1887 shipment/order record",
+    "Haddon/Sollas Dublin 1887 record set",
+    "one Irish invoice with full packaging/transport breakdown",
+    "one record demonstrating historical foot-unit conversion",
+    "one record showing cork and coarse/fine shavings at source level"
+  ],
+  "research_observation": "The strongest junction is between packing as a database of materials, dimensions and charges and transport as a sequence of transformations and handoffs. Liverpool supplies an accounting/survival cross-check, Dublin a misrouting/breakage/replacement chain, Harvard a longitudinal packing-customs-unpacking feedback control, while the new email leads add metrology, cork, shaving specification and post-arrival conservation/mobility questions that are currently underrepresented in the backend."
+}
