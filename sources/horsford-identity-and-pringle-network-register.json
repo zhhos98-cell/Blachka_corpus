@@ -1,19 +1,30 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "generated_date": "2026-08-13",
-  "title": "Horsford identity disambiguation and Pringle-network register",
-  "purpose": "Track the identity of the Horsford associated with Gillett & Horsford / Southwick Nurseries while preventing publication-level over-merging with Frederick Hinsdale Horsford until an explicit firm-person source is recovered.",
+  "title": "Horsford identity disambiguation, Southwick commercial-form, and Pringle-network register",
+  "purpose": "Track the likely identity of the Horsford associated with Gillett & Horsford / Southwick Nurseries while separating person identity from the unresolved legal/commercial form of the association and preserving the parallel Pringle/Charlotte network.",
   "southwick_firm": {
     "firm": "Gillett & Horsford / Southwick Nurseries",
     "place": "Southwick, Massachusetts",
     "named_actor": "Edward Gillett",
     "partner_identity_working": "very likely Frederick Hinsdale Horsford",
-    "partner_identity_publication_status": "strongly_supported_identity_bridge; partnership_title_not_yet_explicit",
+    "partner_identity_publication_status": "strongly_supported_identity_bridge; exact commercial/legal role not yet explicit",
+    "commercial_form_status": "unresolved_overlap_possible",
+    "legal_partnership_status": "unresolved",
     "direct_blaschka_link": "Blaschka workshop letter of 19 July 1891 states that a California Fritillaria bulb had been sent the previous year by Gillett & Horsford, Southwick Mass.",
     "harvard_metadata": "HOLLIS describes an 1891 folder as letters from Edward Gillett of Gillett and Horsford, plant nursery in Southwick, MA.",
     "primary_stationery": "Pass 38 verifies repeated OCR of Southwick Nurseries (Gillett & Horsford) letterhead in the Edward Gillett-to-Watson block, including the printed cable address HORSFORD, SOUTHWICK.",
-    "contemporary_1890_identity_bridge": "The American Garden vol. XI (1890), article Some Native Orchids, ends 'Southwick, Mass. F. H. Horsford.' A later note identifies this piece as appearing in the April issue.",
-    "status": "directly_relevant_identity_bridge_strong"
+    "contemporary_1890_identity_bridge": "The American Garden vol. XI (1890), article Some Native Orchids, ends 'Southwick, Mass. F. H. Horsford.' A later note explicitly refers to this article as appearing in the April issue.",
+    "commercial_name_attestations": [
+      {"date": "1890", "form": "Gillett & Horsford", "evidence_type": "BHL/NAL catalogue title/bibliography", "note": "Gillett & Horsford's 1890 descriptive catalogue; separate Southwick wholesale catalogue includes California bulbs."},
+      {"date": "1890-05", "form": "Gillett & Hosford", "evidence_type": "contemporary publication notice", "note": "Popular Science Monthly publication list; retain as spelling variant/error, not a separate firm."},
+      {"date": "1891", "form": "Gillett and Horsford", "evidence_type": "Harvard HOLLIS archival description plus surviving business stationery", "note": "Edward Gillett identified as of Gillett and Horsford, Southwick MA; stationery reads Southwick Nurseries (Gillett & Horsford)."},
+      {"date": "1892", "form": "Southwick Nurseries / Edward Gillett", "evidence_type": "NAL/AGRIS bibliographic metadata", "note": "Publisher Southwick Nurseries; note Edward Gillett, Southwick Nurseries."},
+      {"date": "1893", "form": "Edward Gillett / Southwick Nurseries", "evidence_type": "NAL/AGRIS bibliographic metadata", "note": "Publisher Edward Gillett; note Edward Gillett [Southwick Nurseries]."},
+      {"date": "1895", "form": "Gillett & Horsford", "evidence_type": "NAL/AGRIS bibliographic metadata", "note": "Catalogue explicitly styled Gillett & Horsford's catalogue; publisher/corporate author Gillett & Horsford; note grown and for sale by Gillett & Horsford."}
+    ],
+    "metadata_conflict": "yes_non_monotonic_1892_1893_1895",
+    "status": "directly_relevant_identity_bridge_strong_commercial_form_unresolved"
   },
   "frederick_hinsdale_horsford_network": {
     "person": "Frederick Hinsdale Horsford",
@@ -21,9 +32,10 @@
     "associated_person": "Cyrus G. Pringle",
     "associated_business_string": "Pringle & Horsford",
     "later_business_place": "Charlotte, Vermont",
-    "relation_to_southwick_firm": "strongly_supported_same-person bridge via F. H. Horsford at Southwick in April 1890; exact partnership role still unresolved",
+    "relation_to_southwick_firm": "strongly_supported same-person bridge via F. H. Horsford at Southwick in April 1890; exact commercial role in Gillett & Horsford remains unresolved",
     "working_merge_status": "likely_same_person",
-    "publication_merge_status": "retain_separate_actor_ids_with_cross-reference_until_explicit_firm-person_source",
+    "publication_merge_status": "retain_cross-referenced_actor_ids_until_explicit_firm-person-role_source",
+    "parallel_firm_activity": "directly attested: F.H. Horsford (Firm), Charlotte VT catalogue stream by 1893 while Gillett & Horsford is again bibliographically attested at Southwick in 1895",
     "documents": [
       {"date": "1887-10-04", "sender_or_entity": "Pringle & Horsford", "recipient": "unresolved in current metadata", "type": "invoice", "source_family": "Harvard/BHL Asa Gray correspondence"},
       {"date": "1889-08-15", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "source_family": "Cyrus G. Pringle correspondence"},
@@ -34,19 +46,21 @@
       {"date": "1890-07-06", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "bhl_part": "261778", "zenodo_record": "16328435"},
       {"date": "1890-08-18", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "source_family": "Cyrus G. Pringle correspondence"},
       {"date": "1890-12-10", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "bhl_part": "261779", "zenodo_record": "16366668"},
-      {"date": "1891-06-12", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "bhl_part": "278343", "zenodo_record": "16354450"}
+      {"date": "1891-06-12", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "bhl_part": "278343", "zenodo_record": "16354450"},
+      {"date": "1893", "sender_or_entity": "F.H. Horsford (Firm)", "place": "Charlotte, Vermont", "type": "nursery catalogue", "title": "Horsford's trade list of bulbs, ferns, orchids, and bog plants for the summer and autumn of '93", "source_family": "BHL/NAL Seed & Nursery Catalogs"}
     ],
     "research_use": [
       "counterpart nursery/collector transaction vocabulary",
       "Watson commercial/taxonomic mediation",
       "native-orchid cultivation and habitat expertise",
       "invoice and plant-list comparison",
-      "strong identity bridge to Southwick requiring explicit partnership closure"
+      "strong identity bridge to Southwick requiring explicit business-role closure",
+      "test overlapping nursery associations rather than assuming exclusive partnership"
     ]
   },
   "identity_hypothesis": {
     "hypothesis": "Frederick Hinsdale Horsford was the Horsford associated with Gillett & Horsford, Southwick, Massachusetts",
-    "status": "strongly_supported_not_yet_explicitly_titled_partner",
+    "status": "strongly_supported_not_yet_explicitly_titled_in_firm_role",
     "current_support": [
       "F. H. Horsford is directly placed at Southwick, Mass. in an April 1890 horticultural article",
       "BHL independently identifies Frederick Hinsdale Horsford as a botanical correspondent to Sereno Watson repeatedly in 1890",
@@ -54,17 +68,36 @@
       "Edward Gillett's surviving Southwick stationery uses cable address HORSFORD, SOUTHWICK",
       "F. H. Horsford's native-orchid cultivation expertise matches the Southwick firm's native-plant commercial specialization"
     ],
-    "remaining_gap": "No inspected source yet explicitly says 'Frederick Hinsdale Horsford, partner in Gillett & Horsford' or equivalent.",
-    "decision_rule": "For discovery/search use likely_same_person. For publication-level actor merging, retain cross-referenced IDs until a contemporary catalogue, letterhead, directory, signature, advertisement or firm notice explicitly connects Frederick Hinsdale Horsford to Gillett & Horsford."
+    "remaining_gap": "No inspected source yet explicitly states Frederick Hinsdale Horsford's title or legal/commercial role within Gillett & Horsford.",
+    "decision_rule": "For discovery/search use likely_same_person. For publication-level role assertions, retain cross-referenced IDs and describe Gillett & Horsford as a Southwick commercial association until a contemporary title page, directory, advertisement, contract, invoice or letter explicitly identifies Horsford's role."
   },
-  "conceptual_note": "If the identity is closed, the Southwick supplier node joins commercial nursery work, native-plant cultivation/field knowledge and Harvard taxonomic correspondence. Do not assume the Pringle relationship and Gillett relationship were mutually exclusive; overlapping associations remain possible.",
+  "commercial_form_hypothesis": {
+    "status": "unresolved_overlap_possible",
+    "problem": "Gillett & Horsford is attested in 1890/1891 and again in 1895, while 1892/1893 Southwick metadata names Edward Gillett alone and F.H. Horsford has an independent Charlotte VT firm by 1893.",
+    "allowed_models": [
+      "overlapping commercial associations",
+      "continuing trading/catalogue label after operational change",
+      "different imprints for different lists or seasons",
+      "bibliographic normalization inconsistency"
+    ],
+    "forbidden_inference": "Do not infer a simple exclusive partnership formation/dissolution timeline from catalogue metadata alone."
+  },
+  "evidence_hierarchy_for_firm_history": [
+    "signed contract / partnership or dissolution notice / business registration",
+    "contemporaneous title page / invoice / letterhead / advertisement / directory",
+    "archival folder description grounded in physical correspondence",
+    "contemporary publication notice",
+    "NAL/BHL bibliographic publisher/corporate-author metadata",
+    "later nursery/local histories"
+  ],
+  "conceptual_note": "If person identity is ultimately closed, the Southwick supplier node joins commercial nursery work, native-plant cultivation/field knowledge and Harvard taxonomic correspondence. Commercial association structure should remain distinct from person identity: the same actor could participate in multiple supply networks.",
   "next_retrievals": [
-    "Original April 1890 American Garden page image and page number/byline format",
-    "Southwick Nurseries/Gillett & Horsford catalogue title pages and imprints, 1890–1895",
-    "1891 Edward Gillett letters/invoices for references to Horsford, F.H., Fred, Pringle, Vermont or Charlotte",
-    "Frederick Hinsdale Horsford letters to Watson at image level for address/letterhead/business identity",
+    "Original 1890, 1892, 1893 and 1895 Southwick catalogue title/order pages and imprints",
+    "Original April 1890 American Garden page image and exact page/byline format",
+    "1891 Edward Gillett letters/invoices for Horsford, F.H., Fred, Pringle, Vermont or Charlotte references",
+    "Frederick Hinsdale Horsford letters to Watson at image level for sender address/letterhead/business identity",
     "Southwick business directories/advertisements and Massachusetts firm records using Horsford and Hosford variants",
-    "1928 Southwick anniversary catalogue/history for predecessor-partner information",
+    "1928 Gillett's hardy fern and flower farm, 1878–1928 anniversary history",
     "taxon-level catalogue search for Fritillaria recurva, California bulbs and Cypripedium"
   ]
 }
