@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zhhos98-cell.github.io/Blachka_corpus/sitemap.xml
