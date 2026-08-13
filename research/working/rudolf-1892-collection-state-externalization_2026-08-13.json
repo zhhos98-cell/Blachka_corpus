@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0-working",
+  "generated_date": "2026-08-13",
+  "status": "pass32_collection_state_externalization",
+  "project": "Rudolf Blaschka America 1892",
+  "result": "The direct 1892 evidence proves generic collection-aware negative selection but still does not yield a named rejected taxon. Later 1902-1903 letters provide longitudinal calibration showing that Harvard's collection state could be externalized into portable selection instruments: Engler's Syllabus for lacking orders and a Goodale desiderata list prioritizing new families over repetitions. This supports a new category, collection-state media, while chronology guards prevent back-projecting the later instruments into 1892.",
+  "core_sources": [
+    {
+      "record_id": "BLA-D00879",
+      "locator": "017:233",
+      "date": "1892-05-24",
+      "place": "Colorado Springs",
+      "evidence": "Rudolf says Cambridge does not want some species because they are already represented; reports 200 species drawn/studied and projects 400.",
+      "function": "direct_1892_remote_negative_selector",
+      "confidence": "high",
+      "limits": "No named rejected taxon."
+    },
+    {
+      "record_id": "BLA-D02137/BLA-D02138",
+      "locator": "021:154-155",
+      "date": "1902-11-23",
+      "place": "Hosterwitz",
+      "evidence": "Rudolf says Goodale left Engler's Syllabus, useful for completing lacking orders; they discuss gaps including economic plants, carnivorous families not already represented, sensitive reaction and plant sleep.",
+      "function": "longitudinal_collection_gap_externalization_via_taxonomic_reference",
+      "confidence": "high",
+      "limits": "Do not identify this physical copy with the Harvard archival Engler volume without edition/provenance closure."
+    },
+    {
+      "record_id": "BLA-D01987",
+      "locator": "021:4",
+      "date": "1903-07-03",
+      "place": "Hosterwitz",
+      "evidence": "Rudolf says Goodale sent a list of desiderata concerning new families wanted first; he prefers new orders over repetitions of Leguminosae and Solanaceae, of which many are already done; some new families are covered by journey material yet in hand.",
+      "function": "portable_positive_and_negative_collection_state_instruction",
+      "confidence": "high",
+      "limits": "Journey material cannot yet be assigned specifically to the 1892 expedition; 1895 or mixed stock remains possible."
+    }
+  ],
+  "new_ontology": {
+    "collection_state_externalization": "Conversion of a museum collection's gaps, redundancies and priorities into portable documentary form.",
+    "collection_state_medium": "A list, inventory, syllabus annotation or correspondence unit whose primary function is to encode what the collection lacks, already possesses or wants next.",
+    "remote_negative_selector": "A distant collection state that lowers the priority of otherwise available material because a representational category is already sufficiently covered.",
+    "positive_desideratum": "An explicitly identified gap or priority that increases the value of obtaining or manufacturing a representative."
+  },
+  "mechanism_chain": [
+    "physical collection state in Cambridge",
+    "judgment of gap/redundancy/priority",
+    "externalization into correspondence/list/taxonomic reference/inventory",
+    "movement of collection-state information",
+    "field or workshop selection",
+    "reference acquisition and/or model production"
+  ],
+  "integration_with_gate_model": {
+    "gate_A": "Collection-state information can affect whether an available plant becomes a retained field reference.",
+    "gate_B": "Collection-state information can affect whether a retained reference becomes a glass model or receives production priority."
+  },
+  "evidence_status_named_1892_negative_case": {
+    "status": "open",
+    "direct_rule_found": true,
+    "named_taxon_found": false,
+    "search_scope": [
+      "015-040 archive master and compact/clustered variants",
+      "1892 source registers",
+      "current GitHub research logs",
+      "searchable Harvard finding-aid metadata"
+    ],
+    "best_next_source": "Harvard Acquisition, Development, and Shipping lists, especially 1892 January-June and other 1892 folders",
+    "secondary_next_source": "George Lincoln Goodale to Elizabeth and Mary Ware, 28 March 1892"
+  },
+  "source_critical_guards": [
+    "Do not infer a named 1892 rejection from model absence.",
+    "Do not back-project the formal 1902-1903 syllabus/desiderata instruments into 1892 without direct evidence.",
+    "Do not identify the 1902 Engler Syllabus copy with a surviving Harvard archival volume until edition, provenance and annotations are matched.",
+    "Do not assign 1903 'journey material yet in hand' specifically to 1892; 1895 or mixed stock remains possible.",
+    "Treat systematic, economic and biological/physiological completeness as distinct gap regimes."
+  ],
+  "article_consequence": "The transatlantic system moved both plant-state references toward Cambridge and collection-state instructions outward toward the field/workshop. Harvard was therefore not only a receiver of references and models; its inventory state could become an upstream selective signal.",
+  "working_sentence": "The collection travelled twice: once through the objects sent to Cambridge, and again through portable descriptions of what Cambridge still lacked.",
+  "public_map_change": false,
+  "next_retrievals": [
+    "Retrieve/image-transcribe Harvard Acquisition, Development, and Shipping lists for 1892 January-June and other 1892 folders.",
+    "Retrieve original Goodale-to-Ware letter, 28 March 1892.",
+    "Resolve edition/copy identity of the Engler Syllabus mentioned in November 1902 versus surviving Harvard archival volumes.",
+    "Search Goodale-to-Rudolf 1892 correspondence for named requests or vetoes.",
+    "Search shipping/model lists for explicit duplicate/omit/already-represented/new-family/desideratum annotations."
+  ]
+}
