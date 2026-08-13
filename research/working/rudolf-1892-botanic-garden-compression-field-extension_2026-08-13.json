@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0-working",
+  "generated_date": "2026-08-13",
+  "status": "pass34_botanic_garden_compression_field_extension",
+  "project": "Rudolf Blaschka America 1892",
+  "core_result": "Botanical gardens and wild excursions functioned as complementary access regimes. Gardens compressed plant concentration, naming, institutional contacts, workspace and sometimes phenological access; wild excursions extended the searchable taxonomic set and preserved direct habitat encounter. St Louis demonstrates both mechanisms in one source sequence.",
+  "sources": [
+    {
+      "record_id": "BLA-D00879",
+      "locator": "017:233",
+      "date": "1892-05-24",
+      "place": "Colorado Springs",
+      "evidence": "Rudolf says a good botanical garden makes material easier to find because names and everything are at hand; without gardens they have collected from the wild and he values acquaintance with habitats.",
+      "function": "explicit_comparison_of_access_regimes"
+    },
+    {
+      "record_id": "BLA-D00896",
+      "locator": "017:251",
+      "date": "1892-05-31",
+      "place": "St Louis",
+      "evidence": "Dewart meets party, arranges lodging, provides Rudolf a workroom in the botanical garden; garden immediately yields material; flowering Darlingtonia is sketched in colour and preserved in alcohol; broader local goal of about 18 species cannot probably be met by garden alone, so wild excursion planned next day.",
+      "function": "institutional_compression_plus_ecological_extension"
+    }
+  ],
+  "ontology": {
+    "institutional_compression": "Concentration of plant material, names, specialists, logistics and workspace that reduces the operations required to make a usable reference.",
+    "ecological_extension": "Wild-field access used to broaden the reference set beyond cultivated holdings and to retain direct habitat information.",
+    "access_regime": [
+      "wild habitat",
+      "botanical garden/cultivated institution",
+      "nursery/private cultivation",
+      "local specialist supply",
+      "deferred seed/bulb/plant supply"
+    ],
+    "access_function": [
+      "substitution",
+      "compression",
+      "phenological access",
+      "network access",
+      "extension",
+      "habitat observation"
+    ]
+  },
+  "st_louis_hybrid_circuit": [
+    "institutional reception and lodging coordination",
+    "workroom access",
+    "cultivated named material",
+    "Darlingtonia same-day colour sketch and alcohol preservation",
+    "identify remaining local reference gap",
+    "wild excursion for additional species"
+  ],
+  "gate_A_refinement": [
+    "ecological/seasonal availability",
+    "collection need/redundancy",
+    "access regime",
+    "identification confidence",
+    "desired biological state",
+    "medium feasibility",
+    "body/time/route/cost",
+    "retain / substitute / extend search / defer / abandon"
+  ],
+  "guard": [
+    "Do not generalize St Louis garden conditions to all institutions.",
+    "Do not treat institutional access as universally superior to field access.",
+    "Darlingtonia is taxon-specific substitution inside a mixed access regime, not evidence that gardens replaced fieldwork.",
+    "The St Louis approximately-18-species goal is a local planning target, not an expedition denominator.",
+    "Access ease does not imply glass conversion."
+  ],
+  "article_consequence": "The expedition alternated between institutional compression and ecological extension according to what information and biological state were needed from a plant. This is more precise than a field-versus-garden contrast or a generic institutional-network argument.",
+  "working_sentence": "For Rudolf, a botanical garden was a compressed field in one sense and an incomplete one in another: names and specimens came together, while habitats and missing species still pulled him back outside.",
+  "public_map_change": false
+}
