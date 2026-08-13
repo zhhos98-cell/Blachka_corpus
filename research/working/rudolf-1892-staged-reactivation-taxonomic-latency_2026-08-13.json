@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0-working",
+  "generated_date": "2026-08-13",
+  "status": "pass33_staged_reactivation_taxonomic_latency",
+  "project": "Rudolf Blaschka America 1892",
+  "core_result": "The expedition returned as reference stock rather than a single shipment plan. American references were selectively and progressively reactivated across the 1893-1894 production queue, while some retained references remained taxonomically unresolved after field capture. Gate B therefore requires stored-stock, taxonomic-status, activation, production and dispatch states.",
+  "batch_checkpoints": [
+    {
+      "date": "1893-01-31",
+      "source": "Goodale to Mrs and Miss Ware",
+      "evidence": "a few of the American plants collected on the journey, and a large group of Cryptogamia",
+      "shipment_context": "7th shipment, February 1893, models 312-373",
+      "interpretation": "early selective activation; expedition material remains a minority qualitative component within a mixed workshop program",
+      "guard": "No numerical American count."
+    },
+    {
+      "date": "1893-07-18",
+      "source": "BLA-D00168/BLA-D00169",
+      "evidence": "37 ordinary plant species: 20 Jamaica, 15 West, arithmetic reconstruction 2 garden; second portion higher-science/anatomy/physiology especially Cryptogams",
+      "shipment_context": "8th shipment; models 374-410 ordinary block, followed by 411-423 scientific/cryptogamic block",
+      "interpretation": "expedition reference stock becomes a quantified production block while remaining aggregated with parallel scientific work",
+      "guard": "Regional model-number subranges are high-confidence inferred blocks rather than printed regional headings."
+    },
+    {
+      "date": "1893-12-15",
+      "source": "BLA-D00222",
+      "evidence": "January consignment of 50 flower species, with only a few stated exceptions, made from Jamaica and West material/studies; Darlingtonia explicitly said to have been made",
+      "shipment_context": "9th shipment, January 1894, models 424-473 exactly 50",
+      "interpretation": "1892 stock becomes the principal reference base for a complete major batch",
+      "guard": "Do not describe all 50 as American; source states exceptions."
+    }
+  ],
+  "new_state": {
+    "taxonomic_latency": "A physical reference can survive field capture while its taxonomic identity remains unresolved or provisional; identification may be completed later in Hosterwitz and/or Cambridge before or during model production.",
+    "documented_source": "BLA-D00169 / 015:170",
+    "evidence": "Blaschkas report determining previously undetermined Jamaica plants with scanty means and say some western plants were probably determined in the Harvard institution in the meantime."
+  },
+  "gate_B_queue": [
+    "retained reference",
+    "stored reference stock",
+    "taxonomic status unresolved/provisional/stabilized",
+    "production priority assigned",
+    "activated into current batch",
+    "manufactured",
+    "mounted/handleable",
+    "shipment assigned",
+    "dispatched"
+  ],
+  "latency_types": {
+    "phenological_latency": "desired biological state occurs later and may require seed, bulb, cultivation or deferred supply",
+    "taxonomic_latency": "reference is physically available but identity remains unfinished",
+    "production_latency": "usable reference waits on workshop priority/capacity or competing programs",
+    "dispatch_latency": "finished model waits on mounting, crate manufacture, packing, insurance, certification or transport"
+  },
+  "darlingtonia_upgrade": {
+    "model": 444,
+    "taxon": "Darlingtonia californica",
+    "chain": [
+      "Goodale priority",
+      "Shasta access proposal and four-day/$70 problem",
+      "Goodale telegram: do not go to Shasta",
+      "31 May 1892 St Louis flowering cultivated specimen",
+      "colour sketch",
+      "alcohol specimen",
+      "reference return/storage",
+      "15 Dec 1893 workshop letter explicitly states Darlingtonia was made for January consignment",
+      "9th shipment January 1894, models 424-473",
+      "model 444 Darlingtonia"
+    ],
+    "closed_now": [
+      "taxon",
+      "route substitution",
+      "reference capture",
+      "contemporaneous production statement",
+      "production batch",
+      "shipment timing",
+      "glass model identifier"
+    ],
+    "still_open": [
+      "direct identity of St Louis sketch with drawing 133264",
+      "surviving alcohol/herbarium specimen",
+      "one-to-one physical genealogy from reference object to model 444"
+    ]
+  },
+  "article_consequence": "Return should be treated as conversion of a moving expedition into an inventory/queue, not as the endpoint of fieldwork followed by immediate manufacture. Fieldwork ended in 1892 while its references remained operational in workshop production across later consignments.",
+  "working_sentences": [
+    "The expedition returned as stock, not as a shipment plan.",
+    "Fieldwork ended in 1892; the expedition remained operational in the workshop for years.",
+    "Return converted a moving expedition into a reference inventory whose members waited on identification, priority and workshop capacity before reappearing as glass."
+  ],
+  "public_map_change": false
+}
