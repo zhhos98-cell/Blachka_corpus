@@ -69,4 +69,45 @@
     }
     location.href = `${routes[scope.value] || routes.cases}?q=${encodeURIComponent(query)}`;
   });
+
+  const style = document.createElement('style');
+  style.textContent = `
+    .network-quicklinks{display:flex;flex-wrap:wrap;gap:7px;margin:11px 8px 0;align-items:center;font:600 .66rem/1 var(--ui)}
+    .network-quicklinks a,.network-quicklinks button{display:inline-flex;align-items:center;min-height:31px;padding:0 11px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(20,14,12,.22);color:rgba(255,255,255,.82);text-decoration:none;cursor:pointer;backdrop-filter:blur(9px);transition:background .2s ease,transform .2s ease,border-color .2s ease}
+    .network-quicklinks a:hover,.network-quicklinks button:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.34);transform:translateY(-1px)}
+    .network-quicklinks .network-quicklinks-label{padding-right:3px;color:rgba(255,255,255,.5);font-weight:520;letter-spacing:.04em;text-transform:uppercase}
+    @media (max-width:680px){.network-quicklinks{margin-left:4px;margin-right:4px}.network-quicklinks-label{width:100%;margin-bottom:1px}}
+  `;
+  document.head.appendChild(style);
+
+  if (!form.querySelector('.network-quicklinks')) {
+    const quick = document.createElement('div');
+    quick.className = 'network-quicklinks';
+    quick.setAttribute('aria-label', 'Quick exploration');
+    quick.innerHTML = '<span class="network-quicklinks-label">Explore</span><button type="button" data-random-case>Random trail</button><a href="cases/prague/">New · Prague</a><a href="cases/field-museum/">New · Field Museum</a><a href="cases/geneva/">New · Geneva</a>';
+    form.appendChild(quick);
+
+    const randomRoutes = [
+      'cases/#sample-liverpool',
+      'cases/#sample-auckland',
+      'cases/#sample-florence',
+      'cases/#sample-tufts',
+      'cases/#sample-michigan',
+      'cases/#sample-mexico',
+      'cases/#sample-newcastle',
+      'cases/#sample-nottingham',
+      'cases/#sample-vassar',
+      'cases/#sample-milwaukee',
+      'cases/prague/',
+      'cases/field-museum/',
+      'cases/geneva/'
+    ];
+    quick.querySelector('[data-random-case]')?.addEventListener('click', () => {
+      const destination = randomRoutes[Math.floor(Math.random() * randomRoutes.length)];
+      location.href = destination;
+    });
+  }
+
+  const viewAll = document.querySelector('.feature-footer .view-all');
+  if (viewAll) viewAll.textContent = 'View all thirteen cases ↗';
 })();
