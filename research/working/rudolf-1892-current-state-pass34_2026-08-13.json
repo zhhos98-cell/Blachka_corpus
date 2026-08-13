@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0-current-state",
+  "generated_date": "2026-08-13",
+  "through_pass": 34,
+  "project": "Rudolf Blaschka America 1892",
+  "article_core": "The 1892 expedition intervened in an already distributed Harvard-Hosterwitz reference-supply ecology. It moved maker observation into selected American settings while Harvard's existing collection state, season, route, body, time and medium requirements governed what was retained. Botanical references moved in multiple states and on different clocks. Cambridge could externalize gaps and redundancies as selection information; botanical institutions compressed access while wild excursions extended it; returned references became stored workshop stock and were only serially reactivated as identification, priority and capacity allowed. Finished glass then entered a separate chain of mounting, packing, customs, receiving, repair and installation.",
+  "central_mechanisms": {
+    "gate_A_field_reference_retention": {
+      "variables": [
+        "ecological and seasonal availability",
+        "maker interest/usefulness",
+        "Harvard collection need/redundancy",
+        "access regime",
+        "identification confidence",
+        "desired biological state",
+        "medium feasibility",
+        "body/time/route/cost"
+      ],
+      "outcomes": [
+        "retain reference",
+        "seek institutional substitute",
+        "extend wild search",
+        "defer supply",
+        "assign another medium",
+        "abandon"
+      ]
+    },
+    "gate_B_workshop_reactivation": {
+      "states": [
+        "retained reference",
+        "stored reference stock",
+        "taxonomic status unresolved/provisional/stabilized",
+        "production priority assigned",
+        "activated into batch",
+        "manufactured",
+        "mounted/handleable",
+        "shipment assigned",
+        "dispatched"
+      ],
+      "principle": "Retention in 1892 did not imply immediate or eventual glass conversion. Gate B is a queue with latency and competing production programs."
+    }
+  },
+  "new_since_pass31": {
+    "pass32_collection_state_externalization": {
+      "direct_1892_rule": "Rudolf says Cambridge rejects some locally available species because they are already represented.",
+      "longitudinal_calibration": "1902 Goodale leaves Engler's Syllabus for completing lacking orders; 1903 Goodale sends a desiderata list for new families and Rudolf explicitly prefers new orders to repetitions already done.",
+      "new_category": "collection-state media",
+      "meaning": "portable descriptions of gaps, redundancies and priorities can move outward from a museum and govern later field/workshop selection",
+      "open": "No named taxon-level 1892 rejection yet."
+    },
+    "pass33_staged_reactivation_taxonomic_latency": {
+      "checkpoint_1": "31 Jan 1893 Goodale: a few journey-derived American plants + large Cryptogamia",
+      "checkpoint_2": "18 Jul 1893: 37 ordinary models = 20 Jamaica + 15 West + 2 garden, alongside separate scientific/cryptogamic work",
+      "checkpoint_3": "15 Dec 1893: January 1894 fifty-model flower consignment overwhelmingly based on Jamaica/West material with a few exceptions",
+      "new_latency": "taxonomic latency: some field references remained unidentified/provisionally identified; Hosterwitz and probably Cambridge continued determination work after field capture",
+      "darlingtonia_upgrade": "Contemporaneous Dec 1893 letter says Darlingtonia was made for January consignment; model 444 therefore has production-batch and shipment timing closed to Jan 1894."
+    },
+    "pass34_access_regimes": {
+      "institutional_compression": "botanical garden concentrates plants, names, specialists, logistics and workspace",
+      "ecological_extension": "wild excursion broadens reference set and preserves direct habitat encounter",
+      "st_louis": "same source shows both: garden yields flowering Darlingtonia immediately but cannot probably meet Rudolf's broader local approximately-18-species target, so a wild excursion is planned",
+      "principle": "gardens can replace a specific habitat trip without replacing fieldwork as a whole"
+    }
+  },
+  "latencies": {
+    "phenological": "desired biological state occurs later; repair by cultivation/deferred supply",
+    "taxonomic": "physical reference survives but identity remains unfinished",
+    "production": "usable reference waits on priority/capacity/parallel model programs",
+    "dispatch": "finished model waits on mounting, crates, packing, insurance, certification or transport"
+  },
+  "media_and_state_types": [
+    "colour drawing/study",
+    "herbarium sheet",
+    "alcohol-preserved specimen",
+    "seed",
+    "bulb",
+    "living plant/cutting",
+    "cultivated future flowering state",
+    "collection-state medium: desiderata/inventory/syllabus/correspondence",
+    "finished glass model",
+    "mounted/packed freight object"
+  ],
+  "strong_chains": {
+    "darlingtonia_444": [
+      "Harvard desire",
+      "Shasta four-day/$70 proposal",
+      "telegram says do not go",
+      "St Louis garden substitution",
+      "31 May 1892 colour sketch + alcohol specimen",
+      "returned reference stock",
+      "15 Dec 1893 explicit workshop production statement",
+      "Jan 1894 shipment 9, models 424-473",
+      "model 444"
+    ],
+    "hoffmannseggia_433": [
+      "Tempe 1892 Ganong/Rudolf herbarium sheet GH01676890 retained at Harvard",
+      "field/reference lineage",
+      "Hosterwitz manufacture",
+      "Jan 1894 model 433 returned to Harvard"
+    ],
+    "crinum": [
+      "California flowering-time miss",
+      "Orcutt deferred supply",
+      "seed/bulb packet",
+      "Cambridge receipt",
+      "later workshop use not yet closed"
+    ],
+    "sequoia": [
+      "actual sequoia-forest visit",
+      "flowering season already over",
+      "planned later flower supply via local botanists",
+      "dispatch/receipt not yet closed"
+    ]
+  },
+  "shipment_reactivation_sequence": {
+    "shipment_6_Jan1892": "models 252-311 exactly 60; pre-expedition finished-object lane",
+    "shipment_7_Feb1893": "models 312-373; mixes Leopold's first-half-1892 stationary work, large Cryptogamia and a few journey-derived American plants",
+    "shipment_8_JulAug1893": "models 374-410 ordinary plant block aligns 20 Jamaica + 15 West + 2 garden; 411-423 scientific/cryptogamic block",
+    "shipment_9_Jan1894": "models 424-473 exactly 50; Dec 1893 workshop letter describes batch as overwhelmingly Jamaica/West-derived and explicitly includes Darlingtonia",
+    "shipment_10_Aug1894": "models 474-523 exactly 50"
+  },
+  "denominator_guards": {
+    "D1": "current discovered nine-sheet Tempe packet only",
+    "D2": "complete 1892 Ganong-Blaschka Harvard herbarium subset not yet bounded",
+    "D3": "all 1892 reference outputs across heterogeneous media",
+    "rule": "Do not calculate an expedition-to-glass conversion rate until denominator and crosswalk are bounded."
+  },
+  "source_critical_guards": [
+    "No named 1892 Cambridge rejection from the generic already-represented statement.",
+    "No HUH search hit is not proof of historical absence.",
+    "No exact model string is not proof of no descendant; same genus is not proof of genealogy.",
+    "The Harvard >300 herbarium count combines 1892 and 1895.",
+    "Promises of later supply are separate from dispatch, receipt, survival, flowering and model reactivation.",
+    "Later 1902-1903 collection-state instruments calibrate the mechanism but cannot be projected into 1892 as identical formal paperwork.",
+    "Taxonomic latency is documented for some references, not every field object.",
+    "Botanical-garden substitution is taxon-specific; the same sources show continuing need for wild excursions.",
+    "Darlingtonia batch/shipment timing is closed; direct identity among St Louis sketch, Corning drawing 133264 and physical model 444 remains open."
+  ],
+  "article_architecture": [
+    "I. A distributed reference-supply system before and during the journey",
+    "II. Gate A: selection by season, collection state, access regime and medium",
+    "III. Multiple mobile states and deferred access",
+    "IV. Return as inventory: taxonomic, phenological and production latency",
+    "V. Gate B: staged reactivation across mixed shipment batches",
+    "VI. Finished-object mobility: mounting, freight, customs, unpacking, repair and installation"
+  ],
+  "working_claims": [
+    "The collection travelled twice: through objects moving to Cambridge and through portable descriptions of what Cambridge still lacked.",
+    "The expedition returned as stock, not as a shipment plan.",
+    "Fieldwork ended in 1892; the expedition remained operational in the workshop for years.",
+    "Botanical gardens compressed botanical access; field excursions extended it.",
+    "Transport did not merely move references; it distributed their temporal capacities across different media and institutions."
+  ],
+  "next_high_value_retrievals": [
+    "Harvard Acquisition, Development, and Shipping lists for 1892 January-June and remaining 1892 folders, seeking a named negative selection case",
+    "Original Goodale-to-Ware 28 March 1892 letter",
+    "Darlingtonia drawing 133264 image/annotations and surviving St Louis preserved specimen",
+    "Person-level taxonomic determination correspondence linking Hosterwitz indeterminata to Harvard determiners",
+    "Taxon-by-taxon garden-versus-wild provenance at St Louis",
+    "Complete 1892 Harvard herbarium subset export to bound denominator D2"
+  ],
+  "public_map_change": false
+}
