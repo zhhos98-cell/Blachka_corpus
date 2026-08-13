@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0-working",
+  "generated_date": "2026-08-13",
+  "status": "pass35_remote_budget_governance",
+  "project": "Rudolf Blaschka America 1892",
+  "core_result": "Goodale's direct 28 March and 16 April 1892 letters close a remote administrative lane: Cambridge received field availability reports, maintained a running trip account, prepared a California expense estimate, authorized needed facilities, budgeted jars and lodging, and delegated spending discretion to Ganong. Finance therefore enters the reference chain as an operational variable rather than background patronage.",
+  "sources": [
+    {
+      "record_id": "BLA-D00032",
+      "locator": "015:32",
+      "date": "1892-03-28",
+      "sender": "George Lincoln Goodale",
+      "recipient": "Ware family",
+      "evidence": "Blaschka and Cameron are working hard; material is not so ready at hand as hoped, but they seem successful.",
+      "function": "remote field-status and availability report",
+      "confidence": "high"
+    },
+    {
+      "record_id": "BLA-D00041",
+      "locator": "015:41",
+      "date": "1892-04-16",
+      "sender": "George Lincoln Goodale",
+      "recipient": "Mrs Ware",
+      "evidence": "Trip statement/account; estimate to/from California; $1,000 initial fund with $572.62 spent and $427.38 remaining; additional Ganong transfer amount OCR-uncertain; instruction to use every needed facility for Blaschka's work; estimate covers jars and private-family boarding strategy against a $3/day estimate.",
+      "function": "running financial governance and delegated field discretion",
+      "confidence": "high with specified OCR guards"
+    }
+  ],
+  "ontology": {
+    "remote_budget_governance": "Financial oversight and authorization performed at distance through running accounts, estimates, correspondence and delegated spending authority.",
+    "epistemic_budgeting": "Allocation decisions whose direct effect is to alter the facilities, preservation media, lodging, routes or time available for producing usable references."
+  },
+  "governance_chain": [
+    "Ware funding and suggestions",
+    "Goodale account keeping / estimate / authorization",
+    "Ganong field discretion and logistics",
+    "facilities, jars, lodging and route capacity",
+    "Rudolf reference production"
+  ],
+  "cost_layers": [
+    "daily subsistence/lodging",
+    "equipment and preservation",
+    "institutional/site facilities",
+    "marginal route cost for desired targets",
+    "regional/overall trip balance"
+  ],
+  "recursive_system": {
+    "outward_from_Cambridge": [
+      "collection-state priorities",
+      "financial authorization/resources",
+      "letters/telegrams and route decisions"
+    ],
+    "inward_from_field": [
+      "availability/progress reports",
+      "drawings/specimens/seeds/bulbs",
+      "route/cost/logistical problems"
+    ]
+  },
+  "source_critical_guards": [
+    "Additional April transfer amount to Ganong remains OCR-corrupt.",
+    "Name attached to California estimate remains OCR-corrupt.",
+    "$3 per diem is an estimate, not an observed trip-wide daily average.",
+    "Authorization to use needed facilities does not prove every facility was purchased or used.",
+    "Do not infer direct causal response from 28 March scarcity report to 16 April budget arrangement without connecting evidence."
+  ],
+  "article_consequence": "Harvard's distant role can be specified as a form of delegated governance: maintaining balances, transmitting priorities, authorizing facilities and answering exceptional route decisions while leaving local selection and improvisation to Rudolf and Ganong.",
+  "working_sentence": "A jar, a boarding arrangement, and a railway diversion belonged to the same operational budget because each changed what Rudolf could turn into a usable reference.",
+  "public_map_change": false
+}
