@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0.0-pass36",
+  "generated_date": "2026-08-13",
+  "project": "Rudolf Blaschka America 1892",
+  "pass": 36,
+  "focus": "pre-existing transatlantic reference supply, nursery mediation, collection-state scarcity and long-latency workshop stock",
+  "core_result": "The 1892 expedition did not inaugurate access to American botanical material. By 1889-1891 Harvard and Hosterwitz already operated a transatlantic reference-supply ecology using plants, seeds, books, paid cultivation, circulating lists, nursery catalogues and living shipments. The journey supplemented that system by obtaining reference states and forms poorly available through remote supply. Returned expedition material then persisted as workshop stock whose activation depended on taxonomy, redundancy, biological adequacy, difficulty and production capacity.",
+  "events": [
+    {
+      "id": "SUPPLY-1889-CONTRACT",
+      "date": "1889-07-10",
+      "status": "direct_primary",
+      "source_anchor": "BLA-D01148 / primary 018:18",
+      "mechanism": "Harvard pays reasonable care expenses for American plants at Hosterwitz and, through George Lincoln Goodale, provides plants, seeds and books needed for the collection.",
+      "research_value": "Makes transatlantic American-reference supply and local cultivation contractual infrastructure before the 1892 expedition.",
+      "guards": [
+        "OCR renders the weekly garden allowance unclearly, approximately 'seven banks'; do not normalize currency without image verification."
+      ]
+    },
+    {
+      "id": "SUPPLY-1890-AMERICAN-LIST",
+      "date": "1890-02-25",
+      "status": "direct_primary",
+      "source_anchor": "BLA-D01181 / primary 018:51",
+      "mechanism": "The workshop refers to a selection among American plants from a list recently sent to Goodale and asks for wild plants spanning as many new families as possible.",
+      "research_value": "Shows that Harvard collection need was already being externalized into a portable pre-expedition selection list.",
+      "guards": [
+        "Do not identify this list with the undated Corning Plant Desiderata document until the latter is inspected."
+      ]
+    },
+    {
+      "id": "SUPPLY-1890-1891-GILLETT-FRITILLARIA",
+      "date_range": "1890 to 1891-07-19",
+      "status": "direct_primary",
+      "source_anchor": "Blaschka letter of 19 July 1891",
+      "taxon": "Fritillaria recurva as written in the letter",
+      "supplier": "Gillett & Horsford, Southwick, Massachusetts",
+      "mechanism": "A California bulb was sent to Hosterwitz in 1890, flowered there, differed in colour from published descriptions, but was judged sufficiently characteristic for modelling; Goodale was expected to identify the resulting model.",
+      "chain": [
+        "California plant",
+        "Massachusetts nursery/intermediary",
+        "transatlantic shipment",
+        "Hosterwitz cultivation",
+        "comparison with botanical literature",
+        "taxonomic uncertainty",
+        "modelling decision",
+        "expected Harvard-side determination"
+      ],
+      "research_value": "Remote supply could solve material access while leaving taxonomic closure unresolved.",
+      "guards": [
+        "Do not crosswalk automatically to the annotated shipment-list entry Fritillaria parviflora, Torr."
+      ]
+    },
+    {
+      "id": "SUPPLY-1891-INACCESSIBILITY-RECALIBRATION",
+      "date": "1891-12-17",
+      "status": "direct_primary_reinterpretation",
+      "source_anchor": "BLA-D00006 / 015:6",
+      "evidence": "Rudolf looked forward to collecting American forms 'hitherto inaccessible to us'.",
+      "calibration": "Because American plants were already reaching Hosterwitz through the 1889-1891 supply system, 'inaccessible' should refer to residual forms, states or observations, not to American flora as a whole."
+    },
+    {
+      "id": "SUPPLY-1892-GILLETT-PLANNED-RECONNECT",
+      "date": "1892-06-02",
+      "status": "direct_primary_plan",
+      "place": "St Louis",
+      "mechanism": "Rudolf planned to visit Mr. Gillett in Southwick, identifying him as the supplier of catalogues and Cypripedium material, to discuss future acquisition of seeds and plants.",
+      "associated_observation": "Rudolf said the current journey yielded little seed because plants were generally in spring condition and seeds usually began later, around July.",
+      "research_value": "Field travel was expected to reconnect with and extend the remote nursery supply network.",
+      "guard": "The present corpus does not yet prove the proposed 1892 Southwick visit occurred."
+    },
+    {
+      "id": "SUPPLY-1895-SOUTHWICK-DOCUMENTED-VISIT",
+      "date_range": "1895-07-04 to 1895-07-05",
+      "status": "direct_primary",
+      "journey": "second American journey",
+      "actors": ["Rudolf Blaschka", "Edward Gillett", "Blankinship"],
+      "mechanism": "Rudolf and Blankinship visited the Southwick nursery; Rudolf obtained three or four plants and then collected during the walk back toward Westfield.",
+      "research_value": "Demonstrates later physical integration of nursery and field acquisition.",
+      "chronology_guard": "Do not use this documented 1895 visit as evidence that the proposed 1892 visit took place."
+    },
+    {
+      "id": "STOCK-1895-FIRST-JOURNEY-REMAINDER",
+      "date": "1895",
+      "status": "direct_primary_retrospective",
+      "source_anchor": "BLA-D01538-BLA-D01539 sequence",
+      "evidence": "Rudolf said material remaining from the first journey should cover only two more shipments and that several very complicated first-journey subjects had been postponed for lack of time and were still waiting.",
+      "research_value": "The 1892 return became finite heterogeneous stock; difficult references could remain dormant behind later production."
+    },
+    {
+      "id": "STOCK-1901-FILLER-SCARCITY",
+      "date": "1901-11-17",
+      "status": "direct_primary",
+      "source_anchor": "BLA-D01936-BLA-D01937 / primary 020:470-471",
+      "evidence": "Rudolf recalled that early consignments could be filled with easy/easier subjects from abundant material, but the 'fillers got scarce' as the collection developed; fixed annual expectations of first 120 and later 100 models became increasingly hard.",
+      "research_value": "Collection saturation changed the marginal difficulty of useful additions; scarcity was representational as well as botanical."
+    },
+    {
+      "id": "STOCK-1902-EIGHTY-REMAINDER",
+      "date": "1902-02-24",
+      "status": "direct_primary",
+      "source_anchor": "Ware correspondence, 24 February 1902",
+      "evidence": "Rudolf counted about eighty pieces/species of 'secured material yet to be done' and reported Goodale/Greenman determination work on poorly determined California-journey plants.",
+      "research_value": "Some journey-derived reference stock remained operationally and taxonomically active about a decade later.",
+      "guard": "Image-check quantitative and taxonomic wording before publication quotation."
+    },
+    {
+      "id": "STOCK-UNALIGNED-GAP-FILLER-COLLECTION-STATE",
+      "date": null,
+      "status": "direct_primary_text_source_alignment_pending",
+      "source_anchor": "05B / Correspondence OCR, exact sequence pending",
+      "evidence": "Rudolf says he uses an American plant obtained locally when it is a valuable 'gap-filler' not represented in the collection, while some journey material represents types already present; he also says he still has about eighty species of journey material at hand.",
+      "research_value": "Directly separates physical availability, journey provenance, collection redundancy and production usefulness.",
+      "guard": "Do not assign this text to the dated 24 February 1902 letter until source alignment is completed."
+    }
+  ],
+  "external_counterpart_targets": [
+    {
+      "id": "ARCHIVE-GILLETT-GRAY-1891",
+      "repository": "Harvard / Asa Gray correspondence",
+      "reference": "gra00078, Drawer H1.2",
+      "description": "Gillett and Horsford (Edward Gillett), 1891; finding aid says the folder includes letters from Edward Gillett of the Southwick, Massachusetts plant nursery.",
+      "status": "official_finding_aid_target",
+      "next_questions": [
+        "Do the letters mention Goodale, the Blaschkas or Hosterwitz?",
+        "Do they mention Fritillaria, Cypripedium, catalogues, shipments, prices or packing?",
+        "Can the Massachusetts nursery side of the 1890-1891 supply episode be reconstructed independently?"
+      ]
+    },
+    {
+      "id": "CATALOG-GILLETT-1890",
+      "repository": "Biodiversity Heritage Library / NYBG Mertz Library",
+      "title": "Hardy ferns and flowers, and roses : over 60 kinds of lilies, bog plants and orchids in great variety, hardy ornamentals, native shrubs, etc",
+      "date": "1890",
+      "status": "catalogue_context_pending_page_level_taxon_extraction"
+    },
+    {
+      "id": "CATALOG-SOUTHWICK-1892",
+      "repository": "Biodiversity Heritage Library",
+      "title_context": "Southwick Nurseries catalogues for hardy ferns and flowers, lilies, bog plants, orchids, native shrubs and an 1892 wholesale catalogue of wild flowers, ferns, bulbs and hardy ornamentals",
+      "date": "1892",
+      "status": "catalogue_context_pending_page_level_taxon_extraction"
+    },
+    {
+      "id": "ARCHIVE-PLANT-DESIDERATA-BOX41-F08",
+      "repository": "Rakow Research Library / Leopold and Rudolf Blaschka Collection",
+      "reference": "box 41 folder 08",
+      "title": "Plant Desiderata for Pharmacological Collection of the Division of Botany",
+      "date": "undated",
+      "status": "retrieval_target",
+      "guard": "Do not identify with the 1890 circulating American-plant list without comparison."
+    },
+    {
+      "id": "LATER-DEANE-DESIDERATA",
+      "repository": "project 05B OCR source",
+      "date": "OCR reads March 25/922; year unsafe",
+      "description": "A later specimen request specifies native grasses, flowering and fruiting state, root structure, labelled shipment and intended conversion into Harvard class models.",
+      "status": "longitudinal_calibration_source_alignment_pending",
+      "guard": "Not evidence for an identical 1892 instrument."
+    }
+  ],
+  "access_regimes": {
+    "remote_contractual_supply": {
+      "chain": [
+        "Harvard collection need",
+        "list/catalogue/correspondence",
+        "nursery/garden/supplier",
+        "plant/seed/book packet",
+        "Hosterwitz cultivation/study"
+      ],
+      "strength": "directly documented before 1892"
+    },
+    "mobile_field_acquisition": {
+      "chain": [
+        "route/access decision",
+        "living encounter",
+        "selection",
+        "drawing/specimen/seed/alcohol medium",
+        "return packet"
+      ],
+      "strength": "directly documented in 1892"
+    },
+    "institutional_compression": "Botanical gardens concentrate cultivated access, specialists and work space.",
+    "ecological_extension": "Wild excursions extend the reference set and habitat encounter beyond institutional collections.",
+    "later_gap_filling": "Nurseries/gardens/local opportunities can supply useful non-redundant American forms after the journey."
+  },
+  "gate_B_revision": {
+    "states": [
+      "received/secured reference",
+      "cultivated or preserved",
+      "identified/provisionally identified",
+      "compared against existing collection",
+      "classified as useful/redundant",
+      "queued by biological adequacy, difficulty and priority",
+      "manufactured",
+      "mounted/handleable",
+      "shipment assignment",
+      "dispatch"
+    ],
+    "principle": "Journey provenance did not confer automatic production priority. A reference could remain secured stock for years while taxonomy, redundancy, condition and workshop capacity changed around it."
+  },
+  "chronology_corrections": [
+    {
+      "issue": "Gillett/Southwick visit",
+      "old_risk": "Treating the June 1892 planned visit as if a detailed Southwick visit narrative proved completion in 1892.",
+      "corrected_state": "2 June 1892 = plan to visit. 4-5 July 1895 = documented visit during second American journey. 1892 fulfillment remains open."
+    }
+  ],
+  "negative_closure_audit": [
+    {
+      "lead": "Sequoia sempervirens",
+      "result": "no secure later fulfillment hit in current 04+05B search",
+      "interpretation": "corpus non-closure only"
+    },
+    {
+      "lead": "Orcutt",
+      "result": "no post-1892 hit in current 05B search",
+      "interpretation": "corpus non-closure only"
+    },
+    {
+      "lead": "June 1892 Orcutt Crinum",
+      "result": "later Crinum-like search hit is not securely the same taxon/material",
+      "interpretation": "do not conflate"
+    },
+    {
+      "lead": "1892 Gillett visit",
+      "result": "planned but not yet directly confirmed",
+      "interpretation": "itinerary question remains open"
+    }
+  ],
+  "working_claims": [
+    "Remote supply and fieldwork were complementary access regimes, not serial replacements.",
+    "Inaccessibility was relative to the biological and epistemic state required for modelling, not to geography alone.",
+    "The collection itself generated scarcity as easy non-redundant fillers disappeared.",
+    "The expedition returned as stock whose members could remain inactive for years before staged reactivation.",
+    "A growing collection changes the cost structure of the next useful model.",
+    "The 1892 journey was a mobile intervention inside an already distributed supply ecology."
+  ],
+  "source_critical_guards": [
+    "Do not normalize unclear OCR currency in the 1889 garden-care clause without the image.",
+    "Do not equate the 1890 list with the undated Plant Desiderata document without inspection.",
+    "Do not crosswalk Fritillaria recurva to Fritillaria parviflora automatically.",
+    "Do not treat the 1895 Southwick visit as 1892 evidence.",
+    "Do not date the unaligned gap-filler passage until sequence-level source alignment.",
+    "Later desiderata documents are longitudinal calibration, not automatic evidence of identical 1892 forms.",
+    "Search failure for Sequoia, Orcutt or Crinum is not evidence of historical non-fulfillment.",
+    "Do not calculate a conversion rate until the full 1892 reference denominator is bounded."
+  ],
+  "next_high_value_retrievals": [
+    "Retrieve Harvard gra00078 Gillett and Horsford 1891 correspondence folder.",
+    "Extract page-level 1890 and 1892 Southwick/Gillett catalogue entries for Fritillaria, Cypripedium, lilies, bog plants and shipment language.",
+    "Inspect Corning box 41 folder 08 Plant Desiderata and compare to the February 1890 American-plant list reference.",
+    "Align the gap-filler / about eighty journey species OCR passage to exact letter/date/addressee.",
+    "Image-check 17 November 1901 and 24 February 1902 quantitative/taxonomic wording.",
+    "Search the 1892 itinerary for direct proof or disproof of the proposed Gillett visit.",
+    "Build an incoming American reference-packet register for 1889-1892 by supplier, taxon, medium, date and later model use.",
+    "Continue pass35 image-level BLA-D00041 and trip-account retrieval.",
+    "Keep Sequoia, Orcutt and Crinum fulfillment audits open.",
+    "Bound the complete 1892 Harvard herbarium/reference subset before conversion-rate analysis."
+  ],
+  "public_map_change": false
+}
