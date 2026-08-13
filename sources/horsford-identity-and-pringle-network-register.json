@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "generated_date": "2026-08-13",
+  "title": "Horsford identity disambiguation and Pringle-network register",
+  "purpose": "Prevent premature merging of the unidentified Horsford partner in Gillett & Horsford, Southwick, Massachusetts, with Frederick Hinsdale Horsford of the Pringle/Watson/Charlotte, Vermont network while preserving both as research leads.",
+  "southwick_firm": {
+    "firm": "Gillett & Horsford / Southwick Nurseries",
+    "place": "Southwick, Massachusetts",
+    "named_actor": "Edward Gillett",
+    "partner_identity": "unresolved",
+    "direct_blaschka_link": "Blaschka workshop letter of 19 July 1891 states that a California Fritillaria bulb had been sent the previous year by Gillett & Horsford, Southwick Mass.",
+    "harvard_metadata": "HOLLIS describes an 1891 folder as letters from Edward Gillett of Gillett and Horsford, plant nursery in Southwick, MA.",
+    "primary_stationery": "Pass 38 verifies repeated OCR of Southwick Nurseries (Gillett & Horsford) letterhead in the Edward Gillett-to-Watson block.",
+    "status": "directly_relevant_partner_unidentified"
+  },
+  "frederick_hinsdale_horsford_network": {
+    "person": "Frederick Hinsdale Horsford",
+    "life_dates": "1855–1923",
+    "associated_person": "Cyrus G. Pringle",
+    "associated_business_string": "Pringle & Horsford",
+    "later_business_place": "Charlotte, Vermont",
+    "relation_to_southwick_firm": "unresolved",
+    "merge_status": "do_not_merge",
+    "documents": [
+      {"date": "1887-10-04", "sender_or_entity": "Pringle & Horsford", "recipient": "unresolved in current metadata", "type": "invoice", "source_family": "Harvard/BHL Asa Gray correspondence"},
+      {"date": "1889-08-15", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "source_family": "Cyrus G. Pringle correspondence"},
+      {"date": "1889-08-19", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "source_family": "Cyrus G. Pringle correspondence"},
+      {"date": "1889-09-25", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "bhl_part": "261775", "zenodo_record": "16366671"},
+      {"date": "1890-06-30", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "source_family": "Asa Gray correspondence Senders Ho-Hy"},
+      {"date": "1890-07-06", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "bhl_part": "261778", "zenodo_record": "16328435"},
+      {"date": "1890-08-18", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "source_family": "Cyrus G. Pringle correspondence"},
+      {"date": "1890-12-10", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "bhl_part": "261779", "zenodo_record": "16366668"},
+      {"date": "1891-06-12", "sender_or_entity": "Frederick H. Horsford", "recipient": "Sereno Watson", "type": "letter", "bhl_part": "278343", "zenodo_record": "16354450"}
+    ],
+    "research_use": [
+      "counterpart nursery/collector transaction vocabulary",
+      "Watson commercial/taxonomic mediation",
+      "invoice and plant-list comparison",
+      "possible identity bridge to test rather than assume"
+    ]
+  },
+  "identity_hypothesis": {
+    "hypothesis": "Frederick Hinsdale Horsford was the Horsford partner in Gillett & Horsford, Southwick, Massachusetts",
+    "status": "unresolved",
+    "current_support": "surname, chronology and shared Harvard/Watson environment only",
+    "current_counterweight": "Frederick Hinsdale Horsford is independently documented in a Pringle/Charlotte Vermont network; no inspected source explicitly places him in the Southwick partnership",
+    "decision_rule": "Do not merge actor IDs without a contemporary source explicitly connecting Frederick Hinsdale Horsford to Gillett & Horsford/Southwick or otherwise identifying the Southwick partner."
+  },
+  "next_retrievals": [
+    "Southwick Nurseries/Gillett & Horsford catalogue title pages and imprints, 1890–1895",
+    "Southwick business directories/advertisements and Massachusetts firm records",
+    "letterhead/signatures in Edward Gillett correspondence and invoices",
+    "Frederick Hinsdale Horsford letters and Pringle & Horsford 1887 invoice at image level",
+    "1928 Southwick anniversary catalogue/history for predecessor-partner information",
+    "taxon-level catalogue search for Fritillaria recurva and California bulbs"
+  ]
+}
