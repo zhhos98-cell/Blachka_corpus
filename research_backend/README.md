@@ -13,13 +13,13 @@ Contents:
 Packaging state:
 - source snapshot: `backend_clean_v8_2026-08-17`
 - flat web bundle: 17 payload files + 1 manifest
-- 196 source JSON objects preserved in the bundles
+- 196 source-record identities remain represented in the bundles
 - no PDFs are retained in this snapshot
 - OCR/platform boilerplate and other high-confidence technical noise were removed during cleaning
 - this is a working research corpus, not a byte-for-byte forensic preservation copy of the original inputs
 
-The files were moved here from the repository root without rewriting their blob contents, so their uploaded Git object identity remains unchanged.
+The files were originally moved here from the repository root without rewriting their blob contents. On 2026-08-17, the public copy of `04_99_other_backend.json` was deliberately sanitized for rights reasons: page-level extracted full text was removed from six modern secondary-literature records while their filenames, identifiers, source hashes, page counts and other provenance metadata were retained. Archival OCR and nineteenth-century primary-source text were not targeted by that sanitization. `00_MANIFEST.json` records the resulting public bundle hash and sanitization state.
 
-Rights note: this research backend mixes public-domain historical OCR with extracted metadata/text from later scholarly and archival sources. In particular, `04_99_other_backend.json` requires rights review before being treated as an openly redistributable dataset. Its presence in this public repository should not be read as an open-license declaration.
+The full research copies of the six modern secondary works belong in the private research archive, not in this public repository. Current-tree sanitization does not erase older Git objects from repository history; any history rewrite, if ever required, is a separate destructive operation and is not implied by this cleanup.
 
 The public-facing site should use curated data under the normal site/data structure rather than depending directly on these backend bundles.
