@@ -1,0 +1,43 @@
+name: Sanitize public research backend
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/sanitize_public_research_backend.py"
+      - ".github/workflows/sanitize_public_research_backend.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sanitize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sanitize modern secondary-literature page text
+        run: python scripts/sanitize_public_research_backend.py --in-place
+
+      - name: Verify public-safe backend and manifest
+        run: python scripts/sanitize_public_research_backend.py --check
+
+      - name: Commit sanitized payload when changed
+        shell: bash
+        run: |
+          if git diff --quiet -- research_backend/04_99_other_backend.json research_backend/00_MANIFEST.json; then
+            echo "Public backend already sanitized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_backend/04_99_other_backend.json research_backend/00_MANIFEST.json
+          git commit -m "Sanitize public backend secondary literature"
+          git push
