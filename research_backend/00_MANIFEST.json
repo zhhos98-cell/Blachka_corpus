@@ -5,7 +5,7 @@
   "source_snapshot": "backend_clean_v8_2026-08-17",
   "source_json_file_count": 196,
   "bundle_file_count": 17,
-  "all_source_json_preserved": true,
+  "all_source_json_preserved": false,
   "maximum_bundle_bytes": 18702567,
   "maximum_bundle_mib": 17.836,
   "upload_note": "All files in this ZIP are at the root level. Each bundle is valid JSON and below 25 MiB.",
@@ -238,8 +238,8 @@
     },
     {
       "file": "04_99_other_backend.json",
-      "size_bytes": 8983671,
-      "sha256": "71b7f758302ee1a8f3f002108ff38c47e2723c0ec500a7ff4851e53192816c27",
+      "size_bytes": 8737100,
+      "sha256": "9c783f354941b6dc212c2c32eea6084129d7c41cf545d6fdb55225386b1dc446",
       "item_count": 98,
       "source_paths": [
         "04_blaschka_archive/metadata.json",
@@ -342,5 +342,12 @@
         "VERIFICATION.json"
       ]
     }
-  ]
+  ],
+  "public_rights_sanitization": {
+    "policy_version": "2026-08-17-v1",
+    "sanitized_bundle": "04_99_other_backend.json",
+    "modern_secondary_records_sanitized": 6,
+    "source_records_retained": true,
+    "note": "Modern secondary-literature full text omitted from the public repository; bibliographic/provenance metadata retained. Full research text remains in the private archive."
+  }
 }
