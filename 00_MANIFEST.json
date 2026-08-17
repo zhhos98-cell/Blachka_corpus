@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.0-flat-web-manifest",
+  "generated": "2026-08-17",
+  "purpose": "Single-level GitHub-web upload package; no nested directories.",
+  "source_snapshot": "backend_clean_v8_2026-08-17",
+  "source_json_file_count": 196,
+  "bundle_file_count": 17,
+  "all_source_json_preserved": true,
+  "maximum_bundle_bytes": 18702567,
+  "maximum_bundle_mib": 17.836,
+  "upload_note": "All files in this ZIP are at the root level. Each bundle is valid JSON and below 25 MiB.",
+  "bundles": [
+    {
+      "file": "01_core_01.json",
+      "size_bytes": 18702567,
+      "sha256": "05db925e1cf41fff8212c326bbed0b623826a1eb3b997c8e38eeb454d02dcb9e",
+      "item_count": 5,
+      "source_paths": [
+        "01_microscopy_core/01A/metadata.json",
+        "01_microscopy_core/01A/sections/01_RMS_Transactions_1844_1868/part-001.json",
+        "01_microscopy_core/01A/sections/02_RMS_QJMS_shared_text_1853_1868/part-001.json",
+        "01_microscopy_core/01A/sections/03_QJMS_1853_1868/part-001.json",
+        "01_microscopy_core/01A/sections/03_QJMS_1853_1868/part-002.json"
+      ]
+    },
+    {
+      "file": "01_core_02.json",
+      "size_bytes": 15754075,
+      "sha256": "fb27672ef09c241479a825d86222f39a5fdb9c351b8db7b4b47b9136f97a0a64",
+      "item_count": 3,
+      "source_paths": [
+        "01_microscopy_core/01A/sections/04_Monthly_Microscopical_Journal_1869_1877/part-001.json",
+        "01_microscopy_core/01A/sections/04_Monthly_Microscopical_Journal_1869_1877/part-002.json",
+        "01_microscopy_core/01B/metadata.json"
+      ]
+    },
+    {
+      "file": "01_core_03.json",
+      "size_bytes": 10197089,
+      "sha256": "1a92c3aae42eb1d8a6820468614e7a03ac7b875d01a1d29ac599c772064c6dc3",
+      "item_count": 1,
+      "source_paths": [
+        "01_microscopy_core/01B/sections/01_QJMS_1869_1886/part-001.json"
+      ]
+    },
+    {
+      "file": "01_core_04.json",
+      "size_bytes": 12347517,
+      "sha256": "0ad011aaf1304a1655d3f6b52a32ab2f84e8b8223f27d99f020d0e674e3636df",
+      "item_count": 2,
+      "source_paths": [
+        "01_microscopy_core/01B/sections/01_QJMS_1869_1886/part-002.json",
+        "01_microscopy_core/01B/sections/01_QJMS_1869_1886/part-003.json"
+      ]
+    },
+    {
+      "file": "01_core_05.json",
+      "size_bytes": 9981836,
+      "sha256": "a29015e4a2359ac8bd8339711545d4733f3880bec7cf299b3e45fc5a54d3202a",
+      "item_count": 1,
+      "source_paths": [
+        "01_microscopy_core/01B/sections/02_Journal_of_the_RMS_1878_1886/part-001.json"
+      ]
+    },
+    {
+      "file": "01_core_06.json",
+      "size_bytes": 18011789,
+      "sha256": "a8f46b098d1e9caa7b98f0dcb62f98df9efe2c1cfdadfc8ca0a014b5db582d1a",
+      "item_count": 4,
+      "source_paths": [
+        "01_microscopy_core/01B/sections/02_Journal_of_the_RMS_1878_1886/part-002.json",
+        "01_microscopy_core/01B/sections/02_Journal_of_the_RMS_1878_1886/part-003.json",
+        "01_microscopy_core/01B/sections/03_Institutional_lists_and_reference_indexes/part-001.json",
+        "01_microscopy_core/01C/metadata.json"
+      ]
+    },
+    {
+      "file": "01_core_07.json",
+      "size_bytes": 10536884,
+      "sha256": "4e0a72def7f45bdf01b84b7a24a6f885b0086f1ee1f54213b6c1fcf71decfebd",
+      "item_count": 2,
+      "source_paths": [
+        "01_microscopy_core/01C/sections/01_Quekett_Microscopical_Club_1868_1886/part-001.json",
+        "01_microscopy_core/01C/sections/02_Postal_Microscopical_Society_1882_1886/part-001.json"
+      ]
+    },
+    {
+      "file": "01_core_08.json",
+      "size_bytes": 10193090,
+      "sha256": "4d9110b12bf13b4a80920882028cde36600fb47e3b0aa1877222be1a2484a1a3",
+      "item_count": 1,
+      "source_paths": [
+        "01_microscopy_core/01C/sections/03_Hardwicke_s_Science_Gossip_1865_1886/part-001.json"
+      ]
+    },
+    {
+      "file": "01_core_09.json",
+      "size_bytes": 9867642,
+      "sha256": "cb1508405bd343335c6686c8a129d7481ddfb6f51e685225d8949d6dec955016",
+      "item_count": 1,
+      "source_paths": [
+        "01_microscopy_core/01C/sections/03_Hardwicke_s_Science_Gossip_1865_1886/part-002.json"
+      ]
+    },
+    {
+      "file": "01_core_10.json",
+      "size_bytes": 14258585,
+      "sha256": "5f901e7eabd6f773ae9bef59482d75cb2f40d76e79ff2021804a125b7d17a878",
+      "item_count": 2,
+      "source_paths": [
+        "01_microscopy_core/01C/sections/03_Hardwicke_s_Science_Gossip_1865_1886/part-003.json",
+        "01_microscopy_core/01C/sections/03_Hardwicke_s_Science_Gossip_1865_1886/part-004.json"
+      ]
+    },
+    {
+      "file": "01_core_11.json",
+      "size_bytes": 10284474,
+      "sha256": "347f281e8ae1e9a2d21af333bb0ed3a4a2a1e0b9be25e76bbd75c9985024c010",
+      "item_count": 2,
+      "source_paths": [
+        "01_microscopy_core/01C/sections/04_Local_societies_manuals_and_associated_publications/part-001.json",
+        "01_microscopy_core/01C/sections/04_Local_societies_manuals_and_associated_publications/part-002.json"
+      ]
+    },
+    {
+      "file": "02_extensions_01.json",
+      "size_bytes": 18690158,
+      "sha256": "9df88bb5d99360408cb537f72c7af42c3847d2f390baf6b6c5d2025119b66761",
+      "item_count": 17,
+      "source_paths": [
+        "02_microscopy_extensions/02A/documents/EXT-0001_Beale_Clinical_Microscopy_1854_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0014_Hassall_Food_Adulterations_1855_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0015_Hogg_Microscope_1859_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0016_Hogg_Microscope_1867_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0017_Intellectual_Observer_v01_1862_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0018_Intellectual_Observer_v02_1863_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0019_Intellectual_Observer_v04_1864_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0020_Intellectual_Observer_v05_1864_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0021_Intellectual_Observer_v06_1865_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0022_Intellectual_Observer_v07_1865_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0023_Intellectual_Observer_v08_1866_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0024_Intellectual_Observer_v10_1867_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0025_Intellectual_Observer_v11_1867_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0029_Lankester_Half_Hours_1859_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0030_Lankester_Half_Hours_1863_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0032_Mary_Ward_Microscope_Teachings_1866_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0033_Mary_Ward_World_of_Wonders_1859_txt.json"
+      ]
+    },
+    {
+      "file": "02_extensions_02.json",
+      "size_bytes": 18307402,
+      "sha256": "95df7bb9efa41a2c03c034ca389fa55a094c352a16e5140d13500261e520b20b",
+      "item_count": 14,
+      "source_paths": [
+        "02_microscopy_extensions/02A/documents/EXT-0034_Micrographic_Dictionary_1856_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0035_Micrographic_Dictionary_1860_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0045_Pritchard_Microscopic_Objects_1847_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0053_The_Geologist_v01_1858_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0054_The_Geologist_v02_1859_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0055_The_Geologist_v03_1860_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0056_The_Geologist_v04_1861_txt.json",
+        "02_microscopy_extensions/02A/documents/EXT-0057_The_Geologist_v05_1862_txt.json",
+        "02_microscopy_extensions/02A/metadata.json",
+        "02_microscopy_extensions/02B/documents/EXT-0002_Beale_Descriptive_Catalogue_Microscopical_Specimens_1868_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0004_Belfast_Naturalists_Field_Club_ser2_v1_1873_1880_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0006_Common_Insects_Microscope_Lantern_Slides_c1870_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0007_Cooke_One_Thousand_Objects_1869_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0010_Food_Journal_v01_1870_1871_txt.json"
+      ]
+    },
+    {
+      "file": "02_extensions_03.json",
+      "size_bytes": 18098327,
+      "sha256": "a580b1529bc9213b9476a2526985ae4dc0f46f1d853b6c06951fc5751e2ef42b",
+      "item_count": 15,
+      "source_paths": [
+        "02_microscopy_extensions/02B/documents/EXT-0011_Food_Journal_v02_1871_1872_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0012_Food_Journal_v03_1873_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0013_Food_Journal_v04_1874_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0026_Intellectual_Observer_v12_1868_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0028_John_H_Martin_Microscopic_Objects_Figured_Described_1870_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0036_Micrographic_Dictionary_1875_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0046_Student_Intellectual_Observer_v01_1868_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0047_Student_Intellectual_Observer_v02_1869_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0048_Student_Intellectual_Observer_v03_1869_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0049_Student_Intellectual_Observer_v04_1870_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0050_Student_Intellectual_Observer_v05_1871_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0058_Watford_Hertfordshire_Field_Club_v1_1875_1880_txt.json",
+        "02_microscopy_extensions/02B/documents/EXT-0059_Watford_Hertfordshire_Field_Club_v2_1875_1880_txt.json",
+        "02_microscopy_extensions/02B/metadata.json",
+        "02_microscopy_extensions/02C/documents/EXT-0003_Beck_Illustrated_Price_List_1882_txt.json"
+      ]
+    },
+    {
+      "file": "02_extensions_04.json",
+      "size_bytes": 12349366,
+      "sha256": "533ea4d6a267c9a92851d6d33d80f6d311e4fed8463583b0a508f5716e3ee85f",
+      "item_count": 17,
+      "source_paths": [
+        "02_microscopy_extensions/02C/documents/EXT-0005_Belfast_Naturalists_Field_Club_ser2_v2_1880_1887_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0008_East_Kent_Natural_History_Society_Transactions_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0009_Field_Naturalist_Scientific_Student_1883_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0027_International_Medical_Sanitary_Exhibition_1881_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0031_Lankester_Half_Hours_1878_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0037_Micrographic_Dictionary_1883_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0038_Microscopical_News_Northern_Microscopist_v03_1883_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0039_Midland_Naturalist_v02_1879_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0040_Midland_Naturalist_v03_1880_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0041_Midland_Naturalist_v04_1881_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0044_Northern_Microscopist_v02_1882_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0051_The_Analyst_v06_1881_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0052_The_Analyst_v08_1883_txt.json",
+        "02_microscopy_extensions/02C/documents/EXT-0060_Woolhope_Transactions_1876_1886_txt.json",
+        "02_microscopy_extensions/02C/metadata.json",
+        "02_microscopy_extensions/02C/structured_ocr/Cumulative_Index_to_the_Quekett_Journals_of_Microscopy_pdf_by_PaddleOCR_VL_1_6_json.json",
+        "02_microscopy_extensions/02C/structured_ocr/The_Northern_Microscopist_pdf_by_PaddleOCR_VL_1_6_json.json"
+      ]
+    },
+    {
+      "file": "03_BNA.json",
+      "size_bytes": 10358222,
+      "sha256": "9b07377134a946ff3c64c7475655f3db0205d41a182dcc574ccf3c62e0e4e665",
+      "item_count": 11,
+      "source_paths": [
+        "03_BNA/metadata_and_derived_views.json",
+        "03_BNA/records/part-001.json",
+        "03_BNA/records/part-002.json",
+        "03_BNA/records/part-003.json",
+        "03_BNA/records/part-004.json",
+        "03_BNA/records/part-005.json",
+        "03_BNA/records/part-006.json",
+        "03_BNA/records/part-007.json",
+        "03_BNA/records/part-008.json",
+        "03_BNA/records/part-009.json",
+        "03_BNA/records/part-010.json"
+      ]
+    },
+    {
+      "file": "04_99_other_backend.json",
+      "size_bytes": 8983671,
+      "sha256": "71b7f758302ee1a8f3f002108ff38c47e2723c0ec500a7ff4851e53192816c27",
+      "item_count": 98,
+      "source_paths": [
+        "04_blaschka_archive/metadata.json",
+        "04_blaschka_archive/pages/part-001.json",
+        "04_blaschka_archive/pages/part-002.json",
+        "04_blaschka_archive/pages/part-003.json",
+        "04_blaschka_archive/pages/part-004.json",
+        "04_blaschka_archive/pages/part-005.json",
+        "04_blaschka_archive/pages/part-006.json",
+        "05A_crossproject/metadata.json",
+        "05A_crossproject/modules/backend_consolidation_manifest.json",
+        "05A_crossproject/modules/blaschka_newspaper_audit.json",
+        "05A_crossproject/modules/early_atlantic_family_manuscripts.json",
+        "05A_crossproject/modules/working_mens_college_index.json",
+        "05B_blaschka_literature_technical/corning_finding_aid.json",
+        "05B_blaschka_literature_technical/corning_technical_tools/1_3_txt.json",
+        "05B_blaschka_literature_technical/corning_technical_tools/corning_alma_sru_v1_4_zip.json",
+        "05B_blaschka_literature_technical/corning_technical_tools/corning_finding_aid_v1_5_zip.json",
+        "05B_blaschka_literature_technical/corning_technical_tools/corning_primo_browser_v1_2_zip.json",
+        "05B_blaschka_literature_technical/corning_technical_tools/corning_primo_harvester_v1_1_py.json",
+        "05B_blaschka_literature_technical/corning_technical_tools/corning_primo_harvester_v1_1_zip.json",
+        "05B_blaschka_literature_technical/corning_technical_tools/corning_primo_harvester_zip.json",
+        "05B_blaschka_literature_technical/corning_technical_tools/corning_primo_partition_v1_3_zip.json",
+        "05B_blaschka_literature_technical/corning_technical_tools/root_page_debug_json.json",
+        "05B_blaschka_literature_technical/digital_resource_package.json",
+        "05B_blaschka_literature_technical/grant_application_template.json",
+        "05B_blaschka_literature_technical/metadata.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/1173388_pdf_by_PaddleOCR_VL_1_6_json.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/Blaschka_ecb00006_Series5_Subseries1_Annotated_shipment_list_of_models_1887_Part1_pdf_by_PaddleOCR_V.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/Blaschka_ecb00006_Series5_Subseries1_Annotated_shipment_list_of_models_1887_Part2_pdf_by_PaddleOCR_V.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/Blaschka_ecb00006_Series5_Subseries1_Annotated_shipment_list_of_models_1887_Part3_pdf_by_PaddleOCR_V.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/Blaschka_ecb00006_Series5_Subseries1_Annotated_shipment_list_of_models_1887_Part4_pdf_by_PaddleOCR_V.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/Blaschka_ecb00006_Series5_Subseries1_Packing_diagram_photocopy_pdf_by_PaddleOCR_VL_1_6_json.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/Blaschka_ecb00006_Series5_Subseries2_Method_of_preparing_the_models_for_transportation_pdf_by_Paddle.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/Corning_Rakow_notebook_1_700_pdf_by_PaddleOCR_VL_1_6_json.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/Corning_Rakow_notebook_701_1396_pdf_by_PaddleOCR_VL_1_6_json.json",
+        "05B_blaschka_literature_technical/primary_archive_ocr/Correspondencew00Blas_pdf_by_PaddleOCR_VL_1_6_json.json",
+        "05B_blaschka_literature_technical/secondary_literature/01_Taxonomic_revision_1888_catalogue_2018_pdf.json",
+        "05B_blaschka_literature_technical/secondary_literature/02_Blaschka_models_Irish_institutions_2016_pdf.json",
+        "05B_blaschka_literature_technical/secondary_literature/03_UCD_Blaschka_collection_history_2013_pdf.json",
+        "05B_blaschka_literature_technical/secondary_literature/04_Cheeseman_Ward_correspondence_2019_pdf.json",
+        "05B_blaschka_literature_technical/secondary_literature/05_Los_modelos_Blaschka_2014_pdf.json",
+        "05B_blaschka_literature_technical/secondary_literature/06_Canterbury_Museum_Blaschka_catalogue_2017_pdf.json",
+        "05B_blaschka_literature_technical/ward_catalogue_1878.json",
+        "06_blaschka_global_object_archive/metadata.json",
+        "06_blaschka_global_object_archive/modules/amgueddfa_cymru_cardiff_inventory_conservation.json",
+        "06_blaschka_global_object_archive/modules/ansp_philadelphia_ward_objects_labels_provenance.json",
+        "06_blaschka_global_object_archive/modules/auckland_museum_cheeseman_ward_blaschka.json",
+        "06_blaschka_global_object_archive/modules/australian_museum_deep_provenance.json",
+        "06_blaschka_global_object_archive/modules/berlin_humboldt_mfn_numbered_objects_provenance.json",
+        "06_blaschka_global_object_archive/modules/dundee_numbered_objects_3d_provenance.json",
+        "06_blaschka_global_object_archive/modules/field_museum_chicago_WCE_Ward_blaschka_collection.json",
+        "06_blaschka_global_object_archive/modules/fondazione_scienza_tecnica_firenze_blaschka.json",
+        "06_blaschka_global_object_archive/modules/geneva_mhng_1888_blaschka_collection.json",
+        "06_blaschka_global_object_archive/modules/glasgow_museums_philip_brookes_mason_collection.json",
+        "06_blaschka_global_object_archive/modules/global_catalogue_archive_network_base.json",
+        "06_blaschka_global_object_archive/modules/great_north_museum_hancock_nhsn_blaschka.json",
+        "06_blaschka_global_object_archive/modules/imperial_royal_college_science_south_kensington.json",
+        "06_blaschka_global_object_archive/modules/indian_museum_calcutta_blaschka_collection.json",
+        "06_blaschka_global_object_archive/modules/ireland_numbered_objects_orders_and_circulation.json",
+        "06_blaschka_global_object_archive/modules/jeypore_albert_hall_1886_1887_blaschka_collection.json",
+        "06_blaschka_global_object_archive/modules/leeds_1865_fric_blaschka_actineae_collection.json",
+        "06_blaschka_global_object_archive/modules/milwaukee_public_museum_70_model_Ward_collection.json",
+        "06_blaschka_global_object_archive/modules/musee_zoologique_strasbourg_1890_order_conservation_and_display.json",
+        "06_blaschka_global_object_archive/modules/museo_nacional_mexico_blaschka_successor_split.json",
+        "06_blaschka_global_object_archive/modules/national_museum_prague_1884_gift_and_surviving_octopus.json",
+        "06_blaschka_global_object_archive/modules/national_museum_victoria_museums_victoria_blaschka.json",
+        "06_blaschka_global_object_archive/modules/national_museums_scotland_numbered_conservation.json",
+        "06_blaschka_global_object_archive/modules/nhm_london_inventory_damage_conservation_display.json",
+        "06_blaschka_global_object_archive/modules/nottingham_wollaton_blaschka_collection.json",
+        "06_blaschka_global_object_archive/modules/oxford_1867_british_sea_anemone_series.json",
+        "06_blaschka_global_object_archive/modules/perth_jellyfish_series_invoice_exhibition.json",
+        "06_blaschka_global_object_archive/modules/pisa_collection_display_migration_catalogue_gap.json",
+        "06_blaschka_global_object_archive/modules/redpath_museum_mcgill_31_model_collection.json",
+        "06_blaschka_global_object_archive/modules/science_museum_south_kensington_dispersal_hub.json",
+        "06_blaschka_global_object_archive/modules/stift_kremsmuenster_blaschka_collection.json",
+        "06_blaschka_global_object_archive/modules/stift_seitenstetten_61_model_teaching_collection.json",
+        "06_blaschka_global_object_archive/modules/tokyo_educational_museum_kahaku_blaschka.json",
+        "06_blaschka_global_object_archive/modules/tuebingen_complete_survival_teaching_exhibition.json",
+        "06_blaschka_global_object_archive/modules/tufts_barnum_museum_blaschka.json",
+        "06_blaschka_global_object_archive/modules/ucl_grant_museum_dual_acquisition_teaching_display.json",
+        "06_blaschka_global_object_archive/modules/university_of_liege_aquarium_museum_blaschka_collection.json",
+        "06_blaschka_global_object_archive/modules/university_of_michigan_blaschka_collection.json",
+        "06_blaschka_global_object_archive/modules/university_of_rostock_zoological_collection_blaschka.json",
+        "06_blaschka_global_object_archive/modules/vassar_college_blaschka_collection.json",
+        "06_blaschka_global_object_archive/modules/world_museum_liverpool_1887_blaschka.json",
+        "07_tables/Rudolf_Blaschka_America_1892_MASTER.csv.json",
+        "07_tables/Rudolf_Blaschka_America_1892_sources.csv.json",
+        "08_extracted_pdf_text/27244037_10480415860009266_OCR.pdf.text.json",
+        "EXCLUDED_MISIDENTIFIED_SOURCES.json",
+        "FILE_INVENTORY.json",
+        "OCR_NOISE_OMISSIONS.json",
+        "V3_CLEANING_AUDIT.json",
+        "V4_CLEANING_AUDIT.json",
+        "V5_CLEANING_AUDIT.json",
+        "V6_CLEANING_AUDIT.json",
+        "V7_CLEANING_AUDIT.json",
+        "V8_CLEANING_AUDIT.json",
+        "V8_VERIFICATION.json",
+        "VERIFICATION.json"
+      ]
+    }
+  ]
+}
