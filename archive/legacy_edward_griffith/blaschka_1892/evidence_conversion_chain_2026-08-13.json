@@ -1,0 +1,47 @@
+{
+  "schema": "rb1892-conversion-chain-v0.1",
+  "updated": "2026-08-13",
+  "argument": "1892 fieldwork is best tested as a distributed reference/conversion system, not as an itinerary-discovery project.",
+  "chain": [
+    "living plant",
+    "observation",
+    "drawing",
+    "preserved specimen",
+    "propagule",
+    "future supply/cultivation",
+    "glass model",
+    "display/repair"
+  ],
+  "baseline": "Rossi-Wilcox 2007 already provides a substantial itinerary and uses the 1892 letters.",
+  "events": [
+    {"id":"RB1892-E01","date":"1892-01-20","place":"Hosterwitz bei Dresden","source":"BLA-D00016/015:16","tags":["finance","shipment","departure planning"],"claim":"Fieldwork was attached to the commission's financial and shipping system before departure."},
+    {"id":"RB1892-E02","date":"1892-02","place":"Cambridge, Massachusetts","source":"BLA-D00676/017:30","tags":["museum feedback","repair","display"],"claim":"Harvard display was part of the fieldwork feedback loop, not merely the terminal destination of finished models."},
+    {"id":"RB1892-E03","date":"1892-02","place":"Cambridge, Massachusetts","source":"BLA-D00682/017:36","tags":["commission negotiation","field preparation"],"claim":"The expedition was an adaptive production program with delegated preservation labor."},
+    {"id":"RB1892-E04","date":"1892-03-06","place":"Hope Garden, Kingston, Jamaica","source":"BLA-D00704/017:58","tags":["fieldwork","preservation","workstation"],"claim":"Observation depended on a temporary workstation plus parallel conversion of plants into drawings and preserved reference materials."},
+    {"id":"RB1892-E05","date":"1892-03-27","place":"Jamaica","source":"BLA-D00725/017:79","tags":["fieldwork output","photographic reference"],"claim":"The trip produced a mixed reference archive rather than a single medium."},
+    {"id":"RB1892-E06","date":"1892-04","place":"Cambridge, Massachusetts","source":"BLA-D00743/017:97","tags":["post-Jamaica conversion","cultivation","visual reference"],"claim":"Field observation extended into cultivation, mailed material, photography and institutional garden study."},
+    {"id":"RB1892-E07","date":"1892-04-10/12","place":"Cambridge to western United States","source":"BLA-D00744/017:98","tags":["route design","postal coordination"],"claim":"The route was institutionally coordinated and communication-dependent."},
+    {"id":"RB1892-E08","date":"1892-04-26/30","place":"San Diego, California","source":"BLA-D00803/017:157","tags":["field processing","finance","material transport"],"claim":"A single passage exposes labor division, specimen conversion, procurement, transport and the microeconomics of fieldwork."},
+    {"id":"RB1892-E09","date":"1892-05","place":"San Diego, California","source":"BLA-D00814/017:168","tags":["supplier network","shipment"],"claim":"Local botanists converted a passing visit into a procurement node."},
+    {"id":"RB1892-E10","date":"1892-05-15","place":"Oakland, California","source":"BLA-D00851/017:205","tags":["field observation","color recording"],"claim":"Color and ecological setting were recorded under time pressure at a daily production cadence."},
+    {"id":"RB1892-E11","date":"1892-05-late","place":"Colorado Springs, Colorado","source":"BLA-D00873/017:227","tags":["phenology","route adaptation"],"claim":"Phenology, not geographic completeness, governed route value."},
+    {"id":"RB1892-E12","date":"1892-05-late","place":"Colorado Springs, Colorado","source":"BLA-D00890/017:244","tags":["future procurement network","seed suppliers"],"claim":"The trip deliberately built a supplier network designed to outlast Rudolf's physical presence."},
+    {"id":"RB1892-E13","date":"1892-05/06","place":"St. Louis, Missouri","source":"BLA-D00896/017:251","tags":["botanic garden","preservation","route substitution"],"claim":"A botanic garden could substitute for distant field travel by concentrating identified living material and saving time."},
+    {"id":"RB1892-E14","date":"1892-06-early","place":"St. Louis, Missouri","source":"BLA-D00902/017:257","tags":["phenological gap","future procurement"],"claim":"Seed procurement compensated for temporal mismatch between the travel calendar and plant life cycles."},
+    {"id":"RB1892-E15","date":"1892-06-07","place":"Cambridge, Massachusetts","source":"BLA-D00917/017:272","tags":["return","repair","local study"],"claim":"The field season closed by folding procurement and maintenance back into observation."},
+    {"id":"RB1892-E16","date":"1892-06-mid","place":"Cambridge, Massachusetts","source":"BLA-D00927/017:282","tags":["repair","supplier network","future production horizon"],"claim":"The strongest evidence that the expedition engineered future access rather than merely harvesting a finite set of observations."}
+  ],
+  "guards": [
+    "Do not claim discovery of the itinerary.",
+    "Keep Rudolf's 106 species and the institutional 116 colored drawings as separate counts until reconciled.",
+    "Archive-retained ephemera are not proof of physical presence.",
+    "Verify OCR and translations against images before quotation.",
+    "Do not equate observed plants, preserved specimens, propagules and later models without a specific crosswalk."
+  ],
+  "next": [
+    "Crosswalk named plants from letters to drawings, herbarium specimens, model/section labels and later models.",
+    "Build a finance/logistics ledger from passage, travel/hotel funding, supply purchases, receipts and shipping.",
+    "Resolve dated supplier-network edges for Cameron, Ganong, Orcutt, Parrish, Gillett and botanical-garden staff.",
+    "Tag route changes caused by flowering stage, seed season, weather, fatigue and garden substitution."
+  ]
+}
